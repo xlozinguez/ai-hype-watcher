@@ -90,6 +90,18 @@ Leon van Zyl ([#013]) demonstrates this concretely: installed skills consume ver
 
 This connects directly to the context engineering principles covered in [Module 02: Prompting & Workflows](../02-prompting-and-workflows/README.md). See also: Tim Berglund's "60-70% rule" -- research shows that performance peaks at roughly 60-70% of context window capacity, meaning effective context engineering requires being selective enough to leave headroom. Skills are one of the primary mechanisms for achieving that selectivity.
 
+### Concept 7: Advanced Claude Code Configuration -- Hooks, MCP CLI, and Insights
+
+Beyond skills and CLAUDE.md, Claude Code supports several advanced configuration mechanisms that extend the platform's capabilities in sophisticated ways. As demonstrated in AI LABS ([#021]), these features enable deterministic control over agent behavior, more efficient context management, and structured knowledge accumulation across sessions.
+
+**Hooks with exit code 2**: Claude Code hooks can return exit code 2 to block agent actions deterministically. This is more than logging or notification -- it is enforcement. AI LABS uses this to prevent agents from modifying test files, enforcing a test-driven development discipline where tests are written by humans (defining behavior) and implementation is written by agents (satisfying the tests). When a hook returns exit code 2, the agent's action is rejected and the agent must adjust its approach.
+
+**MCP CLI mode**: An experimental feature that addresses a specific context management problem. When many MCP servers are installed, their combined tool schemas consume significant context window space in every session, whether or not those tools are used. MCP CLI mode presents MCP server tools as CLI commands rather than loading tool schemas into the agent's context. The agent invokes tools via command-line interface instead of carrying all tool definitions in the context window, reducing baseline token consumption.
+
+**The `insights` command**: A structured documentation pattern for project-specific notes that persist across sessions. `/insights add` functions as a lightweight knowledge base for the project -- more dynamic than CLAUDE.md (which requires file edits to update), less structured than skills (which are designed for reusable workflows). Insights serve as a middle ground for capturing architectural decisions, gotchas, and context that emerge during development.
+
+**Structured documentation in context**: A recurring theme in AI LABS is that agent output quality is directly proportional to the quality of structured context provided. Feed agents user stories, architecture decision records, and explicit requirements rather than vague instructions. The difference between "improve the authentication flow" and "implement OAuth2 refresh token rotation according to ADR-014" is measurable in both correctness and execution time.
+
 ## Patterns & Practices
 
 ### Pattern 1: Skill Composition and Chaining
@@ -124,6 +136,13 @@ This connects directly to the context engineering principles covered in [Module 
 - **Example**: Instead of writing a skill from scratch, ask Claude Code to use the Skill Creator skill: "Create a skill that generates database migration files following our team's conventions." The meta-skill produces the scaffolding; you refine the domain knowledge.
 - **Source**: [#013]
 
+### Pattern 5: Hooks for Test-Driven Agent Workflows
+
+- **When to use**: When you want agents to implement code but not modify your test suite.
+- **How it works**: Create a PreToolUse hook that checks if the agent is about to write to test files. Return exit code 2 to block the write. This enforces a workflow where humans write tests (defining behavior) and agents write implementation (satisfying the tests). The deterministic enforcement via hooks is more reliable than prompting the agent not to touch tests -- the agent cannot bypass a hook that returns exit code 2.
+- **Example**: AI LABS ([#021]) demonstrates a hook that intercepts Write and Edit operations on test files and blocks them with exit code 2. The agent must then implement code that passes the human-written tests, creating a natural TDD loop.
+- **Source**: [#021]
+
 ## Common Pitfalls
 
 - **Writing skill descriptions for humans instead of for the auto-activation system**: The description field in `SKILL.md` is what Claude Code reads to decide whether to activate a skill. Vague or conversational descriptions lead to unreliable activation. Make descriptions precise, keyword-rich, and focused on what the skill does and when it should be used.
@@ -135,6 +154,8 @@ This connects directly to the context engineering principles covered in [Module 
 - **Installing skills from untrusted sources without review**: As ThePrimeagen warns in [#017], 36% of publicly available agent skills contain security vulnerabilities. Skills execute with user-level permissions and can run arbitrary code. Treat skill installation with the same caution you would give to running an unknown script -- review the source code before installing.
 
 - **Ignoring token cost of MCP servers**: When every capability is an MCP server, tool definitions accumulate in the context window and consume tokens in every session. If you notice your context filling up quickly, audit which MCP servers are loaded and consider converting occasionally-used ones to skills.
+
+- **Loading too many MCP server tool schemas into context**: When many MCP servers are installed, their combined tool definitions consume significant context window space in every session. AI LABS ([#021]) recommends the experimental MCP CLI mode as a mitigation -- tools are invoked via CLI rather than loaded as schemas. Alternatively, audit which MCP servers are truly needed per-session and disable the rest. The cost is real: a dozen MCP servers might consume thousands of tokens before the agent even begins working on the actual task.
 
 ## Hands-On Exercises
 
@@ -155,6 +176,7 @@ This connects directly to the context engineering principles covered in [Module 
 | [013: Stop Using Claude Code Without Skills](../../sources/013-leon-van-zyl-claude-code-skills.md) | Leon van Zyl | Hands-on skills tutorial, building custom skills, skill composition, MCP vs skills taxonomy |
 | [015: I finally CRACKED Claude Agent Skills](../../sources/015-indydevdan-skills-engineering.md) | IndyDevDan | Skills architecture, lazy-loading, SKILL.md anatomy, skills.sh ecosystem, context budget management |
 | [017: Be Careful w/ Skills](../../sources/017-primeagen-skills-security.md) | ThePrimeagen | Skills security, 36% vulnerability rate, hallucination squatting, supply chain risks |
+| [021: Claude's Best Release Yet + 10 Tricks](../../sources/021-ai-labs-claude-code-tricks.md) | AI LABS | Hooks with exit code 2, MCP CLI mode, insights command, structured documentation, context engineering |
 
 ## Further Reading
 

@@ -124,6 +124,10 @@ One of the most influential agentic patterns emerged not from a research lab but
 
 The technique is "embarrassingly simple" -- while the AI industry was building elaborate multi-agent frameworks, Huntley discovered that a loop that keeps running until tests pass is more reliable than carefully choreographed agent handoffs. VentureBeat called it "the biggest name in AI right now."
 
+Jo Van Eyck ([#024]) provides a more detailed framework for understanding the Ralph Wiggum loop: it is fundamentally a while loop around a coding agent where the halting condition is deterministic verification -- compilation succeeds, tests pass, linting is clean. The key insight: "We do not need AGI, we do not need super smart models, we just need persistence." The agent will confidently report "all done, all tests pass" when the code doesn't even compile. The Ralph loop's value is precisely that it replaces agent self-assessment with actual execution of compilation and test suites.
+
+The Ralph Wiggum loop also connects to Van Eyck's "autonomy slider" concept -- it enables the shift from In-the-Loop (babysitting the agent through each step) to On-the-Loop (fire-and-forget with quality gates). You prepare a package of work, hand it to an agent, and only return when deterministic verification confirms completion. This shift requires trust in the quality gates, not trust in the agent's self-assessment.
+
 Ralph embodies a key principle of power user patterns from [#008]: **accept imperfection and iterate**. The AI will produce broken code, so you make it retry until it fixes it. It never gets tired. This requires abandoning the expectation that AI should get things right the first time.
 
 Anthropic's native Task System can be understood as the productized version of what Ralph demonstrated as a prototype: persistent agent coordination with context isolation across sessions.
@@ -139,6 +143,23 @@ As Jacob Schmitt from CircleCI argues in [#018], when AI accelerates code genera
 Multiple sources converge on this point. Nate B Jones ([#008]) cites Maggie Appleton: "When agents write the code, design becomes the bottleneck." The capability overhang is not about whether AI can do the work -- it can. The overhang is in the human systems (review, validation, deployment) that have not yet adapted to AI-paced output.
 
 > "When AI can generate ten solutions quickly, the valuable skill becomes choosing the right one for your context." -- Jacob Schmitt ([#018])
+
+### Concept 9: Persistent Task Management with Beats
+
+Jo Van Eyck ([#024]) introduces Beats -- a persistent memory and task management system for coding agents, created by Steve Yaggi. Think of it as "a Trello board for your coding agents." Plans are broken into subtasks with identified dependencies and blocking relationships, persisted outside the context window as a git repository with JSON files.
+
+The architecture solves a fundamental problem: when task state lives in the context window, it degrades as sessions extend (what Van Eyck calls "context rot"). By externalizing task state, Beats enables agents to look at the next task, update completion state, and reason about parallel versus sequential work without holding the entire plan in working memory.
+
+Key properties of Beats:
+
+- **Git-backed persistence**: Task state is stored as JSON files in a git repository, completely outside the agent's context window
+- **Dependency-aware sequencing**: Agents can query which tasks are ready to work on based on completion state and blocking relationships
+- **Cross-session continuity**: When a new agent picks up work, it reads the current state from disk rather than reconstructing it from conversation history
+- **Parallel execution support**: Multiple agents can work on independent tasks simultaneously, coordinating through the shared task repository
+
+Claude Code's improved plan mode (introduced in late 2025/early 2026) follows the same pattern -- a series of JSON files on disk that persist task state outside the context window. As Van Eyck notes, this is "very Beats-like." The principle extends in Module 05's Gas Town pattern, which adds fleet orchestration on top of Beats-style persistent task management.
+
+The connection to the Ralph Wiggum loop (Concept 7) is direct: Beats provides the persistent state that enables long-running autonomous loops to survive context window resets. Each agent iteration reads the current task state, makes progress, updates the state, and terminates. The next iteration picks up seamlessly.
 
 ## Patterns & Practices
 
@@ -191,6 +212,13 @@ Multiple sources converge on this point. Nate B Jones ([#008]) cites Maggie Appl
 - **Example**: Nate B Jones ([#008]) recommends that technical leaders "define agent-coding expectations per codebase based on risk profile. High-risk production code requires watching the agent in an IDE and writing careful evals. Green-field prototypes allow stepping back."
 - **Source**: [#008]
 
+### Pattern 8: Adversarial Verification Agents
+
+- **When to use**: When you need higher confidence in research, analysis, or implementation quality and cannot rely solely on deterministic testing.
+- **How it works**: Spawn adversarial agent pairs where one agent performs research or implementation and a second agent actively tries to find flaws, challenge assumptions, or identify gaps. Unlike the builder/validator pattern (which is sequential), adversarial agents can run concurrently. This is particularly effective for research tasks where confirmation bias is a risk.
+- **Example**: AI LABS ([#021]) demonstrates spawning adversarial agent pairs for research validation. After the primary agent completes research, an adversarial agent receives the same prompt with instructions to challenge conclusions and identify missing information. AI LABS also uses "predictive failure analysis" as a post-testing quality gate -- after tests pass, a separate agent analyzes the code for potential failure modes that tests might not cover.
+- **Source**: [#021]
+
 ## Common Pitfalls
 
 - **Relying on automatic task system activation instead of deliberate meta-prompts**: The task system activates automatically for large, complex prompts, but automatic activation lacks the organizational context and standards baked into a well-crafted meta-prompt. Deliberate meta-prompts enforce specific patterns (builder/validator pairs, dependency structures, validation criteria) and produce more consistent results.
@@ -206,6 +234,8 @@ Multiple sources converge on this point. Nate B Jones ([#008]) cites Maggie Appl
 - **Treating all codebases with the same supervision level**: A prototype and a payment processing service should not have the same agent autonomy level. Without explicit policy, agent supervision becomes a free-for-all with inconsistent quality. Define policies per risk tier.
 
 - **Building monolithic skills instead of composable ones**: As IndyDevDan notes in [#015], prefer skill composition (sequential chaining, parallel activation) over building monolithic skills that try to do everything. Smaller, focused skills are easier to test, reuse, and combine.
+
+- **Running autonomous loops without deterministic halting conditions**: Van Eyck ([#024]) warns that agents will confidently report "all done, all tests pass" when the code doesn't even compile. The Ralph Wiggum loop's value is precisely that it replaces agent self-assessment with deterministic verification (actual compilation, actual test execution). Without this, autonomous loops produce false-positive completion signals and waste compute on work that never had a chance of succeeding.
 
 ## Hands-On Exercises
 
@@ -231,6 +261,8 @@ Multiple sources converge on this point. Nate B Jones ([#008]) cites Maggie Appl
 | [015: I finally CRACKED Claude Agent Skills](../../sources/015-indydevdan-skills-engineering.md) | IndyDevDan | Skill composition patterns, chaining, context budget management |
 | [016: The Biggest AI Jump](../../sources/016-nate-b-jones-opus-46-jump.md) | Nate B Jones | Opus 4.6 capability leap, workflow inversion from "AI assists" to "AI leads" |
 | [018: The New AI-Driven SDLC](../../sources/018-circleci-ai-sdlc.md) | CircleCI (Jacob Schmitt) | Bottleneck shift from writing to evaluating, SDLC as network, infrastructure as enabler |
+| [021: Claude's Best Release Yet + 10 Tricks](../../sources/021-ai-labs-claude-code-tricks.md) | AI LABS | Adversarial agent pairs, predictive failure analysis, hooks for TDD enforcement, user stories for BDD |
+| [024: Agentic coding in 2026](../../sources/024-jo-van-eyck-agentic-coding-2026.md) | Jo Van Eyck | Ralph Wiggum loop deep dive, Beats persistent task management, autonomy slider, deterministic verification |
 
 ## Further Reading
 
