@@ -18,6 +18,7 @@ Each source is synthesized (not transcribed) into a structured note with frontma
 | [008](008-nate-b-jones-phase-transition.md) | OpenAI Is Slowing Hiring / Capability Overhang | Nate B Jones | video | capability-overhang, ai-landscape, agentic-coding, task-system |
 | [009](009-nate-b-jones-infrastructure-crisis.md) | Why the Smartest AI Teams Are Panic-Buying Compute | Nate B Jones | video | infrastructure, ai-economics, enterprise-ai |
 | [010](010-indydevdan-multi-agent-orchestration.md) | Claude Code Multi-Agent Orchestration with Opus 4.6 | IndyDevDan | video | multi-agent, agent-teams, agentic-coding, claude-code |
+| [011](011-confluent-developer-context-engineering.md) | Prompt Engineering is dead. | Confluent Developer (Tim Berglund) | video | context-engineering, prompt-engineering, agentic-coding, mcp |
 
 ## Adding Sources
 
