@@ -19,6 +19,14 @@ Each source is synthesized (not transcribed) into a structured note with frontma
 | [009](009-nate-b-jones-infrastructure-crisis.md) | Why the Smartest AI Teams Are Panic-Buying Compute | Nate B Jones | video | infrastructure, ai-economics, enterprise-ai |
 | [010](010-indydevdan-multi-agent-orchestration.md) | Claude Code Multi-Agent Orchestration with Opus 4.6 | IndyDevDan | video | multi-agent, agent-teams, agentic-coding, claude-code |
 | [011](011-confluent-developer-context-engineering.md) | Prompt Engineering is dead. | Confluent Developer (Tim Berglund) | video | context-engineering, prompt-engineering, agentic-coding, mcp |
+| [012](012-nate-b-jones-career-collapse.md) | Going Slower Feels Safer, But Your Domain Expertise Won't Save You | Nate B Jones | video | capability-overhang, ai-landscape, agentic-coding |
+| [013](013-leon-van-zyl-claude-code-skills.md) | Stop Using Claude Code Without Skills | Leon van Zyl | video | skills, claude-code, skills-ecosystem |
+| [014](014-leon-van-zyl-agent-teams.md) | I Gave Opus 4.6 an Entire Dev Team | Leon van Zyl | video | agent-teams, multi-agent, claude-code |
+| [015](015-indydevdan-skills-engineering.md) | I finally CRACKED Claude Agent Skills | IndyDevDan | video | skills, claude-code, agentic-coding, skills-ecosystem |
+| [016](016-nate-b-jones-opus-46-jump.md) | Claude Opus 4.6: The Biggest AI Jump I've Covered | Nate B Jones | video | ai-landscape, claude-code, agentic-coding |
+| [017](017-primeagen-skills-security.md) | Be Careful w/ Skills | ThePrimeagen | video | security, skills-ecosystem, claude-code |
+| [018](018-circleci-ai-sdlc.md) | The New AI-Driven SDLC | CircleCI (Jacob Schmitt) | article | ai-sdlc, agentic-coding, enterprise-ai |
+| [019](019-matt-shumer-something-big.md) | Something Big Is Happening | Matt Shumer | article | ai-landscape, capability-overhang, ai-economics |
 
 ## Adding Sources
 

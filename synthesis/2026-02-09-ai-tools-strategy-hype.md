@@ -2,7 +2,7 @@
 title: "AI Tools, Strategy, and Hype: A Synthesis"
 date: "2026-02-09"
 updated: "2026-02-11"
-sources_covered: "#001-#018 (16 videos + 2 articles)"
+sources_covered: "#001-#019 (16 videos + 2 articles)"
 ---
 
 # AI Tools, Strategy, and Hype: A Synthesis
@@ -57,7 +57,7 @@ On February 5, 2026, Anthropic and OpenAI released their flagship models within 
 
 ### The C Compiler Milestone and Production Deployments
 
-**Nate B Jones** ([#015](../sources/015-nate-b-jones-biggest-ai-jump.md)) argues that Opus 4.6 represents the biggest single AI capability jump he has covered — "not close." His case rests on three data points:
+**Nate B Jones** ([#016](../sources/016-nate-b-jones-biggest-ai-jump.md)) argues that Opus 4.6 represents the biggest single AI capability jump he has covered — "not close." His case rests on three data points:
 
 **16 agents built a C compiler in two weeks**: Anthropic's team (led by Nicholas Carlini) ran 16 Opus 4.6 instances in parallel for approximately two weeks. They produced ~100,000 lines of Rust code that compiles the Linux kernel, PostgreSQL, FFmpeg, SQLite, QEMU, and Redis. It passes the vast majority of the GCC torture test suite. Total cost: **$20,000** (2 billion input tokens, 140 million output tokens, ~2,000 Claude Code sessions). Humans set the spec and validated results but wrote no code.
 
@@ -80,14 +80,14 @@ On February 5, 2026, Anthropic and OpenAI released their flagship models within 
 
 Key finding: build times were comparable, but Agent Teams delivered **deeper feature implementations without explicit prompting**, suggesting the parallel specialization enables more creative architectural thinking. The tradeoff is ~5x token consumption.
 
-**Leon van Zyl** ([#013](../sources/013-leon-van-zyl-full-dev-team.md)) took this further by building a fitness tracker app with a five-agent team: UX/UI designer, back-end developer, technical architect, database expert, and a **devil's advocate** that questions everything the other agents do. Key architecture clarifications:
+**Leon van Zyl** ([#014](../sources/014-leon-van-zyl-full-dev-team.md)) took this further by building a fitness tracker app with a five-agent team: UX/UI designer, back-end developer, technical architect, database expert, and a **devil's advocate** that questions everything the other agents do. Key architecture clarifications:
 
 - **Sub-agents** are one-way: isolated context windows, report back to parent, can't see each other
 - **Agent Teams** share a task list and have **peer-to-peer messaging** — "the equivalent of bringing a bunch of people into the same room"
 - Each team member gets its own full Claude Code instance with access to skills, MCP servers, etc.
 - **Human-in-the-loop**: you can stop any individual agent, give it different instructions, and resume — without affecting other team members
 
-**Emergent hierarchy**: Jones ([#015](../sources/015-nate-b-jones-biggest-ai-jump.md)) adds a striking detail from the C compiler project — when the 16 agents were given the task, they independently developed hierarchical coordination structures resembling human management patterns. Hierarchy emerged as a structural requirement of complex tasks, not a culturally imposed convention.
+**Emergent hierarchy**: Jones ([#016](../sources/016-nate-b-jones-biggest-ai-jump.md)) adds a striking detail from the C compiler project — when the 16 agents were given the task, they independently developed hierarchical coordination structures resembling human management patterns. Hierarchy emerged as a structural requirement of complex tasks, not a culturally imposed convention.
 
 ### Multi-Agent Orchestration at Scale
 
@@ -95,13 +95,13 @@ Key finding: build times were comparable, but Agent Teams delivered **deeper fea
 
 **The demo**: Eight complete full-stack applications were one-shotted by Opus 4.6 in E2B cloud sandboxes. Then two teams of four agents were spun up in parallel — each agent with its own context window, model, and task — producing **160+ tool calls in under a minute** while the primary orchestrator used only **31% of its context window**.
 
-**The "Core Four" framework** (first articulated in [#014](../sources/014-indydevdan-skills-framework.md), expanded here): **Context, Model, Prompt, Tools** — adding tools as an explicit dimension because the engineering game has shifted from "can the model do X?" to "what tools have you given it?"
+**The "Core Four" framework** (first articulated in [#015](../sources/015-indydevdan-skills-framework.md), expanded here): **Context, Model, Prompt, Tools** — adding tools as an explicit dimension because the engineering game has shifted from "can the model do X?" to "what tools have you given it?"
 
 Key insight: "The true limitation is you and I." Models can do far more than most engineers know how to unlock. The constraint is now your ability to prompt engineer, context engineer, and build reusable agentic systems.
 
 ### Skills: The Decision Framework and Composability Hierarchy
 
-**IndyDevDan** ([#014](../sources/014-indydevdan-skills-framework.md)) provided the foundational taxonomy for Claude Code's expanding feature set — when to use skills vs. MCP servers vs. sub-agents vs. custom slash commands. His central thesis: **"The prompt is the fundamental unit of knowledge work."**
+**IndyDevDan** ([#015](../sources/015-indydevdan-skills-framework.md)) provided the foundational taxonomy for Claude Code's expanding feature set — when to use skills vs. MCP servers vs. sub-agents vs. custom slash commands. His central thesis: **"The prompt is the fundamental unit of knowledge work."**
 
 > **Note**: Anthropic has officially **merged custom slash commands into skills**. Per the [Claude Code Skills docs](https://code.claude.com/docs/en/skills): _"Custom slash commands have been merged into skills. A file at `.claude/commands/review.md` and a skill at `.claude/skills/review/SKILL.md` both create `/review` and work the same way."_
 
@@ -120,7 +120,7 @@ Key insight: "The true limitation is you and I." Models can do far more than mos
 
 ### Skills in Practice
 
-**Leon van Zyl** ([#012](../sources/012-leon-van-zyl-claude-code-skills.md)) demonstrated the practical side — building skills that extend Claude Code with capabilities it doesn't have natively (image generation, advanced UI design, browser verification).
+**Leon van Zyl** ([#013](../sources/013-leon-van-zyl-claude-code-skills.md)) demonstrated the practical side — building skills that extend Claude Code with capabilities it doesn't have natively (image generation, advanced UI design, browser verification).
 
 **Key patterns for teams**:
 - Install skills at **project level** (not global) so they commit to the repo and the whole team gets them
@@ -136,7 +136,7 @@ Key insight: "The true limitation is you and I." Models can do far more than mos
 
 ### Skills Security: The Supply Chain Crisis
 
-**ThePrimeagen** ([#016](../sources/016-primeagen-skills-security.md)) delivers a sharp counterpoint to skills enthusiasm: the skills ecosystem is a security disaster. His core argument: "Do you understand that just raw dogging text to an LLM that has full permissions on your system is a bad plan?"
+**ThePrimeagen** ([#017](../sources/017-primeagen-skills-security.md)) delivers a sharp counterpoint to skills enthusiasm: the skills ecosystem is a security disaster. His core argument: "Do you understand that just raw dogging text to an LLM that has full permissions on your system is a bad plan?"
 
 **The data** (Snyk ToxicSkills study, Feb 2026): Of 3,984 skills scanned from ClawHub and skills.sh, **36% contain security flaws** and **76 confirmed malicious payloads** were found. 91% of malicious skills combine prompt injection with traditional malware, bypassing both AI safety mechanisms and traditional security tools.
 
@@ -168,10 +168,10 @@ Key insight: "The true limitation is you and I." Models can do far more than mos
 - **Bart Slodyczka**: Agent Teams' direct inter-agent communication is the critical advantage over subagents.
 - **Nate B Jones** ([#008](../sources/008-nate-b-jones-phase-transition.md)): "Sam Altman admits he still hasn't changed how he works, despite being CEO of OpenAI. If the CEO can't close the capability-adoption gap, what hope do the rest of us have without deliberate effort?"
 - **IndyDevDan** ([#010](../sources/010-indydevdan-multi-agent-orchestration.md)): "This whole idea that engineers are going to be replaced by this technology is absurd. Engineers are the best positioned to use agentic technology."
-- **Leon van Zyl** ([#013](../sources/013-leon-van-zyl-full-dev-team.md)): Adding a devil's advocate team member "seems to really question everything and just get a way better response."
-- **IndyDevDan** ([#014](../sources/014-indydevdan-skills-framework.md)): "The prompt is the fundamental unit of knowledge work. If you don't know how to build and manage prompts, you will lose."
-- **Nate B Jones** ([#015](../sources/015-nate-b-jones-biggest-ai-jump.md)): "Thirty minutes to two weeks in twelve months. That's not a trend line. That's a phase change."
-- **ThePrimeagen** ([#016](../sources/016-primeagen-skills-security.md)): "2025 was the year of the human intervenor. You are no longer the captain."
+- **Leon van Zyl** ([#014](../sources/014-leon-van-zyl-full-dev-team.md)): Adding a devil's advocate team member "seems to really question everything and just get a way better response."
+- **IndyDevDan** ([#015](../sources/015-indydevdan-skills-framework.md)): "The prompt is the fundamental unit of knowledge work. If you don't know how to build and manage prompts, you will lose."
+- **Nate B Jones** ([#016](../sources/016-nate-b-jones-biggest-ai-jump.md)): "Thirty minutes to two weeks in twelve months. That's not a trend line. That's a phase change."
+- **ThePrimeagen** ([#017](../sources/017-primeagen-skills-security.md)): "2025 was the year of the human intervenor. You are no longer the captain."
 
 ---
 
@@ -204,7 +204,7 @@ Key insight: "The true limitation is you and I." Models can do far more than mos
 
 ### AI Is Collapsing Futures
 
-**Nate B Jones** ([#011](../sources/011-nate-b-jones-collapsing-futures.md)) made the broadest argument: AI is not destroying work — it's **compressing** it.
+**Nate B Jones** ([#012](../sources/012-nate-b-jones-collapsing-futures.md)) made the broadest argument: AI is not destroying work — it's **compressing** it.
 
 **Horizontal collapse** — Knowledge work roles are converging. Engineer, PM, marketer, analyst, designer, and ops lead are merging into one meta-competency: **orchestrating AI agents**. Gartner predicts close to half of enterprise applications will integrate task-specific AI agents by end of 2026.
 
@@ -216,7 +216,7 @@ Key insight: "The true limitation is you and I." Models can do far more than mos
 
 ### "Something Big Is Happening" — The February 2020 Analogy
 
-**Matt Shumer** ([#018](../sources/018-matt-shumer-something-big.md)) published a viral post comparing the current AI moment to **February 2020** — when COVID-19 seemed distant to most people before rapidly transforming everything.
+**Matt Shumer** ([#019](../sources/019-matt-shumer-something-big.md)) published a viral post comparing the current AI moment to **February 2020** — when COVID-19 seemed distant to most people before rapidly transforming everything.
 
 **The acceleration curve**: METR measurements show AI task completion capacity doubling approximately every 7 months, possibly accelerating to every 4 months.
 
@@ -226,7 +226,7 @@ Key insight: "The true limitation is you and I." Models can do far more than mos
 
 ### Vibe Working and Revenue Per Employee
 
-**Nate B Jones** ([#015](../sources/015-nate-b-jones-biggest-ai-jump.md)) extends "vibe coding" into **"vibe working"**. Revenue-per-employee at AI-native companies breaks the traditional SaaS model:
+**Nate B Jones** ([#016](../sources/016-nate-b-jones-biggest-ai-jump.md)) extends "vibe coding" into **"vibe working"**. Revenue-per-employee at AI-native companies breaks the traditional SaaS model:
 
 | Company | Revenue/Employee | Headcount | ARR |
 |---------|-----------------|-----------|-----|
@@ -237,7 +237,7 @@ Key insight: "The true limitation is you and I." Models can do far more than mos
 
 ### The AI-Driven SDLC
 
-**CircleCI** ([#017](../sources/017-circleci-ai-sdlc.md)) argues the entire software development lifecycle is being restructured by AI:
+**CircleCI** ([#018](../sources/018-circleci-ai-sdlc.md)) argues the entire software development lifecycle is being restructured by AI:
 
 - The traditional linear SDLC is giving way to an **interconnected network** where AI participates in every phase simultaneously
 - The bottleneck shifts from **writing code** to **evaluating code**
@@ -272,8 +272,8 @@ Key insight: "The true limitation is you and I." Models can do far more than mos
 - **Nate B Jones** ([#005](../sources/005-nate-b-jones-vibe-coding-readiness.md)): "This isn't about hustle or arbitrage. It's closer to what happens when any creative tool becomes widely accessible."
 - **Nate B Jones** ([#008](../sources/008-nate-b-jones-phase-transition.md)): "Technical leaders need to define agent-coding expectations per codebase based on risk profile."
 - **CircleCI**: "The bottleneck has shifted from writing code to evaluating it."
-- **Nate B Jones** ([#015](../sources/015-nate-b-jones-biggest-ai-jump.md)): "The question has changed from whether to adopt AI to what your agent-to-human ratio should be."
-- **Matt Shumer** ([#018](../sources/018-matt-shumer-something-big.md)): "We're past the point where this is an interesting dinner conversation about the future. The future is already here."
+- **Nate B Jones** ([#016](../sources/016-nate-b-jones-biggest-ai-jump.md)): "The question has changed from whether to adopt AI to what your agent-to-human ratio should be."
+- **Matt Shumer** ([#019](../sources/019-matt-shumer-something-big.md)): "We're past the point where this is an interesting dinner conversation about the future. The future is already here."
 
 ---
 
@@ -400,21 +400,22 @@ Key insight: "The true limitation is you and I." Models can do far more than mos
 
 | # | Title | Creator | URL |
 |---|-------|---------|-----|
-| 1 | Claude Code Task System: ANTI-HYPE Agentic Coding | IndyDevDan | [YouTube](https://www.youtube.com/watch?v=4_2j5wgt_ds) |
-| 2 | Anthropic's CEO Bet the Company on This Philosophy | Nate B Jones | [YouTube](https://www.youtube.com/watch?v=iL3uDrk-i_E) |
-| 3 | Opus 4.6 AND ChatGPT 5.3 SAME DAY??? | The PrimeTime | [YouTube](https://www.youtube.com/watch?v=wN13YeqEaqk) |
-| 4 | Claude Code's New Agent Teams Are Insane | Bart Slodyczka | [YouTube](https://www.youtube.com/watch?v=VWngYUC63po) |
-| 5 | Most People Aren't Ready for Vibe Coding | Nate B Jones | [YouTube](https://www.youtube.com/watch?v=sLz4mAyykeE) |
-| 6 | 4 AI Skills That Set You Apart From 90% Of People | Ali H. Salem | [YouTube](https://www.youtube.com/watch?v=wuOCa50e3fk) |
-| 7 | Super Bowl Commercial Bubble Curse: AIs imitate Dot-Coms | Internet of Bugs | [YouTube](https://www.youtube.com/watch?v=Z68ncMsEgsI) |
-| 8 | OpenAI Is Slowing Hiring. Anthropic's Engineers Stopped Writing Code | Nate B Jones | [YouTube](https://www.youtube.com/watch?v=dZxyeYBxPBA) |
-| 9 | Why the Smartest AI Teams Are Panic-Buying Compute | Nate B Jones | [YouTube](https://www.youtube.com/watch?v=pSgy2P2q790) |
-| 10 | Claude Code Multi-Agent Orchestration with Opus 4.6 | IndyDevDan | [YouTube](https://www.youtube.com/watch?v=RpUTF_U4kiw) |
-| 11 | Going Slower Feels Safer, But Your Domain Expertise Won't Save You | Nate B Jones | [YouTube](https://www.youtube.com/watch?v=q6p-_W6_VoM) |
-| 12 | Stop Using Claude Code Without Skills | Leon van Zyl | [YouTube](https://www.youtube.com/watch?v=vIUJ4Hd7be0) |
-| 13 | Opus 4.6 Can Run a Full Dev Team Now | Leon van Zyl | [YouTube](https://www.youtube.com/watch?v=KCJsdQpcfic) |
-| 14 | I finally CRACKED Claude Agent Skills | IndyDevDan | [YouTube](https://www.youtube.com/watch?v=kFpLzCVLA20) |
-| 15 | Claude Opus 4.6: The Biggest AI Jump I've Covered | Nate B Jones | [YouTube](https://www.youtube.com/watch?v=JKk77rzOL34) |
-| 16 | Skills are more dangerous than you think | ThePrimeagen | [YouTube](https://www.youtube.com/watch?v=Y2otN_NY75Y) |
-| 17 | The New AI-Driven SDLC | CircleCI (Jacob Schmitt) | [Article](https://circleci.com/blog/ai-sdlc/) |
-| 18 | Something Big Is Happening | Matt Shumer | [Post](https://shumer.dev/something-big-is-happening) |
+| 001 | Claude Code Task System: ANTI-HYPE Agentic Coding | IndyDevDan | [YouTube](https://www.youtube.com/watch?v=4_2j5wgt_ds) |
+| 002 | Anthropic's CEO Bet the Company on This Philosophy | Nate B Jones | [YouTube](https://www.youtube.com/watch?v=iL3uDrk-i_E) |
+| 003 | Opus 4.6 AND ChatGPT 5.3 SAME DAY??? | The PrimeTime | [YouTube](https://www.youtube.com/watch?v=wN13YeqEaqk) |
+| 004 | Claude Code's New Agent Teams Are Insane | Bart Slodyczka | [YouTube](https://www.youtube.com/watch?v=VWngYUC63po) |
+| 005 | Most People Aren't Ready for Vibe Coding | Nate B Jones | [YouTube](https://www.youtube.com/watch?v=sLz4mAyykeE) |
+| 006 | 4 AI Skills That Set You Apart From 90% Of People | Ali H. Salem | [YouTube](https://www.youtube.com/watch?v=wuOCa50e3fk) |
+| 007 | Super Bowl Commercial Bubble Curse: AIs imitate Dot-Coms | Internet of Bugs | [YouTube](https://www.youtube.com/watch?v=Z68ncMsEgsI) |
+| 008 | OpenAI Is Slowing Hiring. Anthropic's Engineers Stopped Writing Code | Nate B Jones | [YouTube](https://www.youtube.com/watch?v=dZxyeYBxPBA) |
+| 009 | Why the Smartest AI Teams Are Panic-Buying Compute | Nate B Jones | [YouTube](https://www.youtube.com/watch?v=pSgy2P2q790) |
+| 010 | Claude Code Multi-Agent Orchestration with Opus 4.6 | IndyDevDan | [YouTube](https://www.youtube.com/watch?v=RpUTF_U4kiw) |
+| 011 | Prompt Engineering is dead. | Confluent Developer (Tim Berglund) | [YouTube](https://www.youtube.com/watch?v=LbMHYcMIc-8) |
+| 012 | Going Slower Feels Safer, But Your Domain Expertise Won't Save You | Nate B Jones | [YouTube](https://www.youtube.com/watch?v=q6p-_W6_VoM) |
+| 013 | Stop Using Claude Code Without Skills | Leon van Zyl | [YouTube](https://www.youtube.com/watch?v=vIUJ4Hd7be0) |
+| 014 | Opus 4.6 Can Run a Full Dev Team Now | Leon van Zyl | [YouTube](https://www.youtube.com/watch?v=KCJsdQpcfic) |
+| 015 | I finally CRACKED Claude Agent Skills | IndyDevDan | [YouTube](https://www.youtube.com/watch?v=kFpLzCVLA20) |
+| 016 | Claude Opus 4.6: The Biggest AI Jump I've Covered | Nate B Jones | [YouTube](https://www.youtube.com/watch?v=JKk77rzOL34) |
+| 017 | Skills are more dangerous than you think | ThePrimeagen | [YouTube](https://www.youtube.com/watch?v=Y2otN_NY75Y) |
+| 018 | The New AI-Driven SDLC | CircleCI (Jacob Schmitt) | [Article](https://circleci.com/blog/ai-sdlc/) |
+| 019 | Something Big Is Happening | Matt Shumer | [Post](https://shumer.dev/something-big-is-happening) |

@@ -3,8 +3,18 @@
     "allow": [
       "Bash(git *)",
       "Bash(gh *)",
+      "Bash(curl *)",
       "WebFetch",
-      "WebSearch"
+      "WebSearch",
+      "mcp__playwright__browser_navigate",
+      "mcp__playwright__browser_snapshot",
+      "mcp__playwright__browser_click",
+      "mcp__playwright__browser_evaluate",
+      "mcp__playwright__browser_wait_for",
+      "mcp__playwright__browser_close",
+      "mcp__playwright__browser_take_screenshot",
+      "mcp__playwright__browser_press_key",
+      "mcp__playwright__browser_tabs"
     ]
   }
 }

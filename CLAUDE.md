@@ -39,11 +39,12 @@ watchlist/        → YouTube channel watchlist and scanning config
 
 | Skill | Purpose |
 |-------|---------|
+| `/ingest` | Full pipeline orchestrator — transcribe, synthesize, and index a source in one step |
 | `/synthesize-source` | Convert a YouTube video or article URL into a structured source note |
 | `/compile-curriculum` | Rebuild curriculum sections from tagged sources |
 | `/daily-briefing` | Generate a dated findings briefing |
-| `/youtube-transcriber` | Capture YouTube video transcript and prepare for synthesis |
-| `/scan-channels` | Scan YouTube watchlist for new relevant content |
+| `/youtube-transcriber` | Extract YouTube video transcript via Playwright and prepare for synthesis |
+| `/scan-channels` | Scan YouTube watchlist RSS feeds for new relevant content |
 
 ## Rules
 

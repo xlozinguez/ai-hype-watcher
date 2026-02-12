@@ -5,6 +5,8 @@
 #   name: Display name
 #   handle: YouTube @handle
 #   url: Channel URL
+#   channel_id: YouTube channel ID (for RSS feeds)
+#   rss_url: RSS feed URL (auto-derived from channel_id)
 #   focus: What this channel covers
 #   keywords: Terms to filter for relevant videos (matched against title/description)
 #   priority: high | medium | low — how aggressively to scan
@@ -13,6 +15,8 @@ channels:
   - name: "Bart Slodyczka"
     handle: "@BartSlodyczka"
     url: "https://www.youtube.com/@BartSlodyczka"
+    channel_id: "UC8F7X90NDmMr1mGx8897r_A"
+    rss_url: "https://www.youtube.com/feeds/videos.xml?channel_id=UC8F7X90NDmMr1mGx8897r_A"
     focus: "Claude Code tutorials, agent teams, practical AI coding demos"
     keywords:
       - "claude code"
@@ -25,6 +29,8 @@ channels:
   - name: "IndyDevDan"
     handle: "@indydevdan"
     url: "https://www.youtube.com/@indydevdan"
+    channel_id: "UC_x36zCEGilGpB1m-V4gmjg"
+    rss_url: "https://www.youtube.com/feeds/videos.xml?channel_id=UC_x36zCEGilGpB1m-V4gmjg"
     focus: "Principled agentic coding, Claude Code hooks/skills/tasks, anti-hype perspective"
     keywords:
       - "claude code"
@@ -38,6 +44,8 @@ channels:
   - name: "Nate B Jones"
     handle: "@NateBJones"
     url: "https://www.youtube.com/@NateBJones"
+    channel_id: "UC0C-17n9iuUQPylguM1d-lQ"
+    rss_url: "https://www.youtube.com/feeds/videos.xml?channel_id=UC0C-17n9iuUQPylguM1d-lQ"
     focus: "AI strategy, capability analysis, infrastructure economics, adoption patterns"
     keywords:
       - "AI"
@@ -52,6 +60,8 @@ channels:
   - name: "Confluent Developer"
     handle: "@ConfluentDeveloper"
     url: "https://www.youtube.com/@ConfluentDeveloper"
+    channel_id: "UCmTK4CrCaDXpuZ-Evl5-b5Q"
+    rss_url: "https://www.youtube.com/feeds/videos.xml?channel_id=UCmTK4CrCaDXpuZ-Evl5-b5Q"
     focus: "Event streaming, Kafka, data infrastructure, AI integration with data platforms"
     keywords:
       - "AI"
@@ -66,6 +76,8 @@ channels:
   - name: "The PrimeTime / ThePrimeagen"
     handle: "@ThePrimeTimeagen"
     url: "https://www.youtube.com/@ThePrimeTimeagen"
+    channel_id: "UCUyeluBRhGPCW4rPe_UvBZQ"
+    rss_url: "https://www.youtube.com/feeds/videos.xml?channel_id=UCUyeluBRhGPCW4rPe_UvBZQ"
     focus: "AI tool reviews, security analysis, critical perspective"
     keywords:
       - "claude"
@@ -78,6 +90,8 @@ channels:
   - name: "Leon van Zyl"
     handle: "@LeonvanZyl"
     url: "https://www.youtube.com/@LeonvanZyl"
+    channel_id: "UCtevzRsHEKhs-RK8pAqwSyQ"
+    rss_url: "https://www.youtube.com/feeds/videos.xml?channel_id=UCtevzRsHEKhs-RK8pAqwSyQ"
     focus: "Claude Code skills tutorials, agent teams, practical demos"
     keywords:
       - "claude code"
@@ -88,6 +102,8 @@ channels:
   - name: "Internet of Bugs"
     handle: "@InternetOfBugs"
     url: "https://www.youtube.com/@InternetOfBugs"
+    channel_id: "UCfJRkBBiPtKZyZn_3PxWaiQ"
+    rss_url: "https://www.youtube.com/feeds/videos.xml?channel_id=UCfJRkBBiPtKZyZn_3PxWaiQ"
     focus: "Critical AI analysis, hype debunking, industry economics"
     keywords:
       - "AI"
@@ -99,6 +115,8 @@ channels:
   - name: "Ali H. Salem"
     handle: "@AliHSalem"
     url: "https://www.youtube.com/@AliHSalem"
+    channel_id: "UCkPIDhf2H_RfCbzQX4SB7bQ"
+    rss_url: "https://www.youtube.com/feeds/videos.xml?channel_id=UCkPIDhf2H_RfCbzQX4SB7bQ"
     focus: "AI productivity skills, workflow optimization"
     keywords:
       - "AI skills"

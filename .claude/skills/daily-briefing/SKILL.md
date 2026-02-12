@@ -50,6 +50,8 @@ Write a briefing covering:
 - **Details**: 1-2 paragraph synthesis for each headline item
 - **Connections**: How today's findings relate to existing sources and curriculum themes
 - **Action Items**: Anything that warrants a new source note, curriculum update, or further investigation
+  - Check for recent `/scan-channels` results or run a lightweight RSS check on high-priority channels
+  - Surface any undiscovered content with ready-to-run `/ingest` commands
 - **Sources**: Links to all referenced content
 
 ### Step 6: Write the briefing file

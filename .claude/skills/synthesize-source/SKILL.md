@@ -47,9 +47,18 @@ Read `sources/_template.md` for the expected structure.
 
 Read `.claude/skills/synthesize-source/REFERENCE.md` for tag taxonomy and curriculum module mappings.
 
-### Step 5: Synthesize content
+### Step 5: Gather content
 
-Based on the transcript/content provided by the user (and any additional fetched content), write a synthesis (NOT a reformatted transcript) covering:
+Before asking the user for a transcript, check these sources in order:
+
+1. **Auto-draft detection**: Check `sources/_drafts/` for a file containing the target URL (the URL from Step 2). If found, read it automatically — this was likely created by `/youtube-transcriber` or `/ingest`.
+2. **Conversation context**: Check if the user has pasted a transcript in the current conversation.
+3. **WebFetch**: For article URLs, use WebFetch to retrieve the content directly.
+4. **Prompt user**: If none of the above produced content, suggest running `/youtube-transcriber <url>` first for YouTube videos, or ask the user to paste the transcript.
+
+### Step 6: Synthesize content
+
+Based on the transcript/content gathered in Step 5 (and any additional fetched content), write a synthesis (NOT a reformatted transcript) covering:
 - **Summary**: 2-3 paragraph overview of the source's main argument
 - **Key Concepts**: 3-7 subsections covering the most important ideas
 - **Practical Takeaways**: Actionable insights for engineering teams
@@ -57,20 +66,20 @@ Based on the transcript/content provided by the user (and any additional fetched
 - **Related Sources**: Cross-references to other sources in the repo (by ID and filename)
 - **Related Curriculum**: Which curriculum modules this source informs
 
-### Step 6: Assign tags and curriculum modules
+### Step 7: Assign tags and curriculum modules
 
 Using the reference material:
 - Assign 2-5 tags from the established taxonomy (or create new ones if needed)
 - Map to 1-3 curriculum modules based on content alignment
 
-### Step 7: Write the source file
+### Step 8: Write the source file
 
 Write the file to `sources/{ID}-{creator-slug}-{topic-slug}.md` where:
 - `{ID}` is the 3-digit zero-padded source ID
 - `{creator-slug}` is the creator's name, lowercased and hyphenated
 - `{topic-slug}` is a brief topic descriptor, lowercased and hyphenated
 
-### Step 8: Update the sources index
+### Step 9: Update the sources index
 
 Edit `sources/README.md` to add a new row to the index table with the source's ID, title, creator, type, and tags.
 

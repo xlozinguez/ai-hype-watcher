@@ -41,21 +41,22 @@ Full list of analyzed videos and articles — see [sources/README.md](../sources
 
 | # | Title | Creator | URL |
 |---|-------|---------|-----|
-| 1 | Claude Code Task System: ANTI-HYPE Agentic Coding | IndyDevDan | [YouTube](https://www.youtube.com/watch?v=4_2j5wgt_ds) |
-| 2 | Anthropic's CEO Bet the Company on This Philosophy | Nate B Jones | [YouTube](https://www.youtube.com/watch?v=iL3uDrk-i_E) |
-| 3 | Opus 4.6 AND ChatGPT 5.3 SAME DAY??? | The PrimeTime | [YouTube](https://www.youtube.com/watch?v=wN13YeqEaqk) |
-| 4 | Claude Code's New Agent Teams Are Insane | Bart Slodyczka | [YouTube](https://www.youtube.com/watch?v=VWngYUC63po) |
-| 5 | Most People Aren't Ready for Vibe Coding | Nate B Jones | [YouTube](https://www.youtube.com/watch?v=sLz4mAyykeE) |
-| 6 | 4 AI Skills That Set You Apart From 90% Of People | Ali H. Salem | [YouTube](https://www.youtube.com/watch?v=wuOCa50e3fk) |
-| 7 | Super Bowl Commercial Bubble Curse: AIs imitate Dot-Coms | Internet of Bugs | [YouTube](https://www.youtube.com/watch?v=Z68ncMsEgsI) |
-| 8 | OpenAI Is Slowing Hiring. Anthropic's Engineers Stopped Writing Code | Nate B Jones | [YouTube](https://www.youtube.com/watch?v=dZxyeYBxPBA) |
-| 9 | Why the Smartest AI Teams Are Panic-Buying Compute | Nate B Jones | [YouTube](https://www.youtube.com/watch?v=pSgy2P2q790) |
-| 10 | Claude Code Multi-Agent Orchestration with Opus 4.6 | IndyDevDan | [YouTube](https://www.youtube.com/watch?v=RpUTF_U4kiw) |
-| 11 | Going Slower Feels Safer, But Your Domain Expertise Won't Save You | Nate B Jones | [YouTube](https://www.youtube.com/watch?v=q6p-_W6_VoM) |
-| 12 | Stop Using Claude Code Without Skills | Leon van Zyl | [YouTube](https://www.youtube.com/watch?v=vIUJ4Hd7be0) |
-| 13 | Opus 4.6 Can Run a Full Dev Team Now | Leon van Zyl | [YouTube](https://www.youtube.com/watch?v=KCJsdQpcfic) |
-| 14 | I finally CRACKED Claude Agent Skills | IndyDevDan | [YouTube](https://www.youtube.com/watch?v=kFpLzCVLA20) |
-| 15 | Claude Opus 4.6: The Biggest AI Jump I've Covered | Nate B Jones | [YouTube](https://www.youtube.com/watch?v=JKk77rzOL34) |
-| 16 | Skills are more dangerous than you think | ThePrimeagen | [YouTube](https://www.youtube.com/watch?v=Y2otN_NY75Y) |
-| 17 | The New AI-Driven SDLC | CircleCI (Jacob Schmitt) | [Article](https://circleci.com/blog/ai-sdlc/) |
-| 18 | Something Big Is Happening | Matt Shumer | [Post](https://shumer.dev/something-big-is-happening) |
+| 001 | Claude Code Task System: ANTI-HYPE Agentic Coding | IndyDevDan | [YouTube](https://www.youtube.com/watch?v=4_2j5wgt_ds) |
+| 002 | Anthropic's CEO Bet the Company on This Philosophy | Nate B Jones | [YouTube](https://www.youtube.com/watch?v=iL3uDrk-i_E) |
+| 003 | Opus 4.6 AND ChatGPT 5.3 SAME DAY??? | The PrimeTime | [YouTube](https://www.youtube.com/watch?v=wN13YeqEaqk) |
+| 004 | Claude Code's New Agent Teams Are Insane | Bart Slodyczka | [YouTube](https://www.youtube.com/watch?v=VWngYUC63po) |
+| 005 | Most People Aren't Ready for Vibe Coding | Nate B Jones | [YouTube](https://www.youtube.com/watch?v=sLz4mAyykeE) |
+| 006 | 4 AI Skills That Set You Apart From 90% Of People | Ali H. Salem | [YouTube](https://www.youtube.com/watch?v=wuOCa50e3fk) |
+| 007 | Super Bowl Commercial Bubble Curse: AIs imitate Dot-Coms | Internet of Bugs | [YouTube](https://www.youtube.com/watch?v=Z68ncMsEgsI) |
+| 008 | OpenAI Is Slowing Hiring. Anthropic's Engineers Stopped Writing Code | Nate B Jones | [YouTube](https://www.youtube.com/watch?v=dZxyeYBxPBA) |
+| 009 | Why the Smartest AI Teams Are Panic-Buying Compute | Nate B Jones | [YouTube](https://www.youtube.com/watch?v=pSgy2P2q790) |
+| 010 | Claude Code Multi-Agent Orchestration with Opus 4.6 | IndyDevDan | [YouTube](https://www.youtube.com/watch?v=RpUTF_U4kiw) |
+| 011 | Prompt Engineering is dead. | Confluent Developer (Tim Berglund) | [YouTube](https://www.youtube.com/watch?v=LbMHYcMIc-8) |
+| 012 | Going Slower Feels Safer, But Your Domain Expertise Won't Save You | Nate B Jones | [YouTube](https://www.youtube.com/watch?v=q6p-_W6_VoM) |
+| 013 | Stop Using Claude Code Without Skills | Leon van Zyl | [YouTube](https://www.youtube.com/watch?v=vIUJ4Hd7be0) |
+| 014 | Opus 4.6 Can Run a Full Dev Team Now | Leon van Zyl | [YouTube](https://www.youtube.com/watch?v=KCJsdQpcfic) |
+| 015 | I finally CRACKED Claude Agent Skills | IndyDevDan | [YouTube](https://www.youtube.com/watch?v=kFpLzCVLA20) |
+| 016 | Claude Opus 4.6: The Biggest AI Jump I've Covered | Nate B Jones | [YouTube](https://www.youtube.com/watch?v=JKk77rzOL34) |
+| 017 | Skills are more dangerous than you think | ThePrimeagen | [YouTube](https://www.youtube.com/watch?v=Y2otN_NY75Y) |
+| 018 | The New AI-Driven SDLC | CircleCI (Jacob Schmitt) | [Article](https://circleci.com/blog/ai-sdlc/) |
+| 019 | Something Big Is Happening | Matt Shumer | [Post](https://shumer.dev/something-big-is-happening) |

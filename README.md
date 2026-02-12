@@ -6,7 +6,7 @@ Curated AI-assisted development learning resource — from fundamentals to agent
 
 A structured collection of notes, analyses, and learning materials synthesized from YouTube videos, articles, and posts about the rapidly evolving AI-assisted development landscape. The emphasis is on **practical patterns for working engineers** alongside **healthy skepticism** about hype cycles and industry economics.
 
-This repository is maintained with the help of four Claude Code skills that automate content workflows — from scanning YouTube channels for new content, to processing sources, compiling curriculum sections, and generating daily briefings.
+This repository is maintained with the help of six Claude Code skills that automate content workflows — from scanning YouTube channels via RSS feeds, to extracting transcripts with Playwright, synthesizing source notes, compiling curriculum sections, and generating daily briefings.
 
 ## Browse
 
@@ -42,12 +42,13 @@ This repository is maintained with the help of four Claude Code skills that auto
 
 ## Skills (Claude Code)
 
-This repo includes five skills for automated content workflows:
+This repo includes six skills for automated content workflows:
 
 | Skill | Purpose | Usage |
 |-------|---------|-------|
-| `/scan-channels` | Scan YouTube watchlist for new relevant content | `/scan-channels` |
-| `/youtube-transcriber` | Capture video transcript and prepare for synthesis | `/youtube-transcriber https://youtube.com/watch?v=...` |
+| `/ingest` | Full pipeline — transcribe, synthesize, and index in one step | `/ingest https://youtube.com/watch?v=...` |
+| `/scan-channels` | Scan YouTube watchlist RSS feeds for new relevant content | `/scan-channels` |
+| `/youtube-transcriber` | Extract video transcript via Playwright automation | `/youtube-transcriber https://youtube.com/watch?v=...` |
 | `/synthesize-source` | Convert a URL + transcript into a structured source note | `/synthesize-source https://youtube.com/watch?v=...` |
 | `/compile-curriculum` | Rebuild curriculum sections from tagged sources | `/compile-curriculum all` |
 | `/daily-briefing` | Generate a dated findings briefing | `/daily-briefing` |
@@ -55,16 +56,18 @@ This repo includes five skills for automated content workflows:
 ### Content Pipeline
 
 ```
+/ingest <url>  — runs the full pipeline automatically:
+
 /scan-channels → /youtube-transcriber → /synthesize-source → /compile-curriculum
-    discover        capture transcript      synthesize note       integrate into
-    new content     + metadata              + index               curriculum
+    RSS feeds       Playwright extract     synthesize note       integrate into
+    + keywords      transcript + metadata  + index               curriculum
 ```
 
 ## Sources Tracked
 
-18 sources analyzed so far — 16 YouTube videos + 1 article + 1 post. See the full [source index](sources/) and [reference table](resources/).
+19 sources analyzed so far — 17 YouTube videos + 2 articles. See the full [source index](sources/) and [reference table](resources/).
 
-Creators covered: IndyDevDan, Nate B Jones, The PrimeTime, Bart Slodyczka, Ali H. Salem, Internet of Bugs, Leon van Zyl, ThePrimeagen, CircleCI, Matt Shumer.
+Creators covered: IndyDevDan, Nate B Jones, The PrimeTime, Bart Slodyczka, Ali H. Salem, Internet of Bugs, Confluent Developer, Leon van Zyl, ThePrimeagen, CircleCI, Matt Shumer.
 
 ## Contributing
 

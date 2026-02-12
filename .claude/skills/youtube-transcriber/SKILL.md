@@ -1,86 +1,129 @@
 ---
 name: youtube-transcriber
-description: Transcribe a YouTube video using the Claude Chrome extension and prepare it for synthesis into a source note. This is the first step in the content pipeline — transcribe, then synthesize.
-allowed-tools: Bash, Read, Write, Edit, Glob, Grep
+description: Automatically extract a YouTube video transcript using Playwright browser automation and prepare it for synthesis into a source note. This is the first step in the content pipeline — transcribe, then synthesize.
+allowed-tools: Bash, Read, Write, Edit, Glob, Grep, WebFetch, WebSearch, mcp__playwright__browser_navigate, mcp__playwright__browser_snapshot, mcp__playwright__browser_click, mcp__playwright__browser_evaluate, mcp__playwright__browser_wait_for, mcp__playwright__browser_close, mcp__playwright__browser_take_screenshot, mcp__playwright__browser_press_key
 argument-hint: "<youtube-url>"
 ---
 
 # YouTube Transcriber
 
-Capture and prepare a YouTube video transcript for synthesis into a structured source note.
+Automatically extract a YouTube video transcript using Playwright browser automation and prepare it for synthesis.
 
-## Overview
+## Input
 
-This skill documents the transcript capture workflow using the Claude Chrome extension. It's the upstream step before `/synthesize-source` — you capture the raw transcript here, then synthesize it into a structured note.
+A YouTube video URL (e.g., `https://www.youtube.com/watch?v=...` or `https://youtu.be/...`).
 
 ## Workflow
 
-### Step 1: Capture the transcript
+### Step 1: Validate the URL
 
-The user captures the transcript using one of these methods:
+Confirm the input is a valid YouTube URL. Extract the video ID. Supported formats:
+- `https://www.youtube.com/watch?v=VIDEO_ID`
+- `https://youtu.be/VIDEO_ID`
+- `https://www.youtube.com/watch?v=VIDEO_ID&t=...` (with timestamps)
 
-**Method A: Claude Chrome Extension (preferred)**
-1. Open the YouTube video in Chrome
-2. Activate the Claude Chrome extension
-3. Play the video (or use the transcript panel)
-4. The extension captures the transcript text
-5. Copy the transcript and paste it into the Claude Code conversation
+### Step 2: Determine next source ID
 
-**Method B: YouTube's built-in transcript**
-1. Open the YouTube video
-2. Click "..." → "Show transcript"
-3. Select all transcript text and copy
-4. Paste into the Claude Code conversation
+Read `sources/README.md` to find the highest existing source ID. The draft will use the next sequential 3-digit zero-padded ID.
 
-**Method C: Third-party transcript tools**
-- [youtubetranscript.com](https://youtubetranscript.com)
-- [kome.ai](https://kome.ai/tools/youtube-transcript-generator)
-- yt-dlp: `yt-dlp --write-auto-sub --sub-lang en --skip-download <url>`
-
-### Step 2: Gather video metadata
+### Step 3: Gather video metadata
 
 Use the noembed API to get basic metadata:
 ```bash
-curl -sL "https://noembed.com/embed?url=<youtube-url>" | python3 -m json.tool
+curl -sL "https://noembed.com/embed?url=<youtube-url>"
 ```
 
 This returns: title, author_name, author_url, thumbnail_url.
 
-For additional metadata (date, duration, view count), use WebSearch:
+For additional metadata (date, duration), use WebSearch:
 ```
 "<video title>" "<channel name>" youtube published duration
 ```
 
-### Step 3: Save the raw transcript
+### Step 4: Extract transcript via Playwright
 
-Save the raw transcript to a temporary file for reference:
-```
-sources/_drafts/NNN-raw-transcript.md
+**Navigate to the video page:**
+1. `browser_navigate` → the YouTube video URL
+2. `browser_wait_for` text "Subscribe" — confirms page load
+
+**Handle consent dialog (if present):**
+3. `browser_snapshot` — check for cookie/consent dialog
+4. If consent dialog found → `browser_click` "Accept all" or "Reject all"
+
+**Expand description and open transcript:**
+5. `browser_snapshot` → find the "...more" button in the description area
+6. `browser_click` → "...more" to expand the description
+7. `browser_snapshot` → find "Show transcript" button
+8. `browser_click` → "Show transcript"
+9. `browser_wait_for` text "Search in video" — confirms transcript panel loaded
+
+**Extract transcript segments:**
+10. `browser_evaluate` with this JavaScript:
+```javascript
+() => {
+  const segments = document.querySelectorAll('ytd-transcript-segment-renderer');
+  if (segments.length === 0) return { error: 'No transcript segments found' };
+  const result = [];
+  segments.forEach(seg => {
+    const timestamp = seg.querySelector('.segment-timestamp')?.textContent?.trim() || '';
+    const text = seg.querySelector('.segment-text')?.textContent?.trim() || '';
+    if (text) result.push({ timestamp, text });
+  });
+  return { segments: result, count: result.length };
+}
 ```
 
-Include metadata header:
+**Clean up:**
+11. `browser_close`
+
+### Step 5: Save the raw transcript
+
+Create `sources/_drafts/` directory if it doesn't exist.
+
+Save to `sources/_drafts/NNN-raw-transcript.md` with this format:
+
 ```markdown
 # Raw Transcript: Video Title
 
 - **URL**: https://youtube.com/watch?v=...
 - **Creator**: Channel Name
-- **Captured**: YYYY-MM-DD
-- **Method**: Chrome extension / YouTube transcript / yt-dlp
+- **Date**: YYYY-MM-DD (publication date)
+- **Duration**: MM:SS
+- **Captured**: YYYY-MM-DD (today's date)
+- **Method**: Playwright automated extraction
+- **Segments**: N segments extracted
 
 ---
 
-[transcript text here]
+[timestamp] text
+[timestamp] text
+...
 ```
 
-### Step 4: Hand off to synthesis
+### Step 6: Report and hand off
 
-The raw transcript is now ready for `/synthesize-source`. The user can either:
-- Run `/synthesize-source <url>` and paste the transcript when prompted
-- Or provide both the URL and transcript in a single message
+Print a summary:
+- Video title and creator
+- Number of transcript segments extracted
+- Draft file path
+- Suggest next step: `/synthesize-source <url>`
+
+## Fallback Handling
+
+If "Show transcript" button is NOT found:
+- Report that the video may not have captions available
+- Suggest manual alternatives:
+  - Check if the video has community-contributed captions
+  - Try `yt-dlp --write-auto-sub --sub-lang en --skip-download <url>`
+  - Use [youtubetranscript.com](https://youtubetranscript.com)
+
+If transcript segments return empty:
+- Take a screenshot for debugging: `browser_take_screenshot`
+- Report the issue and suggest manual extraction
 
 ## Notes
 
-- Raw transcripts are saved in `sources/_drafts/` — this directory is for working files and can be cleaned up periodically
-- The transcript capture step is manual (requires a browser) — the synthesis step is automated
-- For batch processing, capture multiple transcripts first, then run `/synthesize-source` for each one
-- YouTube auto-generated transcripts may have errors — the synthesis step should interpret intent rather than relying on exact wording
+- Raw transcripts are saved in `sources/_drafts/` — this directory is for working files
+- YouTube auto-generated transcripts may have errors — the synthesis step interprets intent, not exact wording
+- The Playwright selectors (`ytd-transcript-segment-renderer`, `.segment-timestamp`, `.segment-text`) may change with YouTube frontend updates — see REFERENCE.md for troubleshooting
+- For batch processing, run this skill for each video sequentially to avoid rate limiting
