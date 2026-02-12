@@ -42,6 +42,7 @@ watchlist/        → YouTube channel watchlist and scanning config
 | `/synthesize-source` | Convert a YouTube video or article URL into a structured source note |
 | `/compile-curriculum` | Rebuild curriculum sections from tagged sources |
 | `/daily-briefing` | Generate a dated findings briefing |
+| `/youtube-transcriber` | Capture YouTube video transcript and prepare for synthesis |
 | `/scan-channels` | Scan YouTube watchlist for new relevant content |
 
 ## Rules

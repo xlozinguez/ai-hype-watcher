@@ -11,7 +11,11 @@ Convert a YouTube video or article URL into a structured source note following t
 
 ## Input
 
-A URL to a YouTube video or article/blog post. Optionally, the user may provide additional context or notes.
+A URL to a YouTube video or article/blog post. The user will typically also provide:
+- **Transcript text** (pasted from the Claude Chrome extension or other transcript tool)
+- Additional context or notes
+
+For YouTube videos, the primary workflow is: user plays the video with the Claude Chrome extension, copies the transcript, and provides it alongside the URL. The skill then synthesizes the transcript into structured source notes — it does NOT simply reformat the transcript.
 
 ## Workflow
 
@@ -21,15 +25,19 @@ Read `sources/README.md` to find the highest existing source ID. The new source 
 
 ### Step 2: Gather metadata
 
-Use WebFetch on the provided URL to extract:
+For YouTube videos, use `curl -sL "https://noembed.com/embed?url=URL"` to get title, author, and thumbnail. Then use WebSearch to find:
+- **Date**: Publication date (YYYY-MM-DD)
+- **Duration**: Approximate length (MM:SS)
+
+For articles, use WebFetch on the provided URL to extract title, author, date, etc.
+
+Required metadata fields:
 - **Title**: Full title of the video/article
 - **Creator**: Author or channel name
 - **Platform**: YouTube, Blog, etc.
 - **Date**: Publication date (YYYY-MM-DD)
 - **Duration**: For videos, approximate length (MM:SS)
 - **Type**: `video` or `article`
-
-If WebFetch doesn't provide enough metadata, use WebSearch to find additional details (creator name, publication date, etc.).
 
 ### Step 3: Read the template
 
@@ -41,7 +49,7 @@ Read `.claude/skills/synthesize-source/REFERENCE.md` for tag taxonomy and curric
 
 ### Step 5: Synthesize content
 
-Based on the fetched content, write a synthesis (NOT a transcription) covering:
+Based on the transcript/content provided by the user (and any additional fetched content), write a synthesis (NOT a reformatted transcript) covering:
 - **Summary**: 2-3 paragraph overview of the source's main argument
 - **Key Concepts**: 3-7 subsections covering the most important ideas
 - **Practical Takeaways**: Actionable insights for engineering teams

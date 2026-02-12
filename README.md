@@ -42,14 +42,23 @@ This repository is maintained with the help of four Claude Code skills that auto
 
 ## Skills (Claude Code)
 
-This repo includes four skills for automated content workflows:
+This repo includes five skills for automated content workflows:
 
 | Skill | Purpose | Usage |
 |-------|---------|-------|
 | `/scan-channels` | Scan YouTube watchlist for new relevant content | `/scan-channels` |
-| `/synthesize-source` | Convert a URL into a structured source note | `/synthesize-source https://youtube.com/watch?v=...` |
+| `/youtube-transcriber` | Capture video transcript and prepare for synthesis | `/youtube-transcriber https://youtube.com/watch?v=...` |
+| `/synthesize-source` | Convert a URL + transcript into a structured source note | `/synthesize-source https://youtube.com/watch?v=...` |
 | `/compile-curriculum` | Rebuild curriculum sections from tagged sources | `/compile-curriculum all` |
 | `/daily-briefing` | Generate a dated findings briefing | `/daily-briefing` |
+
+### Content Pipeline
+
+```
+/scan-channels → /youtube-transcriber → /synthesize-source → /compile-curriculum
+    discover        capture transcript      synthesize note       integrate into
+    new content     + metadata              + index               curriculum
+```
 
 ## Sources Tracked
 
