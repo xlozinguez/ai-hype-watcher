@@ -7,6 +7,7 @@ Dated entries covering recent AI development findings, tool updates, and critica
 | Date | Focus | Categories |
 |------|-------|------------|
 | [2026-02-11](2026-02-11.md) | Launch day — repository overview and current landscape | tools, patterns, critical |
+| [2026-02-12](2026-02-12.md) | The productivity reality check — controlled studies, burnout data, and labor market signals converge | critical, economics, tools, patterns |
 
 ## Adding Briefings
 
