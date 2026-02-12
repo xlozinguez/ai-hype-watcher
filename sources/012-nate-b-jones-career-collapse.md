@@ -59,11 +59,11 @@ The scale of capital commitment removes ambiguity about direction. Big tech's co
 
 ## Notable Quotes
 
-> "What used to be 50 different specializations is going to converge into variations on a single theme. Humans directing AI with good knowledge and good software-shaped intent toward an outcome." -- Nate B Jones
+> "What used to be 50 different specializations is going to converge into variations on a single theme. Humans directing AI with good knowledge and good software-shaped intent toward an outcome." -- Nate B Jones ([4:03](https://www.youtube.com/watch?v=q6p-_W6_VoM&t=243))
 
-> "You're actually safer leaning in and going faster than you are going slower because slower forces you to constantly think about breaking and stopping and slowing down." -- Nate B Jones
+> "You're actually safer leaning in and going faster than you are going slower because slower forces you to constantly think about breaking and stopping and slowing down." -- Nate B Jones ([8:16](https://www.youtube.com/watch?v=q6p-_W6_VoM&t=496))
 
-> "The half-life of any given piece of specific AI knowledge is short and it's getting shorter. The half-life of the learning habit around AI is getting longer and more durable." -- Nate B Jones
+> "The half-life of any given piece of specific AI knowledge is short and it's getting shorter. The half-life of the learning habit around AI is getting longer and more durable." -- Nate B Jones ([9:25](https://www.youtube.com/watch?v=q6p-_W6_VoM&t=565))
 
 ## Related Sources
 

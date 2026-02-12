@@ -108,23 +108,23 @@ Van Eyck stresses that AI agents "cannot become accountability sinks." Engineers
 
 ## Notable Quotes
 
-> "I still see a lot of software engineers, especially older seasoned engineers, being very skeptical about how far AI coding agents will actually get. And I think there's a structural under appreciation of where we are right now. I think 2026 will be a sobering year for a whole lot of people." — Jo Van Eyck
+> "I still see a lot of software engineers, especially older seasoned engineers, being very skeptical about how far AI coding agents will actually get. And I think there's a structural under appreciation of where we are right now. I think 2026 will be a sobering year for a whole lot of people." — Jo Van Eyck ([0:00](https://www.youtube.com/watch?v=6W_-YWHKwZ4&t=0))
 
-> "Ralph is a while loop put around a coding agent. The halting condition or the break statement to jump out of the while loop is a deterministic way to verify whether or not work is done." — Jo Van Eyck
+> "Ralph is a while loop put around a coding agent. The halting condition or the break statement to jump out of the while loop is a deterministic way to verify whether or not work is done." — Jo Van Eyck ([3:10](https://www.youtube.com/watch?v=6W_-YWHKwZ4&t=190))
 
-> "We do not need AGI, we do not need super smart models, we just need persistence." — Jo Van Eyck
+> "We do not need AGI, we do not need super smart models, we just need persistence." — Jo Van Eyck ([4:29](https://www.youtube.com/watch?v=6W_-YWHKwZ4&t=269))
 
-> "Six months in my AI coding journey, things have shifted dramatically. I am not babysitting these things because of all the innovations we just discussed and the quality of code that meets my eyes for the first time is almost indistinguishable from the quality of code that I hand-rolled before." — Jo Van Eyck
+> "Six months in my AI coding journey, things have shifted dramatically. I am not babysitting these things because of all the innovations we just discussed and the quality of code that meets my eyes for the first time is almost indistinguishable from the quality of code that I hand-rolled before." — Jo Van Eyck ([13:19](https://www.youtube.com/watch?v=6W_-YWHKwZ4&t=799))
 
-> "When you see a coding agent doom loop, your mind should go, 'How can I help? Install guard rails, improve my prompt, improve the design of my codebase?'" — Jo Van Eyck
+> "When you see a coding agent doom loop, your mind should go, 'How can I help? Install guard rails, improve my prompt, improve the design of my codebase?'" — Jo Van Eyck ([18:20](https://www.youtube.com/watch?v=6W_-YWHKwZ4&t=1100))
 
-> "If you start with a multi-agent coding setup and you have not implemented reusable skills, played around with MCP servers, put in guard rails like test automation, security vulnerability scanners — you will shoot yourself, your organization, and your friends in the foot." — Jo Van Eyck
+> "If you start with a multi-agent coding setup and you have not implemented reusable skills, played around with MCP servers, put in guard rails like test automation, security vulnerability scanners — you will shoot yourself, your organization, and your friends in the foot." — Jo Van Eyck ([22:07](https://www.youtube.com/watch?v=6W_-YWHKwZ4&t=1327))
 
-> "Learning languages on a syntax level doesn't make a lot of sense." — Jo Van Eyck
+> "Learning languages on a syntax level doesn't make a lot of sense." — Jo Van Eyck ([22:41](https://www.youtube.com/watch?v=6W_-YWHKwZ4&t=1361))
 
-> "AI coding agents cannot become accountability sinks. You need to have ownership over the code you're pushing into production." — Jo Van Eyck
+> "AI coding agents cannot become accountability sinks. You need to have ownership over the code you're pushing into production." — Jo Van Eyck ([26:17](https://www.youtube.com/watch?v=6W_-YWHKwZ4&t=1577))
 
-> "Thinking about Andrej Karpathy's quote that it's not the year of agents, it's the decade of agents. I think we will have job security as software engineers. But the job will change. A small-to-big part of the job will be setting up and debugging these agentic workflows." — Jo Van Eyck
+> "Thinking about Andrej Karpathy's quote that it's not the year of agents, it's the decade of agents. I think we will have job security as software engineers. But the job will change. A small-to-big part of the job will be setting up and debugging these agentic workflows." — Jo Van Eyck ([28:21](https://www.youtube.com/watch?v=6W_-YWHKwZ4&t=1701))
 
 ## Related Sources
 

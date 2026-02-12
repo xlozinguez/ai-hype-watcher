@@ -77,13 +77,13 @@ Beyond testing implemented code, they ask Claude to predict where the implementa
 
 ## Notable Quotes
 
-> "The most important step is still how well you give context to the agent... when you give it the right context, errors basically drop to zero because it knows what to act upon." — AI LABS
+> "The most important step is still how well you give context to the agent... when you give it the right context, errors basically drop to zero because it knows what to act upon." — AI LABS ([1:21](https://www.youtube.com/watch?v=TmsH-RIHvas&t=81))
 
-> "This exit code 2 is important because using it, you can control the agents behavior." — AI LABS
+> "This exit code 2 is important because using it, you can control the agents behavior." — AI LABS ([3:34](https://www.youtube.com/watch?v=TmsH-RIHvas&t=214))
 
-> "According to the words of Claude codes creator, the agent works better if it has some way to verify its own work." — AI LABS
+> "According to the words of Claude codes creator, the agent works better if it has some way to verify its own work." — AI LABS ([10:01](https://www.youtube.com/watch?v=TmsH-RIHvas&t=601))
 
-> "We ask Claude to predict things that haven't happened yet — to check the implementation and identify areas where the app could fail. This works because we're giving Claude a chance to predict potential issues by pattern matching against failures that already existed in other apps." — AI LABS
+> "We ask Claude to predict things that haven't happened yet — to check the implementation and identify areas where the app could fail. This works because we're giving Claude a chance to predict potential issues by pattern matching against failures that already existed in other apps." — AI LABS ([11:27](https://www.youtube.com/watch?v=TmsH-RIHvas&t=687))
 
 ## Related Sources
 

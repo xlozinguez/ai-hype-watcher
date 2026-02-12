@@ -62,9 +62,34 @@ Based on the transcript/content gathered in Step 5 (and any additional fetched c
 - **Summary**: 2-3 paragraph overview of the source's main argument
 - **Key Concepts**: 3-7 subsections covering the most important ideas
 - **Practical Takeaways**: Actionable insights for engineering teams
-- **Notable Quotes**: Direct quotes from the source (only if clearly present in the content)
+- **Notable Quotes**: Direct quotes from the source (only if clearly present in the content) — with timestamp links (see Step 6b)
 - **Related Sources**: Cross-references to other sources in the repo (by ID and filename)
 - **Related Curriculum**: Which curriculum modules this source informs
+
+### Step 6b: Add YouTube timestamp links
+
+For YouTube video sources where a raw transcript with `[MM:SS]` timestamps is available (either from Step 5 auto-draft detection or user-pasted), add clickable timestamp links to Notable Quotes and key claims.
+
+**Process:**
+1. Extract the YouTube video ID from the URL (the `v=` parameter)
+2. For each Notable Quote, search the raw transcript for matching text and find the nearest `[MM:SS]` timestamp
+3. Convert `MM:SS` to seconds: `t = MM*60 + SS`
+4. Append the timestamp link after the attribution
+
+**Quote format:**
+```markdown
+> "Quote text..." — Creator ([MM:SS](https://www.youtube.com/watch?v=VIDEO_ID&t=SECONDS))
+```
+
+**Concept/claim reference format:**
+```markdown
+Creator discusses the architectural breakdown ([MM:SS](https://www.youtube.com/watch?v=VIDEO_ID&t=SECONDS))
+```
+
+**Rules:**
+- Only add timestamps for quotes/claims that can be verified in the raw transcript
+- Do not alter quote text — only add attribution links
+- If no raw transcript with timestamps is available, skip this step
 
 ### Step 7: Assign tags and curriculum modules
 

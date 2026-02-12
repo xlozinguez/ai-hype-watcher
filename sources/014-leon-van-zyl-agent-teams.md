@@ -29,7 +29,7 @@ The video positions agent teams as the right tool for complex, multi-faceted bui
 
 The core architectural distinction:
 
-- **Sub-agents**: The main agent spawns background agents for specific tasks. Each sub-agent has its own context window but cannot see what other sub-agents are doing. Communication is strictly one-way: sub-agent reports back to parent. "One sub-agent in theory could implement a change that's actually not compatible with what sub-agent 2 is doing."
+- **Sub-agents**: The main agent spawns background agents for specific tasks. Each sub-agent has its own context window but cannot see what other sub-agents are doing. Communication is strictly one-way: sub-agent reports back to parent. "One sub-agent in theory could implement a change that's actually not compatible with what sub-agent 2 is doing." ([2:00](https://www.youtube.com/watch?v=KCJsdQpcfic&t=120))
 - **Agent Teams**: The main agent becomes team lead and creates a shared task list. All team members can see the full task list and communicate directly with each other via peer-to-peer messaging. They coordinate automatically because they share the same coordination layer.
 
 This is the difference between sending five people to work in separate rooms with instructions to report back versus bringing five people into the same room where they can talk to each other while working.
@@ -40,19 +40,19 @@ When an agent team is created, the first action the team lead takes is to build 
 
 ### Individual Agent Autonomy
 
-Each team member runs as a full Claude Code instance with its own context window, tool access, skills, and MCP servers. The video demonstrates this by pressing Escape to interrupt just the UI designer -- the other four agents continue running unaffected. Van Zyl then sends a message specifically to the interrupted UI designer ("please use the front end design skill to assist you with the UI design"), showing that individual team members can receive targeted instructions mid-execution without disturbing the rest of the team.
+Each team member runs as a full Claude Code instance with its own context window, tool access, skills, and MCP servers. The video demonstrates this by pressing Escape to interrupt just the UI designer -- the other four agents continue running unaffected. Van Zyl then sends a message specifically to the interrupted UI designer ("please use the front end design skill to assist you with the UI design" ([0:00](https://www.youtube.com/watch?v=KCJsdQpcfic&t=0))), showing that individual team members can receive targeted instructions mid-execution without disturbing the rest of the team.
 
 ### Team Composition and Role Design
 
-The demonstration uses five specialized roles: UX/UI designer, back-end developer, technical architect, database expert, and a devil's advocate who "will basically question everything the other team members do." The devil's advocate role is notable -- it functions as a built-in quality gate and stress-test agent, similar in spirit to the validator pattern from source #001 but operating as a team peer rather than a paired review agent. The prompt specifies Opus as the model for each team member.
+The demonstration uses five specialized roles: UX/UI designer, back-end developer, technical architect, database expert, and a devil's advocate who "will basically question everything the other team members do." ([0:00](https://www.youtube.com/watch?v=KCJsdQpcfic&t=0)) The devil's advocate role is notable -- it functions as a built-in quality gate and stress-test agent, similar in spirit to the validator pattern from source #001 but operating as a team peer rather than a paired review agent. The prompt specifies Opus as the model for each team member.
 
 ### When to Use Agent Teams vs Sub-Agents
 
-Van Zyl provides clear scoping guidance: "Agent teams is really meant to implement complex changes. If you just want to do like a once-off task, you should definitely use sub agents instead. But for complicated tasks like setting up an entire project from scratch, agent teams can definitely help you get way better results out of the box." This practical boundary -- complexity and inter-dependency of the work -- is the deciding factor.
+Van Zyl provides clear scoping guidance: "Agent teams is really meant to implement complex changes. If you just want to do like a once-off task, you should definitely use sub agents instead. But for complicated tasks like setting up an entire project from scratch, agent teams can definitely help you get way better results out of the box." ([3:50](https://www.youtube.com/watch?v=KCJsdQpcfic&t=230)) This practical boundary -- complexity and inter-dependency of the work -- is the deciding factor.
 
 ### Setup and Configuration
 
-Agent teams is an experimental feature enabled by adding a property to the Claude Code `settings.json` file. To create a team, you describe the desired team members in your prompt ("Create an agent team to explore this from different angles"), specify the model for each member, and enable delegation mode with Shift+Tab. The setup is lightweight -- no external infrastructure, no Docker containers, no tmux -- just configuration and a well-structured prompt.
+Agent teams is an experimental feature enabled by adding a property to the Claude Code `settings.json` file. To create a team, you describe the desired team members in your prompt ("Create an agent team to explore this from different angles" ([4:40](https://www.youtube.com/watch?v=KCJsdQpcfic&t=280))), specify the model for each member, and enable delegation mode with Shift+Tab. The setup is lightweight -- no external infrastructure, no Docker containers, no tmux -- just configuration and a well-structured prompt.
 
 ## Practical Takeaways
 
@@ -63,9 +63,9 @@ Agent teams is an experimental feature enabled by adding a property to the Claud
 
 ## Notable Quotes
 
-> "This is the equivalent of bringing a bunch of people into the same room and they can converse with each other to work together to achieve a task." -- Leon van Zyl
+> "This is the equivalent of bringing a bunch of people into the same room and they can converse with each other to work together to achieve a task." -- Leon van Zyl ([2:48](https://www.youtube.com/watch?v=KCJsdQpcfic&t=168))
 
-> "One sub agent does not have a view of what another sub agent is doing. So, sub agent one in theory could implement a change that's actually not compatible with what sub agent 2 is doing." -- Leon van Zyl
+> "One sub agent does not have a view of what another sub agent is doing. So, sub agent one in theory could implement a change that's actually not compatible with what sub agent 2 is doing." -- Leon van Zyl ([2:00](https://www.youtube.com/watch?v=KCJsdQpcfic&t=120))
 
 ## Related Sources
 

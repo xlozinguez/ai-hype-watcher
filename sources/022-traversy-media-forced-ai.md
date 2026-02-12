@@ -49,21 +49,21 @@ A recurring concern throughout the video: new developers face unprecedented conf
 
 ## Notable Quotes
 
-> "AI has really taken some of the magic and the fun out of coding. And I would say especially for new developers."
+> "AI has really taken some of the magic and the fun out of coding. And I would say especially for new developers." — Brad Traversy ([0:00](https://www.youtube.com/watch?v=UaB0gWFwuEU&t=0))
 
-> "Nothing that you build with AI is 100% yours."
+> "Nothing that you build with AI is 100% yours." — Brad Traversy ([2:31](https://www.youtube.com/watch?v=UaB0gWFwuEU&t=151))
 
-> "There are correct and incorrect ways to use AI. Correctly you can manage context, create workflows, use agents, which is much different and much better than vibe coding, but you still don't write most of the code."
+> "There are correct and incorrect ways to use AI. Correctly you can manage context, create workflows, use agents, which is much different and much better than vibe coding, but you still don't write most of the code." — Brad Traversy ([3:22](https://www.youtube.com/watch?v=UaB0gWFwuEU&t=202))
 
-> "Well, there is. The entire freaking industry. So many companies now and even small agencies are forcing their developers to use AI because they want productivity, right?"
+> "Well, there is. The entire freaking industry. So many companies now and even small agencies are forcing their developers to use AI because they want productivity, right?" — Brad Traversy ([3:56](https://www.youtube.com/watch?v=UaB0gWFwuEU&t=236))
 
-> "If you don't know how to code and you're vibe coding, you're nothing. You're someone that pushes buttons. So that's why it's more vital now than ever to actually learn how to code and don't just jump into using AI as a beginner."
+> "If you don't know how to code and you're vibe coding, you're nothing. You're someone that pushes buttons. So that's why it's more vital now than ever to actually learn how to code and don't just jump into using AI as a beginner." — Brad Traversy ([5:38](https://www.youtube.com/watch?v=UaB0gWFwuEU&t=338))
 
-> "You now want to look at yourself as the architect of your projects. The vision, the structure, the decisions are all still yours. You're just no longer the brick layer."
+> "You now want to look at yourself as the architect of your projects. The vision, the structure, the decisions are all still yours. You're just no longer the brick layer." — Brad Traversy ([5:38](https://www.youtube.com/watch?v=UaB0gWFwuEU&t=338))
 
-> "The medium changed but the impact didn't."
+> "The medium changed but the impact didn't." — Brad Traversy ([6:19](https://www.youtube.com/watch?v=UaB0gWFwuEU&t=379))
 
-> "For those of you that have been around for a while, can you even imagine how confusing it must be learning to code now?"
+> "For those of you that have been around for a while, can you even imagine how confusing it must be learning to code now?" — Brad Traversy ([7:25](https://www.youtube.com/watch?v=UaB0gWFwuEU&t=445))
 
 ## Related Sources
 

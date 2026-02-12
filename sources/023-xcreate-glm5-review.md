@@ -24,16 +24,16 @@ The review focuses on the engineering tradeoffs of running frontier-scale models
 ## Key Concepts
 
 ### Multi-Head Latent Attention (MLA) for Memory Efficiency
-Multi-head latent attention represents a significant architectural improvement over traditional multi-head attention (MHA), reducing context memory usage by 33x. In a direct comparison, the same 3D demo prompt consumed over 10GB with MHA but only 0.3GB with MLA. This efficiency enables much larger context windows on fixed hardware and makes batching viable for local deployments.
+Multi-head latent attention represents a significant architectural improvement over traditional multi-head attention (MHA), reducing context memory usage by 33x ([0:39](https://www.youtube.com/watch?v=3XCYruBYr-0&t=39)). In a direct comparison, the same 3D demo prompt consumed over 10GB with MHA but only 0.3GB with MLA ([3:50](https://www.youtube.com/watch?v=3XCYruBYr-0&t=230)). This efficiency enables much larger context windows on fixed hardware and makes batching viable for local deployments.
 
 ### Quantization Strategy Exploration
-The video documents a methodical exploration of quantization approaches to fit the 744B parameter model into 512GB RAM. Starting with a 4/6-bit mix using 400GB, xCreate progressively experimented with 4/6/9-bit and 4/6/16-bit combinations before settling on a "469" configuration that balanced quality and memory footprint at approximately 418GB peak usage. This leaves nearly 100GB available for context window operations.
+The video documents a methodical exploration of quantization approaches to fit the 744B parameter model into 512GB RAM ([1:52](https://www.youtube.com/watch?v=3XCYruBYr-0&t=112)). Starting with a 4/6-bit mix using 400GB, xCreate progressively experimented with 4/6/9-bit and 4/6/16-bit combinations before settling on a "469" configuration ([3:31](https://www.youtube.com/watch?v=3XCYruBYr-0&t=211)) that balanced quality and memory footprint at approximately 418GB peak usage ([5:34](https://www.youtube.com/watch?v=3XCYruBYr-0&t=334)). This leaves nearly 100GB available for context window operations.
 
 ### Sparse Attention and Mixture-of-Experts Architecture
-GLM-5 integrates DeepSeek's sparse attention mechanism for extended context handling and uses a mixture-of-experts design with 40B active parameters out of 744B total. The video demonstrates that increasing the number of active experts can improve performance on difficult reasoning tasks, though this requires manual configuration rather than automatic scaling.
+GLM-5 integrates DeepSeek's sparse attention mechanism for extended context handling ([0:39](https://www.youtube.com/watch?v=3XCYruBYr-0&t=39)) and uses a mixture-of-experts design with 40B active parameters out of 744B total. The video demonstrates that increasing the number of active experts can improve performance on difficult reasoning tasks ([11:27](https://www.youtube.com/watch?v=3XCYruBYr-0&t=687)), though this requires manual configuration rather than automatic scaling.
 
 ### Batching for Local Inference at Scale
-With MLA reducing memory overhead, batching becomes practical for local deployments. The video shows 2 concurrent prompts running at 12.7 tokens/second each (25+ combined), with the potential to serve 6 simultaneous requests exceeding 30 tokens/second aggregate throughput. This positions local hardware as viable for family or small business multi-user scenarios.
+With MLA reducing memory overhead, batching becomes practical for local deployments. The video shows 2 concurrent prompts running at 12.7 tokens/second each (25+ combined), with the potential to serve 6 simultaneous requests exceeding 30 tokens/second aggregate throughput ([6:32](https://www.youtube.com/watch?v=3XCYruBYr-0&t=392)). This positions local hardware as viable for family or small business multi-user scenarios.
 
 ## Practical Takeaways
 
@@ -51,13 +51,13 @@ With MLA reducing memory overhead, batching becomes practical for local deployme
 
 ## Notable Quotes
 
-> "They used to do 32 billion active parameters. Now they've gone to 40 billion active parameters. They used to train on 23 trillion tokens. Now they've gone up to 28.5." — xCreate
+> "They used to do 32 billion active parameters. Now they've gone to 40 billion active parameters. They used to train on 23 trillion tokens. Now they've gone up to 28.5." — xCreate ([0:00](https://www.youtube.com/watch?v=3XCYruBYr-0&t=0))
 
-> "Using MHA the multi head attention and the context of this took over 10 gigabytes of memory. But then using MLA, which is multi head latent attention, this one only uses 0.3 GB." — xCreate
+> "Using MHA the multi head attention and the context of this took over 10 gigabytes of memory. But then using MLA, which is multi head latent attention, this one only uses 0.3 GB." — xCreate ([3:50](https://www.youtube.com/watch?v=3XCYruBYr-0&t=230))
 
-> "If you got sixes at the same time, you get over 30 tokens a second. So that is if you got like a family computer or a business when lots of people are just hammering your server, you can get multiple inferences going all at the same time with this model." — xCreate
+> "If you got sixes at the same time, you get over 30 tokens a second. So that is if you got like a family computer or a business when lots of people are just hammering your server, you can get multiple inferences going all at the same time with this model." — xCreate ([6:32](https://www.youtube.com/watch?v=3XCYruBYr-0&t=392))
 
-> "And one thing you just got to respect these guys for — this is MIT license. This is a very open license. You can just grab the weights and do what you want with them. Some models they require you to state attribution, but these guys just say, 'Hey, just take it. MIT.'" — xCreate
+> "And one thing you just got to respect these guys for — this is MIT license. This is a very open license. You can just grab the weights and do what you want with them. Some models they require you to state attribution, but these guys just say, 'Hey, just take it. MIT.'" — xCreate ([19:44](https://www.youtube.com/watch?v=3XCYruBYr-0&t=1184))
 
 ## Related Sources
 

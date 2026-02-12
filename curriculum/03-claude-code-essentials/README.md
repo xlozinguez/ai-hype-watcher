@@ -40,7 +40,7 @@ The body of `SKILL.md` contains the actual instructions: step-by-step workflows,
 
 When a user asks Claude Code to perform a task, the agent reads the description fields of available skills to determine which ones are relevant. Only the relevant skills are loaded into the working context. This means you can have dozens of installed skills without paying a token cost for all of them in every session.
 
-> "We can use skills to teach Claude Code how to do something that it couldn't do natively." -- Leon van Zyl ([#013])
+> "We can use skills to teach Claude Code how to do something that it couldn't do natively." -- Leon van Zyl ([00:55](https://www.youtube.com/watch?v=vIUJ4Hd7be0&t=55))
 
 ### Concept 3: Skills vs. MCP Servers vs. Custom Commands
 
@@ -56,7 +56,7 @@ As IndyDevDan puts it in [#015]: "If you would put it in a library that is alway
 
 Skills and MCP tools can be combined: a skill might instruct the agent to use a particular MCP tool in a specific way, layering workflow knowledge on top of raw tool capabilities. This composition -- workflow instructions (skill) directing tool usage (MCP) -- is a common and effective pattern.
 
-> "MCP servers simply provide new tools to the agent... skills actually take up very little context." -- Leon van Zyl ([#013])
+> "MCP servers simply provide new tools to the agent... skills actually take up very little context." -- Leon van Zyl ([01:47](https://www.youtube.com/watch?v=vIUJ4Hd7be0&t=107))
 
 ### Concept 4: The Skills Ecosystem
 

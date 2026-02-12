@@ -78,9 +78,9 @@ The video shows skills working together in sequence: the front-end design skill 
 
 ## Notable Quotes
 
-> "We can use skills to teach Claude Code how to do something that it couldn't do natively." -- Leon van Zyl
+> "We can use skills to teach Claude Code how to do something that it couldn't do natively." -- Leon van Zyl ([00:55](https://www.youtube.com/watch?v=vIUJ4Hd7be0&t=55))
 
-> "MCP servers simply provide new tools to the agent... skills actually take up very little context." -- Leon van Zyl
+> "MCP servers simply provide new tools to the agent... skills actually take up very little context." -- Leon van Zyl ([01:47](https://www.youtube.com/watch?v=vIUJ4Hd7be0&t=107))
 
 ## Related Sources
 

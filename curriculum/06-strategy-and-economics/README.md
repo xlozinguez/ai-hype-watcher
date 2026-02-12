@@ -91,13 +91,13 @@ See also: [Module 03: Claude Code Essentials](../03-claude-code-essentials/READM
 
 Nate B Jones argues ([#012](../../sources/012-nate-b-jones-career-collapse.md)) that AI is collapsing professional futures along two dimensions simultaneously.
 
-**The horizontal collapse**: Formerly distinct career paths -- engineering, product management, marketing, finance, design, operations -- are converging into a single meta-competency: orchestrating AI agents to get work done. Jones frames it starkly: "What used to be 50 different specializations is going to converge into variations on a single theme. Humans directing AI with good knowledge and good software-shaped intent toward an outcome." Domain expertise does not disappear, but it shifts from differentiator to table stakes -- it only matters if you can channel it through AI-driven workflows.
+**The horizontal collapse**: Formerly distinct career paths -- engineering, product management, marketing, finance, design, operations -- are converging into a single meta-competency: orchestrating AI agents to get work done. Jones frames it starkly: "What used to be 50 different specializations is going to converge into variations on a single theme. Humans directing AI with good knowledge and good software-shaped intent toward an outcome" ([4:03](https://www.youtube.com/watch?v=q6p-_W6_VoM&t=243)). Domain expertise does not disappear, but it shifts from differentiator to table stakes -- it only matters if you can channel it through AI-driven workflows.
 
 **The temporal collapse**: Traditional career planning assumed skills appreciated over time -- learn something, apply it for years, get promoted. In the AI era, expertise depreciates unless continuously updated, and the depreciation rate is accelerating. The SWE-bench benchmark went from 4% to roughly 95% saturation in two years. Career planning based on five-year horizons is, in Jones's words, "catastrophically wrong."
 
 Jones introduces the concept of "software-shaped intent" -- the ability to think about problems the way software processes them, even if your job has nothing to do with building software. When directing AI agents, you need to understand where the agent's toolset is, where its memory lives, and what interfaces it can read and write. This makes the software engineering mental model universal.
 
-> "The half-life of any given piece of specific AI knowledge is short and it's getting shorter. The half-life of the learning habit around AI is getting longer and more durable." -- Nate B Jones
+> "The half-life of any given piece of specific AI knowledge is short and it's getting shorter. The half-life of the learning habit around AI is getting longer and more durable." -- Nate B Jones ([9:25](https://www.youtube.com/watch?v=q6p-_W6_VoM&t=565))
 
 ### Concept 8: The Accelerating Capability Curve
 
@@ -133,7 +133,7 @@ At the same time, Notion has publicly disclosed that AI costs now consume 10 per
 
 ### Concept 11: The Forced Adoption Dynamic
 
-AI adoption is no longer a competitive choice -- it has become a structural mandate. As Brad Traversy (Traversy Media) documents ([#022](../../sources/022-traversy-media-forced-ai.md)), companies across the industry now require developers to use AI tools regardless of long-term code quality implications: "So many companies now and even small agencies are forcing their developers to use AI because they want productivity."
+AI adoption is no longer a competitive choice -- it has become a structural mandate. As Brad Traversy (Traversy Media) documents ([#022](../../sources/022-traversy-media-forced-ai.md)), companies across the industry now require developers to use AI tools regardless of long-term code quality implications: "So many companies now and even small agencies are forcing their developers to use AI because they want productivity" ([3:56](https://www.youtube.com/watch?v=UaB0gWFwuEU&t=236)).
 
 This creates a race-to-the-bottom dynamic. Even when experienced engineers could deliver cleaner, more maintainable code through manual implementation, the time cost becomes prohibitive: "Even if having a senior dev manually write code would be cleaner and more maintainable in the long run, it's just too slow for the company. And you almost can't blame them because if they don't do it that way, then they fall behind."
 
@@ -143,7 +143,7 @@ Traversy also identifies a deeper consequence: the **devaluation of craft**. "Ev
 
 For engineering leaders, this concept has practical implications. The joy shift from "I built this" to "I shipped this" is real, and pretending it does not exist or dismissing it as resistance to change misses the point. The psychological contract between developer and craft is being renegotiated at scale, and organizations that ignore the emotional dimension of this transition will struggle with retention and morale.
 
-> "So many companies now and even small agencies are forcing their developers to use AI because they want productivity." -- Brad Traversy
+> "So many companies now and even small agencies are forcing their developers to use AI because they want productivity." -- Brad Traversy ([3:56](https://www.youtube.com/watch?v=UaB0gWFwuEU&t=236))
 
 ### Concept 12: Local Inference Economics -- The Open-Source Alternative
 
@@ -237,7 +237,7 @@ The cost reality also explains why local inference (Concept 12) becomes strategi
 
 - **Expecting developers to self-fund multi-agent experimentation**: Multi-agent workflows cost hundreds of dollars per serious project ([#024](../../sources/024-jo-van-eyck-agentic-coding-2026.md)). Asking individual developers to absorb these costs on personal API keys creates an uneven playing field where only those with disposable income can gain fluency with the most advanced workflows. Engineering leaders should provide team-level API keys and budget for experimentation. The alternative is a skill gap between developers who can afford to learn and those who cannot.
 
-- **Dismissing developer sentiment about AI adoption as mere resistance**: Traversy's emotional account ([#022](../../sources/022-traversy-media-forced-ai.md)) of AI "taking some of the magic and the fun out of coding" reflects a real and widespread morale risk. The shift from builder satisfaction to architect satisfaction requires active organizational support -- framing the new role positively, preserving opportunities for hands-on coding where appropriate, and acknowledging the genuine loss that comes with the transition. Treating this as "resistance to change" misses the psychological dimension of a fundamental redefinition of professional identity.
+- **Dismissing developer sentiment about AI adoption as mere resistance**: Traversy's emotional account ([#022](../../sources/022-traversy-media-forced-ai.md)) of AI "taking some of the magic and the fun out of coding" ([0:00](https://www.youtube.com/watch?v=UaB0gWFwuEU&t=0)) reflects a real and widespread morale risk. The shift from builder satisfaction to architect satisfaction requires active organizational support -- framing the new role positively, preserving opportunities for hands-on coding where appropriate, and acknowledging the genuine loss that comes with the transition. Treating this as "resistance to change" misses the psychological dimension of a fundamental redefinition of professional identity.
 
 ## Hands-On Exercises
 
