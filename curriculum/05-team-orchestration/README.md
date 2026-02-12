@@ -22,9 +22,13 @@ The most important distinction in multi-agent Claude Code is the difference betw
 
 **Sub-agents** (the Task tool) are spawned by a parent agent to handle isolated tasks. Each sub-agent has its own context window but operates in a strictly hierarchical relationship: it receives instructions from the parent, does its work, and reports back. Sub-agents cannot see what other sub-agents are doing. As Leon van Zyl explains: "One sub agent does not have a view of what another sub agent is doing. So, sub agent one in theory could implement a change that's actually not compatible with what sub agent 2 is doing."
 
-**Agent teams** break this isolation. When a team is created, the primary agent becomes the team lead and creates a shared task list that all team members can see. Team members communicate directly with each other via peer-to-peer messaging -- the database expert can align with the API developer on schema design in real time, rather than each working from separate assumptions and hoping the parent agent resolves conflicts after the fact.
+The underlying problem that drives the need for multi-agent architectures is what Simon Scrapes identifies as "context rot" -- as context windows fill with information, agent performance degrades. Single agents eventually hit a ceiling where adding more context actively hurts performance. Sub-agents solve delegation but create a hub-and-spoke bottleneck where the parent agent is the single coordinator. Every question, every dependency resolution, every interface decision flows through one agent, which becomes the limiting factor at scale.
+
+**Agent teams** break this isolation. When a team is created, the primary agent becomes the team lead and creates a shared task list that all team members can see. Team members communicate directly with each other via peer-to-peer messaging -- the database expert can align with the API developer on schema design in real time, rather than each working from separate assumptions and hoping the parent agent resolves conflicts after the fact. This shifts from a hub-and-spoke topology (all coordination through the parent) to a mesh topology (peer-to-peer communication), resolving the coordination bottleneck.
 
 As Van Zyl puts it: "This is the equivalent of bringing a bunch of people into the same room and they can converse with each other to work together to achieve a task." Sub-agents are sending five people to separate rooms with instructions to report back. Agent teams bring them into the same room.
+
+Simon Scrapes provides a practical decision framework through a complexity rating heuristic: tasks rated **2** (simple, well-defined, single area of focus) should use a single agent. Tasks rated **6** (moderate complexity, some dependencies, multiple areas) benefit from sub-agents. Tasks rated **8** (high complexity, tight interdependencies, architectural decisions across multiple domains) require agent teams. This 2/6/8 heuristic gives practitioners a concrete decision rule rather than relying on intuition alone.
 
 | Aspect | Sub-Agents | Agent Teams |
 |--------|-----------|------------|
@@ -110,6 +114,24 @@ By offloading detailed work to team members, the lead agent preserves its contex
 
 The corollary is that deleting teams when work is done (TeamDelete) forces a clean context reset between phases. This is not cleanup -- it is a deliberate quality practice that prevents context contamination between unrelated work streams.
 
+### Concept 9: Agent Isolation with Git Worktrees
+
+Multi-agent setups require filesystem isolation to prevent agents from overwriting each other's uncommitted changes. Git worktrees provide this isolation -- each agent gets its own working directory pointing to the same repository but with independent file states.
+
+As AI LABS emphasizes, the critical distinction is between **branches** and **worktrees**. Git branches share the same working directory, meaning concurrent agents operating on different branches would still overwrite each other's uncommitted changes in the filesystem. If Agent A is on `feature-auth` and Agent B is on `feature-db`, both agents are still writing to the same files on disk. Uncommitted edits from Agent A would be visible to Agent B, and vice versa, creating race conditions and file conflicts.
+
+Git worktrees solve this by giving each agent a separate filesystem checkout while sharing the same git history and object database. Use `git worktree add ../agent-1-worktree branch-name` to create an isolated working directory for each agent. Each worktree can be on a different branch, and changes in one worktree are completely invisible to other worktrees until committed and merged.
+
+This is a hard infrastructure requirement for any multi-agent setup that modifies files concurrently. Without worktrees, you will encounter file corruption, lost edits, and unpredictable behavior as agents overwrite each other's work.
+
+### Concept 10: Fleet Orchestration with Gas Town
+
+Van Eyck introduces Gas Town (by Steve Yaggi, the same author as Beats) as the logical conclusion of multi-agent orchestration: fleet orchestration for coding agents.
+
+Gas Town combines the task board architecture from Beats (Module 04) with a fleet manager that assigns agents to tasks and manages state transitions. Think of it as a Trello board where each card is a task, and Gas Town automatically spawns agents, assigns them to cards, monitors progress, and handles completion. This is the next level beyond manual team creation: automated fleet management where the orchestrator manages agent lifecycle, resource allocation, and task routing.
+
+Van Eyck frames Claude Code as the integration platform bringing these innovations together in experimental form. The patterns pioneered by the community -- hooks (Ralph Wiggum-like verification from Module 04), sub-agents with independent context windows, agent teams (basically Gas Town's mesh coordination), and improved plan mode (basically Beats) -- are being integrated into Claude Code's core feature set. What started as community experiments and third-party tools is converging into a unified multi-agent platform.
+
 ## Patterns & Practices
 
 ### Pattern 1: Functional Team for Complex Builds
@@ -140,6 +162,13 @@ The corollary is that deleting teams when work is done (TeamDelete) forces a cle
 - **Example**: IndyDevDan's first demo uses eight Haiku agents for codebase summarization (a read-heavy, lower-complexity task) while his second demo uses four Opus agents for application deployment (requiring judgment and troubleshooting). The model choice matches the cognitive demands of each task.
 - **Source**: [#010: IndyDevDan](../../sources/010-indydevdan-multi-agent-orchestration.md)
 
+### Pattern 5: Adversarial Research Teams
+
+- **When to use**: Research or analysis tasks that need high-confidence results, where you want to minimize confirmation bias and surface competing interpretations.
+- **How it works**: Spawn adversarial agent pairs for research -- one agent investigates a hypothesis or gathers evidence, another actively challenges the findings and looks for counterexamples. The shared task list enables real-time disagreement resolution. This extends the devil's advocate pattern (Concept 4) from a single challenger to structured adversarial investigation.
+- **Example**: AI LABS demonstrates creating two agents for a technical research task: one agent investigates documentation and builds a solution approach, the second agent reviews the approach and actively tries to find edge cases, contradictions, or missing requirements. Both agents update the shared task list with their findings and engage in peer-to-peer dialogue to resolve disagreements before presenting conclusions.
+- **Source**: [#021: AI LABS](../../sources/021-ai-labs-claude-code-tricks.md)
+
 ## Common Pitfalls
 
 - **Using teams for simple tasks**: Agent teams add coordination overhead (shared task lists, peer messaging, multiple context windows) that is only justified for complex, interdependent work. For isolated one-off tasks -- file exploration, targeted code changes, focused refactoring -- sub-agents are faster, cheaper, and simpler. As Van Zyl advises: "If you just want to do like a once-off task, you should definitely use sub agents instead."
@@ -149,6 +178,8 @@ The corollary is that deleting teams when work is done (TeamDelete) forces a cle
 - **No observability**: Running multiple agents without visibility into their activity is flying blind. You cannot diagnose coordination failures, identify agents that are stuck or duplicating work, or improve your team compositions if you do not know what happened. Invest in observability hooks before scaling to large teams.
 
 - **Skipping team cleanup**: Failing to delete teams (TeamDelete) after work completes leaves stale context that can contaminate subsequent work. The delete is not optional cleanup -- it is a deliberate context reset that maintains quality across multi-step workflows.
+
+- **Using branches instead of worktrees for agent isolation**: Git branches share the same working directory. Multiple agents on different branches will overwrite each other's uncommitted changes. Use `git worktree add` to give each agent its own filesystem checkout. This is a hard requirement for any multi-agent setup that modifies files concurrently.
 
 - **Expecting speed improvements**: Bart Slodyczka's comparison ([#004](../../sources/004-bart-slodyczka-agent-teams.md)) shows that build times between single-agent and team approaches are comparable. Teams provide depth, not speed. If your primary goal is faster execution, teams may not deliver the improvement you expect.
 
@@ -175,6 +206,9 @@ The corollary is that deleting teams when work is done (TeamDelete) forces a cle
 | [004: Claude Code's New Agent Teams Are Insane](../../sources/004-bart-slodyczka-agent-teams.md) | Bart Slodyczka | Single agent vs. team comparison, setup guide, team architecture, known limitations |
 | [010: Claude Code Multi-Agent Orchestration](../../sources/010-indydevdan-multi-agent-orchestration.md) | IndyDevDan | Opus 4.6 orchestration at scale, Tmux, E2B sandboxes, observability, Core Four framework |
 | [014: I Gave Opus 4.6 an Entire Dev Team](../../sources/014-leon-van-zyl-agent-teams.md) | Leon van Zyl | Sub-agents vs. teams architecture, devil's advocate pattern, individual agent interaction, skills composition |
+| [020: How & When to Use Claude Code Agent Teams](../../sources/020-simon-scrapes-agent-teams.md) | Simon Scrapes | Context rot, hub-spoke vs mesh topology, 2/6/8 complexity heuristic, shared task list architecture |
+| [021: Claude's Best Release Yet + 10 Tricks](../../sources/021-ai-labs-claude-code-tricks.md) | AI LABS | Git worktrees for isolation, adversarial research teams, MCP CLI mode for context savings |
+| [024: Agentic coding in 2026](../../sources/024-jo-van-eyck-agentic-coding-2026.md) | Jo Van Eyck | Gas Town fleet orchestration, Claude Code as integration platform, Beats + multi-agent convergence |
 
 ## Further Reading
 

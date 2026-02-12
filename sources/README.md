@@ -27,6 +27,11 @@ Each source is synthesized (not transcribed) into a structured note with frontma
 | [017](017-primeagen-skills-security.md) | Be Careful w/ Skills | ThePrimeagen | video | security, skills-ecosystem, claude-code |
 | [018](018-circleci-ai-sdlc.md) | The New AI-Driven SDLC | CircleCI (Jacob Schmitt) | article | ai-sdlc, agentic-coding, enterprise-ai |
 | [019](019-matt-shumer-something-big.md) | Something Big Is Happening | Matt Shumer | article | ai-landscape, capability-overhang, ai-economics |
+| [020](020-simon-scrapes-agent-teams.md) | How & When to Use Claude Code Agent Teams in 13 Mins (Opus 4.6) | Simon Scrapes | video | agent-teams, multi-agent, claude-code, agentic-coding, context-engineering, task-system |
+| [021](021-ai-labs-claude-code-tricks.md) | Claude's Best Release Yet + 10 Tricks That Gave Me An Unfair Advantage | AI LABS | video | claude-code, agentic-coding, context-engineering, mcp, skills, multi-agent, validation, agent-teams |
+| [022](022-traversy-media-forced-ai.md) | Developers are forced to use AI | Traversy Media | video | vibe-coding, ai-landscape |
+| [023](023-xcreate-glm5-review.md) | Let's Run GLM-5 - SUPER LARGE Local AI "Coding King" REVIEW | xCreate | video | ai-landscape, infrastructure |
+| [024](024-jo-van-eyck-agentic-coding-2026.md) | You are Not Ready: Agentic coding in 2026 | Jo Van Eyck | video | agentic-coding, claude-code, multi-agent, agent-teams, context-engineering, prompt-engineering, skills, capability-overhang |
 
 ## Adding Sources
 
