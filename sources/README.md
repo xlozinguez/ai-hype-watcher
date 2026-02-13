@@ -45,6 +45,12 @@ Each source is synthesized (not transcribed) into a structured note with frontma
 | [035](035-lennys-podcast-openai-sherwin-wu.md) | "Engineers are becoming sorcerers" — The future of software development with OpenAI's Sherwin Wu | Lenny's Podcast (Sherwin Wu) | video | openai, enterprise-ai, ai-landscape, agentic-coding, capability-overhang, ai-economics, ai-sdlc, vibe-coding |
 | [036](036-prof-g-ai-kill-software.md) | Did AI Just Kill Software? | Prof G Markets (Scott Galloway) | video | ai-hype, ai-economics, enterprise-ai, ai-landscape, anthropic, openai |
 | [037](037-prof-g-google-ai-arms-race.md) | Google Goes All-In on the AI Arms Race | Prof G Markets (Scott Galloway) | video | ai-economics, infrastructure, ai-hype, ai-landscape |
+| [038](038-interface-studies-prompt-interface.md) | When the Interface Flattens Into a Prompt | Interface Studies | video | ai-landscape, prompt-engineering, context-engineering, specification, vibe-coding, ai-hype |
+| [039](039-pivot-to-ai-saaspocalypse.md) | SaaSpocalypse: investors overspend badly and blame AI | Pivot to AI (David Gerard) | video | ai-hype, ai-economics, enterprise-ai, vibe-coding, anthropic |
+| [040](040-charlie-automates-claudemd-context.md) | Stop Feeding Claude Your Entire CLAUDE.md | Charlie Automates | video | claude-code, context-engineering, skills-ecosystem |
+| [041](041-awesome-claude-compiler-critique.md) | The new Claude just generated the worst C compiler ever... | Awesome | video | ai-hype, agent-teams, anthropic, ai-economics, multi-agent |
+| [042](042-devforge-vibe-coding-trap.md) | Vibe Coding is a Trap (What Senior Devs See That You Don't) | DevForge | video | vibe-coding, ai-hype, ai-sdlc |
+| [043](043-agrici-daniel-claude-ad-agency.md) | Claude Code just replaced your ad agency - here's how | Agrici Daniel | video | claude-code, skills, skills-ecosystem, prompt-engineering, context-engineering, mcp |
 
 ## Adding Sources
 

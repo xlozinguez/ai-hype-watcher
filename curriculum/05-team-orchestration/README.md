@@ -183,6 +183,8 @@ Van Eyck frames Claude Code as the integration platform bringing these innovatio
 
 - **Expecting speed improvements**: Bart Slodyczka's comparison ([#004](../../sources/004-bart-slodyczka-agent-teams.md)) shows that build times between single-agent and team approaches are comparable. Teams provide depth, not speed. If your primary goal is faster execution, teams may not deliver the improvement you expect.
 
+- **Confusing scale with quality**: Anthropic's own C compiler experiment ([#041](../../sources/041-awesome-claude-compiler-critique.md)) is a cautionary case study. Sixteen agent instances working in parallel across approximately 2,000 sessions produced a 100,000-line C compiler at a cost of $20,000 -- but the result lacks its own assembler and linker, cannot compile a 16-bit mode needed to boot Linux, sometimes fails on Hello World, and produces less efficient code than GCC with all optimizations disabled. At roughly $0.20 per generated line, the economics are stark. The critique identifies a broader pattern: agent team experiments quietly redefine "success" from "produce a better or working tool" to "demonstrate that something resembling X can emerge from autonomous iteration." Evaluate agent team output against existing tools and established standards, not against the lowered bar of "did agents produce something."
+
 - **Ignoring initial bugs**: Team output may require refinement fixes that single-agent output does not. In Bart's experiment, the agent team's task manager needed a JavaScript fix before buttons worked, while the single-agent version worked immediately. Budget time for integration testing and quick fixes after team builds.
 
 - **No session resumption**: Agent teams do not survive session interruptions. The `/resume` and `/rewind` commands do not restore teammates. If your terminal closes or your connection drops, the team state is lost. For long-running work, use the observability system to track progress so you can reconstruct state if needed.
@@ -209,6 +211,7 @@ Van Eyck frames Claude Code as the integration platform bringing these innovatio
 | [020: How & When to Use Claude Code Agent Teams](../../sources/020-simon-scrapes-agent-teams.md) | Simon Scrapes | Context rot, hub-spoke vs mesh topology, 2/6/8 complexity heuristic, shared task list architecture |
 | [021: Claude's Best Release Yet + 10 Tricks](../../sources/021-ai-labs-claude-code-tricks.md) | AI LABS | Git worktrees for isolation, adversarial research teams, MCP CLI mode for context savings |
 | [024: Agentic coding in 2026](../../sources/024-jo-van-eyck-agentic-coding-2026.md) | Jo Van Eyck | Gas Town fleet orchestration, Claude Code as integration platform, Beats + multi-agent convergence |
+| [041: The new Claude just generated the worst C compiler ever](../../sources/041-awesome-claude-compiler-critique.md) | Awesome | Anthropic's 16-agent C compiler critique, $20K/100K lines (~$0.20/line), shifting success definitions, well-documented domain still produces mediocre results |
 
 ## Further Reading
 

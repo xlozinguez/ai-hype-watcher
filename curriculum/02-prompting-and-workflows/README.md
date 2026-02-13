@@ -30,6 +30,10 @@ When AI can implement your ideas in minutes, the constraining factor shifts to w
 
 The discipline Jones prescribes is deceptively simple: "Pause. Describe what you want really plainly before you start prompting. Know why you're building it. Even if it's just for fun -- what should it do, what success looks like." Experienced developers already do this instinctively -- they know how to break problems into pieces so each coded piece contributes to a coherent whole, and they ask the right questions (What happens when a user is not logged in? What if the database is slow?). The gap between a beginner and someone effective with AI is not coding ability but this specification intuition. As Jones notes, "It's a much smaller gap than learning to code from scratch and it will close faster with practice."
 
+Interface Studies ([#038](../../sources/038-interface-studies-prompt-interface.md)) provides the deeper cognitive explanation for why specification is so demanding. As GUIs collapse into chat boxes, users discover that language is harder than it looks: "The syntax is conversational, but the mental model required is specification and we only have this input box for it." Two paths are emerging -- specification through increasingly structured language (JSON prompts, schemas, agent skills), or hybrid interfaces that patch visual controls back in. Both paths confirm that the chat input has become the assumed starting point for AI interaction, and that specification skill is the differentiator in both.
+
+DevForge ([#042](../../sources/042-devforge-vibe-coding-trap.md)) adds a concrete lifecycle argument: the senior developer pattern is to understand the problem first, design the solution yourself, then optionally use AI to speed up implementation while reviewing critically. AI is used for boilerplate, exploration, and implementation acceleration -- but never for core logic the developer needs to understand. This "design before generating" discipline is the specification-first pattern applied at the code level.
+
 ### Concept 2: The Six-Step Prompting Framework
 
 Ali H. Salem, in "4 AI Skills That Set You Apart," provides the most actionable prompting structure in the source material -- a six-step framework that works across ChatGPT, Claude, Gemini, and other models:
@@ -97,6 +101,10 @@ For longer-running work, Berglund identifies three strategies that prevent conte
 - **Compaction**: Use an LLM call to summarize large resources or conversation history. A 50,000-token document can often be compressed to 500 words without losing decision-relevant information.
 - **Memory**: A key-value store where intermediate results can be parked and retrieved on demand rather than persisted in the window across every call.
 - **Agent decomposition**: Split complex work into composed sub-agents. The parent agent gets a concise summary rather than carrying the full context of every sub-task.
+
+Charlie Automates ([#040](../../sources/040-charlie-automates-claudemd-context.md)) demonstrates these principles applied to CLAUDE.md configuration specifically. A 733-line CLAUDE.md can consume 15-20% of the context window before the user even sends a message. More critically, irrelevant instructions do not sit passively -- they actively dilute the model's attention, degrading output quality. The solution is domain-based rule segmentation: split rules into groups (global, dev, content, clients) and load only the domains whose keywords match the current prompt. In Charlie's demonstration, the same 734-line CLAUDE.md was reduced to 28 rules for a YouTube script task and 23 rules for a dev task. The closing insight reframes the goal: "They think the goal is to make Claude smarter, giving it more information, more context, more rules. It's not. Claude is already super intelligent. The goal is to make Claude more focused." This principle -- focus over intelligence -- is context engineering distilled to its essence.
+
+Charlie also introduces context brackets for adaptive verbosity: as the context window fills, Claude automatically shifts from detailed responses (when fresh) to concise communication (at moderate usage) to code-only survival mode (when depleted). This addresses the common problem of verbose responses accelerating context exhaustion in long sessions.
 
 These strategies become the architectural foundation for the agentic patterns covered in [Module 04: Agentic Patterns](../04-agentic-patterns/README.md).
 
@@ -214,6 +222,9 @@ The discipline here is restraint. As Salem warns: "Using AI for everything actua
 | [005: 90% Fail at Vibe Coding](../../sources/005-nate-b-jones-vibe-coding-readiness.md) | Nate B Jones | Specification as key skill, failure modes, software vision, context discipline |
 | [006: 4 AI Skills That Set You Apart](../../sources/006-ali-salem-4-ai-skills.md) | Ali H. Salem | RTCEOC prompt framework, sticky workflows, validation, tool stacking |
 | [011: Prompt Engineering is Dead](../../sources/011-confluent-developer-context-engineering.md) | Tim Berglund (Confluent) | Context engineering, six context components, 60-70% rule, MCP, compaction |
+| [038: When the Interface Flattens Into a Prompt](../../sources/038-interface-studies-prompt-interface.md) | Interface Studies (Sal) | Specification as cognitive demand, two paths from the chat box, Einstellung effect, interface shapes thinking |
+| [040: Stop Feeding Claude Your Entire CLAUDE.md](../../sources/040-charlie-automates-claudemd-context.md) | Charlie Automates | Monolithic CLAUDE.md problem, domain-based rule segmentation, context brackets for adaptive verbosity, focus over intelligence |
+| [042: Vibe Coding is a Trap](../../sources/042-devforge-vibe-coding-trap.md) | DevForge | Understand-first pattern, mental models as the real asset, senior developer AI usage pattern, design before generating |
 
 ## Further Reading
 
