@@ -45,6 +45,7 @@ watchlist/        → YouTube channel watchlist and scanning config
 | `/daily-briefing` | Generate a dated findings briefing |
 | `/youtube-transcriber` | Extract YouTube video transcript via Playwright and prepare for synthesis |
 | `/scan-channels` | Scan YouTube watchlist RSS feeds for new relevant content |
+| `/pr-description` | Generate a PR description summarizing new knowledge introduced by source notes |
 
 ## Rules
 
