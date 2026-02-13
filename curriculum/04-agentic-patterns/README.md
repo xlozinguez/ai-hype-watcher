@@ -55,6 +55,8 @@ This pattern mirrors real-world engineering practices (code review, QA) but auto
 
 The architectural significance goes beyond simple verification. The validator's read-only constraint is enforced through tool permissions, not through prompting. This is deterministic control -- the validator physically cannot modify code, regardless of what instructions it receives. This distinction between "asked not to" and "cannot" is fundamental to building trustworthy agentic systems.
 
+Agrici Daniel's "Cloudy Ads" skill ([#043](../../sources/043-agrici-daniel-claude-ad-agency.md)) demonstrates a single-agent variant of the builder/validator pattern applied outside software development. When asked to generate a PDF report, the agent self-orchestrates a multi-step workflow: designing an HTML report with charts, writing a Python script for PDF conversion, generating the output, self-reviewing for formatting issues, and fixing problems without human intervention. The agent acts as both builder and reviewer of its own output within the same session. This is less rigorous than the two-agent builder/validator (no tool permission enforcement), but it demonstrates that the review-after-build pattern is valuable even when collapsed into a single agent -- particularly for non-code outputs where the review criteria are visual rather than functional.
+
 ### Concept 4: Meta-Prompts and Reusable Workflows
 
 Building reusable meta-prompts -- prompts that generate other prompts -- is presented in [#001] as one of the most valuable patterns in agentic engineering. Meta-prompts encode engineering best practices and enable deployment of consistent, highly vetted workflows that can be used repeatedly across projects.
@@ -263,6 +265,7 @@ The connection to the Ralph Wiggum loop (Concept 7) is direct: Beats provides th
 | [018: The New AI-Driven SDLC](../../sources/018-circleci-ai-sdlc.md) | CircleCI (Jacob Schmitt) | Bottleneck shift from writing to evaluating, SDLC as network, infrastructure as enabler |
 | [021: Claude's Best Release Yet + 10 Tricks](../../sources/021-ai-labs-claude-code-tricks.md) | AI LABS | Adversarial agent pairs, predictive failure analysis, hooks for TDD enforcement, user stories for BDD |
 | [024: Agentic coding in 2026](../../sources/024-jo-van-eyck-agentic-coding-2026.md) | Jo Van Eyck | Ralph Wiggum loop deep dive, Beats persistent task management, autonomy slider, deterministic verification |
+| [043: Claude Code just replaced your ad agency](../../sources/043-agrici-daniel-claude-ad-agency.md) | Agrici Daniel | Autonomous multi-step tool orchestration within a skill, self-review and self-correction pattern, non-coding agentic workflow |
 
 ## Further Reading
 
