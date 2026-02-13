@@ -11,3 +11,4 @@ Unlike individual [source notes](../sources/), synthesis documents draw connecti
 | [2026-02-09](2026-02-09-ai-tools-strategy-hype.md) | AI Tools, Strategy, and Hype | #001-#018 (16 videos + 2 articles) |
 | [2026-02-12](2026-02-12-agentic-coding-state-of-play.md) | The State of Agentic Coding | #020-#024 (5 videos) |
 | [2026-02-12](2026-02-12-ai-economics-reality-check.md) | The AI Economics Reality Check | #032-#037 (6 videos) |
+| [2026-02-12](2026-02-12-ai-hype-reality-gap.md) | The Hype-Reality Gap: When Marketing Meets Engineering | #038-#043 (6 videos) |

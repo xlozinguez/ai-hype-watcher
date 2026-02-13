@@ -25,6 +25,10 @@ Because CLAUDE.md is always loaded, it occupies context window space in every se
 
 Effective CLAUDE.md files focus on universal project context: directory structure, tech stack, testing conventions, naming patterns, and any non-obvious architectural decisions. Specialized workflows (image generation, deployment procedures, code review checklists) belong in skills, not in CLAUDE.md.
 
+Charlie Automates ([#040](../../sources/040-charlie-automates-claudemd-context.md)) quantifies the cost of ignoring this principle. A 733-line CLAUDE.md consumes 15-20% of the context window before any work begins. More importantly, irrelevant instructions do not sit passively in context -- they actively dilute the model's attention, degrading output quality across the entire conversation. As Charlie puts it: "They think the goal is to make Claude smarter, giving it more information, more context, more rules. It's not. Claude is already super intelligent. The goal is to make Claude more focused."
+
+Charlie introduces Carl (Context Augmentation Reinforcement Layer), a plugin that addresses this by splitting rules into domain-based groups (global, dev, content, clients, agents) and loading only the domains whose keywords match the current prompt. The same 734-line CLAUDE.md reduced to 28 rules for a content task and 23 rules for a dev task. Carl also provides star commands for manual style overrides (`*brief` for bullet-point-only output, `*dev` for code-over-explanation) and context brackets that automatically adjust verbosity as the context window fills -- from detailed responses when fresh, to concise at moderate usage, to code-only survival mode when depleted. Install with a single `npx carl-core` command.
+
 ### Concept 2: Skills as Lazy-Loaded Instructions
 
 The central architectural insight of the skills system, emphasized by both IndyDevDan ([#015]) and Leon van Zyl ([#013]), is that skills are "lazy-loaded instructions" that only occupy context window space when activated. This stands in direct contrast to MCP server tool definitions, which are always present in the agent's context and consume tokens whether or not they are used in a given session.
@@ -68,6 +72,8 @@ Two main sources exist for discovering and installing skills, as Leon van Zyl co
 The ecosystem also includes meta-skills -- skills that find or create other skills. The "Skill Creator" skill, for instance, bootstraps a well-structured `SKILL.md` from a natural language description of the desired capability, lowering the barrier to building custom skills.
 
 IndyDevDan ([#015]) frames the ecosystem through both opportunity and responsibility. The marketplace model enables specialization: domain experts can encode their knowledge as skills that generalist engineers consume. But as the ecosystem grows, the question of trust becomes unavoidable -- a concern that ThePrimeagen takes head-on in [#017].
+
+Agrici Daniel's "Cloudy Ads" skill ([#043](../../sources/043-agrici-daniel-claude-ad-agency.md)) demonstrates the ecosystem's reach beyond software development. This skill packages an entire paid advertising workflow -- covering Google Ads, Meta, YouTube, LinkedIn, TikTok, and Microsoft Ads with over 190 audit checks and industry-specific templates. Its knowledge base draws from approximately 2,500 websites on advertising best practices, encoded as markdown files that the agent reads on demand. The skill uses a progressive questioning pattern (broad parameters first, then targeted follow-ups after reading relevant skill files) and delegates to parallel sub-agents for execution. When asked to produce a PDF report, the agent self-orchestrates: writing a Python script for HTML-to-PDF conversion, generating charts, self-reviewing for formatting issues, and fixing them autonomously. This demonstrates that skills can encode entire professional domains -- not just developer workflows -- into reusable, extensible Claude Code capabilities. The skill also demonstrates budget-aware reasoning: at $1,000/month it recommends Meta only, ruling out LinkedIn (too expensive) and Google Search (wrong goal), illustrating how constraint-based reasoning distinguishes a useful skill from a generic prompt.
 
 ### Concept 5: Building Custom Skills
 
@@ -149,7 +155,7 @@ Beyond skills and CLAUDE.md, Claude Code supports several advanced configuration
 
 - **Over-permissioning skills with allowed-tools**: Giving a skill access to every tool "just in case" expands the attack surface and increases the chance of unintended side effects. A code review skill that can Write files might accidentally modify the code it is supposed to be reviewing. Scope permissions to the minimum required.
 
-- **Loading everything into CLAUDE.md instead of using skills**: A common pattern for new users is to pack every workflow, convention, and procedure into CLAUDE.md. This consumes context window space in every session, regardless of relevance. Move specialized workflows into skills; keep CLAUDE.md focused on universal project context.
+- **Loading everything into CLAUDE.md instead of using skills**: A common pattern for new users is to pack every workflow, convention, and procedure into CLAUDE.md. This consumes context window space in every session, regardless of relevance. Charlie Automates ([#040](../../sources/040-charlie-automates-claudemd-context.md)) quantifies the damage: a 733-line CLAUDE.md eats 15-20% of context before you even send a message, and the irrelevant instructions actively dilute the model's attention. Move specialized workflows into skills or use a domain-based segmentation tool like Carl; keep CLAUDE.md focused on universal project context.
 
 - **Installing skills from untrusted sources without review**: As ThePrimeagen warns in [#017], 36% of publicly available agent skills contain security vulnerabilities. Skills execute with user-level permissions and can run arbitrary code. Treat skill installation with the same caution you would give to running an unknown script -- review the source code before installing.
 
@@ -177,6 +183,8 @@ Beyond skills and CLAUDE.md, Claude Code supports several advanced configuration
 | [015: I finally CRACKED Claude Agent Skills](../../sources/015-indydevdan-skills-engineering.md) | IndyDevDan | Skills architecture, lazy-loading, SKILL.md anatomy, skills.sh ecosystem, context budget management |
 | [017: Be Careful w/ Skills](../../sources/017-primeagen-skills-security.md) | ThePrimeagen | Skills security, 36% vulnerability rate, hallucination squatting, supply chain risks |
 | [021: Claude's Best Release Yet + 10 Tricks](../../sources/021-ai-labs-claude-code-tricks.md) | AI LABS | Hooks with exit code 2, MCP CLI mode, insights command, structured documentation, context engineering |
+| [040: Stop Feeding Claude Your Entire CLAUDE.md](../../sources/040-charlie-automates-claudemd-context.md) | Charlie Automates | Monolithic CLAUDE.md as attention dilution, Carl plugin for domain-based rule segmentation, star commands, context brackets, focus over intelligence |
+| [043: Claude Code just replaced your ad agency](../../sources/043-agrici-daniel-claude-ad-agency.md) | Agrici Daniel | Cloudy Ads skill for paid advertising, domain-expert skills as agency replacements, 190+ audit checks, progressive questioning, skills knowledge base at scale (2,500 sources), non-coding use case |
 
 ## Further Reading
 
