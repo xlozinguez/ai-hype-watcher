@@ -39,6 +39,12 @@ Each source is synthesized (not transcribed) into a structured note with frontma
 | [029](029-modern-software-engineering-ai-study.md) | We Studied 150 Developers Using AI (Here's What's Actually Changed...) | Modern Software Engineering (Dave Farley) | video | ai-hype, ai-sdlc, enterprise-ai, vibe-coding |
 | [030](030-playwright-cli-vs-mcp.md) | Playwright CLI vs MCP - a new tool for your coding agent | Playwright | video | mcp, claude-code, context-engineering, agentic-coding |
 | [031](031-bytebyteai-ai-concepts.md) | 9 AI Concepts Explained in 7 minutes: AI Agents, RAGs, Tokenization, RLHF, Diffusion, LoRA... | ByteByteAI | video | ai-landscape, prompt-engineering, agentic-coding, context-engineering |
+| [032](032-nate-b-jones-openclaw.md) | OpenClaw: 160,000 Developers Just Showed Us What People Actually Want From AI (It's NOT Chatbots) | Nate B Jones | video | ai-landscape, security, enterprise-ai, capability-overhang, skills-ecosystem, ai-hype |
+| [033](033-prof-g-ethan-mollick-ai-wrong.md) | Why CEOs Are Getting AI Wrong — with Ethan Mollick | Prof G Conversations (Scott Galloway / Ethan Mollick) | video | enterprise-ai, ai-landscape, ai-hype, ai-economics, capability-overhang |
+| [034](034-better-offline-cal-newport.md) | Hater Season: Cal Newport on AI Reporting | Better Offline (Ed Zitron / Cal Newport) | video | ai-hype, ai-economics, vibe-coding, ai-landscape |
+| [035](035-lennys-podcast-openai-sherwin-wu.md) | "Engineers are becoming sorcerers" — The future of software development with OpenAI's Sherwin Wu | Lenny's Podcast (Sherwin Wu) | video | openai, enterprise-ai, ai-landscape, agentic-coding, capability-overhang, ai-economics, ai-sdlc, vibe-coding |
+| [036](036-prof-g-ai-kill-software.md) | Did AI Just Kill Software? | Prof G Markets (Scott Galloway) | video | ai-hype, ai-economics, enterprise-ai, ai-landscape, anthropic, openai |
+| [037](037-prof-g-google-ai-arms-race.md) | Google Goes All-In on the AI Arms Race | Prof G Markets (Scott Galloway) | video | ai-economics, infrastructure, ai-hype, ai-landscape |
 
 ## Adding Sources
 

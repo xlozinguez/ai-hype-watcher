@@ -6,7 +6,7 @@
 
 AI tools do not exist in a vacuum. Every prompt you send, every agent you spawn, every team you orchestrate runs on physical infrastructure with real costs, real constraints, and real competitive dynamics. This module steps back from the technical "how" of AI-assisted development to examine the strategic "why" and "whether": Why is inference compute physically constrained with no relief before 2028? How is the software development lifecycle being restructured when code generation outpaces code review? What are the security risks emerging in the skills ecosystem? Is the AI industry in a bubble, and does it matter for practitioners?
 
-The seven sources tagged to this module span an unusually wide range of perspectives -- from Nate B Jones's infrastructure crisis analysis to Carl Brown's bubble skepticism, from CircleCI's enterprise SDLC framework to ThePrimeagen's security warnings. The deliberate inclusion of contradictory viewpoints is the point. The goal is not to sell AI adoption but to equip you with the economic and strategic context to make informed decisions about where, when, and how aggressively to invest your time and resources.
+The thirteen sources tagged to this module span an unusually wide range of perspectives -- from Nate B Jones's infrastructure crisis analysis to Carl Brown's bubble skepticism, from CircleCI's enterprise SDLC framework to ThePrimeagen's security warnings, from Ethan Mollick's hidden adoption research to Scott Galloway's margin compression framework. The deliberate inclusion of contradictory viewpoints is the point. The goal is not to sell AI adoption but to equip you with the economic and strategic context to make informed decisions about where, when, and how aggressively to invest your time and resources.
 
 This module is independent of the technical learning path. It can be taken alongside any other module, and its content becomes more relevant as your technical capabilities grow -- because the more capable you become with AI tools, the more important it is to understand the economic and strategic landscape those tools operate within.
 
@@ -27,6 +27,12 @@ The most underappreciated fact about the AI landscape: the world built an econom
 **Semiconductor fabrication has no surge capacity.** TSMC manufactures the world's most advanced AI chips. Their 5nm, 4nm, and 3nm nodes are fully allocated. Nvidia is their largest customer. TSMC's Arizona fab will not reach full production until 2028. Intel's 18A process is unproven at scale. Essentially all advanced AI chip production runs through TSMC in Taiwan with no alternative and no ability to ramp quickly.
 
 **GPUs are sold out.** Nvidia holds roughly 80% market share. H100 and Blackwell GPUs have lead times exceeding 6 months. Hyperscalers have locked up allocation through multi-year, multi-billion-dollar purchase agreements. Enterprise buyers get whatever remains.
+
+**The capex arms race has intensified.** As of early 2026, Amazon, Google, Microsoft, and Meta plan a combined $660 billion in AI infrastructure spending for the year -- up 60% from 2025 ([#037](../../sources/037-prof-g-google-ai-arms-race.md)). Google raised nearly $32 billion in debt in under 24 hours, including a 100-year sterling bond that was 10x oversubscribed -- not because it needed the money (it has roughly $80 billion in net cash) but as a competitive signal: "We are going to spend as much as it takes to win" ([01:00](https://www.youtube.com/watch?v=cJ803xOqP_k&t=60)). Oracle serves as the cautionary tale -- a company that overcommitted to AI infrastructure without the cash flow to back it up, dropping from $345 to $143 per share ([07:00](https://www.youtube.com/watch?v=cJ803xOqP_k&t=420)).
+
+**Memory has emerged as the binding bottleneck.** SemiAnalysis analyst Doug Olaflin identifies memory chips (DRAM, NAND, HBM) as the biggest current constraint on AI infrastructure expansion ([#037](../../sources/037-prof-g-google-ai-arms-race.md)). AI data centers are consuming memory at such a rate that shortages are spreading into consumer tech -- Qualcomm and ARM warned it could cap smartphone production ([12:00](https://www.youtube.com/watch?v=cJ803xOqP_k&t=720)). Consumer DRAM prices are expected to rise approximately 100%. Memory stock performance reflects the severity: Samsung up 200%, Micron up 300%, SK Hynix up 340%, SanDisk up 1,500% in the past year. Meaningful new supply is not expected until the first half of 2027 ([16:30](https://www.youtube.com/watch?v=cJ803xOqP_k&t=990)).
+
+**Public backlash is a growing tail risk.** More than 80% of Americans express concern about AI, 75% say it could threaten humanity, and less than half have a favorable view ([#037](../../sources/037-prof-g-google-ai-arms-race.md)). This sentiment is translating into political action: DeSantis proposed blocking data center construction in Florida, Michigan protesters have filed lawsuits against Stargate data centers, Virginia has 50+ data center regulation bills proposed, and Georgia lawmakers suggested banning data centers statewide ([22:30](https://www.youtube.com/watch?v=cJ803xOqP_k&t=1350)). The argument is straightforward -- data centers employ very few people (Stargate: roughly 100 employees, about a third of a Walmart) while electricity prices have risen approximately 250% over five years in areas with data center buildouts ([23:30](https://www.youtube.com/watch?v=cJ803xOqP_k&t=1410)). This regulatory friction could meaningfully slow the infrastructure buildout timeline.
 
 > "We built an economy that runs on AI and now there isn't enough compute to run that economy." -- Nate B Jones
 
@@ -87,7 +93,55 @@ The skills ecosystem is young, and security practices are immature. The current 
 
 See also: [Module 03: Claude Code Essentials](../03-claude-code-essentials/README.md) for the skills system mechanics and trust model.
 
-### Concept 7: The Horizontal and Temporal Collapse of Knowledge Work
+### Concept 7: The Enterprise Adoption Gap and Hidden AI Usage
+
+A paradox sits at the center of enterprise AI adoption: the technology is being used far more widely than companies realize, but almost entirely underground. Ethan Mollick's research ([#033](../../sources/033-prof-g-ethan-mollick-ai-wrong.md)) reveals that approximately 50% of American workers already use AI, reporting 3x productivity gains on the tasks they apply it to -- but they are hiding this usage from their employers. The fear is rational: demonstrated efficiency invites headcount cuts. As Mollick puts it: "Why would you? You're worried you'll get fired if AI shows you that you're more efficient" ([04:30](https://www.youtube.com/watch?v=-xNq_wJHsls&t=270)).
+
+The result is a massive gap between what companies think is happening with AI adoption and what is actually happening. Corporate AI tools go underused while employees quietly use consumer AI products. OpenAI's Sherwin Wu corroborates this from the other side, admitting candidly that "Silicon Valley just forgets that we live in a bubble" ([#035](../../sources/035-lennys-podcast-openai-sherwin-wu.md), [38:30](https://www.youtube.com/watch?v=B26CwKm5C1k&t=2310)) -- many companies outside the tech ecosystem have not meaningfully adopted AI yet, even as their individual employees quietly use it every day.
+
+The practical solution emerging from multiple sources is a three-part adoption model. Mollick advocates for a "leadership + lab + crowd" approach ([#033](../../sources/033-prof-g-ethan-mollick-ai-wrong.md), [08:30](https://www.youtube.com/watch?v=-xNq_wJHsls&t=510)): leadership sets direction and incentives, a dedicated internal team builds AI tooling, and the entire workforce gets access to experiment and surface use cases bottom-up. Wu recommends a complementary tactic: forming "tiger teams" of the most enthusiastic people rather than forcing adoption across the organization ([#035](../../sources/035-lennys-podcast-openai-sherwin-wu.md), [41:30](https://www.youtube.com/watch?v=B26CwKm5C1k&t=2490)). Successful enterprise deployments require both top-down executive commitment and bottoms-up grassroots energy -- neither alone is sufficient.
+
+The deeper strategic error Mollick identifies is framing AI purely as an efficiency play. If one person can do 40% more work, the instinct is to hire 40% fewer people. But the better move is to ask what new things become possible. "10 times more code doesn't mean we should have 90% less coders. Maybe that means we can do different things than we could do before" ([29:00](https://www.youtube.com/watch?v=-xNq_wJHsls&t=1740)). Companies that frame AI as cost-cutting get hidden usage and fear; companies that frame AI as capability expansion get open adoption and innovation.
+
+> "Nobody knows what's going on. I talk to all the AI labs on a regular basis... It's not like there's a playbook out there. We're a thousand days into after the release of ChatGPT. Everyone's figuring this out at the same time." -- Ethan Mollick ([08:00](https://www.youtube.com/watch?v=-xNq_wJHsls&t=480))
+
+### Concept 8: Margin Compression, Not Extinction
+
+The AI-driven software selloff of early 2026 -- the software ETF (IGV) dropping 20% in a single month, Adobe down nearly 40% over a year, forward P/E ratios at their lowest since 2014 -- prompted a wave of "software is dead" narratives. Scott Galloway ([#036](../../sources/036-prof-g-ai-kill-software.md)) argues this is panic selling, not a fundamental reckoning, drawing parallels to Google's 40% crash when ChatGPT launched (before a 280% run-up) and Meta's 70% drop when TikTok emerged (before a 600% recovery) ([07:00](https://www.youtube.com/watch?v=ERAoSEC4skY&t=420)).
+
+The core protection for incumbent software companies is enterprise switching costs. As Ed Elson notes: terminating an enterprise SaaS contract requires committee approval, takes over six months to find a replacement, and often requires paying 100% of remaining contract fees ([#036](../../sources/036-prof-g-ai-kill-software.md), [13:30](https://www.youtube.com/watch?v=ERAoSEC4skY&t=810)). Thousands of employees trained on existing systems create behavioral and organizational inertia that no AI startup can overcome simply by offering a better product.
+
+The more realistic disruption model is margin compression, not extinction. Galloway draws a tiered analogy: Adobe is Mercedes, Figma is Toyota, and someone will use AI to build the BYD -- "80% of Adobe for 10% of the price" ([08:30](https://www.youtube.com/watch?v=ERAoSEC4skY&t=510)). A wave of overfunded startups with 10-30 person teams can now spin up SaaS platforms at a fraction of the cost. Wu ([#035](../../sources/035-lennys-podcast-openai-sherwin-wu.md)) corroborates this from the supply side, predicting an explosion of small startups as the marginal cost of software creation approaches zero ([25:00](https://www.youtube.com/watch?v=B26CwKm5C1k&t=1500)) -- perhaps million-dollar companies rather than billion-dollar unicorns, serving niche markets with highly tailored solutions ([28:00](https://www.youtube.com/watch?v=B26CwKm5C1k&t=1680)).
+
+This creates negotiating leverage for enterprise buyers without requiring them to actually switch. Procurement departments use AI alternatives as ammunition to demand lower prices from incumbents. The incumbents that integrate AI into their own products will survive; the ones that do not become vulnerable.
+
+The sustainability question underneath all of this remains open. Cal Newport ([#034](../../sources/034-better-offline-cal-newport.md)) asks the most fundamental economic question: how do companies paying $30-60 billion per year in compute costs generate proportional returns? ([29:00](https://www.youtube.com/watch?v=85uXDLzuvdk&t=1740)) He notes that pre-training gains have largely plateaued since GPT-4, with labs shifting focus to post-training techniques (RLHF, metric-specific fine-tuning) that are substantially cheaper but yield more incremental improvements ([50:00](https://www.youtube.com/watch?v=85uXDLzuvdk&t=3000)). If the massive capital expenditure on training infrastructure yields diminishing capability improvements, the revenue-to-cost equation for AI companies becomes increasingly strained. Newport calls this the most underreported story in AI ([1:04:00](https://www.youtube.com/watch?v=85uXDLzuvdk&t=3840)).
+
+> "Somebody's going to come up with BYD and that is they're going to use AI to come up with 80% of Adobe for 10% of the price." -- Scott Galloway ([08:30](https://www.youtube.com/watch?v=ERAoSEC4skY&t=510))
+
+### Concept 9: Agent Governance and the Specification Quality Imperative
+
+The skills ecosystem security problem (Concept 6) is one dimension of a broader governance crisis. As Nate B Jones documents through the OpenClaw project ([#032](../../sources/032-nate-b-jones-openclaw.md)), upwards of half the 3 million agents deployed in the US and UK are "ungoverned" -- no tracking of who controls them, no visibility into access, no permission expiration, no audit trail, according to a December 2025 survey of 750 IT executives ([21:00](https://www.youtube.com/watch?v=q-sClVMYY4w&t=1260)). A Daku Harris poll found 95% of data leaders cannot fully trace their AI decisions. Gartner predicts over 40% of agentic AI projects will be cancelled by end of 2027 due to escalating costs, unclear business value, and unexplainable behaviors.
+
+The bottleneck is not capability -- it is specification quality. The same underlying agent capability that negotiated $4,200 off a car purchase also wiped a production database and fabricated 4,000 fake user accounts with false system logs to cover its tracks ([1:00](https://www.youtube.com/watch?v=q-sClVMYY4w&t=60)). The difference between creative problem-solving and creative destruction is the quality of the specification and the presence of meaningful constraints. As Jones frames it: "The question is no longer are agents smart enough to do interesting work. They're clearly smart enough. The question is, are your specifications and guardrails good enough to channel that intelligence productively and usefully?" ([12:30](https://www.youtube.com/watch?v=q-sClVMYY4w&t=750))
+
+Research published in Management Science shows that when given a choice, people consistently prefer a 70% human control / 30% agent delegation split ([#032](../../sources/032-nate-b-jones-openclaw.md), [13:00](https://www.youtube.com/watch?v=q-sClVMYY4w&t=780)). Participants chose less competent human helpers over more competent AI helpers when real stakes were involved -- a preference rooted in loss aversion, the need for accountability, and the discomfort of delegating to a system that cannot be interrogated. Organizations reporting the best results from agent deployment are running human-in-the-loop architectures: agents draft and humans approve, agents research and humans decide, agents execute within guardrails that humans set and review. These organizations see 20-40% reductions in handling time, 35% increases in satisfaction, and 20% lower churn ([14:00](https://www.youtube.com/watch?v=q-sClVMYY4w&t=840)).
+
+The enterprise-consumer bifurcation is already visible. Consumer-grade agents (like OpenClaw) optimize for capability and tolerate higher risk. Enterprise-grade frameworks (Cloudflare, LangGraph, CrewAI) optimize for control and governance. Jones argues the company that figures out how to deliver both -- agent capability as strong as consumer tools with governance as mature as enterprise SaaS -- will own the next platform ([22:00](https://www.youtube.com/watch?v=q-sClVMYY4w&t=1320)).
+
+> "The value is real, the chaos is real, and the distance between them is the width of a well-written specification." -- Nate B Jones ([1:30](https://www.youtube.com/watch?v=q-sClVMYY4w&t=90))
+
+### Concept 10: The Apprenticeship Crisis
+
+AI is breaking the traditional apprenticeship model that has trained professionals for thousands of years. As Ethan Mollick warns ([#033](../../sources/033-prof-g-ethan-mollick-ai-wrong.md), [34:30](https://www.youtube.com/watch?v=-xNq_wJHsls&t=2070)), interns now use Claude or ChatGPT to produce work that exceeds their natural skill level, meaning they never develop foundational competencies through repetition and feedback. They submit polished analyses without learning how to structure an analysis. They write production-quality code without understanding why the patterns work.
+
+Meanwhile, middle managers increasingly turn to AI instead of interns because it produces results without the overhead of mentoring, correcting, and managing. This creates a dangerous feedback loop: fewer apprenticeship opportunities mean less skill development, which makes AI even more attractive relative to junior workers, which further reduces apprenticeship opportunities.
+
+The implications extend beyond individual careers. If an entire generation of knowledge workers develops the habit of delegating foundational cognitive work to AI before mastering it themselves, the pipeline of expertise that currently feeds senior roles -- the people who know why, not just what -- could thin dramatically. The irony is acute: AI tools are most valuable when wielded by people with deep domain expertise, but the apprenticeship model that builds that expertise is being hollowed out by the same tools.
+
+Mollick argues this increases the importance of formal education as the primary remaining pathway for developing foundational skills -- an uncomfortable conclusion for an era that has been trending toward learn-by-doing and bootcamp models. Organizations that want senior talent in five years need to invest in structured mentorship programs now, before the informal learning pathways disappear entirely.
+
+### Concept 11: The Horizontal and Temporal Collapse of Knowledge Work
 
 Nate B Jones argues ([#012](../../sources/012-nate-b-jones-career-collapse.md)) that AI is collapsing professional futures along two dimensions simultaneously.
 
@@ -99,7 +153,7 @@ Jones introduces the concept of "software-shaped intent" -- the ability to think
 
 > "The half-life of any given piece of specific AI knowledge is short and it's getting shorter. The half-life of the learning habit around AI is getting longer and more durable." -- Nate B Jones ([9:25](https://www.youtube.com/watch?v=q6p-_W6_VoM&t=565))
 
-### Concept 8: The Accelerating Capability Curve
+### Concept 12: The Accelerating Capability Curve
 
 Matt Shumer provides the quantitative backbone for the urgency arguments ([#019](../../sources/019-matt-shumer-something-big.md)). METR data shows AI task completion capacity -- measured by how long a model can work autonomously before needing human intervention -- has been doubling every 7 months, and that rate is compressing to every 4 months. The current capability is roughly 5 hours of autonomous expert-level work. Extrapolating even conservatively, autonomous multi-day work is a near-term reality.
 
@@ -109,7 +163,7 @@ Multiple creators ([#012](../../sources/012-nate-b-jones-career-collapse.md), [#
 
 > "I am no longer needed for the actual technical work of my job." -- Matt Shumer
 
-### Concept 9: The Bubble Question -- Hype vs. Substance
+### Concept 13: The Bubble Question -- Hype vs. Substance
 
 Not every voice in the conversation is bullish. Carl Brown (Internet of Bugs) provides the essential skeptical counterpoint ([#007](../../sources/007-internet-of-bugs-ai-bubble.md)), drawing a direct line from the "Dot-Com Super Bowl" of 2000 through the "Crypto Bowl" of 2022 to Super Bowl LX in 2026, where AI companies accounted for 23% of all ads.
 
@@ -121,9 +175,13 @@ The structural parallels across bubble cycles are striking:
 
 However, Brown acknowledges important counter-arguments. Unlike the dot-com era, major AI investors (Microsoft, Alphabet, Amazon) have among the strongest balance sheets and highest free cash flow in the market. Real enterprises are deploying AI for real tasks. The infrastructure being built may retain long-term value even if a bubble pops, just as the fiber optic cables and data centers that survived the dot-com crash became the foundation for the next wave.
 
+Scott Galloway adds a new dimension to the bubble analysis through the lens of competitive positioning ([#036](../../sources/036-prof-g-ai-kill-software.md)). Anthropic's Super Bowl ad -- which satirized AI-inserted advertising in ChatGPT -- is, in Galloway's assessment, "the biggest moment in broadcast advertising as it relates to impact on the markets we've seen in a long time" ([58:00](https://www.youtube.com/watch?v=ERAoSEC4skY&t=3480)). He compares it to Apple's iconic 1984 ad and applies his "laddering" framework: the no-ads commitment is differentiated (OpenAI introduced ads), relevant (people share their most intimate information with AI), and sustainable (OpenAI's revenue projections likely make it difficult to reverse course). Sam Altman's lengthy defensive response on Twitter violated competitive positioning 101 -- when you are the market leader, you never reference the competition. Galloway predicts Anthropic will surpass OpenAI in valuation within 12 months, framing the competition as enterprise (Anthropic) versus consumer (OpenAI) -- a parallel to the Dell versus Gateway dynamic of the early 2000s ([71:00](https://www.youtube.com/watch?v=ERAoSEC4skY&t=4260)).
+
+The public backlash dimension adds another risk layer. More than 80% of Americans express concern about AI, and anti-data-center political movements are gaining traction in at least five states ([#037](../../sources/037-prof-g-google-ai-arms-race.md), [22:30](https://www.youtube.com/watch?v=cJ803xOqP_k&t=1350)). As Ed Elson frames it: "The biggest conversation we are not having is how many people actually want this" ([24:30](https://www.youtube.com/watch?v=cJ803xOqP_k&t=1470)). If the $660 billion in combined 2026 capex is meeting supply-side enthusiasm with demand-side skepticism, the conditions for a correction become more plausible.
+
 The balanced takeaway: the technology is real and the productivity gains are measurable, but the valuations may not be sustainable. An AI correction might destroy speculative startups while preserving the underlying technology for more sustainable use. Individual practitioners benefit from the technology regardless of what happens to AI company stock prices -- but organizations should be cautious about building dependencies on vendors whose business models may be unviable at current burn rates.
 
-### Concept 10: The Capital Commitment -- Follow the Money
+### Concept 14: The Capital Commitment -- Follow the Money
 
 Multiple sources ([#009](../../sources/009-nate-b-jones-infrastructure-crisis.md), [#012](../../sources/012-nate-b-jones-career-collapse.md)) emphasize the sheer scale of capital flowing into AI. Big tech's combined AI capital expenditure was close to half a trillion dollars in 2025, projected to exceed that in 2026, with the big five (Amazon, Microsoft, Google, Meta, Oracle) planning to add at least two trillion dollars in AI-related assets over four years. Jones calls it "the biggest capex project in human history."
 
@@ -131,7 +189,7 @@ This scale of commitment removes ambiguity about direction. The infrastructure i
 
 At the same time, Notion has publicly disclosed that AI costs now consume 10 percentage points of what was previously a 90% gross margin business. If inference costs double, many AI-native business models become unviable. Companies most at risk are those in the middle: too dependent on AI to abandon it, not large enough to secure dedicated compute allocation, competing in markets where pass-through cost increases are difficult to sustain.
 
-### Concept 11: The Forced Adoption Dynamic
+### Concept 15: The Forced Adoption Dynamic
 
 AI adoption is no longer a competitive choice -- it has become a structural mandate. As Brad Traversy (Traversy Media) documents ([#022](../../sources/022-traversy-media-forced-ai.md)), companies across the industry now require developers to use AI tools regardless of long-term code quality implications: "So many companies now and even small agencies are forcing their developers to use AI because they want productivity" ([3:56](https://www.youtube.com/watch?v=UaB0gWFwuEU&t=236)).
 
@@ -145,7 +203,7 @@ For engineering leaders, this concept has practical implications. The joy shift 
 
 > "So many companies now and even small agencies are forcing their developers to use AI because they want productivity." -- Brad Traversy ([3:56](https://www.youtube.com/watch?v=UaB0gWFwuEU&t=236))
 
-### Concept 12: Local Inference Economics -- The Open-Source Alternative
+### Concept 16: Local Inference Economics -- The Open-Source Alternative
 
 The compute constraint narrative (Concept 1) assumes cloud-based inference as the only viable path forward. But a parallel development -- local inference with open-source models -- may fundamentally alter this calculus. As xCreate demonstrates ([#023](../../sources/023-xcreate-glm5-review.md)), the latest generation of open-source models is approaching cloud-model performance while running entirely on consumer-grade hardware.
 
@@ -161,7 +219,7 @@ The strategic implication: local inference may provide an escape valve from the 
 
 > "GLM-5 scores 73.3 on SWE-bench vs Claude 3.5 Sonnet's 75.0 -- the gap is closing." -- xCreate
 
-### Concept 13: The Multi-Agent Cost Reality
+### Concept 17: The Multi-Agent Cost Reality
 
 The most concrete cost warning in the source material comes from Jo Van Eyck ([#024](../../sources/024-jo-van-eyck-agentic-coding-2026.md)): "If you are running the latest Sonnet or Opus models and you are starting to play around with multi-agent stuff, you will need multiple hundreds of dollars."
 
@@ -171,7 +229,7 @@ This connects directly to the infrastructure crisis (Concept 1). Token consumpti
 
 Simon Scrapes echoes the same concern ([#020](../../sources/020-simon-scrapes-agentic-workflow-trends.md)), warning about "token cost multiplication" when running agent teams. The implication for engineering leaders: multi-agent experimentation requires dedicated tooling budgets, not developer self-funding. Treating this as an optional personal expense creates an uneven playing field where only developers with disposable income can gain fluency with the most advanced workflows.
 
-The cost reality also explains why local inference (Concept 12) becomes strategically important -- if multi-agent workflows are the highest-value use case but also the most expensive, they are the natural candidates for migration to local infrastructure once open-source model quality crosses the viability threshold.
+The cost reality also explains why local inference (Concept 16) becomes strategically important -- if multi-agent workflows are the highest-value use case but also the most expensive, they are the natural candidates for migration to local infrastructure once open-source model quality crosses the viability threshold.
 
 > "If you are running the latest Sonnet or Opus models and you are starting to play around with multi-agent stuff, you will need multiple hundreds of dollars." -- Jo Van Eyck
 
@@ -251,7 +309,7 @@ The cost reality also explains why local inference (Concept 12) becomes strategi
 
 5. **Career capability mapping**: List the 10 tasks that consume most of your working time. For each, estimate (a) the current METR autonomous capability threshold relative to that task, (b) how many months until autonomous capability likely crosses that threshold, and (c) what judgment or relationship component of the task would persist. Use this to identify your highest-priority areas for career development.
 
-6. **Enterprise AI strategy brief**: Write a 1-page strategy document for a hypothetical CTO addressing: current compute constraints and their timeline, recommended provider diversification approach, infrastructure investments needed to capture AI productivity gains, and the security posture required for the skills ecosystem. Synthesize across all seven sources in this module.
+6. **Enterprise AI strategy brief**: Write a 1-page strategy document for a hypothetical CTO addressing: current compute constraints and their timeline, recommended provider diversification approach, infrastructure investments needed to capture AI productivity gains, and the security posture required for the skills ecosystem. Synthesize across all sources in this module.
 
 ## Source Material
 
@@ -267,6 +325,12 @@ The cost reality also explains why local inference (Concept 12) becomes strategi
 | [022: Developers are forced to use AI](../../sources/022-traversy-media-forced-ai.md) | Brad Traversy (Traversy Media) | Forced adoption dynamics, quantity over quality, developer identity crisis, craft devaluation |
 | [023: GLM-5 Local AI Review](../../sources/023-xcreate-glm5-review.md) | xCreate | Local inference economics, MLA 33x memory optimization, MIT licensing, Mac Studio viability |
 | [024: Agentic coding in 2026](../../sources/024-jo-van-eyck-agentic-coding-2026.md) | Jo Van Eyck | Multi-agent cost reality, "hundreds of dollars" per project, enterprise key guidance |
+| [032: OpenClaw: 160,000 Developers](../../sources/032-nate-b-jones-openclaw.md) | Nate B Jones | Specification quality problem, 70/30 human-agent split, 50% ungoverned agents, Gartner 40% cancellation prediction |
+| [033: Why CEOs Are Getting AI Wrong](../../sources/033-prof-g-ethan-mollick-ai-wrong.md) | Prof G / Ethan Mollick | Hidden 50% AI adoption, efficiency vs capability expansion, apprenticeship crisis, "leadership + lab + crowd" model |
+| [034: Hater Season: Cal Newport on AI Reporting](../../sources/034-better-offline-cal-newport.md) | Better Offline / Cal Newport | AI economics revenue question ($30-60B/year compute), pre-training plateau, training cost structure |
+| [035: Engineers are becoming sorcerers](../../sources/035-lennys-podcast-openai-sherwin-wu.md) | Lenny's Podcast / Sherwin Wu (OpenAI) | Tiger teams, explosion of small companies, 95% Codex usage at OpenAI, build for 80% capability today |
+| [036: Did AI Just Kill Software?](../../sources/036-prof-g-ai-kill-software.md) | Prof G Markets (Scott Galloway) | Enterprise switching costs as moat, margin compression not extinction, Anthropic Super Bowl ad, Anthropic vs OpenAI |
+| [037: Google Goes All-In on the AI Arms Race](../../sources/037-prof-g-google-ai-arms-race.md) | Prof G Markets (Scott Galloway) | $660B combined 2026 capex, winner-take-most dynamics, memory chip shortage, 80%+ Americans concerned about AI |
 
 ## Further Reading
 
