@@ -2,7 +2,7 @@
 name: ingest
 description: "Full pipeline orchestrator — transcribe, synthesize, and index a source in one step. Accepts YouTube URLs, article URLs, or 'scan' to discover new content."
 allowed-tools: Bash, Read, Write, Edit, Glob, Grep, WebFetch, WebSearch, mcp__playwright__browser_navigate, mcp__playwright__browser_snapshot, mcp__playwright__browser_click, mcp__playwright__browser_evaluate, mcp__playwright__browser_wait_for, mcp__playwright__browser_close, mcp__playwright__browser_take_screenshot, mcp__playwright__browser_press_key
-argument-hint: "<youtube-url | article-url | scan>"
+argument-hint: "<youtube-url | article-url | scan | url1 url2 ...>"
 ---
 
 # Ingest
@@ -99,9 +99,41 @@ For each confirmed URL, run Mode A (YouTube) or Mode B (article) sequentially.
 - **WebFetch fails for article**: Report the error, skip the item
 - **Source ID conflict**: Re-check `sources/README.md` before each write to avoid overwrites
 
+## Mode D: Batch/Playlist (`/ingest <url1> <url2> ...` or `/ingest <playlist-url>`)
+
+### Step 1: Download all VTT files
+
+For playlists or multiple URLs, use yt-dlp to download VTT files in bulk:
+```bash
+yt-dlp --write-auto-sub --sub-lang en --skip-download -o "sources/_drafts/NNN-vtt" <url>
+```
+
+Assign sequential source IDs starting from the next available in `sources/README.md`.
+
+### Step 2: Convert VTTs to raw transcripts
+
+Can be parallelized — one Task agent per VTT file. Each agent reads the VTT and writes a clean `sources/_drafts/NNN-raw-transcript.md`.
+
+### Step 3: Synthesize all sources
+
+Parallelizable — one Task agent per source. Each reads its raw transcript, the template, and REFERENCE.md, then writes the source note and updates `sources/README.md`.
+
+**Watch for conflicts**: Multiple agents writing to `sources/README.md` simultaneously can cause edit failures. If this happens, re-read and retry after other agents complete.
+
+### Step 4: Post-ingest updates
+
+After all sources are synthesized:
+1. **Curriculum**: Update relevant modules (01-06) with new source content
+2. **Synthesis**: Create a cross-source synthesis doc if 4+ sources share a theme
+3. **Briefing**: Create or update the daily briefing for today's date
+4. **Indexes**: Verify all README indexes are current
+
+These can run as 3 parallel Task agents (curriculum, synthesis, briefing).
+
 ## Notes
 
-- Process YouTube videos **sequentially** to avoid rate limiting from Playwright automation
+- **yt-dlp is the preferred transcript method** — faster and more reliable than Playwright. Use Playwright only as fallback.
+- Process YouTube videos **sequentially** for Playwright extraction to avoid rate limiting
 - Articles can be processed without Playwright — they use WebFetch directly
-- For batch processing (Mode C), all transcripts are extracted first, then synthesis runs for each
+- For batch processing, download all VTTs first, then parallelize synthesis
 - The `/ingest` skill combines `/youtube-transcriber` + `/synthesize-source` into one flow — you can still run them separately if needed

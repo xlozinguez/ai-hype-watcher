@@ -46,13 +46,14 @@ Read `sources/README.md` to check if any of the gathered content overlaps with e
 ### Step 5: Synthesize the briefing
 
 Write a briefing covering:
-- **Headlines**: 3-5 most significant findings
-- **Details**: 1-2 paragraph synthesis for each headline item
-- **Connections**: How today's findings relate to existing sources and curriculum themes
+- **Headlines**: 3-5 most significant findings (tag each with `[critical]`, `[tools]`, `[economics]`, `[patterns]`, `[security]`, `[research]`, `[ecosystem]`)
+- **Details**: 1-2 paragraph synthesis for each headline item. Reference source IDs with links (e.g., `[038](../sources/038-interface-studies-prompt-interface.md)`)
+- **Also Ingested**: Brief 2-3 sentence summaries for sources that don't warrant full detail sections
+- **Connections to Existing Sources**: Pairwise connections between new and existing sources (e.g., `038 ↔ [011: Context Engineering]`). Explain what each connection reveals.
 - **Action Items**: Anything that warrants a new source note, curriculum update, or further investigation
   - Check for recent `/scan-channels` results or run a lightweight RSS check on high-priority channels
   - Surface any undiscovered content with ready-to-run `/ingest` commands
-- **Sources**: Links to all referenced content
+  - **Synthesis opportunities**: If 4+ sources cluster around a theme, suggest a synthesis doc
 
 ### Step 6: Write the briefing file
 

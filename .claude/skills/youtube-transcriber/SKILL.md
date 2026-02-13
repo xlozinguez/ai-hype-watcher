@@ -40,7 +40,23 @@ For additional metadata (date, duration), use WebSearch:
 "<video title>" "<channel name>" youtube published duration
 ```
 
-### Step 4: Extract transcript via Playwright
+### Step 4: Extract transcript via yt-dlp (preferred)
+
+Download the auto-generated VTT subtitle file:
+```bash
+yt-dlp --write-auto-sub --sub-lang en --skip-download -o "sources/_drafts/NNN-vtt" <youtube-url>
+```
+
+This creates `sources/_drafts/NNN-vtt.en.vtt`. Convert the VTT to raw transcript markdown:
+- Strip VTT headers and metadata lines
+- Merge consecutive duplicate lines (VTT repeats text across overlapping cue boundaries)
+- Convert VTT timestamps (`HH:MM:SS.mmm`) to `[MM:SS]` format
+- Insert a timestamp marker every ~30 seconds (not every line)
+- Produce clean, readable paragraphs between timestamps
+
+### Step 4b: Fallback — Extract transcript via Playwright
+
+If yt-dlp fails (no auto-captions available), use Playwright browser automation:
 
 **Navigate to the video page:**
 1. `browser_navigate` → the YouTube video URL
@@ -110,11 +126,13 @@ Print a summary:
 
 ## Fallback Handling
 
-If "Show transcript" button is NOT found:
+If yt-dlp returns no subtitles:
+- Fall back to Playwright extraction (Step 4b above)
+
+If Playwright "Show transcript" button is also NOT found:
 - Report that the video may not have captions available
 - Suggest manual alternatives:
   - Check if the video has community-contributed captions
-  - Try `yt-dlp --write-auto-sub --sub-lang en --skip-download <url>`
   - Use [youtubetranscript.com](https://youtubetranscript.com)
 
 If transcript segments return empty:

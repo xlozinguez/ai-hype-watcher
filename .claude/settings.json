@@ -4,6 +4,10 @@
       "Bash(git *)",
       "Bash(gh *)",
       "Bash(curl *)",
+      "Bash(yt-dlp *)",
+      "Bash(ls *)",
+      "Bash(wc *)",
+      "Bash(mkdir *)",
       "WebFetch",
       "WebSearch",
       "mcp__playwright__browser_navigate",
@@ -14,7 +18,9 @@
       "mcp__playwright__browser_close",
       "mcp__playwright__browser_take_screenshot",
       "mcp__playwright__browser_press_key",
-      "mcp__playwright__browser_tabs"
+      "mcp__playwright__browser_tabs",
+      "mcp__playwright__browser_run_code",
+      "mcp__playwright__browser_type"
     ]
   }
 }
