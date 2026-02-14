@@ -1,0 +1,2048 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.320 --> 00:00:02.710 align:start position:0%
+ 
+Right<00:00:00.640><c> now,</c><00:00:01.040><c> when</c><00:00:01.280><c> your</c><00:00:01.600><c> agent</c><00:00:02.000><c> visits</c><00:00:02.399><c> a</c>
+
+00:00:02.710 --> 00:00:02.720 align:start position:0%
+Right now, when your agent visits a
+ 
+
+00:00:02.720 --> 00:00:05.269 align:start position:0%
+Right now, when your agent visits a
+website,<00:00:03.280><c> it's</c><00:00:03.679><c> basically</c><00:00:04.160><c> a</c><00:00:04.400><c> tourist</c><00:00:04.960><c> who</c>
+
+00:00:05.269 --> 00:00:05.279 align:start position:0%
+website, it's basically a tourist who
+ 
+
+00:00:05.279 --> 00:00:08.070 align:start position:0%
+website, it's basically a tourist who
+doesn't<00:00:05.759><c> speak</c><00:00:06.000><c> the</c><00:00:06.319><c> language</c><00:00:06.799><c> of</c><00:00:07.040><c> that</c><00:00:07.359><c> site.</c>
+
+00:00:08.070 --> 00:00:08.080 align:start position:0%
+doesn't speak the language of that site.
+ 
+
+00:00:08.080 --> 00:00:09.669 align:start position:0%
+doesn't speak the language of that site.
+And<00:00:08.240><c> this</c><00:00:08.480><c> is</c><00:00:08.559><c> the</c><00:00:08.800><c> same</c><00:00:09.040><c> whether</c><00:00:09.360><c> you're</c>
+
+00:00:09.669 --> 00:00:09.679 align:start position:0%
+And this is the same whether you're
+ 
+
+00:00:09.679 --> 00:00:12.629 align:start position:0%
+And this is the same whether you're
+building<00:00:10.160><c> lang</c><00:00:10.559><c> chain</c><00:00:10.960><c> agents,</c><00:00:11.759><c> claude</c><00:00:12.240><c> code</c>
+
+00:00:12.629 --> 00:00:12.639 align:start position:0%
+building lang chain agents, claude code
+ 
+
+00:00:12.639 --> 00:00:15.350 align:start position:0%
+building lang chain agents, claude code
+agents,<00:00:13.599><c> or</c><00:00:13.840><c> even</c><00:00:14.080><c> new</c><00:00:14.400><c> things</c><00:00:14.639><c> like</c><00:00:14.960><c> open</c>
+
+00:00:15.350 --> 00:00:15.360 align:start position:0%
+agents, or even new things like open
+ 
+
+00:00:15.360 --> 00:00:17.990 align:start position:0%
+agents, or even new things like open
+core.<00:00:16.080><c> Basically,</c><00:00:16.480><c> the</c><00:00:16.720><c> agent</c><00:00:17.119><c> is</c><00:00:17.520><c> guessing</c>
+
+00:00:17.990 --> 00:00:18.000 align:start position:0%
+core. Basically, the agent is guessing
+ 
+
+00:00:18.000 --> 00:00:20.550 align:start position:0%
+core. Basically, the agent is guessing
+which<00:00:18.320><c> buttons</c><00:00:18.800><c> to</c><00:00:19.119><c> press.</c><00:00:19.680><c> It's</c><00:00:19.920><c> scraping</c>
+
+00:00:20.550 --> 00:00:20.560 align:start position:0%
+which buttons to press. It's scraping
+ 
+
+00:00:20.560 --> 00:00:23.590 align:start position:0%
+which buttons to press. It's scraping
+HTML,<00:00:21.439><c> perhaps</c><00:00:21.840><c> using</c><00:00:22.320><c> screenshots.</c><00:00:23.279><c> Now,</c><00:00:23.439><c> if</c>
+
+00:00:23.590 --> 00:00:23.600 align:start position:0%
+HTML, perhaps using screenshots. Now, if
+ 
+
+00:00:23.600 --> 00:00:25.109 align:start position:0%
+HTML, perhaps using screenshots. Now, if
+you've<00:00:23.760><c> been</c><00:00:23.920><c> building</c><00:00:24.240><c> agents</c><00:00:24.560><c> for</c><00:00:24.720><c> a</c><00:00:24.880><c> while,</c>
+
+00:00:25.109 --> 00:00:25.119 align:start position:0%
+you've been building agents for a while,
+ 
+
+00:00:25.119 --> 00:00:28.150 align:start position:0%
+you've been building agents for a while,
+you<00:00:25.439><c> know</c><00:00:25.680><c> exactly</c><00:00:26.240><c> how</c><00:00:26.560><c> painful</c><00:00:27.039><c> that</c><00:00:27.439><c> is.</c>
+
+00:00:28.150 --> 00:00:28.160 align:start position:0%
+you know exactly how painful that is.
+ 
+
+00:00:28.160 --> 00:00:29.750 align:start position:0%
+you know exactly how painful that is.
+Well,<00:00:28.400><c> earlier</c><00:00:28.720><c> this</c><00:00:28.960><c> week,</c><00:00:29.199><c> the</c><00:00:29.439><c> Google</c>
+
+00:00:29.750 --> 00:00:29.760 align:start position:0%
+Well, earlier this week, the Google
+ 
+
+00:00:29.760 --> 00:00:31.750 align:start position:0%
+Well, earlier this week, the Google
+Chrome<00:00:30.080><c> team</c><00:00:30.400><c> has</c><00:00:30.640><c> shipped</c><00:00:30.960><c> an</c><00:00:31.119><c> early</c><00:00:31.439><c> preview</c>
+
+00:00:31.750 --> 00:00:31.760 align:start position:0%
+Chrome team has shipped an early preview
+ 
+
+00:00:31.760 --> 00:00:34.389 align:start position:0%
+Chrome team has shipped an early preview
+of<00:00:32.000><c> WebM</c><00:00:32.480><c> MCP.</c><00:00:33.440><c> This</c><00:00:33.600><c> is</c><00:00:33.760><c> a</c><00:00:34.000><c> whole</c><00:00:34.160><c> new</c>
+
+00:00:34.389 --> 00:00:34.399 align:start position:0%
+of WebM MCP. This is a whole new
+ 
+
+00:00:34.399 --> 00:00:37.270 align:start position:0%
+of WebM MCP. This is a whole new
+standard<00:00:34.880><c> that</c><00:00:35.200><c> lets</c><00:00:35.520><c> any</c><00:00:35.920><c> website</c><00:00:36.719><c> expose</c>
+
+00:00:37.270 --> 00:00:37.280 align:start position:0%
+standard that lets any website expose
+ 
+
+00:00:37.280 --> 00:00:40.470 align:start position:0%
+standard that lets any website expose
+structured<00:00:37.760><c> tools</c><00:00:38.239><c> directly</c><00:00:38.719><c> to</c><00:00:38.960><c> AI</c><00:00:39.440><c> agents.</c>
+
+00:00:40.470 --> 00:00:40.480 align:start position:0%
+structured tools directly to AI agents.
+ 
+
+00:00:40.480 --> 00:00:42.869 align:start position:0%
+structured tools directly to AI agents.
+No<00:00:40.719><c> more</c><00:00:40.960><c> need</c><00:00:41.200><c> for</c><00:00:41.520><c> scraping.</c><00:00:42.320><c> No</c><00:00:42.480><c> more</c><00:00:42.719><c> need</c>
+
+00:00:42.869 --> 00:00:42.879 align:start position:0%
+No more need for scraping. No more need
+ 
+
+00:00:42.879 --> 00:00:45.910 align:start position:0%
+No more need for scraping. No more need
+for<00:00:43.200><c> thousands</c><00:00:43.760><c> of</c><00:00:44.000><c> screenshots.</c><00:00:45.200><c> Your</c><00:00:45.440><c> agent</c>
+
+00:00:45.910 --> 00:00:45.920 align:start position:0%
+for thousands of screenshots. Your agent
+ 
+
+00:00:45.920 --> 00:00:48.229 align:start position:0%
+for thousands of screenshots. Your agent
+just<00:00:46.160><c> calls</c><00:00:46.640><c> functions.</c><00:00:47.440><c> In</c><00:00:47.680><c> this</c><00:00:47.840><c> video,</c><00:00:48.079><c> I'm</c>
+
+00:00:48.229 --> 00:00:48.239 align:start position:0%
+just calls functions. In this video, I'm
+ 
+
+00:00:48.239 --> 00:00:50.790 align:start position:0%
+just calls functions. In this video, I'm
+going<00:00:48.320><c> to</c><00:00:48.480><c> talk</c><00:00:48.640><c> about</c><00:00:48.960><c> exactly</c><00:00:49.520><c> how</c><00:00:49.840><c> WebMCP</c>
+
+00:00:50.790 --> 00:00:50.800 align:start position:0%
+going to talk about exactly how WebMCP
+ 
+
+00:00:50.800 --> 00:00:54.150 align:start position:0%
+going to talk about exactly how WebMCP
+works,<00:00:51.520><c> the</c><00:00:51.760><c> two</c><00:00:52.000><c> different</c><00:00:52.320><c> APIs,</c><00:00:53.680><c> why</c><00:00:53.920><c> this</c>
+
+00:00:54.150 --> 00:00:54.160 align:start position:0%
+works, the two different APIs, why this
+ 
+
+00:00:54.160 --> 00:00:56.709 align:start position:0%
+works, the two different APIs, why this
+is<00:00:54.399><c> set</c><00:00:54.640><c> up</c><00:00:54.800><c> to</c><00:00:55.039><c> actually</c><00:00:55.440><c> cut</c><00:00:55.840><c> token</c><00:00:56.239><c> costs,</c>
+
+00:00:56.709 --> 00:00:56.719 align:start position:0%
+is set up to actually cut token costs,
+ 
+
+00:00:56.719 --> 00:00:58.790 align:start position:0%
+is set up to actually cut token costs,
+and<00:00:56.960><c> perhaps</c><00:00:57.280><c> some</c><00:00:57.440><c> of</c><00:00:57.520><c> the</c><00:00:57.760><c> problems</c><00:00:58.480><c> that</c>
+
+00:00:58.790 --> 00:00:58.800 align:start position:0%
+and perhaps some of the problems that
+ 
+
+00:00:58.800 --> 00:01:00.470 align:start position:0%
+and perhaps some of the problems that
+this<00:00:59.120><c> solves</c><00:00:59.440><c> that</c><00:00:59.760><c> people</c><00:00:59.920><c> really</c><00:01:00.239><c> haven't</c>
+
+00:01:00.470 --> 00:01:00.480 align:start position:0%
+this solves that people really haven't
+ 
+
+00:01:00.480 --> 00:01:02.549 align:start position:0%
+this solves that people really haven't
+even<00:01:00.719><c> been</c><00:01:00.960><c> talking</c><00:01:01.280><c> about</c><00:01:01.600><c> yet.</c><00:01:02.160><c> So,</c><00:01:02.320><c> if</c>
+
+00:01:02.549 --> 00:01:02.559 align:start position:0%
+even been talking about yet. So, if
+ 
+
+00:01:02.559 --> 00:01:04.549 align:start position:0%
+even been talking about yet. So, if
+you're<00:01:02.800><c> building</c><00:01:03.199><c> AI</c><00:01:03.600><c> agents</c><00:01:04.080><c> or</c><00:01:04.320><c> you're</c>
+
+00:01:04.549 --> 00:01:04.559 align:start position:0%
+you're building AI agents or you're
+ 
+
+00:01:04.559 --> 00:01:07.030 align:start position:0%
+you're building AI agents or you're
+building<00:01:05.040><c> websites</c><00:01:05.600><c> and</c><00:01:05.920><c> products</c><00:01:06.479><c> that</c><00:01:06.799><c> you</c>
+
+00:01:07.030 --> 00:01:07.040 align:start position:0%
+building websites and products that you
+ 
+
+00:01:07.040 --> 00:01:09.590 align:start position:0%
+building websites and products that you
+want<00:01:07.280><c> agents</c><00:01:07.760><c> to</c><00:01:08.000><c> use,</c><00:01:08.799><c> this</c><00:01:09.040><c> literally</c><00:01:09.439><c> could</c>
+
+00:01:09.590 --> 00:01:09.600 align:start position:0%
+want agents to use, this literally could
+ 
+
+00:01:09.600 --> 00:01:11.590 align:start position:0%
+want agents to use, this literally could
+be<00:01:09.760><c> the</c><00:01:10.000><c> most</c><00:01:10.159><c> important</c><00:01:10.560><c> thing</c><00:01:10.720><c> to</c><00:01:11.040><c> land</c><00:01:11.280><c> in</c>
+
+00:01:11.590 --> 00:01:11.600 align:start position:0%
+be the most important thing to land in
+ 
+
+00:01:11.600 --> 00:01:14.230 align:start position:0%
+be the most important thing to land in
+Chrome<00:01:12.080><c> in</c><00:01:12.400><c> years.</c><00:01:13.280><c> So,</c><00:01:13.520><c> let</c><00:01:13.680><c> me</c><00:01:13.840><c> break</c><00:01:14.000><c> it</c>
+
+00:01:14.230 --> 00:01:14.240 align:start position:0%
+Chrome in years. So, let me break it
+ 
+
+00:01:14.240 --> 00:01:16.230 align:start position:0%
+Chrome in years. So, let me break it
+down.<00:01:14.560><c> So,</c><00:01:14.799><c> it's</c><00:01:15.040><c> been</c><00:01:15.200><c> pretty</c><00:01:15.520><c> clear</c><00:01:15.760><c> for</c><00:01:16.000><c> a</c>
+
+00:01:16.230 --> 00:01:16.240 align:start position:0%
+down. So, it's been pretty clear for a
+ 
+
+00:01:16.240 --> 00:01:17.990 align:start position:0%
+down. So, it's been pretty clear for a
+while<00:01:16.400><c> that</c><00:01:16.720><c> one</c><00:01:16.960><c> of</c><00:01:16.960><c> the</c><00:01:17.200><c> biggest</c><00:01:17.439><c> things</c><00:01:17.680><c> you</c>
+
+00:01:17.990 --> 00:01:18.000 align:start position:0%
+while that one of the biggest things you
+ 
+
+00:01:18.000 --> 00:01:20.789 align:start position:0%
+while that one of the biggest things you
+want<00:01:18.240><c> agents</c><00:01:18.720><c> to</c><00:01:19.040><c> do</c><00:01:19.360><c> is</c><00:01:19.600><c> to</c><00:01:19.920><c> interact</c><00:01:20.479><c> with</c>
+
+00:01:20.789 --> 00:01:20.799 align:start position:0%
+want agents to do is to interact with
+ 
+
+00:01:20.799 --> 00:01:23.030 align:start position:0%
+want agents to do is to interact with
+the<00:01:21.040><c> web.</c><00:01:21.520><c> And</c><00:01:21.680><c> we're</c><00:01:21.920><c> actually</c><00:01:22.320><c> seeing</c><00:01:22.640><c> this</c>
+
+00:01:23.030 --> 00:01:23.040 align:start position:0%
+the web. And we're actually seeing this
+ 
+
+00:01:23.040 --> 00:01:25.990 align:start position:0%
+the web. And we're actually seeing this
+a<00:01:23.360><c> lot</c><00:01:23.680><c> in</c><00:01:24.000><c> the</c><00:01:24.159><c> way</c><00:01:24.320><c> that</c><00:01:24.640><c> people</c><00:01:24.960><c> use</c><00:01:25.520><c> Open</c>
+
+00:01:25.990 --> 00:01:26.000 align:start position:0%
+a lot in the way that people use Open
+ 
+
+00:01:26.000 --> 00:01:28.630 align:start position:0%
+a lot in the way that people use Open
+Claw<00:01:26.400><c> to</c><00:01:26.720><c> do</c><00:01:26.960><c> different</c><00:01:27.280><c> kinds</c><00:01:27.600><c> of</c><00:01:27.840><c> research,</c>
+
+00:01:28.630 --> 00:01:28.640 align:start position:0%
+Claw to do different kinds of research,
+ 
+
+00:01:28.640 --> 00:01:31.830 align:start position:0%
+Claw to do different kinds of research,
+to<00:01:28.880><c> go</c><00:01:29.119><c> to</c><00:01:29.600><c> web</c><00:01:29.920><c> pages,</c><00:01:30.479><c> to</c><00:01:30.720><c> download</c><00:01:31.200><c> them,</c><00:01:31.600><c> to</c>
+
+00:01:31.830 --> 00:01:31.840 align:start position:0%
+to go to web pages, to download them, to
+ 
+
+00:01:31.840 --> 00:01:34.390 align:start position:0%
+to go to web pages, to download them, to
+take<00:01:32.079><c> screenshots,</c><00:01:32.960><c> etc.</c><00:01:33.439><c> And</c><00:01:33.600><c> for</c><00:01:33.840><c> far</c><00:01:34.079><c> too</c>
+
+00:01:34.390 --> 00:01:34.400 align:start position:0%
+take screenshots, etc. And for far too
+ 
+
+00:01:34.400 --> 00:01:36.310 align:start position:0%
+take screenshots, etc. And for far too
+long,<00:01:34.880><c> the</c><00:01:35.119><c> sort</c><00:01:35.280><c> of</c><00:01:35.439><c> two</c><00:01:35.680><c> main</c><00:01:35.920><c> ways</c><00:01:36.159><c> that</c>
+
+00:01:36.310 --> 00:01:36.320 align:start position:0%
+long, the sort of two main ways that
+ 
+
+00:01:36.320 --> 00:01:38.630 align:start position:0%
+long, the sort of two main ways that
+people<00:01:36.560><c> have</c><00:01:36.799><c> done</c><00:01:36.960><c> that</c><00:01:37.280><c> is</c><00:01:37.600><c> either</c><00:01:38.240><c> through</c>
+
+00:01:38.630 --> 00:01:38.640 align:start position:0%
+people have done that is either through
+ 
+
+00:01:38.640 --> 00:01:41.510 align:start position:0%
+people have done that is either through
+screenshots<00:01:39.520><c> which</c><00:01:39.759><c> they</c><00:01:40.079><c> pass</c><00:01:40.560><c> into</c><00:01:41.280><c> a</c>
+
+00:01:41.510 --> 00:01:41.520 align:start position:0%
+screenshots which they pass into a
+ 
+
+00:01:41.520 --> 00:01:44.149 align:start position:0%
+screenshots which they pass into a
+multimodal<00:01:42.320><c> model.</c><00:01:43.040><c> And</c><00:01:43.200><c> then</c><00:01:43.360><c> ideally</c><00:01:43.920><c> the</c>
+
+00:01:44.149 --> 00:01:44.159 align:start position:0%
+multimodal model. And then ideally the
+ 
+
+00:01:44.159 --> 00:01:46.149 align:start position:0%
+multimodal model. And then ideally the
+multimodal<00:01:44.799><c> model</c><00:01:45.119><c> can</c><00:01:45.280><c> tell</c><00:01:45.439><c> you</c><00:01:45.680><c> not</c><00:01:45.920><c> only</c>
+
+00:01:46.149 --> 00:01:46.159 align:start position:0%
+multimodal model can tell you not only
+ 
+
+00:01:46.159 --> 00:01:48.389 align:start position:0%
+multimodal model can tell you not only
+what's<00:01:46.479><c> on</c><00:01:46.720><c> the</c><00:01:46.960><c> screenshot</c><00:01:47.600><c> but</c><00:01:47.920><c> also</c><00:01:48.159><c> where</c>
+
+00:01:48.389 --> 00:01:48.399 align:start position:0%
+what's on the screenshot but also where
+ 
+
+00:01:48.399 --> 00:01:51.270 align:start position:0%
+what's on the screenshot but also where
+the<00:01:48.640><c> buttons</c><00:01:49.119><c> are,</c><00:01:49.520><c> where</c><00:01:49.920><c> form</c><00:01:50.399><c> fields</c><00:01:50.880><c> are,</c>
+
+00:01:51.270 --> 00:01:51.280 align:start position:0%
+the buttons are, where form fields are,
+ 
+
+00:01:51.280 --> 00:01:53.190 align:start position:0%
+the buttons are, where form fields are,
+where<00:01:51.520><c> text</c><00:01:51.840><c> fields</c><00:01:52.240><c> are,</c><00:01:52.560><c> all</c><00:01:52.720><c> these</c><00:01:52.960><c> sorts</c>
+
+00:01:53.190 --> 00:01:53.200 align:start position:0%
+where text fields are, all these sorts
+ 
+
+00:01:53.200 --> 00:01:55.190 align:start position:0%
+where text fields are, all these sorts
+of<00:01:53.360><c> things.</c><00:01:54.000><c> The</c><00:01:54.320><c> second</c><00:01:54.560><c> way</c><00:01:54.720><c> that</c><00:01:54.960><c> people</c>
+
+00:01:55.190 --> 00:01:55.200 align:start position:0%
+of things. The second way that people
+ 
+
+00:01:55.200 --> 00:01:57.830 align:start position:0%
+of things. The second way that people
+have<00:01:55.520><c> actually</c><00:01:55.840><c> done</c><00:01:56.159><c> this</c><00:01:56.640><c> is</c><00:01:56.880><c> to</c><00:01:57.200><c> access</c><00:01:57.600><c> the</c>
+
+00:01:57.830 --> 00:01:57.840 align:start position:0%
+have actually done this is to access the
+ 
+
+00:01:57.840 --> 00:02:01.030 align:start position:0%
+have actually done this is to access the
+DOM<00:01:58.399><c> directly</c><00:01:59.439><c> and</c><00:01:59.759><c> access</c><00:02:00.159><c> often</c><00:02:00.560><c> just</c><00:02:00.799><c> the</c>
+
+00:02:01.030 --> 00:02:01.040 align:start position:0%
+DOM directly and access often just the
+ 
+
+00:02:01.040 --> 00:02:03.270 align:start position:0%
+DOM directly and access often just the
+sort<00:02:01.200><c> of</c><00:02:01.280><c> raw</c><00:02:01.600><c> HTML</c><00:02:02.320><c> code</c><00:02:02.640><c> and</c><00:02:02.880><c> perhaps</c>
+
+00:02:03.270 --> 00:02:03.280 align:start position:0%
+sort of raw HTML code and perhaps
+ 
+
+00:02:03.280 --> 00:02:06.709 align:start position:0%
+sort of raw HTML code and perhaps
+JavaScript<00:02:03.920><c> code</c><00:02:04.719><c> to</c><00:02:05.040><c> use</c><00:02:05.360><c> that</c><00:02:05.759><c> as</c><00:02:06.000><c> a</c><00:02:06.240><c> way</c><00:02:06.399><c> to</c>
+
+00:02:06.709 --> 00:02:06.719 align:start position:0%
+JavaScript code to use that as a way to
+ 
+
+00:02:06.719 --> 00:02:08.949 align:start position:0%
+JavaScript code to use that as a way to
+work<00:02:06.960><c> out</c><00:02:07.280><c> what</c><00:02:07.520><c> are</c><00:02:07.680><c> the</c><00:02:07.840><c> elements</c><00:02:08.399><c> on</c><00:02:08.720><c> the</c>
+
+00:02:08.949 --> 00:02:08.959 align:start position:0%
+work out what are the elements on the
+ 
+
+00:02:08.959 --> 00:02:11.430 align:start position:0%
+work out what are the elements on the
+page<00:02:09.200><c> that</c><00:02:09.440><c> are</c><00:02:09.679><c> interactive,</c><00:02:10.800><c> how</c><00:02:11.039><c> would</c><00:02:11.200><c> you</c>
+
+00:02:11.430 --> 00:02:11.440 align:start position:0%
+page that are interactive, how would you
+ 
+
+00:02:11.440 --> 00:02:13.990 align:start position:0%
+page that are interactive, how would you
+interact<00:02:11.840><c> with</c><00:02:12.000><c> them,</c><00:02:12.560><c> etc.</c><00:02:13.040><c> But</c><00:02:13.280><c> really</c><00:02:13.680><c> both</c>
+
+00:02:13.990 --> 00:02:14.000 align:start position:0%
+interact with them, etc. But really both
+ 
+
+00:02:14.000 --> 00:02:16.390 align:start position:0%
+interact with them, etc. But really both
+of<00:02:14.160><c> these</c><00:02:14.640><c> is</c><00:02:14.959><c> like</c><00:02:15.280><c> speaking</c><00:02:15.680><c> a</c><00:02:15.920><c> foreign</c>
+
+00:02:16.390 --> 00:02:16.400 align:start position:0%
+of these is like speaking a foreign
+ 
+
+00:02:16.400 --> 00:02:19.110 align:start position:0%
+of these is like speaking a foreign
+language<00:02:17.040><c> to</c><00:02:17.440><c> the</c><00:02:17.680><c> actual</c><00:02:18.160><c> website,</c><00:02:18.800><c> right?</c>
+
+00:02:19.110 --> 00:02:19.120 align:start position:0%
+language to the actual website, right?
+ 
+
+00:02:19.120 --> 00:02:21.510 align:start position:0%
+language to the actual website, right?
+you're<00:02:19.680><c> having</c><00:02:20.000><c> to</c><00:02:20.160><c> use</c><00:02:20.560><c> huge</c><00:02:20.959><c> amounts</c><00:02:21.280><c> of</c>
+
+00:02:21.510 --> 00:02:21.520 align:start position:0%
+you're having to use huge amounts of
+ 
+
+00:02:21.520 --> 00:02:23.190 align:start position:0%
+you're having to use huge amounts of
+tokens,<00:02:22.239><c> especially</c><00:02:22.560><c> if</c><00:02:22.800><c> you're</c><00:02:22.959><c> sort</c><00:02:23.120><c> of</c>
+
+00:02:23.190 --> 00:02:23.200 align:start position:0%
+tokens, especially if you're sort of
+ 
+
+00:02:23.200 --> 00:02:25.910 align:start position:0%
+tokens, especially if you're sort of
+doing<00:02:23.360><c> the</c><00:02:23.599><c> whole</c><00:02:24.080><c> images</c><00:02:24.879><c> only</c><00:02:25.200><c> route.</c>
+
+00:02:25.910 --> 00:02:25.920 align:start position:0%
+doing the whole images only route.
+ 
+
+00:02:25.920 --> 00:02:27.350 align:start position:0%
+doing the whole images only route.
+You're<00:02:26.160><c> going</c><00:02:26.239><c> to</c><00:02:26.319><c> be</c><00:02:26.400><c> using</c><00:02:26.720><c> thousands</c><00:02:27.200><c> of</c>
+
+00:02:27.350 --> 00:02:27.360 align:start position:0%
+You're going to be using thousands of
+ 
+
+00:02:27.360 --> 00:02:30.790 align:start position:0%
+You're going to be using thousands of
+tokens<00:02:28.319><c> for</c><00:02:28.640><c> each</c><00:02:29.040><c> image</c><00:02:29.440><c> that</c><00:02:29.680><c> you</c><00:02:29.920><c> process.</c>
+
+00:02:30.790 --> 00:02:30.800 align:start position:0%
+tokens for each image that you process.
+ 
+
+00:02:30.800 --> 00:02:32.869 align:start position:0%
+tokens for each image that you process.
+And<00:02:31.040><c> even</c><00:02:31.200><c> if</c><00:02:31.360><c> you</c><00:02:31.440><c> go</c><00:02:31.599><c> the</c><00:02:31.840><c> HTML</c><00:02:32.560><c> route,</c>
+
+00:02:32.869 --> 00:02:32.879 align:start position:0%
+And even if you go the HTML route,
+ 
+
+00:02:32.879 --> 00:02:34.710 align:start position:0%
+And even if you go the HTML route,
+you're<00:02:33.120><c> also</c><00:02:33.440><c> speaking</c><00:02:33.680><c> a</c><00:02:33.920><c> foreign</c><00:02:34.239><c> language</c>
+
+00:02:34.710 --> 00:02:34.720 align:start position:0%
+you're also speaking a foreign language
+ 
+
+00:02:34.720 --> 00:02:36.710 align:start position:0%
+you're also speaking a foreign language
+in<00:02:34.959><c> that</c><00:02:35.120><c> you've</c><00:02:35.360><c> got</c><00:02:35.519><c> to</c><00:02:35.760><c> translate</c><00:02:36.400><c> from</c>
+
+00:02:36.710 --> 00:02:36.720 align:start position:0%
+in that you've got to translate from
+ 
+
+00:02:36.720 --> 00:02:40.070 align:start position:0%
+in that you've got to translate from
+basically<00:02:37.440><c> HTML</c><00:02:38.480><c> to</c><00:02:38.800><c> more</c><00:02:39.120><c> summarized</c><00:02:39.760><c> and</c>
+
+00:02:40.070 --> 00:02:40.080 align:start position:0%
+basically HTML to more summarized and
+ 
+
+00:02:40.080 --> 00:02:43.030 align:start position:0%
+basically HTML to more summarized and
+simplified<00:02:40.879><c> information</c><00:02:41.440><c> for</c><00:02:41.760><c> your</c><00:02:42.000><c> agent</c><00:02:42.879><c> so</c>
+
+00:02:43.030 --> 00:02:43.040 align:start position:0%
+simplified information for your agent so
+ 
+
+00:02:43.040 --> 00:02:45.589 align:start position:0%
+simplified information for your agent so
+that<00:02:43.280><c> it</c><00:02:43.519><c> can</c><00:02:43.760><c> actually</c><00:02:44.160><c> act</c><00:02:44.480><c> on</c><00:02:44.800><c> that.</c><00:02:45.360><c> We</c>
+
+00:02:45.589 --> 00:02:45.599 align:start position:0%
+that it can actually act on that. We
+ 
+
+00:02:45.599 --> 00:02:47.430 align:start position:0%
+that it can actually act on that. We
+don't<00:02:45.760><c> really</c><00:02:46.000><c> care</c><00:02:46.319><c> about</c><00:02:46.640><c> things</c><00:02:47.040><c> like</c>
+
+00:02:47.430 --> 00:02:47.440 align:start position:0%
+don't really care about things like
+ 
+
+00:02:47.440 --> 00:02:51.350 align:start position:0%
+don't really care about things like
+paragraph<00:02:48.319><c> tags</c><00:02:49.120><c> or</c><00:02:49.440><c> different</c><00:02:49.760><c> kinds</c><00:02:50.160><c> of</c><00:02:50.800><c> CSS</c>
+
+00:02:51.350 --> 00:02:51.360 align:start position:0%
+paragraph tags or different kinds of CSS
+ 
+
+00:02:51.360 --> 00:02:53.830 align:start position:0%
+paragraph tags or different kinds of CSS
+for<00:02:51.680><c> making</c><00:02:52.000><c> something</c><00:02:52.480><c> look</c><00:02:52.720><c> good.</c><00:02:53.360><c> Yet</c><00:02:53.599><c> at</c>
+
+00:02:53.830 --> 00:02:53.840 align:start position:0%
+for making something look good. Yet at
+ 
+
+00:02:53.840 --> 00:02:56.229 align:start position:0%
+for making something look good. Yet at
+the<00:02:54.000><c> moment,</c><00:02:54.560><c> a</c><00:02:54.800><c> lot</c><00:02:54.959><c> of</c><00:02:55.040><c> that</c><00:02:55.360><c> is</c><00:02:55.599><c> what</c><00:02:55.840><c> gets</c>
+
+00:02:56.229 --> 00:02:56.239 align:start position:0%
+the moment, a lot of that is what gets
+ 
+
+00:02:56.239 --> 00:02:58.869 align:start position:0%
+the moment, a lot of that is what gets
+used<00:02:56.640><c> for</c><00:02:57.040><c> agents</c><00:02:57.440><c> to</c><00:02:57.599><c> be</c><00:02:57.760><c> able</c><00:02:57.920><c> to</c><00:02:58.080><c> do</c><00:02:58.239><c> this.</c>
+
+00:02:58.869 --> 00:02:58.879 align:start position:0%
+used for agents to be able to do this.
+ 
+
+00:02:58.879 --> 00:03:00.790 align:start position:0%
+used for agents to be able to do this.
+So<00:02:59.120><c> the</c><00:02:59.360><c> idea</c><00:02:59.599><c> here</c><00:02:59.840><c> is</c><00:03:00.160><c> actually</c><00:03:00.480><c> pretty</c>
+
+00:03:00.790 --> 00:03:00.800 align:start position:0%
+So the idea here is actually pretty
+ 
+
+00:03:00.800 --> 00:03:04.630 align:start position:0%
+So the idea here is actually pretty
+simple.<00:03:01.360><c> The</c><00:03:01.599><c> idea</c><00:03:02.239><c> is</c><00:03:02.720><c> make</c><00:03:02.959><c> it</c><00:03:03.440><c> so</c><00:03:03.760><c> that</c><00:03:04.159><c> each</c>
+
+00:03:04.630 --> 00:03:04.640 align:start position:0%
+simple. The idea is make it so that each
+ 
+
+00:03:04.640 --> 00:03:08.470 align:start position:0%
+simple. The idea is make it so that each
+web<00:03:04.959><c> page</c><00:03:05.599><c> can</c><00:03:05.920><c> act</c><00:03:06.239><c> as</c><00:03:06.560><c> an</c><00:03:06.800><c> MCP</c><00:03:07.599><c> and</c><00:03:07.840><c> a</c><00:03:08.080><c> model</c>
+
+00:03:08.470 --> 00:03:08.480 align:start position:0%
+web page can act as an MCP and a model
+ 
+
+00:03:08.480 --> 00:03:11.270 align:start position:0%
+web page can act as an MCP and a model
+can<00:03:08.800><c> call</c><00:03:09.040><c> it</c><00:03:09.599><c> to</c><00:03:09.840><c> get</c><00:03:10.159><c> various</c><00:03:10.720><c> information.</c>
+
+00:03:11.270 --> 00:03:11.280 align:start position:0%
+can call it to get various information.
+ 
+
+00:03:11.280 --> 00:03:13.190 align:start position:0%
+can call it to get various information.
+And<00:03:11.440><c> it's</c><00:03:11.680><c> kind</c><00:03:11.840><c> of</c><00:03:11.920><c> like</c><00:03:12.400><c> the</c><00:03:12.720><c> model's</c><00:03:13.120><c> going</c>
+
+00:03:13.190 --> 00:03:13.200 align:start position:0%
+And it's kind of like the model's going
+ 
+
+00:03:13.200 --> 00:03:15.509 align:start position:0%
+And it's kind of like the model's going
+to<00:03:13.360><c> say</c><00:03:13.440><c> to</c><00:03:13.599><c> the</c><00:03:13.760><c> web</c><00:03:14.000><c> page,</c><00:03:14.640><c> hey,</c><00:03:15.040><c> what's</c><00:03:15.280><c> on</c>
+
+00:03:15.509 --> 00:03:15.519 align:start position:0%
+to say to the web page, hey, what's on
+ 
+
+00:03:15.519 --> 00:03:17.830 align:start position:0%
+to say to the web page, hey, what's on
+this<00:03:15.760><c> page?</c><00:03:16.560><c> Tell</c><00:03:16.720><c> me</c><00:03:16.959><c> what</c><00:03:17.200><c> I</c><00:03:17.360><c> should</c><00:03:17.519><c> be</c><00:03:17.680><c> able</c>
+
+00:03:17.830 --> 00:03:17.840 align:start position:0%
+this page? Tell me what I should be able
+ 
+
+00:03:17.840 --> 00:03:19.589 align:start position:0%
+this page? Tell me what I should be able
+to<00:03:18.080><c> read.</c><00:03:18.480><c> Tell</c><00:03:18.640><c> me</c><00:03:18.800><c> what</c><00:03:18.959><c> I</c><00:03:19.200><c> should</c><00:03:19.280><c> be</c><00:03:19.440><c> able</c>
+
+00:03:19.589 --> 00:03:19.599 align:start position:0%
+to read. Tell me what I should be able
+ 
+
+00:03:19.599 --> 00:03:21.110 align:start position:0%
+to read. Tell me what I should be able
+to<00:03:19.760><c> click.</c><00:03:20.159><c> Tell</c><00:03:20.239><c> me</c><00:03:20.400><c> what</c><00:03:20.560><c> I</c><00:03:20.720><c> should</c><00:03:20.879><c> be</c><00:03:20.959><c> able</c>
+
+00:03:21.110 --> 00:03:21.120 align:start position:0%
+to click. Tell me what I should be able
+ 
+
+00:03:21.120 --> 00:03:23.589 align:start position:0%
+to click. Tell me what I should be able
+to<00:03:21.200><c> fill</c><00:03:21.440><c> in.</c><00:03:21.680><c> And</c><00:03:21.920><c> this</c><00:03:22.159><c> idea</c><00:03:22.480><c> is</c><00:03:22.879><c> not</c><00:03:23.200><c> totally</c>
+
+00:03:23.589 --> 00:03:23.599 align:start position:0%
+to fill in. And this idea is not totally
+ 
+
+00:03:23.599 --> 00:03:26.470 align:start position:0%
+to fill in. And this idea is not totally
+new.<00:03:24.080><c> It's</c><00:03:24.319><c> been</c><00:03:24.480><c> kicking</c><00:03:24.879><c> around</c><00:03:25.440><c> a</c><00:03:25.760><c> lot</c><00:03:26.080><c> last</c>
+
+00:03:26.470 --> 00:03:26.480 align:start position:0%
+new. It's been kicking around a lot last
+ 
+
+00:03:26.480 --> 00:03:29.270 align:start position:0%
+new. It's been kicking around a lot last
+year<00:03:27.120><c> with</c><00:03:27.440><c> both</c><00:03:27.840><c> academic</c><00:03:28.480><c> people</c><00:03:28.879><c> sort</c><00:03:29.120><c> of</c>
+
+00:03:29.270 --> 00:03:29.280 align:start position:0%
+year with both academic people sort of
+ 
+
+00:03:29.280 --> 00:03:32.070 align:start position:0%
+year with both academic people sort of
+proposing<00:03:30.000><c> papers</c><00:03:30.640><c> around</c><00:03:31.040><c> this.</c><00:03:31.680><c> But</c><00:03:31.920><c> also</c>
+
+00:03:32.070 --> 00:03:32.080 align:start position:0%
+proposing papers around this. But also
+ 
+
+00:03:32.080 --> 00:03:33.750 align:start position:0%
+proposing papers around this. But also
+in<00:03:32.319><c> the</c><00:03:32.400><c> second</c><00:03:32.640><c> half</c><00:03:32.799><c> of</c><00:03:33.040><c> last</c><00:03:33.280><c> year,</c>
+
+00:03:33.750 --> 00:03:33.760 align:start position:0%
+in the second half of last year,
+ 
+
+00:03:33.760 --> 00:03:36.309 align:start position:0%
+in the second half of last year,
+Microsoft<00:03:34.400><c> and</c><00:03:34.720><c> Google</c><00:03:35.200><c> got</c><00:03:35.440><c> together</c><00:03:36.000><c> and</c>
+
+00:03:36.309 --> 00:03:36.319 align:start position:0%
+Microsoft and Google got together and
+ 
+
+00:03:36.319 --> 00:03:38.710 align:start position:0%
+Microsoft and Google got together and
+actually<00:03:36.640><c> proposed</c><00:03:37.200><c> a</c><00:03:37.519><c> whole</c><00:03:37.760><c> idea</c><00:03:38.159><c> of</c><00:03:38.400><c> how</c>
+
+00:03:38.710 --> 00:03:38.720 align:start position:0%
+actually proposed a whole idea of how
+ 
+
+00:03:38.720 --> 00:03:40.869 align:start position:0%
+actually proposed a whole idea of how
+you<00:03:38.879><c> would</c><00:03:39.120><c> actually</c><00:03:39.519><c> treat</c><00:03:39.840><c> this,</c><00:03:40.480><c> how</c><00:03:40.720><c> you</c>
+
+00:03:40.869 --> 00:03:40.879 align:start position:0%
+you would actually treat this, how you
+ 
+
+00:03:40.879 --> 00:03:43.190 align:start position:0%
+you would actually treat this, how you
+could<00:03:41.120><c> actually</c><00:03:41.519><c> build</c><00:03:41.840><c> something</c><00:03:42.159><c> like</c><00:03:42.480><c> this</c>
+
+00:03:43.190 --> 00:03:43.200 align:start position:0%
+could actually build something like this
+ 
+
+00:03:43.200 --> 00:03:45.430 align:start position:0%
+could actually build something like this
+so<00:03:43.440><c> that</c><00:03:43.599><c> it</c><00:03:43.840><c> would</c><00:03:44.000><c> give</c><00:03:44.319><c> agents</c><00:03:44.879><c> a</c><00:03:45.200><c> much</c>
+
+00:03:45.430 --> 00:03:45.440 align:start position:0%
+so that it would give agents a much
+ 
+
+00:03:45.440 --> 00:03:48.070 align:start position:0%
+so that it would give agents a much
+simpler<00:03:45.920><c> way</c><00:03:46.400><c> to</c><00:03:46.640><c> be</c><00:03:46.799><c> able</c><00:03:47.040><c> to</c><00:03:47.280><c> interact</c><00:03:47.760><c> with</c>
+
+00:03:48.070 --> 00:03:48.080 align:start position:0%
+simpler way to be able to interact with
+ 
+
+00:03:48.080 --> 00:03:50.949 align:start position:0%
+simpler way to be able to interact with
+websites<00:03:49.280><c> but</c><00:03:49.680><c> not</c><00:03:49.920><c> have</c><00:03:50.159><c> to</c><00:03:50.239><c> totally</c><00:03:50.640><c> go</c><00:03:50.799><c> the</c>
+
+00:03:50.949 --> 00:03:50.959 align:start position:0%
+websites but not have to totally go the
+ 
+
+00:03:50.959 --> 00:03:53.030 align:start position:0%
+websites but not have to totally go the
+route<00:03:51.120><c> of</c><00:03:51.280><c> an</c><00:03:51.440><c> API</c><00:03:51.920><c> where</c><00:03:52.159><c> everything</c><00:03:52.720><c> has</c><00:03:52.879><c> to</c>
+
+00:03:53.030 --> 00:03:53.040 align:start position:0%
+route of an API where everything has to
+ 
+
+00:03:53.040 --> 00:03:56.070 align:start position:0%
+route of an API where everything has to
+be<00:03:53.280><c> an</c><00:03:53.519><c> API</c><00:03:54.000><c> call</c><00:03:54.239><c> to</c><00:03:54.480><c> a</c><00:03:54.640><c> backend.</c><00:03:55.599><c> This</c><00:03:55.840><c> would</c>
+
+00:03:56.070 --> 00:03:56.080 align:start position:0%
+be an API call to a backend. This would
+ 
+
+00:03:56.080 --> 00:03:57.910 align:start position:0%
+be an API call to a backend. This would
+still<00:03:56.239><c> allow</c><00:03:56.640><c> normal</c><00:03:57.040><c> users</c><00:03:57.360><c> to</c><00:03:57.599><c> be</c><00:03:57.680><c> able</c><00:03:57.840><c> to</c>
+
+00:03:57.910 --> 00:03:57.920 align:start position:0%
+still allow normal users to be able to
+ 
+
+00:03:57.920 --> 00:03:59.910 align:start position:0%
+still allow normal users to be able to
+interact<00:03:58.319><c> with</c><00:03:58.480><c> the</c><00:03:58.720><c> websites.</c><00:03:59.519><c> it</c><00:03:59.760><c> would</c>
+
+00:03:59.910 --> 00:03:59.920 align:start position:0%
+interact with the websites. it would
+ 
+
+00:03:59.920 --> 00:04:01.990 align:start position:0%
+interact with the websites. it would
+just<00:04:00.080><c> make</c><00:04:00.239><c> it</c><00:04:00.480><c> more</c><00:04:00.799><c> efficient</c><00:04:01.200><c> for</c><00:04:01.599><c> agents</c>
+
+00:04:01.990 --> 00:04:02.000 align:start position:0%
+just make it more efficient for agents
+ 
+
+00:04:02.000 --> 00:04:03.910 align:start position:0%
+just make it more efficient for agents
+to<00:04:02.239><c> interact</c><00:04:02.720><c> as</c><00:04:02.959><c> well.</c><00:04:03.360><c> So</c><00:04:03.599><c> some</c><00:04:03.680><c> of</c><00:04:03.760><c> the</c>
+
+00:04:03.910 --> 00:04:03.920 align:start position:0%
+to interact as well. So some of the
+ 
+
+00:04:03.920 --> 00:04:05.429 align:start position:0%
+to interact as well. So some of the
+things<00:04:04.000><c> that</c><00:04:04.159><c> were</c><00:04:04.319><c> being</c><00:04:04.480><c> proposed</c><00:04:04.959><c> for</c><00:04:05.200><c> this</c>
+
+00:04:05.429 --> 00:04:05.439 align:start position:0%
+things that were being proposed for this
+ 
+
+00:04:05.439 --> 00:04:07.670 align:start position:0%
+things that were being proposed for this
+sort<00:04:05.599><c> of</c><00:04:05.760><c> thing</c><00:04:05.920><c> last</c><00:04:06.239><c> year</c><00:04:06.799><c> in</c><00:04:07.120><c> Chrome</c><00:04:07.439><c> were</c>
+
+00:04:07.670 --> 00:04:07.680 align:start position:0%
+sort of thing last year in Chrome were
+ 
+
+00:04:07.680 --> 00:04:09.750 align:start position:0%
+sort of thing last year in Chrome were
+things<00:04:07.840><c> like</c><00:04:08.159><c> script</c><00:04:08.560><c> tools</c><00:04:09.040><c> in</c><00:04:09.280><c> Microsoft</c>
+
+00:04:09.750 --> 00:04:09.760 align:start position:0%
+things like script tools in Microsoft
+ 
+
+00:04:09.760 --> 00:04:11.270 align:start position:0%
+things like script tools in Microsoft
+Edge.<00:04:10.080><c> I</c><00:04:10.239><c> think</c><00:04:10.319><c> they</c><00:04:10.560><c> had</c><00:04:10.720><c> something</c><00:04:10.959><c> like</c>
+
+00:04:11.270 --> 00:04:11.280 align:start position:0%
+Edge. I think they had something like
+ 
+
+00:04:11.280 --> 00:04:13.910 align:start position:0%
+Edge. I think they had something like
+web<00:04:11.599><c> model</c><00:04:12.000><c> context.</c><00:04:12.959><c> But</c><00:04:13.120><c> around</c><00:04:13.360><c> the</c><00:04:13.599><c> end</c><00:04:13.760><c> of</c>
+
+00:04:13.910 --> 00:04:13.920 align:start position:0%
+web model context. But around the end of
+ 
+
+00:04:13.920 --> 00:04:16.069 align:start position:0%
+web model context. But around the end of
+the<00:04:14.080><c> third</c><00:04:14.319><c> quarter</c><00:04:14.720><c> last</c><00:04:15.040><c> year,</c><00:04:15.599><c> Microsoft</c>
+
+00:04:16.069 --> 00:04:16.079 align:start position:0%
+the third quarter last year, Microsoft
+ 
+
+00:04:16.079 --> 00:04:18.310 align:start position:0%
+the third quarter last year, Microsoft
+and<00:04:16.400><c> Google</c><00:04:16.799><c> got</c><00:04:17.040><c> together</c><00:04:17.359><c> to</c><00:04:17.680><c> start</c><00:04:17.919><c> putting</c>
+
+00:04:18.310 --> 00:04:18.320 align:start position:0%
+and Google got together to start putting
+ 
+
+00:04:18.320 --> 00:04:20.789 align:start position:0%
+and Google got together to start putting
+together<00:04:18.799><c> this</c><00:04:19.120><c> sort</c><00:04:19.280><c> of</c><00:04:19.600><c> spec</c><00:04:20.000><c> of</c><00:04:20.239><c> how</c><00:04:20.560><c> this</c>
+
+00:04:20.789 --> 00:04:20.799 align:start position:0%
+together this sort of spec of how this
+ 
+
+00:04:20.799 --> 00:04:22.230 align:start position:0%
+together this sort of spec of how this
+would<00:04:20.959><c> actually</c><00:04:21.280><c> work.</c><00:04:21.519><c> Now</c><00:04:21.759><c> if</c><00:04:21.919><c> you</c><00:04:22.079><c> think</c>
+
+00:04:22.230 --> 00:04:22.240 align:start position:0%
+would actually work. Now if you think
+ 
+
+00:04:22.240 --> 00:04:24.230 align:start position:0%
+would actually work. Now if you think
+back,<00:04:22.800><c> this</c><00:04:22.960><c> was</c><00:04:23.120><c> around</c><00:04:23.440><c> the</c><00:04:23.680><c> time</c><00:04:23.840><c> that</c><00:04:24.080><c> we</c>
+
+00:04:24.230 --> 00:04:24.240 align:start position:0%
+back, this was around the time that we
+ 
+
+00:04:24.240 --> 00:04:27.430 align:start position:0%
+back, this was around the time that we
+saw<00:04:24.720><c> Perplexity</c><00:04:25.600><c> release</c><00:04:26.000><c> Comet,</c><00:04:26.720><c> OpenAI</c>
+
+00:04:27.430 --> 00:04:27.440 align:start position:0%
+saw Perplexity release Comet, OpenAI
+ 
+
+00:04:27.440 --> 00:04:29.749 align:start position:0%
+saw Perplexity release Comet, OpenAI
+release<00:04:27.840><c> Atlas.</c><00:04:28.560><c> you</c><00:04:28.720><c> know,</c><00:04:28.960><c> a</c><00:04:29.199><c> lot</c><00:04:29.280><c> of</c><00:04:29.440><c> the</c>
+
+00:04:29.749 --> 00:04:29.759 align:start position:0%
+release Atlas. you know, a lot of the
+ 
+
+00:04:29.759 --> 00:04:33.350 align:start position:0%
+release Atlas. you know, a lot of the
+ideas<00:04:30.800><c> of</c><00:04:31.280><c> web</c><00:04:31.680><c> interaction</c><00:04:32.639><c> were</c><00:04:32.960><c> certainly</c>
+
+00:04:33.350 --> 00:04:33.360 align:start position:0%
+ideas of web interaction were certainly
+ 
+
+00:04:33.360 --> 00:04:35.430 align:start position:0%
+ideas of web interaction were certainly
+taking<00:04:33.759><c> off.</c><00:04:34.400><c> The</c><00:04:34.639><c> thing</c><00:04:34.720><c> that</c><00:04:34.960><c> makes</c><00:04:35.120><c> this</c>
+
+00:04:35.430 --> 00:04:35.440 align:start position:0%
+taking off. The thing that makes this
+ 
+
+00:04:35.440 --> 00:04:37.830 align:start position:0%
+taking off. The thing that makes this
+kind<00:04:35.600><c> of</c><00:04:35.759><c> different</c><00:04:36.160><c> though</c><00:04:36.720><c> is</c><00:04:37.040><c> that</c><00:04:37.440><c> the</c><00:04:37.680><c> way</c>
+
+00:04:37.830 --> 00:04:37.840 align:start position:0%
+kind of different though is that the way
+ 
+
+00:04:37.840 --> 00:04:39.830 align:start position:0%
+kind of different though is that the way
+they've<00:04:38.240><c> approached</c><00:04:38.560><c> this,</c><00:04:39.199><c> it's</c><00:04:39.520><c> actually</c>
+
+00:04:39.830 --> 00:04:39.840 align:start position:0%
+they've approached this, it's actually
+ 
+
+00:04:39.840 --> 00:04:41.749 align:start position:0%
+they've approached this, it's actually
+going<00:04:40.000><c> to</c><00:04:40.160><c> be</c><00:04:40.320><c> used</c><00:04:40.560><c> for</c><00:04:40.880><c> sort</c><00:04:41.040><c> of</c><00:04:41.199><c> human</c><00:04:41.520><c> in</c>
+
+00:04:41.749 --> 00:04:41.759 align:start position:0%
+going to be used for sort of human in
+ 
+
+00:04:41.759 --> 00:04:44.469 align:start position:0%
+going to be used for sort of human in
+the<00:04:41.919><c> loop</c><00:04:42.240><c> first</c><00:04:42.639><c> stuff</c><00:04:43.360><c> and</c><00:04:43.600><c> that</c><00:04:43.840><c> the</c><00:04:44.080><c> agent</c>
+
+00:04:44.469 --> 00:04:44.479 align:start position:0%
+the loop first stuff and that the agent
+ 
+
+00:04:44.479 --> 00:04:47.350 align:start position:0%
+the loop first stuff and that the agent
+will<00:04:44.800><c> be</c><00:04:44.880><c> able</c><00:04:45.120><c> to</c><00:04:45.600><c> work</c><00:04:45.919><c> with</c><00:04:46.240><c> the</c><00:04:46.479><c> user,</c><00:04:47.199><c> not</c>
+
+00:04:47.350 --> 00:04:47.360 align:start position:0%
+will be able to work with the user, not
+ 
+
+00:04:47.360 --> 00:04:49.430 align:start position:0%
+will be able to work with the user, not
+just<00:04:47.520><c> fully</c><00:04:47.919><c> autonomously.</c><00:04:48.639><c> So,</c><00:04:48.880><c> humans</c><00:04:49.199><c> are</c>
+
+00:04:49.430 --> 00:04:49.440 align:start position:0%
+just fully autonomously. So, humans are
+ 
+
+00:04:49.440 --> 00:04:51.670 align:start position:0%
+just fully autonomously. So, humans are
+still<00:04:49.600><c> going</c><00:04:49.759><c> to</c><00:04:49.840><c> use</c><00:04:50.160><c> web</c><00:04:50.400><c> pages,</c><00:04:51.280><c> but</c><00:04:51.520><c> we'd</c>
+
+00:04:51.670 --> 00:04:51.680 align:start position:0%
+still going to use web pages, but we'd
+ 
+
+00:04:51.680 --> 00:04:54.150 align:start position:0%
+still going to use web pages, but we'd
+like<00:04:51.840><c> to</c><00:04:52.000><c> be</c><00:04:52.080><c> able</c><00:04:52.240><c> to</c><00:04:52.639><c> speed</c><00:04:52.960><c> up</c><00:04:53.199><c> and</c><00:04:53.520><c> improve</c>
+
+00:04:54.150 --> 00:04:54.160 align:start position:0%
+like to be able to speed up and improve
+ 
+
+00:04:54.160 --> 00:04:57.189 align:start position:0%
+like to be able to speed up and improve
+the<00:04:54.479><c> quality</c><00:04:54.880><c> that</c><00:04:55.199><c> they</c><00:04:55.520><c> get</c><00:04:55.759><c> from</c><00:04:56.080><c> web</c><00:04:56.320><c> pages</c>
+
+00:04:57.189 --> 00:04:57.199 align:start position:0%
+the quality that they get from web pages
+ 
+
+00:04:57.199 --> 00:04:59.909 align:start position:0%
+the quality that they get from web pages
+by<00:04:57.600><c> being</c><00:04:57.840><c> able</c><00:04:58.080><c> to</c><00:04:58.240><c> have</c><00:04:58.479><c> those</c><00:04:58.800><c> interactions</c>
+
+00:04:59.909 --> 00:04:59.919 align:start position:0%
+by being able to have those interactions
+ 
+
+00:04:59.919 --> 00:05:02.550 align:start position:0%
+by being able to have those interactions
+empowered<00:05:00.560><c> with</c><00:05:00.880><c> agents</c><00:05:01.360><c> as</c><00:05:01.600><c> well.</c><00:05:02.240><c> So,</c><00:05:02.400><c> at</c>
+
+00:05:02.550 --> 00:05:02.560 align:start position:0%
+empowered with agents as well. So, at
+ 
+
+00:05:02.560 --> 00:05:04.629 align:start position:0%
+empowered with agents as well. So, at
+the<00:05:02.720><c> web</c><00:05:02.960><c> AI</c><00:05:03.360><c> summit</c><00:05:03.680><c> last</c><00:05:03.919><c> year,</c><00:05:04.160><c> there</c><00:05:04.320><c> was</c><00:05:04.400><c> a</c>
+
+00:05:04.629 --> 00:05:04.639 align:start position:0%
+the web AI summit last year, there was a
+ 
+
+00:05:04.639 --> 00:05:07.029 align:start position:0%
+the web AI summit last year, there was a
+nice<00:05:04.800><c> talk</c><00:05:05.120><c> all</c><00:05:05.440><c> about</c><00:05:05.759><c> this</c><00:05:06.400><c> and</c><00:05:06.639><c> one</c><00:05:06.800><c> of</c><00:05:06.880><c> the</c>
+
+00:05:07.029 --> 00:05:07.039 align:start position:0%
+nice talk all about this and one of the
+ 
+
+00:05:07.039 --> 00:05:09.350 align:start position:0%
+nice talk all about this and one of the
+Googlers<00:05:07.520><c> sort</c><00:05:07.680><c> of</c><00:05:07.840><c> presented</c><00:05:08.400><c> how</c><00:05:08.720><c> there</c><00:05:09.039><c> are</c>
+
+00:05:09.350 --> 00:05:09.360 align:start position:0%
+Googlers sort of presented how there are
+ 
+
+00:05:09.360 --> 00:05:12.629 align:start position:0%
+Googlers sort of presented how there are
+three<00:05:09.680><c> pillars</c><00:05:10.160><c> to</c><00:05:10.400><c> this.</c><00:05:11.199><c> So</c><00:05:11.440><c> the</c><00:05:11.759><c> first</c><00:05:12.000><c> one</c>
+
+00:05:12.629 --> 00:05:12.639 align:start position:0%
+three pillars to this. So the first one
+ 
+
+00:05:12.639 --> 00:05:15.189 align:start position:0%
+three pillars to this. So the first one
+being<00:05:13.039><c> sort</c><00:05:13.280><c> of</c><00:05:13.520><c> context</c><00:05:14.479><c> and</c><00:05:14.720><c> this</c><00:05:14.880><c> is</c><00:05:15.039><c> like</c>
+
+00:05:15.189 --> 00:05:15.199 align:start position:0%
+being sort of context and this is like
+ 
+
+00:05:15.199 --> 00:05:17.270 align:start position:0%
+being sort of context and this is like
+all<00:05:15.440><c> the</c><00:05:15.680><c> data</c><00:05:16.080><c> that</c><00:05:16.240><c> agents</c><00:05:16.800><c> need</c><00:05:17.039><c> to</c>
+
+00:05:17.270 --> 00:05:17.280 align:start position:0%
+all the data that agents need to
+ 
+
+00:05:17.280 --> 00:05:20.469 align:start position:0%
+all the data that agents need to
+understand<00:05:18.000><c> what</c><00:05:18.240><c> the</c><00:05:18.479><c> user</c><00:05:18.880><c> is</c><00:05:19.120><c> doing.</c><00:05:19.919><c> So</c><00:05:20.240><c> if</c>
+
+00:05:20.469 --> 00:05:20.479 align:start position:0%
+understand what the user is doing. So if
+ 
+
+00:05:20.479 --> 00:05:23.029 align:start position:0%
+understand what the user is doing. So if
+you're<00:05:20.880><c> watching</c><00:05:21.199><c> a</c><00:05:21.520><c> video,</c><00:05:22.080><c> if</c><00:05:22.240><c> you're</c><00:05:22.479><c> into</c>
+
+00:05:23.029 --> 00:05:23.039 align:start position:0%
+you're watching a video, if you're into
+ 
+
+00:05:23.039 --> 00:05:24.629 align:start position:0%
+you're watching a video, if you're into
+reading<00:05:23.360><c> an</c><00:05:23.600><c> article</c><00:05:23.919><c> or</c><00:05:24.240><c> something</c><00:05:24.400><c> like</c>
+
+00:05:24.629 --> 00:05:24.639 align:start position:0%
+reading an article or something like
+ 
+
+00:05:24.639 --> 00:05:28.070 align:start position:0%
+reading an article or something like
+that,<00:05:25.360><c> you</c><00:05:25.680><c> want</c><00:05:25.919><c> the</c><00:05:26.240><c> agent</c><00:05:26.720><c> to</c><00:05:26.960><c> sort</c><00:05:27.120><c> of</c><00:05:27.360><c> know</c>
+
+00:05:28.070 --> 00:05:28.080 align:start position:0%
+that, you want the agent to sort of know
+ 
+
+00:05:28.080 --> 00:05:30.390 align:start position:0%
+that, you want the agent to sort of know
+not<00:05:28.320><c> only</c><00:05:28.639><c> what's</c><00:05:28.960><c> on</c><00:05:29.199><c> the</c><00:05:29.360><c> screen,</c><00:05:30.160><c> but</c>
+
+00:05:30.390 --> 00:05:30.400 align:start position:0%
+not only what's on the screen, but
+ 
+
+00:05:30.400 --> 00:05:32.070 align:start position:0%
+not only what's on the screen, but
+really<00:05:30.800><c> you</c><00:05:30.960><c> would</c><00:05:31.120><c> like</c><00:05:31.280><c> the</c><00:05:31.520><c> agent</c><00:05:31.840><c> to</c><00:05:32.000><c> be</c>
+
+00:05:32.070 --> 00:05:32.080 align:start position:0%
+really you would like the agent to be
+ 
+
+00:05:32.080 --> 00:05:33.749 align:start position:0%
+really you would like the agent to be
+able<00:05:32.240><c> to</c><00:05:32.400><c> know</c><00:05:32.639><c> sort</c><00:05:32.880><c> of</c><00:05:32.960><c> what</c><00:05:33.280><c> has</c><00:05:33.520><c> come</c>
+
+00:05:33.749 --> 00:05:33.759 align:start position:0%
+able to know sort of what has come
+ 
+
+00:05:33.759 --> 00:05:36.550 align:start position:0%
+able to know sort of what has come
+before<00:05:34.240><c> this</c><00:05:34.880><c> as</c><00:05:35.120><c> well.</c><00:05:35.680><c> So</c><00:05:35.840><c> if</c><00:05:36.000><c> the</c><00:05:36.160><c> user</c><00:05:36.400><c> were</c>
+
+00:05:36.550 --> 00:05:36.560 align:start position:0%
+before this as well. So if the user were
+ 
+
+00:05:36.560 --> 00:05:38.870 align:start position:0%
+before this as well. So if the user were
+to<00:05:36.720><c> ask</c><00:05:36.880><c> a</c><00:05:37.120><c> question</c><00:05:37.440><c> or</c><00:05:37.759><c> ask</c><00:05:37.919><c> the</c><00:05:38.160><c> agent</c><00:05:38.479><c> to</c><00:05:38.720><c> do</c>
+
+00:05:38.870 --> 00:05:38.880 align:start position:0%
+to ask a question or ask the agent to do
+ 
+
+00:05:38.880 --> 00:05:40.710 align:start position:0%
+to ask a question or ask the agent to do
+something<00:05:39.199><c> that</c><00:05:39.600><c> relates</c><00:05:40.000><c> to</c><00:05:40.320><c> something</c>
+
+00:05:40.710 --> 00:05:40.720 align:start position:0%
+something that relates to something
+ 
+
+00:05:40.720 --> 00:05:43.270 align:start position:0%
+something that relates to something
+that's<00:05:41.120><c> not</c><00:05:41.360><c> in</c><00:05:41.600><c> that</c><00:05:41.919><c> current</c><00:05:42.320><c> screenshot,</c>
+
+00:05:43.270 --> 00:05:43.280 align:start position:0%
+that's not in that current screenshot,
+ 
+
+00:05:43.280 --> 00:05:44.950 align:start position:0%
+that's not in that current screenshot,
+the<00:05:43.440><c> agent</c><00:05:43.759><c> should</c><00:05:44.000><c> be</c><00:05:44.160><c> able</c><00:05:44.320><c> to</c><00:05:44.560><c> still</c>
+
+00:05:44.950 --> 00:05:44.960 align:start position:0%
+the agent should be able to still
+ 
+
+00:05:44.960 --> 00:05:46.950 align:start position:0%
+the agent should be able to still
+understand<00:05:45.440><c> this.</c><00:05:46.080><c> The</c><00:05:46.320><c> second</c><00:05:46.479><c> big</c><00:05:46.720><c> pillar</c>
+
+00:05:46.950 --> 00:05:46.960 align:start position:0%
+understand this. The second big pillar
+ 
+
+00:05:46.960 --> 00:05:49.749 align:start position:0%
+understand this. The second big pillar
+is<00:05:47.120><c> the</c><00:05:47.360><c> whole</c><00:05:47.520><c> idea</c><00:05:47.840><c> of</c><00:05:48.160><c> capabilities.</c><00:05:49.520><c> And</c>
+
+00:05:49.749 --> 00:05:49.759 align:start position:0%
+is the whole idea of capabilities. And
+ 
+
+00:05:49.759 --> 00:05:52.550 align:start position:0%
+is the whole idea of capabilities. And
+this<00:05:50.000><c> is</c><00:05:50.240><c> actions</c><00:05:50.960><c> on</c><00:05:51.280><c> the</c><00:05:51.440><c> user's</c><00:05:51.919><c> behalf.</c><00:05:52.320><c> So</c>
+
+00:05:52.550 --> 00:05:52.560 align:start position:0%
+this is actions on the user's behalf. So
+ 
+
+00:05:52.560 --> 00:05:53.909 align:start position:0%
+this is actions on the user's behalf. So
+this<00:05:52.720><c> is</c><00:05:52.800><c> not</c><00:05:52.960><c> just</c><00:05:53.120><c> sort</c><00:05:53.360><c> of</c><00:05:53.440><c> things</c><00:05:53.680><c> like</c>
+
+00:05:53.909 --> 00:05:53.919 align:start position:0%
+this is not just sort of things like
+ 
+
+00:05:53.919 --> 00:05:55.590 align:start position:0%
+this is not just sort of things like
+answering<00:05:54.400><c> questions,</c><00:05:54.960><c> but</c><00:05:55.199><c> this</c><00:05:55.360><c> is</c>
+
+00:05:55.590 --> 00:05:55.600 align:start position:0%
+answering questions, but this is
+ 
+
+00:05:55.600 --> 00:05:58.310 align:start position:0%
+answering questions, but this is
+actually<00:05:55.919><c> doing</c><00:05:56.320><c> stuff</c><00:05:56.720><c> like,</c><00:05:57.199><c> hey,</c><00:05:57.840><c> I'm</c><00:05:58.080><c> too</c>
+
+00:05:58.310 --> 00:05:58.320 align:start position:0%
+actually doing stuff like, hey, I'm too
+ 
+
+00:05:58.320 --> 00:06:00.710 align:start position:0%
+actually doing stuff like, hey, I'm too
+lazy<00:05:58.639><c> to</c><00:05:58.800><c> fill</c><00:05:59.039><c> out</c><00:05:59.199><c> this</c><00:05:59.440><c> form.</c><00:06:00.320><c> Please</c><00:06:00.639><c> go</c>
+
+00:06:00.710 --> 00:06:00.720 align:start position:0%
+lazy to fill out this form. Please go
+ 
+
+00:06:00.720 --> 00:06:02.150 align:start position:0%
+lazy to fill out this form. Please go
+and<00:06:00.960><c> fill</c><00:06:01.120><c> out</c><00:06:01.199><c> this</c><00:06:01.440><c> form</c><00:06:01.759><c> based</c><00:06:02.000><c> on</c>
+
+00:06:02.150 --> 00:06:02.160 align:start position:0%
+and fill out this form based on
+ 
+
+00:06:02.160 --> 00:06:04.390 align:start position:0%
+and fill out this form based on
+everything<00:06:02.479><c> that</c><00:06:02.720><c> you</c><00:06:02.960><c> know</c><00:06:03.199><c> about</c><00:06:03.520><c> me,</c><00:06:04.000><c> etc.</c>
+
+00:06:04.390 --> 00:06:04.400 align:start position:0%
+everything that you know about me, etc.
+ 
+
+00:06:04.400 --> 00:06:06.469 align:start position:0%
+everything that you know about me, etc.
+And<00:06:04.639><c> the</c><00:06:04.800><c> third</c><00:06:05.039><c> big</c><00:06:05.360><c> pillar</c><00:06:05.759><c> is</c><00:06:06.000><c> the</c><00:06:06.160><c> pillar</c>
+
+00:06:06.469 --> 00:06:06.479 align:start position:0%
+And the third big pillar is the pillar
+ 
+
+00:06:06.479 --> 00:06:09.270 align:start position:0%
+And the third big pillar is the pillar
+of<00:06:06.800><c> coordination.</c><00:06:08.080><c> So</c><00:06:08.319><c> this</c><00:06:08.560><c> is</c><00:06:08.720><c> sort</c><00:06:08.880><c> of</c><00:06:09.039><c> how</c>
+
+00:06:09.270 --> 00:06:09.280 align:start position:0%
+of coordination. So this is sort of how
+ 
+
+00:06:09.280 --> 00:06:11.990 align:start position:0%
+of coordination. So this is sort of how
+do<00:06:09.440><c> you</c><00:06:09.680><c> control</c><00:06:10.160><c> the</c><00:06:10.479><c> flow</c><00:06:11.039><c> between</c><00:06:11.360><c> the</c><00:06:11.600><c> user</c>
+
+00:06:11.990 --> 00:06:12.000 align:start position:0%
+do you control the flow between the user
+ 
+
+00:06:12.000 --> 00:06:14.390 align:start position:0%
+do you control the flow between the user
+and<00:06:12.240><c> the</c><00:06:12.479><c> agent.</c><00:06:13.280><c> And</c><00:06:13.440><c> a</c><00:06:13.680><c> nice</c><00:06:13.919><c> example</c><00:06:14.240><c> of</c>
+
+00:06:14.390 --> 00:06:14.400 align:start position:0%
+and the agent. And a nice example of
+ 
+
+00:06:14.400 --> 00:06:16.870 align:start position:0%
+and the agent. And a nice example of
+this<00:06:14.560><c> is</c><00:06:14.880><c> what</c><00:06:15.199><c> happens</c><00:06:15.680><c> if</c><00:06:16.080><c> you've</c><00:06:16.479><c> asked</c>
+
+00:06:16.870 --> 00:06:16.880 align:start position:0%
+this is what happens if you've asked
+ 
+
+00:06:16.880 --> 00:06:19.510 align:start position:0%
+this is what happens if you've asked
+your<00:06:17.199><c> agent</c><00:06:18.000><c> to</c><00:06:18.160><c> go</c><00:06:18.319><c> and</c><00:06:18.479><c> buy</c><00:06:18.639><c> a</c><00:06:18.880><c> certain</c><00:06:19.199><c> brand</c>
+
+00:06:19.510 --> 00:06:19.520 align:start position:0%
+your agent to go and buy a certain brand
+ 
+
+00:06:19.520 --> 00:06:22.230 align:start position:0%
+your agent to go and buy a certain brand
+or<00:06:19.840><c> type</c><00:06:20.160><c> of</c><00:06:20.400><c> milk</c><00:06:21.120><c> and</c><00:06:21.360><c> while</c><00:06:21.600><c> the</c><00:06:21.840><c> site</c><00:06:22.080><c> has</c>
+
+00:06:22.230 --> 00:06:22.240 align:start position:0%
+or type of milk and while the site has
+ 
+
+00:06:22.240 --> 00:06:24.469 align:start position:0%
+or type of milk and while the site has
+milk<00:06:22.560><c> for</c><00:06:22.720><c> sale,</c><00:06:23.039><c> it</c><00:06:23.280><c> doesn't</c><00:06:23.520><c> have</c><00:06:23.840><c> what</c><00:06:24.160><c> you</c>
+
+00:06:24.469 --> 00:06:24.479 align:start position:0%
+milk for sale, it doesn't have what you
+ 
+
+00:06:24.479 --> 00:06:26.950 align:start position:0%
+milk for sale, it doesn't have what you
+actually<00:06:24.880><c> want.</c><00:06:25.680><c> In</c><00:06:25.919><c> this</c><00:06:26.080><c> case,</c><00:06:26.400><c> you</c><00:06:26.639><c> want</c><00:06:26.800><c> to</c>
+
+00:06:26.950 --> 00:06:26.960 align:start position:0%
+actually want. In this case, you want to
+ 
+
+00:06:26.960 --> 00:06:29.830 align:start position:0%
+actually want. In this case, you want to
+be<00:06:27.120><c> able</c><00:06:27.280><c> to</c><00:06:27.600><c> easily</c><00:06:28.080><c> pass</c><00:06:28.479><c> back</c><00:06:28.800><c> to</c><00:06:29.039><c> the</c><00:06:29.280><c> user</c>
+
+00:06:29.830 --> 00:06:29.840 align:start position:0%
+be able to easily pass back to the user
+ 
+
+00:06:29.840 --> 00:06:31.909 align:start position:0%
+be able to easily pass back to the user
+for<00:06:30.080><c> a</c><00:06:30.240><c> human</c><00:06:30.479><c> in</c><00:06:30.639><c> the</c><00:06:30.800><c> loop</c><00:06:31.120><c> kind</c><00:06:31.280><c> of</c><00:06:31.440><c> thing.</c>
+
+00:06:31.909 --> 00:06:31.919 align:start position:0%
+for a human in the loop kind of thing.
+ 
+
+00:06:31.919 --> 00:06:33.909 align:start position:0%
+for a human in the loop kind of thing.
+Now,<00:06:32.400><c> while</c><00:06:32.639><c> you're</c><00:06:32.800><c> not</c><00:06:32.960><c> going</c><00:06:33.039><c> to</c><00:06:33.199><c> find</c><00:06:33.680><c> all</c>
+
+00:06:33.909 --> 00:06:33.919 align:start position:0%
+Now, while you're not going to find all
+ 
+
+00:06:33.919 --> 00:06:37.029 align:start position:0%
+Now, while you're not going to find all
+of<00:06:34.160><c> this</c><00:06:34.639><c> in</c><00:06:35.039><c> every</c><00:06:35.440><c> Chrome</c><00:06:35.919><c> user</c><00:06:36.319><c> and</c><00:06:36.720><c> every</c>
+
+00:06:37.029 --> 00:06:37.039 align:start position:0%
+of this in every Chrome user and every
+ 
+
+00:06:37.039 --> 00:06:39.110 align:start position:0%
+of this in every Chrome user and every
+website<00:06:37.600><c> straight</c><00:06:37.919><c> away,</c><00:06:38.479><c> the</c><00:06:38.720><c> latest</c>
+
+00:06:39.110 --> 00:06:39.120 align:start position:0%
+website straight away, the latest
+ 
+
+00:06:39.120 --> 00:06:41.430 align:start position:0%
+website straight away, the latest
+version<00:06:39.360><c> of</c><00:06:39.520><c> Chrome</c><00:06:40.000><c> will</c><00:06:40.400><c> actually</c><00:06:40.880><c> have</c><00:06:41.280><c> all</c>
+
+00:06:41.430 --> 00:06:41.440 align:start position:0%
+version of Chrome will actually have all
+ 
+
+00:06:41.440 --> 00:06:44.950 align:start position:0%
+version of Chrome will actually have all
+of<00:06:41.680><c> this</c><00:06:42.560><c> behind</c><00:06:43.280><c> a</c><00:06:43.600><c> flag</c><00:06:44.160><c> where</c><00:06:44.479><c> you're</c><00:06:44.720><c> able</c>
+
+00:06:44.950 --> 00:06:44.960 align:start position:0%
+of this behind a flag where you're able
+ 
+
+00:06:44.960 --> 00:06:47.189 align:start position:0%
+of this behind a flag where you're able
+to<00:06:45.120><c> turn</c><00:06:45.360><c> it</c><00:06:45.520><c> on.</c><00:06:46.080><c> You're</c><00:06:46.319><c> able</c><00:06:46.560><c> to</c><00:06:46.800><c> actually</c>
+
+00:06:47.189 --> 00:06:47.199 align:start position:0%
+to turn it on. You're able to actually
+ 
+
+00:06:47.199 --> 00:06:48.870 align:start position:0%
+to turn it on. You're able to actually
+engage<00:06:47.680><c> with</c><00:06:47.919><c> this.</c><00:06:48.319><c> And</c><00:06:48.479><c> you</c><00:06:48.560><c> got</c><00:06:48.720><c> to</c><00:06:48.800><c> think</c>
+
+00:06:48.870 --> 00:06:48.880 align:start position:0%
+engage with this. And you got to think
+ 
+
+00:06:48.880 --> 00:06:50.070 align:start position:0%
+engage with this. And you got to think
+that<00:06:49.120><c> this</c><00:06:49.280><c> is</c><00:06:49.440><c> something</c><00:06:49.600><c> that</c><00:06:49.759><c> perhaps</c>
+
+00:06:50.070 --> 00:06:50.080 align:start position:0%
+that this is something that perhaps
+ 
+
+00:06:50.080 --> 00:06:51.909 align:start position:0%
+that this is something that perhaps
+Google's<00:06:50.479><c> going</c><00:06:50.560><c> to</c><00:06:50.639><c> roll</c><00:06:50.880><c> out</c><00:06:51.120><c> in</c><00:06:51.360><c> full</c><00:06:51.680><c> at</c>
+
+00:06:51.909 --> 00:06:51.919 align:start position:0%
+Google's going to roll out in full at
+ 
+
+00:06:51.919 --> 00:06:55.029 align:start position:0%
+Google's going to roll out in full at
+Google<00:06:52.240><c> Cloud</c><00:06:52.560><c> Next</c><00:06:52.880><c> or</c><00:06:53.120><c> at</c><00:06:53.280><c> Google</c><00:06:53.600><c> IO</c><00:06:54.479><c> in</c><00:06:54.800><c> the</c>
+
+00:06:55.029 --> 00:06:55.039 align:start position:0%
+Google Cloud Next or at Google IO in the
+ 
+
+00:06:55.039 --> 00:06:57.110 align:start position:0%
+Google Cloud Next or at Google IO in the
+next<00:06:55.280><c> few</c><00:06:55.520><c> months.</c><00:06:56.240><c> So,</c><00:06:56.319><c> I</c><00:06:56.479><c> do</c><00:06:56.639><c> think</c><00:06:56.800><c> this</c><00:06:56.960><c> is</c>
+
+00:06:57.110 --> 00:06:57.120 align:start position:0%
+next few months. So, I do think this is
+ 
+
+00:06:57.120 --> 00:06:58.070 align:start position:0%
+next few months. So, I do think this is
+going to<00:06:57.280><c> be</c><00:06:57.360><c> something</c><00:06:57.600><c> that's</c><00:06:57.840><c> going</c><00:06:58.000><c> to</c>
+
+00:06:58.070 --> 00:06:58.080 align:start position:0%
+going to be something that's going to
+ 
+
+00:06:58.080 --> 00:07:00.629 align:start position:0%
+going to be something that's going to
+move<00:06:58.400><c> quite</c><00:06:58.800><c> quickly.</c><00:06:59.599><c> Okay.</c><00:06:59.919><c> So</c><00:07:00.160><c> an</c><00:07:00.319><c> example</c>
+
+00:07:00.629 --> 00:07:00.639 align:start position:0%
+move quite quickly. Okay. So an example
+ 
+
+00:07:00.639 --> 00:07:03.430 align:start position:0%
+move quite quickly. Okay. So an example
+of<00:07:00.800><c> how</c><00:07:01.039><c> this</c><00:07:01.280><c> would</c><00:07:01.599><c> work</c><00:07:02.240><c> is</c><00:07:02.560><c> that</c><00:07:02.880><c> your</c>
+
+00:07:03.430 --> 00:07:03.440 align:start position:0%
+of how this would work is that your
+ 
+
+00:07:03.440 --> 00:07:06.710 align:start position:0%
+of how this would work is that your
+particular<00:07:03.919><c> web</c><00:07:04.160><c> page</c><00:07:04.560><c> would</c><00:07:05.120><c> expose</c><00:07:06.240><c> certain</c>
+
+00:07:06.710 --> 00:07:06.720 align:start position:0%
+particular web page would expose certain
+ 
+
+00:07:06.720 --> 00:07:09.589 align:start position:0%
+particular web page would expose certain
+functions.<00:07:07.759><c> So</c><00:07:07.919><c> if</c><00:07:08.160><c> you</c><00:07:08.319><c> had</c><00:07:08.479><c> the</c><00:07:08.720><c> ability</c><00:07:09.199><c> for</c>
+
+00:07:09.589 --> 00:07:09.599 align:start position:0%
+functions. So if you had the ability for
+ 
+
+00:07:09.599 --> 00:07:12.150 align:start position:0%
+functions. So if you had the ability for
+someone<00:07:10.400><c> to</c><00:07:10.880><c> be</c><00:07:11.039><c> able</c><00:07:11.199><c> to</c><00:07:11.440><c> do</c><00:07:11.599><c> some</c><00:07:11.840><c> kind</c><00:07:12.000><c> of</c>
+
+00:07:12.150 --> 00:07:12.160 align:start position:0%
+someone to be able to do some kind of
+ 
+
+00:07:12.160 --> 00:07:14.070 align:start position:0%
+someone to be able to do some kind of
+visual<00:07:12.639><c> search</c><00:07:13.039><c> on</c><00:07:13.280><c> the</c><00:07:13.440><c> site,</c><00:07:13.840><c> something</c>
+
+00:07:14.070 --> 00:07:14.080 align:start position:0%
+visual search on the site, something
+ 
+
+00:07:14.080 --> 00:07:16.550 align:start position:0%
+visual search on the site, something
+like<00:07:14.319><c> that,</c><00:07:14.880><c> that</c><00:07:15.120><c> would</c><00:07:15.360><c> also</c><00:07:15.680><c> be</c><00:07:15.759><c> in</c><00:07:15.919><c> the</c><00:07:16.080><c> UI</c>
+
+00:07:16.550 --> 00:07:16.560 align:start position:0%
+like that, that would also be in the UI
+ 
+
+00:07:16.560 --> 00:07:18.469 align:start position:0%
+like that, that would also be in the UI
+that<00:07:16.720><c> would</c><00:07:16.960><c> also</c><00:07:17.199><c> be</c><00:07:17.360><c> exposed</c><00:07:17.759><c> as</c><00:07:17.919><c> a</c><00:07:18.160><c> function</c>
+
+00:07:18.469 --> 00:07:18.479 align:start position:0%
+that would also be exposed as a function
+ 
+
+00:07:18.479 --> 00:07:20.629 align:start position:0%
+that would also be exposed as a function
+like<00:07:18.880><c> search</c><00:07:19.280><c> products.</c><00:07:19.680><c> So,</c><00:07:19.840><c> the</c><00:07:20.080><c> site</c><00:07:20.400><c> would</c>
+
+00:07:20.629 --> 00:07:20.639 align:start position:0%
+like search products. So, the site would
+ 
+
+00:07:20.639 --> 00:07:23.110 align:start position:0%
+like search products. So, the site would
+basically<00:07:21.440><c> have</c><00:07:21.599><c> a</c><00:07:21.840><c> registered</c><00:07:22.639><c> search</c>
+
+00:07:23.110 --> 00:07:23.120 align:start position:0%
+basically have a registered search
+ 
+
+00:07:23.120 --> 00:07:25.749 align:start position:0%
+basically have a registered search
+products<00:07:23.680><c> tool</c><00:07:24.479><c> that</c><00:07:24.720><c> would</c><00:07:24.960><c> make</c><00:07:25.120><c> it</c><00:07:25.360><c> much</c>
+
+00:07:25.749 --> 00:07:25.759 align:start position:0%
+products tool that would make it much
+ 
+
+00:07:25.759 --> 00:07:29.189 align:start position:0%
+products tool that would make it much
+easier<00:07:26.160><c> for</c><00:07:26.479><c> your</c><00:07:26.800><c> agent</c><00:07:27.199><c> to</c><00:07:27.520><c> actually</c><00:07:28.000><c> go</c><00:07:28.319><c> in</c>
+
+00:07:29.189 --> 00:07:29.199 align:start position:0%
+easier for your agent to actually go in
+ 
+
+00:07:29.199 --> 00:07:32.629 align:start position:0%
+easier for your agent to actually go in
+and<00:07:29.840><c> use</c><00:07:30.160><c> the</c><00:07:30.479><c> search</c><00:07:30.960><c> and</c><00:07:31.280><c> find</c><00:07:31.599><c> what</c><00:07:31.840><c> it</c><00:07:32.080><c> is</c>
+
+00:07:32.629 --> 00:07:32.639 align:start position:0%
+and use the search and find what it is
+ 
+
+00:07:32.639 --> 00:07:34.309 align:start position:0%
+and use the search and find what it is
+rather<00:07:33.039><c> than</c><00:07:33.199><c> having</c><00:07:33.520><c> to</c><00:07:33.680><c> sort</c><00:07:33.840><c> of</c><00:07:34.000><c> click</c>
+
+00:07:34.309 --> 00:07:34.319 align:start position:0%
+rather than having to sort of click
+ 
+
+00:07:34.319 --> 00:07:36.790 align:start position:0%
+rather than having to sort of click
+through<00:07:35.120><c> lots</c><00:07:35.440><c> of</c><00:07:35.680><c> different</c><00:07:36.000><c> filters,</c>
+
+00:07:36.790 --> 00:07:36.800 align:start position:0%
+through lots of different filters,
+ 
+
+00:07:36.800 --> 00:07:39.670 align:start position:0%
+through lots of different filters,
+scrolling<00:07:37.280><c> through</c><00:07:37.680><c> different</c><00:07:38.160><c> pages,</c><00:07:39.039><c> etc.</c>
+
+00:07:39.670 --> 00:07:39.680 align:start position:0%
+scrolling through different pages, etc.
+ 
+
+00:07:39.680 --> 00:07:41.670 align:start position:0%
+scrolling through different pages, etc.
+The<00:07:39.919><c> other</c><00:07:40.080><c> thing</c><00:07:40.319><c> too</c><00:07:40.639><c> is</c><00:07:40.960><c> that</c><00:07:41.199><c> then</c><00:07:41.440><c> the</c>
+
+00:07:41.670 --> 00:07:41.680 align:start position:0%
+The other thing too is that then the
+ 
+
+00:07:41.680 --> 00:07:44.629 align:start position:0%
+The other thing too is that then the
+agent<00:07:42.080><c> would</c><00:07:42.400><c> actually</c><00:07:42.800><c> get</c><00:07:43.039><c> back</c><00:07:43.759><c> structured</c>
+
+00:07:44.629 --> 00:07:44.639 align:start position:0%
+agent would actually get back structured
+ 
+
+00:07:44.639 --> 00:07:46.950 align:start position:0%
+agent would actually get back structured
+results.<00:07:45.599><c> So</c><00:07:45.759><c> you</c><00:07:46.000><c> can</c><00:07:46.080><c> imagine</c><00:07:46.400><c> this</c><00:07:46.639><c> sort</c><00:07:46.800><c> of</c>
+
+00:07:46.950 --> 00:07:46.960 align:start position:0%
+results. So you can imagine this sort of
+ 
+
+00:07:46.960 --> 00:07:49.270 align:start position:0%
+results. So you can imagine this sort of
+one<00:07:47.199><c> tool</c><00:07:47.520><c> call</c><00:07:47.919><c> replaces</c><00:07:48.560><c> what</c><00:07:48.880><c> could</c><00:07:49.120><c> have</c>
+
+00:07:49.270 --> 00:07:49.280 align:start position:0%
+one tool call replaces what could have
+ 
+
+00:07:49.280 --> 00:07:52.070 align:start position:0%
+one tool call replaces what could have
+been<00:07:49.840><c> dozens</c><00:07:50.400><c> of</c><00:07:50.720><c> interactions</c><00:07:51.599><c> that</c><00:07:51.840><c> would</c>
+
+00:07:52.070 --> 00:07:52.080 align:start position:0%
+been dozens of interactions that would
+ 
+
+00:07:52.080 --> 00:07:54.070 align:start position:0%
+been dozens of interactions that would
+have<00:07:52.240><c> been</c><00:07:52.479><c> needed</c><00:07:53.120><c> if</c><00:07:53.360><c> you</c><00:07:53.520><c> were</c><00:07:53.680><c> just</c><00:07:53.919><c> using</c>
+
+00:07:54.070 --> 00:07:54.080 align:start position:0%
+have been needed if you were just using
+ 
+
+00:07:54.080 --> 00:07:56.309 align:start position:0%
+have been needed if you were just using
+a<00:07:54.319><c> browser</c><00:07:54.800><c> use</c><00:07:55.120><c> kind</c><00:07:55.280><c> of</c><00:07:55.440><c> thing.</c><00:07:55.840><c> So</c><00:07:56.000><c> the</c><00:07:56.160><c> way</c>
+
+00:07:56.309 --> 00:07:56.319 align:start position:0%
+a browser use kind of thing. So the way
+ 
+
+00:07:56.319 --> 00:07:58.070 align:start position:0%
+a browser use kind of thing. So the way
+that<00:07:56.479><c> they've</c><00:07:56.720><c> currently</c><00:07:57.199><c> structured</c><00:07:57.680><c> these</c>
+
+00:07:58.070 --> 00:07:58.080 align:start position:0%
+that they've currently structured these
+ 
+
+00:07:58.080 --> 00:08:00.790 align:start position:0%
+that they've currently structured these
+interactions<00:07:59.360><c> is</c><00:07:59.680><c> that</c><00:08:00.000><c> they've</c><00:08:00.240><c> got</c><00:08:00.479><c> two</c>
+
+00:08:00.790 --> 00:08:00.800 align:start position:0%
+interactions is that they've got two
+ 
+
+00:08:00.800 --> 00:08:03.110 align:start position:0%
+interactions is that they've got two
+main<00:08:01.120><c> APIs.</c><00:08:02.000><c> They've</c><00:08:02.240><c> got</c><00:08:02.319><c> the</c><00:08:02.479><c> declarative</c>
+
+00:08:03.110 --> 00:08:03.120 align:start position:0%
+main APIs. They've got the declarative
+ 
+
+00:08:03.120 --> 00:08:06.309 align:start position:0%
+main APIs. They've got the declarative
+API<00:08:03.680><c> and</c><00:08:03.919><c> the</c><00:08:04.160><c> imperative</c><00:08:04.879><c> API.</c><00:08:05.919><c> So</c><00:08:06.080><c> the</c>
+
+00:08:06.309 --> 00:08:06.319 align:start position:0%
+API and the imperative API. So the
+ 
+
+00:08:06.319 --> 00:08:09.350 align:start position:0%
+API and the imperative API. So the
+declarative<00:08:07.120><c> API</c><00:08:07.759><c> is</c><00:08:08.160><c> all</c><00:08:08.400><c> about</c><00:08:08.960><c> standard</c>
+
+00:08:09.350 --> 00:08:09.360 align:start position:0%
+declarative API is all about standard
+ 
+
+00:08:09.360 --> 00:08:11.990 align:start position:0%
+declarative API is all about standard
+actions<00:08:09.840><c> that</c><00:08:10.160><c> can</c><00:08:10.400><c> take</c><00:08:10.639><c> your</c><00:08:10.960><c> existing</c><00:08:11.440><c> HTML</c>
+
+00:08:11.990 --> 00:08:12.000 align:start position:0%
+actions that can take your existing HTML
+ 
+
+00:08:12.000 --> 00:08:14.710 align:start position:0%
+actions that can take your existing HTML
+forms<00:08:12.800><c> and</c><00:08:13.039><c> can</c><00:08:13.280><c> add</c><00:08:13.599><c> things</c><00:08:13.919><c> like</c><00:08:14.160><c> a</c><00:08:14.400><c> tool</c>
+
+00:08:14.710 --> 00:08:14.720 align:start position:0%
+forms and can add things like a tool
+ 
+
+00:08:14.720 --> 00:08:17.830 align:start position:0%
+forms and can add things like a tool
+name<00:08:15.360><c> description</c><00:08:16.560><c> so</c><00:08:16.720><c> that</c><00:08:16.879><c> your</c><00:08:17.120><c> agent</c><00:08:17.520><c> can</c>
+
+00:08:17.830 --> 00:08:17.840 align:start position:0%
+name description so that your agent can
+ 
+
+00:08:17.840 --> 00:08:20.469 align:start position:0%
+name description so that your agent can
+use<00:08:18.080><c> that.</c><00:08:18.639><c> Now</c><00:08:19.120><c> if</c><00:08:19.280><c> you've</c><00:08:19.520><c> got</c><00:08:19.840><c> pretty</c><00:08:20.160><c> good</c>
+
+00:08:20.469 --> 00:08:20.479 align:start position:0%
+use that. Now if you've got pretty good
+ 
+
+00:08:20.479 --> 00:08:23.029 align:start position:0%
+use that. Now if you've got pretty good
+well<00:08:20.720><c> ststructured</c><00:08:21.280><c> HTML</c><00:08:22.080><c> forms,</c><00:08:22.560><c> it</c><00:08:22.800><c> sounds</c>
+
+00:08:23.029 --> 00:08:23.039 align:start position:0%
+well ststructured HTML forms, it sounds
+ 
+
+00:08:23.039 --> 00:08:25.189 align:start position:0%
+well ststructured HTML forms, it sounds
+like<00:08:23.280><c> you're</c><00:08:23.599><c> probably</c><00:08:24.000><c> kind</c><00:08:24.240><c> of</c><00:08:24.319><c> like</c><00:08:24.560><c> 80%</c><00:08:25.120><c> of</c>
+
+00:08:25.189 --> 00:08:25.199 align:start position:0%
+like you're probably kind of like 80% of
+ 
+
+00:08:25.199 --> 00:08:27.430 align:start position:0%
+like you're probably kind of like 80% of
+the<00:08:25.360><c> way</c><00:08:25.520><c> done</c><00:08:25.840><c> for</c><00:08:26.080><c> that</c><00:08:26.400><c> already.</c><00:08:27.199><c> The</c>
+
+00:08:27.430 --> 00:08:27.440 align:start position:0%
+the way done for that already. The
+ 
+
+00:08:27.440 --> 00:08:30.550 align:start position:0%
+the way done for that already. The
+second<00:08:27.759><c> one</c><00:08:28.000><c> is</c><00:08:28.319><c> the</c><00:08:28.639><c> imperative</c><00:08:29.360><c> API.</c><00:08:30.319><c> So</c>
+
+00:08:30.550 --> 00:08:30.560 align:start position:0%
+second one is the imperative API. So
+ 
+
+00:08:30.560 --> 00:08:32.949 align:start position:0%
+second one is the imperative API. So
+this<00:08:30.720><c> is</c><00:08:30.879><c> for</c><00:08:31.199><c> more</c><00:08:31.599><c> complex</c><00:08:32.320><c> dynamic</c>
+
+00:08:32.949 --> 00:08:32.959 align:start position:0%
+this is for more complex dynamic
+ 
+
+00:08:32.959 --> 00:08:34.870 align:start position:0%
+this is for more complex dynamic
+interactions<00:08:34.000><c> that</c><00:08:34.240><c> perhaps</c><00:08:34.560><c> going</c><00:08:34.719><c> to</c>
+
+00:08:34.870 --> 00:08:34.880 align:start position:0%
+interactions that perhaps going to
+ 
+
+00:08:34.880 --> 00:08:36.389 align:start position:0%
+interactions that perhaps going to
+require<00:08:35.279><c> things</c><00:08:35.519><c> like</c><00:08:35.760><c> JavaScript</c>
+
+00:08:36.389 --> 00:08:36.399 align:start position:0%
+require things like JavaScript
+ 
+
+00:08:36.399 --> 00:08:38.550 align:start position:0%
+require things like JavaScript
+execution.<00:08:37.120><c> So</c><00:08:37.279><c> the</c><00:08:37.519><c> idea</c><00:08:37.760><c> here</c><00:08:37.919><c> is</c><00:08:38.159><c> that</c><00:08:38.320><c> this</c>
+
+00:08:38.550 --> 00:08:38.560 align:start position:0%
+execution. So the idea here is that this
+ 
+
+00:08:38.560 --> 00:08:41.269 align:start position:0%
+execution. So the idea here is that this
+goes<00:08:38.880><c> beyond</c><00:08:39.360><c> just</c><00:08:39.760><c> forms.</c><00:08:40.640><c> And</c><00:08:40.880><c> here</c><00:08:41.039><c> you're</c>
+
+00:08:41.269 --> 00:08:41.279 align:start position:0%
+goes beyond just forms. And here you're
+ 
+
+00:08:41.279 --> 00:08:43.589 align:start position:0%
+goes beyond just forms. And here you're
+going<00:08:41.360><c> to</c><00:08:41.519><c> decide</c><00:08:42.240><c> okay</c><00:08:42.959><c> what's</c><00:08:43.279><c> going</c><00:08:43.360><c> to</c><00:08:43.519><c> be</c>
+
+00:08:43.589 --> 00:08:43.599 align:start position:0%
+going to decide okay what's going to be
+ 
+
+00:08:43.599 --> 00:08:46.230 align:start position:0%
+going to decide okay what's going to be
+the<00:08:43.839><c> sort</c><00:08:44.080><c> of</c><00:08:44.240><c> schema</c><00:08:44.640><c> for</c><00:08:44.959><c> this.</c><00:08:45.680><c> And</c><00:08:45.920><c> in</c><00:08:46.080><c> many</c>
+
+00:08:46.230 --> 00:08:46.240 align:start position:0%
+the sort of schema for this. And in many
+ 
+
+00:08:46.240 --> 00:08:47.910 align:start position:0%
+the sort of schema for this. And in many
+ways<00:08:46.480><c> these</c><00:08:46.720><c> are</c><00:08:46.880><c> probably</c><00:08:47.120><c> going</c><00:08:47.200><c> to</c><00:08:47.360><c> be</c><00:08:47.600><c> like</c>
+
+00:08:47.910 --> 00:08:47.920 align:start position:0%
+ways these are probably going to be like
+ 
+
+00:08:47.920 --> 00:08:50.389 align:start position:0%
+ways these are probably going to be like
+defining<00:08:48.560><c> tools</c><00:08:49.120><c> that</c><00:08:49.360><c> you</c><00:08:49.600><c> would</c><00:08:49.839><c> send</c><00:08:50.160><c> to</c>
+
+00:08:50.389 --> 00:08:50.399 align:start position:0%
+defining tools that you would send to
+ 
+
+00:08:50.399 --> 00:08:53.030 align:start position:0%
+defining tools that you would send to
+say<00:08:50.720><c> the</c><00:08:50.959><c> open</c><00:08:51.279><c> AI</c><00:08:51.680><c> or</c><00:08:51.920><c> anthropic</c><00:08:52.480><c> API</c>
+
+00:08:53.030 --> 00:08:53.040 align:start position:0%
+say the open AI or anthropic API
+ 
+
+00:08:53.040 --> 00:08:56.070 align:start position:0%
+say the open AI or anthropic API
+endpoints<00:08:53.920><c> etc.</c><00:08:54.720><c> Obviously</c><00:08:55.279><c> though</c><00:08:55.760><c> this</c><00:08:55.920><c> is</c>
+
+00:08:56.070 --> 00:08:56.080 align:start position:0%
+endpoints etc. Obviously though this is
+ 
+
+00:08:56.080 --> 00:08:58.070 align:start position:0%
+endpoints etc. Obviously though this is
+all<00:08:56.320><c> going</c><00:08:56.399><c> to</c><00:08:56.480><c> be</c><00:08:56.720><c> running</c><00:08:57.040><c> client</c><00:08:57.440><c> side</c><00:08:57.839><c> in</c>
+
+00:08:58.070 --> 00:08:58.080 align:start position:0%
+all going to be running client side in
+ 
+
+00:08:58.080 --> 00:09:00.070 align:start position:0%
+all going to be running client side in
+the<00:08:58.320><c> browser.</c><00:08:58.959><c> So,</c><00:08:59.200><c> while</c><00:08:59.440><c> this</c><00:08:59.680><c> is</c><00:08:59.839><c> still</c>
+
+00:09:00.070 --> 00:09:00.080 align:start position:0%
+the browser. So, while this is still
+ 
+
+00:09:00.080 --> 00:09:02.310 align:start position:0%
+the browser. So, while this is still
+perhaps<00:09:00.480><c> early</c><00:09:00.880><c> days</c><00:09:01.200><c> for</c><00:09:01.440><c> this</c><00:09:01.839><c> actually</c>
+
+00:09:02.310 --> 00:09:02.320 align:start position:0%
+perhaps early days for this actually
+ 
+
+00:09:02.320 --> 00:09:04.710 align:start position:0%
+perhaps early days for this actually
+rolling<00:09:02.800><c> out</c><00:09:03.040><c> to</c><00:09:03.360><c> the</c><00:09:03.519><c> mass</c><00:09:03.920><c> public</c><00:09:04.240><c> and</c><00:09:04.560><c> stuff</c>
+
+00:09:04.710 --> 00:09:04.720 align:start position:0%
+rolling out to the mass public and stuff
+ 
+
+00:09:04.720 --> 00:09:07.030 align:start position:0%
+rolling out to the mass public and stuff
+like<00:09:04.880><c> that,</c><00:09:05.440><c> it</c><00:09:05.680><c> is</c><00:09:05.920><c> literally</c><00:09:06.399><c> just</c><00:09:06.720><c> around</c>
+
+00:09:07.030 --> 00:09:07.040 align:start position:0%
+like that, it is literally just around
+ 
+
+00:09:07.040 --> 00:09:09.110 align:start position:0%
+like that, it is literally just around
+the<00:09:07.279><c> corner.</c><00:09:07.760><c> This</c><00:09:08.000><c> is</c><00:09:08.160><c> no</c><00:09:08.320><c> longer</c><00:09:08.640><c> just</c><00:09:08.880><c> a</c>
+
+00:09:09.110 --> 00:09:09.120 align:start position:0%
+the corner. This is no longer just a
+ 
+
+00:09:09.120 --> 00:09:11.590 align:start position:0%
+the corner. This is no longer just a
+debate<00:09:09.519><c> about</c><00:09:09.760><c> the</c><00:09:10.080><c> specs</c><00:09:10.399><c> of</c><00:09:10.640><c> this.</c><00:09:11.279><c> This</c><00:09:11.440><c> is</c>
+
+00:09:11.590 --> 00:09:11.600 align:start position:0%
+debate about the specs of this. This is
+ 
+
+00:09:11.600 --> 00:09:13.590 align:start position:0%
+debate about the specs of this. This is
+now<00:09:11.839><c> already</c><00:09:12.240><c> in</c><00:09:12.560><c> Chrome,</c><00:09:13.040><c> even</c><00:09:13.200><c> if</c><00:09:13.440><c> it's</c>
+
+00:09:13.590 --> 00:09:13.600 align:start position:0%
+now already in Chrome, even if it's
+ 
+
+00:09:13.600 --> 00:09:15.990 align:start position:0%
+now already in Chrome, even if it's
+behind<00:09:14.000><c> a</c><00:09:14.240><c> flag.</c><00:09:15.200><c> And</c><00:09:15.360><c> if</c><00:09:15.519><c> you</c><00:09:15.600><c> want</c><00:09:15.680><c> to</c><00:09:15.839><c> get</c>
+
+00:09:15.990 --> 00:09:16.000 align:start position:0%
+behind a flag. And if you want to get
+ 
+
+00:09:16.000 --> 00:09:17.350 align:start position:0%
+behind a flag. And if you want to get
+started,<00:09:16.320><c> you</c><00:09:16.560><c> can</c><00:09:16.640><c> actually</c><00:09:16.880><c> join</c><00:09:17.120><c> the</c>
+
+00:09:17.350 --> 00:09:17.360 align:start position:0%
+started, you can actually join the
+ 
+
+00:09:17.360 --> 00:09:19.269 align:start position:0%
+started, you can actually join the
+Chrome<00:09:17.760><c> early</c><00:09:18.080><c> preview</c><00:09:18.560><c> program</c><00:09:18.959><c> to</c>
+
+00:09:19.269 --> 00:09:19.279 align:start position:0%
+Chrome early preview program to
+ 
+
+00:09:19.279 --> 00:09:21.430 align:start position:0%
+Chrome early preview program to
+basically<00:09:19.680><c> get</c><00:09:19.920><c> more</c><00:09:20.320><c> access</c><00:09:20.880><c> to</c><00:09:21.200><c> some</c><00:09:21.360><c> of</c>
+
+00:09:21.430 --> 00:09:21.440 align:start position:0%
+basically get more access to some of
+ 
+
+00:09:21.440 --> 00:09:24.230 align:start position:0%
+basically get more access to some of
+these<00:09:21.760><c> APIs</c><00:09:22.560><c> and</c><00:09:22.800><c> to</c><00:09:23.120><c> what</c><00:09:23.440><c> actually</c><00:09:23.920><c> Google</c>
+
+00:09:24.230 --> 00:09:24.240 align:start position:0%
+these APIs and to what actually Google
+ 
+
+00:09:24.240 --> 00:09:26.150 align:start position:0%
+these APIs and to what actually Google
+is<00:09:24.480><c> doing</c><00:09:24.720><c> here.</c><00:09:25.200><c> So,</c><00:09:25.440><c> I'm</c><00:09:25.600><c> sure</c><00:09:25.760><c> over</c><00:09:26.000><c> the</c>
+
+00:09:26.150 --> 00:09:26.160 align:start position:0%
+is doing here. So, I'm sure over the
+ 
+
+00:09:26.160 --> 00:09:27.590 align:start position:0%
+is doing here. So, I'm sure over the
+next<00:09:26.320><c> month</c><00:09:26.480><c> or</c><00:09:26.640><c> two,</c><00:09:26.800><c> we'll</c><00:09:27.120><c> see</c><00:09:27.279><c> more</c><00:09:27.440><c> of</c>
+
+00:09:27.590 --> 00:09:27.600 align:start position:0%
+next month or two, we'll see more of
+ 
+
+00:09:27.600 --> 00:09:29.670 align:start position:0%
+next month or two, we'll see more of
+this<00:09:28.000><c> actually</c><00:09:28.399><c> roll</c><00:09:28.720><c> out.</c><00:09:29.360><c> And</c><00:09:29.519><c> we'll</c>
+
+00:09:29.670 --> 00:09:29.680 align:start position:0%
+this actually roll out. And we'll
+ 
+
+00:09:29.680 --> 00:09:31.190 align:start position:0%
+this actually roll out. And we'll
+probably<00:09:29.920><c> see</c><00:09:30.080><c> a</c><00:09:30.320><c> number</c><00:09:30.399><c> of</c><00:09:30.560><c> tools</c><00:09:30.959><c> or</c>
+
+00:09:31.190 --> 00:09:31.200 align:start position:0%
+probably see a number of tools or
+ 
+
+00:09:31.200 --> 00:09:33.030 align:start position:0%
+probably see a number of tools or
+perhaps<00:09:31.519><c> even</c><00:09:31.760><c> things</c><00:09:31.920><c> like</c><00:09:32.240><c> chord</c><00:09:32.640><c> skills</c>
+
+00:09:33.030 --> 00:09:33.040 align:start position:0%
+perhaps even things like chord skills
+ 
+
+00:09:33.040 --> 00:09:35.190 align:start position:0%
+perhaps even things like chord skills
+that<00:09:33.200><c> allow</c><00:09:33.519><c> you</c><00:09:33.920><c> to</c><00:09:34.240><c> take</c><00:09:34.480><c> a</c><00:09:34.720><c> particular</c>
+
+00:09:35.190 --> 00:09:35.200 align:start position:0%
+that allow you to take a particular
+ 
+
+00:09:35.200 --> 00:09:38.630 align:start position:0%
+that allow you to take a particular
+website<00:09:36.000><c> and</c><00:09:36.480><c> convert</c><00:09:36.880><c> it</c><00:09:37.279><c> and</c><00:09:37.600><c> set</c><00:09:37.839><c> it</c><00:09:38.000><c> up</c><00:09:38.320><c> to</c>
+
+00:09:38.630 --> 00:09:38.640 align:start position:0%
+website and convert it and set it up to
+ 
+
+00:09:38.640 --> 00:09:41.829 align:start position:0%
+website and convert it and set it up to
+actually<00:09:39.200><c> have</c><00:09:39.600><c> its</c><00:09:39.920><c> own</c><00:09:40.160><c> sort</c><00:09:40.399><c> of</c><00:09:40.560><c> web</c><00:09:40.880><c> MCPS</c>
+
+00:09:41.829 --> 00:09:41.839 align:start position:0%
+actually have its own sort of web MCPS
+ 
+
+00:09:41.839 --> 00:09:43.990 align:start position:0%
+actually have its own sort of web MCPS
+on<00:09:42.080><c> it.</c><00:09:42.640><c> But</c><00:09:42.880><c> definitely</c><00:09:43.120><c> for</c><00:09:43.360><c> now,</c><00:09:43.600><c> if</c><00:09:43.760><c> you're</c>
+
+00:09:43.990 --> 00:09:44.000 align:start position:0%
+on it. But definitely for now, if you're
+ 
+
+00:09:44.000 --> 00:09:46.310 align:start position:0%
+on it. But definitely for now, if you're
+looking<00:09:44.160><c> at</c><00:09:44.480><c> building</c><00:09:45.120><c> things</c><00:09:45.440><c> with</c><00:09:45.760><c> agents,</c>
+
+00:09:46.310 --> 00:09:46.320 align:start position:0%
+looking at building things with agents,
+ 
+
+00:09:46.320 --> 00:09:48.150 align:start position:0%
+looking at building things with agents,
+building<00:09:46.640><c> things</c><00:09:46.880><c> with</c><00:09:47.120><c> AI,</c><00:09:47.839><c> this</c><00:09:48.000><c> is</c>
+
+00:09:48.150 --> 00:09:48.160 align:start position:0%
+building things with AI, this is
+ 
+
+00:09:48.160 --> 00:09:49.350 align:start position:0%
+building things with AI, this is
+something<00:09:48.399><c> that</c><00:09:48.560><c> you</c><00:09:48.800><c> definitely</c><00:09:49.120><c> want</c><00:09:49.279><c> to</c>
+
+00:09:49.350 --> 00:09:49.360 align:start position:0%
+something that you definitely want to
+ 
+
+00:09:49.360 --> 00:09:51.190 align:start position:0%
+something that you definitely want to
+have<00:09:49.600><c> on</c><00:09:49.839><c> your</c><00:09:50.080><c> radar.</c><00:09:50.560><c> So,</c><00:09:50.880><c> check</c><00:09:50.959><c> out</c><00:09:51.120><c> the</c>
+
+00:09:51.190 --> 00:09:51.200 align:start position:0%
+have on your radar. So, check out the
+ 
+
+00:09:51.200 --> 00:09:52.470 align:start position:0%
+have on your radar. So, check out the
+links<00:09:51.440><c> in</c><00:09:51.519><c> the</c><00:09:51.680><c> description</c><00:09:52.000><c> and</c><00:09:52.160><c> let</c><00:09:52.320><c> me</c><00:09:52.399><c> know</c>
+
+00:09:52.470 --> 00:09:52.480 align:start position:0%
+links in the description and let me know
+ 
+
+00:09:52.480 --> 00:09:53.829 align:start position:0%
+links in the description and let me know
+in<00:09:52.720><c> the</c><00:09:52.800><c> comments</c><00:09:53.200><c> if</c><00:09:53.360><c> you've</c><00:09:53.519><c> got</c><00:09:53.680><c> an</c>
+
+00:09:53.829 --> 00:09:53.839 align:start position:0%
+in the comments if you've got an
+ 
+
+00:09:53.839 --> 00:09:55.350 align:start position:0%
+in the comments if you've got an
+interesting<00:09:54.080><c> take</c><00:09:54.320><c> of</c><00:09:54.560><c> where</c><00:09:54.800><c> you</c><00:09:54.959><c> could</c><00:09:55.200><c> see</c>
+
+00:09:55.350 --> 00:09:55.360 align:start position:0%
+interesting take of where you could see
+ 
+
+00:09:55.360 --> 00:09:57.190 align:start position:0%
+interesting take of where you could see
+this<00:09:55.760><c> actually</c><00:09:56.160><c> going.</c><00:09:56.560><c> I</c><00:09:56.800><c> definitely</c><00:09:57.120><c> think</c>
+
+00:09:57.190 --> 00:09:57.200 align:start position:0%
+this actually going. I definitely think
+ 
+
+00:09:57.200 --> 00:09:58.710 align:start position:0%
+this actually going. I definitely think
+this<00:09:57.440><c> is</c><00:09:57.600><c> one</c><00:09:57.760><c> of</c><00:09:57.839><c> the</c><00:09:58.080><c> interesting</c><00:09:58.480><c> things</c>
+
+00:09:58.710 --> 00:09:58.720 align:start position:0%
+this is one of the interesting things
+ 
+
+00:09:58.720 --> 00:10:00.630 align:start position:0%
+this is one of the interesting things
+that's<00:09:59.120><c> not</c><00:09:59.360><c> getting</c><00:09:59.519><c> a</c><00:09:59.760><c> lot</c><00:09:59.839><c> of</c><00:10:00.000><c> coverage</c><00:10:00.399><c> at</c>
+
+00:10:00.630 --> 00:10:00.640 align:start position:0%
+that's not getting a lot of coverage at
+ 
+
+00:10:00.640 --> 00:10:02.790 align:start position:0%
+that's not getting a lot of coverage at
+the<00:10:00.800><c> moment.</c><00:10:01.360><c> Anyway,</c><00:10:01.920><c> as</c><00:10:02.160><c> always,</c><00:10:02.480><c> I</c><00:10:02.640><c> will</c>
+
+00:10:02.790 --> 00:10:02.800 align:start position:0%
+the moment. Anyway, as always, I will
+ 
+
+00:10:02.800 --> 00:10:04.630 align:start position:0%
+the moment. Anyway, as always, I will
+talk<00:10:02.959><c> to</c><00:10:03.040><c> you</c><00:10:03.120><c> in</c><00:10:03.279><c> the</c><00:10:03.360><c> next</c><00:10:03.519><c> video.</c><00:10:04.160><c> Bye</c><00:10:04.480><c> for</c>
+
+00:10:04.630 --> 00:10:04.640 align:start position:0%
+talk to you in the next video. Bye for
+ 
+
+00:10:04.640 --> 00:10:06.800 align:start position:0%
+talk to you in the next video. Bye for
+now.
+

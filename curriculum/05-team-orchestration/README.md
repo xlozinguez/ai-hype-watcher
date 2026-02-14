@@ -212,6 +212,9 @@ Van Eyck frames Claude Code as the integration platform bringing these innovatio
 | [021: Claude's Best Release Yet + 10 Tricks](../../sources/021-ai-labs-claude-code-tricks.md) | AI LABS | Git worktrees for isolation, adversarial research teams, MCP CLI mode for context savings |
 | [024: Agentic coding in 2026](../../sources/024-jo-van-eyck-agentic-coding-2026.md) | Jo Van Eyck | Gas Town fleet orchestration, Claude Code as integration platform, Beats + multi-agent convergence |
 | [041: The new Claude just generated the worst C compiler ever](../../sources/041-awesome-claude-compiler-critique.md) | Awesome | Anthropic's 16-agent C compiler critique, $20K/100K lines (~$0.20/line), shifting success definitions, well-documented domain still produces mediocre results |
+| [051: You're using Claude Code Wrong](../../sources/051-simon-scrapes-claude-code-tips.md) | Simon Scrapes | Agent teams vs sub-agents graduation model, shared task list coordination, peer-to-peer communication benefits |
+| [054: The Cursor Situation](../../sources/054-java-brains-cursor-browser-hype.md) | Java Brains | Integrator removal antipattern, velocity vs correctness tradeoff, $8-16M in tokens for non-compiling code, bounded vs open-ended agent tasks |
+| [055: Multi-Agent Measurement Rig](../../sources/055-brainqub3-multi-agent-measurement.md) | Brainqub3 | Baseline-relative multi-agent measurement, coordination collapse under scale, single-agent performance as task difficulty proxy, empirical coordination metrics |
 
 ## Further Reading
 

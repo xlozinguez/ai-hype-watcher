@@ -221,6 +221,22 @@ The connection to the Ralph Wiggum loop (Concept 7) is direct: Beats provides th
 - **Example**: AI LABS ([#021]) demonstrates spawning adversarial agent pairs for research validation. After the primary agent completes research, an adversarial agent receives the same prompt with instructions to challenge conclusions and identify missing information. AI LABS also uses "predictive failure analysis" as a post-testing quality gate -- after tests pass, a separate agent analyzes the code for potential failure modes that tests might not cover.
 - **Source**: [#021]
 
+### Concept 10: WebMCP -- Structured Agent-Web Interaction
+
+Sam Witteveen ([#046](../../sources/046-sam-witteveen-webmcp.md)) breaks down WebMCP, a new standard jointly developed by Google and Microsoft that replaces the two fundamentally inefficient methods agents currently use to interact with websites: screenshot-based interaction (consuming thousands of tokens per image) and DOM/HTML parsing (translating raw markup into actionable information). WebMCP allows websites to expose structured tools directly to AI agents through the browser, turning each web page into what is effectively an MCP server.
+
+The architecture rests on three pillars: **Context** (data agents need, including content not currently visible), **Capabilities** (actions agents can take on the user's behalf), and **Coordination** (handoff between user and agent when ambiguity arises). Two complementary APIs are provided: a **Declarative API** that annotates existing HTML forms (making well-structured forms approximately 80% agent-ready with minimal work) and an **Imperative API** for complex JavaScript-driven interactions.
+
+For agent builders, WebMCP replaces what could be dozens of screenshot-and-click interactions with a single structured tool call, dramatically reducing token costs and improving reliability. This is available now behind a flag in Chrome with broader rollout expected in early-to-mid 2026.
+
+### Concept 11: REPL + Recursion as a Reasoning Primitive
+
+Brainqub3's analysis of the Recursive Language Models paper ([#048](../../sources/048-brainqub3-recursive-language-models.md)) introduces a deceptively simple agentic pattern for reasoning over complex, high-context documents. Instead of placing documents in the context window, the system assigns them to variables in a Python REPL. The model then operates through four primitives: **Read** (inspect the data object), **Evaluate** (run programmatic functions), **Print** (return results), and **Loop** (continue until solved). A recursive layer allows the orchestrating model to hand off sub-tasks to smaller models that focus on specific portions of the data.
+
+This pattern is particularly powerful for documents that are dependency graphs rather than linear text -- legal contracts, codebases, and policy documents with dense internal cross-references. Prior approaches (context stuffing, summarization, and RAG) break down when task complexity is high. Context stuffing is expensive and can bury signal in noise. Summarization is lossy. RAG works for simple Q&A but cannot capture logical relationships needed for multihop reasoning. The REPL + recursion approach enables intelligent search over the document graph rather than brute-force context consumption.
+
+The practical guidance: match the approach to the complexity. RLMs shine when tasks involve both long context and high complexity. For short context or simple retrieval, a direct LLM call often outperforms the overhead. Implement guardrails for recursion -- the paper limits recursion to one layer deep and uses synchronous workflows to prevent runaway costs.
+
 ## Common Pitfalls
 
 - **Relying on automatic task system activation instead of deliberate meta-prompts**: The task system activates automatically for large, complex prompts, but automatic activation lacks the organizational context and standards baked into a well-crafted meta-prompt. Deliberate meta-prompts enforce specific patterns (builder/validator pairs, dependency structures, validation criteria) and produce more consistent results.
@@ -236,6 +252,8 @@ The connection to the Ralph Wiggum loop (Concept 7) is direct: Beats provides th
 - **Treating all codebases with the same supervision level**: A prototype and a payment processing service should not have the same agent autonomy level. Without explicit policy, agent supervision becomes a free-for-all with inconsistent quality. Define policies per risk tier.
 
 - **Building monolithic skills instead of composable ones**: As IndyDevDan notes in [#015], prefer skill composition (sequential chaining, parallel activation) over building monolithic skills that try to do everything. Smaller, focused skills are easier to test, reuse, and combine.
+
+- **Jumping to agent teams when sub-agents suffice**: Simon Scrapes ([#051](../../sources/051-simon-scrapes-claude-code-tips.md)) recommends a clear graduation model: start with single agents, graduate to sub-agents for delegation, then reach for agent teams only when genuine cross-collaboration is required. Agent teams add token cost (~5x) and coordination overhead. The additional complexity is overkill for simple delegation tasks.
 
 - **Running autonomous loops without deterministic halting conditions**: Van Eyck ([#024]) warns that agents will confidently report "all done, all tests pass" when the code doesn't even compile. The Ralph Wiggum loop's value is precisely that it replaces agent self-assessment with deterministic verification (actual compilation, actual test execution). Without this, autonomous loops produce false-positive completion signals and waste compute on work that never had a chance of succeeding.
 
@@ -266,6 +284,9 @@ The connection to the Ralph Wiggum loop (Concept 7) is direct: Beats provides th
 | [021: Claude's Best Release Yet + 10 Tricks](../../sources/021-ai-labs-claude-code-tricks.md) | AI LABS | Adversarial agent pairs, predictive failure analysis, hooks for TDD enforcement, user stories for BDD |
 | [024: Agentic coding in 2026](../../sources/024-jo-van-eyck-agentic-coding-2026.md) | Jo Van Eyck | Ralph Wiggum loop deep dive, Beats persistent task management, autonomy slider, deterministic verification |
 | [043: Claude Code just replaced your ad agency](../../sources/043-agrici-daniel-claude-ad-agency.md) | Agrici Daniel | Autonomous multi-step tool orchestration within a skill, self-review and self-correction pattern, non-coding agentic workflow |
+| [046: The Rise of WebMCP](../../sources/046-sam-witteveen-webmcp.md) | Sam Witteveen | WebMCP structured agent-web interaction, declarative vs imperative APIs, replacing screenshot-based browsing with tool calls |
+| [048: Before You Build Another Agent, Understand This MIT Paper](../../sources/048-brainqub3-recursive-language-models.md) | Brainqub3 | REPL + recursion as reasoning primitive, context rot as two-dimensional, documents as dependency graphs, recursive delegation to smaller models |
+| [051: You're using Claude Code Wrong](../../sources/051-simon-scrapes-claude-code-tips.md) | Simon Scrapes | Agent teams vs sub-agents graduation model, hooks as zero-token checks, skill-augmented workflows |
 
 ## Further Reading
 
