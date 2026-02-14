@@ -65,9 +65,65 @@ This repo includes six skills for automated content workflows:
 
 ## Sources Tracked
 
-19 sources analyzed so far — 17 YouTube videos + 2 articles. See the full [source index](sources/) and [reference table](resources/).
+67 sources analyzed — 64 YouTube videos + 3 articles. See the full [source index](sources/) and [reference table](resources/).
 
-Creators covered: IndyDevDan, Nate B Jones, The PrimeTime, Bart Slodyczka, Ali H. Salem, Internet of Bugs, Confluent Developer, Leon van Zyl, ThePrimeagen, CircleCI, Matt Shumer.
+### YouTube Channels
+
+| Creator | Sources |
+|---------|---------|
+| [Nate B Jones](https://www.youtube.com/@NateBJones) | 9 |
+| [IndyDevDan](https://www.youtube.com/@indydevdan) | 4 |
+| [Simon Scrapes](https://www.youtube.com/@simonscrapes) | 3 |
+| [The PrimeTime / ThePrimeagen](https://www.youtube.com/@ThePrimeTimeagen) | 3 |
+| [Bart Slodyczka](https://www.youtube.com/@BartSlodyczka) | 2 |
+| [Leon van Zyl](https://www.youtube.com/@leonvanzyl) | 2 |
+| [Prof G (Scott Galloway)](https://www.youtube.com/@TheProfGPod) | 3 |
+| [Brainqub3](https://www.youtube.com/@brainqub3) | 2 |
+| [AI LABS](https://www.youtube.com/@AILABS-393) | 1 |
+| [Agrici Daniel](https://www.youtube.com/@AgriciDaniel) | 1 |
+| [Ali H. Salem](https://www.youtube.com/@Ali.H.Salem1) | 1 |
+| [Awesome](https://www.youtube.com/@awesome-coding) | 1 |
+| [Ben AI](https://www.youtube.com/@BenAI92) | 1 |
+| [Better Offline](https://www.youtube.com/@BetterOfflinePod) | 1 |
+| [Brooke Wright](https://www.youtube.com/@WrightMode) | 1 |
+| [ByteByteAI](https://www.youtube.com/@TeamByteByteAI) | 1 |
+| [Caleb Writes Code](https://www.youtube.com/@CalebWritesCode) | 1 |
+| [Charlie Automates](https://www.youtube.com/@charlieautomates) | 1 |
+| [Confluent Developer](https://www.youtube.com/@ConfluentDeveloper) | 1 |
+| [DevForge](https://www.youtube.com/@devforgehq) | 1 |
+| [Dwarkesh Patel](https://www.youtube.com/@DwarkeshPatel) | 1 |
+| [Griffonomics](https://www.youtube.com/@Griffonomics) | 1 |
+| [HR.com](https://www.youtube.com/@hrcom) | 1 |
+| [IBM Technology](https://www.youtube.com/@IBMTechnology) | 1 |
+| [Interface Studies](https://www.youtube.com/@interfacestudies) | 1 |
+| [Internet of Bugs](https://www.youtube.com/@InternetOfBugs) | 1 |
+| [Java Brains](https://www.youtube.com/@Java.Brains) | 1 |
+| [Jeremiah Krakowski](https://www.youtube.com/@jeremykrak) | 1 |
+| [Jo Van Eyck](https://www.youtube.com/@JoVanEyck) | 1 |
+| [Joshua Morony](https://www.youtube.com/@JoshuaMorony) | 1 |
+| [Lenny's Podcast](https://www.youtube.com/@LennysPodcast) | 1 |
+| [Modern Software Engineering](https://www.youtube.com/@ModernSoftwareEngineeringYT) | 1 |
+| [No Code MBA](https://www.youtube.com/@nocodemba) | 1 |
+| [Novara Media](https://www.youtube.com/@NovaraMedia) | 1 |
+| [Pivot to AI](https://www.youtube.com/@PivotToAI) | 1 |
+| [Playwright](https://www.youtube.com/@Playwrightdev) | 1 |
+| [Prompt Engineering](https://www.youtube.com/@engineerprompt) | 1 |
+| [Sam Harris](https://www.youtube.com/@samharrisorg) | 1 |
+| [Sam Witteveen](https://www.youtube.com/@samwitteveenai) | 1 |
+| [The Tech Report](https://www.youtube.com/@TheTechReportTR) | 1 |
+| [TheStandupPod](https://www.youtube.com/@TheStandupPod) | 1 |
+| [Tim Fairley](https://www.youtube.com/@ConstructIQ) | 1 |
+| [Traversy Media](https://www.youtube.com/@TraversyMedia) | 1 |
+| [Two Minute Papers](https://www.youtube.com/@TwoMinutePapers) | 1 |
+| [xCreate](https://www.youtube.com/@xcreate) | 1 |
+
+### Articles & Blogs
+
+| Creator | Publication |
+|---------|-------------|
+| Jacob Schmitt | [CircleCI Blog](https://circleci.com/blog/) |
+| Matt Shumer | [shumer.dev](https://shumer.dev/) |
+| David Gerard | [Pivot to AI](https://pivot-to-ai.com/) |
 
 ## Contributing
 
