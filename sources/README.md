@@ -63,6 +63,18 @@ Each source is synthesized (not transcribed) into a structured note with frontma
 | [053](053-hr-com-ai-operational-traction-wfm.md) | From AI Curiosity to Operational Traction | HR.com | video | enterprise-ai, ai-hype, capability-overhang |
 | [054](054-java-brains-cursor-browser-hype.md) | The Cursor Situation | Java Brains | video | ai-hype, agentic-coding, cursor, multi-agent, ai-economics |
 | [055](055-brainqub3-multi-agent-measurement.md) | I Built an Open-Source Rig That Measures Multi-Agent Architectures | Brainqub3 | video | multi-agent, agent-teams, enterprise-ai, agentic-coding |
+| [056](056-dwarkesh-patel-dario-amodei-interview.md) | Dario Amodei — The highest-stakes financial model in history | Dwarkesh Patel | video | ai-economics, anthropic, ai-landscape, ai-safety, infrastructure, enterprise-ai, capability-overhang |
+| [057](057-ibm-zero-trust-ai-agents.md) | Securing AI Agents with Zero Trust | IBM Technology | video | security, agentic-coding, enterprise-ai, multi-agent |
+| [058](058-krakowski-openclaw-agents.md) | The TRUTH About OpenClaw AI Agents (And How I'm Using Them) | Jeremiah Krakowski | video | ai-hype, multi-agent, security, enterprise-ai, ai-economics |
+| [059](059-nate-b-jones-ai-spending-skills.md) | Why $650 Billion in AI Spending ISN'T Enough. The 4 Skills that Survive | Nate B Jones | video | ai-economics, infrastructure, enterprise-ai, ai-hype, capability-overhang, ai-landscape, agentic-coding |
+| [060](060-prompt-engineering-100x-breakthrough.md) | The 100x AI Breakthrough No One is Talking About | Prompt Engineering | video | ai-landscape, agentic-coding, ai-economics, infrastructure |
+| [061](061-fairley-ai-first-construction.md) | Become an AI-first construction company: Strategy, Systems and Use-Cases | Tim Fairley | video | enterprise-ai, ai-hype, capability-overhang |
+| [062](062-simon-scrapes-claude-code-levels.md) | Every Level of Claude Code Explained in 39 Minutes | Simon Scrapes | video | claude-code, skills, context-engineering, mcp, agentic-coding, multi-agent, agent-teams, skills-ecosystem |
+| [063](063-ben-ai-cowork-plugins.md) | Claude Cowork Just Became 10x Better (Plugins Guide) | Ben AI | video | skills, skills-ecosystem, enterprise-ai, ai-economics, mcp, anthropic |
+| [064](064-indydevdan-agentic-prompt.md) | One Prompt Every AGENTIC Codebase Should Have (For Engineering Teams) | IndyDevDan | video | agentic-coding, claude-code, prompt-engineering, context-engineering, ai-sdlc |
+| [065](065-griffonomics-saaspocalypse.md) | SaaS-pocalypse: The Death of Seat-Based Software vs. The $600B AI Arms Race | Griffonomics | video | ai-economics, ai-hype, enterprise-ai, infrastructure, ai-landscape, capability-overhang, vibe-coding, revenue-per-employee |
+| [066](066-brooke-wright-cowork-tutorial.md) | How to use Claude Cowork better than 99% of people (full tutorial) | Brooke Wright | video | claude-code, enterprise-ai, skills-ecosystem, ai-economics, capability-overhang |
+| [067](067-bart-slodyczka-agent-teams-course.md) | Learn 90% Of Claude Code Agent Teams in 22 Minutes (Opus 4.6) | Bart Slodyczka | video | agent-teams, multi-agent, claude-code, context-engineering, skills |
 
 ## Adding Sources
 

@@ -67,6 +67,30 @@ The mechanism is straightforward: enterprises deploying AI in production environ
 
 > "A prominent part of Anthropic's culture has been 'do more with less,' always trying to maintain a situation where with less computational resources, we can do the same or better than someone with many more." -- Dario Amodei
 
+### Concept 4a: The "Hellish Demand Prediction Problem"
+
+Dario Amodei ([#056](../../sources/056-dwarkesh-patel-dario-amodei-interview.md)) provides the most transparent explanation to date of the financial dynamics of frontier AI labs. The key insight: profitability is not about choosing to invest versus take profits -- it is a function of whether you correctly predicted demand when you committed to compute purchases 1-2 years earlier. If you underestimate demand, you are profitable but compute-starved. If you overestimate, you have a research windfall but lose money. Being off by even one year at the current growth rate (10x/year) can be "ruinous."
+
+Amodei describes this as the highest-stakes financial model in history -- betting hundreds of billions on the precise trajectory of an unprecedented exponential curve. He also identifies a roughly 50/50 equilibrium between compute spent on training and inference, noting that companies finding the right balance will have structural advantages.
+
+On enterprise diffusion, Amodei pushes back on two extremes -- the "diffusion is cope" crowd who dismiss AI's limitations, and the "it will take forever" crowd who use economic diffusion as a reason to dismiss AI's significance. Claude Code adoption at enterprises is faster than any previous technology adoption but still takes months due to legal review, security compliance, procurement, and leadership buy-in.
+
+> "If you're off by only a year, you destroy yourselves. That's the balance." -- Dario Amodei
+
+### Concept 4b: Zero Trust Security for Agentic Systems
+
+IBM Technology ([#057](../../sources/057-ibm-zero-trust-ai-agents.md)) presents a structured threat model for agentic AI built around the agent's sense-think-act loop. The framework maps zero trust principles -- verify then trust, least privilege, assume breach, pervasive controls -- onto the new attack surfaces created by agentic architectures.
+
+The framework identifies six distinct attack vectors: prompt injection, policy/model poisoning, interface interception (including MCP calls), tool/API compromise, credential theft, and privilege escalation. The resulting security blueprint consists of:
+
+- **Credential vaults with dynamic just-in-time access**: Replace static, pre-provisioned credentials with dynamic issuance. Agents receive only the access rights they need, only when they need them, with immediate revocation after use.
+- **Tool registries with vetted inventories**: Before an agent can use a tool, API, data source, or spawn another agent, each must be registered and security-reviewed. This maps directly to MCP tool supply chain security concerns.
+- **AI firewalls/gateways**: An enforcement layer that inspects both inputs (catching prompt injections) and outputs (detecting data leakage) at agent boundaries.
+- **Immutable audit logs**: All agent actions logged to tamper-proof trails for post-incident forensics and alignment verification.
+- **Human-in-the-loop kill switches**: Rate-limiting high-impact actions and maintaining override capability for production agent deployments.
+
+The most important and most overlooked principle: design every control assuming the agent or its environment is already compromised. When autonomous agents have elevated privileges and can take real-world actions, the "assume breach" mindset becomes existential.
+
 ### Concept 5: The Execution Premium Collapse and the Rise of Judgment
 
 Nate B Jones ([#044](../../sources/044-nate-b-jones-claude-excel-powerpoint.md)) extends the bottleneck shift beyond software engineering into the broader knowledge economy. For 30+ years, professional value was built on execution skills -- building financial models, structuring analyses, writing code, designing presentations. That execution premium is evaporating. Jones demonstrated a production-quality Goldman Sachs-grade operating model built in 10 minutes that an analyst validated as full-day work.
@@ -148,6 +172,32 @@ David Gerard's analysis of the "SaaSpocalypse" ([#039](../../sources/039-pivot-t
 The sustainability question underneath all of this remains open. Cal Newport ([#034](../../sources/034-better-offline-cal-newport.md)) asks the most fundamental economic question: how do companies paying $30-60 billion per year in compute costs generate proportional returns? ([29:00](https://www.youtube.com/watch?v=85uXDLzuvdk&t=1740)) He notes that pre-training gains have largely plateaued since GPT-4, with labs shifting focus to post-training techniques (RLHF, metric-specific fine-tuning) that are substantially cheaper but yield more incremental improvements ([50:00](https://www.youtube.com/watch?v=85uXDLzuvdk&t=3000)). If the massive capital expenditure on training infrastructure yields diminishing capability improvements, the revenue-to-cost equation for AI companies becomes increasingly strained. Newport calls this the most underreported story in AI ([1:04:00](https://www.youtube.com/watch?v=85uXDLzuvdk&t=3840)).
 
 > "Somebody's going to come up with BYD and that is they're going to use AI to come up with 80% of Adobe for 10% of the price." -- Scott Galloway ([08:30](https://www.youtube.com/watch?v=ERAoSEC4skY&t=510))
+
+### Concept 8a: The Structural SaaSpocalypse -- Seat-Based Pricing Under Existential Threat
+
+Griffonomics ([#065](../../sources/065-griffonomics-saaspocalypse.md)) extends the SaaSpocalypse narrative from market panic to structural analysis. For 15-20 years, SaaS revenue scaled directly with customer headcount growth through per-seat pricing. Agentic AI severs this link -- if one engineer with AI agents does the work of 3-18 engineers, seat-based revenue plummets. The theoretical scenario: 94% of seat-based revenue could be cannibalized.
+
+The analysis surfaces a hidden systemic risk: **private equity firms loaded up leveraged buyouts of "lazy SaaS" companies at ~20x EBITDA**, betting on perpetual seat growth. With that growth stalling, software now represents **31% of all distressed names in the syndicated loan market**, with PIK (payment-in-kind) usage hitting 11.3% -- companies paying debt by taking on more debt. This debt is packaged into CLOs and BDCs held by pension funds and insurance companies, creating credit market contagion risk extending far beyond tech investors.
+
+The survival framework is binary: companies that provide **intelligence** (like Palantir's ontology/data mapping) or **infrastructure** (orchestration layers like ServiceNow's agent governance) will benefit from the agentic shift. Companies in the "mushy middle" that merely provide dashboards for humans to operate face commoditization. As vibe coding accelerates (AI-generated code already ~4% of GitHub), the scarcity value of proprietary software code approaches zero, further eroding SaaS moats.
+
+> "If your entire business is selling washing machine instruction manuals, which is what a lot of complex SaaS interfaces effectively are, you are in a world of trouble." -- Griffonomics
+
+### Concept 8b: The AI-as-Universal-Interface Thesis
+
+Ben AI ([#063](../../sources/063-ben-ai-cowork-plugins.md)) frames the plugin ecosystem as the mechanism through which AI agents could replace the multi-tool workflow most knowledge workers endure. Instead of jumping between 15 different tools with different interfaces and learning curves, a user talks to one AI interface that accesses all tools through plugins and connections. This positions Claude Cowork not as another tool but as the meta-layer above all existing tools.
+
+The department-scoped plugin model is strategically significant: companies can control which teams access which integrations, preventing cross-department data leakage while enabling focused capability. Three plugin economies are emerging: Anthropic-built starters, third-party provider plugins (monetizable by SaaS companies), and custom-built plugins unique to each business. The stock market reaction to this announcement -- drops for Salesforce, ServiceNow, and Adobe -- reflects how seriously investors take the threat to the multi-tool SaaS landscape.
+
+### Concept 8c: Integrated vs. Ad Hoc AI Adoption
+
+Tim Fairley ([#061](../../sources/061-fairley-ai-first-construction.md)) provides a ground-level framework for enterprise AI strategy from outside Silicon Valley. His distinction between integrated and ad hoc AI adoption is broadly applicable: everyone uses ChatGPT to draft emails and ask questions, but this provides no competitive advantage. The real value comes from integrating AI into defined processes with clear triggers, rules, and verification steps.
+
+Fairley's six foundations for AI adoption offer a practical checklist: (1) structured, accessible data as context; (2) good use cases where intelligence is the actual bottleneck; (3) mandatory human verification guardrails; (4) automation capability (triggers, data processing, output actions); (5) understanding limitations (hallucination, context constraints, visual reasoning gaps); (6) privacy and security awareness for contractual obligations.
+
+His most valuable contribution is the honest cost comparison: AI solutions should always be benchmarked against alternatives including outsourced human labor, which may be cheaper, more accurate, and more customizable for specific tasks. The economic test is not "can AI do this?" but "is AI the most cost-effective way to do this?"
+
+> "You should be looking to solve problems. Sometimes AI makes sense to solve those problems. Sometimes it doesn't." -- Tim Fairley
 
 ### Concept 9: Agent Governance and the Specification Quality Imperative
 
@@ -347,6 +397,10 @@ The cost reality also explains why local inference (Concept 16) becomes strategi
 
 - **Accepting "AI solves AI problems" narratives uncritically**: When an AI company frames its own technology as both the risk and the remedy ([#045](../../sources/045-primetime-altman-townhall-biosecurity.md)), apply extra skepticism. This framing can obscure accountability and create lock-in to that company's products. As model distillation makes dangerous capabilities increasingly available in smaller, open models, the premise of centralized access control weakens.
 
+- **Ignoring the PE credit market contagion risk**: The SaaSpocalypse is not just an equity market story. Private equity firms bought "boring, stable" B2B SaaS at ~20x EBITDA using leveraged buyouts, and software now represents 31% of distressed syndicated loan names ([#065](../../sources/065-griffonomics-saaspocalypse.md)). This debt is packaged into CLOs and BDCs held by pension funds and insurance companies. Watch credit markets, not just equities, for systemic risk signals.
+
+- **Deploying agentic systems without zero trust security**: IBM's framework ([#057](../../sources/057-ibm-zero-trust-ai-agents.md)) identifies six attack vectors specific to agents. Organizations that apply traditional security models (perimeter-based, human-identity-focused) to agentic systems leave massive gaps around non-human identity proliferation, tool supply chain compromise, and credential management. Treat every agent identity like a privileged user; never embed credentials in agent code; maintain vetted tool registries for all MCP connections.
+
 - **Dismissing developer sentiment about AI adoption as mere resistance**: Traversy's emotional account ([#022](../../sources/022-traversy-media-forced-ai.md)) of AI "taking some of the magic and the fun out of coding" ([0:00](https://www.youtube.com/watch?v=UaB0gWFwuEU&t=0)) reflects a real and widespread morale risk. The shift from builder satisfaction to architect satisfaction requires active organizational support -- framing the new role positively, preserving opportunities for hands-on coding where appropriate, and acknowledging the genuine loss that comes with the transition. Treating this as "resistance to change" misses the psychological dimension of a fundamental redefinition of professional identity.
 
 ## Hands-On Exercises
@@ -393,6 +447,13 @@ The cost reality also explains why local inference (Concept 16) becomes strategi
 | [053: From AI Curiosity to Operational Traction](../../sources/053-hr-com-ai-operational-traction-wfm.md) | HR.com / Jim Jensen | Assistive intelligence paradigm, autonomy tiers (observe/recommend/execute/escalate), redefining work as decisions, best-of-breed resurgence, upstream data quality |
 | [054: The Cursor Situation](../../sources/054-java-brains-cursor-browser-hype.md) | Java Brains | $8-16M for non-compiling code, compute cost does not equal value, bounded vs open-ended agent tasks, hype framing eroding industry trust |
 | [055: Multi-Agent Measurement Rig](../../sources/055-brainqub3-multi-agent-measurement.md) | Brainqub3 | Empirical multi-agent measurement, coordination collapse under scale, baseline-relative evaluation, enterprise decision-making for agent architecture investments |
+| [056: Dario Amodei — The highest-stakes financial model in history](../../sources/056-dwarkesh-patel-dario-amodei-interview.md) | Dwarkesh Patel | Compute economics, "hellish demand prediction," 10x revenue curve, training/inference split, fast-but-not-instant diffusion, 15-20% TFP improvement |
+| [057: Securing AI Agents with Zero Trust](../../sources/057-ibm-zero-trust-ai-agents.md) | IBM Technology | Zero trust for agentic AI, six attack vectors, just-in-time credentials, tool registry, AI firewalls, immutable logging, human kill switches |
+| [058: The TRUTH About OpenClaw AI Agents](../../sources/058-krakowski-openclaw-agents.md) | Jeremiah Krakowski | Non-technical agent deployment economics, $200/month + hardware costs, human-in-the-loop reality, surface-level security awareness |
+| [061: Become an AI-first construction company](../../sources/061-fairley-ai-first-construction.md) | Tim Fairley | Integrated vs ad hoc AI adoption, six foundations framework, honest cost comparison vs outsourcing, AI sweet spot test |
+| [063: Claude Cowork Just Became 10x Better (Plugins Guide)](../../sources/063-ben-ai-cowork-plugins.md) | Ben AI | AI-as-universal-interface thesis, department-scoped plugins, three plugin economies, SaaS disruption mechanism |
+| [065: SaaS-pocalypse: The Death of Seat-Based Software](../../sources/065-griffonomics-saaspocalypse.md) | Griffonomics | Structural SaaSpocalypse analysis, PE debt bomb (31% distressed loans), tool era vs agentic era, $600B infrastructure arms race, hollow middle youth unemployment |
+| [066: How to use Claude Cowork better than 99% of people](../../sources/066-brooke-wright-cowork-tutorial.md) | Brooke Wright | Co-work practical capabilities vs stock market panic, SaaS replacement reality check, non-technical enterprise AI adoption |
 
 ## Further Reading
 

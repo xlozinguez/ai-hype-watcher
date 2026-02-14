@@ -146,7 +146,33 @@ Three findings from the experiments are directly actionable:
 
 3. **Four canonical coordination patterns** represent different points in the coordination trade space: independent (parallel with aggregation), centralized (workers draft, orchestrator synthesizes), decentralized (agents exchange information and converge), and hybrid. Each has distinct coordination cost profiles visible through the measurement framework.
 
-### Concept 12: The Integrator Removal Antipattern
+### Concept 12: The Three Modes Mental Model
+
+Bart Slodyczka ([#067](../../sources/067-bart-slodyczka-agent-teams-course.md)) provides a clear three-mode framework for understanding Claude Code's session architecture, building on the sub-agent vs. team distinction:
+
+1. **Default mode**: One terminal, one session, one agent. Useful for configuration and simple tasks. Suffers from tunnel vision on large codebases -- the model gravitates toward one area and struggles to pull back out.
+
+2. **Sub-agent mode**: Still one primary session, but the main agent dispatches sub-agents for discrete tasks. The sub-agent completes work and returns only a summary -- preserving tokens in the main session. Analogous to sending a security guard from a control room to investigate a floor and report back.
+
+3. **Agent teams mode**: Each agent gets its own independent session with its own context window. A team leader breaks work into tasks, creates prompts for each teammate, and coordinates. Agents communicate via peer-to-peer messaging.
+
+The progression is fundamentally about **managing finite context windows**. In default mode, large codebases exhaust the token budget. Sub-agents conserve the primary session's tokens. Agent teams give each teammate a fresh context window for deeper investigation.
+
+Key operational details from Bart's walkthrough:
+
+- **Context inheritance**: Teammates do not inherit the full conversation history from the main session. If prior context matters, write it to a shared MD file and instruct the team leader to have agents read it.
+- **Race condition protection**: Anthropic's implementation includes checks to prevent two agents from picking up the same task when they finish current work simultaneously.
+- **Model selection per teammate**: The team leader can specify cheaper models (e.g., Sonnet) for simpler tasks while reserving Opus for complex reasoning, optimizing cost without sacrificing quality where it matters.
+- **Graceful shutdown**: Agents can reject shutdown requests if they believe their work is mission-critical. For development work, leave agents idling after task completion to preserve context for follow-up fixes.
+- **Shared memory files**: For cross-session persistence, create a shared MD file where agents log bugs, fixes, and issues. Future sessions reference this file to inherit knowledge from previous runs.
+
+### Concept 12a: Non-Technical Multi-Agent Patterns
+
+The OpenClaw adoption pattern ([#058](../../sources/058-krakowski-openclaw-agents.md)) reveals how multi-agent orchestration plays out for non-developer users. Krakowski runs 14 agents across dedicated hardware (M1 Mac Minis, Hetzner VPS instances) with Slack channels as the communication layer -- effectively a low-tech version of the tmux split-pane approach.
+
+The pattern is instructive for understanding the human-in-the-loop reality at scale: despite framing agents as autonomous virtual employees, the actual workflow involves heavy human direction. Agents propose, draft, and build; the human reviews, selects, and approves. When agents cannot navigate websites (due to bot detection), they open a browser and tell the human which buttons to click. The cost structure -- $200/month Claude Max plus $150-300 one-time hardware -- provides a concrete economic benchmark for non-enterprise multi-agent deployment.
+
+### Concept 13: The Integrator Removal Antipattern
 
 Java Brains ([#054](../../sources/054-java-brains-cursor-browser-hype.md)) surfaces a critical cautionary pattern from Cursor's FastRender browser experiment. The agent system originally included an "integrator" agent responsible for quality control -- analogous to a senior engineer doing code review. The blog post admits this agent was removed because it created bottlenecks. Rather than solving the quality-at-speed problem, they eliminated quality checks entirely.
 
@@ -246,6 +272,9 @@ This directly parallels the antipattern in human teams where managers optimize f
 | [051: You're using Claude Code Wrong](../../sources/051-simon-scrapes-claude-code-tips.md) | Simon Scrapes | Agent teams vs sub-agents graduation model, shared task list coordination, peer-to-peer communication benefits |
 | [054: The Cursor Situation](../../sources/054-java-brains-cursor-browser-hype.md) | Java Brains | Integrator removal antipattern, velocity vs correctness tradeoff, $8-16M in tokens for non-compiling code, bounded vs open-ended agent tasks |
 | [055: Multi-Agent Measurement Rig](../../sources/055-brainqub3-multi-agent-measurement.md) | Brainqub3 | Baseline-relative multi-agent measurement, coordination collapse under scale, single-agent performance as task difficulty proxy, empirical coordination metrics |
+| [058: The TRUTH About OpenClaw AI Agents](../../sources/058-krakowski-openclaw-agents.md) | Jeremiah Krakowski | Non-technical multi-agent adoption, Slack-based agent communication, dedicated hardware isolation, human-in-the-loop reality at 14 agents |
+| [062: Every Level of Claude Code Explained](../../sources/062-simon-scrapes-claude-code-levels.md) | Simon Scrapes | Agent teams as level 6, autonomous pipelines as level 7, context rot mitigation via GSD/RAWL, seven-level progression framework |
+| [067: Learn 90% Of Claude Code Agent Teams](../../sources/067-bart-slodyczka-agent-teams-course.md) | Bart Slodyczka | Three modes (default/sub-agent/teams), tmux setup, race condition protection, model selection per teammate, shared memory files, skill-from-process workflow |
 
 ## Further Reading
 

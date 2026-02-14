@@ -229,7 +229,32 @@ The architecture rests on three pillars: **Context** (data agents need, includin
 
 For agent builders, WebMCP replaces what could be dozens of screenshot-and-click interactions with a single structured tool call, dramatically reducing token costs and improving reliability. This is available now behind a flag in Chrome with broader rollout expected in early-to-mid 2026.
 
-### Concept 11: REPL + Recursion as a Reasoning Primitive
+### Concept 11: The Generate-Verify-Revise Pattern
+
+Google DeepMind's Althia research agent ([#060](../../sources/060-prompt-engineering-100x-breakthrough.md)) formalizes a three-part agentic loop that outperforms raw model inference at every compute scale:
+
+1. **Generator**: Takes a research task and proposes a candidate solution
+2. **Verifier**: A separate natural-language mechanism that probes the logic for gaps and hallucinations (not surface-level plausibility checks)
+3. **Reviser**: Patches minor issues or triggers a complete restart back to the generator if critically flawed
+
+Althia achieved 91.9% on Advanced Proof Bench (previous record: 65.7%), and on the 29 of 30 problems where it returned a solution, conditional accuracy was 98.3%. Two features distinguish it from simpler loops: it uses web search to ground citations in real literature (addressing hallucinated citations), and it can explicitly admit when it cannot solve a problem rather than hallucinating a confident answer.
+
+The meta-lesson reinforced across the release: **the orchestration layer around the model is where the real capability gains come from**. Poetic's agentic harness on Gemini 3 Pro beat earlier Deep Think at lower cost. Tool selection alone can yield 5-8% improvements -- gains not typically achievable with a model generation upgrade. This validates investing in harness design (generate-verify-revise loops, tool access, orchestration logic) rather than waiting for the next model release.
+
+### Concept 11a: Deterministic Scripts + Agentic Prompts as Architectural Pattern
+
+IndyDevDan ([#064](../../sources/064-indydevdan-agentic-prompt.md)) introduces a pattern applicable beyond codebase setup: combining deterministic code execution with agentic intelligence. The pattern structure is:
+
+1. Run deterministic steps first (scripts with predictable execution)
+2. Log everything from the deterministic execution
+3. Let an agentic prompt read the logs, validate results, and handle exceptions
+4. For interactive workflows, the agent asks human-in-the-loop questions for decisions that require judgment
+
+This pattern directly addresses the trust problem in agentic systems. As IndyDevDan frames it: "Agents when combined with code beats either alone." Deterministic hooks provide the reliability floor; agentic prompts provide the intelligence ceiling. The combination is strictly better than either approach in isolation.
+
+The encoding of common failure modes into the prompt creates a positive feedback loop: every time a new failure is discovered, it gets encoded as a problem/solution pair, making the agent progressively better at handling issues without human intervention. This turns prompts into evolving knowledge bases -- "living documents that execute."
+
+### Concept 12: REPL + Recursion as a Reasoning Primitive
 
 Brainqub3's analysis of the Recursive Language Models paper ([#048](../../sources/048-brainqub3-recursive-language-models.md)) introduces a deceptively simple agentic pattern for reasoning over complex, high-context documents. Instead of placing documents in the context window, the system assigns them to variables in a Python REPL. The model then operates through four primitives: **Read** (inspect the data object), **Evaluate** (run programmatic functions), **Print** (return results), and **Loop** (continue until solved). A recursive layer allows the orchestrating model to hand off sub-tasks to smaller models that focus on specific portions of the data.
 
@@ -256,6 +281,8 @@ The practical guidance: match the approach to the complexity. RLMs shine when ta
 - **Jumping to agent teams when sub-agents suffice**: Simon Scrapes ([#051](../../sources/051-simon-scrapes-claude-code-tips.md)) recommends a clear graduation model: start with single agents, graduate to sub-agents for delegation, then reach for agent teams only when genuine cross-collaboration is required. Agent teams add token cost (~5x) and coordination overhead. The additional complexity is overkill for simple delegation tasks.
 
 - **Running autonomous loops without deterministic halting conditions**: Van Eyck ([#024]) warns that agents will confidently report "all done, all tests pass" when the code doesn't even compile. The Ralph Wiggum loop's value is precisely that it replaces agent self-assessment with deterministic verification (actual compilation, actual test execution). Without this, autonomous loops produce false-positive completion signals and waste compute on work that never had a chance of succeeding.
+
+- **Neglecting the agent security surface**: IBM's zero trust framework for agentic AI ([#057](../../sources/057-ibm-zero-trust-ai-agents.md)) identifies six attack vectors specific to agent architectures: prompt injection, policy/model poisoning, interface interception (including MCP calls), tool/API compromise, credential theft, and privilege escalation. The "assume breach" mindset -- designing every control assuming the agent or its environment is already compromised -- becomes critical when autonomous agents have elevated privileges and can take real-world actions. Key mitigations: never embed credentials in agent code (use just-in-time credential vaults), maintain a vetted tool registry for all MCP tools and APIs, deploy AI firewalls at agent boundaries for input/output inspection, and log everything immutably for post-incident forensics.
 
 ## Hands-On Exercises
 
@@ -287,6 +314,10 @@ The practical guidance: match the approach to the complexity. RLMs shine when ta
 | [046: The Rise of WebMCP](../../sources/046-sam-witteveen-webmcp.md) | Sam Witteveen | WebMCP structured agent-web interaction, declarative vs imperative APIs, replacing screenshot-based browsing with tool calls |
 | [048: Before You Build Another Agent, Understand This MIT Paper](../../sources/048-brainqub3-recursive-language-models.md) | Brainqub3 | REPL + recursion as reasoning primitive, context rot as two-dimensional, documents as dependency graphs, recursive delegation to smaller models |
 | [051: You're using Claude Code Wrong](../../sources/051-simon-scrapes-claude-code-tips.md) | Simon Scrapes | Agent teams vs sub-agents graduation model, hooks as zero-token checks, skill-augmented workflows |
+| [057: Securing AI Agents with Zero Trust](../../sources/057-ibm-zero-trust-ai-agents.md) | IBM Technology | Six agent attack vectors, assume-breach for agents, just-in-time credentials, tool registry, AI firewalls, immutable logging |
+| [060: The 100x AI Breakthrough No One is Talking About](../../sources/060-prompt-engineering-100x-breakthrough.md) | Prompt Engineering | Generate-verify-revise pattern (Althia), agent layer as capability multiplier, tool selection impact on performance |
+| [062: Every Level of Claude Code Explained](../../sources/062-simon-scrapes-claude-code-levels.md) | Simon Scrapes | GSD planning framework, context rot mitigation, RAWL autonomous loops, seven-level progression |
+| [064: One Prompt Every AGENTIC Codebase Should Have](../../sources/064-indydevdan-agentic-prompt.md) | IndyDevDan | Deterministic + agentic pattern, setup hooks, justfile as launchpad, encoding failure modes into prompts, living documents |
 
 ## Further Reading
 
