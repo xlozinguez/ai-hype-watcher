@@ -27,6 +27,8 @@ Effective CLAUDE.md files focus on universal project context: directory structur
 
 Charlie Automates ([#040](../../sources/040-charlie-automates-claudemd-context.md)) quantifies the cost of ignoring this principle. A 733-line CLAUDE.md consumes 15-20% of the context window before any work begins. More importantly, irrelevant instructions do not sit passively in context -- they actively dilute the model's attention, degrading output quality across the entire conversation. As Charlie puts it: "They think the goal is to make Claude smarter, giving it more information, more context, more rules. It's not. Claude is already super intelligent. The goal is to make Claude more focused."
 
+Simon Scrapes ([#051](../../sources/051-simon-scrapes-claude-code-tips.md)) independently arrives at the same principle with a memorable formulation: "Keep CLAUDE.md lean and point to where the detail lives. Don't dump the detail itself." His recommendation is to keep CLAUDE.md under 20-30 lines and use it as an index that points to skills and reference files that Claude loads on demand. This preserves a clean, scannable root configuration while keeping detailed context available when needed without eating into the token budget of every session.
+
 Charlie introduces Carl (Context Augmentation Reinforcement Layer), a plugin that addresses this by splitting rules into domain-based groups (global, dev, content, clients, agents) and loading only the domains whose keywords match the current prompt. The same 734-line CLAUDE.md reduced to 28 rules for a content task and 23 rules for a dev task. Carl also provides star commands for manual style overrides (`*brief` for bullet-point-only output, `*dev` for code-over-explanation) and context brackets that automatically adjust verbosity as the context window fills -- from detailed responses when fresh, to concise at moderate usage, to code-only survival mode when depleted. Install with a single `npx carl-core` command.
 
 ### Concept 2: Skills as Lazy-Loaded Instructions
@@ -59,6 +61,8 @@ The three extension mechanisms in Claude Code serve different purposes, and choo
 As IndyDevDan puts it in [#015]: "If you would put it in a library that is always imported, use an MCP server. If you would put it in a module that is imported on demand, use a skill."
 
 Skills and MCP tools can be combined: a skill might instruct the agent to use a particular MCP tool in a specific way, layering workflow knowledge on top of raw tool capabilities. This composition -- workflow instructions (skill) directing tool usage (MCP) -- is a common and effective pattern.
+
+Simon Scrapes ([#051](../../sources/051-simon-scrapes-claude-code-tips.md)) extends this taxonomy with a fourth category: **Plugins**. Plugins are the distribution layer -- a packaged collection of commands, skills, hooks, and agents that can be installed from a marketplace in two commands. He also clarifies that **hooks** are purely programmatic (zero LLM tokens) and run deterministic checks at defined lifecycle points, such as scanning output drafts for banned words. The four-part extensibility stack -- slash commands (user-triggered), skills (auto-invoked context), hooks (zero-token programmatic checks), and plugins (distributable packages) -- provides a clear mental model for which mechanism to use when.
 
 > "MCP servers simply provide new tools to the agent... skills actually take up very little context." -- Leon van Zyl ([01:47](https://www.youtube.com/watch?v=vIUJ4Hd7be0&t=107))
 
@@ -96,7 +100,15 @@ Leon van Zyl ([#013]) demonstrates this concretely: installed skills consume ver
 
 This connects directly to the context engineering principles covered in [Module 02: Prompting & Workflows](../02-prompting-and-workflows/README.md). See also: Tim Berglund's "60-70% rule" -- research shows that performance peaks at roughly 60-70% of context window capacity, meaning effective context engineering requires being selective enough to leave headroom. Skills are one of the primary mechanisms for achieving that selectivity.
 
-### Concept 7: Advanced Claude Code Configuration -- Hooks, MCP CLI, and Insights
+### Concept 7: Research Workarounds and Fact-Checking Discipline
+
+Simon Scrapes ([#051](../../sources/051-simon-scrapes-claude-code-tips.md)) identifies two practical gaps in Claude Code's native capabilities and demonstrates workarounds.
+
+**Research access limitations**: Claude Code cannot fetch from many sites (Reddit, paywalled content, some social platforms). A workaround installs the Gemini CLI as a fallback research tool via a custom skill that detects blocked-site requests and routes them through Gemini's broader web access. Additionally, the community-built "last 30 days" skill scans Reddit and X for recent discussions, synthesizes patterns, and generates ready-to-use prompts.
+
+**Fact-checking as systematic workflow step**: Asking Claude to "double check every claim and statistic and make a table of what you could and couldn't verify, including the source" produces a verification matrix that catches hallucinated statistics before publication. In Simon's demo, 3 of 8 claims in generated content were flagged as unverifiable, with Claude recommending removal or softening. This transforms fact-checking from an afterthought into a final step in content workflows -- particularly valuable for non-code outputs where traditional test suites do not apply.
+
+### Concept 8: Advanced Claude Code Configuration -- Hooks, MCP CLI, and Insights
 
 Beyond skills and CLAUDE.md, Claude Code supports several advanced configuration mechanisms that extend the platform's capabilities in sophisticated ways. As demonstrated in AI LABS ([#021]), these features enable deterministic control over agent behavior, more efficient context management, and structured knowledge accumulation across sessions.
 
@@ -185,6 +197,7 @@ Beyond skills and CLAUDE.md, Claude Code supports several advanced configuration
 | [021: Claude's Best Release Yet + 10 Tricks](../../sources/021-ai-labs-claude-code-tricks.md) | AI LABS | Hooks with exit code 2, MCP CLI mode, insights command, structured documentation, context engineering |
 | [040: Stop Feeding Claude Your Entire CLAUDE.md](../../sources/040-charlie-automates-claudemd-context.md) | Charlie Automates | Monolithic CLAUDE.md as attention dilution, Carl plugin for domain-based rule segmentation, star commands, context brackets, focus over intelligence |
 | [043: Claude Code just replaced your ad agency](../../sources/043-agrici-daniel-claude-ad-agency.md) | Agrici Daniel | Cloudy Ads skill for paid advertising, domain-expert skills as agency replacements, 190+ audit checks, progressive questioning, skills knowledge base at scale (2,500 sources), non-coding use case |
+| [051: You're using Claude Code Wrong](../../sources/051-simon-scrapes-claude-code-tips.md) | Simon Scrapes | Extensibility stack disambiguation (commands vs skills vs hooks vs plugins), CLAUDE.md lean pointer pattern, Gemini CLI research fallback, fact-checking as workflow discipline |
 
 ## Further Reading
 

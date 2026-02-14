@@ -1,0 +1,4032 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.080 --> 00:00:01.910 align:start position:0%
+ 
+agents<00:00:00.560><c> can</c><00:00:00.800><c> finally</c><00:00:01.280><c> handle</c><00:00:01.680><c> high</c>
+
+00:00:01.910 --> 00:00:01.920 align:start position:0%
+agents can finally handle high
+ 
+
+00:00:01.920 --> 00:00:03.750 align:start position:0%
+agents can finally handle high
+complexity<00:00:02.480><c> work</c><00:00:02.879><c> outside</c><00:00:03.200><c> of</c><00:00:03.360><c> software</c>
+
+00:00:03.750 --> 00:00:03.760 align:start position:0%
+complexity work outside of software
+ 
+
+00:00:03.760 --> 00:00:06.150 align:start position:0%
+complexity work outside of software
+engineering.<00:00:04.720><c> Honestly,</c><00:00:05.359><c> this</c><00:00:05.680><c> feels</c><00:00:06.000><c> like</c>
+
+00:00:06.150 --> 00:00:06.160 align:start position:0%
+engineering. Honestly, this feels like
+ 
+
+00:00:06.160 --> 00:00:08.549 align:start position:0%
+engineering. Honestly, this feels like
+the<00:00:06.400><c> reasoning</c><00:00:06.799><c> moment</c><00:00:07.279><c> all</c><00:00:07.520><c> over</c><00:00:07.759><c> again,</c><00:00:08.240><c> but</c>
+
+00:00:08.549 --> 00:00:08.559 align:start position:0%
+the reasoning moment all over again, but
+ 
+
+00:00:08.559 --> 00:00:11.350 align:start position:0%
+the reasoning moment all over again, but
+for<00:00:08.720><c> AI</c><00:00:09.120><c> agents.</c><00:00:10.240><c> What's</c><00:00:10.480><c> most</c><00:00:10.719><c> surprising</c><00:00:11.120><c> is</c>
+
+00:00:11.350 --> 00:00:11.360 align:start position:0%
+for AI agents. What's most surprising is
+ 
+
+00:00:11.360 --> 00:00:14.310 align:start position:0%
+for AI agents. What's most surprising is
+the<00:00:11.519><c> fix</c><00:00:11.840><c> is</c><00:00:12.240><c> almost</c><00:00:12.719><c> absurdly</c><00:00:13.360><c> simple.</c><00:00:14.000><c> Code</c>
+
+00:00:14.310 --> 00:00:14.320 align:start position:0%
+the fix is almost absurdly simple. Code
+ 
+
+00:00:14.320 --> 00:00:16.710 align:start position:0%
+the fix is almost absurdly simple. Code
+execution<00:00:15.120><c> plus</c><00:00:15.519><c> recursion.</c><00:00:16.320><c> I've</c><00:00:16.560><c> read</c>
+
+00:00:16.710 --> 00:00:16.720 align:start position:0%
+execution plus recursion. I've read
+ 
+
+00:00:16.720 --> 00:00:18.470 align:start position:0%
+execution plus recursion. I've read
+through<00:00:16.880><c> the</c><00:00:16.960><c> RLM's</c><00:00:17.520><c> paper</c><00:00:17.760><c> and</c><00:00:18.000><c> distilled</c><00:00:18.320><c> it</c>
+
+00:00:18.470 --> 00:00:18.480 align:start position:0%
+through the RLM's paper and distilled it
+ 
+
+00:00:18.480 --> 00:00:20.390 align:start position:0%
+through the RLM's paper and distilled it
+into<00:00:18.800><c> the</c><00:00:19.039><c> important</c><00:00:19.600><c> mental</c><00:00:19.920><c> models</c><00:00:20.240><c> that</c>
+
+00:00:20.390 --> 00:00:20.400 align:start position:0%
+into the important mental models that
+ 
+
+00:00:20.400 --> 00:00:22.310 align:start position:0%
+into the important mental models that
+you're<00:00:20.640><c> going</c><00:00:20.800><c> to</c><00:00:20.960><c> need</c><00:00:21.279><c> to</c><00:00:21.520><c> apply</c><00:00:21.760><c> this.</c><00:00:22.080><c> So</c>
+
+00:00:22.310 --> 00:00:22.320 align:start position:0%
+you're going to need to apply this. So
+ 
+
+00:00:22.320 --> 00:00:24.070 align:start position:0%
+you're going to need to apply this. So
+the<00:00:22.480><c> first</c><00:00:22.640><c> mental</c><00:00:22.960><c> model</c><00:00:23.199><c> that</c><00:00:23.439><c> I</c><00:00:23.680><c> kind</c><00:00:23.840><c> of</c>
+
+00:00:24.070 --> 00:00:24.080 align:start position:0%
+the first mental model that I kind of
+ 
+
+00:00:24.080 --> 00:00:26.470 align:start position:0%
+the first mental model that I kind of
+want<00:00:24.240><c> to</c><00:00:25.039><c> communicate</c><00:00:25.519><c> is</c><00:00:25.840><c> why</c><00:00:26.080><c> context</c>
+
+00:00:26.470 --> 00:00:26.480 align:start position:0%
+want to communicate is why context
+ 
+
+00:00:26.480 --> 00:00:28.150 align:start position:0%
+want to communicate is why context
+length<00:00:26.800><c> is</c><00:00:27.039><c> only</c><00:00:27.199><c> half</c><00:00:27.439><c> the</c><00:00:27.599><c> size</c><00:00:27.840><c> when</c><00:00:28.000><c> we're</c>
+
+00:00:28.150 --> 00:00:28.160 align:start position:0%
+length is only half the size when we're
+ 
+
+00:00:28.160 --> 00:00:29.669 align:start position:0%
+length is only half the size when we're
+dealing<00:00:28.320><c> with</c><00:00:28.480><c> these</c><00:00:28.720><c> high</c><00:00:29.039><c> complexity</c>
+
+00:00:29.669 --> 00:00:29.679 align:start position:0%
+dealing with these high complexity
+ 
+
+00:00:29.679 --> 00:00:32.389 align:start position:0%
+dealing with these high complexity
+tasks.<00:00:30.880><c> So</c><00:00:31.439><c> one</c><00:00:31.679><c> of</c><00:00:31.760><c> the</c><00:00:31.840><c> insights</c><00:00:32.160><c> from</c><00:00:32.320><c> the</c>
+
+00:00:32.389 --> 00:00:32.399 align:start position:0%
+tasks. So one of the insights from the
+ 
+
+00:00:32.399 --> 00:00:35.270 align:start position:0%
+tasks. So one of the insights from the
+RLM<00:00:32.960><c> paper</c><00:00:33.440><c> is</c><00:00:33.760><c> that</c><00:00:34.399><c> it's</c><00:00:34.719><c> not</c><00:00:34.880><c> just</c><00:00:35.040><c> about</c>
+
+00:00:35.270 --> 00:00:35.280 align:start position:0%
+RLM paper is that it's not just about
+ 
+
+00:00:35.280 --> 00:00:37.190 align:start position:0%
+RLM paper is that it's not just about
+context<00:00:35.840><c> length.</c><00:00:36.399><c> It's</c><00:00:36.640><c> not</c><00:00:36.800><c> just</c><00:00:36.960><c> about</c>
+
+00:00:37.190 --> 00:00:37.200 align:start position:0%
+context length. It's not just about
+ 
+
+00:00:37.200 --> 00:00:39.510 align:start position:0%
+context length. It's not just about
+having<00:00:37.920><c> legal</c><00:00:38.320><c> contracts</c><00:00:38.719><c> that</c><00:00:38.960><c> are</c><00:00:39.120><c> like</c><00:00:39.280><c> a</c>
+
+00:00:39.510 --> 00:00:39.520 align:start position:0%
+having legal contracts that are like a
+ 
+
+00:00:39.520 --> 00:00:41.190 align:start position:0%
+having legal contracts that are like a
+million<00:00:39.760><c> tokens</c><00:00:40.160><c> long,</c><00:00:40.480><c> let's</c><00:00:40.719><c> say,</c><00:00:40.960><c> or</c>
+
+00:00:41.190 --> 00:00:41.200 align:start position:0%
+million tokens long, let's say, or
+ 
+
+00:00:41.200 --> 00:00:43.030 align:start position:0%
+million tokens long, let's say, or
+having<00:00:41.440><c> data</c><00:00:41.760><c> rooms</c><00:00:42.079><c> that</c><00:00:42.399><c> span</c><00:00:42.719><c> across</c>
+
+00:00:43.030 --> 00:00:43.040 align:start position:0%
+having data rooms that span across
+ 
+
+00:00:43.040 --> 00:00:45.350 align:start position:0%
+having data rooms that span across
+millions<00:00:43.360><c> of</c><00:00:43.520><c> tokens</c><00:00:43.840><c> or</c><00:00:44.160><c> large</c><00:00:44.399><c> code</c><00:00:44.719><c> bases.</c>
+
+00:00:45.350 --> 00:00:45.360 align:start position:0%
+millions of tokens or large code bases.
+ 
+
+00:00:45.360 --> 00:00:48.150 align:start position:0%
+millions of tokens or large code bases.
+It's<00:00:45.600><c> also</c><00:00:45.920><c> about</c><00:00:46.160><c> the</c><00:00:46.399><c> inherent</c><00:00:46.960><c> complexity</c>
+
+00:00:48.150 --> 00:00:48.160 align:start position:0%
+It's also about the inherent complexity
+ 
+
+00:00:48.160 --> 00:00:50.950 align:start position:0%
+It's also about the inherent complexity
+of<00:00:48.800><c> those</c><00:00:49.280><c> documents</c><00:00:49.840><c> of</c><00:00:50.000><c> those</c><00:00:50.320><c> types</c><00:00:50.640><c> of</c>
+
+00:00:50.950 --> 00:00:50.960 align:start position:0%
+of those documents of those types of
+ 
+
+00:00:50.960 --> 00:00:53.590 align:start position:0%
+of those documents of those types of
+data<00:00:51.360><c> assets.</c><00:00:52.480><c> So</c><00:00:52.719><c> if</c><00:00:52.879><c> you</c><00:00:52.960><c> look</c><00:00:53.120><c> at</c><00:00:53.280><c> legal</c>
+
+00:00:53.590 --> 00:00:53.600 align:start position:0%
+data assets. So if you look at legal
+ 
+
+00:00:53.600 --> 00:00:55.510 align:start position:0%
+data assets. So if you look at legal
+contracts,<00:00:54.239><c> take</c><00:00:54.480><c> a</c><00:00:54.640><c> merger</c><00:00:54.960><c> agreement</c><00:00:55.360><c> for</c>
+
+00:00:55.510 --> 00:00:55.520 align:start position:0%
+contracts, take a merger agreement for
+ 
+
+00:00:55.520 --> 00:00:58.389 align:start position:0%
+contracts, take a merger agreement for
+example,<00:00:56.320><c> there</c><00:00:56.559><c> are</c><00:00:56.800><c> a</c><00:00:57.120><c> lot</c><00:00:57.360><c> of</c><00:00:57.760><c> internal</c>
+
+00:00:58.389 --> 00:00:58.399 align:start position:0%
+example, there are a lot of internal
+ 
+
+00:00:58.399 --> 00:01:00.630 align:start position:0%
+example, there are a lot of internal
+self-<00:00:58.719><c> references</c><00:00:59.520><c> that</c><00:00:59.840><c> introduce</c><00:01:00.320><c> a</c><00:01:00.480><c> high</c>
+
+00:01:00.630 --> 00:01:00.640 align:start position:0%
+self- references that introduce a high
+ 
+
+00:01:00.640 --> 00:01:02.630 align:start position:0%
+self- references that introduce a high
+degree<00:01:00.879><c> of</c><00:01:01.120><c> complexity</c><00:01:01.840><c> of</c><00:01:02.079><c> that</c><00:01:02.320><c> type</c><00:01:02.480><c> of</c>
+
+00:01:02.630 --> 00:01:02.640 align:start position:0%
+degree of complexity of that type of
+ 
+
+00:01:02.640 --> 00:01:04.549 align:start position:0%
+degree of complexity of that type of
+asset.<00:01:03.199><c> So</c><00:01:03.359><c> it</c><00:01:03.520><c> turns</c><00:01:03.680><c> out</c><00:01:03.840><c> you</c><00:01:04.000><c> can't</c><00:01:04.239><c> read</c>
+
+00:01:04.549 --> 00:01:04.559 align:start position:0%
+asset. So it turns out you can't read
+ 
+
+00:01:04.559 --> 00:01:06.870 align:start position:0%
+asset. So it turns out you can't read
+those<00:01:04.799><c> things</c><00:01:05.199><c> just</c><00:01:05.439><c> like</c><00:01:05.680><c> you</c><00:01:05.920><c> read</c><00:01:06.159><c> a</c><00:01:06.479><c> book</c>
+
+00:01:06.870 --> 00:01:06.880 align:start position:0%
+those things just like you read a book
+ 
+
+00:01:06.880 --> 00:01:09.350 align:start position:0%
+those things just like you read a book
+end<00:01:07.119><c> to</c><00:01:07.360><c> end.</c><00:01:08.080><c> There</c><00:01:08.320><c> are</c><00:01:08.720><c> clauses</c><00:01:09.119><c> that</c>
+
+00:01:09.350 --> 00:01:09.360 align:start position:0%
+end to end. There are clauses that
+ 
+
+00:01:09.360 --> 00:01:11.030 align:start position:0%
+end to end. There are clauses that
+reference<00:01:09.760><c> other</c><00:01:10.000><c> clauses</c><00:01:10.479><c> that</c><00:01:10.720><c> might</c><00:01:10.880><c> have</c>
+
+00:01:11.030 --> 00:01:11.040 align:start position:0%
+reference other clauses that might have
+ 
+
+00:01:11.040 --> 00:01:13.670 align:start position:0%
+reference other clauses that might have
+come<00:01:11.200><c> earlier</c><00:01:11.680><c> or</c><00:01:12.080><c> might</c><00:01:12.320><c> come</c><00:01:12.560><c> later.</c><00:01:13.520><c> There</c>
+
+00:01:13.670 --> 00:01:13.680 align:start position:0%
+come earlier or might come later. There
+ 
+
+00:01:13.680 --> 00:01:16.550 align:start position:0%
+come earlier or might come later. There
+are<00:01:14.000><c> things</c><00:01:14.320><c> in</c><00:01:14.640><c> there</c><00:01:14.960><c> that</c><00:01:15.760><c> create</c><00:01:16.159><c> that</c>
+
+00:01:16.550 --> 00:01:16.560 align:start position:0%
+are things in there that create that
+ 
+
+00:01:16.560 --> 00:01:19.749 align:start position:0%
+are things in there that create that
+complex<00:01:17.200><c> structure.</c><00:01:18.479><c> So</c><00:01:18.720><c> context</c><00:01:19.200><c> window</c><00:01:19.600><c> is</c>
+
+00:01:19.749 --> 00:01:19.759 align:start position:0%
+complex structure. So context window is
+ 
+
+00:01:19.759 --> 00:01:22.149 align:start position:0%
+complex structure. So context window is
+basically<00:01:20.159><c> only</c><00:01:20.640><c> half</c><00:01:20.960><c> the</c><00:01:21.280><c> story.</c><00:01:21.759><c> The</c><00:01:22.000><c> other</c>
+
+00:01:22.149 --> 00:01:22.159 align:start position:0%
+basically only half the story. The other
+ 
+
+00:01:22.159 --> 00:01:25.109 align:start position:0%
+basically only half the story. The other
+half<00:01:22.320><c> of</c><00:01:22.400><c> the</c><00:01:22.640><c> story</c><00:01:23.040><c> is</c><00:01:23.600><c> task</c><00:01:24.159><c> complexity.</c>
+
+00:01:25.109 --> 00:01:25.119 align:start position:0%
+half of the story is task complexity.
+ 
+
+00:01:25.119 --> 00:01:26.710 align:start position:0%
+half of the story is task complexity.
+And<00:01:25.360><c> when</c><00:01:25.520><c> we</c><00:01:25.680><c> talk</c><00:01:25.759><c> about</c><00:01:25.920><c> task</c><00:01:26.240><c> complexity,</c>
+
+00:01:26.710 --> 00:01:26.720 align:start position:0%
+And when we talk about task complexity,
+ 
+
+00:01:26.720 --> 00:01:28.070 align:start position:0%
+And when we talk about task complexity,
+we're<00:01:26.880><c> talking</c><00:01:27.119><c> specifically</c><00:01:27.680><c> about</c><00:01:27.840><c> the</c>
+
+00:01:28.070 --> 00:01:28.080 align:start position:0%
+we're talking specifically about the
+ 
+
+00:01:28.080 --> 00:01:29.749 align:start position:0%
+we're talking specifically about the
+complexity<00:01:28.479><c> of</c><00:01:28.640><c> the</c><00:01:28.880><c> documents</c><00:01:29.280><c> we're</c><00:01:29.600><c> trying</c>
+
+00:01:29.749 --> 00:01:29.759 align:start position:0%
+complexity of the documents we're trying
+ 
+
+00:01:29.759 --> 00:01:33.190 align:start position:0%
+complexity of the documents we're trying
+to<00:01:30.799><c> have</c><00:01:31.040><c> the</c><00:01:31.280><c> agent</c><00:01:31.759><c> work</c><00:01:32.000><c> with.</c><00:01:32.640><c> So</c><00:01:32.880><c> let's</c>
+
+00:01:33.190 --> 00:01:33.200 align:start position:0%
+to have the agent work with. So let's
+ 
+
+00:01:33.200 --> 00:01:35.030 align:start position:0%
+to have the agent work with. So let's
+talk<00:01:33.360><c> a</c><00:01:33.520><c> little</c><00:01:33.600><c> bit</c><00:01:33.759><c> about</c><00:01:33.920><c> why</c><00:01:34.240><c> LLMs</c><00:01:34.799><c> have</c>
+
+00:01:35.030 --> 00:01:35.040 align:start position:0%
+talk a little bit about why LLMs have
+ 
+
+00:01:35.040 --> 00:01:37.109 align:start position:0%
+talk a little bit about why LLMs have
+struggled<00:01:35.520><c> with</c><00:01:36.000><c> this</c><00:01:36.400><c> kind</c><00:01:36.560><c> of</c><00:01:36.720><c> task</c>
+
+00:01:37.109 --> 00:01:37.119 align:start position:0%
+struggled with this kind of task
+ 
+
+00:01:37.119 --> 00:01:40.950 align:start position:0%
+struggled with this kind of task
+complexity<00:01:37.840><c> and</c><00:01:38.560><c> high</c><00:01:39.439><c> context</c><00:01:40.000><c> workloads.</c>
+
+00:01:40.950 --> 00:01:40.960 align:start position:0%
+complexity and high context workloads.
+ 
+
+00:01:40.960 --> 00:01:43.670 align:start position:0%
+complexity and high context workloads.
+It's<00:01:41.200><c> called</c><00:01:41.360><c> context</c><00:01:41.920><c> rot.</c><00:01:42.560><c> So</c><00:01:42.799><c> context</c><00:01:43.280><c> rot</c>
+
+00:01:43.670 --> 00:01:43.680 align:start position:0%
+It's called context rot. So context rot
+ 
+
+00:01:43.680 --> 00:01:45.910 align:start position:0%
+It's called context rot. So context rot
+is<00:01:44.000><c> this</c><00:01:44.479><c> phenomenon</c><00:01:45.119><c> where</c><00:01:45.520><c> the</c><00:01:45.759><c> more</c>
+
+00:01:45.910 --> 00:01:45.920 align:start position:0%
+is this phenomenon where the more
+ 
+
+00:01:45.920 --> 00:01:47.429 align:start position:0%
+is this phenomenon where the more
+context<00:01:46.240><c> you</c><00:01:46.399><c> stuff</c><00:01:46.560><c> into</c><00:01:46.720><c> a</c><00:01:46.880><c> large</c><00:01:47.119><c> language</c>
+
+00:01:47.429 --> 00:01:47.439 align:start position:0%
+context you stuff into a large language
+ 
+
+00:01:47.439 --> 00:01:48.950 align:start position:0%
+context you stuff into a large language
+model<00:01:47.920><c> the</c><00:01:48.079><c> more</c><00:01:48.320><c> the</c><00:01:48.560><c> performance</c>
+
+00:01:48.950 --> 00:01:48.960 align:start position:0%
+model the more the performance
+ 
+
+00:01:48.960 --> 00:01:50.950 align:start position:0%
+model the more the performance
+deteriorates<00:01:49.920><c> and</c><00:01:50.159><c> before</c><00:01:50.479><c> we</c><00:01:50.720><c> were</c><00:01:50.799><c> looking</c>
+
+00:01:50.950 --> 00:01:50.960 align:start position:0%
+deteriorates and before we were looking
+ 
+
+00:01:50.960 --> 00:01:52.550 align:start position:0%
+deteriorates and before we were looking
+at<00:01:51.200><c> context</c><00:01:51.680><c> rot</c><00:01:51.920><c> kind</c><00:01:52.079><c> of</c><00:01:52.159><c> unid</c>
+
+00:01:52.550 --> 00:01:52.560 align:start position:0%
+at context rot kind of unid
+ 
+
+00:01:52.560 --> 00:01:54.469 align:start position:0%
+at context rot kind of unid
+dimensionally<00:01:53.200><c> as</c><00:01:53.600><c> just</c><00:01:53.840><c> a</c><00:01:54.079><c> function</c><00:01:54.320><c> of</c>
+
+00:01:54.469 --> 00:01:54.479 align:start position:0%
+dimensionally as just a function of
+ 
+
+00:01:54.479 --> 00:01:56.710 align:start position:0%
+dimensionally as just a function of
+context<00:01:55.280><c> but</c><00:01:55.520><c> it's</c><00:01:55.840><c> actually</c><00:01:56.000><c> a</c><00:01:56.240><c> function</c><00:01:56.479><c> of</c>
+
+00:01:56.710 --> 00:01:56.720 align:start position:0%
+context but it's actually a function of
+ 
+
+00:01:56.720 --> 00:02:00.469 align:start position:0%
+context but it's actually a function of
+context<00:01:57.280><c> and</c><00:01:57.840><c> task</c><00:01:58.240><c> complexity.</c><00:01:59.520><c> So</c><00:01:59.840><c> a</c><00:02:00.240><c> model</c>
+
+00:02:00.469 --> 00:02:00.479 align:start position:0%
+context and task complexity. So a model
+ 
+
+00:02:00.479 --> 00:02:03.109 align:start position:0%
+context and task complexity. So a model
+that<00:02:00.640><c> has</c><00:02:00.799><c> a</c><00:02:00.960><c> million</c><00:02:01.280><c> token</c><00:02:01.680><c> context</c><00:02:02.719><c> will</c>
+
+00:02:03.109 --> 00:02:03.119 align:start position:0%
+that has a million token context will
+ 
+
+00:02:03.119 --> 00:02:05.190 align:start position:0%
+that has a million token context will
+deteriorate<00:02:04.079><c> long</c><00:02:04.399><c> before</c><00:02:04.640><c> that</c><00:02:04.880><c> million</c>
+
+00:02:05.190 --> 00:02:05.200 align:start position:0%
+deteriorate long before that million
+ 
+
+00:02:05.200 --> 00:02:07.910 align:start position:0%
+deteriorate long before that million
+tokens<00:02:05.520><c> is</c><00:02:05.759><c> hit</c><00:02:06.079><c> if</c><00:02:06.320><c> your</c><00:02:06.560><c> task</c><00:02:06.880><c> complexity</c><00:02:07.600><c> is</c>
+
+00:02:07.910 --> 00:02:07.920 align:start position:0%
+tokens is hit if your task complexity is
+ 
+
+00:02:07.920 --> 00:02:09.830 align:start position:0%
+tokens is hit if your task complexity is
+also<00:02:08.319><c> high.</c><00:02:09.200><c> that</c><00:02:09.360><c> leads</c><00:02:09.520><c> to</c><00:02:09.599><c> a</c><00:02:09.679><c> lot</c><00:02:09.759><c> of</c>
+
+00:02:09.830 --> 00:02:09.840 align:start position:0%
+also high. that leads to a lot of
+ 
+
+00:02:09.840 --> 00:02:12.150 align:start position:0%
+also high. that leads to a lot of
+instability<00:02:10.479><c> in</c><00:02:10.720><c> how</c><00:02:10.959><c> effectively</c><00:02:11.520><c> a</c><00:02:11.840><c> model</c>
+
+00:02:12.150 --> 00:02:12.160 align:start position:0%
+instability in how effectively a model
+ 
+
+00:02:12.160 --> 00:02:14.949 align:start position:0%
+instability in how effectively a model
+can<00:02:12.879><c> utilize</c><00:02:13.200><c> its</c><00:02:13.520><c> context.</c><00:02:14.480><c> There's</c><00:02:14.720><c> also</c>
+
+00:02:14.949 --> 00:02:14.959 align:start position:0%
+can utilize its context. There's also
+ 
+
+00:02:14.959 --> 00:02:17.430 align:start position:0%
+can utilize its context. There's also
+another<00:02:15.280><c> misconception.</c><00:02:16.080><c> So</c><00:02:16.239><c> we've</c><00:02:16.560><c> had</c><00:02:17.200><c> this</c>
+
+00:02:17.430 --> 00:02:17.440 align:start position:0%
+another misconception. So we've had this
+ 
+
+00:02:17.440 --> 00:02:19.670 align:start position:0%
+another misconception. So we've had this
+kind<00:02:17.680><c> of</c><00:02:17.920><c> lost</c><00:02:18.480><c> middle</c><00:02:18.720><c> problem</c><00:02:18.959><c> for</c><00:02:19.120><c> a</c><00:02:19.280><c> while</c>
+
+00:02:19.670 --> 00:02:19.680 align:start position:0%
+kind of lost middle problem for a while
+ 
+
+00:02:19.680 --> 00:02:21.510 align:start position:0%
+kind of lost middle problem for a while
+and<00:02:19.840><c> a</c><00:02:20.080><c> lost</c><00:02:20.239><c> in</c><00:02:20.400><c> the</c><00:02:20.560><c> middle</c><00:02:20.720><c> problem</c><00:02:21.200><c> is</c>
+
+00:02:21.510 --> 00:02:21.520 align:start position:0%
+and a lost in the middle problem is
+ 
+
+00:02:21.520 --> 00:02:23.350 align:start position:0%
+and a lost in the middle problem is
+basically<00:02:22.000><c> give</c><00:02:22.160><c> a</c><00:02:22.319><c> large</c><00:02:22.480><c> language</c><00:02:22.800><c> model</c><00:02:23.040><c> a</c>
+
+00:02:23.350 --> 00:02:23.360 align:start position:0%
+basically give a large language model a
+ 
+
+00:02:23.360 --> 00:02:25.750 align:start position:0%
+basically give a large language model a
+huge<00:02:23.520><c> amount</c><00:02:23.760><c> of</c><00:02:23.920><c> context,</c><00:02:24.879><c> put</c><00:02:25.120><c> some</c><00:02:25.360><c> needles</c>
+
+00:02:25.750 --> 00:02:25.760 align:start position:0%
+huge amount of context, put some needles
+ 
+
+00:02:25.760 --> 00:02:27.670 align:start position:0%
+huge amount of context, put some needles
+in<00:02:25.920><c> there.</c><00:02:26.160><c> So</c><00:02:26.319><c> to</c><00:02:26.560><c> represent</c><00:02:26.800><c> a</c><00:02:27.040><c> needle</c><00:02:27.360><c> in</c><00:02:27.520><c> a</c>
+
+00:02:27.670 --> 00:02:27.680 align:start position:0%
+in there. So to represent a needle in a
+ 
+
+00:02:27.680 --> 00:02:29.990 align:start position:0%
+in there. So to represent a needle in a
+haystack<00:02:28.400><c> which</c><00:02:28.560><c> is</c><00:02:28.800><c> basically</c><00:02:29.200><c> small</c><00:02:29.680><c> pieces</c>
+
+00:02:29.990 --> 00:02:30.000 align:start position:0%
+haystack which is basically small pieces
+ 
+
+00:02:30.000 --> 00:02:31.510 align:start position:0%
+haystack which is basically small pieces
+of<00:02:30.160><c> information</c><00:02:30.560><c> that</c><00:02:30.800><c> the</c><00:02:30.959><c> model</c><00:02:31.200><c> has</c><00:02:31.440><c> to</c>
+
+00:02:31.510 --> 00:02:31.520 align:start position:0%
+of information that the model has to
+ 
+
+00:02:31.520 --> 00:02:33.270 align:start position:0%
+of information that the model has to
+retrieve<00:02:31.840><c> from</c><00:02:32.080><c> that</c><00:02:32.319><c> large</c><00:02:32.720><c> context</c><00:02:33.120><c> and</c>
+
+00:02:33.270 --> 00:02:33.280 align:start position:0%
+retrieve from that large context and
+ 
+
+00:02:33.280 --> 00:02:34.630 align:start position:0%
+retrieve from that large context and
+that<00:02:33.440><c> could</c><00:02:33.519><c> be</c><00:02:33.680><c> distributed</c><00:02:34.239><c> anywhere</c>
+
+00:02:34.630 --> 00:02:34.640 align:start position:0%
+that could be distributed anywhere
+ 
+
+00:02:34.640 --> 00:02:37.350 align:start position:0%
+that could be distributed anywhere
+across<00:02:34.959><c> the</c><00:02:35.120><c> context</c><00:02:36.000><c> and</c><00:02:36.400><c> assess</c><00:02:36.800><c> how</c><00:02:37.040><c> well</c>
+
+00:02:37.350 --> 00:02:37.360 align:start position:0%
+across the context and assess how well
+ 
+
+00:02:37.360 --> 00:02:39.589 align:start position:0%
+across the context and assess how well
+the<00:02:37.519><c> model</c><00:02:37.760><c> is</c><00:02:37.920><c> able</c><00:02:38.080><c> to</c><00:02:38.160><c> pull</c><00:02:38.400><c> that</c><00:02:38.560><c> back.</c><00:02:39.200><c> So</c>
+
+00:02:39.589 --> 00:02:39.599 align:start position:0%
+the model is able to pull that back. So
+ 
+
+00:02:39.599 --> 00:02:41.589 align:start position:0%
+the model is able to pull that back. So
+this<00:02:39.840><c> has</c><00:02:40.080><c> been</c><00:02:40.319><c> a</c><00:02:40.640><c> relatively</c><00:02:41.200><c> solved</c>
+
+00:02:41.589 --> 00:02:41.599 align:start position:0%
+this has been a relatively solved
+ 
+
+00:02:41.599 --> 00:02:43.270 align:start position:0%
+this has been a relatively solved
+problem<00:02:41.840><c> for</c><00:02:42.000><c> a</c><00:02:42.160><c> while</c><00:02:42.319><c> now</c><00:02:42.480><c> and</c><00:02:42.560><c> the</c><00:02:42.720><c> RLS</c>
+
+00:02:43.270 --> 00:02:43.280 align:start position:0%
+problem for a while now and the RLS
+ 
+
+00:02:43.280 --> 00:02:45.430 align:start position:0%
+problem for a while now and the RLS
+paper<00:02:43.519><c> does</c><00:02:43.760><c> reference</c><00:02:44.080><c> that</c><00:02:44.720><c> but</c><00:02:45.040><c> what</c><00:02:45.200><c> we're</c>
+
+00:02:45.430 --> 00:02:45.440 align:start position:0%
+paper does reference that but what we're
+ 
+
+00:02:45.440 --> 00:02:46.790 align:start position:0%
+paper does reference that but what we're
+talking<00:02:45.599><c> about</c><00:02:45.840><c> is</c><00:02:46.080><c> different.</c><00:02:46.480><c> We're</c><00:02:46.640><c> not</c>
+
+00:02:46.790 --> 00:02:46.800 align:start position:0%
+talking about is different. We're not
+ 
+
+00:02:46.800 --> 00:02:48.470 align:start position:0%
+talking about is different. We're not
+talking<00:02:47.040><c> about</c><00:02:47.280><c> retrieving</c><00:02:47.920><c> needles</c><00:02:48.239><c> from</c>
+
+00:02:48.470 --> 00:02:48.480 align:start position:0%
+talking about retrieving needles from
+ 
+
+00:02:48.480 --> 00:02:50.150 align:start position:0%
+talking about retrieving needles from
+haystacks.<00:02:49.120><c> We're</c><00:02:49.280><c> talking</c><00:02:49.440><c> about</c><00:02:49.680><c> reasoning</c>
+
+00:02:50.150 --> 00:02:50.160 align:start position:0%
+haystacks. We're talking about reasoning
+ 
+
+00:02:50.160 --> 00:02:53.190 align:start position:0%
+haystacks. We're talking about reasoning
+over<00:02:50.480><c> document</c><00:02:50.959><c> complexity</c><00:02:52.160><c> which</c><00:02:52.480><c> is</c><00:02:52.959><c> an</c>
+
+00:02:53.190 --> 00:02:53.200 align:start position:0%
+over document complexity which is an
+ 
+
+00:02:53.200 --> 00:02:55.350 align:start position:0%
+over document complexity which is an
+entirely<00:02:53.599><c> different</c><00:02:53.920><c> problem.</c><00:02:54.640><c> So</c><00:02:54.879><c> it's</c><00:02:55.120><c> a</c>
+
+00:02:55.350 --> 00:02:55.360 align:start position:0%
+entirely different problem. So it's a
+ 
+
+00:02:55.360 --> 00:02:56.710 align:start position:0%
+entirely different problem. So it's a
+different<00:02:55.519><c> class</c><00:02:55.760><c> of</c><00:02:55.920><c> problem</c><00:02:56.239><c> because</c><00:02:56.480><c> it</c>
+
+00:02:56.710 --> 00:02:56.720 align:start position:0%
+different class of problem because it
+ 
+
+00:02:56.720 --> 00:02:58.309 align:start position:0%
+different class of problem because it
+requires<00:02:57.120><c> something</c><00:02:57.360><c> called</c><00:02:57.599><c> multihop</c>
+
+00:02:58.309 --> 00:02:58.319 align:start position:0%
+requires something called multihop
+ 
+
+00:02:58.319 --> 00:03:00.630 align:start position:0%
+requires something called multihop
+reasoning.<00:02:59.040><c> And</c><00:02:59.360><c> you</c><00:02:59.519><c> know</c><00:02:59.680><c> I</c><00:02:59.920><c> experimented</c><00:03:00.400><c> a</c>
+
+00:03:00.630 --> 00:03:00.640 align:start position:0%
+reasoning. And you know I experimented a
+ 
+
+00:03:00.640 --> 00:03:02.710 align:start position:0%
+reasoning. And you know I experimented a
+while<00:03:00.800><c> back</c><00:03:01.040><c> with</c><00:03:01.280><c> a</c><00:03:01.519><c> chatbot</c><00:03:02.000><c> called</c><00:03:02.159><c> Jared</c>
+
+00:03:02.710 --> 00:03:02.720 align:start position:0%
+while back with a chatbot called Jared
+ 
+
+00:03:02.720 --> 00:03:04.949 align:start position:0%
+while back with a chatbot called Jared
+to<00:03:02.959><c> build</c><00:03:03.519><c> multihop</c><00:03:04.080><c> reasoning.</c><00:03:04.480><c> And</c><00:03:04.640><c> what</c><00:03:04.800><c> I</c>
+
+00:03:04.949 --> 00:03:04.959 align:start position:0%
+to build multihop reasoning. And what I
+ 
+
+00:03:04.959 --> 00:03:07.190 align:start position:0%
+to build multihop reasoning. And what I
+found<00:03:05.280><c> was</c><00:03:05.519><c> that</c><00:03:05.920><c> the</c><00:03:06.239><c> scaffolds</c><00:03:06.720><c> I</c><00:03:06.959><c> used</c>
+
+00:03:07.190 --> 00:03:07.200 align:start position:0%
+found was that the scaffolds I used
+ 
+
+00:03:07.200 --> 00:03:08.949 align:start position:0%
+found was that the scaffolds I used
+whether<00:03:07.440><c> I</c><00:03:07.519><c> was</c><00:03:07.599><c> using</c><00:03:07.840><c> langraph</c><00:03:08.480><c> or</c><00:03:08.640><c> anything</c>
+
+00:03:08.949 --> 00:03:08.959 align:start position:0%
+whether I was using langraph or anything
+ 
+
+00:03:08.959 --> 00:03:11.430 align:start position:0%
+whether I was using langraph or anything
+else<00:03:09.680><c> were</c><00:03:10.159><c> really</c><00:03:10.480><c> fragile.</c><00:03:10.959><c> Once</c><00:03:11.200><c> you</c><00:03:11.280><c> got</c>
+
+00:03:11.430 --> 00:03:11.440 align:start position:0%
+else were really fragile. Once you got
+ 
+
+00:03:11.440 --> 00:03:13.670 align:start position:0%
+else were really fragile. Once you got
+to<00:03:11.599><c> two</c><00:03:11.760><c> or</c><00:03:12.000><c> three</c><00:03:12.159><c> hops</c><00:03:12.720><c> the</c><00:03:12.959><c> chatbot</c><00:03:13.440><c> would</c>
+
+00:03:13.670 --> 00:03:13.680 align:start position:0%
+to two or three hops the chatbot would
+ 
+
+00:03:13.680 --> 00:03:15.589 align:start position:0%
+to two or three hops the chatbot would
+completely<00:03:14.080><c> break</c><00:03:14.319><c> down.</c><00:03:15.040><c> That</c><00:03:15.280><c> is</c><00:03:15.440><c> what</c>
+
+00:03:15.589 --> 00:03:15.599 align:start position:0%
+completely break down. That is what
+ 
+
+00:03:15.599 --> 00:03:17.110 align:start position:0%
+completely break down. That is what
+you're<00:03:15.840><c> doing</c><00:03:16.000><c> when</c><00:03:16.239><c> you're</c><00:03:16.400><c> analyzing</c><00:03:16.879><c> a</c><00:03:17.040><c> lot</c>
+
+00:03:17.110 --> 00:03:17.120 align:start position:0%
+you're doing when you're analyzing a lot
+ 
+
+00:03:17.120 --> 00:03:18.869 align:start position:0%
+you're doing when you're analyzing a lot
+of<00:03:17.200><c> these</c><00:03:17.440><c> legal</c><00:03:17.760><c> agreements</c><00:03:18.239><c> or</c><00:03:18.560><c> a</c><00:03:18.720><c> lot</c><00:03:18.800><c> of</c>
+
+00:03:18.869 --> 00:03:18.879 align:start position:0%
+of these legal agreements or a lot of
+ 
+
+00:03:18.879 --> 00:03:20.869 align:start position:0%
+of these legal agreements or a lot of
+these<00:03:19.120><c> complex</c><00:03:19.599><c> policy</c><00:03:20.000><c> documents.</c><00:03:20.720><c> You're</c>
+
+00:03:20.869 --> 00:03:20.879 align:start position:0%
+these complex policy documents. You're
+ 
+
+00:03:20.879 --> 00:03:22.630 align:start position:0%
+these complex policy documents. You're
+doing<00:03:21.040><c> multihop</c><00:03:21.680><c> reasoning.</c><00:03:22.239><c> you're</c><00:03:22.480><c> looking</c>
+
+00:03:22.630 --> 00:03:22.640 align:start position:0%
+doing multihop reasoning. you're looking
+ 
+
+00:03:22.640 --> 00:03:24.790 align:start position:0%
+doing multihop reasoning. you're looking
+at<00:03:22.800><c> one</c><00:03:23.040><c> part</c><00:03:23.280><c> and</c><00:03:23.440><c> then</c><00:03:23.680><c> having</c><00:03:23.920><c> to</c><00:03:24.400><c> reason</c>
+
+00:03:24.790 --> 00:03:24.800 align:start position:0%
+at one part and then having to reason
+ 
+
+00:03:24.800 --> 00:03:26.470 align:start position:0%
+at one part and then having to reason
+about<00:03:25.040><c> it</c><00:03:25.200><c> and</c><00:03:25.440><c> then</c><00:03:25.599><c> go</c><00:03:25.760><c> and</c><00:03:26.000><c> find</c><00:03:26.159><c> another</c>
+
+00:03:26.470 --> 00:03:26.480 align:start position:0%
+about it and then go and find another
+ 
+
+00:03:26.480 --> 00:03:27.990 align:start position:0%
+about it and then go and find another
+part<00:03:26.640><c> that</c><00:03:26.879><c> might</c><00:03:27.040><c> be</c><00:03:27.120><c> relevant</c><00:03:27.440><c> and</c><00:03:27.680><c> reason</c>
+
+00:03:27.990 --> 00:03:28.000 align:start position:0%
+part that might be relevant and reason
+ 
+
+00:03:28.000 --> 00:03:29.589 align:start position:0%
+part that might be relevant and reason
+about<00:03:28.239><c> that</c><00:03:28.400><c> and</c><00:03:28.640><c> applying</c><00:03:29.040><c> some</c><00:03:29.280><c> conditions</c>
+
+00:03:29.589 --> 00:03:29.599 align:start position:0%
+about that and applying some conditions
+ 
+
+00:03:29.599 --> 00:03:32.149 align:start position:0%
+about that and applying some conditions
+to<00:03:29.760><c> it</c><00:03:30.000><c> to</c><00:03:30.239><c> do</c><00:03:30.400><c> your</c><00:03:30.560><c> analysis.</c><00:03:31.440><c> Raw</c><00:03:31.760><c> language</c>
+
+00:03:32.149 --> 00:03:32.159 align:start position:0%
+to it to do your analysis. Raw language
+ 
+
+00:03:32.159 --> 00:03:34.630 align:start position:0%
+to it to do your analysis. Raw language
+models<00:03:32.560><c> deteriorate</c><00:03:33.599><c> when</c><00:03:34.080><c> the</c><00:03:34.319><c> task</c>
+
+00:03:34.630 --> 00:03:34.640 align:start position:0%
+models deteriorate when the task
+ 
+
+00:03:34.640 --> 00:03:36.630 align:start position:0%
+models deteriorate when the task
+requires<00:03:35.040><c> that</c><00:03:35.200><c> type</c><00:03:35.360><c> of</c><00:03:35.599><c> complex</c><00:03:36.000><c> multihop</c>
+
+00:03:36.630 --> 00:03:36.640 align:start position:0%
+requires that type of complex multihop
+ 
+
+00:03:36.640 --> 00:03:38.550 align:start position:0%
+requires that type of complex multihop
+reasoning.<00:03:37.280><c> They</c><00:03:37.519><c> can</c><00:03:37.680><c> do</c><00:03:37.760><c> it</c><00:03:37.920><c> over</c><00:03:38.159><c> a</c><00:03:38.319><c> small</c>
+
+00:03:38.550 --> 00:03:38.560 align:start position:0%
+reasoning. They can do it over a small
+ 
+
+00:03:38.560 --> 00:03:39.990 align:start position:0%
+reasoning. They can do it over a small
+context,<00:03:38.879><c> but</c><00:03:39.120><c> as</c><00:03:39.280><c> soon</c><00:03:39.360><c> as</c><00:03:39.440><c> you</c><00:03:39.519><c> extend</c><00:03:39.840><c> that</c>
+
+00:03:39.990 --> 00:03:40.000 align:start position:0%
+context, but as soon as you extend that
+ 
+
+00:03:40.000 --> 00:03:41.350 align:start position:0%
+context, but as soon as you extend that
+context,<00:03:40.480><c> you</c><00:03:40.640><c> see</c><00:03:40.799><c> quickly</c><00:03:41.040><c> that</c><00:03:41.280><c> the</c>
+
+00:03:41.350 --> 00:03:41.360 align:start position:0%
+context, you see quickly that the
+ 
+
+00:03:41.360 --> 00:03:43.350 align:start position:0%
+context, you see quickly that the
+performance<00:03:41.760><c> falls</c><00:03:42.000><c> off</c><00:03:42.159><c> a</c><00:03:42.319><c> cliff.</c><00:03:42.959><c> What</c><00:03:43.200><c> this</c>
+
+00:03:43.350 --> 00:03:43.360 align:start position:0%
+performance falls off a cliff. What this
+ 
+
+00:03:43.360 --> 00:03:45.509 align:start position:0%
+performance falls off a cliff. What this
+leads<00:03:43.599><c> to</c><00:03:43.840><c> is</c><00:03:44.239><c> models</c><00:03:44.560><c> that</c><00:03:44.799><c> are</c><00:03:44.959><c> confidently</c>
+
+00:03:45.509 --> 00:03:45.519 align:start position:0%
+leads to is models that are confidently
+ 
+
+00:03:45.519 --> 00:03:47.270 align:start position:0%
+leads to is models that are confidently
+wrong.<00:03:46.159><c> And</c><00:03:46.319><c> that's</c><00:03:46.480><c> the</c><00:03:46.640><c> quickest</c><00:03:46.959><c> way</c><00:03:47.120><c> to</c>
+
+00:03:47.270 --> 00:03:47.280 align:start position:0%
+wrong. And that's the quickest way to
+ 
+
+00:03:47.280 --> 00:03:49.190 align:start position:0%
+wrong. And that's the quickest way to
+break<00:03:47.440><c> down</c><00:03:47.599><c> trust</c><00:03:47.840><c> in</c><00:03:48.080><c> any</c><00:03:48.239><c> AI</c><00:03:48.640><c> agent</c><00:03:48.959><c> that</c>
+
+00:03:49.190 --> 00:03:49.200 align:start position:0%
+break down trust in any AI agent that
+ 
+
+00:03:49.200 --> 00:03:50.789 align:start position:0%
+break down trust in any AI agent that
+you<00:03:49.440><c> produce.</c><00:03:49.920><c> So,</c><00:03:50.159><c> let's</c><00:03:50.319><c> talk</c><00:03:50.400><c> a</c><00:03:50.560><c> bit</c><00:03:50.640><c> about</c>
+
+00:03:50.789 --> 00:03:50.799 align:start position:0%
+you produce. So, let's talk a bit about
+ 
+
+00:03:50.799 --> 00:03:52.149 align:start position:0%
+you produce. So, let's talk a bit about
+the<00:03:51.040><c> strategies</c><00:03:51.440><c> that</c><00:03:51.519><c> have</c><00:03:51.680><c> been</c><00:03:51.760><c> tried</c><00:03:52.000><c> in</c>
+
+00:03:52.149 --> 00:03:52.159 align:start position:0%
+the strategies that have been tried in
+ 
+
+00:03:52.159 --> 00:03:53.910 align:start position:0%
+the strategies that have been tried in
+the<00:03:52.319><c> past.</c><00:03:52.560><c> The</c><00:03:52.799><c> first</c><00:03:52.879><c> one</c><00:03:53.040><c> is</c><00:03:53.200><c> the</c><00:03:53.360><c> naive</c><00:03:53.760><c> one</c>
+
+00:03:53.910 --> 00:03:53.920 align:start position:0%
+the past. The first one is the naive one
+ 
+
+00:03:53.920 --> 00:03:55.830 align:start position:0%
+the past. The first one is the naive one
+of<00:03:54.239><c> just</c><00:03:54.400><c> simply</c><00:03:54.799><c> taking</c><00:03:55.280><c> everything</c><00:03:55.599><c> and</c>
+
+00:03:55.830 --> 00:03:55.840 align:start position:0%
+of just simply taking everything and
+ 
+
+00:03:55.840 --> 00:03:57.830 align:start position:0%
+of just simply taking everything and
+stuffing<00:03:56.159><c> it</c><00:03:56.319><c> into</c><00:03:56.480><c> an</c><00:03:56.640><c> LLM</c><00:03:57.120><c> and</c><00:03:57.360><c> hoping</c><00:03:57.599><c> and</c>
+
+00:03:57.830 --> 00:03:57.840 align:start position:0%
+stuffing it into an LLM and hoping and
+ 
+
+00:03:57.840 --> 00:03:59.589 align:start position:0%
+stuffing it into an LLM and hoping and
+praying<00:03:58.080><c> for</c><00:03:58.239><c> the</c><00:03:58.400><c> best.</c><00:03:58.879><c> So,</c><00:03:59.040><c> I've</c><00:03:59.360><c> explained</c>
+
+00:03:59.589 --> 00:03:59.599 align:start position:0%
+praying for the best. So, I've explained
+ 
+
+00:03:59.599 --> 00:04:01.509 align:start position:0%
+praying for the best. So, I've explained
+before<00:03:59.840><c> the</c><00:04:00.080><c> context</c><00:04:00.480><c> rock</c><00:04:00.799><c> phenomenon,</c><00:04:01.360><c> and</c>
+
+00:04:01.509 --> 00:04:01.519 align:start position:0%
+before the context rock phenomenon, and
+ 
+
+00:04:01.519 --> 00:04:02.869 align:start position:0%
+before the context rock phenomenon, and
+you<00:04:01.760><c> should</c><00:04:01.920><c> understand</c><00:04:02.400><c> it's</c><00:04:02.640><c> pretty</c>
+
+00:04:02.869 --> 00:04:02.879 align:start position:0%
+you should understand it's pretty
+ 
+
+00:04:02.879 --> 00:04:04.869 align:start position:0%
+you should understand it's pretty
+self-explanatory<00:04:03.680><c> why</c><00:04:03.920><c> this</c><00:04:04.159><c> doesn't</c><00:04:04.400><c> work.</c>
+
+00:04:04.869 --> 00:04:04.879 align:start position:0%
+self-explanatory why this doesn't work.
+ 
+
+00:04:04.879 --> 00:04:07.910 align:start position:0%
+self-explanatory why this doesn't work.
+It<00:04:05.120><c> is</c><00:04:05.280><c> also</c><00:04:05.519><c> incredibly</c><00:04:06.080><c> expensive</c><00:04:06.640><c> and</c><00:04:07.200><c> slow</c>
+
+00:04:07.910 --> 00:04:07.920 align:start position:0%
+It is also incredibly expensive and slow
+ 
+
+00:04:07.920 --> 00:04:10.710 align:start position:0%
+It is also incredibly expensive and slow
+and<00:04:08.400><c> have</c><00:04:08.560><c> been</c><00:04:08.720><c> shown</c><00:04:08.959><c> to</c><00:04:09.120><c> lead</c><00:04:09.360><c> to</c><00:04:10.080><c> subpar</c>
+
+00:04:10.710 --> 00:04:10.720 align:start position:0%
+and have been shown to lead to subpar
+ 
+
+00:04:10.720 --> 00:04:13.110 align:start position:0%
+and have been shown to lead to subpar
+results.<00:04:11.680><c> Just</c><00:04:11.840><c> stuffing</c><00:04:12.239><c> more</c><00:04:12.480><c> context</c><00:04:12.799><c> in</c><00:04:12.959><c> a</c>
+
+00:04:13.110 --> 00:04:13.120 align:start position:0%
+results. Just stuffing more context in a
+ 
+
+00:04:13.120 --> 00:04:15.509 align:start position:0%
+results. Just stuffing more context in a
+model<00:04:13.360><c> can</c><00:04:13.760><c> actually</c><00:04:14.159><c> reduce</c><00:04:14.560><c> reliability</c>
+
+00:04:15.509 --> 00:04:15.519 align:start position:0%
+model can actually reduce reliability
+ 
+
+00:04:15.519 --> 00:04:17.670 align:start position:0%
+model can actually reduce reliability
+rather<00:04:15.840><c> than</c><00:04:16.239><c> improve</c><00:04:16.639><c> it</c><00:04:16.880><c> because</c><00:04:17.280><c> sometimes</c>
+
+00:04:17.670 --> 00:04:17.680 align:start position:0%
+rather than improve it because sometimes
+ 
+
+00:04:17.680 --> 00:04:20.229 align:start position:0%
+rather than improve it because sometimes
+that<00:04:17.919><c> context</c><00:04:18.320><c> is</c><00:04:18.560><c> noise.</c><00:04:19.359><c> So</c><00:04:19.680><c> sometimes</c><00:04:20.079><c> you</c>
+
+00:04:20.229 --> 00:04:20.239 align:start position:0%
+that context is noise. So sometimes you
+ 
+
+00:04:20.239 --> 00:04:21.830 align:start position:0%
+that context is noise. So sometimes you
+are<00:04:20.400><c> actually</c><00:04:20.639><c> burying</c><00:04:21.040><c> the</c><00:04:21.199><c> signal</c><00:04:21.519><c> even</c>
+
+00:04:21.830 --> 00:04:21.840 align:start position:0%
+are actually burying the signal even
+ 
+
+00:04:21.840 --> 00:04:23.270 align:start position:0%
+are actually burying the signal even
+further.<00:04:22.160><c> The</c><00:04:22.320><c> next</c><00:04:22.479><c> approach</c><00:04:22.800><c> that</c><00:04:23.040><c> we</c>
+
+00:04:23.270 --> 00:04:23.280 align:start position:0%
+further. The next approach that we
+ 
+
+00:04:23.280 --> 00:04:25.270 align:start position:0%
+further. The next approach that we
+explore<00:04:23.680><c> is</c><00:04:23.919><c> summarization.</c><00:04:24.800><c> You</c><00:04:25.040><c> would</c><00:04:25.120><c> have</c>
+
+00:04:25.270 --> 00:04:25.280 align:start position:0%
+explore is summarization. You would have
+ 
+
+00:04:25.280 --> 00:04:27.030 align:start position:0%
+explore is summarization. You would have
+dealt<00:04:25.520><c> with</c><00:04:25.600><c> summarization</c><00:04:26.479><c> if</c><00:04:26.639><c> you've</c><00:04:26.800><c> used</c>
+
+00:04:27.030 --> 00:04:27.040 align:start position:0%
+dealt with summarization if you've used
+ 
+
+00:04:27.040 --> 00:04:28.310 align:start position:0%
+dealt with summarization if you've used
+claude<00:04:27.360><c> because</c><00:04:27.600><c> they</c><00:04:27.759><c> have</c><00:04:27.919><c> this</c><00:04:28.080><c> feature</c>
+
+00:04:28.310 --> 00:04:28.320 align:start position:0%
+claude because they have this feature
+ 
+
+00:04:28.320 --> 00:04:30.710 align:start position:0%
+claude because they have this feature
+called<00:04:28.560><c> the</c><00:04:28.880><c> autocompat</c><00:04:29.680><c> feature.</c><00:04:30.400><c> What</c><00:04:30.560><c> that</c>
+
+00:04:30.710 --> 00:04:30.720 align:start position:0%
+called the autocompat feature. What that
+ 
+
+00:04:30.720 --> 00:04:33.510 align:start position:0%
+called the autocompat feature. What that
+autocompat<00:04:31.360><c> feature</c><00:04:31.680><c> will</c><00:04:31.919><c> do</c><00:04:32.240><c> is</c><00:04:32.880><c> once</c><00:04:33.280><c> you</c>
+
+00:04:33.510 --> 00:04:33.520 align:start position:0%
+autocompat feature will do is once you
+ 
+
+00:04:33.520 --> 00:04:35.189 align:start position:0%
+autocompat feature will do is once you
+reach<00:04:33.759><c> a</c><00:04:34.000><c> certain</c><00:04:34.240><c> saturation</c><00:04:34.800><c> of</c><00:04:34.960><c> the</c>
+
+00:04:35.189 --> 00:04:35.199 align:start position:0%
+reach a certain saturation of the
+ 
+
+00:04:35.199 --> 00:04:37.430 align:start position:0%
+reach a certain saturation of the
+context<00:04:35.600><c> window,</c><00:04:36.240><c> the</c><00:04:36.479><c> large</c><00:04:36.800><c> language</c><00:04:37.120><c> model</c>
+
+00:04:37.430 --> 00:04:37.440 align:start position:0%
+context window, the large language model
+ 
+
+00:04:37.440 --> 00:04:39.990 align:start position:0%
+context window, the large language model
+itself<00:04:38.160><c> will</c><00:04:38.560><c> hand</c><00:04:38.880><c> off</c><00:04:39.120><c> that</c><00:04:39.440><c> context</c><00:04:39.840><c> to</c>
+
+00:04:39.990 --> 00:04:40.000 align:start position:0%
+itself will hand off that context to
+ 
+
+00:04:40.000 --> 00:04:42.070 align:start position:0%
+itself will hand off that context to
+another<00:04:40.240><c> model</c><00:04:40.560><c> which</c><00:04:40.800><c> will</c><00:04:41.120><c> compact</c><00:04:41.840><c> and</c>
+
+00:04:42.070 --> 00:04:42.080 align:start position:0%
+another model which will compact and
+ 
+
+00:04:42.080 --> 00:04:44.230 align:start position:0%
+another model which will compact and
+summarize<00:04:42.639><c> it</c><00:04:43.120><c> freeing</c><00:04:43.440><c> up</c><00:04:43.600><c> the</c><00:04:43.759><c> context</c><00:04:44.080><c> of</c>
+
+00:04:44.230 --> 00:04:44.240 align:start position:0%
+summarize it freeing up the context of
+ 
+
+00:04:44.240 --> 00:04:46.390 align:start position:0%
+summarize it freeing up the context of
+the<00:04:44.400><c> main</c><00:04:44.560><c> model</c><00:04:44.800><c> to</c><00:04:45.040><c> continue</c><00:04:45.360><c> work</c><00:04:45.919><c> based</c><00:04:46.240><c> on</c>
+
+00:04:46.390 --> 00:04:46.400 align:start position:0%
+the main model to continue work based on
+ 
+
+00:04:46.400 --> 00:04:48.550 align:start position:0%
+the main model to continue work based on
+that<00:04:46.639><c> summary.</c><00:04:47.360><c> Now</c><00:04:47.600><c> the</c><00:04:47.840><c> problem</c><00:04:48.080><c> with</c><00:04:48.240><c> this</c>
+
+00:04:48.550 --> 00:04:48.560 align:start position:0%
+that summary. Now the problem with this
+ 
+
+00:04:48.560 --> 00:04:51.110 align:start position:0%
+that summary. Now the problem with this
+is<00:04:48.800><c> that</c><00:04:49.120><c> summarization</c><00:04:49.919><c> is</c><00:04:50.160><c> lossy.</c><00:04:50.800><c> So</c>
+
+00:04:51.110 --> 00:04:51.120 align:start position:0%
+is that summarization is lossy. So
+ 
+
+00:04:51.120 --> 00:04:53.749 align:start position:0%
+is that summarization is lossy. So
+information<00:04:51.759><c> is</c><00:04:52.080><c> lost</c><00:04:52.479><c> about</c><00:04:52.800><c> the</c><00:04:53.040><c> task</c><00:04:53.520><c> and</c>
+
+00:04:53.749 --> 00:04:53.759 align:start position:0%
+information is lost about the task and
+ 
+
+00:04:53.759 --> 00:04:55.590 align:start position:0%
+information is lost about the task and
+deciding<00:04:54.320><c> which</c><00:04:54.639><c> information</c><00:04:54.960><c> to</c><00:04:55.199><c> keep</c><00:04:55.440><c> and</c>
+
+00:04:55.590 --> 00:04:55.600 align:start position:0%
+deciding which information to keep and
+ 
+
+00:04:55.600 --> 00:04:57.510 align:start position:0%
+deciding which information to keep and
+which<00:04:55.759><c> to</c><00:04:55.840><c> get</c><00:04:55.919><c> rid</c><00:04:56.080><c> of</c><00:04:56.320><c> to</c><00:04:56.720><c> get</c><00:04:56.880><c> an</c><00:04:57.120><c> effective</c>
+
+00:04:57.510 --> 00:04:57.520 align:start position:0%
+which to get rid of to get an effective
+ 
+
+00:04:57.520 --> 00:04:59.909 align:start position:0%
+which to get rid of to get an effective
+summary<00:04:57.919><c> is</c><00:04:58.240><c> a</c><00:04:58.479><c> difficult</c><00:04:58.880><c> task</c><00:04:59.199><c> in</c><00:04:59.520><c> and</c><00:04:59.759><c> of</c>
+
+00:04:59.909 --> 00:04:59.919 align:start position:0%
+summary is a difficult task in and of
+ 
+
+00:04:59.919 --> 00:05:03.030 align:start position:0%
+summary is a difficult task in and of
+itself.<00:05:01.040><c> And</c><00:05:01.600><c> this</c><00:05:02.080><c> has</c><00:05:02.320><c> been</c><00:05:02.479><c> shown</c><00:05:02.720><c> by</c><00:05:02.880><c> the</c>
+
+00:05:03.030 --> 00:05:03.040 align:start position:0%
+itself. And this has been shown by the
+ 
+
+00:05:03.040 --> 00:05:04.870 align:start position:0%
+itself. And this has been shown by the
+R&amp;M's<00:05:03.600><c> paper</c><00:05:03.759><c> to</c><00:05:04.000><c> actually</c><00:05:04.160><c> be</c><00:05:04.320><c> an</c><00:05:04.479><c> expensive</c>
+
+00:05:04.870 --> 00:05:04.880 align:start position:0%
+R&amp;M's paper to actually be an expensive
+ 
+
+00:05:04.880 --> 00:05:06.790 align:start position:0%
+R&amp;M's paper to actually be an expensive
+approach<00:05:05.280><c> because</c><00:05:05.440><c> that</c><00:05:05.759><c> resummarization</c>
+
+00:05:06.790 --> 00:05:06.800 align:start position:0%
+approach because that resummarization
+ 
+
+00:05:06.800 --> 00:05:09.189 align:start position:0%
+approach because that resummarization
+requires<00:05:07.440><c> the</c><00:05:07.759><c> entire</c><00:05:08.160><c> context</c><00:05:08.639><c> of</c><00:05:08.960><c> the</c>
+
+00:05:09.189 --> 00:05:09.199 align:start position:0%
+requires the entire context of the
+ 
+
+00:05:09.199 --> 00:05:11.749 align:start position:0%
+requires the entire context of the
+previous<00:05:09.600><c> task</c><00:05:10.160><c> to</c><00:05:10.400><c> do.</c><00:05:11.039><c> So</c><00:05:11.199><c> what</c><00:05:11.440><c> ends</c><00:05:11.680><c> up</c>
+
+00:05:11.749 --> 00:05:11.759 align:start position:0%
+previous task to do. So what ends up
+ 
+
+00:05:11.759 --> 00:05:13.189 align:start position:0%
+previous task to do. So what ends up
+happening<00:05:12.000><c> with</c><00:05:12.160><c> summarization</c><00:05:12.800><c> is</c><00:05:13.039><c> you</c>
+
+00:05:13.189 --> 00:05:13.199 align:start position:0%
+happening with summarization is you
+ 
+
+00:05:13.199 --> 00:05:15.270 align:start position:0%
+happening with summarization is you
+often<00:05:13.520><c> lose</c><00:05:13.919><c> important</c><00:05:14.400><c> context</c><00:05:14.880><c> in</c><00:05:15.120><c> the</c>
+
+00:05:15.270 --> 00:05:15.280 align:start position:0%
+often lose important context in the
+ 
+
+00:05:15.280 --> 00:05:16.710 align:start position:0%
+often lose important context in the
+summary<00:05:15.840><c> and</c><00:05:16.000><c> then</c><00:05:16.160><c> the</c><00:05:16.320><c> agent</c><00:05:16.560><c> will</c>
+
+00:05:16.710 --> 00:05:16.720 align:start position:0%
+summary and then the agent will
+ 
+
+00:05:16.720 --> 00:05:18.710 align:start position:0%
+summary and then the agent will
+gradually<00:05:17.199><c> drift</c><00:05:17.440><c> off</c><00:05:17.680><c> task</c><00:05:17.919><c> until</c><00:05:18.240><c> it's</c><00:05:18.479><c> way</c>
+
+00:05:18.710 --> 00:05:18.720 align:start position:0%
+gradually drift off task until it's way
+ 
+
+00:05:18.720 --> 00:05:20.150 align:start position:0%
+gradually drift off task until it's way
+off<00:05:18.880><c> from</c><00:05:19.120><c> where</c><00:05:19.280><c> it</c><00:05:19.440><c> initially</c><00:05:19.840><c> started</c>
+
+00:05:20.150 --> 00:05:20.160 align:start position:0%
+off from where it initially started
+ 
+
+00:05:20.160 --> 00:05:21.670 align:start position:0%
+off from where it initially started
+with.<00:05:20.560><c> And</c><00:05:20.720><c> some</c><00:05:20.880><c> of</c><00:05:20.960><c> you</c><00:05:21.120><c> might</c><00:05:21.280><c> have</c><00:05:21.440><c> already</c>
+
+00:05:21.670 --> 00:05:21.680 align:start position:0%
+with. And some of you might have already
+ 
+
+00:05:21.680 --> 00:05:23.350 align:start position:0%
+with. And some of you might have already
+experienced<00:05:22.080><c> this</c><00:05:22.240><c> with</c><00:05:22.400><c> C</c><00:05:22.800><c> code.</c><00:05:23.199><c> People</c>
+
+00:05:23.350 --> 00:05:23.360 align:start position:0%
+experienced this with C code. People
+ 
+
+00:05:23.360 --> 00:05:25.270 align:start position:0%
+experienced this with C code. People
+have<00:05:23.520><c> come</c><00:05:23.680><c> up</c><00:05:23.840><c> with</c><00:05:24.000><c> scaffolds</c><00:05:24.639><c> to</c><00:05:24.960><c> present</c>
+
+00:05:25.270 --> 00:05:25.280 align:start position:0%
+have come up with scaffolds to present
+ 
+
+00:05:25.280 --> 00:05:27.110 align:start position:0%
+have come up with scaffolds to present
+this<00:05:25.520><c> but</c><00:05:25.680><c> a</c><00:05:25.840><c> lot</c><00:05:25.919><c> of</c><00:05:26.000><c> the</c><00:05:26.160><c> time</c><00:05:26.639><c> what</c><00:05:26.880><c> people</c>
+
+00:05:27.110 --> 00:05:27.120 align:start position:0%
+this but a lot of the time what people
+ 
+
+00:05:27.120 --> 00:05:28.790 align:start position:0%
+this but a lot of the time what people
+are<00:05:27.360><c> trying</c><00:05:27.520><c> to</c><00:05:27.680><c> do</c><00:05:27.919><c> is</c><00:05:28.160><c> they're</c><00:05:28.479><c> trying</c><00:05:28.639><c> to</c>
+
+00:05:28.790 --> 00:05:28.800 align:start position:0%
+are trying to do is they're trying to
+ 
+
+00:05:28.800 --> 00:05:30.469 align:start position:0%
+are trying to do is they're trying to
+create<00:05:29.199><c> some</c><00:05:29.440><c> kind</c><00:05:29.680><c> of</c><00:05:30.000><c> elaborate</c>
+
+00:05:30.469 --> 00:05:30.479 align:start position:0%
+create some kind of elaborate
+ 
+
+00:05:30.479 --> 00:05:33.029 align:start position:0%
+create some kind of elaborate
+summarization<00:05:31.600><c> which</c><00:05:31.919><c> is</c><00:05:32.240><c> brittle</c><00:05:32.720><c> in</c><00:05:32.880><c> the</c>
+
+00:05:33.029 --> 00:05:33.039 align:start position:0%
+summarization which is brittle in the
+ 
+
+00:05:33.039 --> 00:05:34.950 align:start position:0%
+summarization which is brittle in the
+end.<00:05:33.520><c> Another</c><00:05:33.919><c> approach</c><00:05:34.160><c> that</c><00:05:34.400><c> was</c><00:05:34.560><c> used</c><00:05:34.720><c> is</c>
+
+00:05:34.950 --> 00:05:34.960 align:start position:0%
+end. Another approach that was used is
+ 
+
+00:05:34.960 --> 00:05:37.590 align:start position:0%
+end. Another approach that was used is
+rag<00:05:35.280><c> retrieval</c><00:05:35.759><c> augmented</c><00:05:36.240><c> generation.</c><00:05:37.199><c> So</c>
+
+00:05:37.590 --> 00:05:37.600 align:start position:0%
+rag retrieval augmented generation. So
+ 
+
+00:05:37.600 --> 00:05:40.310 align:start position:0%
+rag retrieval augmented generation. So
+this<00:05:37.840><c> came</c><00:05:38.080><c> in</c><00:05:38.479><c> really</c><00:05:38.800><c> I</c><00:05:39.039><c> would</c><00:05:39.120><c> say</c><00:05:39.520><c> 2022</c>
+
+00:05:40.310 --> 00:05:40.320 align:start position:0%
+this came in really I would say 2022
+ 
+
+00:05:40.320 --> 00:05:42.710 align:start position:0%
+this came in really I would say 2022
+2023<00:05:41.199><c> when</c><00:05:41.520><c> people</c><00:05:41.759><c> started</c><00:05:42.080><c> to</c><00:05:42.240><c> really</c><00:05:42.479><c> see</c>
+
+00:05:42.710 --> 00:05:42.720 align:start position:0%
+2023 when people started to really see
+ 
+
+00:05:42.720 --> 00:05:45.430 align:start position:0%
+2023 when people started to really see
+the<00:05:42.960><c> power</c><00:05:43.199><c> of</c><00:05:43.520><c> large</c><00:05:43.840><c> language</c><00:05:44.240><c> models</c><00:05:45.120><c> and</c>
+
+00:05:45.430 --> 00:05:45.440 align:start position:0%
+the power of large language models and
+ 
+
+00:05:45.440 --> 00:05:47.270 align:start position:0%
+the power of large language models and
+what<00:05:45.680><c> rag</c><00:05:46.160><c> was</c><00:05:46.320><c> trying</c><00:05:46.479><c> to</c><00:05:46.639><c> solve</c><00:05:46.880><c> was</c>
+
+00:05:47.270 --> 00:05:47.280 align:start position:0%
+what rag was trying to solve was
+ 
+
+00:05:47.280 --> 00:05:49.110 align:start position:0%
+what rag was trying to solve was
+extremely<00:05:47.840><c> small</c><00:05:48.160><c> context</c><00:05:48.560><c> windows</c><00:05:48.960><c> of</c>
+
+00:05:49.110 --> 00:05:49.120 align:start position:0%
+extremely small context windows of
+ 
+
+00:05:49.120 --> 00:05:51.430 align:start position:0%
+extremely small context windows of
+around<00:05:49.440><c> 8K.</c><00:05:50.320><c> Rag</c><00:05:50.639><c> turned</c><00:05:50.800><c> out</c><00:05:50.960><c> to</c><00:05:51.120><c> be</c><00:05:51.199><c> quite</c>
+
+00:05:51.430 --> 00:05:51.440 align:start position:0%
+around 8K. Rag turned out to be quite
+ 
+
+00:05:51.440 --> 00:05:53.029 align:start position:0%
+around 8K. Rag turned out to be quite
+powerful<00:05:51.759><c> for</c><00:05:52.000><c> things</c><00:05:52.240><c> like</c><00:05:52.479><c> question</c><00:05:52.800><c> and</c>
+
+00:05:53.029 --> 00:05:53.039 align:start position:0%
+powerful for things like question and
+ 
+
+00:05:53.039 --> 00:05:55.029 align:start position:0%
+powerful for things like question and
+answer<00:05:53.759><c> because</c><00:05:54.240><c> what</c><00:05:54.479><c> you're</c><00:05:54.720><c> doing</c><00:05:54.800><c> with</c>
+
+00:05:55.029 --> 00:05:55.039 align:start position:0%
+answer because what you're doing with
+ 
+
+00:05:55.039 --> 00:05:56.710 align:start position:0%
+answer because what you're doing with
+rag<00:05:55.360><c> is</c><00:05:55.520><c> you're</c><00:05:55.759><c> doing</c><00:05:55.840><c> the</c><00:05:56.080><c> retrieval</c><00:05:56.560><c> which</c>
+
+00:05:56.710 --> 00:05:56.720 align:start position:0%
+rag is you're doing the retrieval which
+ 
+
+00:05:56.720 --> 00:05:59.670 align:start position:0%
+rag is you're doing the retrieval which
+is<00:05:56.960><c> usually</c><00:05:57.280><c> just</c><00:05:57.919><c> a</c><00:05:58.400><c> similarity</c><00:05:59.120><c> search.</c><00:05:59.520><c> So</c>
+
+00:05:59.670 --> 00:05:59.680 align:start position:0%
+is usually just a similarity search. So
+ 
+
+00:05:59.680 --> 00:06:02.150 align:start position:0%
+is usually just a similarity search. So
+it's<00:05:59.840><c> looking</c><00:06:00.000><c> for</c><00:06:00.160><c> semantic</c><00:06:00.639><c> similarity</c><00:06:01.360><c> or</c>
+
+00:06:02.150 --> 00:06:02.160 align:start position:0%
+it's looking for semantic similarity or
+ 
+
+00:06:02.160 --> 00:06:04.469 align:start position:0%
+it's looking for semantic similarity or
+keyword<00:06:02.560><c> matching.</c><00:06:03.199><c> So</c><00:06:03.360><c> if</c><00:06:03.520><c> you</c><00:06:03.600><c> imagine</c><00:06:04.080><c> with</c>
+
+00:06:04.469 --> 00:06:04.479 align:start position:0%
+keyword matching. So if you imagine with
+ 
+
+00:06:04.479 --> 00:06:05.990 align:start position:0%
+keyword matching. So if you imagine with
+question<00:06:04.800><c> and</c><00:06:05.039><c> answer</c><00:06:05.280><c> pairs,</c><00:06:05.680><c> you</c><00:06:05.840><c> can</c>
+
+00:06:05.990 --> 00:06:06.000 align:start position:0%
+question and answer pairs, you can
+ 
+
+00:06:06.000 --> 00:06:07.749 align:start position:0%
+question and answer pairs, you can
+easily<00:06:06.240><c> do</c><00:06:06.479><c> semantic</c><00:06:06.960><c> matching</c><00:06:07.360><c> on</c><00:06:07.520><c> the</c>
+
+00:06:07.749 --> 00:06:07.759 align:start position:0%
+easily do semantic matching on the
+ 
+
+00:06:07.759 --> 00:06:09.189 align:start position:0%
+easily do semantic matching on the
+questions<00:06:08.080><c> themselves</c><00:06:08.560><c> and</c><00:06:08.800><c> retrieve</c>
+
+00:06:09.189 --> 00:06:09.199 align:start position:0%
+questions themselves and retrieve
+ 
+
+00:06:09.199 --> 00:06:11.189 align:start position:0%
+questions themselves and retrieve
+answers.<00:06:10.160><c> But</c><00:06:10.319><c> rag</c><00:06:10.639><c> turned</c><00:06:10.800><c> out</c><00:06:10.880><c> to</c><00:06:11.039><c> be</c><00:06:11.120><c> quite</c>
+
+00:06:11.189 --> 00:06:11.199 align:start position:0%
+answers. But rag turned out to be quite
+ 
+
+00:06:11.199 --> 00:06:12.790 align:start position:0%
+answers. But rag turned out to be quite
+a<00:06:11.360><c> brittle</c><00:06:11.680><c> approach</c><00:06:12.000><c> when</c><00:06:12.319><c> the</c><00:06:12.479><c> task</c>
+
+00:06:12.790 --> 00:06:12.800 align:start position:0%
+a brittle approach when the task
+ 
+
+00:06:12.800 --> 00:06:15.350 align:start position:0%
+a brittle approach when the task
+complexity<00:06:13.520><c> grows</c><00:06:14.800><c> because</c><00:06:15.039><c> you're</c><00:06:15.199><c> only</c>
+
+00:06:15.350 --> 00:06:15.360 align:start position:0%
+complexity grows because you're only
+ 
+
+00:06:15.360 --> 00:06:17.350 align:start position:0%
+complexity grows because you're only
+doing<00:06:15.600><c> semantic</c><00:06:16.080><c> similarity</c><00:06:16.560><c> for</c><00:06:16.800><c> retrieval.</c>
+
+00:06:17.350 --> 00:06:17.360 align:start position:0%
+doing semantic similarity for retrieval.
+ 
+
+00:06:17.360 --> 00:06:18.870 align:start position:0%
+doing semantic similarity for retrieval.
+There<00:06:17.520><c> isn't</c><00:06:17.840><c> much</c><00:06:18.000><c> flexibility</c><00:06:18.560><c> and</c><00:06:18.720><c> the</c>
+
+00:06:18.870 --> 00:06:18.880 align:start position:0%
+There isn't much flexibility and the
+ 
+
+00:06:18.880 --> 00:06:19.909 align:start position:0%
+There isn't much flexibility and the
+types<00:06:19.039><c> of</c><00:06:19.120><c> things</c><00:06:19.280><c> that</c><00:06:19.360><c> you</c><00:06:19.440><c> can</c><00:06:19.520><c> pull</c><00:06:19.759><c> back</c>
+
+00:06:19.909 --> 00:06:19.919 align:start position:0%
+types of things that you can pull back
+ 
+
+00:06:19.919 --> 00:06:22.309 align:start position:0%
+types of things that you can pull back
+from<00:06:20.160><c> the</c><00:06:20.319><c> context</c><00:06:20.720><c> are</c><00:06:20.960><c> rudimentary.</c><00:06:22.000><c> So</c><00:06:22.240><c> for</c>
+
+00:06:22.309 --> 00:06:22.319 align:start position:0%
+from the context are rudimentary. So for
+ 
+
+00:06:22.319 --> 00:06:24.390 align:start position:0%
+from the context are rudimentary. So for
+example,<00:06:22.880><c> you're</c><00:06:23.199><c> only</c><00:06:23.600><c> being</c><00:06:23.840><c> able</c><00:06:24.000><c> to</c><00:06:24.080><c> pull</c>
+
+00:06:24.390 --> 00:06:24.400 align:start position:0%
+example, you're only being able to pull
+ 
+
+00:06:24.400 --> 00:06:25.430 align:start position:0%
+example, you're only being able to pull
+similar<00:06:24.720><c> documents.</c><00:06:25.120><c> should</c><00:06:25.280><c> not</c>
+
+00:06:25.430 --> 00:06:25.440 align:start position:0%
+similar documents. should not
+ 
+
+00:06:25.440 --> 00:06:26.950 align:start position:0%
+similar documents. should not
+necessarily<00:06:25.840><c> be</c><00:06:26.000><c> able</c><00:06:26.160><c> to</c><00:06:26.240><c> pull</c><00:06:26.560><c> logical</c>
+
+00:06:26.950 --> 00:06:26.960 align:start position:0%
+necessarily be able to pull logical
+ 
+
+00:06:26.960 --> 00:06:29.430 align:start position:0%
+necessarily be able to pull logical
+relationships<00:06:27.520><c> that</c><00:06:27.840><c> you</c><00:06:28.000><c> might</c><00:06:28.240><c> need</c><00:06:28.880><c> to</c><00:06:29.120><c> do</c>
+
+00:06:29.430 --> 00:06:29.440 align:start position:0%
+relationships that you might need to do
+ 
+
+00:06:29.440 --> 00:06:31.110 align:start position:0%
+relationships that you might need to do
+that<00:06:29.680><c> multihob</c><00:06:30.319><c> reasoning</c><00:06:30.639><c> that</c><00:06:30.800><c> you</c><00:06:30.960><c> need</c><00:06:31.039><c> to</c>
+
+00:06:31.110 --> 00:06:31.120 align:start position:0%
+that multihob reasoning that you need to
+ 
+
+00:06:31.120 --> 00:06:32.870 align:start position:0%
+that multihob reasoning that you need to
+do<00:06:31.280><c> over</c><00:06:31.440><c> a</c><00:06:31.600><c> legal</c><00:06:31.919><c> contract</c><00:06:32.319><c> or</c><00:06:32.560><c> over</c><00:06:32.720><c> a</c>
+
+00:06:32.870 --> 00:06:32.880 align:start position:0%
+do over a legal contract or over a
+ 
+
+00:06:32.880 --> 00:06:35.830 align:start position:0%
+do over a legal contract or over a
+codebase.<00:06:33.919><c> So</c><00:06:34.240><c> if</c><00:06:34.720><c> any</c><00:06:35.039><c> programmers</c><00:06:35.600><c> you</c>
+
+00:06:35.830 --> 00:06:35.840 align:start position:0%
+codebase. So if any programmers you
+ 
+
+00:06:35.840 --> 00:06:37.590 align:start position:0%
+codebase. So if any programmers you
+should<00:06:36.000><c> think</c><00:06:36.240><c> does</c><00:06:36.400><c> rag</c><00:06:36.800><c> actually</c><00:06:37.120><c> ever</c><00:06:37.360><c> make</c>
+
+00:06:37.590 --> 00:06:37.600 align:start position:0%
+should think does rag actually ever make
+ 
+
+00:06:37.600 --> 00:06:40.309 align:start position:0%
+should think does rag actually ever make
+sense<00:06:38.000><c> on</c><00:06:38.240><c> a</c><00:06:38.479><c> codebase.</c><00:06:39.520><c> I</c><00:06:39.759><c> wouldn't</c><00:06:40.000><c> say</c><00:06:40.080><c> it</c>
+
+00:06:40.309 --> 00:06:40.319 align:start position:0%
+sense on a codebase. I wouldn't say it
+ 
+
+00:06:40.319 --> 00:06:41.670 align:start position:0%
+sense on a codebase. I wouldn't say it
+does.<00:06:40.560><c> The</c><00:06:40.800><c> other</c><00:06:40.960><c> thing</c><00:06:41.039><c> that</c><00:06:41.199><c> makes</c><00:06:41.440><c> rag</c>
+
+00:06:41.670 --> 00:06:41.680 align:start position:0%
+does. The other thing that makes rag
+ 
+
+00:06:41.680 --> 00:06:43.430 align:start position:0%
+does. The other thing that makes rag
+brittle<00:06:42.080><c> is</c><00:06:42.319><c> that</c><00:06:42.479><c> you</c><00:06:42.800><c> have</c><00:06:42.960><c> to</c><00:06:43.120><c> actually</c>
+
+00:06:43.430 --> 00:06:43.440 align:start position:0%
+brittle is that you have to actually
+ 
+
+00:06:43.440 --> 00:06:45.270 align:start position:0%
+brittle is that you have to actually
+decide<00:06:43.680><c> the</c><00:06:43.919><c> chunking</c><00:06:44.319><c> strategy.</c><00:06:44.960><c> So</c><00:06:45.120><c> the</c>
+
+00:06:45.270 --> 00:06:45.280 align:start position:0%
+decide the chunking strategy. So the
+ 
+
+00:06:45.280 --> 00:06:47.350 align:start position:0%
+decide the chunking strategy. So the
+chunking<00:06:45.680><c> strategy</c><00:06:46.080><c> is</c><00:06:46.400><c> how</c><00:06:46.639><c> you</c><00:06:46.880><c> break</c><00:06:47.120><c> up</c>
+
+00:06:47.350 --> 00:06:47.360 align:start position:0%
+chunking strategy is how you break up
+ 
+
+00:06:47.360 --> 00:06:49.430 align:start position:0%
+chunking strategy is how you break up
+and<00:06:47.600><c> atomize</c><00:06:48.160><c> that</c><00:06:48.400><c> context</c><00:06:48.720><c> so</c><00:06:48.960><c> that</c><00:06:49.120><c> it</c><00:06:49.280><c> can</c>
+
+00:06:49.430 --> 00:06:49.440 align:start position:0%
+and atomize that context so that it can
+ 
+
+00:06:49.440 --> 00:06:51.110 align:start position:0%
+and atomize that context so that it can
+be<00:06:49.600><c> retrieved.</c><00:06:50.319><c> You</c><00:06:50.479><c> don't</c><00:06:50.639><c> retrieve</c><00:06:50.880><c> the</c>
+
+00:06:51.110 --> 00:06:51.120 align:start position:0%
+be retrieved. You don't retrieve the
+ 
+
+00:06:51.120 --> 00:06:52.469 align:start position:0%
+be retrieved. You don't retrieve the
+whole<00:06:51.199><c> context.</c><00:06:51.600><c> You</c><00:06:51.759><c> only</c><00:06:51.919><c> retrieve</c><00:06:52.319><c> what</c>
+
+00:06:52.469 --> 00:06:52.479 align:start position:0%
+whole context. You only retrieve what
+ 
+
+00:06:52.479 --> 00:06:54.469 align:start position:0%
+whole context. You only retrieve what
+you<00:06:52.639><c> need.</c><00:06:53.280><c> The</c><00:06:53.520><c> type</c><00:06:53.680><c> of</c><00:06:53.759><c> trunking</c><00:06:54.160><c> strategy</c>
+
+00:06:54.469 --> 00:06:54.479 align:start position:0%
+you need. The type of trunking strategy
+ 
+
+00:06:54.479 --> 00:06:56.230 align:start position:0%
+you need. The type of trunking strategy
+you<00:06:54.720><c> use</c><00:06:54.960><c> can</c><00:06:55.199><c> change</c><00:06:55.440><c> depending</c><00:06:55.840><c> on</c><00:06:55.919><c> the</c><00:06:56.160><c> type</c>
+
+00:06:56.230 --> 00:06:56.240 align:start position:0%
+you use can change depending on the type
+ 
+
+00:06:56.240 --> 00:06:58.150 align:start position:0%
+you use can change depending on the type
+of<00:06:56.400><c> document</c><00:06:56.800><c> that</c><00:06:57.039><c> you</c><00:06:57.199><c> have.</c><00:06:57.600><c> A</c><00:06:57.840><c> legal</c>
+
+00:06:58.150 --> 00:06:58.160 align:start position:0%
+of document that you have. A legal
+ 
+
+00:06:58.160 --> 00:07:00.390 align:start position:0%
+of document that you have. A legal
+contract<00:06:58.880><c> for</c><00:06:59.120><c> a</c><00:06:59.360><c> merger</c><00:06:59.680><c> for</c><00:06:59.840><c> a</c><00:07:00.000><c> particular</c>
+
+00:07:00.390 --> 00:07:00.400 align:start position:0%
+contract for a merger for a particular
+ 
+
+00:07:00.400 --> 00:07:02.150 align:start position:0%
+contract for a merger for a particular
+type<00:07:00.639><c> of</c><00:07:00.800><c> entity</c><00:07:01.280><c> might</c><00:07:01.520><c> be</c><00:07:01.759><c> completely</c>
+
+00:07:02.150 --> 00:07:02.160 align:start position:0%
+type of entity might be completely
+ 
+
+00:07:02.160 --> 00:07:05.029 align:start position:0%
+type of entity might be completely
+different<00:07:02.400><c> trunking</c><00:07:02.880><c> strategy</c><00:07:03.599><c> to</c><00:07:04.160><c> a</c>
+
+00:07:05.029 --> 00:07:05.039 align:start position:0%
+different trunking strategy to a
+ 
+
+00:07:05.039 --> 00:07:07.189 align:start position:0%
+different trunking strategy to a
+research<00:07:05.680><c> document</c><00:07:06.160><c> for</c><00:07:06.319><c> a</c><00:07:06.479><c> pharmaceutical</c>
+
+00:07:07.189 --> 00:07:07.199 align:start position:0%
+research document for a pharmaceutical
+ 
+
+00:07:07.199 --> 00:07:09.110 align:start position:0%
+research document for a pharmaceutical
+company<00:07:07.599><c> for</c><00:07:07.680><c> example.</c><00:07:08.319><c> And</c><00:07:08.479><c> then</c><00:07:08.639><c> how</c><00:07:08.880><c> do</c><00:07:08.960><c> you</c>
+
+00:07:09.110 --> 00:07:09.120 align:start position:0%
+company for example. And then how do you
+ 
+
+00:07:09.120 --> 00:07:10.550 align:start position:0%
+company for example. And then how do you
+expand<00:07:09.440><c> that?</c><00:07:09.759><c> How</c><00:07:09.840><c> do</c><00:07:10.000><c> you</c><00:07:10.080><c> scale</c><00:07:10.319><c> that</c>
+
+00:07:10.550 --> 00:07:10.560 align:start position:0%
+expand that? How do you scale that
+ 
+
+00:07:10.560 --> 00:07:12.870 align:start position:0%
+expand that? How do you scale that
+strategy<00:07:11.039><c> to</c><00:07:11.759><c> thousands</c><00:07:12.160><c> of</c><00:07:12.319><c> documents</c><00:07:12.720><c> that</c>
+
+00:07:12.870 --> 00:07:12.880 align:start position:0%
+strategy to thousands of documents that
+ 
+
+00:07:12.880 --> 00:07:14.150 align:start position:0%
+strategy to thousands of documents that
+you<00:07:13.039><c> might</c><00:07:13.199><c> want</c><00:07:13.360><c> to</c><00:07:13.440><c> work</c><00:07:13.599><c> with</c><00:07:13.759><c> or</c><00:07:14.000><c> to</c>
+
+00:07:14.150 --> 00:07:14.160 align:start position:0%
+you might want to work with or to
+ 
+
+00:07:14.160 --> 00:07:15.430 align:start position:0%
+you might want to work with or to
+hundreds<00:07:14.479><c> of</c><00:07:14.560><c> documents</c><00:07:14.960><c> that</c><00:07:15.199><c> you</c><00:07:15.360><c> might</c>
+
+00:07:15.430 --> 00:07:15.440 align:start position:0%
+hundreds of documents that you might
+ 
+
+00:07:15.440 --> 00:07:17.189 align:start position:0%
+hundreds of documents that you might
+want<00:07:15.599><c> to</c><00:07:15.759><c> work</c><00:07:15.840><c> with.</c><00:07:16.560><c> This</c><00:07:16.720><c> is</c><00:07:16.880><c> what</c><00:07:17.039><c> makes</c>
+
+00:07:17.189 --> 00:07:17.199 align:start position:0%
+want to work with. This is what makes
+ 
+
+00:07:17.199 --> 00:07:18.870 align:start position:0%
+want to work with. This is what makes
+rag<00:07:17.520><c> brittle</c><00:07:17.759><c> when</c><00:07:17.919><c> you</c><00:07:18.080><c> want</c><00:07:18.160><c> to</c><00:07:18.240><c> scale</c><00:07:18.479><c> it</c><00:07:18.639><c> to</c>
+
+00:07:18.870 --> 00:07:18.880 align:start position:0%
+rag brittle when you want to scale it to
+ 
+
+00:07:18.880 --> 00:07:21.029 align:start position:0%
+rag brittle when you want to scale it to
+real<00:07:19.520><c> production</c><00:07:19.919><c> use</c><00:07:20.160><c> cases.</c><00:07:20.560><c> Now</c><00:07:20.720><c> I</c><00:07:20.880><c> want</c><00:07:20.960><c> to</c>
+
+00:07:21.029 --> 00:07:21.039 align:start position:0%
+real production use cases. Now I want to
+ 
+
+00:07:21.039 --> 00:07:22.629 align:start position:0%
+real production use cases. Now I want to
+give<00:07:21.120><c> you</c><00:07:21.280><c> some</c><00:07:21.440><c> mental</c><00:07:21.759><c> models</c><00:07:22.160><c> about</c>
+
+00:07:22.629 --> 00:07:22.639 align:start position:0%
+give you some mental models about
+ 
+
+00:07:22.639 --> 00:07:24.309 align:start position:0%
+give you some mental models about
+understanding<00:07:23.280><c> the</c><00:07:23.520><c> type</c><00:07:23.680><c> of</c><00:07:23.840><c> complexity</c>
+
+00:07:24.309 --> 00:07:24.319 align:start position:0%
+understanding the type of complexity
+ 
+
+00:07:24.319 --> 00:07:27.029 align:start position:0%
+understanding the type of complexity
+we're<00:07:24.639><c> dealing</c><00:07:24.880><c> with.</c><00:07:25.520><c> Right?</c><00:07:26.319><c> So</c><00:07:26.560><c> when</c><00:07:26.880><c> we're</c>
+
+00:07:27.029 --> 00:07:27.039 align:start position:0%
+we're dealing with. Right? So when we're
+ 
+
+00:07:27.039 --> 00:07:29.029 align:start position:0%
+we're dealing with. Right? So when we're
+talking<00:07:27.280><c> about</c><00:07:27.520><c> a</c><00:07:27.919><c> legal</c><00:07:28.240><c> contract</c><00:07:28.560><c> or</c><00:07:28.800><c> code</c>
+
+00:07:29.029 --> 00:07:29.039 align:start position:0%
+talking about a legal contract or code
+ 
+
+00:07:29.039 --> 00:07:31.189 align:start position:0%
+talking about a legal contract or code
+base,<00:07:29.759><c> we're</c><00:07:30.000><c> not</c><00:07:30.240><c> really</c><00:07:30.560><c> talking</c><00:07:30.800><c> about</c>
+
+00:07:31.189 --> 00:07:31.199 align:start position:0%
+base, we're not really talking about
+ 
+
+00:07:31.199 --> 00:07:32.950 align:start position:0%
+base, we're not really talking about
+something<00:07:31.520><c> that</c><00:07:31.919><c> necessarily</c><00:07:32.479><c> is</c><00:07:32.639><c> going</c><00:07:32.800><c> to</c>
+
+00:07:32.950 --> 00:07:32.960 align:start position:0%
+something that necessarily is going to
+ 
+
+00:07:32.960 --> 00:07:34.790 align:start position:0%
+something that necessarily is going to
+be<00:07:33.120><c> read</c><00:07:33.360><c> end</c><00:07:33.599><c> to</c><00:07:33.759><c> end.</c><00:07:34.240><c> We're</c><00:07:34.479><c> talking</c><00:07:34.639><c> about</c>
+
+00:07:34.790 --> 00:07:34.800 align:start position:0%
+be read end to end. We're talking about
+ 
+
+00:07:34.800 --> 00:07:36.469 align:start position:0%
+be read end to end. We're talking about
+something<00:07:35.120><c> that</c><00:07:35.440><c> has</c><00:07:35.599><c> a</c><00:07:35.840><c> high</c><00:07:36.080><c> degree</c><00:07:36.319><c> of</c>
+
+00:07:36.469 --> 00:07:36.479 align:start position:0%
+something that has a high degree of
+ 
+
+00:07:36.479 --> 00:07:38.390 align:start position:0%
+something that has a high degree of
+internal<00:07:36.880><c> self-</c><00:07:37.199><c> refferencing.</c><00:07:37.919><c> So</c><00:07:38.080><c> in</c><00:07:38.240><c> a</c>
+
+00:07:38.390 --> 00:07:38.400 align:start position:0%
+internal self- refferencing. So in a
+ 
+
+00:07:38.400 --> 00:07:40.070 align:start position:0%
+internal self- refferencing. So in a
+legal<00:07:38.720><c> contract,</c><00:07:39.199><c> one</c><00:07:39.440><c> clause</c><00:07:39.840><c> might</c>
+
+00:07:40.070 --> 00:07:40.080 align:start position:0%
+legal contract, one clause might
+ 
+
+00:07:40.080 --> 00:07:42.070 align:start position:0%
+legal contract, one clause might
+reference<00:07:40.479><c> another</c><00:07:40.800><c> clause.</c><00:07:41.120><c> In</c><00:07:41.280><c> a</c><00:07:41.440><c> codebase,</c>
+
+00:07:42.070 --> 00:07:42.080 align:start position:0%
+reference another clause. In a codebase,
+ 
+
+00:07:42.080 --> 00:07:43.749 align:start position:0%
+reference another clause. In a codebase,
+one<00:07:42.319><c> function</c><00:07:42.639><c> might</c><00:07:42.880><c> call</c><00:07:43.120><c> another</c><00:07:43.440><c> function</c>
+
+00:07:43.749 --> 00:07:43.759 align:start position:0%
+one function might call another function
+ 
+
+00:07:43.759 --> 00:07:45.589 align:start position:0%
+one function might call another function
+or<00:07:44.000><c> you</c><00:07:44.160><c> might</c><00:07:44.319><c> have</c><00:07:44.479><c> a</c><00:07:44.639><c> class</c><00:07:45.039><c> abstraction</c>
+
+00:07:45.589 --> 00:07:45.599 align:start position:0%
+or you might have a class abstraction
+ 
+
+00:07:45.599 --> 00:07:47.830 align:start position:0%
+or you might have a class abstraction
+that<00:07:45.840><c> is</c><00:07:46.000><c> used</c><00:07:46.240><c> in</c><00:07:46.400><c> multiple</c><00:07:46.800><c> places</c><00:07:47.440><c> in</c><00:07:47.680><c> the</c>
+
+00:07:47.830 --> 00:07:47.840 align:start position:0%
+that is used in multiple places in the
+ 
+
+00:07:47.840 --> 00:07:50.230 align:start position:0%
+that is used in multiple places in the
+codebase.<00:07:48.720><c> that</c><00:07:48.960><c> class</c><00:07:49.280><c> can</c><00:07:49.520><c> be</c><00:07:49.599><c> called</c><00:07:50.000><c> by</c>
+
+00:07:50.230 --> 00:07:50.240 align:start position:0%
+codebase. that class can be called by
+ 
+
+00:07:50.240 --> 00:07:51.909 align:start position:0%
+codebase. that class can be called by
+another<00:07:50.560><c> function.</c><00:07:51.120><c> So</c><00:07:51.280><c> there's</c><00:07:51.520><c> a</c><00:07:51.680><c> high</c>
+
+00:07:51.909 --> 00:07:51.919 align:start position:0%
+another function. So there's a high
+ 
+
+00:07:51.919 --> 00:07:54.150 align:start position:0%
+another function. So there's a high
+degree<00:07:52.319><c> of</c><00:07:52.560><c> self-referencing</c><00:07:53.520><c> and</c><00:07:53.759><c> that</c><00:07:54.000><c> is</c>
+
+00:07:54.150 --> 00:07:54.160 align:start position:0%
+degree of self-referencing and that is
+ 
+
+00:07:54.160 --> 00:07:57.670 align:start position:0%
+degree of self-referencing and that is
+what<00:07:54.479><c> makes</c><00:07:54.720><c> these</c><00:07:55.360><c> types</c><00:07:55.759><c> of</c><00:07:56.160><c> data</c><00:07:56.479><c> assets</c>
+
+00:07:57.670 --> 00:07:57.680 align:start position:0%
+what makes these types of data assets
+ 
+
+00:07:57.680 --> 00:07:59.830 align:start position:0%
+what makes these types of data assets
+complex<00:07:58.160><c> to</c><00:07:58.319><c> reason</c><00:07:58.639><c> over.</c><00:07:59.280><c> Just</c><00:07:59.520><c> think</c><00:07:59.680><c> about</c>
+
+00:07:59.830 --> 00:07:59.840 align:start position:0%
+complex to reason over. Just think about
+ 
+
+00:07:59.840 --> 00:08:01.749 align:start position:0%
+complex to reason over. Just think about
+it<00:08:00.080><c> yourself.</c><00:08:00.800><c> Think</c><00:08:00.960><c> about</c><00:08:01.199><c> following</c><00:08:01.599><c> all</c>
+
+00:08:01.749 --> 00:08:01.759 align:start position:0%
+it yourself. Think about following all
+ 
+
+00:08:01.759 --> 00:08:03.990 align:start position:0%
+it yourself. Think about following all
+of<00:08:01.840><c> the</c><00:08:02.080><c> different</c><00:08:02.319><c> links</c><00:08:02.960><c> in</c><00:08:03.280><c> a</c><00:08:03.680><c> legal</c>
+
+00:08:03.990 --> 00:08:04.000 align:start position:0%
+of the different links in a legal
+ 
+
+00:08:04.000 --> 00:08:05.830 align:start position:0%
+of the different links in a legal
+contract<00:08:04.400><c> or</c><00:08:04.639><c> following</c><00:08:05.039><c> and</c><00:08:05.360><c> finding</c><00:08:05.680><c> out</c>
+
+00:08:05.830 --> 00:08:05.840 align:start position:0%
+contract or following and finding out
+ 
+
+00:08:05.840 --> 00:08:07.749 align:start position:0%
+contract or following and finding out
+all<00:08:06.000><c> of</c><00:08:06.080><c> the</c><00:08:06.240><c> different</c><00:08:06.479><c> places</c><00:08:07.120><c> a</c><00:08:07.440><c> function</c>
+
+00:08:07.749 --> 00:08:07.759 align:start position:0%
+all of the different places a function
+ 
+
+00:08:07.759 --> 00:08:10.790 align:start position:0%
+all of the different places a function
+is<00:08:08.000><c> used</c><00:08:08.479><c> in</c><00:08:08.800><c> a</c><00:08:08.960><c> massive</c><00:08:09.360><c> codebase.</c><00:08:10.319><c> That</c><00:08:10.639><c> is</c>
+
+00:08:10.790 --> 00:08:10.800 align:start position:0%
+is used in a massive codebase. That is
+ 
+
+00:08:10.800 --> 00:08:12.790 align:start position:0%
+is used in a massive codebase. That is
+what<00:08:11.039><c> makes</c><00:08:11.199><c> it</c><00:08:11.360><c> cognitively</c><00:08:12.000><c> demanding</c><00:08:12.560><c> and</c>
+
+00:08:12.790 --> 00:08:12.800 align:start position:0%
+what makes it cognitively demanding and
+ 
+
+00:08:12.800 --> 00:08:15.110 align:start position:0%
+what makes it cognitively demanding and
+that<00:08:12.960><c> is</c><00:08:13.199><c> actually</c><00:08:13.520><c> what</c><00:08:13.840><c> makes</c><00:08:14.000><c> it</c><00:08:14.160><c> complex.</c>
+
+00:08:15.110 --> 00:08:15.120 align:start position:0%
+that is actually what makes it complex.
+ 
+
+00:08:15.120 --> 00:08:16.790 align:start position:0%
+that is actually what makes it complex.
+So<00:08:15.360><c> rather</c><00:08:15.680><c> than</c><00:08:15.919><c> trying</c><00:08:16.080><c> to</c><00:08:16.240><c> model</c><00:08:16.479><c> these</c>
+
+00:08:16.790 --> 00:08:16.800 align:start position:0%
+So rather than trying to model these
+ 
+
+00:08:16.800 --> 00:08:18.869 align:start position:0%
+So rather than trying to model these
+things<00:08:17.199><c> as</c><00:08:17.759><c> like</c><00:08:17.919><c> a</c><00:08:18.160><c> story</c><00:08:18.400><c> book</c><00:08:18.560><c> that</c><00:08:18.720><c> you</c>
+
+00:08:18.869 --> 00:08:18.879 align:start position:0%
+things as like a story book that you
+ 
+
+00:08:18.879 --> 00:08:21.270 align:start position:0%
+things as like a story book that you
+read<00:08:19.039><c> end</c><00:08:19.280><c> to</c><00:08:19.440><c> end,</c><00:08:20.080><c> I</c><00:08:20.319><c> think</c><00:08:20.479><c> it</c><00:08:20.720><c> helps</c><00:08:20.960><c> much</c>
+
+00:08:21.270 --> 00:08:21.280 align:start position:0%
+read end to end, I think it helps much
+ 
+
+00:08:21.280 --> 00:08:23.270 align:start position:0%
+read end to end, I think it helps much
+more<00:08:21.440><c> to</c><00:08:21.599><c> model</c><00:08:21.919><c> these</c><00:08:22.160><c> things</c><00:08:22.400><c> as</c><00:08:22.720><c> dependency</c>
+
+00:08:23.270 --> 00:08:23.280 align:start position:0%
+more to model these things as dependency
+ 
+
+00:08:23.280 --> 00:08:25.589 align:start position:0%
+more to model these things as dependency
+graphs<00:08:24.080><c> on</c><00:08:24.479><c> the</c><00:08:24.720><c> nodes.</c><00:08:25.039><c> For</c><00:08:25.199><c> a</c><00:08:25.360><c> legal</c>
+
+00:08:25.589 --> 00:08:25.599 align:start position:0%
+graphs on the nodes. For a legal
+ 
+
+00:08:25.599 --> 00:08:27.430 align:start position:0%
+graphs on the nodes. For a legal
+contract,<00:08:26.000><c> you</c><00:08:26.240><c> might</c><00:08:26.400><c> have</c><00:08:26.560><c> certain</c><00:08:26.879><c> clauses</c>
+
+00:08:27.430 --> 00:08:27.440 align:start position:0%
+contract, you might have certain clauses
+ 
+
+00:08:27.440 --> 00:08:29.270 align:start position:0%
+contract, you might have certain clauses
+and<00:08:27.680><c> then</c><00:08:28.000><c> how</c><00:08:28.240><c> they</c><00:08:28.479><c> relate</c><00:08:28.800><c> to</c><00:08:29.039><c> other</c>
+
+00:08:29.270 --> 00:08:29.280 align:start position:0%
+and then how they relate to other
+ 
+
+00:08:29.280 --> 00:08:32.070 align:start position:0%
+and then how they relate to other
+clauses<00:08:29.759><c> on</c><00:08:30.000><c> the</c><00:08:30.160><c> edges.</c><00:08:31.039><c> On</c><00:08:31.280><c> a</c><00:08:31.520><c> codebase,</c>
+
+00:08:32.070 --> 00:08:32.080 align:start position:0%
+clauses on the edges. On a codebase,
+ 
+
+00:08:32.080 --> 00:08:34.949 align:start position:0%
+clauses on the edges. On a codebase,
+you'll<00:08:32.399><c> have</c><00:08:32.640><c> certain</c><00:08:32.959><c> functions</c><00:08:33.680><c> and</c><00:08:34.080><c> APIs</c>
+
+00:08:34.949 --> 00:08:34.959 align:start position:0%
+you'll have certain functions and APIs
+ 
+
+00:08:34.959 --> 00:08:36.790 align:start position:0%
+you'll have certain functions and APIs
+and<00:08:35.200><c> how</c><00:08:35.440><c> they</c><00:08:35.599><c> call</c><00:08:35.919><c> or</c><00:08:36.159><c> how</c><00:08:36.320><c> they</c><00:08:36.479><c> interact</c>
+
+00:08:36.790 --> 00:08:36.800 align:start position:0%
+and how they call or how they interact
+ 
+
+00:08:36.800 --> 00:08:39.750 align:start position:0%
+and how they call or how they interact
+with<00:08:37.039><c> other</c><00:08:37.279><c> functions</c><00:08:37.599><c> and</c><00:08:37.839><c> APIs</c><00:08:38.560><c> as</c><00:08:38.959><c> notes.</c>
+
+00:08:39.750 --> 00:08:39.760 align:start position:0%
+with other functions and APIs as notes.
+ 
+
+00:08:39.760 --> 00:08:42.550 align:start position:0%
+with other functions and APIs as notes.
+that<00:08:40.080><c> is</c><00:08:40.320><c> a</c><00:08:40.640><c> much</c><00:08:40.880><c> better</c><00:08:41.120><c> mental</c><00:08:41.519><c> model</c><00:08:41.919><c> of</c>
+
+00:08:42.550 --> 00:08:42.560 align:start position:0%
+that is a much better mental model of
+ 
+
+00:08:42.560 --> 00:08:44.630 align:start position:0%
+that is a much better mental model of
+mapping<00:08:42.880><c> the</c><00:08:43.120><c> complexity</c><00:08:43.760><c> of</c><00:08:44.000><c> the</c><00:08:44.240><c> type</c><00:08:44.480><c> of</c>
+
+00:08:44.630 --> 00:08:44.640 align:start position:0%
+mapping the complexity of the type of
+ 
+
+00:08:44.640 --> 00:08:46.310 align:start position:0%
+mapping the complexity of the type of
+data<00:08:44.959><c> assets</c><00:08:45.360><c> we're</c><00:08:45.600><c> dealing</c><00:08:45.839><c> with</c><00:08:46.000><c> here</c><00:08:46.160><c> when</c>
+
+00:08:46.310 --> 00:08:46.320 align:start position:0%
+data assets we're dealing with here when
+ 
+
+00:08:46.320 --> 00:08:47.910 align:start position:0%
+data assets we're dealing with here when
+we're<00:08:46.560><c> talking</c><00:08:46.640><c> about</c><00:08:46.800><c> these</c><00:08:47.200><c> real</c>
+
+00:08:47.910 --> 00:08:47.920 align:start position:0%
+we're talking about these real
+ 
+
+00:08:47.920 --> 00:08:50.070 align:start position:0%
+we're talking about these real
+workflows.<00:08:49.040><c> So</c><00:08:49.200><c> in</c><00:08:49.440><c> short,</c><00:08:49.680><c> when</c><00:08:49.920><c> we're</c>
+
+00:08:50.070 --> 00:08:50.080 align:start position:0%
+workflows. So in short, when we're
+ 
+
+00:08:50.080 --> 00:08:52.070 align:start position:0%
+workflows. So in short, when we're
+modeling<00:08:50.480><c> these</c><00:08:50.720><c> types</c><00:08:50.959><c> of</c><00:08:51.200><c> complex</c><00:08:51.680><c> long</c>
+
+00:08:52.070 --> 00:08:52.080 align:start position:0%
+modeling these types of complex long
+ 
+
+00:08:52.080 --> 00:08:53.829 align:start position:0%
+modeling these types of complex long
+documents,<00:08:52.560><c> we</c><00:08:52.720><c> really</c><00:08:52.959><c> want</c><00:08:53.040><c> to</c><00:08:53.200><c> be</c><00:08:53.279><c> modeling</c>
+
+00:08:53.829 --> 00:08:53.839 align:start position:0%
+documents, we really want to be modeling
+ 
+
+00:08:53.839 --> 00:08:56.470 align:start position:0%
+documents, we really want to be modeling
+them<00:08:54.080><c> as</c><00:08:54.320><c> dependency</c><00:08:54.959><c> graphs</c><00:08:55.600><c> rather</c><00:08:56.000><c> than</c>
+
+00:08:56.470 --> 00:08:56.480 align:start position:0%
+them as dependency graphs rather than
+ 
+
+00:08:56.480 --> 00:08:59.990 align:start position:0%
+them as dependency graphs rather than
+just<00:08:57.440><c> long</c><00:08:57.920><c> pieces</c><00:08:58.320><c> of</c><00:08:58.560><c> text.</c><00:08:59.200><c> So</c><00:08:59.680><c> hopefully</c>
+
+00:08:59.990 --> 00:09:00.000 align:start position:0%
+just long pieces of text. So hopefully
+ 
+
+00:09:00.000 --> 00:09:02.630 align:start position:0%
+just long pieces of text. So hopefully
+by<00:09:00.160><c> now</c><00:09:00.320><c> I'm</c><00:09:00.560><c> building</c><00:09:00.800><c> this</c><00:09:01.040><c> picture</c><00:09:01.839><c> of</c><00:09:02.160><c> why</c>
+
+00:09:02.630 --> 00:09:02.640 align:start position:0%
+by now I'm building this picture of why
+ 
+
+00:09:02.640 --> 00:09:04.630 align:start position:0%
+by now I'm building this picture of why
+the<00:09:03.040><c> previous</c><00:09:03.440><c> approaches</c><00:09:04.000><c> didn't</c><00:09:04.240><c> work.</c>
+
+00:09:04.630 --> 00:09:04.640 align:start position:0%
+the previous approaches didn't work.
+ 
+
+00:09:04.640 --> 00:09:05.910 align:start position:0%
+the previous approaches didn't work.
+Once<00:09:04.959><c> you</c><00:09:05.120><c> understand</c><00:09:05.360><c> that</c><00:09:05.600><c> these</c><00:09:05.760><c> things</c>
+
+00:09:05.910 --> 00:09:05.920 align:start position:0%
+Once you understand that these things
+ 
+
+00:09:05.920 --> 00:09:07.590 align:start position:0%
+Once you understand that these things
+are<00:09:06.160><c> dependency</c><00:09:06.720><c> graphs</c><00:09:07.040><c> and</c><00:09:07.200><c> once</c><00:09:07.360><c> you</c>
+
+00:09:07.590 --> 00:09:07.600 align:start position:0%
+are dependency graphs and once you
+ 
+
+00:09:07.600 --> 00:09:09.590 align:start position:0%
+are dependency graphs and once you
+understand<00:09:08.000><c> context</c><00:09:08.480><c> rot,</c><00:09:08.959><c> you</c><00:09:09.200><c> understand</c>
+
+00:09:09.590 --> 00:09:09.600 align:start position:0%
+understand context rot, you understand
+ 
+
+00:09:09.600 --> 00:09:12.389 align:start position:0%
+understand context rot, you understand
+why<00:09:10.560><c> stuffing</c><00:09:11.040><c> everything</c><00:09:11.279><c> into</c><00:09:11.519><c> an</c><00:09:11.680><c> LLM</c><00:09:12.240><c> even</c>
+
+00:09:12.389 --> 00:09:12.399 align:start position:0%
+why stuffing everything into an LLM even
+ 
+
+00:09:12.399 --> 00:09:14.389 align:start position:0%
+why stuffing everything into an LLM even
+though<00:09:12.560><c> the</c><00:09:12.800><c> reasoning</c><00:09:13.200><c> power</c><00:09:13.600><c> is</c><00:09:13.839><c> quite</c><00:09:14.080><c> high</c>
+
+00:09:14.389 --> 00:09:14.399 align:start position:0%
+though the reasoning power is quite high
+ 
+
+00:09:14.399 --> 00:09:16.470 align:start position:0%
+though the reasoning power is quite high
+nowadays<00:09:15.200><c> won't</c><00:09:15.519><c> work.</c><00:09:15.760><c> And</c><00:09:15.920><c> you</c><00:09:16.160><c> understand</c>
+
+00:09:16.470 --> 00:09:16.480 align:start position:0%
+nowadays won't work. And you understand
+ 
+
+00:09:16.480 --> 00:09:19.190 align:start position:0%
+nowadays won't work. And you understand
+why<00:09:16.880><c> rag</c><00:09:17.279><c> by</c><00:09:17.440><c> semantic</c><00:09:18.000><c> retrieval</c><00:09:18.800><c> doesn't</c>
+
+00:09:19.190 --> 00:09:19.200 align:start position:0%
+why rag by semantic retrieval doesn't
+ 
+
+00:09:19.200 --> 00:09:21.670 align:start position:0%
+why rag by semantic retrieval doesn't
+work.<00:09:19.760><c> And</c><00:09:19.839><c> you</c><00:09:20.000><c> also</c><00:09:20.320><c> understand</c><00:09:20.800><c> why</c><00:09:21.360><c> the</c>
+
+00:09:21.670 --> 00:09:21.680 align:start position:0%
+work. And you also understand why the
+ 
+
+00:09:21.680 --> 00:09:23.750 align:start position:0%
+work. And you also understand why the
+summarization<00:09:22.480><c> and</c><00:09:22.720><c> compaction</c><00:09:23.200><c> method</c><00:09:23.519><c> that</c>
+
+00:09:23.750 --> 00:09:23.760 align:start position:0%
+summarization and compaction method that
+ 
+
+00:09:23.760 --> 00:09:26.949 align:start position:0%
+summarization and compaction method that
+we<00:09:24.080><c> see</c><00:09:24.320><c> so</c><00:09:24.720><c> commonly</c><00:09:25.200><c> nowadays</c><00:09:26.240><c> also</c><00:09:26.720><c> is</c>
+
+00:09:26.949 --> 00:09:26.959 align:start position:0%
+we see so commonly nowadays also is
+ 
+
+00:09:26.959 --> 00:09:30.470 align:start position:0%
+we see so commonly nowadays also is
+brittle.<00:09:27.760><c> So</c><00:09:28.000><c> let's</c><00:09:28.320><c> explain</c><00:09:29.040><c> how</c><00:09:29.279><c> the</c><00:09:29.600><c> RLM</c>
+
+00:09:30.470 --> 00:09:30.480 align:start position:0%
+brittle. So let's explain how the RLM
+ 
+
+00:09:30.480 --> 00:09:32.470 align:start position:0%
+brittle. So let's explain how the RLM
+actually<00:09:30.800><c> changes</c><00:09:31.200><c> that.</c><00:09:31.360><c> So</c><00:09:31.519><c> the</c><00:09:31.680><c> RLM</c><00:09:32.160><c> is</c><00:09:32.320><c> the</c>
+
+00:09:32.470 --> 00:09:32.480 align:start position:0%
+actually changes that. So the RLM is the
+ 
+
+00:09:32.480 --> 00:09:35.430 align:start position:0%
+actually changes that. So the RLM is the
+recursive<00:09:33.200><c> language</c><00:09:33.600><c> models.</c><00:09:34.480><c> RLM</c><00:09:35.120><c> is</c>
+
+00:09:35.430 --> 00:09:35.440 align:start position:0%
+recursive language models. RLM is
+ 
+
+00:09:35.440 --> 00:09:37.829 align:start position:0%
+recursive language models. RLM is
+incredibly<00:09:36.080><c> simple.</c><00:09:36.959><c> You</c><00:09:37.200><c> have</c><00:09:37.440><c> what</c><00:09:37.680><c> you</c>
+
+00:09:37.829 --> 00:09:37.839 align:start position:0%
+incredibly simple. You have what you
+ 
+
+00:09:37.839 --> 00:09:40.710 align:start position:0%
+incredibly simple. You have what you
+call<00:09:38.160><c> a</c><00:09:38.399><c> ripple.</c><00:09:39.440><c> Ripple</c><00:09:39.839><c> is</c><00:09:40.000><c> simply</c><00:09:40.240><c> a</c><00:09:40.480><c> read</c>
+
+00:09:40.710 --> 00:09:40.720 align:start position:0%
+call a ripple. Ripple is simply a read
+ 
+
+00:09:40.720 --> 00:09:42.870 align:start position:0%
+call a ripple. Ripple is simply a read
+evaluate<00:09:41.279><c> print</c><00:09:41.600><c> loop.</c><00:09:42.000><c> That's</c><00:09:42.240><c> all</c><00:09:42.399><c> it</c><00:09:42.640><c> is,</c>
+
+00:09:42.870 --> 00:09:42.880 align:start position:0%
+evaluate print loop. That's all it is,
+ 
+
+00:09:42.880 --> 00:09:44.870 align:start position:0%
+evaluate print loop. That's all it is,
+right?<00:09:43.279><c> So</c><00:09:43.440><c> what</c><00:09:43.600><c> you</c><00:09:43.760><c> do</c><00:09:44.000><c> is</c><00:09:44.240><c> instead</c><00:09:44.560><c> of</c>
+
+00:09:44.870 --> 00:09:44.880 align:start position:0%
+right? So what you do is instead of
+ 
+
+00:09:44.880 --> 00:09:46.949 align:start position:0%
+right? So what you do is instead of
+stuffing<00:09:45.279><c> the</c><00:09:45.680><c> entire</c><00:09:46.080><c> context</c><00:09:46.480><c> into</c><00:09:46.800><c> the</c>
+
+00:09:46.949 --> 00:09:46.959 align:start position:0%
+stuffing the entire context into the
+ 
+
+00:09:46.959 --> 00:09:49.190 align:start position:0%
+stuffing the entire context into the
+language<00:09:47.279><c> model,</c><00:09:47.760><c> you</c><00:09:48.080><c> provide</c><00:09:48.399><c> the</c><00:09:48.640><c> model</c>
+
+00:09:49.190 --> 00:09:49.200 align:start position:0%
+language model, you provide the model
+ 
+
+00:09:49.200 --> 00:09:51.910 align:start position:0%
+language model, you provide the model
+with<00:09:49.680><c> a</c><00:09:49.920><c> data</c><00:09:50.320><c> asset</c><00:09:50.720><c> and</c><00:09:50.880><c> that</c><00:09:51.040><c> data</c><00:09:51.279><c> asset</c><00:09:51.680><c> is</c>
+
+00:09:51.910 --> 00:09:51.920 align:start position:0%
+with a data asset and that data asset is
+ 
+
+00:09:51.920 --> 00:09:55.509 align:start position:0%
+with a data asset and that data asset is
+a<00:09:52.240><c> variable</c><00:09:52.720><c> in</c><00:09:52.959><c> a</c><00:09:53.120><c> Python</c><00:09:53.519><c> script.</c><00:09:54.720><c> So</c><00:09:55.120><c> a</c>
+
+00:09:55.509 --> 00:09:55.519 align:start position:0%
+a variable in a Python script. So a
+ 
+
+00:09:55.519 --> 00:09:58.150 align:start position:0%
+a variable in a Python script. So a
+legal<00:09:55.839><c> contract</c><00:09:56.399><c> can</c><00:09:56.640><c> be</c><00:09:57.200><c> assigned</c><00:09:57.680><c> to</c><00:09:57.920><c> a</c>
+
+00:09:58.150 --> 00:09:58.160 align:start position:0%
+legal contract can be assigned to a
+ 
+
+00:09:58.160 --> 00:09:59.990 align:start position:0%
+legal contract can be assigned to a
+variable<00:09:58.480><c> in</c><00:09:58.640><c> a</c><00:09:58.800><c> Python</c><00:09:59.120><c> script</c><00:09:59.440><c> and</c><00:09:59.680><c> instead</c>
+
+00:09:59.990 --> 00:10:00.000 align:start position:0%
+variable in a Python script and instead
+ 
+
+00:10:00.000 --> 00:10:02.310 align:start position:0%
+variable in a Python script and instead
+of<00:10:00.320><c> having</c><00:10:00.640><c> that</c><00:10:00.959><c> inside</c><00:10:01.360><c> the</c><00:10:01.600><c> context</c><00:10:02.000><c> of</c><00:10:02.160><c> the</c>
+
+00:10:02.310 --> 00:10:02.320 align:start position:0%
+of having that inside the context of the
+ 
+
+00:10:02.320 --> 00:10:04.150 align:start position:0%
+of having that inside the context of the
+language<00:10:02.720><c> model,</c><00:10:03.120><c> the</c><00:10:03.440><c> language</c><00:10:03.760><c> model</c>
+
+00:10:04.150 --> 00:10:04.160 align:start position:0%
+language model, the language model
+ 
+
+00:10:04.160 --> 00:10:06.870 align:start position:0%
+language model, the language model
+programmatically<00:10:05.279><c> operates</c><00:10:05.760><c> on</c><00:10:06.000><c> that</c><00:10:06.480><c> using</c>
+
+00:10:06.870 --> 00:10:06.880 align:start position:0%
+programmatically operates on that using
+ 
+
+00:10:06.880 --> 00:10:10.310 align:start position:0%
+programmatically operates on that using
+the<00:10:07.360><c> functions</c><00:10:07.920><c> read,</c><00:10:08.480><c> evaluate,</c><00:10:09.440><c> print</c><00:10:10.000><c> and</c>
+
+00:10:10.310 --> 00:10:10.320 align:start position:0%
+the functions read, evaluate, print and
+ 
+
+00:10:10.320 --> 00:10:12.630 align:start position:0%
+the functions read, evaluate, print and
+loop.<00:10:11.279><c> And</c><00:10:11.600><c> there's</c><00:10:11.920><c> an</c><00:10:12.080><c> additional</c><00:10:12.399><c> point</c>
+
+00:10:12.630 --> 00:10:12.640 align:start position:0%
+loop. And there's an additional point
+ 
+
+00:10:12.640 --> 00:10:14.870 align:start position:0%
+loop. And there's an additional point
+here.<00:10:13.200><c> There</c><00:10:13.360><c> is</c><00:10:13.440><c> a</c><00:10:13.680><c> recursive</c><00:10:14.160><c> factor.</c><00:10:14.720><c> So</c>
+
+00:10:14.870 --> 00:10:14.880 align:start position:0%
+here. There is a recursive factor. So
+ 
+
+00:10:14.880 --> 00:10:17.269 align:start position:0%
+here. There is a recursive factor. So
+that<00:10:15.120><c> language</c><00:10:15.440><c> model</c><00:10:15.839><c> can</c><00:10:16.160><c> call</c><00:10:16.560><c> a</c><00:10:16.880><c> smaller</c>
+
+00:10:17.269 --> 00:10:17.279 align:start position:0%
+that language model can call a smaller
+ 
+
+00:10:17.279 --> 00:10:19.110 align:start position:0%
+that language model can call a smaller
+language<00:10:17.600><c> model</c><00:10:17.920><c> or</c><00:10:18.160><c> a</c><00:10:18.320><c> language</c><00:10:18.640><c> model</c><00:10:18.880><c> of</c>
+
+00:10:19.110 --> 00:10:19.120 align:start position:0%
+language model or a language model of
+ 
+
+00:10:19.120 --> 00:10:21.750 align:start position:0%
+language model or a language model of
+the<00:10:19.360><c> same</c><00:10:19.519><c> type</c><00:10:20.160><c> and</c><00:10:20.560><c> recursively</c><00:10:21.360><c> operate</c>
+
+00:10:21.750 --> 00:10:21.760 align:start position:0%
+the same type and recursively operate
+ 
+
+00:10:21.760 --> 00:10:23.350 align:start position:0%
+the same type and recursively operate
+over<00:10:22.000><c> that.</c><00:10:22.480><c> So</c><00:10:22.640><c> the</c><00:10:22.800><c> way</c><00:10:22.880><c> to</c><00:10:23.040><c> think</c><00:10:23.200><c> about</c>
+
+00:10:23.350 --> 00:10:23.360 align:start position:0%
+over that. So the way to think about
+ 
+
+00:10:23.360 --> 00:10:26.150 align:start position:0%
+over that. So the way to think about
+recursion<00:10:24.000><c> here</c><00:10:24.240><c> is</c><00:10:24.560><c> like</c><00:10:24.800><c> a</c><00:10:24.959><c> handoff.</c><00:10:26.000><c> You</c>
+
+00:10:26.150 --> 00:10:26.160 align:start position:0%
+recursion here is like a handoff. You
+ 
+
+00:10:26.160 --> 00:10:28.069 align:start position:0%
+recursion here is like a handoff. You
+have<00:10:26.320><c> one</c><00:10:26.560><c> model</c><00:10:26.880><c> operating</c><00:10:27.360><c> over</c><00:10:27.600><c> that</c><00:10:27.839><c> data</c>
+
+00:10:28.069 --> 00:10:28.079 align:start position:0%
+have one model operating over that data
+ 
+
+00:10:28.079 --> 00:10:31.030 align:start position:0%
+have one model operating over that data
+object<00:10:28.800><c> and</c><00:10:29.600><c> then</c><00:10:30.000><c> handing</c><00:10:30.399><c> that</c><00:10:30.560><c> off</c><00:10:30.720><c> to</c><00:10:30.880><c> a</c>
+
+00:10:31.030 --> 00:10:31.040 align:start position:0%
+object and then handing that off to a
+ 
+
+00:10:31.040 --> 00:10:32.870 align:start position:0%
+object and then handing that off to a
+smaller<00:10:31.360><c> model</c><00:10:31.680><c> to</c><00:10:31.920><c> focus</c><00:10:32.240><c> on</c><00:10:32.560><c> different</c>
+
+00:10:32.870 --> 00:10:32.880 align:start position:0%
+smaller model to focus on different
+ 
+
+00:10:32.880 --> 00:10:34.790 align:start position:0%
+smaller model to focus on different
+parts<00:10:33.120><c> of</c><00:10:33.279><c> that</c><00:10:33.440><c> data</c><00:10:33.680><c> object.</c><00:10:34.160><c> So</c><00:10:34.399><c> what</c><00:10:34.640><c> you</c>
+
+00:10:34.790 --> 00:10:34.800 align:start position:0%
+parts of that data object. So what you
+ 
+
+00:10:34.800 --> 00:10:36.630 align:start position:0%
+parts of that data object. So what you
+get<00:10:34.959><c> there</c><00:10:35.200><c> is</c><00:10:35.440><c> effectively</c><00:10:35.920><c> a</c><00:10:36.240><c> much</c><00:10:36.399><c> more</c>
+
+00:10:36.630 --> 00:10:36.640 align:start position:0%
+get there is effectively a much more
+ 
+
+00:10:36.640 --> 00:10:39.110 align:start position:0%
+get there is effectively a much more
+sophisticated<00:10:37.519><c> way</c><00:10:37.920><c> to</c><00:10:38.160><c> do</c><00:10:38.399><c> multihop</c>
+
+00:10:39.110 --> 00:10:39.120 align:start position:0%
+sophisticated way to do multihop
+ 
+
+00:10:39.120 --> 00:10:41.670 align:start position:0%
+sophisticated way to do multihop
+reasoning<00:10:39.519><c> because</c><00:10:40.000><c> that</c><00:10:40.399><c> setup</c><00:10:40.880><c> gives</c><00:10:41.360><c> the</c>
+
+00:10:41.670 --> 00:10:41.680 align:start position:0%
+reasoning because that setup gives the
+ 
+
+00:10:41.680 --> 00:10:44.389 align:start position:0%
+reasoning because that setup gives the
+agent<00:10:42.079><c> the</c><00:10:42.320><c> ability</c><00:10:42.720><c> to</c><00:10:43.040><c> search</c><00:10:43.440><c> over</c><00:10:44.160><c> the</c>
+
+00:10:44.389 --> 00:10:44.399 align:start position:0%
+agent the ability to search over the
+ 
+
+00:10:44.399 --> 00:10:47.430 align:start position:0%
+agent the ability to search over the
+context<00:10:45.279><c> flexibly</c><00:10:46.240><c> depending</c><00:10:46.560><c> on</c><00:10:46.720><c> the</c><00:10:46.959><c> task</c>
+
+00:10:47.430 --> 00:10:47.440 align:start position:0%
+context flexibly depending on the task
+ 
+
+00:10:47.440 --> 00:10:50.790 align:start position:0%
+context flexibly depending on the task
+and<00:10:47.760><c> find</c><00:10:48.000><c> out</c><00:10:48.560><c> exactly</c><00:10:49.200><c> where</c><00:10:50.000><c> the</c><00:10:50.320><c> relevant</c>
+
+00:10:50.790 --> 00:10:50.800 align:start position:0%
+and find out exactly where the relevant
+ 
+
+00:10:50.800 --> 00:10:53.190 align:start position:0%
+and find out exactly where the relevant
+information<00:10:51.360><c> is</c><00:10:51.760><c> to</c><00:10:52.000><c> answer</c><00:10:52.320><c> your</c><00:10:52.560><c> query</c><00:10:52.959><c> or</c>
+
+00:10:53.190 --> 00:10:53.200 align:start position:0%
+information is to answer your query or
+ 
+
+00:10:53.200 --> 00:10:56.230 align:start position:0%
+information is to answer your query or
+to<00:10:53.600><c> deliver</c><00:10:53.920><c> a</c><00:10:54.160><c> task.</c><00:10:54.880><c> And</c><00:10:55.120><c> that</c><00:10:55.600><c> turns</c><00:10:55.839><c> out</c><00:10:56.000><c> to</c>
+
+00:10:56.230 --> 00:10:56.240 align:start position:0%
+to deliver a task. And that turns out to
+ 
+
+00:10:56.240 --> 00:10:58.790 align:start position:0%
+to deliver a task. And that turns out to
+use<00:10:56.399><c> a</c><00:10:56.720><c> lot</c><00:10:56.800><c> less</c><00:10:57.200><c> context</c><00:10:57.839><c> than</c><00:10:58.320><c> stuffing</c><00:10:58.640><c> the</c>
+
+00:10:58.790 --> 00:10:58.800 align:start position:0%
+use a lot less context than stuffing the
+ 
+
+00:10:58.800 --> 00:11:00.870 align:start position:0%
+use a lot less context than stuffing the
+model<00:10:59.040><c> with</c><00:10:59.279><c> context.</c><00:11:00.079><c> What</c><00:11:00.320><c> we</c><00:11:00.560><c> built</c><00:11:00.720><c> there</c>
+
+00:11:00.870 --> 00:11:00.880 align:start position:0%
+model with context. What we built there
+ 
+
+00:11:00.880 --> 00:11:03.350 align:start position:0%
+model with context. What we built there
+with<00:11:01.040><c> Ripple</c><00:11:01.600><c> is</c><00:11:02.480><c> the</c><00:11:02.800><c> ability</c><00:11:03.120><c> to</c>
+
+00:11:03.350 --> 00:11:03.360 align:start position:0%
+with Ripple is the ability to
+ 
+
+00:11:03.360 --> 00:11:06.230 align:start position:0%
+with Ripple is the ability to
+intelligently<00:11:04.160><c> search</c><00:11:04.640><c> and</c><00:11:04.959><c> synthesize.</c><00:11:06.000><c> So</c>
+
+00:11:06.230 --> 00:11:06.240 align:start position:0%
+intelligently search and synthesize. So
+ 
+
+00:11:06.240 --> 00:11:07.509 align:start position:0%
+intelligently search and synthesize. So
+we're<00:11:06.480><c> talking</c><00:11:06.720><c> about</c><00:11:06.880><c> intelligent</c>
+
+00:11:07.509 --> 00:11:07.519 align:start position:0%
+we're talking about intelligent
+ 
+
+00:11:07.519 --> 00:11:11.990 align:start position:0%
+we're talking about intelligent
+decomposition<00:11:08.640><c> of</c><00:11:09.360><c> long</c><00:11:10.000><c> legal</c><00:11:10.320><c> contracts</c><00:11:11.200><c> of</c>
+
+00:11:11.990 --> 00:11:12.000 align:start position:0%
+decomposition of long legal contracts of
+ 
+
+00:11:12.000 --> 00:11:14.630 align:start position:0%
+decomposition of long legal contracts of
+code<00:11:12.240><c> bases</c><00:11:12.959><c> and</c><00:11:13.360><c> intelligent</c><00:11:13.920><c> symphysis</c><00:11:14.480><c> of</c>
+
+00:11:14.630 --> 00:11:14.640 align:start position:0%
+code bases and intelligent symphysis of
+ 
+
+00:11:14.640 --> 00:11:16.710 align:start position:0%
+code bases and intelligent symphysis of
+those<00:11:14.880><c> code</c><00:11:15.120><c> bases</c><00:11:15.680><c> all</c><00:11:15.920><c> with</c><00:11:16.160><c> very</c><00:11:16.480><c> simple</c>
+
+00:11:16.710 --> 00:11:16.720 align:start position:0%
+those code bases all with very simple
+ 
+
+00:11:16.720 --> 00:11:18.870 align:start position:0%
+those code bases all with very simple
+primitives<00:11:17.279><c> of</c><00:11:17.440><c> a</c><00:11:17.600><c> code</c><00:11:17.760><c> interpreter</c><00:11:18.480><c> and</c>
+
+00:11:18.870 --> 00:11:18.880 align:start position:0%
+primitives of a code interpreter and
+ 
+
+00:11:18.880 --> 00:11:21.030 align:start position:0%
+primitives of a code interpreter and
+recursion.<00:11:19.920><c> So</c><00:11:20.320><c> let's</c><00:11:20.640><c> look</c><00:11:20.720><c> at</c><00:11:20.880><c> the</c>
+
+00:11:21.030 --> 00:11:21.040 align:start position:0%
+recursion. So let's look at the
+ 
+
+00:11:21.040 --> 00:11:23.190 align:start position:0%
+recursion. So let's look at the
+individual<00:11:21.440><c> components.</c><00:11:22.240><c> Read</c><00:11:22.560><c> is</c><00:11:22.800><c> obvious.</c>
+
+00:11:23.190 --> 00:11:23.200 align:start position:0%
+individual components. Read is obvious.
+ 
+
+00:11:23.200 --> 00:11:25.750 align:start position:0%
+individual components. Read is obvious.
+Read<00:11:23.440><c> is</c><00:11:23.680><c> just</c><00:11:24.000><c> reading</c><00:11:24.320><c> the</c><00:11:24.480><c> data</c><00:11:24.800><c> object</c><00:11:25.440><c> at</c>
+
+00:11:25.750 --> 00:11:25.760 align:start position:0%
+Read is just reading the data object at
+ 
+
+00:11:25.760 --> 00:11:27.910 align:start position:0%
+Read is just reading the data object at
+the<00:11:25.920><c> point</c><00:11:26.160><c> in</c><00:11:26.480><c> time</c><00:11:26.800><c> of</c><00:11:27.040><c> what</c><00:11:27.279><c> it</c><00:11:27.440><c> is.</c>
+
+00:11:27.910 --> 00:11:27.920 align:start position:0%
+the point in time of what it is.
+ 
+
+00:11:27.920 --> 00:11:29.590 align:start position:0%
+the point in time of what it is.
+Evaluate<00:11:28.480><c> is</c><00:11:28.720><c> where</c><00:11:28.880><c> a</c><00:11:28.959><c> lot</c><00:11:29.040><c> of</c><00:11:29.120><c> the</c><00:11:29.279><c> magic</c>
+
+00:11:29.590 --> 00:11:29.600 align:start position:0%
+Evaluate is where a lot of the magic
+ 
+
+00:11:29.600 --> 00:11:31.430 align:start position:0%
+Evaluate is where a lot of the magic
+happens.<00:11:30.000><c> So</c><00:11:30.160><c> evaluate</c><00:11:30.800><c> can</c><00:11:30.959><c> be</c><00:11:31.120><c> any</c>
+
+00:11:31.430 --> 00:11:31.440 align:start position:0%
+happens. So evaluate can be any
+ 
+
+00:11:31.440 --> 00:11:33.590 align:start position:0%
+happens. So evaluate can be any
+programmatic<00:11:32.160><c> function</c><00:11:32.880><c> over</c><00:11:33.120><c> that</c><00:11:33.279><c> data</c>
+
+00:11:33.590 --> 00:11:33.600 align:start position:0%
+programmatic function over that data
+ 
+
+00:11:33.600 --> 00:11:35.750 align:start position:0%
+programmatic function over that data
+object.<00:11:33.920><c> So</c><00:11:34.079><c> it</c><00:11:34.240><c> could</c><00:11:34.320><c> be</c><00:11:34.399><c> a</c><00:11:34.640><c> slice.</c><00:11:35.360><c> It</c><00:11:35.600><c> could</c>
+
+00:11:35.750 --> 00:11:35.760 align:start position:0%
+object. So it could be a slice. It could
+ 
+
+00:11:35.760 --> 00:11:37.990 align:start position:0%
+object. So it could be a slice. It could
+even<00:11:36.000><c> be</c><00:11:36.240><c> a</c><00:11:36.480><c> keyword</c><00:11:36.880><c> match</c><00:11:37.279><c> on</c><00:11:37.519><c> that</c><00:11:37.680><c> data</c>
+
+00:11:37.990 --> 00:11:38.000 align:start position:0%
+even be a keyword match on that data
+ 
+
+00:11:38.000 --> 00:11:40.470 align:start position:0%
+even be a keyword match on that data
+object.<00:11:38.720><c> It</c><00:11:38.959><c> could</c><00:11:39.120><c> be</c><00:11:39.519><c> any</c><00:11:39.839><c> programmatic</c>
+
+00:11:40.470 --> 00:11:40.480 align:start position:0%
+object. It could be any programmatic
+ 
+
+00:11:40.480 --> 00:11:43.430 align:start position:0%
+object. It could be any programmatic
+function<00:11:40.800><c> on</c><00:11:41.040><c> that</c><00:11:41.200><c> data</c><00:11:41.519><c> object.</c><00:11:42.480><c> And</c><00:11:42.640><c> then</c>
+
+00:11:43.430 --> 00:11:43.440 align:start position:0%
+function on that data object. And then
+ 
+
+00:11:43.440 --> 00:11:46.069 align:start position:0%
+function on that data object. And then
+print<00:11:44.000><c> is</c><00:11:44.480><c> how</c><00:11:44.720><c> we</c><00:11:44.959><c> return</c><00:11:45.200><c> the</c><00:11:45.440><c> result</c><00:11:45.839><c> back</c>
+
+00:11:46.069 --> 00:11:46.079 align:start position:0%
+print is how we return the result back
+ 
+
+00:11:46.079 --> 00:11:48.310 align:start position:0%
+print is how we return the result back
+to<00:11:46.320><c> the</c><00:11:46.480><c> interpreter.</c><00:11:47.040><c> So</c><00:11:47.200><c> that</c><00:11:47.440><c> is</c><00:11:47.600><c> how</c><00:11:48.000><c> the</c>
+
+00:11:48.310 --> 00:11:48.320 align:start position:0%
+to the interpreter. So that is how the
+ 
+
+00:11:48.320 --> 00:11:50.550 align:start position:0%
+to the interpreter. So that is how the
+overall<00:11:48.800><c> system</c><00:11:49.120><c> keeps</c><00:11:49.440><c> track</c><00:11:49.760><c> of</c><00:11:50.240><c> where</c>
+
+00:11:50.550 --> 00:11:50.560 align:start position:0%
+overall system keeps track of where
+ 
+
+00:11:50.560 --> 00:11:52.870 align:start position:0%
+overall system keeps track of where
+things<00:11:50.800><c> are.</c><00:11:51.360><c> And</c><00:11:51.519><c> then</c><00:11:51.760><c> loop</c><00:11:52.079><c> is</c><00:11:52.480><c> continuing</c>
+
+00:11:52.870 --> 00:11:52.880 align:start position:0%
+things are. And then loop is continuing
+ 
+
+00:11:52.880 --> 00:11:55.509 align:start position:0%
+things are. And then loop is continuing
+to<00:11:53.040><c> do</c><00:11:53.200><c> that</c><00:11:53.760><c> until</c><00:11:54.160><c> the</c><00:11:54.399><c> task</c><00:11:54.640><c> is</c><00:11:54.800><c> solved.</c><00:11:55.360><c> And</c>
+
+00:11:55.509 --> 00:11:55.519 align:start position:0%
+to do that until the task is solved. And
+ 
+
+00:11:55.519 --> 00:11:57.430 align:start position:0%
+to do that until the task is solved. And
+it's<00:11:55.839><c> this</c><00:11:56.079><c> it's</c><00:11:56.399><c> with</c><00:11:56.640><c> this</c><00:11:56.880><c> approach</c><00:11:57.200><c> that</c>
+
+00:11:57.430 --> 00:11:57.440 align:start position:0%
+it's this it's with this approach that
+ 
+
+00:11:57.440 --> 00:11:59.509 align:start position:0%
+it's this it's with this approach that
+we're<00:11:57.760><c> able</c><00:11:58.000><c> to</c><00:11:58.240><c> build</c><00:11:58.560><c> that</c><00:11:58.880><c> dependency</c>
+
+00:11:59.509 --> 00:11:59.519 align:start position:0%
+we're able to build that dependency
+ 
+
+00:11:59.519 --> 00:12:02.230 align:start position:0%
+we're able to build that dependency
+graph.<00:12:00.160><c> And</c><00:12:00.399><c> that</c><00:12:00.640><c> is</c><00:12:00.959><c> how</c><00:12:01.279><c> we</c><00:12:01.519><c> actually</c><00:12:02.000><c> are</c>
+
+00:12:02.230 --> 00:12:02.240 align:start position:0%
+graph. And that is how we actually are
+ 
+
+00:12:02.240 --> 00:12:04.710 align:start position:0%
+graph. And that is how we actually are
+able<00:12:02.560><c> to</c><00:12:02.800><c> model</c><00:12:03.040><c> the</c><00:12:03.279><c> complexity</c><00:12:04.079><c> and</c><00:12:04.399><c> reason</c>
+
+00:12:04.710 --> 00:12:04.720 align:start position:0%
+able to model the complexity and reason
+ 
+
+00:12:04.720 --> 00:12:06.629 align:start position:0%
+able to model the complexity and reason
+over<00:12:04.959><c> those</c><00:12:05.200><c> complex</c><00:12:05.600><c> documents.</c><00:12:06.240><c> Not</c><00:12:06.480><c> by</c>
+
+00:12:06.629 --> 00:12:06.639 align:start position:0%
+over those complex documents. Not by
+ 
+
+00:12:06.639 --> 00:12:08.790 align:start position:0%
+over those complex documents. Not by
+treating<00:12:07.040><c> them</c><00:12:07.200><c> as</c><00:12:07.519><c> a</c><00:12:07.839><c> story</c><00:12:08.160><c> book</c><00:12:08.399><c> and</c><00:12:08.639><c> trying</c>
+
+00:12:08.790 --> 00:12:08.800 align:start position:0%
+treating them as a story book and trying
+ 
+
+00:12:08.800 --> 00:12:10.629 align:start position:0%
+treating them as a story book and trying
+to<00:12:08.959><c> stuff</c><00:12:09.200><c> the</c><00:12:09.360><c> model</c><00:12:09.519><c> in</c><00:12:09.760><c> and</c><00:12:09.920><c> read</c><00:12:10.079><c> them</c><00:12:10.320><c> auto</c>
+
+00:12:10.629 --> 00:12:10.639 align:start position:0%
+to stuff the model in and read them auto
+ 
+
+00:12:10.639 --> 00:12:12.629 align:start position:0%
+to stuff the model in and read them auto
+reggressively<00:12:11.200><c> end</c><00:12:11.360><c> to</c><00:12:11.519><c> end,</c><00:12:12.000><c> but</c><00:12:12.240><c> by</c>
+
+00:12:12.629 --> 00:12:12.639 align:start position:0%
+reggressively end to end, but by
+ 
+
+00:12:12.639 --> 00:12:15.190 align:start position:0%
+reggressively end to end, but by
+actually<00:12:13.040><c> giving</c><00:12:13.360><c> the</c><00:12:13.600><c> model</c><00:12:13.839><c> the</c><00:12:14.079><c> ability</c><00:12:14.880><c> to</c>
+
+00:12:15.190 --> 00:12:15.200 align:start position:0%
+actually giving the model the ability to
+ 
+
+00:12:15.200 --> 00:12:17.269 align:start position:0%
+actually giving the model the ability to
+search<00:12:15.519><c> over</c><00:12:15.760><c> that</c><00:12:16.000><c> codebase</c><00:12:16.639><c> intelligently</c>
+
+00:12:17.269 --> 00:12:17.279 align:start position:0%
+search over that codebase intelligently
+ 
+
+00:12:17.279 --> 00:12:19.350 align:start position:0%
+search over that codebase intelligently
+and<00:12:17.600><c> build</c><00:12:18.000><c> that</c><00:12:18.240><c> dependency</c><00:12:18.800><c> graph</c><00:12:19.120><c> or</c>
+
+00:12:19.350 --> 00:12:19.360 align:start position:0%
+and build that dependency graph or
+ 
+
+00:12:19.360 --> 00:12:20.870 align:start position:0%
+and build that dependency graph or
+search<00:12:19.600><c> over</c><00:12:19.839><c> that</c><00:12:20.079><c> legal</c><00:12:20.399><c> contract</c>
+
+00:12:20.870 --> 00:12:20.880 align:start position:0%
+search over that legal contract
+ 
+
+00:12:20.880 --> 00:12:22.710 align:start position:0%
+search over that legal contract
+intelligently<00:12:21.519><c> and</c><00:12:21.760><c> build</c><00:12:22.000><c> that</c><00:12:22.160><c> dependency</c>
+
+00:12:22.710 --> 00:12:22.720 align:start position:0%
+intelligently and build that dependency
+ 
+
+00:12:22.720 --> 00:12:24.629 align:start position:0%
+intelligently and build that dependency
+graph.<00:12:23.200><c> And</c><00:12:23.360><c> that</c><00:12:23.519><c> dependency</c><00:12:24.079><c> graph</c><00:12:24.240><c> is</c><00:12:24.480><c> what</c>
+
+00:12:24.629 --> 00:12:24.639 align:start position:0%
+graph. And that dependency graph is what
+ 
+
+00:12:24.639 --> 00:12:26.230 align:start position:0%
+graph. And that dependency graph is what
+is<00:12:24.800><c> needed</c><00:12:25.120><c> to</c><00:12:25.279><c> actually</c><00:12:25.600><c> answer</c><00:12:25.920><c> those</c>
+
+00:12:26.230 --> 00:12:26.240 align:start position:0%
+is needed to actually answer those
+ 
+
+00:12:26.240 --> 00:12:28.389 align:start position:0%
+is needed to actually answer those
+complex<00:12:26.800><c> legal</c><00:12:27.200><c> queries</c><00:12:27.519><c> or</c><00:12:27.760><c> those</c><00:12:28.000><c> complex</c>
+
+00:12:28.389 --> 00:12:28.399 align:start position:0%
+complex legal queries or those complex
+ 
+
+00:12:28.399 --> 00:12:30.710 align:start position:0%
+complex legal queries or those complex
+code<00:12:28.720><c> queries</c><00:12:29.040><c> in</c><00:12:29.200><c> your</c><00:12:29.360><c> codebase.</c><00:12:30.320><c> So</c><00:12:30.560><c> what</c>
+
+00:12:30.710 --> 00:12:30.720 align:start position:0%
+code queries in your codebase. So what
+ 
+
+00:12:30.720 --> 00:12:32.389 align:start position:0%
+code queries in your codebase. So what
+are<00:12:30.880><c> some</c><00:12:30.959><c> of</c><00:12:31.040><c> the</c><00:12:31.200><c> implications</c><00:12:31.680><c> of</c><00:12:31.839><c> this?</c>
+
+00:12:32.389 --> 00:12:32.399 align:start position:0%
+are some of the implications of this?
+ 
+
+00:12:32.399 --> 00:12:33.590 align:start position:0%
+are some of the implications of this?
+Well,<00:12:32.639><c> they</c><00:12:32.800><c> ran</c><00:12:32.959><c> this</c><00:12:33.120><c> over</c><00:12:33.279><c> a</c><00:12:33.440><c> few</c>
+
+00:12:33.590 --> 00:12:33.600 align:start position:0%
+Well, they ran this over a few
+ 
+
+00:12:33.600 --> 00:12:34.870 align:start position:0%
+Well, they ran this over a few
+experiments<00:12:33.920><c> and</c><00:12:34.079><c> they</c><00:12:34.240><c> found</c><00:12:34.320><c> that</c><00:12:34.560><c> for</c><00:12:34.720><c> most</c>
+
+00:12:34.870 --> 00:12:34.880 align:start position:0%
+experiments and they found that for most
+ 
+
+00:12:34.880 --> 00:12:37.190 align:start position:0%
+experiments and they found that for most
+of<00:12:34.959><c> the</c><00:12:35.120><c> runs</c><00:12:35.440><c> the</c><00:12:35.600><c> RLMs</c><00:12:36.480><c> for</c><00:12:36.720><c> the</c><00:12:36.800><c> most</c><00:12:36.959><c> part</c>
+
+00:12:37.190 --> 00:12:37.200 align:start position:0%
+of the runs the RLMs for the most part
+ 
+
+00:12:37.200 --> 00:12:38.470 align:start position:0%
+of the runs the RLMs for the most part
+they<00:12:37.360><c> were</c><00:12:37.519><c> cheaper</c><00:12:37.839><c> and</c><00:12:38.160><c> higher</c>
+
+00:12:38.470 --> 00:12:38.480 align:start position:0%
+they were cheaper and higher
+ 
+
+00:12:38.480 --> 00:12:40.949 align:start position:0%
+they were cheaper and higher
+performance.<00:12:39.040><c> And</c><00:12:39.200><c> they</c><00:12:39.440><c> did</c><00:12:39.600><c> this</c><00:12:39.839><c> on</c><00:12:40.079><c> GBT5</c>
+
+00:12:40.949 --> 00:12:40.959 align:start position:0%
+performance. And they did this on GBT5
+ 
+
+00:12:40.959 --> 00:12:44.389 align:start position:0%
+performance. And they did this on GBT5
+and<00:12:41.200><c> also</c><00:12:41.440><c> on</c><00:12:41.680><c> Quen</c><00:12:42.399><c> 340</c><00:12:43.279><c> billion</c><00:12:43.680><c> parameter</c>
+
+00:12:44.389 --> 00:12:44.399 align:start position:0%
+and also on Quen 340 billion parameter
+ 
+
+00:12:44.399 --> 00:12:47.030 align:start position:0%
+and also on Quen 340 billion parameter
+coding<00:12:44.800><c> model.</c><00:12:45.440><c> The</c><00:12:45.600><c> model</c><00:12:46.160><c> did</c><00:12:46.560><c> perform</c>
+
+00:12:47.030 --> 00:12:47.040 align:start position:0%
+coding model. The model did perform
+ 
+
+00:12:47.040 --> 00:12:49.509 align:start position:0%
+coding model. The model did perform
+slightly<00:12:47.600><c> worse</c><00:12:48.000><c> than</c><00:12:48.160><c> the</c><00:12:48.320><c> GPT5</c><00:12:49.120><c> model,</c>
+
+00:12:49.509 --> 00:12:49.519 align:start position:0%
+slightly worse than the GPT5 model,
+ 
+
+00:12:49.519 --> 00:12:51.509 align:start position:0%
+slightly worse than the GPT5 model,
+which<00:12:49.839><c> tells</c><00:12:50.079><c> us</c><00:12:50.240><c> that</c><00:12:50.399><c> to</c><00:12:50.639><c> use</c><00:12:50.800><c> this</c><00:12:51.040><c> scaffold</c>
+
+00:12:51.509 --> 00:12:51.519 align:start position:0%
+which tells us that to use this scaffold
+ 
+
+00:12:51.519 --> 00:12:53.509 align:start position:0%
+which tells us that to use this scaffold
+appropriately,<00:12:52.160><c> you</c><00:12:52.399><c> still</c><00:12:52.720><c> probably</c><00:12:53.200><c> need</c>
+
+00:12:53.509 --> 00:12:53.519 align:start position:0%
+appropriately, you still probably need
+ 
+
+00:12:53.519 --> 00:12:55.509 align:start position:0%
+appropriately, you still probably need
+high<00:12:53.760><c> performance</c><00:12:54.240><c> models.</c><00:12:55.120><c> But</c><00:12:55.279><c> the</c>
+
+00:12:55.509 --> 00:12:55.519 align:start position:0%
+high performance models. But the
+ 
+
+00:12:55.519 --> 00:12:57.910 align:start position:0%
+high performance models. But the
+implications<00:12:56.160><c> downstream</c><00:12:56.800><c> are</c><00:12:57.279><c> huge</c><00:12:57.600><c> because</c>
+
+00:12:57.910 --> 00:12:57.920 align:start position:0%
+implications downstream are huge because
+ 
+
+00:12:57.920 --> 00:12:59.509 align:start position:0%
+implications downstream are huge because
+what<00:12:58.079><c> they</c><00:12:58.240><c> were</c><00:12:58.399><c> able</c><00:12:58.560><c> to</c><00:12:58.720><c> do</c><00:12:58.880><c> was</c><00:12:59.120><c> reason</c>
+
+00:12:59.509 --> 00:12:59.519 align:start position:0%
+what they were able to do was reason
+ 
+
+00:12:59.519 --> 00:13:01.509 align:start position:0%
+what they were able to do was reason
+about<00:12:59.839><c> context</c><00:13:00.240><c> that</c><00:13:00.480><c> were</c><00:13:00.959><c> orders</c><00:13:01.360><c> of</c>
+
+00:13:01.509 --> 00:13:01.519 align:start position:0%
+about context that were orders of
+ 
+
+00:13:01.519 --> 00:13:03.590 align:start position:0%
+about context that were orders of
+magnitude<00:13:02.079><c> larger</c><00:13:02.480><c> than</c><00:13:02.639><c> the</c><00:13:02.880><c> advertised</c>
+
+00:13:03.590 --> 00:13:03.600 align:start position:0%
+magnitude larger than the advertised
+ 
+
+00:13:03.600 --> 00:13:06.389 align:start position:0%
+magnitude larger than the advertised
+context<00:13:04.079><c> windows</c><00:13:04.639><c> of</c><00:13:05.120><c> the</c><00:13:05.360><c> models</c><00:13:06.000><c> without</c>
+
+00:13:06.389 --> 00:13:06.399 align:start position:0%
+context windows of the models without
+ 
+
+00:13:06.399 --> 00:13:09.269 align:start position:0%
+context windows of the models without
+the<00:13:06.720><c> same</c><00:13:06.880><c> level</c><00:13:07.120><c> of</c><00:13:07.360><c> deterioration</c><00:13:08.639><c> and</c><00:13:08.880><c> for</c>
+
+00:13:09.269 --> 00:13:09.279 align:start position:0%
+the same level of deterioration and for
+ 
+
+00:13:09.279 --> 00:13:11.829 align:start position:0%
+the same level of deterioration and for
+a<00:13:09.519><c> cost</c><00:13:09.839><c> that</c><00:13:10.079><c> was</c><00:13:10.240><c> in</c><00:13:10.399><c> the</c><00:13:10.560><c> neighborhood</c><00:13:11.120><c> of</c>
+
+00:13:11.829 --> 00:13:11.839 align:start position:0%
+a cost that was in the neighborhood of
+ 
+
+00:13:11.839 --> 00:13:13.269 align:start position:0%
+a cost that was in the neighborhood of
+the<00:13:12.079><c> other</c><00:13:12.240><c> approaches</c><00:13:12.720><c> that</c><00:13:12.880><c> we</c><00:13:13.040><c> talked</c>
+
+00:13:13.269 --> 00:13:13.279 align:start position:0%
+the other approaches that we talked
+ 
+
+00:13:13.279 --> 00:13:15.590 align:start position:0%
+the other approaches that we talked
+about.<00:13:13.519><c> So</c><00:13:13.920><c> the</c><00:13:14.079><c> rag</c><00:13:14.480><c> type</c><00:13:14.639><c> of</c><00:13:14.800><c> approaches,</c>
+
+00:13:15.590 --> 00:13:15.600 align:start position:0%
+about. So the rag type of approaches,
+ 
+
+00:13:15.600 --> 00:13:17.750 align:start position:0%
+about. So the rag type of approaches,
+stuff<00:13:15.839><c> in</c><00:13:16.000><c> the</c><00:13:16.160><c> context</c><00:13:16.480><c> window</c><00:13:16.880><c> approaches.</c>
+
+00:13:17.750 --> 00:13:17.760 align:start position:0%
+stuff in the context window approaches.
+ 
+
+00:13:17.760 --> 00:13:19.350 align:start position:0%
+stuff in the context window approaches.
+So<00:13:18.000><c> what</c><00:13:18.160><c> are</c><00:13:18.320><c> the</c><00:13:18.480><c> limitations?</c><00:13:19.120><c> Because</c>
+
+00:13:19.350 --> 00:13:19.360 align:start position:0%
+So what are the limitations? Because
+ 
+
+00:13:19.360 --> 00:13:20.870 align:start position:0%
+So what are the limitations? Because
+there<00:13:19.600><c> are</c><00:13:19.760><c> limitations</c><00:13:20.240><c> with</c><00:13:20.560><c> this</c>
+
+00:13:20.870 --> 00:13:20.880 align:start position:0%
+there are limitations with this
+ 
+
+00:13:20.880 --> 00:13:23.190 align:start position:0%
+there are limitations with this
+approach.<00:13:21.760><c> So</c><00:13:21.920><c> the</c><00:13:22.160><c> paper</c><00:13:22.480><c> I</c><00:13:22.800><c> thought</c><00:13:22.959><c> was</c>
+
+00:13:23.190 --> 00:13:23.200 align:start position:0%
+approach. So the paper I thought was
+ 
+
+00:13:23.200 --> 00:13:25.350 align:start position:0%
+approach. So the paper I thought was
+brilliant.<00:13:23.680><c> But</c><00:13:24.000><c> with</c><00:13:24.240><c> all</c><00:13:24.480><c> papers</c><00:13:25.040><c> you</c><00:13:25.279><c> want</c>
+
+00:13:25.350 --> 00:13:25.360 align:start position:0%
+brilliant. But with all papers you want
+ 
+
+00:13:25.360 --> 00:13:27.190 align:start position:0%
+brilliant. But with all papers you want
+to<00:13:25.519><c> apply</c><00:13:25.839><c> to</c><00:13:25.920><c> your</c><00:13:26.079><c> own</c><00:13:26.240><c> situation</c><00:13:26.880><c> in</c>
+
+00:13:27.190 --> 00:13:27.200 align:start position:0%
+to apply to your own situation in
+ 
+
+00:13:27.200 --> 00:13:29.190 align:start position:0%
+to apply to your own situation in
+production<00:13:27.760><c> and</c><00:13:28.160><c> depending</c><00:13:28.480><c> on</c><00:13:28.720><c> what</c><00:13:28.959><c> you</c>
+
+00:13:29.190 --> 00:13:29.200 align:start position:0%
+production and depending on what you
+ 
+
+00:13:29.200 --> 00:13:31.190 align:start position:0%
+production and depending on what you
+have<00:13:29.360><c> available</c><00:13:29.680><c> to</c><00:13:29.839><c> you</c><00:13:30.000><c> in</c><00:13:30.240><c> production</c><00:13:30.880><c> and</c>
+
+00:13:31.190 --> 00:13:31.200 align:start position:0%
+have available to you in production and
+ 
+
+00:13:31.200 --> 00:13:32.870 align:start position:0%
+have available to you in production and
+depending<00:13:31.519><c> on</c><00:13:31.760><c> the</c><00:13:32.000><c> sensitivity</c><00:13:32.560><c> of</c><00:13:32.720><c> the</c>
+
+00:13:32.870 --> 00:13:32.880 align:start position:0%
+depending on the sensitivity of the
+ 
+
+00:13:32.880 --> 00:13:34.629 align:start position:0%
+depending on the sensitivity of the
+data,<00:13:33.200><c> this</c><00:13:33.440><c> might</c><00:13:33.600><c> not</c><00:13:33.760><c> be</c><00:13:33.839><c> unlocked</c><00:13:34.320><c> for</c><00:13:34.399><c> you</c>
+
+00:13:34.629 --> 00:13:34.639 align:start position:0%
+data, this might not be unlocked for you
+ 
+
+00:13:34.639 --> 00:13:36.310 align:start position:0%
+data, this might not be unlocked for you
+yet.<00:13:34.880><c> If</c><00:13:35.040><c> you</c><00:13:35.200><c> can</c><00:13:35.279><c> only</c><00:13:35.519><c> use</c><00:13:35.760><c> very</c><00:13:36.079><c> small</c>
+
+00:13:36.310 --> 00:13:36.320 align:start position:0%
+yet. If you can only use very small
+ 
+
+00:13:36.320 --> 00:13:38.389 align:start position:0%
+yet. If you can only use very small
+models,<00:13:37.279><c> there</c><00:13:37.519><c> is</c><00:13:37.680><c> nothing</c><00:13:37.839><c> in</c><00:13:38.000><c> this</c><00:13:38.160><c> paper</c>
+
+00:13:38.389 --> 00:13:38.399 align:start position:0%
+models, there is nothing in this paper
+ 
+
+00:13:38.399 --> 00:13:40.389 align:start position:0%
+models, there is nothing in this paper
+that<00:13:38.639><c> shows</c><00:13:38.880><c> that</c><00:13:39.120><c> it</c><00:13:39.360><c> works</c><00:13:39.600><c> with</c><00:13:39.839><c> very</c><00:13:40.160><c> small</c>
+
+00:13:40.389 --> 00:13:40.399 align:start position:0%
+that shows that it works with very small
+ 
+
+00:13:40.399 --> 00:13:42.389 align:start position:0%
+that shows that it works with very small
+models.<00:13:40.880><c> In</c><00:13:41.120><c> fact,</c><00:13:41.279><c> we</c><00:13:41.440><c> see</c><00:13:41.519><c> a</c><00:13:41.760><c> deterioration</c>
+
+00:13:42.389 --> 00:13:42.399 align:start position:0%
+models. In fact, we see a deterioration
+ 
+
+00:13:42.399 --> 00:13:45.990 align:start position:0%
+models. In fact, we see a deterioration
+in<00:13:42.720><c> capability</c><00:13:43.360><c> even</c><00:13:43.600><c> between</c><00:13:44.079><c> GBT5</c><00:13:45.279><c> and</c><00:13:45.680><c> the</c>
+
+00:13:45.990 --> 00:13:46.000 align:start position:0%
+in capability even between GBT5 and the
+ 
+
+00:13:46.000 --> 00:13:48.710 align:start position:0%
+in capability even between GBT5 and the
+340<00:13:46.720><c> billion</c><00:13:47.040><c> parameter</c><00:13:47.519><c> model,</c><00:13:48.160><c> the</c><00:13:48.320><c> Quen</c>
+
+00:13:48.710 --> 00:13:48.720 align:start position:0%
+340 billion parameter model, the Quen
+ 
+
+00:13:48.720 --> 00:13:51.190 align:start position:0%
+340 billion parameter model, the Quen
+coding<00:13:49.040><c> model.</c><00:13:49.680><c> There</c><00:13:49.839><c> is</c><00:13:50.000><c> also</c><00:13:50.320><c> this</c><00:13:50.560><c> fear</c><00:13:50.880><c> of</c>
+
+00:13:51.190 --> 00:13:51.200 align:start position:0%
+coding model. There is also this fear of
+ 
+
+00:13:51.200 --> 00:13:52.790 align:start position:0%
+coding model. There is also this fear of
+infinite<00:13:51.680><c> recursion.</c><00:13:52.320><c> So,</c><00:13:52.480><c> it's</c><00:13:52.639><c> not</c>
+
+00:13:52.790 --> 00:13:52.800 align:start position:0%
+infinite recursion. So, it's not
+ 
+
+00:13:52.800 --> 00:13:54.150 align:start position:0%
+infinite recursion. So, it's not
+necessarily<00:13:53.200><c> infinite</c><00:13:53.600><c> recursion,</c><00:13:53.920><c> but</c>
+
+00:13:54.150 --> 00:13:54.160 align:start position:0%
+necessarily infinite recursion, but
+ 
+
+00:13:54.160 --> 00:13:56.389 align:start position:0%
+necessarily infinite recursion, but
+there's<00:13:54.320><c> a</c><00:13:54.480><c> fear</c><00:13:54.720><c> that</c><00:13:55.120><c> sometimes</c><00:13:56.160><c> because</c>
+
+00:13:56.389 --> 00:13:56.399 align:start position:0%
+there's a fear that sometimes because
+ 
+
+00:13:56.399 --> 00:13:58.069 align:start position:0%
+there's a fear that sometimes because
+you're<00:13:56.639><c> letting</c><00:13:56.800><c> the</c><00:13:56.959><c> agentic</c><00:13:57.519><c> system</c><00:13:57.839><c> run</c>
+
+00:13:58.069 --> 00:13:58.079 align:start position:0%
+you're letting the agentic system run
+ 
+
+00:13:58.079 --> 00:14:00.150 align:start position:0%
+you're letting the agentic system run
+itself<00:13:58.880><c> that</c><00:13:59.120><c> it</c><00:13:59.360><c> can</c><00:13:59.519><c> get</c><00:13:59.600><c> into</c><00:13:59.839><c> these</c>
+
+00:14:00.150 --> 00:14:00.160 align:start position:0%
+itself that it can get into these
+ 
+
+00:14:00.160 --> 00:14:01.910 align:start position:0%
+itself that it can get into these
+recursion<00:14:00.639><c> loops</c><00:14:00.959><c> if</c><00:14:01.120><c> it</c><00:14:01.279><c> goes</c><00:14:01.440><c> off</c><00:14:01.600><c> on</c><00:14:01.839><c> the</c>
+
+00:14:01.910 --> 00:14:01.920 align:start position:0%
+recursion loops if it goes off on the
+ 
+
+00:14:01.920 --> 00:14:03.509 align:start position:0%
+recursion loops if it goes off on the
+wrong<00:14:02.079><c> tangent</c><00:14:02.480><c> and</c><00:14:02.639><c> that</c><00:14:02.800><c> can</c><00:14:02.959><c> become</c><00:14:03.199><c> very</c>
+
+00:14:03.509 --> 00:14:03.519 align:start position:0%
+wrong tangent and that can become very
+ 
+
+00:14:03.519 --> 00:14:05.590 align:start position:0%
+wrong tangent and that can become very
+expensive.<00:14:04.320><c> So</c><00:14:04.560><c> there</c><00:14:04.720><c> was</c><00:14:04.800><c> a</c><00:14:05.040><c> distribution</c>
+
+00:14:05.590 --> 00:14:05.600 align:start position:0%
+expensive. So there was a distribution
+ 
+
+00:14:05.600 --> 00:14:08.389 align:start position:0%
+expensive. So there was a distribution
+of<00:14:06.079><c> the</c><00:14:06.320><c> cost</c><00:14:06.560><c> of</c><00:14:06.800><c> running</c><00:14:07.040><c> these</c><00:14:07.360><c> tasks</c><00:14:07.760><c> and</c>
+
+00:14:08.389 --> 00:14:08.399 align:start position:0%
+of the cost of running these tasks and
+ 
+
+00:14:08.399 --> 00:14:11.110 align:start position:0%
+of the cost of running these tasks and
+for<00:14:08.720><c> the</c><00:14:09.040><c> 95th</c><00:14:09.519><c> percentile</c><00:14:10.079><c> of</c><00:14:10.240><c> tasks,</c><00:14:10.880><c> it</c>
+
+00:14:11.110 --> 00:14:11.120 align:start position:0%
+for the 95th percentile of tasks, it
+ 
+
+00:14:11.120 --> 00:14:13.590 align:start position:0%
+for the 95th percentile of tasks, it
+became<00:14:11.360><c> very</c><00:14:11.680><c> expensive</c><00:14:12.639><c> relative</c><00:14:13.199><c> to</c><00:14:13.440><c> the</c>
+
+00:14:13.590 --> 00:14:13.600 align:start position:0%
+became very expensive relative to the
+ 
+
+00:14:13.600 --> 00:14:16.470 align:start position:0%
+became very expensive relative to the
+other<00:14:13.839><c> approaches</c><00:14:14.800><c> when</c><00:14:15.360><c> it</c><00:14:15.760><c> hit</c><00:14:16.000><c> those</c>
+
+00:14:16.470 --> 00:14:16.480 align:start position:0%
+other approaches when it hit those
+ 
+
+00:14:16.480 --> 00:14:18.949 align:start position:0%
+other approaches when it hit those
+recursion<00:14:16.959><c> loops</c><00:14:17.279><c> that</c><00:14:17.519><c> would</c><00:14:17.760><c> actually</c><00:14:18.720><c> go</c>
+
+00:14:18.949 --> 00:14:18.959 align:start position:0%
+recursion loops that would actually go
+ 
+
+00:14:18.959 --> 00:14:21.110 align:start position:0%
+recursion loops that would actually go
+off<00:14:19.279><c> in</c><00:14:20.000><c> directions</c><00:14:20.320><c> that</c><00:14:20.560><c> you</c><00:14:20.720><c> don't</c><00:14:20.800><c> want</c><00:14:20.959><c> it</c>
+
+00:14:21.110 --> 00:14:21.120 align:start position:0%
+off in directions that you don't want it
+ 
+
+00:14:21.120 --> 00:14:23.509 align:start position:0%
+off in directions that you don't want it
+to<00:14:21.199><c> go</c><00:14:21.360><c> off</c><00:14:21.519><c> in.</c><00:14:22.160><c> But</c><00:14:22.480><c> the</c><00:14:22.720><c> paper</c><00:14:23.040><c> specified</c>
+
+00:14:23.509 --> 00:14:23.519 align:start position:0%
+to go off in. But the paper specified
+ 
+
+00:14:23.519 --> 00:14:25.030 align:start position:0%
+to go off in. But the paper specified
+how<00:14:23.760><c> they</c><00:14:23.920><c> put</c><00:14:24.079><c> guard</c><00:14:24.320><c> rails</c><00:14:24.560><c> in</c><00:14:24.720><c> place.</c><00:14:24.880><c> And</c>
+
+00:14:25.030 --> 00:14:25.040 align:start position:0%
+how they put guard rails in place. And
+ 
+
+00:14:25.040 --> 00:14:26.389 align:start position:0%
+how they put guard rails in place. And
+this<00:14:25.120><c> is</c><00:14:25.279><c> one</c><00:14:25.360><c> of</c><00:14:25.440><c> the</c><00:14:25.600><c> most</c><00:14:25.839><c> important</c><00:14:26.160><c> things</c>
+
+00:14:26.389 --> 00:14:26.399 align:start position:0%
+this is one of the most important things
+ 
+
+00:14:26.399 --> 00:14:27.990 align:start position:0%
+this is one of the most important things
+if<00:14:26.639><c> you're</c><00:14:26.800><c> going</c><00:14:26.959><c> to</c><00:14:27.120><c> use</c><00:14:27.279><c> this</c><00:14:27.519><c> approach.</c>
+
+00:14:27.990 --> 00:14:28.000 align:start position:0%
+if you're going to use this approach.
+ 
+
+00:14:28.000 --> 00:14:29.829 align:start position:0%
+if you're going to use this approach.
+You<00:14:28.160><c> need</c><00:14:28.240><c> the</c><00:14:28.399><c> guardrails</c><00:14:28.959><c> in</c><00:14:29.120><c> place.</c><00:14:29.600><c> So</c>
+
+00:14:29.829 --> 00:14:29.839 align:start position:0%
+You need the guardrails in place. So
+ 
+
+00:14:29.839 --> 00:14:31.590 align:start position:0%
+You need the guardrails in place. So
+first<00:14:30.000><c> of</c><00:14:30.079><c> all,</c><00:14:30.320><c> they</c><00:14:30.639><c> specified</c><00:14:31.120><c> that</c><00:14:31.360><c> it's</c>
+
+00:14:31.590 --> 00:14:31.600 align:start position:0%
+first of all, they specified that it's
+ 
+
+00:14:31.600 --> 00:14:33.829 align:start position:0%
+first of all, they specified that it's
+only<00:14:31.839><c> one</c><00:14:32.160><c> layer</c><00:14:32.320><c> deep</c><00:14:32.560><c> of</c><00:14:32.720><c> recursion.</c><00:14:33.680><c> And</c>
+
+00:14:33.829 --> 00:14:33.839 align:start position:0%
+only one layer deep of recursion. And
+ 
+
+00:14:33.839 --> 00:14:36.230 align:start position:0%
+only one layer deep of recursion. And
+then<00:14:34.079><c> they</c><00:14:34.320><c> made</c><00:14:34.560><c> the</c><00:14:34.720><c> workflow</c><00:14:35.199><c> synchronous.</c>
+
+00:14:36.230 --> 00:14:36.240 align:start position:0%
+then they made the workflow synchronous.
+ 
+
+00:14:36.240 --> 00:14:38.069 align:start position:0%
+then they made the workflow synchronous.
+But<00:14:36.560><c> I</c><00:14:36.800><c> see</c><00:14:36.959><c> that</c><00:14:37.120><c> as</c><00:14:37.279><c> an</c><00:14:37.440><c> opportunity</c><00:14:37.839><c> to</c>
+
+00:14:38.069 --> 00:14:38.079 align:start position:0%
+But I see that as an opportunity to
+ 
+
+00:14:38.079 --> 00:14:39.990 align:start position:0%
+But I see that as an opportunity to
+actually<00:14:38.399><c> expand</c><00:14:38.720><c> this</c><00:14:39.040><c> because</c><00:14:39.440><c> imagine</c><00:14:39.839><c> if</c>
+
+00:14:39.990 --> 00:14:40.000 align:start position:0%
+actually expand this because imagine if
+ 
+
+00:14:40.000 --> 00:14:41.750 align:start position:0%
+actually expand this because imagine if
+it<00:14:40.160><c> was</c><00:14:40.240><c> asynchronous.</c><00:14:40.959><c> So</c><00:14:41.120><c> that</c><00:14:41.279><c> would</c><00:14:41.440><c> mean</c>
+
+00:14:41.750 --> 00:14:41.760 align:start position:0%
+it was asynchronous. So that would mean
+ 
+
+00:14:41.760 --> 00:14:44.550 align:start position:0%
+it was asynchronous. So that would mean
+being<00:14:42.000><c> able</c><00:14:42.160><c> to</c><00:14:42.399><c> call</c><00:14:42.959><c> multiple</c><00:14:43.519><c> sub</c><00:14:43.839><c> LLM</c><00:14:44.399><c> at</c>
+
+00:14:44.550 --> 00:14:44.560 align:start position:0%
+being able to call multiple sub LLM at
+ 
+
+00:14:44.560 --> 00:14:46.310 align:start position:0%
+being able to call multiple sub LLM at
+the<00:14:44.720><c> same</c><00:14:44.880><c> time</c><00:14:45.279><c> to</c><00:14:45.600><c> do</c><00:14:45.760><c> different</c><00:14:46.000><c> parts</c><00:14:46.240><c> of</c>
+
+00:14:46.310 --> 00:14:46.320 align:start position:0%
+the same time to do different parts of
+ 
+
+00:14:46.320 --> 00:14:47.670 align:start position:0%
+the same time to do different parts of
+the<00:14:46.480><c> work.</c><00:14:46.720><c> And</c><00:14:46.959><c> you</c><00:14:47.040><c> know,</c><00:14:47.120><c> you</c><00:14:47.279><c> can</c><00:14:47.440><c> imagine</c>
+
+00:14:47.670 --> 00:14:47.680 align:start position:0%
+the work. And you know, you can imagine
+ 
+
+00:14:47.680 --> 00:14:49.590 align:start position:0%
+the work. And you know, you can imagine
+that<00:14:47.920><c> would</c><00:14:48.079><c> be</c><00:14:48.240><c> extremely</c><00:14:48.800><c> useful</c><00:14:49.120><c> if</c><00:14:49.360><c> you're</c>
+
+00:14:49.590 --> 00:14:49.600 align:start position:0%
+that would be extremely useful if you're
+ 
+
+00:14:49.600 --> 00:14:51.430 align:start position:0%
+that would be extremely useful if you're
+reasoning<00:14:49.920><c> over</c><00:14:50.160><c> a</c><00:14:50.320><c> data</c><00:14:50.639><c> room</c><00:14:50.959><c> for</c><00:14:51.040><c> example</c>
+
+00:14:51.430 --> 00:14:51.440 align:start position:0%
+reasoning over a data room for example
+ 
+
+00:14:51.440 --> 00:14:54.629 align:start position:0%
+reasoning over a data room for example
+with<00:14:52.240><c> 100</c><00:14:53.120><c> legal</c><00:14:53.519><c> type</c><00:14:53.839><c> documents</c><00:14:54.240><c> in</c><00:14:54.480><c> there</c>
+
+00:14:54.629 --> 00:14:54.639 align:start position:0%
+with 100 legal type documents in there
+ 
+
+00:14:54.639 --> 00:14:57.590 align:start position:0%
+with 100 legal type documents in there
+and<00:14:55.279><c> really</c><00:14:55.680><c> complex</c><00:14:56.560><c> maybe</c><00:14:56.800><c> even</c><00:14:57.040><c> some</c><00:14:57.279><c> code</c>
+
+00:14:57.590 --> 00:14:57.600 align:start position:0%
+and really complex maybe even some code
+ 
+
+00:14:57.600 --> 00:14:59.829 align:start position:0%
+and really complex maybe even some code
+base<00:14:57.839><c> in</c><00:14:58.079><c> there</c><00:14:58.240><c> and</c><00:14:58.480><c> really</c><00:14:58.720><c> complex</c><00:14:59.120><c> things.</c>
+
+00:14:59.829 --> 00:14:59.839 align:start position:0%
+base in there and really complex things.
+ 
+
+00:14:59.839 --> 00:15:02.069 align:start position:0%
+base in there and really complex things.
+All right.<00:15:00.160><c> So</c><00:15:00.399><c> that</c><00:15:00.639><c> asynchronity</c><00:15:01.680><c> has</c><00:15:01.920><c> not</c>
+
+00:15:02.069 --> 00:15:02.079 align:start position:0%
+All right. So that asynchronity has not
+ 
+
+00:15:02.079 --> 00:15:03.910 align:start position:0%
+All right. So that asynchronity has not
+been<00:15:02.240><c> tested</c><00:15:02.560><c> in</c><00:15:02.720><c> this</c><00:15:02.880><c> paper</c><00:15:03.120><c> yet.</c><00:15:03.519><c> It</c><00:15:03.680><c> leaves</c>
+
+00:15:03.910 --> 00:15:03.920 align:start position:0%
+been tested in this paper yet. It leaves
+ 
+
+00:15:03.920 --> 00:15:05.750 align:start position:0%
+been tested in this paper yet. It leaves
+it<00:15:04.160><c> open</c><00:15:04.399><c> for</c><00:15:04.639><c> experimentation.</c><00:15:05.360><c> I'm</c><00:15:05.600><c> sure</c>
+
+00:15:05.750 --> 00:15:05.760 align:start position:0%
+it open for experimentation. I'm sure
+ 
+
+00:15:05.760 --> 00:15:07.269 align:start position:0%
+it open for experimentation. I'm sure
+we're<00:15:06.000><c> going</c><00:15:06.079><c> to</c><00:15:06.160><c> see</c><00:15:06.320><c> lots</c><00:15:06.639><c> of</c><00:15:06.720><c> that</c><00:15:06.959><c> type</c><00:15:07.120><c> of</c>
+
+00:15:07.269 --> 00:15:07.279 align:start position:0%
+we're going to see lots of that type of
+ 
+
+00:15:07.279 --> 00:15:09.110 align:start position:0%
+we're going to see lots of that type of
+stuff<00:15:07.360><c> in</c><00:15:07.600><c> production.</c><00:15:08.399><c> So</c><00:15:08.560><c> that's</c><00:15:08.800><c> one</c><00:15:08.959><c> of</c>
+
+00:15:09.110 --> 00:15:09.120 align:start position:0%
+stuff in production. So that's one of
+ 
+
+00:15:09.120 --> 00:15:11.590 align:start position:0%
+stuff in production. So that's one of
+the<00:15:09.279><c> limitations</c><00:15:09.920><c> there</c><00:15:10.480><c> that</c><00:15:10.800><c> you</c><00:15:11.279><c> are</c><00:15:11.440><c> kind</c>
+
+00:15:11.590 --> 00:15:11.600 align:start position:0%
+the limitations there that you are kind
+ 
+
+00:15:11.600 --> 00:15:13.590 align:start position:0%
+the limitations there that you are kind
+of<00:15:11.760><c> letting</c><00:15:12.000><c> go</c><00:15:12.160><c> of</c><00:15:12.320><c> control</c><00:15:12.639><c> of</c><00:15:12.800><c> the</c><00:15:13.040><c> system</c><00:15:13.360><c> a</c>
+
+00:15:13.590 --> 00:15:13.600 align:start position:0%
+of letting go of control of the system a
+ 
+
+00:15:13.600 --> 00:15:15.430 align:start position:0%
+of letting go of control of the system a
+bit<00:15:13.760><c> which</c><00:15:14.000><c> gives</c><00:15:14.160><c> it</c><00:15:14.320><c> that</c><00:15:14.560><c> flexibility</c><00:15:15.199><c> but</c>
+
+00:15:15.430 --> 00:15:15.440 align:start position:0%
+bit which gives it that flexibility but
+ 
+
+00:15:15.440 --> 00:15:17.509 align:start position:0%
+bit which gives it that flexibility but
+can<00:15:15.760><c> also</c><00:15:16.399><c> run</c><00:15:16.639><c> away</c><00:15:16.880><c> from</c><00:15:16.959><c> you</c><00:15:17.120><c> if</c><00:15:17.279><c> you</c><00:15:17.360><c> don't</c>
+
+00:15:17.509 --> 00:15:17.519 align:start position:0%
+can also run away from you if you don't
+ 
+
+00:15:17.519 --> 00:15:19.590 align:start position:0%
+can also run away from you if you don't
+put<00:15:17.600><c> the</c><00:15:17.760><c> guardrails</c><00:15:18.240><c> in</c><00:15:18.480><c> place.</c><00:15:19.199><c> One</c><00:15:19.360><c> of</c><00:15:19.440><c> the</c>
+
+00:15:19.590 --> 00:15:19.600 align:start position:0%
+put the guardrails in place. One of the
+ 
+
+00:15:19.600 --> 00:15:21.430 align:start position:0%
+put the guardrails in place. One of the
+other<00:15:19.760><c> limitations</c><00:15:20.240><c> is</c><00:15:20.639><c> this</c><00:15:20.880><c> is</c><00:15:21.040><c> not</c><00:15:21.199><c> an</c>
+
+00:15:21.430 --> 00:15:21.440 align:start position:0%
+other limitations is this is not an
+ 
+
+00:15:21.440 --> 00:15:23.750 align:start position:0%
+other limitations is this is not an
+approach<00:15:21.760><c> to</c><00:15:22.000><c> be</c><00:15:22.160><c> used</c><00:15:22.480><c> everywhere.</c><00:15:23.600><c> The</c>
+
+00:15:23.750 --> 00:15:23.760 align:start position:0%
+approach to be used everywhere. The
+ 
+
+00:15:23.760 --> 00:15:24.949 align:start position:0%
+approach to be used everywhere. The
+paper<00:15:24.000><c> actually</c><00:15:24.240><c> mentions</c><00:15:24.480><c> that</c><00:15:24.720><c> when</c><00:15:24.800><c> you're</c>
+
+00:15:24.949 --> 00:15:24.959 align:start position:0%
+paper actually mentions that when you're
+ 
+
+00:15:24.959 --> 00:15:26.550 align:start position:0%
+paper actually mentions that when you're
+dealing<00:15:25.199><c> with</c><00:15:25.440><c> really</c><00:15:25.680><c> small</c><00:15:26.000><c> context,</c><00:15:26.480><c> just</c>
+
+00:15:26.550 --> 00:15:26.560 align:start position:0%
+dealing with really small context, just
+ 
+
+00:15:26.560 --> 00:15:28.310 align:start position:0%
+dealing with really small context, just
+doing<00:15:26.720><c> a</c><00:15:26.959><c> one</c><00:15:27.040><c> shot</c><00:15:27.279><c> with</c><00:15:27.360><c> the</c><00:15:27.440><c> LLM</c><00:15:28.000><c> often</c>
+
+00:15:28.310 --> 00:15:28.320 align:start position:0%
+doing a one shot with the LLM often
+ 
+
+00:15:28.320 --> 00:15:30.310 align:start position:0%
+doing a one shot with the LLM often
+performs<00:15:28.720><c> better.</c><00:15:29.519><c> So</c><00:15:29.760><c> you</c><00:15:30.000><c> have</c><00:15:30.079><c> to</c><00:15:30.240><c> know</c>
+
+00:15:30.310 --> 00:15:30.320 align:start position:0%
+performs better. So you have to know
+ 
+
+00:15:30.320 --> 00:15:32.949 align:start position:0%
+performs better. So you have to know
+when<00:15:30.560><c> to</c><00:15:31.040><c> apply</c><00:15:31.360><c> these</c><00:15:31.839><c> paper</c><00:15:32.240><c> also</c><00:15:32.560><c> mentions</c>
+
+00:15:32.949 --> 00:15:32.959 align:start position:0%
+when to apply these paper also mentions
+ 
+
+00:15:32.959 --> 00:15:35.350 align:start position:0%
+when to apply these paper also mentions
+a<00:15:33.440><c> slight</c><00:15:33.839><c> subtlety.</c><00:15:34.639><c> It</c><00:15:34.800><c> says</c><00:15:34.959><c> that</c><00:15:35.120><c> if</c>
+
+00:15:35.350 --> 00:15:35.360 align:start position:0%
+a slight subtlety. It says that if
+ 
+
+00:15:35.360 --> 00:15:37.269 align:start position:0%
+a slight subtlety. It says that if
+you're<00:15:35.519><c> just</c><00:15:35.680><c> dealing</c><00:15:36.000><c> with</c><00:15:36.240><c> long</c><00:15:36.560><c> context</c>
+
+00:15:37.269 --> 00:15:37.279 align:start position:0%
+you're just dealing with long context
+ 
+
+00:15:37.279 --> 00:15:39.030 align:start position:0%
+you're just dealing with long context
+sometimes<00:15:37.680><c> it's</c><00:15:37.920><c> better</c><00:15:38.160><c> to</c><00:15:38.399><c> not</c><00:15:38.639><c> use</c><00:15:38.800><c> the</c>
+
+00:15:39.030 --> 00:15:39.040 align:start position:0%
+sometimes it's better to not use the
+ 
+
+00:15:39.040 --> 00:15:41.269 align:start position:0%
+sometimes it's better to not use the
+recursion<00:15:39.440><c> but</c><00:15:39.760><c> still</c><00:15:40.000><c> provide</c><00:15:40.240><c> the</c><00:15:40.480><c> ripple</c>
+
+00:15:41.269 --> 00:15:41.279 align:start position:0%
+recursion but still provide the ripple
+ 
+
+00:15:41.279 --> 00:15:43.590 align:start position:0%
+recursion but still provide the ripple
+environment<00:15:41.920><c> for</c><00:15:42.240><c> the</c><00:15:42.480><c> LLM</c><00:15:42.959><c> to</c><00:15:43.120><c> operate</c><00:15:43.360><c> in.</c>
+
+00:15:43.590 --> 00:15:43.600 align:start position:0%
+environment for the LLM to operate in.
+ 
+
+00:15:43.600 --> 00:15:45.350 align:start position:0%
+environment for the LLM to operate in.
+So<00:15:43.760><c> effectively</c><00:15:44.480><c> you're</c><00:15:44.720><c> getting</c><00:15:44.880><c> the</c><00:15:45.120><c> large</c>
+
+00:15:45.350 --> 00:15:45.360 align:start position:0%
+So effectively you're getting the large
+ 
+
+00:15:45.360 --> 00:15:47.189 align:start position:0%
+So effectively you're getting the large
+language<00:15:45.680><c> model</c><00:15:45.920><c> to</c><00:15:46.160><c> reason</c><00:15:46.480><c> over</c><00:15:46.639><c> that</c><00:15:46.880><c> long</c>
+
+00:15:47.189 --> 00:15:47.199 align:start position:0%
+language model to reason over that long
+ 
+
+00:15:47.199 --> 00:15:49.910 align:start position:0%
+language model to reason over that long
+context<00:15:48.079><c> without</c><00:15:48.399><c> the</c><00:15:48.639><c> handoff</c><00:15:49.120><c> process</c><00:15:49.519><c> to</c><00:15:49.759><c> a</c>
+
+00:15:49.910 --> 00:15:49.920 align:start position:0%
+context without the handoff process to a
+ 
+
+00:15:49.920 --> 00:15:52.150 align:start position:0%
+context without the handoff process to a
+smaller<00:15:50.240><c> agent</c><00:15:50.720><c> for</c><00:15:50.959><c> that</c><00:15:51.120><c> recursion</c><00:15:51.600><c> factor.</c>
+
+00:15:52.150 --> 00:15:52.160 align:start position:0%
+smaller agent for that recursion factor.
+ 
+
+00:15:52.160 --> 00:15:53.990 align:start position:0%
+smaller agent for that recursion factor.
+And<00:15:52.320><c> that</c><00:15:52.639><c> works</c><00:15:53.120><c> better</c><00:15:53.440><c> when</c><00:15:53.759><c> you're</c>
+
+00:15:53.990 --> 00:15:54.000 align:start position:0%
+And that works better when you're
+ 
+
+00:15:54.000 --> 00:15:55.269 align:start position:0%
+And that works better when you're
+dealing<00:15:54.240><c> with</c><00:15:54.480><c> something</c><00:15:54.639><c> that's</c><00:15:54.959><c> long</c>
+
+00:15:55.269 --> 00:15:55.279 align:start position:0%
+dealing with something that's long
+ 
+
+00:15:55.279 --> 00:15:58.550 align:start position:0%
+dealing with something that's long
+context<00:15:56.079><c> but</c><00:15:56.560><c> low</c><00:15:56.880><c> complexity</c><00:15:58.000><c> where</c><00:15:58.399><c> you</c>
+
+00:15:58.550 --> 00:15:58.560 align:start position:0%
+context but low complexity where you
+ 
+
+00:15:58.560 --> 00:16:00.230 align:start position:0%
+context but low complexity where you
+have<00:15:58.720><c> that</c><00:15:58.959><c> high</c><00:15:59.279><c> complexity</c><00:15:59.680><c> and</c><00:15:59.920><c> the</c><00:16:00.079><c> long</c>
+
+00:16:00.230 --> 00:16:00.240 align:start position:0%
+have that high complexity and the long
+ 
+
+00:16:00.240 --> 00:16:01.829 align:start position:0%
+have that high complexity and the long
+context.<00:16:00.880><c> That's</c><00:16:01.040><c> when</c><00:16:01.199><c> the</c><00:16:01.440><c> recursion</c>
+
+00:16:01.829 --> 00:16:01.839 align:start position:0%
+context. That's when the recursion
+ 
+
+00:16:01.839 --> 00:16:03.189 align:start position:0%
+context. That's when the recursion
+factor<00:16:02.160><c> comes</c><00:16:02.320><c> in.</c><00:16:02.560><c> So</c><00:16:02.639><c> that's</c><00:16:02.800><c> one</c><00:16:02.959><c> of</c><00:16:03.040><c> the</c>
+
+00:16:03.189 --> 00:16:03.199 align:start position:0%
+factor comes in. So that's one of the
+ 
+
+00:16:03.199 --> 00:16:04.949 align:start position:0%
+factor comes in. So that's one of the
+limitations<00:16:03.759><c> understanding</c><00:16:04.320><c> where</c><00:16:04.720><c> it</c>
+
+00:16:04.949 --> 00:16:04.959 align:start position:0%
+limitations understanding where it
+ 
+
+00:16:04.959 --> 00:16:06.389 align:start position:0%
+limitations understanding where it
+should<00:16:05.199><c> be</c><00:16:05.279><c> applied</c><00:16:05.600><c> and</c><00:16:05.839><c> when</c><00:16:06.000><c> it</c><00:16:06.160><c> shouldn't</c>
+
+00:16:06.389 --> 00:16:06.399 align:start position:0%
+should be applied and when it shouldn't
+ 
+
+00:16:06.399 --> 00:16:08.550 align:start position:0%
+should be applied and when it shouldn't
+be<00:16:06.480><c> applied.</c><00:16:07.120><c> And</c><00:16:07.279><c> the</c><00:16:07.440><c> third</c><00:16:07.680><c> limitation</c><00:16:08.240><c> as</c>
+
+00:16:08.550 --> 00:16:08.560 align:start position:0%
+be applied. And the third limitation as
+ 
+
+00:16:08.560 --> 00:16:10.710 align:start position:0%
+be applied. And the third limitation as
+well<00:16:08.720><c> is</c><00:16:09.040><c> complexity.</c><00:16:09.839><c> These</c><00:16:10.079><c> are</c><00:16:10.240><c> much</c><00:16:10.480><c> more</c>
+
+00:16:10.710 --> 00:16:10.720 align:start position:0%
+well is complexity. These are much more
+ 
+
+00:16:10.720 --> 00:16:12.710 align:start position:0%
+well is complexity. These are much more
+complex<00:16:11.199><c> systems</c><00:16:11.519><c> to</c><00:16:11.680><c> monitor.</c><00:16:12.320><c> They're</c><00:16:12.560><c> much</c>
+
+00:16:12.710 --> 00:16:12.720 align:start position:0%
+complex systems to monitor. They're much
+ 
+
+00:16:12.720 --> 00:16:14.389 align:start position:0%
+complex systems to monitor. They're much
+more<00:16:12.959><c> complex</c><00:16:13.279><c> systems</c><00:16:13.600><c> to</c><00:16:13.839><c> implement</c><00:16:14.240><c> at</c>
+
+00:16:14.389 --> 00:16:14.399 align:start position:0%
+more complex systems to implement at
+ 
+
+00:16:14.399 --> 00:16:16.310 align:start position:0%
+more complex systems to implement at
+production.<00:16:15.120><c> The</c><00:16:15.360><c> other</c><00:16:15.519><c> thing</c><00:16:15.680><c> to</c><00:16:16.000><c> consider</c>
+
+00:16:16.310 --> 00:16:16.320 align:start position:0%
+production. The other thing to consider
+ 
+
+00:16:16.320 --> 00:16:18.069 align:start position:0%
+production. The other thing to consider
+as<00:16:16.480><c> well</c><00:16:16.720><c> is</c><00:16:16.959><c> the</c><00:16:17.120><c> nature</c><00:16:17.360><c> of</c><00:16:17.440><c> your</c><00:16:17.680><c> prompt</c>
+
+00:16:18.069 --> 00:16:18.079 align:start position:0%
+as well is the nature of your prompt
+ 
+
+00:16:18.079 --> 00:16:19.430 align:start position:0%
+as well is the nature of your prompt
+matters<00:16:18.480><c> because</c><00:16:18.800><c> the</c><00:16:18.959><c> nature</c><00:16:19.120><c> of</c><00:16:19.279><c> your</c>
+
+00:16:19.430 --> 00:16:19.440 align:start position:0%
+matters because the nature of your
+ 
+
+00:16:19.440 --> 00:16:21.110 align:start position:0%
+matters because the nature of your
+prompt<00:16:19.680><c> will</c><00:16:19.920><c> steer</c><00:16:20.160><c> that</c><00:16:20.399><c> evaluation</c>
+
+00:16:21.110 --> 00:16:21.120 align:start position:0%
+prompt will steer that evaluation
+ 
+
+00:16:21.120 --> 00:16:23.509 align:start position:0%
+prompt will steer that evaluation
+process.<00:16:21.920><c> So</c><00:16:22.079><c> you</c><00:16:22.240><c> should</c><00:16:22.320><c> be</c><00:16:22.480><c> wary</c><00:16:22.880><c> of</c><00:16:23.120><c> that</c>
+
+00:16:23.509 --> 00:16:23.519 align:start position:0%
+process. So you should be wary of that
+ 
+
+00:16:23.519 --> 00:16:25.590 align:start position:0%
+process. So you should be wary of that
+as<00:16:23.759><c> well.</c><00:16:23.920><c> The</c><00:16:24.079><c> observability</c><00:16:24.959><c> does</c><00:16:25.279><c> become</c>
+
+00:16:25.590 --> 00:16:25.600 align:start position:0%
+as well. The observability does become
+ 
+
+00:16:25.600 --> 00:16:27.269 align:start position:0%
+as well. The observability does become
+more<00:16:25.839><c> difficult.</c><00:16:26.560><c> So</c><00:16:26.720><c> I</c><00:16:26.880><c> want</c><00:16:26.959><c> to</c><00:16:27.040><c> leave</c><00:16:27.120><c> you</c>
+
+00:16:27.269 --> 00:16:27.279 align:start position:0%
+more difficult. So I want to leave you
+ 
+
+00:16:27.279 --> 00:16:28.550 align:start position:0%
+more difficult. So I want to leave you
+with<00:16:27.440><c> the</c><00:16:27.600><c> implications</c><00:16:28.079><c> here.</c><00:16:28.399><c> The</c>
+
+00:16:28.550 --> 00:16:28.560 align:start position:0%
+with the implications here. The
+ 
+
+00:16:28.560 --> 00:16:30.949 align:start position:0%
+with the implications here. The
+implications<00:16:29.120><c> are</c><00:16:29.360><c> that</c><00:16:29.759><c> look</c><00:16:30.079><c> we</c><00:16:30.320><c> can</c><00:16:30.480><c> unlock</c>
+
+00:16:30.949 --> 00:16:30.959 align:start position:0%
+implications are that look we can unlock
+ 
+
+00:16:30.959 --> 00:16:33.749 align:start position:0%
+implications are that look we can unlock
+quite<00:16:31.279><c> a</c><00:16:31.440><c> lot</c><00:16:31.600><c> of</c><00:16:32.000><c> tasks</c><00:16:32.560><c> outside</c><00:16:32.959><c> of</c><00:16:33.360><c> software</c>
+
+00:16:33.749 --> 00:16:33.759 align:start position:0%
+quite a lot of tasks outside of software
+ 
+
+00:16:33.759 --> 00:16:35.910 align:start position:0%
+quite a lot of tasks outside of software
+engineering<00:16:34.399><c> that</c><00:16:34.720><c> have</c><00:16:34.959><c> previously</c><00:16:35.440><c> been</c>
+
+00:16:35.910 --> 00:16:35.920 align:start position:0%
+engineering that have previously been
+ 
+
+00:16:35.920 --> 00:16:39.269 align:start position:0%
+engineering that have previously been
+unaccessible<00:16:36.639><c> to</c><00:16:36.880><c> AI</c><00:16:37.279><c> agents.</c><00:16:38.160><c> And</c><00:16:38.959><c> some</c><00:16:39.199><c> of</c>
+
+00:16:39.269 --> 00:16:39.279 align:start position:0%
+unaccessible to AI agents. And some of
+ 
+
+00:16:39.279 --> 00:16:41.590 align:start position:0%
+unaccessible to AI agents. And some of
+those<00:16:39.600><c> I</c><00:16:39.920><c> think</c><00:16:40.079><c> I've</c><00:16:40.320><c> mentioned</c><00:16:40.639><c> before</c><00:16:41.279><c> like</c>
+
+00:16:41.590 --> 00:16:41.600 align:start position:0%
+those I think I've mentioned before like
+ 
+
+00:16:41.600 --> 00:16:44.790 align:start position:0%
+those I think I've mentioned before like
+legal<00:16:42.000><c> analysis</c><00:16:42.880><c> but</c><00:16:43.279><c> there</c><00:16:43.519><c> is</c><00:16:43.759><c> also</c><00:16:44.320><c> policy</c>
+
+00:16:44.790 --> 00:16:44.800 align:start position:0%
+legal analysis but there is also policy
+ 
+
+00:16:44.800 --> 00:16:47.829 align:start position:0%
+legal analysis but there is also policy
+review.<00:16:45.759><c> There</c><00:16:46.000><c> is</c><00:16:46.240><c> also</c><00:16:47.279><c> information</c>
+
+00:16:47.829 --> 00:16:47.839 align:start position:0%
+review. There is also information
+ 
+
+00:16:47.839 --> 00:16:49.829 align:start position:0%
+review. There is also information
+symphysis<00:16:48.399><c> on</c><00:16:48.720><c> internal</c><00:16:49.199><c> documents.</c><00:16:49.680><c> So</c>
+
+00:16:49.829 --> 00:16:49.839 align:start position:0%
+symphysis on internal documents. So
+ 
+
+00:16:49.839 --> 00:16:51.269 align:start position:0%
+symphysis on internal documents. So
+there's<00:16:50.000><c> a</c><00:16:50.160><c> lot</c><00:16:50.240><c> of</c><00:16:50.320><c> companies</c><00:16:50.639><c> that</c><00:16:50.880><c> have</c>
+
+00:16:51.269 --> 00:16:51.279 align:start position:0%
+there's a lot of companies that have
+ 
+
+00:16:51.279 --> 00:16:53.189 align:start position:0%
+there's a lot of companies that have
+thousands<00:16:51.759><c> of</c><00:16:52.079><c> internal</c><00:16:52.560><c> documents</c><00:16:52.959><c> and</c>
+
+00:16:53.189 --> 00:16:53.199 align:start position:0%
+thousands of internal documents and
+ 
+
+00:16:53.199 --> 00:16:55.269 align:start position:0%
+thousands of internal documents and
+history<00:16:53.920><c> of</c><00:16:54.240><c> different</c><00:16:54.480><c> types</c><00:16:54.959><c> Excel</c>
+
+00:16:55.269 --> 00:16:55.279 align:start position:0%
+history of different types Excel
+ 
+
+00:16:55.279 --> 00:16:57.590 align:start position:0%
+history of different types Excel
+spreadsheets,<00:16:55.920><c> word</c><00:16:56.160><c> documents</c><00:16:57.120><c> in</c><00:16:57.440><c> the</c>
+
+00:16:57.590 --> 00:16:57.600 align:start position:0%
+spreadsheets, word documents in the
+ 
+
+00:16:57.600 --> 00:16:59.269 align:start position:0%
+spreadsheets, word documents in the
+organization<00:16:58.079><c> that</c><00:16:58.320><c> they</c><00:16:58.560><c> just</c><00:16:58.720><c> cannot</c><00:16:59.040><c> make</c>
+
+00:16:59.269 --> 00:16:59.279 align:start position:0%
+organization that they just cannot make
+ 
+
+00:16:59.279 --> 00:17:01.509 align:start position:0%
+organization that they just cannot make
+sense<00:16:59.440><c> of.</c><00:16:59.759><c> And</c><00:16:59.920><c> this</c><00:17:00.399><c> symphysis</c><00:17:01.040><c> layer</c><00:17:01.279><c> does</c>
+
+00:17:01.509 --> 00:17:01.519 align:start position:0%
+sense of. And this symphysis layer does
+ 
+
+00:17:01.519 --> 00:17:03.749 align:start position:0%
+sense of. And this symphysis layer does
+provide<00:17:01.920><c> a</c><00:17:02.160><c> way</c><00:17:02.320><c> to</c><00:17:02.560><c> do</c><00:17:02.720><c> that.</c><00:17:03.199><c> Now</c><00:17:03.440><c> of</c><00:17:03.600><c> course</c>
+
+00:17:03.749 --> 00:17:03.759 align:start position:0%
+provide a way to do that. Now of course
+ 
+
+00:17:03.759 --> 00:17:05.189 align:start position:0%
+provide a way to do that. Now of course
+this<00:17:04.000><c> doesn't</c><00:17:04.160><c> get</c><00:17:04.319><c> rid</c><00:17:04.480><c> of</c><00:17:04.559><c> hallucinations.</c>
+
+00:17:05.189 --> 00:17:05.199 align:start position:0%
+this doesn't get rid of hallucinations.
+ 
+
+00:17:05.199 --> 00:17:06.710 align:start position:0%
+this doesn't get rid of hallucinations.
+So<00:17:05.439><c> you</c><00:17:05.600><c> need</c><00:17:05.679><c> to</c><00:17:05.760><c> ensure</c><00:17:06.079><c> proper</c><00:17:06.400><c> data</c>
+
+00:17:06.710 --> 00:17:06.720 align:start position:0%
+So you need to ensure proper data
+ 
+
+00:17:06.720 --> 00:17:08.630 align:start position:0%
+So you need to ensure proper data
+provenence,<00:17:07.520><c> but</c><00:17:07.760><c> that's</c><00:17:08.079><c> standard</c><00:17:08.400><c> if</c>
+
+00:17:08.630 --> 00:17:08.640 align:start position:0%
+provenence, but that's standard if
+ 
+
+00:17:08.640 --> 00:17:10.470 align:start position:0%
+provenence, but that's standard if
+you're<00:17:08.720><c> building</c><00:17:08.959><c> AI</c><00:17:09.280><c> agents</c><00:17:09.679><c> at</c><00:17:09.839><c> this</c><00:17:10.000><c> point.</c>
+
+00:17:10.470 --> 00:17:10.480 align:start position:0%
+you're building AI agents at this point.
+ 
+
+00:17:10.480 --> 00:17:12.230 align:start position:0%
+you're building AI agents at this point.
+So<00:17:10.559><c> if</c><00:17:10.799><c> I'm</c><00:17:10.959><c> going</c><00:17:11.039><c> to</c><00:17:11.120><c> leave</c><00:17:11.520><c> you</c><00:17:11.760><c> with</c><00:17:11.919><c> a</c><00:17:12.160><c> few</c>
+
+00:17:12.230 --> 00:17:12.240 align:start position:0%
+So if I'm going to leave you with a few
+ 
+
+00:17:12.240 --> 00:17:14.069 align:start position:0%
+So if I'm going to leave you with a few
+points,<00:17:12.559><c> the</c><00:17:12.799><c> points</c><00:17:13.039><c> are</c><00:17:13.280><c> that</c><00:17:13.679><c> when</c><00:17:13.919><c> you</c>
+
+00:17:14.069 --> 00:17:14.079 align:start position:0%
+points, the points are that when you
+ 
+
+00:17:14.079 --> 00:17:15.829 align:start position:0%
+points, the points are that when you
+model<00:17:14.480><c> complex</c><00:17:14.959><c> documents,</c><00:17:15.439><c> the</c><00:17:15.600><c> mental</c>
+
+00:17:15.829 --> 00:17:15.839 align:start position:0%
+model complex documents, the mental
+ 
+
+00:17:15.839 --> 00:17:17.350 align:start position:0%
+model complex documents, the mental
+model<00:17:16.079><c> you</c><00:17:16.240><c> should</c><00:17:16.400><c> hold</c><00:17:16.640><c> is</c><00:17:16.959><c> not</c><00:17:17.199><c> reading</c>
+
+00:17:17.350 --> 00:17:17.360 align:start position:0%
+model you should hold is not reading
+ 
+
+00:17:17.360 --> 00:17:18.949 align:start position:0%
+model you should hold is not reading
+them<00:17:17.520><c> as</c><00:17:17.760><c> long</c><00:17:18.000><c> textbooks,</c><00:17:18.400><c> but</c><00:17:18.640><c> instead</c>
+
+00:17:18.949 --> 00:17:18.959 align:start position:0%
+them as long textbooks, but instead
+ 
+
+00:17:18.959 --> 00:17:21.829 align:start position:0%
+them as long textbooks, but instead
+modeling<00:17:19.360><c> them</c><00:17:19.600><c> as</c><00:17:19.919><c> dependency</c><00:17:20.559><c> graphs.</c><00:17:21.520><c> Code</c>
+
+00:17:21.829 --> 00:17:21.839 align:start position:0%
+modeling them as dependency graphs. Code
+ 
+
+00:17:21.839 --> 00:17:23.429 align:start position:0%
+modeling them as dependency graphs. Code
+execution<00:17:22.240><c> and</c><00:17:22.400><c> recursion</c><00:17:22.880><c> allows</c><00:17:23.199><c> you</c><00:17:23.360><c> to</c>
+
+00:17:23.429 --> 00:17:23.439 align:start position:0%
+execution and recursion allows you to
+ 
+
+00:17:23.439 --> 00:17:25.270 align:start position:0%
+execution and recursion allows you to
+intelligently<00:17:24.160><c> search</c><00:17:24.400><c> over</c><00:17:24.640><c> that</c><00:17:24.880><c> context</c>
+
+00:17:25.270 --> 00:17:25.280 align:start position:0%
+intelligently search over that context
+ 
+
+00:17:25.280 --> 00:17:27.110 align:start position:0%
+intelligently search over that context
+and<00:17:25.600><c> build</c><00:17:25.839><c> those</c><00:17:26.079><c> dependency</c><00:17:26.640><c> graphs</c><00:17:26.959><c> that</c>
+
+00:17:27.110 --> 00:17:27.120 align:start position:0%
+and build those dependency graphs that
+ 
+
+00:17:27.120 --> 00:17:29.110 align:start position:0%
+and build those dependency graphs that
+allow<00:17:27.360><c> you</c><00:17:27.439><c> to</c><00:17:27.600><c> then</c><00:17:27.839><c> synthesize</c><00:17:28.720><c> correct</c>
+
+00:17:29.110 --> 00:17:29.120 align:start position:0%
+allow you to then synthesize correct
+ 
+
+00:17:29.120 --> 00:17:32.310 align:start position:0%
+allow you to then synthesize correct
+answers<00:17:29.520><c> or</c><00:17:29.760><c> synthesize</c><00:17:30.320><c> better</c><00:17:30.799><c> responses</c>
+
+00:17:32.310 --> 00:17:32.320 align:start position:0%
+answers or synthesize better responses
+ 
+
+00:17:32.320 --> 00:17:34.230 align:start position:0%
+answers or synthesize better responses
+while<00:17:32.640><c> reasoning</c><00:17:32.960><c> over</c><00:17:33.200><c> that</c><00:17:33.360><c> long</c><00:17:33.679><c> context.</c>
+
+00:17:34.230 --> 00:17:34.240 align:start position:0%
+while reasoning over that long context.
+ 
+
+00:17:34.240 --> 00:17:35.990 align:start position:0%
+while reasoning over that long context.
+It's<00:17:34.480><c> not</c><00:17:34.640><c> a</c><00:17:34.799><c> one-sizefits-all.</c><00:17:35.760><c> There</c><00:17:35.919><c> are</c>
+
+00:17:35.990 --> 00:17:36.000 align:start position:0%
+It's not a one-sizefits-all. There are
+ 
+
+00:17:36.000 --> 00:17:37.430 align:start position:0%
+It's not a one-sizefits-all. There are
+places<00:17:36.320><c> it</c><00:17:36.559><c> should</c><00:17:36.720><c> be</c><00:17:36.799><c> applied</c><00:17:37.120><c> and</c><00:17:37.280><c> there</c>
+
+00:17:37.430 --> 00:17:37.440 align:start position:0%
+places it should be applied and there
+ 
+
+00:17:37.440 --> 00:17:39.110 align:start position:0%
+places it should be applied and there
+are<00:17:37.520><c> places</c><00:17:37.760><c> it</c><00:17:38.000><c> shouldn't</c><00:17:38.240><c> be</c><00:17:38.320><c> applied.</c><00:17:38.960><c> And</c>
+
+00:17:39.110 --> 00:17:39.120 align:start position:0%
+are places it shouldn't be applied. And
+ 
+
+00:17:39.120 --> 00:17:41.029 align:start position:0%
+are places it shouldn't be applied. And
+you<00:17:39.360><c> should</c><00:17:39.520><c> apply</c><00:17:39.760><c> it</c><00:17:40.000><c> if</c><00:17:40.240><c> you're</c><00:17:40.480><c> doing</c>
+
+00:17:41.029 --> 00:17:41.039 align:start position:0%
+you should apply it if you're doing
+ 
+
+00:17:41.039 --> 00:17:43.430 align:start position:0%
+you should apply it if you're doing
+large<00:17:41.360><c> context,</c><00:17:41.919><c> complex</c><00:17:42.720><c> retrieval,</c>
+
+00:17:43.430 --> 00:17:43.440 align:start position:0%
+large context, complex retrieval,
+ 
+
+00:17:43.440 --> 00:17:45.750 align:start position:0%
+large context, complex retrieval,
+information<00:17:43.919><c> synthesis,</c><00:17:44.480><c> or</c><00:17:44.720><c> research.</c>
+
+00:17:45.750 --> 00:17:45.760 align:start position:0%
+information synthesis, or research.
+ 
+
+00:17:45.760 --> 00:17:48.400 align:start position:0%
+information synthesis, or research.
+Thank<00:17:46.000><c> you.</c>
+

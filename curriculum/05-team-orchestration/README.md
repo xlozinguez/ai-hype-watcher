@@ -132,6 +132,26 @@ Gas Town combines the task board architecture from Beats (Module 04) with a flee
 
 Van Eyck frames Claude Code as the integration platform bringing these innovations together in experimental form. The patterns pioneered by the community -- hooks (Ralph Wiggum-like verification from Module 04), sub-agents with independent context windows, agent teams (basically Gas Town's mesh coordination), and improved plan mode (basically Beats) -- are being integrated into Claude Code's core feature set. What started as community experiments and third-party tools is converging into a unified multi-agent platform.
 
+### Concept 11: Empirical Multi-Agent Measurement
+
+Brainqub3 ([#055](../../sources/055-brainqub3-multi-agent-measurement.md)) presents Brain Cube Agent Labs, an open-source measurement rig for empirically comparing multi-agent architectures against a single-agent baseline, anchored on the Google Research paper "Towards a Science of Scaling Agent Systems." The tool addresses a critical gap: most multi-agent decisions are made on intuition rather than data.
+
+The fundamental design decision is **baseline-relative measurement**: every multi-agent run is automatically paired with a baseline run using identical task, model, and tool configuration. Performance is always expressed as a delta versus baseline, eliminating the guesswork of "does this swarm feel better." The system measures five empirical coordination metrics from live agent runs: **efficiency**, **overhead**, **error amplification**, **redundancy**, and **message density**. These feed into a predictive model that estimates how coordination dynamics shift as agent count and tool count scale.
+
+Three findings from the experiments are directly actionable:
+
+1. **Coordination collapse is predictable**: As agent count scales toward 10, multi-agent systems collapse in performance relative to baseline, regardless of architecture. Increasing tool count compounds this. The modeling shows that the more tools available, the more important it is to keep agent count constrained.
+
+2. **Single-agent performance is a task difficulty proxy**: When single-agent performance on a task is low (suggesting high difficulty), multi-agent systems provide genuine uplift even under coordination pressure. When single-agent performance is already high, multi-agent systems add cost without benefit and collapse sooner. This creates a practical decision heuristic: measure your single-agent baseline first, and only reach for multi-agent when the single agent genuinely struggles.
+
+3. **Four canonical coordination patterns** represent different points in the coordination trade space: independent (parallel with aggregation), centralized (workers draft, orchestrator synthesizes), decentralized (agents exchange information and converge), and hybrid. Each has distinct coordination cost profiles visible through the measurement framework.
+
+### Concept 12: The Integrator Removal Antipattern
+
+Java Brains ([#054](../../sources/054-java-brains-cursor-browser-hype.md)) surfaces a critical cautionary pattern from Cursor's FastRender browser experiment. The agent system originally included an "integrator" agent responsible for quality control -- analogous to a senior engineer doing code review. The blog post admits this agent was removed because it created bottlenecks. Rather than solving the quality-at-speed problem, they eliminated quality checks entirely.
+
+This directly parallels the antipattern in human teams where managers optimize for velocity metrics by cutting code reviews, skipping tests, and rubber-stamping merges. The result: 3 million lines of code with an 88% CI failure rate, at an estimated cost of $8-16 million in API tokens. The lesson for multi-agent orchestration is clear: **quality gates are features, not bottlenecks**. Removing validation from agentic pipelines produces impressive throughput metrics and broken software. The integrator role -- whether as a dedicated agent, a validation step, or a deterministic check -- must be preserved even when it constrains velocity.
+
 ## Patterns & Practices
 
 ### Pattern 1: Functional Team for Complex Builds
@@ -169,6 +189,13 @@ Van Eyck frames Claude Code as the integration platform bringing these innovatio
 - **Example**: AI LABS demonstrates creating two agents for a technical research task: one agent investigates documentation and builds a solution approach, the second agent reviews the approach and actively tries to find edge cases, contradictions, or missing requirements. Both agents update the shared task list with their findings and engage in peer-to-peer dialogue to resolve disagreements before presenting conclusions.
 - **Source**: [#021: AI LABS](../../sources/021-ai-labs-claude-code-tricks.md)
 
+### Pattern 6: Baseline-First Multi-Agent Evaluation
+
+- **When to use**: Before committing to any multi-agent architecture for a new task or domain.
+- **How it works**: Always establish a single-agent baseline first using the same model, tools, and task configuration you plan for the multi-agent system. Measure performance. Only invest in multi-agent when the single agent genuinely struggles. Use empirical coordination metrics (efficiency, overhead, error amplification, redundancy, message density) to predict scaling behavior before deploying at production scale. Run elasticity calibration batches varying agent count and tool count to model where your architecture will plateau or collapse.
+- **Example**: Brainqub3 ([#055](../../sources/055-brainqub3-multi-agent-measurement.md)) demonstrates this with FinanceBench tasks: when single-agent performance was already high, adding agents yielded diminishing returns and coordination collapse beyond 5-7 agents. When single-agent performance was low, multi-agent genuinely helped -- even under tool complexity pressure.
+- **Source**: [#055: Multi-Agent Measurement Rig](../../sources/055-brainqub3-multi-agent-measurement.md)
+
 ## Common Pitfalls
 
 - **Using teams for simple tasks**: Agent teams add coordination overhead (shared task lists, peer messaging, multiple context windows) that is only justified for complex, interdependent work. For isolated one-off tasks -- file exploration, targeted code changes, focused refactoring -- sub-agents are faster, cheaper, and simpler. As Van Zyl advises: "If you just want to do like a once-off task, you should definitely use sub agents instead" ([3:50](https://www.youtube.com/watch?v=KCJsdQpcfic&t=230)).
@@ -182,6 +209,10 @@ Van Eyck frames Claude Code as the integration platform bringing these innovatio
 - **Using branches instead of worktrees for agent isolation**: Git branches share the same working directory. Multiple agents on different branches will overwrite each other's uncommitted changes. Use `git worktree add` to give each agent its own filesystem checkout. This is a hard requirement for any multi-agent setup that modifies files concurrently.
 
 - **Expecting speed improvements**: Bart Slodyczka's comparison ([#004](../../sources/004-bart-slodyczka-agent-teams.md)) shows that build times between single-agent and team approaches are comparable. Teams provide depth, not speed. If your primary goal is faster execution, teams may not deliver the improvement you expect.
+
+- **Removing quality gates to increase throughput**: Cursor's FastRender browser experiment ([#054](../../sources/054-java-brains-cursor-browser-hype.md)) removed an "integrator" agent responsible for quality control because it slowed throughput. The result: 88% CI failure rate and non-compiling code at a cost of $8-16 million. Quality validation in multi-agent systems is not a bottleneck to be eliminated -- it is the mechanism that makes the output worth producing. The same antipattern appears in human teams that cut code reviews to hit velocity metrics.
+
+- **Scaling agent count without measuring coordination costs**: Brainqub3's experiments ([#055](../../sources/055-brainqub3-multi-agent-measurement.md)) show that coordination collapse is predictable and consistent: beyond 5-7 agents, performance degrades regardless of architecture. Adding more tools compounds the problem. Run empirical measurements at small scale before committing to large-scale agent deployments. The cost of a calibration batch is trivial compared to the cost of discovering collapse after deployment.
 
 - **Confusing scale with quality**: Anthropic's own C compiler experiment ([#041](../../sources/041-awesome-claude-compiler-critique.md)) is a cautionary case study. Sixteen agent instances working in parallel across approximately 2,000 sessions produced a 100,000-line C compiler at a cost of $20,000 -- but the result lacks its own assembler and linker, cannot compile a 16-bit mode needed to boot Linux, sometimes fails on Hello World, and produces less efficient code than GCC with all optimizations disabled. At roughly $0.20 per generated line, the economics are stark. The critique identifies a broader pattern: agent team experiments quietly redefine "success" from "produce a better or working tool" to "demonstrate that something resembling X can emerge from autonomous iteration." Evaluate agent team output against existing tools and established standards, not against the lowered bar of "did agents produce something."
 
@@ -212,6 +243,9 @@ Van Eyck frames Claude Code as the integration platform bringing these innovatio
 | [021: Claude's Best Release Yet + 10 Tricks](../../sources/021-ai-labs-claude-code-tricks.md) | AI LABS | Git worktrees for isolation, adversarial research teams, MCP CLI mode for context savings |
 | [024: Agentic coding in 2026](../../sources/024-jo-van-eyck-agentic-coding-2026.md) | Jo Van Eyck | Gas Town fleet orchestration, Claude Code as integration platform, Beats + multi-agent convergence |
 | [041: The new Claude just generated the worst C compiler ever](../../sources/041-awesome-claude-compiler-critique.md) | Awesome | Anthropic's 16-agent C compiler critique, $20K/100K lines (~$0.20/line), shifting success definitions, well-documented domain still produces mediocre results |
+| [051: You're using Claude Code Wrong](../../sources/051-simon-scrapes-claude-code-tips.md) | Simon Scrapes | Agent teams vs sub-agents graduation model, shared task list coordination, peer-to-peer communication benefits |
+| [054: The Cursor Situation](../../sources/054-java-brains-cursor-browser-hype.md) | Java Brains | Integrator removal antipattern, velocity vs correctness tradeoff, $8-16M in tokens for non-compiling code, bounded vs open-ended agent tasks |
+| [055: Multi-Agent Measurement Rig](../../sources/055-brainqub3-multi-agent-measurement.md) | Brainqub3 | Baseline-relative multi-agent measurement, coordination collapse under scale, single-agent performance as task difficulty proxy, empirical coordination metrics |
 
 ## Further Reading
 

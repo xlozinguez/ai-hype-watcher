@@ -51,6 +51,18 @@ Each source is synthesized (not transcribed) into a structured note with frontma
 | [041](041-awesome-claude-compiler-critique.md) | The new Claude just generated the worst C compiler ever... | Awesome | video | ai-hype, agent-teams, anthropic, ai-economics, multi-agent |
 | [042](042-devforge-vibe-coding-trap.md) | Vibe Coding is a Trap (What Senior Devs See That You Don't) | DevForge | video | vibe-coding, ai-hype, ai-sdlc |
 | [043](043-agrici-daniel-claude-ad-agency.md) | Claude Code just replaced your ad agency - here's how | Agrici Daniel | video | claude-code, skills, skills-ecosystem, prompt-engineering, context-engineering, mcp |
+| [044](044-nate-b-jones-claude-excel-powerpoint.md) | I Just Did a Full Day of Analyst Work in 10 Minutes | Nate B Jones | video | enterprise-ai, ai-economics, capability-overhang, anthropic |
+| [045](045-primetime-altman-townhall-biosecurity.md) | Sam Altman said what??? | ThePrimeTime | video | ai-safety, ai-economics, ai-hype, openai, ai-landscape |
+| [046](046-sam-witteveen-webmcp.md) | The Rise of WebMCP | Sam Witteveen | video | mcp, agentic-coding, ai-landscape, enterprise-ai |
+| [047](047-standuppod-ai-browser-security.md) | OpenAI's AI Browser Is a Security Nightmare | TheStandupPod | video | security, ai-hype, openai, chatgpt |
+| [048](048-brainqub3-recursive-language-models.md) | Before You Build Another Agent, Understand This MIT Paper | Brainqub3 | video | context-engineering, agentic-coding, ai-landscape |
+| [049](049-two-minute-papers-assistant-axis.md) | Anthropic Found Out Why AIs Go Insane | Two Minute Papers | video | ai-safety, anthropic, ai-landscape |
+| [050](050-sam-harris-ai-economy-emergency.md) | We're Not Ready for What AI Is About to Do to the Economy | Sam Harris | video | ai-hype, ai-economics, ai-landscape, capability-overhang, revenue-per-employee |
+| [051](051-simon-scrapes-claude-code-tips.md) | You're using Claude Code Wrong - These 10 Tips Will Change Everything | Simon Scrapes | video | claude-code, agent-teams, skills, context-engineering, skills-ecosystem, validation |
+| [052](052-novara-media-anthropic-safety-crisis.md) | Claude Isn't Safe. This Anthropic Whistleblower Has the Proof. | Novara Media | video | ai-safety, ai-hype, ai-economics, anthropic, ai-landscape |
+| [053](053-hr-com-ai-operational-traction-wfm.md) | From AI Curiosity to Operational Traction | HR.com | video | enterprise-ai, ai-hype, capability-overhang |
+| [054](054-java-brains-cursor-browser-hype.md) | The Cursor Situation | Java Brains | video | ai-hype, agentic-coding, cursor, multi-agent, ai-economics |
+| [055](055-brainqub3-multi-agent-measurement.md) | I Built an Open-Source Rig That Measures Multi-Agent Architectures | Brainqub3 | video | multi-agent, agent-teams, enterprise-ai, agentic-coding |
 
 ## Adding Sources
 
