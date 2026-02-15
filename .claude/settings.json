@@ -1,10 +1,13 @@
 {
   "permissions": {
     "allow": [
+      "Write",
+      "Edit",
       "Bash(git *)",
       "Bash(gh *)",
       "Bash(curl *)",
       "Bash(yt-dlp *)",
+      "Bash(python3 *)",
       "Bash(ls *)",
       "Bash(wc *)",
       "Bash(mkdir *)",

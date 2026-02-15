@@ -57,12 +57,10 @@ watchlist/        → YouTube channel watchlist and scanning config
 
 ### Batch ingestion (playlist or multiple URLs)
 1. Download VTT files: `yt-dlp --write-auto-sub --sub-lang en --skip-download -o "sources/_drafts/NNN-vtt" <url>`
-2. Convert each VTT to raw transcript markdown in `sources/_drafts/NNN-raw-transcript.md`
-3. Run `/synthesize-source` for each (can be parallelized via Task agents — one per source)
-4. Update curriculum modules with new source content
-5. Create or update a synthesis doc if 4+ sources cluster around a theme
-6. Create or update the daily briefing
-7. Commit, push, and create PR with `/pr-description`
+2. Convert VTTs to raw transcripts in parallel via Task subagents
+3. Launch parallel Task agents for synthesis — each writes its own source file
+4. Main agent updates `sources/README.md` and runs post-ingest updates sequentially
+5. Commit, push, and create PR with `/pr-description`
 
 ### Daily workflow
 ```
@@ -85,11 +83,11 @@ After ingesting a batch of sources, always:
 
 ## Parallel Processing
 
-- **Transcript extraction**: Sequential (Playwright rate limiting)
 - **VTT download via yt-dlp**: Sequential per playlist, but multiple playlists can run in parallel
-- **VTT-to-transcript conversion**: Parallelizable (one Task agent per file)
-- **Source synthesis**: Parallelizable (one Task agent per source)
-- **Curriculum/briefing/synthesis updates**: Parallelizable (one Task agent per concern), but watch for conflicts on shared files like `sources/README.md`
+- **VTT-to-transcript conversion**: Parallelizable via Task subagents
+- **Source synthesis**: Parallelizable via Task subagents — each writes its own source file directly
+- **Index updates** (`sources/README.md`, `briefings/README.md`, `synthesis/README.md`): Always sequential in main agent — never delegate to subagents due to edit conflicts
+- **Post-ingest updates** (curriculum, briefing, synthesis docs): Run sequentially in main agent to avoid shared file conflicts
 
 ## Rules
 

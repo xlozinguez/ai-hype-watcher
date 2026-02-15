@@ -110,30 +110,44 @@ yt-dlp --write-auto-sub --sub-lang en --skip-download -o "sources/_drafts/NNN-vt
 
 Assign sequential source IDs starting from the next available in `sources/README.md`.
 
+**No captions fallback**: Some videos (especially long courses or live streams) have no auto-generated subtitles. When yt-dlp reports "no subtitles":
+1. Report the gap to the user immediately
+2. Try Playwright transcript extraction as fallback
+3. If both fail, skip the source ID and offer to replace it with an alternative URL
+4. Keep ID numbering sequential — fill gaps with replacement videos, don't leave holes
+
 ### Step 2: Convert VTTs to raw transcripts
 
-Can be parallelized — one Task agent per VTT file. Each agent reads the VTT and writes a clean `sources/_drafts/NNN-raw-transcript.md`.
+Convert VTT files to raw transcripts using a Python script to strip VTT formatting. Can be parallelized via Task subagents:
+
+```bash
+python3 -c "
+import re, sys
+# Read VTT, strip headers/timestamps/duplicates, output clean [MM:SS] transcript
+..." < sources/_drafts/NNN-vtt.en.vtt > sources/_drafts/NNN-raw-transcript.md
+```
 
 ### Step 3: Synthesize all sources
 
-Parallelizable — one Task agent per source. Each reads its raw transcript, the template, and REFERENCE.md, then writes the source note and updates `sources/README.md`.
-
-**Watch for conflicts**: Multiple agents writing to `sources/README.md` simultaneously can cause edit failures. If this happens, re-read and retry after other agents complete.
+Launch parallel Task agents — one per source. Each agent:
+1. Reads the raw transcript, template, and REFERENCE.md
+2. Synthesizes structured content
+3. Writes the source file directly (`sources/NNN-creator-topic.md`)
 
 ### Step 4: Post-ingest updates
 
-After all sources are synthesized:
-1. **Curriculum**: Update relevant modules (01-06) with new source content
-2. **Synthesis**: Create a cross-source synthesis doc if 4+ sources share a theme
-3. **Briefing**: Create or update the daily briefing for today's date
-4. **Indexes**: Verify all README indexes are current
+After all source files are written, run these **sequentially in the main agent** (shared file edits cause conflicts if parallelized):
 
-These can run as 3 parallel Task agents (curriculum, synthesis, briefing).
+1. **Sources index**: Update `sources/README.md` with all new entries in one edit
+2. **Curriculum**: Update relevant modules (01-06) with new source content
+3. **Synthesis**: Create a cross-source synthesis doc if 4+ sources share a theme
+4. **Briefing**: Create or update the daily briefing for today's date
+5. **README indexes**: Verify briefings/README.md and synthesis/README.md are current
 
 ## Notes
 
 - **yt-dlp is the preferred transcript method** — faster and more reliable than Playwright. Use Playwright only as fallback.
-- Process YouTube videos **sequentially** for Playwright extraction to avoid rate limiting
+- **Index updates are always sequential** — never parallelize edits to README files (concurrency issue, not permissions)
 - Articles can be processed without Playwright — they use WebFetch directly
-- For batch processing, download all VTTs first, then parallelize synthesis
+- For batch processing, download all VTTs first, then parallelize both VTT conversion and synthesis via subagents
 - The `/ingest` skill combines `/youtube-transcriber` + `/synthesize-source` into one flow — you can still run them separately if needed

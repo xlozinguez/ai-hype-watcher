@@ -108,7 +108,58 @@ Simon Scrapes ([#051](../../sources/051-simon-scrapes-claude-code-tips.md)) iden
 
 **Fact-checking as systematic workflow step**: Asking Claude to "double check every claim and statistic and make a table of what you could and couldn't verify, including the source" produces a verification matrix that catches hallucinated statistics before publication. In Simon's demo, 3 of 8 claims in generated content were flagged as unverifiable, with Claude recommending removal or softening. This transforms fact-checking from an afterthought into a final step in content workflows -- particularly valuable for non-code outputs where traditional test suites do not apply.
 
-### Concept 8: Advanced Claude Code Configuration -- Hooks, MCP CLI, and Insights
+### Concept 8: The Seven Levels of Claude Code Mastery
+
+Simon Scrapes ([#062](../../sources/062-simon-scrapes-claude-code-levels.md)) organizes Claude Code proficiency into a structured progression that maps the full capability surface, from basic prompting through fully autonomous pipelines:
+
+1. **Prompting with Intent** -- Using plan mode (Shift+Tab) before execution; iterating on plans before touching code
+2. **CLAUDE.md Personalization** -- Setting up project rules, brand voice, and guardrails via CLAUDE.md
+3. **Slash Commands, Skills, and Hooks** -- Reusable prompts (commands), context-rich background knowledge (skills), and automatic post-action triggers (hooks)
+4. **MCP Connections** -- Bridging Claude Code to external apps via Model Context Protocol servers
+5. **Planning Frameworks (GSD)** -- Structured planning frameworks with plan-execute-verify loops and persistent state files to combat context rot
+6. **Agent Teams** -- Running sub-agents for specialized tasks, either sequentially or in parallel across multiple terminals
+7. **Fully Autonomous Pipelines** -- Using loop frameworks like RAWL that run Claude autonomously against a PRD with acceptance criteria
+
+The key insight is that most users plateau at level two or three, never reaching the orchestration and automation tiers that unlock real leverage. Simon's mental model for the three main automation primitives is particularly clean: **Skills** = how Claude *thinks* (background context loaded automatically when relevant); **Hooks** = what happens *automatically after* Claude acts (mechanical checks requiring no LLM tokens); **Commands** = what you *manually trigger* (saved prompts with dynamic arguments).
+
+Simon also surfaces the concept of **context rot** -- as the context window fills (approaching 95% capacity), Claude auto-compresses context into summaries, degrading output reliability. At around 10,000 tokens (~7,500 words), approximately 50% of context fidelity is lost. The GSD framework mitigates this by keeping context in individual phase-level files, and the RAWL loop addresses it by feeding state back into fresh context windows after each completed task.
+
+### Concept 8a: The Setup Hook and Install Prompts
+
+IndyDevDan ([#064](../../sources/064-indydevdan-agentic-prompt.md)) argues that every agentic codebase should have a standardized install/maintain prompt -- a natural language document that combines deterministic setup scripts with agentic intelligence for installation, onboarding, and maintenance. Claude Code's setup hook supports two lifecycle events:
+
+- **Init**: Runs on first setup or with `--init` flag. Handles dependency installation, database initialization, one-time setup.
+- **Maintenance**: Runs periodically for dependency updates, migrations, artifact cleanup, security checks.
+
+The core architectural insight: **deterministic scripts + agentic prompts = best of both worlds**. Scripts provide predictable execution but cannot handle unexpected failures. Agents provide intelligence but lack reliability for known steps. The combination delivers predictable execution for known steps, intelligent oversight for validation and error resolution, and interactivity for configuration decisions requiring human input.
+
+IndyDevDan also introduces the `just` command runner (justfile) as a launchpad for standardizing codebase interactions. The justfile encodes setup commands, agent invocations with specific CLI flags, and maintenance workflows -- eliminating the "look up the right flags" problem for both humans and agents. As he puts it: "You can tell how great an engineering team is by the time it takes for a new engineer to run the project locally."
+
+The most powerful pattern is encoding common issues directly into the install prompt. Every time an installation issue recurs, it becomes a problem/solution pair in the prompt, making the agent progressively better at handling failures without human intervention. This creates what IndyDevDan calls "a living document that executes" -- unlike static READMEs that go stale, these prompts stay accurate because if they are wrong, the installation fails, forcing an update.
+
+### Concept 8b: Claude Cowork Plugins for Non-Developers
+
+Ben AI ([#063](../../sources/063-ben-ai-cowork-plugins.md)) documents Anthropic's plugins system for Claude Cowork -- the non-developer counterpart to Claude Code. Plugins bundle skills, connections (MCPs, built-in connectors, browser access, local files), and slash commands into department-specific packages. This architecture mirrors what exists in Claude Code but is packaged for non-developer accessibility.
+
+Anthropic's design organizes plugins by business department -- sales, customer support, product management, legal, finance -- with each plugin scoping its connectors and skills to that function. This department-level scoping is intentional: it prevents cross-department data leakage while enabling focused capability.
+
+Three plugin economies are emerging: (1) **Anthropic-built plugins** as open-source starters with organization-wide sharing coming soon; (2) **Third-party provider plugins** from SaaS companies and independent builders; (3) **Custom-built plugins** unique to each business's workflows. This echoes the app store pattern but for AI agent capabilities rather than standalone applications.
+
+The broader significance: plugins position AI agents as a potentially superior interface to the fragmented SaaS landscape. When Anthropic launched plugins, companies like Salesforce, ServiceNow, and Adobe saw stock drops because plugins threaten to collapse the multi-tool workflow most knowledge workers endure into a single AI interface that accesses all tools through connections.
+
+### Concept 8c: Skill-to-Repeatable-Process Workflow
+
+Bart Slodyczka ([#067](../../sources/067-bart-slodyczka-agent-teams-course.md)) provides a practical workflow for converting ad hoc team processes into reusable Claude Code skills:
+
+1. Run the full process manually with Claude Code first
+2. Iterate until the process is refined
+3. Prompt Claude to "turn whatever we just did into a skill" with configurable variables
+4. Store the skill in the repository, invoke via `/skillname` in future sessions
+5. Update the skill incrementally as the process evolves
+
+This creates a positive feedback loop: each team session improves the skill definition for future teams. The key principle: **do not write skills from scratch** -- run the process first, then have Claude generate the skill from the actual workflow. This ensures the skill captures the real process rather than an idealized version of it.
+
+### Concept 9: Advanced Claude Code Configuration -- Hooks, MCP CLI, and Insights
 
 Beyond skills and CLAUDE.md, Claude Code supports several advanced configuration mechanisms that extend the platform's capabilities in sophisticated ways. As demonstrated in AI LABS ([#021]), these features enable deterministic control over agent behavior, more efficient context management, and structured knowledge accumulation across sessions.
 
@@ -198,6 +249,11 @@ Beyond skills and CLAUDE.md, Claude Code supports several advanced configuration
 | [040: Stop Feeding Claude Your Entire CLAUDE.md](../../sources/040-charlie-automates-claudemd-context.md) | Charlie Automates | Monolithic CLAUDE.md as attention dilution, Carl plugin for domain-based rule segmentation, star commands, context brackets, focus over intelligence |
 | [043: Claude Code just replaced your ad agency](../../sources/043-agrici-daniel-claude-ad-agency.md) | Agrici Daniel | Cloudy Ads skill for paid advertising, domain-expert skills as agency replacements, 190+ audit checks, progressive questioning, skills knowledge base at scale (2,500 sources), non-coding use case |
 | [051: You're using Claude Code Wrong](../../sources/051-simon-scrapes-claude-code-tips.md) | Simon Scrapes | Extensibility stack disambiguation (commands vs skills vs hooks vs plugins), CLAUDE.md lean pointer pattern, Gemini CLI research fallback, fact-checking as workflow discipline |
+| [062: Every Level of Claude Code Explained](../../sources/062-simon-scrapes-claude-code-levels.md) | Simon Scrapes | Seven levels of mastery, skills-commands-hooks mental model, context rot mitigation, GSD and RAWL frameworks, "don't dump" CLAUDE.md principle |
+| [063: Claude Cowork Just Became 10x Better (Plugins Guide)](../../sources/063-ben-ai-cowork-plugins.md) | Ben AI | Plugin architecture (skills + connections + commands), department-scoped plugins, three plugin economies, AI as universal software interface |
+| [064: One Prompt Every AGENTIC Codebase Should Have](../../sources/064-indydevdan-agentic-prompt.md) | IndyDevDan | Setup hook (init/maintenance), deterministic code + agentic prompts, justfile as launchpad, install prompt as living document, encoding common issues |
+| [066: How to use Claude Cowork better than 99% of people](../../sources/066-brooke-wright-cowork-tutorial.md) | Brooke Wright | Co-work as bridge product, connectors and plugins as leverage layer, parallel task execution, safety patterns (deletion guardrails) |
+| [067: Learn 90% Of Claude Code Agent Teams](../../sources/067-bart-slodyczka-agent-teams-course.md) | Bart Slodyczka | Three modes of Claude Code (default/sub-agent/teams), skill-from-process workflow, model selection for cost optimization, shared memory files |
 
 ## Further Reading
 

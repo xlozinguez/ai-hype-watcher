@@ -1,0 +1,2760 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.080 --> 00:00:02.470 align:start position:0%
+ 
+We've<00:00:00.400><c> entered</c><00:00:00.719><c> the</c><00:00:00.960><c> age</c><00:00:01.199><c> of</c><00:00:01.360><c> agentic</c><00:00:02.000><c> AI</c>
+
+00:00:02.470 --> 00:00:02.480 align:start position:0%
+We've entered the age of agentic AI
+ 
+
+00:00:02.480 --> 00:00:05.190 align:start position:0%
+We've entered the age of agentic AI
+systems<00:00:02.879><c> that</c><00:00:03.200><c> don't</c><00:00:03.439><c> just</c><00:00:03.760><c> think,</c><00:00:04.640><c> but</c><00:00:04.880><c> they</c>
+
+00:00:05.190 --> 00:00:05.200 align:start position:0%
+systems that don't just think, but they
+ 
+
+00:00:05.200 --> 00:00:09.430 align:start position:0%
+systems that don't just think, but they
+also<00:00:05.680><c> act.</c><00:00:06.720><c> Agents</c><00:00:07.440><c> can</c><00:00:07.759><c> talk</c><00:00:07.919><c> to</c><00:00:08.160><c> APIs.</c><00:00:09.200><c> They</c>
+
+00:00:09.430 --> 00:00:09.440 align:start position:0%
+also act. Agents can talk to APIs. They
+ 
+
+00:00:09.440 --> 00:00:11.669 align:start position:0%
+also act. Agents can talk to APIs. They
+can<00:00:09.599><c> call</c><00:00:09.920><c> tools.</c><00:00:10.639><c> They</c><00:00:10.880><c> can</c><00:00:11.040><c> buy</c><00:00:11.280><c> things.</c>
+
+00:00:11.669 --> 00:00:11.679 align:start position:0%
+can call tools. They can buy things.
+ 
+
+00:00:11.679 --> 00:00:13.830 align:start position:0%
+can call tools. They can buy things.
+They<00:00:11.920><c> can</c><00:00:12.080><c> move</c><00:00:12.320><c> data.</c><00:00:12.960><c> Even</c><00:00:13.200><c> create</c><00:00:13.519><c> sub</c>
+
+00:00:13.830 --> 00:00:13.840 align:start position:0%
+They can move data. Even create sub
+ 
+
+00:00:13.840 --> 00:00:17.109 align:start position:0%
+They can move data. Even create sub
+agents.<00:00:14.639><c> But</c><00:00:14.880><c> every</c><00:00:15.120><c> new</c><00:00:15.440><c> capability</c><00:00:16.480><c> adds</c><00:00:16.880><c> a</c>
+
+00:00:17.109 --> 00:00:17.119 align:start position:0%
+agents. But every new capability adds a
+ 
+
+00:00:17.119 --> 00:00:19.590 align:start position:0%
+agents. But every new capability adds a
+new<00:00:17.359><c> attack</c><00:00:17.760><c> surface.</c><00:00:18.560><c> Yet</c><00:00:18.800><c> another</c><00:00:19.199><c> way</c><00:00:19.359><c> the</c>
+
+00:00:19.590 --> 00:00:19.600 align:start position:0%
+new attack surface. Yet another way the
+ 
+
+00:00:19.600 --> 00:00:22.070 align:start position:0%
+new attack surface. Yet another way the
+bad<00:00:19.840><c> guys</c><00:00:20.080><c> can</c><00:00:20.240><c> get</c><00:00:20.400><c> into</c><00:00:20.640><c> our</c><00:00:20.880><c> systems.</c><00:00:21.840><c> So</c>
+
+00:00:22.070 --> 00:00:22.080 align:start position:0%
+bad guys can get into our systems. So
+ 
+
+00:00:22.080 --> 00:00:25.029 align:start position:0%
+bad guys can get into our systems. So
+how<00:00:22.240><c> do</c><00:00:22.400><c> we</c><00:00:22.640><c> protect</c><00:00:22.960><c> this</c><00:00:23.279><c> new</c><00:00:23.600><c> ecosystem?</c><00:00:24.800><c> We</c>
+
+00:00:25.029 --> 00:00:25.039 align:start position:0%
+how do we protect this new ecosystem? We
+ 
+
+00:00:25.039 --> 00:00:28.230 align:start position:0%
+how do we protect this new ecosystem? We
+bring<00:00:25.279><c> zero</c><00:00:25.760><c> trust.</c><00:00:26.640><c> Never</c><00:00:26.960><c> trust.</c><00:00:27.680><c> Always</c>
+
+00:00:28.230 --> 00:00:28.240 align:start position:0%
+bring zero trust. Never trust. Always
+ 
+
+00:00:28.240 --> 00:00:29.750 align:start position:0%
+bring zero trust. Never trust. Always
+verify.
+
+00:00:29.750 --> 00:00:29.760 align:start position:0%
+verify.
+ 
+
+00:00:29.760 --> 00:00:31.830 align:start position:0%
+verify.
+I<00:00:30.000><c> know,</c><00:00:30.240><c> I</c><00:00:30.480><c> know</c><00:00:30.800><c> you've</c><00:00:31.039><c> heard</c><00:00:31.279><c> about</c><00:00:31.439><c> zero</c>
+
+00:00:31.830 --> 00:00:31.840 align:start position:0%
+I know, I know you've heard about zero
+ 
+
+00:00:31.840 --> 00:00:33.350 align:start position:0%
+I know, I know you've heard about zero
+trust<00:00:32.160><c> before.</c><00:00:32.480><c> Isn't</c><00:00:32.800><c> that</c><00:00:32.960><c> just</c><00:00:33.200><c> a</c>
+
+00:00:33.350 --> 00:00:33.360 align:start position:0%
+trust before. Isn't that just a
+ 
+
+00:00:33.360 --> 00:00:35.030 align:start position:0%
+trust before. Isn't that just a
+marketing<00:00:33.760><c> slogan</c><00:00:34.160><c> that</c><00:00:34.320><c> all</c><00:00:34.480><c> the</c><00:00:34.640><c> vendors</c>
+
+00:00:35.030 --> 00:00:35.040 align:start position:0%
+marketing slogan that all the vendors
+ 
+
+00:00:35.040 --> 00:00:37.350 align:start position:0%
+marketing slogan that all the vendors
+used<00:00:35.440><c> and</c><00:00:35.760><c> abused</c><00:00:36.399><c> in</c><00:00:36.640><c> order</c><00:00:36.800><c> to</c><00:00:36.960><c> get</c><00:00:37.040><c> us</c><00:00:37.280><c> to</c>
+
+00:00:37.350 --> 00:00:37.360 align:start position:0%
+used and abused in order to get us to
+ 
+
+00:00:37.360 --> 00:00:39.270 align:start position:0%
+used and abused in order to get us to
+buy<00:00:37.600><c> whatever</c><00:00:37.920><c> they</c><00:00:38.160><c> had</c><00:00:38.320><c> on</c><00:00:38.480><c> the</c><00:00:38.640><c> truck?</c>
+
+00:00:39.270 --> 00:00:39.280 align:start position:0%
+buy whatever they had on the truck?
+ 
+
+00:00:39.280 --> 00:00:41.510 align:start position:0%
+buy whatever they had on the truck?
+Well,<00:00:39.600><c> yes</c><00:00:39.760><c> and</c><00:00:40.079><c> no.</c><00:00:40.640><c> Definitely</c><00:00:41.120><c> the</c><00:00:41.280><c> term</c>
+
+00:00:41.510 --> 00:00:41.520 align:start position:0%
+Well, yes and no. Definitely the term
+ 
+
+00:00:41.520 --> 00:00:43.510 align:start position:0%
+Well, yes and no. Definitely the term
+got<00:00:41.760><c> hijacked</c><00:00:42.239><c> by</c><00:00:42.399><c> overzealous</c><00:00:43.120><c> sellers</c>
+
+00:00:43.510 --> 00:00:43.520 align:start position:0%
+got hijacked by overzealous sellers
+ 
+
+00:00:43.520 --> 00:00:45.830 align:start position:0%
+got hijacked by overzealous sellers
+trying<00:00:43.680><c> to</c><00:00:43.840><c> meet</c><00:00:44.079><c> their</c><00:00:44.239><c> quotas.</c><00:00:45.120><c> But</c><00:00:45.360><c> I'm</c><00:00:45.680><c> a</c>
+
+00:00:45.830 --> 00:00:45.840 align:start position:0%
+trying to meet their quotas. But I'm a
+ 
+
+00:00:45.840 --> 00:00:48.229 align:start position:0%
+trying to meet their quotas. But I'm a
+cyber<00:00:46.160><c> security</c><00:00:46.559><c> architect</c><00:00:47.280><c> and</c><00:00:47.520><c> I</c><00:00:47.680><c> never</c><00:00:48.000><c> got</c>
+
+00:00:48.229 --> 00:00:48.239 align:start position:0%
+cyber security architect and I never got
+ 
+
+00:00:48.239 --> 00:00:50.229 align:start position:0%
+cyber security architect and I never got
+confused<00:00:48.640><c> by</c><00:00:48.879><c> all</c><00:00:49.120><c> that</c><00:00:49.360><c> noise</c><00:00:49.760><c> because</c><00:00:50.000><c> I</c>
+
+00:00:50.229 --> 00:00:50.239 align:start position:0%
+confused by all that noise because I
+ 
+
+00:00:50.239 --> 00:00:51.830 align:start position:0%
+confused by all that noise because I
+knew<00:00:50.480><c> there</c><00:00:50.719><c> were</c><00:00:50.879><c> some</c><00:00:51.120><c> solid,</c><00:00:51.520><c> even</c>
+
+00:00:51.830 --> 00:00:51.840 align:start position:0%
+knew there were some solid, even
+ 
+
+00:00:51.840 --> 00:00:54.150 align:start position:0%
+knew there were some solid, even
+game-changing<00:00:52.640><c> security</c><00:00:53.039><c> principles</c><00:00:53.840><c> worth</c>
+
+00:00:54.150 --> 00:00:54.160 align:start position:0%
+game-changing security principles worth
+ 
+
+00:00:54.160 --> 00:00:56.630 align:start position:0%
+game-changing security principles worth
+holding<00:00:54.399><c> on</c><00:00:54.640><c> to.</c><00:00:55.360><c> And</c><00:00:55.600><c> now</c><00:00:55.760><c> that</c><00:00:55.920><c> we</c><00:00:56.079><c> have</c><00:00:56.239><c> AI</c>
+
+00:00:56.630 --> 00:00:56.640 align:start position:0%
+holding on to. And now that we have AI
+ 
+
+00:00:56.640 --> 00:00:58.950 align:start position:0%
+holding on to. And now that we have AI
+agents<00:00:57.039><c> popping</c><00:00:57.440><c> up</c><00:00:57.680><c> everywhere,</c><00:00:58.559><c> the</c><00:00:58.800><c> time</c>
+
+00:00:58.950 --> 00:00:58.960 align:start position:0%
+agents popping up everywhere, the time
+ 
+
+00:00:58.960 --> 00:01:00.869 align:start position:0%
+agents popping up everywhere, the time
+is<00:00:59.120><c> right</c><00:00:59.359><c> to</c><00:00:59.520><c> dust</c><00:00:59.840><c> off</c><00:01:00.000><c> the</c><00:01:00.160><c> hype</c><00:01:00.559><c> and</c>
+
+00:01:00.869 --> 00:01:00.879 align:start position:0%
+is right to dust off the hype and
+ 
+
+00:01:00.879 --> 00:01:03.430 align:start position:0%
+is right to dust off the hype and
+repurpose<00:01:01.359><c> the</c><00:01:01.600><c> good</c><00:01:01.920><c> in</c><00:01:02.160><c> zero</c><00:01:02.559><c> trust</c><00:01:03.120><c> in</c>
+
+00:01:03.430 --> 00:01:03.440 align:start position:0%
+repurpose the good in zero trust in
+ 
+
+00:01:03.440 --> 00:01:05.509 align:start position:0%
+repurpose the good in zero trust in
+order<00:01:03.600><c> to</c><00:01:03.760><c> face</c><00:01:04.320><c> the</c><00:01:04.640><c> current</c><00:01:05.040><c> security</c>
+
+00:01:05.509 --> 00:01:05.519 align:start position:0%
+order to face the current security
+ 
+
+00:01:05.519 --> 00:01:07.590 align:start position:0%
+order to face the current security
+challenge.<00:01:06.479><c> Okay,</c><00:01:06.799><c> let's</c><00:01:07.040><c> take</c><00:01:07.200><c> a</c><00:01:07.360><c> quick</c>
+
+00:01:07.590 --> 00:01:07.600 align:start position:0%
+challenge. Okay, let's take a quick
+ 
+
+00:01:07.600 --> 00:01:09.590 align:start position:0%
+challenge. Okay, let's take a quick
+review<00:01:07.840><c> of</c><00:01:08.080><c> what</c><00:01:08.320><c> zero</c><00:01:08.720><c> trust</c><00:01:09.040><c> principles</c>
+
+00:01:09.590 --> 00:01:09.600 align:start position:0%
+review of what zero trust principles
+ 
+
+00:01:09.600 --> 00:01:11.910 align:start position:0%
+review of what zero trust principles
+are.<00:01:10.000><c> What</c><00:01:10.320><c> distinguishes</c><00:01:10.880><c> zero</c><00:01:11.280><c> trust</c><00:01:11.600><c> from</c>
+
+00:01:11.910 --> 00:01:11.920 align:start position:0%
+are. What distinguishes zero trust from
+ 
+
+00:01:11.920 --> 00:01:14.149 align:start position:0%
+are. What distinguishes zero trust from
+doing<00:01:12.159><c> things</c><00:01:12.320><c> in</c><00:01:12.560><c> a</c><00:01:12.640><c> nonzero</c><00:01:13.360><c> trust</c><00:01:13.600><c> way.</c>
+
+00:01:14.149 --> 00:01:14.159 align:start position:0%
+doing things in a nonzero trust way.
+ 
+
+00:01:14.159 --> 00:01:16.469 align:start position:0%
+doing things in a nonzero trust way.
+Well,<00:01:14.880><c> one</c><00:01:15.040><c> of</c><00:01:15.200><c> the</c><00:01:15.520><c> simple</c><00:01:15.920><c> things</c><00:01:16.080><c> that</c><00:01:16.320><c> I</c>
+
+00:01:16.469 --> 00:01:16.479 align:start position:0%
+Well, one of the simple things that I
+ 
+
+00:01:16.479 --> 00:01:18.789 align:start position:0%
+Well, one of the simple things that I
+mentioned<00:01:16.799><c> previously</c><00:01:17.439><c> is</c><00:01:17.759><c> you</c><00:01:17.920><c> verify</c><00:01:18.560><c> and</c>
+
+00:01:18.789 --> 00:01:18.799 align:start position:0%
+mentioned previously is you verify and
+ 
+
+00:01:18.799 --> 00:01:21.109 align:start position:0%
+mentioned previously is you verify and
+then<00:01:18.960><c> you</c><00:01:19.200><c> trust.</c><00:01:19.840><c> So</c><00:01:20.240><c> you</c><00:01:20.479><c> only</c><00:01:20.799><c> trust</c>
+
+00:01:21.109 --> 00:01:21.119 align:start position:0%
+then you trust. So you only trust
+ 
+
+00:01:21.119 --> 00:01:23.510 align:start position:0%
+then you trust. So you only trust
+something<00:01:21.439><c> that</c><00:01:21.759><c> has</c><00:01:22.000><c> in</c><00:01:22.159><c> fact</c><00:01:22.400><c> been</c><00:01:22.560><c> verified</c>
+
+00:01:23.510 --> 00:01:23.520 align:start position:0%
+something that has in fact been verified
+ 
+
+00:01:23.520 --> 00:01:25.990 align:start position:0%
+something that has in fact been verified
+or<00:01:24.080><c> trust</c><00:01:24.479><c> follows</c><00:01:24.880><c> verification</c><00:01:25.520><c> is</c><00:01:25.759><c> another</c>
+
+00:01:25.990 --> 00:01:26.000 align:start position:0%
+or trust follows verification is another
+ 
+
+00:01:26.000 --> 00:01:28.390 align:start position:0%
+or trust follows verification is another
+way<00:01:26.159><c> to</c><00:01:26.320><c> think</c><00:01:26.400><c> of</c><00:01:26.560><c> it.</c><00:01:27.200><c> Another</c><00:01:27.520><c> thing</c><00:01:27.840><c> is</c><00:01:28.080><c> we</c>
+
+00:01:28.390 --> 00:01:28.400 align:start position:0%
+way to think of it. Another thing is we
+ 
+
+00:01:28.400 --> 00:01:30.550 align:start position:0%
+way to think of it. Another thing is we
+get<00:01:28.479><c> rid</c><00:01:28.640><c> of</c><00:01:28.720><c> the</c><00:01:28.960><c> just</c><00:01:29.200><c> in</c><00:01:29.520><c> case</c><00:01:29.840><c> principle</c>
+
+00:01:30.550 --> 00:01:30.560 align:start position:0%
+get rid of the just in case principle
+ 
+
+00:01:30.560 --> 00:01:33.030 align:start position:0%
+get rid of the just in case principle
+where<00:01:30.880><c> we</c><00:01:31.200><c> put</c><00:01:31.520><c> things</c><00:01:31.759><c> out</c><00:01:32.159><c> in</c><00:01:32.479><c> case</c><00:01:32.640><c> we</c><00:01:32.880><c> need</c>
+
+00:01:33.030 --> 00:01:33.040 align:start position:0%
+where we put things out in case we need
+ 
+
+00:01:33.040 --> 00:01:35.670 align:start position:0%
+where we put things out in case we need
+them<00:01:33.280><c> and</c><00:01:33.520><c> replace</c><00:01:33.840><c> it</c><00:01:34.000><c> with</c><00:01:34.240><c> just</c><00:01:34.640><c> in</c><00:01:35.040><c> time.</c>
+
+00:01:35.670 --> 00:01:35.680 align:start position:0%
+them and replace it with just in time.
+ 
+
+00:01:35.680 --> 00:01:37.749 align:start position:0%
+them and replace it with just in time.
+So<00:01:35.840><c> we</c><00:01:36.079><c> give</c><00:01:36.320><c> the</c><00:01:36.560><c> access</c><00:01:36.960><c> rights</c><00:01:37.360><c> that</c><00:01:37.600><c> are</c>
+
+00:01:37.749 --> 00:01:37.759 align:start position:0%
+So we give the access rights that are
+ 
+
+00:01:37.759 --> 00:01:40.310 align:start position:0%
+So we give the access rights that are
+needed<00:01:38.560><c> only</c><00:01:38.880><c> when</c><00:01:39.200><c> they're</c><00:01:39.360><c> needed</c><00:01:39.759><c> and</c><00:01:40.079><c> not</c>
+
+00:01:40.310 --> 00:01:40.320 align:start position:0%
+needed only when they're needed and not
+ 
+
+00:01:40.320 --> 00:01:42.550 align:start position:0%
+needed only when they're needed and not
+for<00:01:40.560><c> longer</c><00:01:40.880><c> than</c><00:01:41.040><c> they're</c><00:01:41.280><c> needed.</c><00:01:41.920><c> That's</c><00:01:42.320><c> a</c>
+
+00:01:42.550 --> 00:01:42.560 align:start position:0%
+for longer than they're needed. That's a
+ 
+
+00:01:42.560 --> 00:01:44.469 align:start position:0%
+for longer than they're needed. That's a
+preserving<00:01:43.119><c> of</c><00:01:43.360><c> the</c><00:01:43.600><c> principle</c><00:01:43.920><c> of</c><00:01:44.159><c> lease</c>
+
+00:01:44.469 --> 00:01:44.479 align:start position:0%
+preserving of the principle of lease
+ 
+
+00:01:44.479 --> 00:01:46.870 align:start position:0%
+preserving of the principle of lease
+privilege<00:01:45.119><c> which</c><00:01:45.439><c> says</c><00:01:46.000><c> you</c><00:01:46.240><c> have</c><00:01:46.399><c> only</c><00:01:46.560><c> the</c>
+
+00:01:46.870 --> 00:01:46.880 align:start position:0%
+privilege which says you have only the
+ 
+
+00:01:46.880 --> 00:01:49.429 align:start position:0%
+privilege which says you have only the
+access<00:01:47.680><c> rights</c><00:01:48.000><c> that</c><00:01:48.159><c> you</c><00:01:48.320><c> need</c><00:01:48.720><c> for</c><00:01:48.960><c> only</c><00:01:49.200><c> as</c>
+
+00:01:49.429 --> 00:01:49.439 align:start position:0%
+access rights that you need for only as
+ 
+
+00:01:49.439 --> 00:01:51.910 align:start position:0%
+access rights that you need for only as
+long<00:01:49.600><c> as</c><00:01:49.680><c> you</c><00:01:49.920><c> need</c><00:01:50.079><c> them</c><00:01:50.479><c> and</c><00:01:50.799><c> not</c><00:01:51.040><c> longer.</c>
+
+00:01:51.910 --> 00:01:51.920 align:start position:0%
+long as you need them and not longer.
+ 
+
+00:01:51.920 --> 00:01:53.670 align:start position:0%
+long as you need them and not longer.
+Another<00:01:52.320><c> thing</c><00:01:52.399><c> is</c><00:01:52.640><c> we</c><00:01:52.880><c> move</c><00:01:53.280><c> from</c>
+
+00:01:53.670 --> 00:01:53.680 align:start position:0%
+Another thing is we move from
+ 
+
+00:01:53.680 --> 00:01:56.069 align:start position:0%
+Another thing is we move from
+perimeterbased<00:01:54.799><c> controls</c><00:01:55.520><c> where</c><00:01:55.840><c> we're</c>
+
+00:01:56.069 --> 00:01:56.079 align:start position:0%
+perimeterbased controls where we're
+ 
+
+00:01:56.079 --> 00:01:59.109 align:start position:0%
+perimeterbased controls where we're
+trying<00:01:56.320><c> to</c><00:01:56.720><c> basically</c><00:01:57.600><c> put</c><00:01:57.759><c> the</c><00:01:58.079><c> hard</c><00:01:58.479><c> crunchy</c>
+
+00:01:59.109 --> 00:01:59.119 align:start position:0%
+trying to basically put the hard crunchy
+ 
+
+00:01:59.119 --> 00:02:01.670 align:start position:0%
+trying to basically put the hard crunchy
+outside<00:01:59.680><c> and</c><00:01:59.920><c> leave</c><00:02:00.079><c> the</c><00:02:00.320><c> soft</c><00:02:00.560><c> chewy</c><00:02:01.040><c> center.</c>
+
+00:02:01.670 --> 00:02:01.680 align:start position:0%
+outside and leave the soft chewy center.
+ 
+
+00:02:01.680 --> 00:02:03.910 align:start position:0%
+outside and leave the soft chewy center.
+That's<00:02:01.920><c> not</c><00:02:02.079><c> very</c><00:02:02.399><c> good.</c><00:02:03.040><c> In</c><00:02:03.200><c> fact,</c><00:02:03.520><c> what</c><00:02:03.759><c> we</c>
+
+00:02:03.910 --> 00:02:03.920 align:start position:0%
+That's not very good. In fact, what we
+ 
+
+00:02:03.920 --> 00:02:06.870 align:start position:0%
+That's not very good. In fact, what we
+want<00:02:04.079><c> to</c><00:02:04.240><c> move</c><00:02:04.399><c> to</c><00:02:04.880><c> is</c><00:02:05.119><c> a</c><00:02:05.360><c> more</c><00:02:05.600><c> pervasive</c><00:02:06.320><c> set</c>
+
+00:02:06.870 --> 00:02:06.880 align:start position:0%
+want to move to is a more pervasive set
+ 
+
+00:02:06.880 --> 00:02:09.589 align:start position:0%
+want to move to is a more pervasive set
+of<00:02:07.200><c> security</c><00:02:07.680><c> controls.</c><00:02:08.399><c> So</c><00:02:08.640><c> the</c><00:02:08.879><c> security</c>
+
+00:02:09.589 --> 00:02:09.599 align:start position:0%
+of security controls. So the security
+ 
+
+00:02:09.599 --> 00:02:12.150 align:start position:0%
+of security controls. So the security
+controls<00:02:10.160><c> are</c><00:02:10.560><c> throughout</c><00:02:10.959><c> the</c><00:02:11.280><c> system</c><00:02:12.000><c> not</c>
+
+00:02:12.150 --> 00:02:12.160 align:start position:0%
+controls are throughout the system not
+ 
+
+00:02:12.160 --> 00:02:14.949 align:start position:0%
+controls are throughout the system not
+just<00:02:12.400><c> around</c><00:02:12.720><c> the</c><00:02:12.959><c> outside.</c><00:02:14.000><c> And</c><00:02:14.160><c> then</c><00:02:14.480><c> what</c><00:02:14.720><c> I</c>
+
+00:02:14.949 --> 00:02:14.959 align:start position:0%
+just around the outside. And then what I
+ 
+
+00:02:14.959 --> 00:02:16.869 align:start position:0%
+just around the outside. And then what I
+think<00:02:15.120><c> is</c><00:02:15.280><c> the</c><00:02:15.520><c> most</c><00:02:15.760><c> important</c><00:02:16.160><c> aspect</c><00:02:16.640><c> and</c>
+
+00:02:16.869 --> 00:02:16.879 align:start position:0%
+think is the most important aspect and
+ 
+
+00:02:16.879 --> 00:02:19.030 align:start position:0%
+think is the most important aspect and
+it<00:02:17.040><c> often</c><00:02:17.360><c> gets</c><00:02:17.599><c> overlooked</c><00:02:18.000><c> in</c><00:02:18.239><c> zero</c><00:02:18.560><c> trust</c>
+
+00:02:19.030 --> 00:02:19.040 align:start position:0%
+it often gets overlooked in zero trust
+ 
+
+00:02:19.040 --> 00:02:21.190 align:start position:0%
+it often gets overlooked in zero trust
+discussions<00:02:20.080><c> is</c><00:02:20.239><c> the</c><00:02:20.480><c> idea</c><00:02:20.800><c> of</c><00:02:20.959><c> the</c>
+
+00:02:21.190 --> 00:02:21.200 align:start position:0%
+discussions is the idea of the
+ 
+
+00:02:21.200 --> 00:02:23.990 align:start position:0%
+discussions is the idea of the
+assumption<00:02:21.599><c> of</c><00:02:21.840><c> breach.</c><00:02:22.720><c> You</c><00:02:23.040><c> assume</c><00:02:23.440><c> the</c><00:02:23.760><c> bad</c>
+
+00:02:23.990 --> 00:02:24.000 align:start position:0%
+assumption of breach. You assume the bad
+ 
+
+00:02:24.000 --> 00:02:26.790 align:start position:0%
+assumption of breach. You assume the bad
+guy<00:02:24.239><c> is</c><00:02:24.560><c> already</c><00:02:24.879><c> in</c><00:02:25.200><c> your</c><00:02:25.360><c> system</c><00:02:26.160><c> already</c><00:02:26.560><c> in</c>
+
+00:02:26.790 --> 00:02:26.800 align:start position:0%
+guy is already in your system already in
+ 
+
+00:02:26.800 --> 00:02:28.949 align:start position:0%
+guy is already in your system already in
+your<00:02:26.959><c> network</c><00:02:27.440><c> already</c><00:02:27.760><c> in</c><00:02:28.000><c> your</c><00:02:28.160><c> database</c><00:02:28.720><c> in</c>
+
+00:02:28.949 --> 00:02:28.959 align:start position:0%
+your network already in your database in
+ 
+
+00:02:28.959 --> 00:02:31.990 align:start position:0%
+your network already in your database in
+your<00:02:29.120><c> application</c><00:02:29.840><c> already</c><00:02:30.239><c> has</c><00:02:31.040><c> elevated</c>
+
+00:02:31.990 --> 00:02:32.000 align:start position:0%
+your application already has elevated
+ 
+
+00:02:32.000 --> 00:02:34.390 align:start position:0%
+your application already has elevated
+privileges<00:02:32.560><c> from</c><00:02:32.879><c> stolen</c><00:02:33.360><c> credentials.</c>
+
+00:02:34.390 --> 00:02:34.400 align:start position:0%
+privileges from stolen credentials.
+ 
+
+00:02:34.400 --> 00:02:36.949 align:start position:0%
+privileges from stolen credentials.
+That's<00:02:34.640><c> what</c><00:02:34.800><c> we're</c><00:02:35.120><c> going</c><00:02:35.280><c> to</c><00:02:35.680><c> operate</c><00:02:36.160><c> from.</c>
+
+00:02:36.949 --> 00:02:36.959 align:start position:0%
+That's what we're going to operate from.
+ 
+
+00:02:36.959 --> 00:02:39.270 align:start position:0%
+That's what we're going to operate from.
+Now<00:02:37.200><c> design</c><00:02:37.519><c> your</c><00:02:37.840><c> security.</c><00:02:38.560><c> So</c><00:02:38.959><c> it's</c>
+
+00:02:39.270 --> 00:02:39.280 align:start position:0%
+Now design your security. So it's
+ 
+
+00:02:39.280 --> 00:02:40.790 align:start position:0%
+Now design your security. So it's
+assuming<00:02:39.760><c> that</c><00:02:39.920><c> you've</c><00:02:40.239><c> been</c><00:02:40.400><c> breached</c>
+
+00:02:40.790 --> 00:02:40.800 align:start position:0%
+assuming that you've been breached
+ 
+
+00:02:40.800 --> 00:02:43.030 align:start position:0%
+assuming that you've been breached
+already<00:02:41.519><c> and</c><00:02:41.760><c> it's</c><00:02:42.000><c> a</c><00:02:42.160><c> very</c><00:02:42.400><c> different</c><00:02:42.720><c> model,</c>
+
+00:02:43.030 --> 00:02:43.040 align:start position:0%
+already and it's a very different model,
+ 
+
+00:02:43.040 --> 00:02:44.869 align:start position:0%
+already and it's a very different model,
+a<00:02:43.280><c> very</c><00:02:43.519><c> different</c><00:02:43.760><c> paradigm</c><00:02:44.239><c> and</c><00:02:44.560><c> way</c><00:02:44.720><c> of</c>
+
+00:02:44.869 --> 00:02:44.879 align:start position:0%
+a very different paradigm and way of
+ 
+
+00:02:44.879 --> 00:02:46.949 align:start position:0%
+a very different paradigm and way of
+thinking<00:02:45.120><c> about</c><00:02:45.440><c> security.</c><00:02:46.239><c> So</c><00:02:46.400><c> let's</c><00:02:46.720><c> take</c><00:02:46.800><c> a</c>
+
+00:02:46.949 --> 00:02:46.959 align:start position:0%
+thinking about security. So let's take a
+ 
+
+00:02:46.959 --> 00:02:49.270 align:start position:0%
+thinking about security. So let's take a
+look<00:02:47.120><c> and</c><00:02:47.360><c> see</c><00:02:47.519><c> what</c><00:02:47.760><c> zero</c><00:02:48.239><c> trust</c><00:02:48.560><c> principles</c>
+
+00:02:49.270 --> 00:02:49.280 align:start position:0%
+look and see what zero trust principles
+ 
+
+00:02:49.280 --> 00:02:51.030 align:start position:0%
+look and see what zero trust principles
+would<00:02:49.519><c> look</c><00:02:49.760><c> like</c><00:02:49.920><c> if</c><00:02:50.160><c> they</c><00:02:50.319><c> were</c><00:02:50.480><c> applied</c><00:02:50.800><c> to</c>
+
+00:02:51.030 --> 00:02:51.040 align:start position:0%
+would look like if they were applied to
+ 
+
+00:02:51.040 --> 00:02:53.589 align:start position:0%
+would look like if they were applied to
+an<00:02:51.280><c> agentic</c><00:02:51.920><c> environment.</c><00:02:52.879><c> First</c><00:02:53.040><c> of</c><00:02:53.200><c> all,</c>
+
+00:02:53.589 --> 00:02:53.599 align:start position:0%
+an agentic environment. First of all,
+ 
+
+00:02:53.599 --> 00:02:55.509 align:start position:0%
+an agentic environment. First of all,
+let's<00:02:53.840><c> look</c><00:02:54.000><c> at</c><00:02:54.160><c> a</c><00:02:54.319><c> traditional</c><00:02:54.800><c> environment.</c>
+
+00:02:55.509 --> 00:02:55.519 align:start position:0%
+let's look at a traditional environment.
+ 
+
+00:02:55.519 --> 00:02:57.910 align:start position:0%
+let's look at a traditional environment.
+How<00:02:55.680><c> do</c><00:02:55.840><c> we</c><00:02:56.000><c> apply</c><00:02:56.319><c> zero</c><00:02:56.720><c> trust</c><00:02:57.040><c> in</c><00:02:57.200><c> this</c><00:02:57.360><c> case?</c>
+
+00:02:57.910 --> 00:02:57.920 align:start position:0%
+How do we apply zero trust in this case?
+ 
+
+00:02:57.920 --> 00:02:59.990 align:start position:0%
+How do we apply zero trust in this case?
+Well,<00:02:58.080><c> we've</c><00:02:58.400><c> got</c><00:02:58.560><c> users</c><00:02:59.280><c> that</c><00:02:59.599><c> have</c><00:02:59.680><c> to</c><00:02:59.840><c> be</c>
+
+00:02:59.990 --> 00:03:00.000 align:start position:0%
+Well, we've got users that have to be
+ 
+
+00:03:00.000 --> 00:03:01.509 align:start position:0%
+Well, we've got users that have to be
+secured.<00:03:00.480><c> They're</c><00:03:00.720><c> part</c><00:03:00.800><c> of</c><00:03:00.879><c> the</c><00:03:01.120><c> security</c>
+
+00:03:01.509 --> 00:03:01.519 align:start position:0%
+secured. They're part of the security
+ 
+
+00:03:01.519 --> 00:03:04.070 align:start position:0%
+secured. They're part of the security
+equation.<00:03:02.319><c> So</c><00:03:02.480><c> I</c><00:03:02.720><c> need</c><00:03:02.879><c> to</c><00:03:03.040><c> do</c><00:03:03.519><c> identity</c><00:03:03.760><c> and</c>
+
+00:03:04.070 --> 00:03:04.080 align:start position:0%
+equation. So I need to do identity and
+ 
+
+00:03:04.080 --> 00:03:06.149 align:start position:0%
+equation. So I need to do identity and
+access<00:03:04.400><c> management.</c><00:03:04.959><c> I</c><00:03:05.200><c> need</c><00:03:05.360><c> to</c><00:03:05.519><c> make</c><00:03:05.680><c> sure</c>
+
+00:03:06.149 --> 00:03:06.159 align:start position:0%
+access management. I need to make sure
+ 
+
+00:03:06.159 --> 00:03:08.070 align:start position:0%
+access management. I need to make sure
+that<00:03:06.400><c> the</c><00:03:06.640><c> user</c><00:03:06.879><c> has</c><00:03:07.040><c> an</c><00:03:07.280><c> account,</c><00:03:07.840><c> that</c>
+
+00:03:08.070 --> 00:03:08.080 align:start position:0%
+that the user has an account, that
+ 
+
+00:03:08.080 --> 00:03:09.350 align:start position:0%
+that the user has an account, that
+they're<00:03:08.319><c> logged</c><00:03:08.560><c> in,</c><00:03:08.800><c> that</c><00:03:08.959><c> the</c><00:03:09.120><c> person</c>
+
+00:03:09.350 --> 00:03:09.360 align:start position:0%
+they're logged in, that the person
+ 
+
+00:03:09.360 --> 00:03:11.270 align:start position:0%
+they're logged in, that the person
+logged<00:03:09.680><c> in</c><00:03:09.840><c> is</c><00:03:10.080><c> in</c><00:03:10.239><c> fact</c><00:03:10.319><c> the</c><00:03:10.560><c> user</c><00:03:10.800><c> they</c><00:03:11.040><c> claim</c>
+
+00:03:11.270 --> 00:03:11.280 align:start position:0%
+logged in is in fact the user they claim
+ 
+
+00:03:11.280 --> 00:03:14.070 align:start position:0%
+logged in is in fact the user they claim
+to<00:03:11.440><c> be.</c><00:03:11.840><c> So</c><00:03:12.000><c> that's</c><00:03:12.480><c> strong</c><00:03:12.879><c> authentication,</c>
+
+00:03:14.070 --> 00:03:14.080 align:start position:0%
+to be. So that's strong authentication,
+ 
+
+00:03:14.080 --> 00:03:16.070 align:start position:0%
+to be. So that's strong authentication,
+access<00:03:14.560><c> controls,</c><00:03:15.120><c> so</c><00:03:15.280><c> that</c><00:03:15.440><c> they</c><00:03:15.680><c> can</c><00:03:15.840><c> only</c>
+
+00:03:16.070 --> 00:03:16.080 align:start position:0%
+access controls, so that they can only
+ 
+
+00:03:16.080 --> 00:03:17.830 align:start position:0%
+access controls, so that they can only
+access<00:03:16.400><c> the</c><00:03:16.640><c> things</c><00:03:16.800><c> that</c><00:03:17.040><c> they're</c><00:03:17.360><c> permitted</c>
+
+00:03:17.830 --> 00:03:17.840 align:start position:0%
+access the things that they're permitted
+ 
+
+00:03:17.840 --> 00:03:20.470 align:start position:0%
+access the things that they're permitted
+to<00:03:18.000><c> see.</c><00:03:18.720><c> The</c><00:03:19.040><c> device</c><00:03:19.360><c> that</c><00:03:19.599><c> the</c><00:03:19.840><c> user</c><00:03:20.159><c> is</c>
+
+00:03:20.470 --> 00:03:20.480 align:start position:0%
+to see. The device that the user is
+ 
+
+00:03:20.480 --> 00:03:22.710 align:start position:0%
+to see. The device that the user is
+using<00:03:20.800><c> matters</c><00:03:21.200><c> as</c><00:03:21.440><c> well.</c><00:03:22.080><c> It</c><00:03:22.319><c> could</c><00:03:22.480><c> be</c>
+
+00:03:22.710 --> 00:03:22.720 align:start position:0%
+using matters as well. It could be
+ 
+
+00:03:22.720 --> 00:03:25.110 align:start position:0%
+using matters as well. It could be
+compromised.<00:03:23.519><c> I</c><00:03:23.760><c> need</c><00:03:23.920><c> to</c><00:03:24.080><c> make</c><00:03:24.239><c> sure</c><00:03:24.480><c> that</c><00:03:24.800><c> it</c>
+
+00:03:25.110 --> 00:03:25.120 align:start position:0%
+compromised. I need to make sure that it
+ 
+
+00:03:25.120 --> 00:03:27.350 align:start position:0%
+compromised. I need to make sure that it
+is<00:03:25.360><c> in</c><00:03:25.599><c> fact</c><00:03:25.920><c> pure,</c><00:03:26.560><c> that</c><00:03:26.720><c> it</c><00:03:26.959><c> hasn't</c><00:03:27.200><c> been</c>
+
+00:03:27.350 --> 00:03:27.360 align:start position:0%
+is in fact pure, that it hasn't been
+ 
+
+00:03:27.360 --> 00:03:29.589 align:start position:0%
+is in fact pure, that it hasn't been
+jailbroken,<00:03:28.239><c> that</c><00:03:28.480><c> an</c><00:03:28.720><c> attacker</c><00:03:29.120><c> hasn't</c>
+
+00:03:29.589 --> 00:03:29.599 align:start position:0%
+jailbroken, that an attacker hasn't
+ 
+
+00:03:29.599 --> 00:03:31.830 align:start position:0%
+jailbroken, that an attacker hasn't
+taken<00:03:29.920><c> control</c><00:03:30.239><c> of</c><00:03:30.480><c> the</c><00:03:30.720><c> system</c><00:03:31.360><c> because</c><00:03:31.599><c> then</c>
+
+00:03:31.830 --> 00:03:31.840 align:start position:0%
+taken control of the system because then
+ 
+
+00:03:31.840 --> 00:03:34.070 align:start position:0%
+taken control of the system because then
+it<00:03:32.000><c> won't</c><00:03:32.239><c> matter</c><00:03:32.560><c> if</c><00:03:32.799><c> I</c><00:03:33.040><c> have</c><00:03:33.200><c> the</c><00:03:33.519><c> authentic</c>
+
+00:03:34.070 --> 00:03:34.080 align:start position:0%
+it won't matter if I have the authentic
+ 
+
+00:03:34.080 --> 00:03:36.470 align:start position:0%
+it won't matter if I have the authentic
+user<00:03:34.720><c> trying</c><00:03:34.959><c> to</c><00:03:35.120><c> do</c><00:03:35.280><c> the</c><00:03:35.440><c> right</c><00:03:35.680><c> thing</c><00:03:36.000><c> if</c><00:03:36.239><c> the</c>
+
+00:03:36.470 --> 00:03:36.480 align:start position:0%
+user trying to do the right thing if the
+ 
+
+00:03:36.480 --> 00:03:38.949 align:start position:0%
+user trying to do the right thing if the
+device<00:03:36.879><c> has</c><00:03:37.120><c> already</c><00:03:37.440><c> been</c><00:03:37.680><c> compromised.</c><00:03:38.720><c> I</c>
+
+00:03:38.949 --> 00:03:38.959 align:start position:0%
+device has already been compromised. I
+ 
+
+00:03:38.959 --> 00:03:41.030 align:start position:0%
+device has already been compromised. I
+need<00:03:39.120><c> to</c><00:03:39.200><c> look</c><00:03:39.360><c> at</c><00:03:39.519><c> the</c><00:03:39.680><c> data</c><00:03:40.159><c> layer</c><00:03:40.480><c> of</c><00:03:40.720><c> all</c><00:03:40.879><c> of</c>
+
+00:03:41.030 --> 00:03:41.040 align:start position:0%
+need to look at the data layer of all of
+ 
+
+00:03:41.040 --> 00:03:43.030 align:start position:0%
+need to look at the data layer of all of
+this.<00:03:41.599><c> So,</c><00:03:41.760><c> I</c><00:03:42.000><c> need</c><00:03:42.080><c> to</c><00:03:42.239><c> make</c><00:03:42.400><c> sure</c><00:03:42.560><c> that</c><00:03:42.799><c> the</c>
+
+00:03:43.030 --> 00:03:43.040 align:start position:0%
+this. So, I need to make sure that the
+ 
+
+00:03:43.040 --> 00:03:45.110 align:start position:0%
+this. So, I need to make sure that the
+data<00:03:43.280><c> that's</c><00:03:43.519><c> sensitive</c><00:03:44.159><c> has</c><00:03:44.400><c> been</c><00:03:44.560><c> encrypted</c>
+
+00:03:45.110 --> 00:03:45.120 align:start position:0%
+data that's sensitive has been encrypted
+ 
+
+00:03:45.120 --> 00:03:47.670 align:start position:0%
+data that's sensitive has been encrypted
+so<00:03:45.280><c> it</c><00:03:45.519><c> can't</c><00:03:45.760><c> be</c><00:03:46.080><c> easily</c><00:03:46.560><c> seen.</c><00:03:47.200><c> I</c><00:03:47.360><c> need</c><00:03:47.519><c> to</c>
+
+00:03:47.670 --> 00:03:47.680 align:start position:0%
+so it can't be easily seen. I need to
+ 
+
+00:03:47.680 --> 00:03:49.350 align:start position:0%
+so it can't be easily seen. I need to
+make<00:03:47.840><c> sure</c><00:03:47.920><c> that</c><00:03:48.159><c> it's</c><00:03:48.480><c> not</c><00:03:48.640><c> leaving</c><00:03:49.040><c> my</c>
+
+00:03:49.350 --> 00:03:49.360 align:start position:0%
+make sure that it's not leaving my
+ 
+
+00:03:49.360 --> 00:03:51.910 align:start position:0%
+make sure that it's not leaving my
+network<00:03:50.000><c> if</c><00:03:50.239><c> it's</c><00:03:50.480><c> not</c><00:03:50.720><c> supposed</c><00:03:50.959><c> to.</c><00:03:51.599><c> Things</c>
+
+00:03:51.910 --> 00:03:51.920 align:start position:0%
+network if it's not supposed to. Things
+ 
+
+00:03:51.920 --> 00:03:54.710 align:start position:0%
+network if it's not supposed to. Things
+like<00:03:52.080><c> that.</c><00:03:52.799><c> And</c><00:03:53.040><c> then</c><00:03:53.519><c> another</c><00:03:54.000><c> big</c><00:03:54.239><c> part</c><00:03:54.480><c> and</c>
+
+00:03:54.710 --> 00:03:54.720 align:start position:0%
+like that. And then another big part and
+ 
+
+00:03:54.720 --> 00:03:56.390 align:start position:0%
+like that. And then another big part and
+a<00:03:54.879><c> lot</c><00:03:54.959><c> of</c><00:03:55.040><c> people</c><00:03:55.280><c> start</c><00:03:55.519><c> their</c><00:03:55.760><c> zerorust</c>
+
+00:03:56.390 --> 00:03:56.400 align:start position:0%
+a lot of people start their zerorust
+ 
+
+00:03:56.400 --> 00:03:58.789 align:start position:0%
+a lot of people start their zerorust
+discussions<00:03:57.120><c> in</c><00:03:57.360><c> this</c><00:03:57.599><c> particular</c><00:03:58.080><c> area</c><00:03:58.640><c> and</c>
+
+00:03:58.789 --> 00:03:58.799 align:start position:0%
+discussions in this particular area and
+ 
+
+00:03:58.799 --> 00:04:01.190 align:start position:0%
+discussions in this particular area and
+it's<00:03:59.040><c> the</c><00:03:59.200><c> area</c><00:03:59.439><c> of</c><00:03:59.680><c> the</c><00:03:59.840><c> network.</c><00:04:00.640><c> So</c><00:04:00.879><c> I'm</c>
+
+00:04:01.190 --> 00:04:01.200 align:start position:0%
+it's the area of the network. So I'm
+ 
+
+00:04:01.200 --> 00:04:03.589 align:start position:0%
+it's the area of the network. So I'm
+going<00:04:01.280><c> to</c><00:04:01.599><c> make</c><00:04:01.840><c> sure</c><00:04:02.080><c> that</c><00:04:02.319><c> my</c><00:04:02.640><c> network</c><00:04:03.280><c> is</c>
+
+00:04:03.589 --> 00:04:03.599 align:start position:0%
+going to make sure that my network is
+ 
+
+00:04:03.599 --> 00:04:05.910 align:start position:0%
+going to make sure that my network is
+well<00:04:03.920><c> secured</c><00:04:04.720><c> that</c><00:04:04.879><c> if</c><00:04:05.200><c> information</c><00:04:05.599><c> is</c>
+
+00:04:05.910 --> 00:04:05.920 align:start position:0%
+well secured that if information is
+ 
+
+00:04:05.920 --> 00:04:07.910 align:start position:0%
+well secured that if information is
+traversing<00:04:06.400><c> a</c><00:04:06.720><c> part</c><00:04:06.879><c> and</c><00:04:07.200><c> that</c><00:04:07.519><c> information</c>
+
+00:04:07.910 --> 00:04:07.920 align:start position:0%
+traversing a part and that information
+ 
+
+00:04:07.920 --> 00:04:10.070 align:start position:0%
+traversing a part and that information
+is<00:04:08.159><c> sensitive</c><00:04:08.959><c> then</c><00:04:09.200><c> I</c><00:04:09.360><c> want</c><00:04:09.439><c> to</c><00:04:09.599><c> have</c><00:04:09.840><c> it</c>
+
+00:04:10.070 --> 00:04:10.080 align:start position:0%
+is sensitive then I want to have it
+ 
+
+00:04:10.080 --> 00:04:12.630 align:start position:0%
+is sensitive then I want to have it
+encrypted.<00:04:11.040><c> I</c><00:04:11.280><c> want</c><00:04:11.439><c> to</c><00:04:11.599><c> make</c><00:04:11.760><c> sure</c><00:04:12.000><c> that</c><00:04:12.239><c> I</c><00:04:12.480><c> do</c>
+
+00:04:12.630 --> 00:04:12.640 align:start position:0%
+encrypted. I want to make sure that I do
+ 
+
+00:04:12.640 --> 00:04:15.270 align:start position:0%
+encrypted. I want to make sure that I do
+things<00:04:12.879><c> like</c><00:04:13.120><c> micro</c><00:04:13.599><c> segmentation</c><00:04:14.640><c> where</c><00:04:14.879><c> I</c>
+
+00:04:15.270 --> 00:04:15.280 align:start position:0%
+things like micro segmentation where I
+ 
+
+00:04:15.280 --> 00:04:17.270 align:start position:0%
+things like micro segmentation where I
+group<00:04:15.760><c> individual</c><00:04:16.320><c> parts</c><00:04:16.560><c> of</c><00:04:16.720><c> the</c><00:04:16.880><c> network</c>
+
+00:04:17.270 --> 00:04:17.280 align:start position:0%
+group individual parts of the network
+ 
+
+00:04:17.280 --> 00:04:18.629 align:start position:0%
+group individual parts of the network
+together<00:04:17.600><c> and</c><00:04:17.840><c> give</c><00:04:18.079><c> some</c><00:04:18.239><c> level</c><00:04:18.479><c> of</c>
+
+00:04:18.629 --> 00:04:18.639 align:start position:0%
+together and give some level of
+ 
+
+00:04:18.639 --> 00:04:21.349 align:start position:0%
+together and give some level of
+isolation<00:04:19.280><c> so</c><00:04:19.519><c> that</c><00:04:20.000><c> if</c><00:04:20.320><c> this</c><00:04:20.560><c> guy</c><00:04:21.040><c> gets</c>
+
+00:04:21.349 --> 00:04:21.359 align:start position:0%
+isolation so that if this guy gets
+ 
+
+00:04:21.359 --> 00:04:23.909 align:start position:0%
+isolation so that if this guy gets
+infected,<00:04:22.240><c> his</c><00:04:22.560><c> infection</c><00:04:23.199><c> doesn't</c><00:04:23.520><c> easily</c>
+
+00:04:23.909 --> 00:04:23.919 align:start position:0%
+infected, his infection doesn't easily
+ 
+
+00:04:23.919 --> 00:04:25.749 align:start position:0%
+infected, his infection doesn't easily
+spread<00:04:24.240><c> to</c><00:04:24.400><c> others.</c><00:04:24.960><c> So</c><00:04:25.199><c> those</c><00:04:25.360><c> are</c><00:04:25.520><c> some</c><00:04:25.680><c> of</c>
+
+00:04:25.749 --> 00:04:25.759 align:start position:0%
+spread to others. So those are some of
+ 
+
+00:04:25.759 --> 00:04:27.430 align:start position:0%
+spread to others. So those are some of
+the<00:04:25.919><c> things</c><00:04:26.080><c> that</c><00:04:26.240><c> we've</c><00:04:26.560><c> done</c><00:04:26.800><c> traditionally</c>
+
+00:04:27.430 --> 00:04:27.440 align:start position:0%
+the things that we've done traditionally
+ 
+
+00:04:27.440 --> 00:04:30.310 align:start position:0%
+the things that we've done traditionally
+in<00:04:27.680><c> zero</c><00:04:28.160><c> trust</c><00:04:28.800><c> and</c><00:04:29.600><c> spreading</c><00:04:30.000><c> this</c>
+
+00:04:30.310 --> 00:04:30.320 align:start position:0%
+in zero trust and spreading this
+ 
+
+00:04:30.320 --> 00:04:32.790 align:start position:0%
+in zero trust and spreading this
+pervasively<00:04:31.120><c> throughout</c><00:04:31.520><c> the</c><00:04:31.759><c> system.</c><00:04:32.560><c> I've</c>
+
+00:04:32.790 --> 00:04:32.800 align:start position:0%
+pervasively throughout the system. I've
+ 
+
+00:04:32.800 --> 00:04:35.510 align:start position:0%
+pervasively throughout the system. I've
+got<00:04:32.960><c> to</c><00:04:33.120><c> do</c><00:04:33.360><c> all</c><00:04:33.600><c> of</c><00:04:33.759><c> that</c><00:04:34.479><c> as</c><00:04:34.720><c> I</c><00:04:34.960><c> move</c><00:04:35.120><c> into</c><00:04:35.360><c> the</c>
+
+00:04:35.510 --> 00:04:35.520 align:start position:0%
+got to do all of that as I move into the
+ 
+
+00:04:35.520 --> 00:04:38.150 align:start position:0%
+got to do all of that as I move into the
+agentic<00:04:36.160><c> world</c><00:04:36.800><c> plus</c><00:04:37.360><c> I</c><00:04:37.600><c> have</c><00:04:37.680><c> to</c><00:04:37.840><c> do</c><00:04:38.000><c> some</c>
+
+00:04:38.150 --> 00:04:38.160 align:start position:0%
+agentic world plus I have to do some
+ 
+
+00:04:38.160 --> 00:04:40.950 align:start position:0%
+agentic world plus I have to do some
+more.<00:04:38.880><c> So</c><00:04:39.120><c> as</c><00:04:39.360><c> we</c><00:04:39.520><c> start</c><00:04:39.759><c> looking</c><00:04:40.000><c> at</c><00:04:40.240><c> agents,</c>
+
+00:04:40.950 --> 00:04:40.960 align:start position:0%
+more. So as we start looking at agents,
+ 
+
+00:04:40.960 --> 00:04:43.590 align:start position:0%
+more. So as we start looking at agents,
+who<00:04:41.120><c> are</c><00:04:41.280><c> the</c><00:04:41.440><c> actors?</c><00:04:42.000><c> The</c><00:04:42.240><c> actors</c><00:04:42.800><c> are</c><00:04:43.360><c> in</c>
+
+00:04:43.590 --> 00:04:43.600 align:start position:0%
+who are the actors? The actors are in
+ 
+
+00:04:43.600 --> 00:04:46.629 align:start position:0%
+who are the actors? The actors are in
+fact<00:04:43.919><c> software.</c><00:04:44.800><c> So</c><00:04:45.040><c> we've</c><00:04:45.360><c> got</c><00:04:45.520><c> an</c><00:04:45.759><c> AI</c><00:04:46.240><c> agent</c>
+
+00:04:46.629 --> 00:04:46.639 align:start position:0%
+fact software. So we've got an AI agent
+ 
+
+00:04:46.639 --> 00:04:49.909 align:start position:0%
+fact software. So we've got an AI agent
+here<00:04:48.000><c> that</c><00:04:48.320><c> is</c>
+
+00:04:49.909 --> 00:04:49.919 align:start position:0%
+here that is
+ 
+
+00:04:49.919 --> 00:04:52.870 align:start position:0%
+here that is
+using<00:04:50.320><c> a</c><00:04:50.560><c> nonhuman</c><00:04:51.440><c> identity.</c><00:04:52.160><c> So</c><00:04:52.400><c> here</c><00:04:52.639><c> we</c>
+
+00:04:52.870 --> 00:04:52.880 align:start position:0%
+using a nonhuman identity. So here we
+ 
+
+00:04:52.880 --> 00:04:55.510 align:start position:0%
+using a nonhuman identity. So here we
+had<00:04:53.120><c> users</c><00:04:53.840><c> and</c><00:04:54.080><c> we</c><00:04:54.240><c> could</c><00:04:54.479><c> associate</c><00:04:55.040><c> them</c>
+
+00:04:55.510 --> 00:04:55.520 align:start position:0%
+had users and we could associate them
+ 
+
+00:04:55.520 --> 00:04:57.670 align:start position:0%
+had users and we could associate them
+with<00:04:55.759><c> the</c><00:04:56.160><c> identity</c><00:04:56.479><c> they</c><00:04:56.720><c> were</c><00:04:56.960><c> using.</c><00:04:57.520><c> But</c>
+
+00:04:57.670 --> 00:04:57.680 align:start position:0%
+with the identity they were using. But
+ 
+
+00:04:57.680 --> 00:05:00.230 align:start position:0%
+with the identity they were using. But
+an<00:04:57.919><c> agent</c><00:04:58.400><c> may</c><00:04:58.639><c> in</c><00:04:58.880><c> fact</c><00:04:59.040><c> use</c><00:04:59.360><c> lots</c><00:04:59.680><c> of</c><00:04:59.840><c> these</c>
+
+00:05:00.230 --> 00:05:00.240 align:start position:0%
+an agent may in fact use lots of these
+ 
+
+00:05:00.240 --> 00:05:02.230 align:start position:0%
+an agent may in fact use lots of these
+different<00:05:00.720><c> NHIS,</c><00:05:01.600><c> lots</c><00:05:01.840><c> of</c><00:05:02.000><c> different</c>
+
+00:05:02.230 --> 00:05:02.240 align:start position:0%
+different NHIS, lots of different
+ 
+
+00:05:02.240 --> 00:05:05.189 align:start position:0%
+different NHIS, lots of different
+non-human<00:05:02.960><c> identities.</c><00:05:03.600><c> So</c><00:05:03.840><c> here</c><00:05:04.400><c> we</c><00:05:04.720><c> have</c><00:05:04.960><c> a</c>
+
+00:05:05.189 --> 00:05:05.199 align:start position:0%
+non-human identities. So here we have a
+ 
+
+00:05:05.199 --> 00:05:07.830 align:start position:0%
+non-human identities. So here we have a
+proliferation<00:05:06.000><c> of</c><00:05:06.240><c> these</c><00:05:06.560><c> things</c><00:05:06.880><c> growing.</c><00:05:07.600><c> I</c>
+
+00:05:07.830 --> 00:05:07.840 align:start position:0%
+proliferation of these things growing. I
+ 
+
+00:05:07.840 --> 00:05:10.070 align:start position:0%
+proliferation of these things growing. I
+need<00:05:08.000><c> to</c><00:05:08.160><c> make</c><00:05:08.320><c> sure</c><00:05:08.479><c> all</c><00:05:08.800><c> of</c><00:05:08.960><c> them</c><00:05:09.600><c> have</c><00:05:09.840><c> the</c>
+
+00:05:10.070 --> 00:05:10.080 align:start position:0%
+need to make sure all of them have the
+ 
+
+00:05:10.080 --> 00:05:13.270 align:start position:0%
+need to make sure all of them have the
+same<00:05:10.240><c> level</c><00:05:10.639><c> of</c><00:05:11.520><c> control</c><00:05:12.080><c> and</c><00:05:12.400><c> visibility</c>
+
+00:05:13.270 --> 00:05:13.280 align:start position:0%
+same level of control and visibility
+ 
+
+00:05:13.280 --> 00:05:15.350 align:start position:0%
+same level of control and visibility
+that<00:05:13.520><c> we</c><00:05:13.759><c> had</c><00:05:14.000><c> for</c><00:05:14.160><c> the</c><00:05:14.320><c> human</c><00:05:14.639><c> users.</c><00:05:15.199><c> In</c>
+
+00:05:15.350 --> 00:05:15.360 align:start position:0%
+that we had for the human users. In
+ 
+
+00:05:15.360 --> 00:05:16.950 align:start position:0%
+that we had for the human users. In
+fact,<00:05:15.600><c> maybe</c><00:05:15.840><c> even</c><00:05:16.160><c> more</c><00:05:16.400><c> because</c><00:05:16.639><c> they're</c>
+
+00:05:16.950 --> 00:05:16.960 align:start position:0%
+fact, maybe even more because they're
+ 
+
+00:05:16.960 --> 00:05:19.110 align:start position:0%
+fact, maybe even more because they're
+operating<00:05:17.440><c> autonomously</c><00:05:18.479><c> and</c><00:05:18.720><c> we</c><00:05:18.880><c> need</c>
+
+00:05:19.110 --> 00:05:19.120 align:start position:0%
+operating autonomously and we need
+ 
+
+00:05:19.120 --> 00:05:22.070 align:start position:0%
+operating autonomously and we need
+supervision<00:05:19.600><c> of</c><00:05:19.840><c> that.</c><00:05:20.639><c> We</c><00:05:20.880><c> need</c><00:05:21.039><c> tools</c><00:05:21.759><c> that</c>
+
+00:05:22.070 --> 00:05:22.080 align:start position:0%
+supervision of that. We need tools that
+ 
+
+00:05:22.080 --> 00:05:24.070 align:start position:0%
+supervision of that. We need tools that
+we're<00:05:22.400><c> going</c><00:05:22.479><c> to</c><00:05:22.639><c> be</c><00:05:22.800><c> using</c><00:05:23.199><c> to</c><00:05:23.520><c> also</c><00:05:23.840><c> be</c>
+
+00:05:24.070 --> 00:05:24.080 align:start position:0%
+we're going to be using to also be
+ 
+
+00:05:24.080 --> 00:05:25.990 align:start position:0%
+we're going to be using to also be
+secure.<00:05:24.720><c> We</c><00:05:24.960><c> need</c><00:05:25.039><c> to</c><00:05:25.280><c> make</c><00:05:25.440><c> sure</c><00:05:25.520><c> that</c><00:05:25.759><c> the</c>
+
+00:05:25.990 --> 00:05:26.000 align:start position:0%
+secure. We need to make sure that the
+ 
+
+00:05:26.000 --> 00:05:28.230 align:start position:0%
+secure. We need to make sure that the
+tools<00:05:26.320><c> that</c><00:05:26.560><c> we're</c><00:05:26.800><c> leveraging</c><00:05:27.440><c> are</c><00:05:27.680><c> tools</c><00:05:28.000><c> we</c>
+
+00:05:28.230 --> 00:05:28.240 align:start position:0%
+tools that we're leveraging are tools we
+ 
+
+00:05:28.240 --> 00:05:31.590 align:start position:0%
+tools that we're leveraging are tools we
+can<00:05:28.400><c> trust.</c><00:05:29.440><c> Again,</c><00:05:29.840><c> we</c><00:05:30.160><c> have</c><00:05:30.320><c> data.</c><00:05:31.280><c> In</c><00:05:31.440><c> this</c>
+
+00:05:31.590 --> 00:05:31.600 align:start position:0%
+can trust. Again, we have data. In this
+ 
+
+00:05:31.600 --> 00:05:34.230 align:start position:0%
+can trust. Again, we have data. In this
+case,<00:05:32.000><c> data</c><00:05:32.479><c> may</c><00:05:32.720><c> be</c><00:05:32.880><c> the</c><00:05:33.120><c> thing</c><00:05:33.440><c> that</c><00:05:33.840><c> was</c><00:05:34.000><c> the</c>
+
+00:05:34.230 --> 00:05:34.240 align:start position:0%
+case, data may be the thing that was the
+ 
+
+00:05:34.240 --> 00:05:36.870 align:start position:0%
+case, data may be the thing that was the
+basis<00:05:34.639><c> for</c><00:05:34.880><c> the</c><00:05:35.039><c> AI</c><00:05:35.440><c> agent.</c><00:05:35.919><c> We</c><00:05:36.160><c> use</c><00:05:36.400><c> data</c><00:05:36.639><c> to</c>
+
+00:05:36.870 --> 00:05:36.880 align:start position:0%
+basis for the AI agent. We use data to
+ 
+
+00:05:36.880 --> 00:05:39.990 align:start position:0%
+basis for the AI agent. We use data to
+train<00:05:37.120><c> the</c><00:05:37.360><c> model.</c><00:05:38.160><c> We</c><00:05:38.400><c> need</c><00:05:38.800><c> to</c><00:05:39.120><c> also</c><00:05:39.520><c> augment</c>
+
+00:05:39.990 --> 00:05:40.000 align:start position:0%
+train the model. We need to also augment
+ 
+
+00:05:40.000 --> 00:05:41.909 align:start position:0%
+train the model. We need to also augment
+the<00:05:40.240><c> model.</c><00:05:40.639><c> We</c><00:05:40.880><c> may</c><00:05:41.120><c> use</c><00:05:41.360><c> preference</c>
+
+00:05:41.909 --> 00:05:41.919 align:start position:0%
+the model. We may use preference
+ 
+
+00:05:41.919 --> 00:05:43.510 align:start position:0%
+the model. We may use preference
+information<00:05:42.400><c> and</c><00:05:42.639><c> other</c><00:05:42.960><c> context</c>
+
+00:05:43.510 --> 00:05:43.520 align:start position:0%
+information and other context
+ 
+
+00:05:43.520 --> 00:05:45.909 align:start position:0%
+information and other context
+information<00:05:44.320><c> that</c><00:05:44.560><c> we</c><00:05:44.800><c> put</c><00:05:44.960><c> into</c><00:05:45.280><c> the</c><00:05:45.440><c> model.</c>
+
+00:05:45.909 --> 00:05:45.919 align:start position:0%
+information that we put into the model.
+ 
+
+00:05:45.919 --> 00:05:48.390 align:start position:0%
+information that we put into the model.
+I<00:05:46.160><c> need</c><00:05:46.320><c> to</c><00:05:46.479><c> make</c><00:05:46.639><c> sure</c><00:05:46.960><c> all</c><00:05:47.199><c> of</c><00:05:47.360><c> that</c><00:05:47.600><c> stuff</c>
+
+00:05:48.390 --> 00:05:48.400 align:start position:0%
+I need to make sure all of that stuff
+ 
+
+00:05:48.400 --> 00:05:50.629 align:start position:0%
+I need to make sure all of that stuff
+has<00:05:48.720><c> been</c><00:05:49.199><c> secured,</c><00:05:49.840><c> that</c><00:05:50.000><c> it</c><00:05:50.240><c> hasn't</c><00:05:50.479><c> been</c>
+
+00:05:50.629 --> 00:05:50.639 align:start position:0%
+has been secured, that it hasn't been
+ 
+
+00:05:50.639 --> 00:05:52.950 align:start position:0%
+has been secured, that it hasn't been
+tampered<00:05:51.120><c> with.</c><00:05:51.680><c> And</c><00:05:51.840><c> then</c><00:05:52.160><c> ultimately,</c><00:05:52.720><c> I</c>
+
+00:05:52.950 --> 00:05:52.960 align:start position:0%
+tampered with. And then ultimately, I
+ 
+
+00:05:52.960 --> 00:05:53.990 align:start position:0%
+tampered with. And then ultimately, I
+need<00:05:53.120><c> to</c><00:05:53.199><c> be</c><00:05:53.280><c> able</c><00:05:53.440><c> to</c><00:05:53.600><c> look</c><00:05:53.680><c> at</c><00:05:53.840><c> the</c>
+
+00:05:53.990 --> 00:05:54.000 align:start position:0%
+need to be able to look at the
+ 
+
+00:05:54.000 --> 00:05:56.230 align:start position:0%
+need to be able to look at the
+intentions<00:05:54.560><c> of</c><00:05:54.800><c> the</c><00:05:55.039><c> agent</c><00:05:55.600><c> and</c><00:05:55.840><c> make</c><00:05:56.080><c> sure</c>
+
+00:05:56.230 --> 00:05:56.240 align:start position:0%
+intentions of the agent and make sure
+ 
+
+00:05:56.240 --> 00:05:58.950 align:start position:0%
+intentions of the agent and make sure
+those<00:05:56.479><c> intentions</c><00:05:57.120><c> match</c><00:05:57.759><c> what</c><00:05:58.000><c> the</c><00:05:58.479><c> original</c>
+
+00:05:58.950 --> 00:05:58.960 align:start position:0%
+those intentions match what the original
+ 
+
+00:05:58.960 --> 00:06:01.029 align:start position:0%
+those intentions match what the original
+user's<00:05:59.440><c> intentions</c><00:06:00.000><c> were</c><00:06:00.400><c> for</c><00:06:00.720><c> this</c>
+
+00:06:01.029 --> 00:06:01.039 align:start position:0%
+user's intentions were for this
+ 
+
+00:06:01.039 --> 00:06:02.870 align:start position:0%
+user's intentions were for this
+particular<00:06:01.440><c> system.</c><00:06:02.000><c> Let's</c><00:06:02.320><c> take</c><00:06:02.479><c> a</c><00:06:02.639><c> look</c><00:06:02.720><c> at</c>
+
+00:06:02.870 --> 00:06:02.880 align:start position:0%
+particular system. Let's take a look at
+ 
+
+00:06:02.880 --> 00:06:04.950 align:start position:0%
+particular system. Let's take a look at
+an<00:06:03.120><c> agentic</c><00:06:03.759><c> system</c><00:06:04.240><c> and</c><00:06:04.479><c> see</c><00:06:04.639><c> where</c><00:06:04.800><c> the</c>
+
+00:06:04.950 --> 00:06:04.960 align:start position:0%
+an agentic system and see where the
+ 
+
+00:06:04.960 --> 00:06:07.029 align:start position:0%
+an agentic system and see where the
+threats<00:06:05.280><c> might</c><00:06:05.520><c> be.</c><00:06:05.840><c> So</c><00:06:06.080><c> here</c><00:06:06.319><c> is</c><00:06:06.400><c> how</c><00:06:06.639><c> the</c>
+
+00:06:07.029 --> 00:06:07.039 align:start position:0%
+threats might be. So here is how the
+ 
+
+00:06:07.039 --> 00:06:08.950 align:start position:0%
+threats might be. So here is how the
+thing<00:06:07.199><c> basically</c><00:06:07.600><c> works.</c><00:06:08.080><c> We</c><00:06:08.240><c> have</c><00:06:08.319><c> a</c><00:06:08.479><c> sensing</c>
+
+00:06:08.950 --> 00:06:08.960 align:start position:0%
+thing basically works. We have a sensing
+ 
+
+00:06:08.960 --> 00:06:11.189 align:start position:0%
+thing basically works. We have a sensing
+portion<00:06:09.680><c> that</c><00:06:09.919><c> is</c><00:06:10.160><c> the</c><00:06:10.400><c> thing</c><00:06:10.560><c> that</c><00:06:10.720><c> takes</c><00:06:10.960><c> the</c>
+
+00:06:11.189 --> 00:06:11.199 align:start position:0%
+portion that is the thing that takes the
+ 
+
+00:06:11.199 --> 00:06:13.590 align:start position:0%
+portion that is the thing that takes the
+input.<00:06:11.680><c> It</c><00:06:11.919><c> might</c><00:06:12.240><c> be</c><00:06:12.479><c> visual,</c><00:06:13.039><c> it</c><00:06:13.199><c> might</c><00:06:13.360><c> be</c>
+
+00:06:13.590 --> 00:06:13.600 align:start position:0%
+input. It might be visual, it might be
+ 
+
+00:06:13.600 --> 00:06:15.029 align:start position:0%
+input. It might be visual, it might be
+textual,<00:06:14.080><c> it</c><00:06:14.240><c> could</c><00:06:14.400><c> be</c><00:06:14.479><c> a</c><00:06:14.639><c> lot</c><00:06:14.800><c> of</c><00:06:14.880><c> different</c>
+
+00:06:15.029 --> 00:06:15.039 align:start position:0%
+textual, it could be a lot of different
+ 
+
+00:06:15.039 --> 00:06:17.990 align:start position:0%
+textual, it could be a lot of different
+things<00:06:15.520><c> but</c><00:06:15.759><c> that</c><00:06:16.080><c> feeds</c><00:06:16.400><c> into</c><00:06:16.800><c> the</c><00:06:17.039><c> AI</c><00:06:17.680><c> which</c>
+
+00:06:17.990 --> 00:06:18.000 align:start position:0%
+things but that feeds into the AI which
+ 
+
+00:06:18.000 --> 00:06:20.550 align:start position:0%
+things but that feeds into the AI which
+does<00:06:18.240><c> the</c><00:06:18.479><c> thinking</c><00:06:19.280><c> and</c><00:06:19.520><c> then</c><00:06:20.000><c> in</c><00:06:20.319><c> that</c>
+
+00:06:20.550 --> 00:06:20.560 align:start position:0%
+does the thinking and then in that
+ 
+
+00:06:20.560 --> 00:06:23.110 align:start position:0%
+does the thinking and then in that
+thinking<00:06:21.120><c> we</c><00:06:21.360><c> will</c><00:06:21.600><c> augment</c><00:06:22.080><c> that</c><00:06:22.720><c> with</c>
+
+00:06:23.110 --> 00:06:23.120 align:start position:0%
+thinking we will augment that with
+ 
+
+00:06:23.120 --> 00:06:25.110 align:start position:0%
+thinking we will augment that with
+policies,<00:06:23.840><c> preferences</c><00:06:24.400><c> and</c><00:06:24.639><c> other</c><00:06:24.880><c> things</c>
+
+00:06:25.110 --> 00:06:25.120 align:start position:0%
+policies, preferences and other things
+ 
+
+00:06:25.120 --> 00:06:26.469 align:start position:0%
+policies, preferences and other things
+like<00:06:25.360><c> that.</c><00:06:25.680><c> So</c><00:06:25.840><c> we'll</c><00:06:26.080><c> have</c><00:06:26.240><c> that</c>
+
+00:06:26.469 --> 00:06:26.479 align:start position:0%
+like that. So we'll have that
+ 
+
+00:06:26.479 --> 00:06:28.790 align:start position:0%
+like that. So we'll have that
+information<00:06:27.520><c> affecting</c><00:06:28.160><c> the</c><00:06:28.479><c> thought</c>
+
+00:06:28.790 --> 00:06:28.800 align:start position:0%
+information affecting the thought
+ 
+
+00:06:28.800 --> 00:06:30.629 align:start position:0%
+information affecting the thought
+process,<00:06:29.280><c> the</c><00:06:29.520><c> reasoning</c><00:06:29.919><c> process</c><00:06:30.319><c> that's</c>
+
+00:06:30.629 --> 00:06:30.639 align:start position:0%
+process, the reasoning process that's
+ 
+
+00:06:30.639 --> 00:06:32.550 align:start position:0%
+process, the reasoning process that's
+happening<00:06:31.120><c> and</c><00:06:31.360><c> then</c><00:06:31.600><c> ultimately</c><00:06:32.080><c> it</c><00:06:32.319><c> takes</c>
+
+00:06:32.550 --> 00:06:32.560 align:start position:0%
+happening and then ultimately it takes
+ 
+
+00:06:32.560 --> 00:06:34.950 align:start position:0%
+happening and then ultimately it takes
+those<00:06:32.800><c> actions.</c><00:06:33.520><c> So</c><00:06:33.680><c> it</c><00:06:33.919><c> could</c><00:06:34.080><c> do</c><00:06:34.240><c> an</c><00:06:34.400><c> API</c>
+
+00:06:34.950 --> 00:06:34.960 align:start position:0%
+those actions. So it could do an API
+ 
+
+00:06:34.960 --> 00:06:37.990 align:start position:0%
+those actions. So it could do an API
+call,<00:06:35.600><c> it</c><00:06:35.840><c> might</c><00:06:36.479><c> uh</c><00:06:36.639><c> write</c><00:06:36.960><c> some</c><00:06:37.199><c> data,</c><00:06:37.680><c> move</c>
+
+00:06:37.990 --> 00:06:38.000 align:start position:0%
+call, it might uh write some data, move
+ 
+
+00:06:38.000 --> 00:06:40.550 align:start position:0%
+call, it might uh write some data, move
+some<00:06:38.240><c> data</c><00:06:38.479><c> around,</c><00:06:39.120><c> it</c><00:06:39.360><c> might</c><00:06:39.600><c> use</c><00:06:39.759><c> a</c><00:06:40.000><c> tool,</c>
+
+00:06:40.550 --> 00:06:40.560 align:start position:0%
+some data around, it might use a tool,
+ 
+
+00:06:40.560 --> 00:06:43.270 align:start position:0%
+some data around, it might use a tool,
+it<00:06:40.800><c> might</c><00:06:40.960><c> spawn</c><00:06:41.360><c> other</c><00:06:41.680><c> agents.</c><00:06:42.560><c> And</c><00:06:42.720><c> then</c>
+
+00:06:43.270 --> 00:06:43.280 align:start position:0%
+it might spawn other agents. And then
+ 
+
+00:06:43.280 --> 00:06:45.749 align:start position:0%
+it might spawn other agents. And then
+all<00:06:43.520><c> of</c><00:06:43.680><c> this</c><00:06:44.240><c> is</c><00:06:44.560><c> going</c><00:06:44.639><c> to</c><00:06:44.800><c> be</c><00:06:44.960><c> driven</c><00:06:45.360><c> by</c>
+
+00:06:45.749 --> 00:06:45.759 align:start position:0%
+all of this is going to be driven by
+ 
+
+00:06:45.759 --> 00:06:48.230 align:start position:0%
+all of this is going to be driven by
+credentials.<00:06:46.560><c> So</c><00:06:46.800><c> we</c><00:06:47.039><c> have</c><00:06:47.520><c> individual</c>
+
+00:06:48.230 --> 00:06:48.240 align:start position:0%
+credentials. So we have individual
+ 
+
+00:06:48.240 --> 00:06:50.309 align:start position:0%
+credentials. So we have individual
+capabilities<00:06:49.280><c> that</c><00:06:49.600><c> each</c><00:06:49.840><c> one</c><00:06:50.000><c> of</c><00:06:50.080><c> these</c>
+
+00:06:50.309 --> 00:06:50.319 align:start position:0%
+capabilities that each one of these
+ 
+
+00:06:50.319 --> 00:06:52.550 align:start position:0%
+capabilities that each one of these
+things<00:06:50.639><c> ought</c><00:06:50.800><c> to</c><00:06:50.880><c> be</c><00:06:51.039><c> able</c><00:06:51.199><c> to</c><00:06:51.360><c> have.</c><00:06:52.000><c> So,</c><00:06:52.319><c> if</c>
+
+00:06:52.550 --> 00:06:52.560 align:start position:0%
+things ought to be able to have. So, if
+ 
+
+00:06:52.560 --> 00:06:54.469 align:start position:0%
+things ought to be able to have. So, if
+I'm<00:06:52.720><c> an</c><00:06:52.960><c> attacker,</c><00:06:53.600><c> I</c><00:06:53.840><c> look</c><00:06:53.919><c> at</c><00:06:54.080><c> this</c><00:06:54.319><c> thing</c>
+
+00:06:54.469 --> 00:06:54.479 align:start position:0%
+I'm an attacker, I look at this thing
+ 
+
+00:06:54.479 --> 00:06:56.870 align:start position:0%
+I'm an attacker, I look at this thing
+and<00:06:54.880><c> start</c><00:06:55.120><c> to</c><00:06:55.280><c> figure</c><00:06:55.840><c> how</c><00:06:56.080><c> might</c><00:06:56.319><c> I</c><00:06:56.560><c> break</c>
+
+00:06:56.870 --> 00:06:56.880 align:start position:0%
+and start to figure how might I break
+ 
+
+00:06:56.880 --> 00:06:59.189 align:start position:0%
+and start to figure how might I break
+this<00:06:57.120><c> thing?</c><00:06:57.680><c> Well,</c><00:06:58.000><c> one</c><00:06:58.240><c> thing</c><00:06:58.319><c> I</c><00:06:58.560><c> could</c><00:06:58.800><c> do</c>
+
+00:06:59.189 --> 00:06:59.199 align:start position:0%
+this thing? Well, one thing I could do
+ 
+
+00:06:59.199 --> 00:07:02.309 align:start position:0%
+this thing? Well, one thing I could do
+right<00:06:59.440><c> here</c><00:07:00.160><c> is</c><00:07:00.639><c> a</c><00:07:00.880><c> direct</c><00:07:01.199><c> prompt</c><00:07:01.599><c> injection.</c>
+
+00:07:02.309 --> 00:07:02.319 align:start position:0%
+right here is a direct prompt injection.
+ 
+
+00:07:02.319 --> 00:07:05.270 align:start position:0%
+right here is a direct prompt injection.
+I<00:07:02.560><c> might</c><00:07:02.800><c> send</c><00:07:03.199><c> a</c><00:07:03.440><c> prompt</c><00:07:03.840><c> in</c><00:07:04.479><c> that</c><00:07:04.960><c> is</c><00:07:05.199><c> going</c>
+
+00:07:05.270 --> 00:07:05.280 align:start position:0%
+I might send a prompt in that is going
+ 
+
+00:07:05.280 --> 00:07:07.350 align:start position:0%
+I might send a prompt in that is going
+to<00:07:05.440><c> break</c><00:07:05.680><c> the</c><00:07:05.919><c> context</c><00:07:06.240><c> of</c><00:07:06.400><c> this</c><00:07:06.639><c> system</c><00:07:07.120><c> and</c>
+
+00:07:07.350 --> 00:07:07.360 align:start position:0%
+to break the context of this system and
+ 
+
+00:07:07.360 --> 00:07:09.110 align:start position:0%
+to break the context of this system and
+have<00:07:07.520><c> it</c><00:07:07.759><c> start</c><00:07:08.000><c> doing</c><00:07:08.319><c> things</c><00:07:08.479><c> that</c><00:07:08.639><c> it's</c><00:07:08.960><c> not</c>
+
+00:07:09.110 --> 00:07:09.120 align:start position:0%
+have it start doing things that it's not
+ 
+
+00:07:09.120 --> 00:07:10.950 align:start position:0%
+have it start doing things that it's not
+supposed<00:07:09.360><c> to</c><00:07:09.599><c> do.</c><00:07:10.080><c> So,</c><00:07:10.240><c> that's</c><00:07:10.560><c> one</c><00:07:10.720><c> of</c><00:07:10.800><c> the</c>
+
+00:07:10.950 --> 00:07:10.960 align:start position:0%
+supposed to do. So, that's one of the
+ 
+
+00:07:10.960 --> 00:07:13.270 align:start position:0%
+supposed to do. So, that's one of the
+things<00:07:11.120><c> I</c><00:07:11.360><c> could</c><00:07:11.520><c> think</c><00:07:11.680><c> about.</c><00:07:12.080><c> Another</c><00:07:12.639><c> is</c><00:07:13.039><c> I</c>
+
+00:07:13.270 --> 00:07:13.280 align:start position:0%
+things I could think about. Another is I
+ 
+
+00:07:13.280 --> 00:07:15.830 align:start position:0%
+things I could think about. Another is I
+could<00:07:13.440><c> attack</c><00:07:13.840><c> right</c><00:07:14.080><c> here</c><00:07:14.639><c> and</c><00:07:14.880><c> I</c><00:07:15.120><c> could</c><00:07:15.599><c> do</c>
+
+00:07:15.830 --> 00:07:15.840 align:start position:0%
+could attack right here and I could do
+ 
+
+00:07:15.840 --> 00:07:18.309 align:start position:0%
+could attack right here and I could do
+something<00:07:16.080><c> to</c><00:07:16.479><c> manipulate</c><00:07:17.199><c> to</c><00:07:17.440><c> to</c><00:07:17.919><c> mess</c><00:07:18.160><c> up</c>
+
+00:07:18.309 --> 00:07:18.319 align:start position:0%
+something to manipulate to to mess up
+ 
+
+00:07:18.319 --> 00:07:20.790 align:start position:0%
+something to manipulate to to mess up
+the<00:07:18.560><c> policy</c><00:07:19.039><c> the</c><00:07:19.199><c> preference</c><00:07:19.680><c> information</c><00:07:20.479><c> to</c>
+
+00:07:20.790 --> 00:07:20.800 align:start position:0%
+the policy the preference information to
+ 
+
+00:07:20.800 --> 00:07:23.270 align:start position:0%
+the policy the preference information to
+poison<00:07:21.199><c> that</c><00:07:21.520><c> information</c><00:07:22.319><c> or</c><00:07:22.560><c> even</c><00:07:22.800><c> poison</c>
+
+00:07:23.270 --> 00:07:23.280 align:start position:0%
+poison that information or even poison
+ 
+
+00:07:23.280 --> 00:07:24.950 align:start position:0%
+poison that information or even poison
+the<00:07:23.520><c> model</c><00:07:23.680><c> that</c><00:07:23.919><c> was</c><00:07:24.080><c> used</c><00:07:24.319><c> to</c><00:07:24.479><c> train</c><00:07:24.720><c> this</c>
+
+00:07:24.950 --> 00:07:24.960 align:start position:0%
+the model that was used to train this
+ 
+
+00:07:24.960 --> 00:07:27.670 align:start position:0%
+the model that was used to train this
+thing.<00:07:25.440><c> So</c><00:07:25.680><c> that's</c><00:07:25.919><c> another</c><00:07:26.240><c> one</c><00:07:26.400><c> to</c><00:07:26.639><c> look</c><00:07:26.720><c> at.</c>
+
+00:07:27.670 --> 00:07:27.680 align:start position:0%
+thing. So that's another one to look at.
+ 
+
+00:07:27.680 --> 00:07:29.830 align:start position:0%
+thing. So that's another one to look at.
+Another<00:07:28.080><c> thing</c><00:07:28.319><c> here</c><00:07:28.639><c> is</c><00:07:28.960><c> looking</c><00:07:29.199><c> at</c><00:07:29.440><c> all</c><00:07:29.599><c> of</c>
+
+00:07:29.830 --> 00:07:29.840 align:start position:0%
+Another thing here is looking at all of
+ 
+
+00:07:29.840 --> 00:07:32.309 align:start position:0%
+Another thing here is looking at all of
+these<00:07:30.160><c> interfaces.</c><00:07:31.280><c> What</c><00:07:31.440><c> if</c><00:07:31.599><c> I</c><00:07:31.840><c> insert</c>
+
+00:07:32.309 --> 00:07:32.319 align:start position:0%
+these interfaces. What if I insert
+ 
+
+00:07:32.319 --> 00:07:35.110 align:start position:0%
+these interfaces. What if I insert
+myself<00:07:32.880><c> at</c><00:07:33.120><c> any</c><00:07:33.360><c> one</c><00:07:33.599><c> of</c><00:07:33.759><c> these?</c><00:07:34.639><c> that</c><00:07:34.880><c> would</c>
+
+00:07:35.110 --> 00:07:35.120 align:start position:0%
+myself at any one of these? that would
+ 
+
+00:07:35.120 --> 00:07:37.189 align:start position:0%
+myself at any one of these? that would
+be<00:07:35.759><c> uh</c><00:07:35.840><c> a</c><00:07:36.160><c> place</c><00:07:36.319><c> where</c><00:07:36.479><c> I</c><00:07:36.720><c> could</c><00:07:36.880><c> do</c><00:07:37.039><c> some</c>
+
+00:07:37.189 --> 00:07:37.199 align:start position:0%
+be uh a place where I could do some
+ 
+
+00:07:37.199 --> 00:07:39.990 align:start position:0%
+be uh a place where I could do some
+damage<00:07:37.840><c> if</c><00:07:38.160><c> on</c><00:07:38.479><c> this</c><00:07:38.800><c> and</c><00:07:39.039><c> this</c><00:07:39.280><c> might</c><00:07:39.520><c> be</c><00:07:39.759><c> say</c>
+
+00:07:39.990 --> 00:07:40.000 align:start position:0%
+damage if on this and this might be say
+ 
+
+00:07:40.000 --> 00:07:42.870 align:start position:0%
+damage if on this and this might be say
+an<00:07:40.240><c> MCP</c><00:07:40.880><c> call</c><00:07:41.360><c> something</c><00:07:41.599><c> along</c><00:07:41.919><c> those</c><00:07:42.160><c> lines.</c>
+
+00:07:42.870 --> 00:07:42.880 align:start position:0%
+an MCP call something along those lines.
+ 
+
+00:07:42.880 --> 00:07:45.589 align:start position:0%
+an MCP call something along those lines.
+Um<00:07:43.360><c> and</c><00:07:43.680><c> I</c><00:07:43.919><c> would</c><00:07:44.160><c> be</c><00:07:44.240><c> able</c><00:07:44.479><c> to</c><00:07:44.639><c> insert</c><00:07:45.199><c> and</c>
+
+00:07:45.589 --> 00:07:45.599 align:start position:0%
+Um and I would be able to insert and
+ 
+
+00:07:45.599 --> 00:07:48.150 align:start position:0%
+Um and I would be able to insert and
+take<00:07:45.759><c> control</c><00:07:46.080><c> of</c><00:07:46.319><c> that.</c><00:07:46.960><c> I</c><00:07:47.199><c> might</c><00:07:47.440><c> also</c>
+
+00:07:48.150 --> 00:07:48.160 align:start position:0%
+take control of that. I might also
+ 
+
+00:07:48.160 --> 00:07:50.150 align:start position:0%
+take control of that. I might also
+attack<00:07:48.639><c> individuals</c><00:07:49.199><c> of</c><00:07:49.440><c> these</c><00:07:49.680><c> services,</c>
+
+00:07:50.150 --> 00:07:50.160 align:start position:0%
+attack individuals of these services,
+ 
+
+00:07:50.160 --> 00:07:52.950 align:start position:0%
+attack individuals of these services,
+these<00:07:50.400><c> APIs,</c><00:07:51.039><c> the</c><00:07:51.280><c> data</c><00:07:51.599><c> source,</c><00:07:51.919><c> the</c><00:07:52.160><c> tools,</c>
+
+00:07:52.950 --> 00:07:52.960 align:start position:0%
+these APIs, the data source, the tools,
+ 
+
+00:07:52.960 --> 00:07:55.350 align:start position:0%
+these APIs, the data source, the tools,
+uh<00:07:53.120><c> the</c><00:07:53.360><c> agents.</c><00:07:54.080><c> So</c><00:07:54.319><c> all</c><00:07:54.479><c> of</c><00:07:54.639><c> those</c><00:07:54.960><c> are</c><00:07:55.120><c> an</c>
+
+00:07:55.350 --> 00:07:55.360 align:start position:0%
+uh the agents. So all of those are an
+ 
+
+00:07:55.360 --> 00:07:57.350 align:start position:0%
+uh the agents. So all of those are an
+extension<00:07:55.680><c> of</c><00:07:55.840><c> the</c><00:07:56.000><c> attack</c><00:07:56.319><c> surface.</c><00:07:57.199><c> And</c>
+
+00:07:57.350 --> 00:07:57.360 align:start position:0%
+extension of the attack surface. And
+ 
+
+00:07:57.360 --> 00:07:59.589 align:start position:0%
+extension of the attack surface. And
+then<00:07:57.680><c> right</c><00:07:57.919><c> here</c><00:07:58.479><c> they're</c><00:07:58.720><c> credentials.</c>
+
+00:07:59.589 --> 00:07:59.599 align:start position:0%
+then right here they're credentials.
+ 
+
+00:07:59.599 --> 00:08:01.909 align:start position:0%
+then right here they're credentials.
+Maybe<00:07:59.919><c> I</c><00:08:00.160><c> want</c><00:08:00.240><c> to</c><00:08:00.400><c> go</c><00:08:00.560><c> in</c><00:08:00.720><c> and</c><00:08:00.960><c> attack</c><00:08:01.280><c> those.</c>
+
+00:08:01.909 --> 00:08:01.919 align:start position:0%
+Maybe I want to go in and attack those.
+ 
+
+00:08:01.919 --> 00:08:04.070 align:start position:0%
+Maybe I want to go in and attack those.
+Maybe<00:08:02.160><c> I</c><00:08:02.400><c> can</c><00:08:02.560><c> copy</c><00:08:02.879><c> those</c><00:08:03.120><c> credentials.</c>
+
+00:08:04.070 --> 00:08:04.080 align:start position:0%
+Maybe I can copy those credentials.
+ 
+
+00:08:04.080 --> 00:08:07.029 align:start position:0%
+Maybe I can copy those credentials.
+Maybe<00:08:04.319><c> I</c><00:08:04.639><c> can</c><00:08:05.120><c> log</c><00:08:05.440><c> into</c><00:08:05.759><c> a</c><00:08:06.000><c> system</c><00:08:06.400><c> and</c><00:08:06.720><c> create</c>
+
+00:08:07.029 --> 00:08:07.039 align:start position:0%
+Maybe I can log into a system and create
+ 
+
+00:08:07.039 --> 00:08:09.589 align:start position:0%
+Maybe I can log into a system and create
+new<00:08:07.360><c> accounts</c><00:08:07.919><c> or</c><00:08:08.479><c> increase</c><00:08:08.800><c> my</c><00:08:09.120><c> level</c><00:08:09.360><c> of</c>
+
+00:08:09.589 --> 00:08:09.599 align:start position:0%
+new accounts or increase my level of
+ 
+
+00:08:09.599 --> 00:08:11.589 align:start position:0%
+new accounts or increase my level of
+privilege.<00:08:10.319><c> So</c><00:08:10.479><c> there's</c><00:08:10.720><c> a</c><00:08:10.960><c> lot</c><00:08:11.120><c> of</c><00:08:11.280><c> different</c>
+
+00:08:11.589 --> 00:08:11.599 align:start position:0%
+privilege. So there's a lot of different
+ 
+
+00:08:11.599 --> 00:08:14.710 align:start position:0%
+privilege. So there's a lot of different
+moving<00:08:12.080><c> parts</c><00:08:12.479><c> in</c><00:08:12.800><c> this</c><00:08:13.120><c> system.</c><00:08:13.759><c> An</c><00:08:14.000><c> attacker</c>
+
+00:08:14.710 --> 00:08:14.720 align:start position:0%
+moving parts in this system. An attacker
+ 
+
+00:08:14.720 --> 00:08:17.110 align:start position:0%
+moving parts in this system. An attacker
+has<00:08:15.039><c> a</c><00:08:15.440><c> wealth</c><00:08:15.840><c> of</c><00:08:16.000><c> different</c><00:08:16.319><c> places</c><00:08:16.879><c> that</c>
+
+00:08:17.110 --> 00:08:17.120 align:start position:0%
+has a wealth of different places that
+ 
+
+00:08:17.120 --> 00:08:19.589 align:start position:0%
+has a wealth of different places that
+they<00:08:17.360><c> could</c><00:08:17.680><c> in</c><00:08:17.840><c> fact</c><00:08:18.160><c> dive</c><00:08:18.479><c> into</c><00:08:19.039><c> and</c><00:08:19.280><c> do</c><00:08:19.440><c> a</c>
+
+00:08:19.589 --> 00:08:19.599 align:start position:0%
+they could in fact dive into and do a
+ 
+
+00:08:19.599 --> 00:08:21.589 align:start position:0%
+they could in fact dive into and do a
+lot<00:08:19.680><c> of</c><00:08:19.840><c> damage.</c><00:08:20.400><c> So</c><00:08:20.560><c> now</c><00:08:20.800><c> let's</c><00:08:21.039><c> apply</c><00:08:21.280><c> those</c>
+
+00:08:21.589 --> 00:08:21.599 align:start position:0%
+lot of damage. So now let's apply those
+ 
+
+00:08:21.599 --> 00:08:24.869 align:start position:0%
+lot of damage. So now let's apply those
+zero<00:08:21.919><c> trust</c><00:08:22.240><c> principles</c><00:08:23.039><c> to</c><00:08:23.360><c> this</c><00:08:23.680><c> AI</c><00:08:24.240><c> agentic</c>
+
+00:08:24.869 --> 00:08:24.879 align:start position:0%
+zero trust principles to this AI agentic
+ 
+
+00:08:24.879 --> 00:08:27.029 align:start position:0%
+zero trust principles to this AI agentic
+environment<00:08:25.840><c> and</c><00:08:26.080><c> we'll</c><00:08:26.319><c> see</c><00:08:26.400><c> what</c><00:08:26.639><c> we</c><00:08:26.800><c> can</c><00:08:26.879><c> do</c>
+
+00:08:27.029 --> 00:08:27.039 align:start position:0%
+environment and we'll see what we can do
+ 
+
+00:08:27.039 --> 00:08:29.350 align:start position:0%
+environment and we'll see what we can do
+to<00:08:27.280><c> eliminate</c><00:08:28.080><c> some</c><00:08:28.400><c> or</c><00:08:28.720><c> all</c><00:08:28.879><c> of</c><00:08:29.039><c> these</c>
+
+00:08:29.350 --> 00:08:29.360 align:start position:0%
+to eliminate some or all of these
+ 
+
+00:08:29.360 --> 00:08:31.350 align:start position:0%
+to eliminate some or all of these
+threats.<00:08:30.080><c> So</c><00:08:30.319><c> first</c><00:08:30.560><c> of</c><00:08:30.639><c> all,</c><00:08:30.960><c> we're</c><00:08:31.120><c> going</c><00:08:31.199><c> to</c>
+
+00:08:31.350 --> 00:08:31.360 align:start position:0%
+threats. So first of all, we're going to
+ 
+
+00:08:31.360 --> 00:08:33.190 align:start position:0%
+threats. So first of all, we're going to
+start<00:08:31.520><c> here</c><00:08:31.840><c> with</c><00:08:32.080><c> the</c><00:08:32.320><c> credentials.</c><00:08:32.880><c> And</c><00:08:33.039><c> I</c>
+
+00:08:33.190 --> 00:08:33.200 align:start position:0%
+start here with the credentials. And I
+ 
+
+00:08:33.200 --> 00:08:35.190 align:start position:0%
+start here with the credentials. And I
+mentioned<00:08:33.360><c> this</c><00:08:33.599><c> before,</c><00:08:34.320><c> we</c><00:08:34.560><c> want</c><00:08:34.800><c> unique</c>
+
+00:08:35.190 --> 00:08:35.200 align:start position:0%
+mentioned this before, we want unique
+ 
+
+00:08:35.200 --> 00:08:37.430 align:start position:0%
+mentioned this before, we want unique
+credentials<00:08:35.839><c> for</c><00:08:36.159><c> every</c><00:08:36.479><c> agent,</c><00:08:36.959><c> for</c><00:08:37.200><c> every</c>
+
+00:08:37.430 --> 00:08:37.440 align:start position:0%
+credentials for every agent, for every
+ 
+
+00:08:37.440 --> 00:08:39.670 align:start position:0%
+credentials for every agent, for every
+user,<00:08:37.839><c> and</c><00:08:38.159><c> every</c><00:08:38.399><c> agent</c><00:08:38.719><c> that</c><00:08:38.959><c> those</c><00:08:39.279><c> agents</c>
+
+00:08:39.670 --> 00:08:39.680 align:start position:0%
+user, and every agent that those agents
+ 
+
+00:08:39.680 --> 00:08:41.909 align:start position:0%
+user, and every agent that those agents
+create<00:08:40.080><c> as</c><00:08:40.320><c> well.</c><00:08:40.719><c> So,</c><00:08:40.959><c> we</c><00:08:41.200><c> need</c><00:08:41.279><c> a</c><00:08:41.519><c> place</c><00:08:41.680><c> to</c>
+
+00:08:41.909 --> 00:08:41.919 align:start position:0%
+create as well. So, we need a place to
+ 
+
+00:08:41.919 --> 00:08:44.550 align:start position:0%
+create as well. So, we need a place to
+store<00:08:42.320><c> all</c><00:08:42.560><c> of</c><00:08:42.719><c> these</c><00:08:43.039><c> nonhuman</c><00:08:43.919><c> identities</c>
+
+00:08:44.550 --> 00:08:44.560 align:start position:0%
+store all of these nonhuman identities
+ 
+
+00:08:44.560 --> 00:08:47.430 align:start position:0%
+store all of these nonhuman identities
+and<00:08:44.880><c> keep</c><00:08:45.120><c> all</c><00:08:45.279><c> of</c><00:08:45.440><c> them</c><00:08:46.160><c> access</c><00:08:46.720><c> controlled.</c>
+
+00:08:47.430 --> 00:08:47.440 align:start position:0%
+and keep all of them access controlled.
+ 
+
+00:08:47.440 --> 00:08:49.670 align:start position:0%
+and keep all of them access controlled.
+Keep<00:08:47.680><c> them</c><00:08:47.920><c> so</c><00:08:48.160><c> that</c><00:08:48.480><c> they</c><00:08:48.959><c> don't</c><00:08:49.279><c> have</c><00:08:49.440><c> more</c>
+
+00:08:49.670 --> 00:08:49.680 align:start position:0%
+Keep them so that they don't have more
+ 
+
+00:08:49.680 --> 00:08:51.670 align:start position:0%
+Keep them so that they don't have more
+privilege<00:08:50.080><c> than</c><00:08:50.320><c> they're</c><00:08:50.560><c> supposed</c><00:08:50.880><c> to</c><00:08:51.040><c> have.</c>
+
+00:08:51.670 --> 00:08:51.680 align:start position:0%
+privilege than they're supposed to have.
+ 
+
+00:08:51.680 --> 00:08:54.790 align:start position:0%
+privilege than they're supposed to have.
+We<00:08:51.920><c> want</c><00:08:52.080><c> it</c><00:08:52.240><c> to</c><00:08:52.399><c> be</c><00:08:52.880><c> just</c><00:08:53.200><c> in</c><00:08:53.519><c> time,</c><00:08:54.399><c> not</c><00:08:54.560><c> just</c>
+
+00:08:54.790 --> 00:08:54.800 align:start position:0%
+We want it to be just in time, not just
+ 
+
+00:08:54.800 --> 00:08:56.790 align:start position:0%
+We want it to be just in time, not just
+in<00:08:55.120><c> case.</c><00:08:55.440><c> In</c><00:08:55.600><c> other</c><00:08:55.760><c> words,</c><00:08:56.160><c> we</c><00:08:56.399><c> give</c><00:08:56.640><c> the</c>
+
+00:08:56.790 --> 00:08:56.800 align:start position:0%
+in case. In other words, we give the
+ 
+
+00:08:56.800 --> 00:08:58.550 align:start position:0%
+in case. In other words, we give the
+privilege<00:08:57.279><c> just</c><00:08:57.519><c> when</c><00:08:57.760><c> it's</c><00:08:58.000><c> needed</c><00:08:58.240><c> and</c><00:08:58.399><c> then</c>
+
+00:08:58.550 --> 00:08:58.560 align:start position:0%
+privilege just when it's needed and then
+ 
+
+00:08:58.560 --> 00:09:00.310 align:start position:0%
+privilege just when it's needed and then
+we<00:08:58.720><c> take</c><00:08:58.880><c> it</c><00:08:59.040><c> away.</c><00:08:59.519><c> We</c><00:08:59.680><c> don't</c><00:08:59.839><c> give</c><00:08:59.920><c> it</c><00:09:00.080><c> in</c>
+
+00:09:00.310 --> 00:09:00.320 align:start position:0%
+we take it away. We don't give it in
+ 
+
+00:09:00.320 --> 00:09:01.750 align:start position:0%
+we take it away. We don't give it in
+advance<00:09:00.560><c> and</c><00:09:00.800><c> say,</c><00:09:00.880><c> "Well,</c><00:09:01.120><c> just</c><00:09:01.279><c> in</c><00:09:01.440><c> case</c><00:09:01.519><c> you</c>
+
+00:09:01.750 --> 00:09:01.760 align:start position:0%
+advance and say, "Well, just in case you
+ 
+
+00:09:01.760 --> 00:09:03.509 align:start position:0%
+advance and say, "Well, just in case you
+might<00:09:01.920><c> need</c><00:09:02.080><c> this</c><00:09:02.320><c> later."</c><00:09:02.959><c> So,</c><00:09:03.200><c> we're</c><00:09:03.440><c> going</c>
+
+00:09:03.509 --> 00:09:03.519 align:start position:0%
+might need this later." So, we're going
+ 
+
+00:09:03.519 --> 00:09:04.949 align:start position:0%
+might need this later." So, we're going
+to<00:09:03.600><c> do</c><00:09:03.760><c> that.</c><00:09:04.240><c> We're</c><00:09:04.480><c> going</c><00:09:04.560><c> to</c><00:09:04.720><c> make</c><00:09:04.800><c> sure</c>
+
+00:09:04.949 --> 00:09:04.959 align:start position:0%
+to do that. We're going to make sure
+ 
+
+00:09:04.959 --> 00:09:08.310 align:start position:0%
+to do that. We're going to make sure
+that<00:09:05.120><c> these</c><00:09:05.440><c> systems</c><00:09:06.160><c> also</c><00:09:07.040><c> never</c><00:09:07.680><c> include</c>
+
+00:09:08.310 --> 00:09:08.320 align:start position:0%
+that these systems also never include
+ 
+
+00:09:08.320 --> 00:09:11.030 align:start position:0%
+that these systems also never include
+credentials<00:09:09.279><c> buried</c><00:09:09.920><c> into</c><00:09:10.480><c> the</c><00:09:10.800><c> system</c>
+
+00:09:11.030 --> 00:09:11.040 align:start position:0%
+credentials buried into the system
+ 
+
+00:09:11.040 --> 00:09:13.430 align:start position:0%
+credentials buried into the system
+itself.<00:09:11.839><c> And</c><00:09:12.000><c> that's</c><00:09:12.240><c> been</c><00:09:12.480><c> a</c><00:09:12.720><c> temptation</c><00:09:13.200><c> of</c>
+
+00:09:13.430 --> 00:09:13.440 align:start position:0%
+itself. And that's been a temptation of
+ 
+
+00:09:13.440 --> 00:09:15.910 align:start position:0%
+itself. And that's been a temptation of
+programmers.<00:09:14.160><c> They</c><00:09:14.399><c> put</c><00:09:14.560><c> a</c><00:09:14.880><c> a</c><00:09:15.200><c> password,</c><00:09:15.760><c> they</c>
+
+00:09:15.910 --> 00:09:15.920 align:start position:0%
+programmers. They put a a password, they
+ 
+
+00:09:15.920 --> 00:09:18.150 align:start position:0%
+programmers. They put a a password, they
+put<00:09:16.080><c> an</c><00:09:16.240><c> API</c><00:09:16.720><c> key,</c><00:09:17.120><c> and</c><00:09:17.279><c> they</c><00:09:17.519><c> bet</c><00:09:17.680><c> it</c><00:09:17.839><c> direct</c>
+
+00:09:18.150 --> 00:09:18.160 align:start position:0%
+put an API key, and they bet it direct
+ 
+
+00:09:18.160 --> 00:09:20.630 align:start position:0%
+put an API key, and they bet it direct
+embed<00:09:18.560><c> it</c><00:09:18.720><c> directly</c><00:09:19.200><c> into</c><00:09:19.519><c> their</c><00:09:19.760><c> code.</c><00:09:20.399><c> That</c>
+
+00:09:20.630 --> 00:09:20.640 align:start position:0%
+embed it directly into their code. That
+ 
+
+00:09:20.640 --> 00:09:22.710 align:start position:0%
+embed it directly into their code. That
+is<00:09:20.720><c> an</c><00:09:20.959><c> absolute</c><00:09:21.440><c> no</c><00:09:21.680><c> no.</c><00:09:22.080><c> What</c><00:09:22.320><c> we</c><00:09:22.560><c> want</c>
+
+00:09:22.710 --> 00:09:22.720 align:start position:0%
+is an absolute no no. What we want
+ 
+
+00:09:22.720 --> 00:09:25.190 align:start position:0%
+is an absolute no no. What we want
+instead<00:09:23.200><c> is</c><00:09:23.440><c> to</c><00:09:23.680><c> store</c><00:09:24.000><c> all</c><00:09:24.240><c> of</c><00:09:24.320><c> these</c><00:09:24.800><c> in</c><00:09:25.040><c> a</c>
+
+00:09:25.190 --> 00:09:25.200 align:start position:0%
+instead is to store all of these in a
+ 
+
+00:09:25.200 --> 00:09:28.550 align:start position:0%
+instead is to store all of these in a
+vault<00:09:26.000><c> where</c><00:09:26.399><c> we</c><00:09:26.640><c> have</c><00:09:26.800><c> a</c><00:09:27.040><c> dynamic</c><00:09:28.000><c> system</c>
+
+00:09:28.550 --> 00:09:28.560 align:start position:0%
+vault where we have a dynamic system
+ 
+
+00:09:28.560 --> 00:09:30.630 align:start position:0%
+vault where we have a dynamic system
+where<00:09:28.880><c> I</c><00:09:29.040><c> can</c><00:09:29.120><c> go</c><00:09:29.360><c> check</c><00:09:29.680><c> credentials</c><00:09:30.240><c> in</c><00:09:30.399><c> and</c>
+
+00:09:30.630 --> 00:09:30.640 align:start position:0%
+where I can go check credentials in and
+ 
+
+00:09:30.640 --> 00:09:33.030 align:start position:0%
+where I can go check credentials in and
+out.<00:09:31.120><c> I</c><00:09:31.360><c> can</c><00:09:31.519><c> get</c><00:09:31.680><c> new</c><00:09:31.920><c> credentials</c><00:09:32.480><c> created</c>
+
+00:09:33.030 --> 00:09:33.040 align:start position:0%
+out. I can get new credentials created
+ 
+
+00:09:33.040 --> 00:09:36.310 align:start position:0%
+out. I can get new credentials created
+over<00:09:33.360><c> time.</c><00:09:34.000><c> I</c><00:09:34.240><c> can</c><00:09:34.399><c> enforce</c><00:09:35.040><c> just</c><00:09:35.279><c> in</c><00:09:35.519><c> time.</c><00:09:36.080><c> I</c>
+
+00:09:36.310 --> 00:09:36.320 align:start position:0%
+over time. I can enforce just in time. I
+ 
+
+00:09:36.320 --> 00:09:39.509 align:start position:0%
+over time. I can enforce just in time. I
+can<00:09:36.399><c> enforce</c><00:09:37.200><c> RO</c><00:09:37.600><c> based</c><00:09:38.000><c> access</c><00:09:38.560><c> control.</c><00:09:39.279><c> I</c>
+
+00:09:39.509 --> 00:09:39.519 align:start position:0%
+can enforce RO based access control. I
+ 
+
+00:09:39.519 --> 00:09:41.829 align:start position:0%
+can enforce RO based access control. I
+can<00:09:39.680><c> do</c><00:09:39.839><c> strong</c><00:09:40.240><c> authentication.</c><00:09:41.360><c> I</c><00:09:41.519><c> can</c><00:09:41.680><c> do</c>
+
+00:09:41.829 --> 00:09:41.839 align:start position:0%
+can do strong authentication. I can do
+ 
+
+00:09:41.839 --> 00:09:43.509 align:start position:0%
+can do strong authentication. I can do
+all<00:09:42.080><c> of</c><00:09:42.240><c> those</c><00:09:42.480><c> kinds</c><00:09:42.720><c> of</c><00:09:42.880><c> things</c><00:09:43.040><c> that</c><00:09:43.279><c> I'm</c>
+
+00:09:43.509 --> 00:09:43.519 align:start position:0%
+all of those kinds of things that I'm
+ 
+
+00:09:43.519 --> 00:09:46.790 align:start position:0%
+all of those kinds of things that I'm
+needing<00:09:43.760><c> to</c><00:09:44.000><c> do</c><00:09:44.560><c> in</c><00:09:44.800><c> these</c><00:09:45.120><c> cases.</c><00:09:45.839><c> So,</c><00:09:46.480><c> we're</c>
+
+00:09:46.790 --> 00:09:46.800 align:start position:0%
+needing to do in these cases. So, we're
+ 
+
+00:09:46.800 --> 00:09:49.670 align:start position:0%
+needing to do in these cases. So, we're
+going<00:09:46.880><c> to</c><00:09:47.279><c> uh</c><00:09:47.600><c> cover</c><00:09:48.000><c> all</c><00:09:48.240><c> of</c><00:09:48.399><c> those</c><00:09:48.640><c> bases.</c><00:09:49.360><c> No</c>
+
+00:09:49.670 --> 00:09:49.680 align:start position:0%
+going to uh cover all of those bases. No
+ 
+
+00:09:49.680 --> 00:09:51.670 align:start position:0%
+going to uh cover all of those bases. No
+static<00:09:50.080><c> credentials.</c><00:09:51.040><c> everything</c><00:09:51.440><c> is</c>
+
+00:09:51.670 --> 00:09:51.680 align:start position:0%
+static credentials. everything is
+ 
+
+00:09:51.680 --> 00:09:54.230 align:start position:0%
+static credentials. everything is
+dynamic<00:09:52.160><c> instead.</c><00:09:53.200><c> And</c><00:09:53.519><c> then</c><00:09:53.760><c> we're</c><00:09:54.080><c> going</c><00:09:54.160><c> to</c>
+
+00:09:54.230 --> 00:09:54.240 align:start position:0%
+dynamic instead. And then we're going to
+ 
+
+00:09:54.240 --> 00:09:56.870 align:start position:0%
+dynamic instead. And then we're going to
+move<00:09:54.560><c> over</c><00:09:54.800><c> to</c><00:09:54.959><c> the</c><00:09:55.200><c> tools</c><00:09:55.519><c> themselves.</c><00:09:56.399><c> So</c><00:09:56.640><c> I</c>
+
+00:09:56.870 --> 00:09:56.880 align:start position:0%
+move over to the tools themselves. So I
+ 
+
+00:09:56.880 --> 00:10:00.870 align:start position:0%
+move over to the tools themselves. So I
+need<00:09:57.040><c> to</c><00:09:57.200><c> make</c><00:09:57.360><c> sure</c><00:09:57.839><c> that</c><00:09:58.160><c> these</c><00:09:58.560><c> things</c><00:09:59.279><c> have</c>
+
+00:10:00.870 --> 00:10:00.880 align:start position:0%
+need to make sure that these things have
+ 
+
+00:10:00.880 --> 00:10:02.310 align:start position:0%
+need to make sure that these things have
+registered<00:10:01.440><c> versions.</c><00:10:01.839><c> So</c><00:10:02.000><c> I'm</c><00:10:02.240><c> going</c><00:10:02.240><c> to</c>
+
+00:10:02.310 --> 00:10:02.320 align:start position:0%
+registered versions. So I'm going to
+ 
+
+00:10:02.320 --> 00:10:04.630 align:start position:0%
+registered versions. So I'm going to
+have<00:10:02.480><c> a</c><00:10:02.640><c> tool</c><00:10:03.040><c> registry</c><00:10:04.000><c> where</c><00:10:04.240><c> I</c><00:10:04.480><c> have</c>
+
+00:10:04.630 --> 00:10:04.640 align:start position:0%
+have a tool registry where I have
+ 
+
+00:10:04.640 --> 00:10:08.630 align:start position:0%
+have a tool registry where I have
+verified<00:10:05.680><c> these</c><00:10:06.080><c> are</c><00:10:06.720><c> secure</c><00:10:07.600><c> APIs</c><00:10:08.240><c> that</c><00:10:08.480><c> we</c>
+
+00:10:08.630 --> 00:10:08.640 align:start position:0%
+verified these are secure APIs that we
+ 
+
+00:10:08.640 --> 00:10:10.710 align:start position:0%
+verified these are secure APIs that we
+can<00:10:08.800><c> afford</c><00:10:09.120><c> to</c><00:10:09.360><c> use.</c><00:10:09.839><c> The</c><00:10:10.080><c> others</c><00:10:10.320><c> have</c><00:10:10.560><c> not</c>
+
+00:10:10.710 --> 00:10:10.720 align:start position:0%
+can afford to use. The others have not
+ 
+
+00:10:10.720 --> 00:10:13.750 align:start position:0%
+can afford to use. The others have not
+been<00:10:10.880><c> vetted.</c><00:10:11.680><c> These</c><00:10:12.000><c> are</c><00:10:12.160><c> a</c><00:10:12.320><c> set</c><00:10:12.560><c> of</c><00:10:12.800><c> secure</c>
+
+00:10:13.750 --> 00:10:13.760 align:start position:0%
+been vetted. These are a set of secure
+ 
+
+00:10:13.760 --> 00:10:16.230 align:start position:0%
+been vetted. These are a set of secure
+databases<00:10:14.560><c> and</c><00:10:14.880><c> data</c><00:10:15.200><c> sources</c><00:10:15.600><c> that</c><00:10:15.920><c> we</c><00:10:16.079><c> can</c>
+
+00:10:16.230 --> 00:10:16.240 align:start position:0%
+databases and data sources that we can
+ 
+
+00:10:16.240 --> 00:10:18.870 align:start position:0%
+databases and data sources that we can
+use.<00:10:16.959><c> These</c><00:10:17.279><c> are</c><00:10:17.360><c> a</c><00:10:17.600><c> set</c><00:10:17.760><c> of</c><00:10:18.000><c> tools</c><00:10:18.399><c> that</c><00:10:18.640><c> we</c>
+
+00:10:18.870 --> 00:10:18.880 align:start position:0%
+use. These are a set of tools that we
+ 
+
+00:10:18.880 --> 00:10:21.670 align:start position:0%
+use. These are a set of tools that we
+have<00:10:19.040><c> vetted</c><00:10:19.600><c> and</c><00:10:19.920><c> we</c><00:10:20.079><c> can</c><00:10:20.320><c> trust.</c><00:10:21.040><c> And</c><00:10:21.279><c> all</c><00:10:21.519><c> of</c>
+
+00:10:21.670 --> 00:10:21.680 align:start position:0%
+have vetted and we can trust. And all of
+ 
+
+00:10:21.680 --> 00:10:23.110 align:start position:0%
+have vetted and we can trust. And all of
+these<00:10:22.000><c> kinds</c><00:10:22.240><c> of</c><00:10:22.399><c> things,</c><00:10:22.640><c> if</c><00:10:22.800><c> we're</c><00:10:22.959><c> going</c><00:10:23.040><c> to</c>
+
+00:10:23.110 --> 00:10:23.120 align:start position:0%
+these kinds of things, if we're going to
+ 
+
+00:10:23.120 --> 00:10:24.949 align:start position:0%
+these kinds of things, if we're going to
+be<00:10:23.279><c> using</c><00:10:23.600><c> those,</c><00:10:24.079><c> it's</c><00:10:24.320><c> basically,</c><00:10:24.720><c> think</c>
+
+00:10:24.949 --> 00:10:24.959 align:start position:0%
+be using those, it's basically, think
+ 
+
+00:10:24.959 --> 00:10:27.430 align:start position:0%
+be using those, it's basically, think
+about<00:10:25.120><c> if</c><00:10:25.360><c> you're</c><00:10:25.519><c> making</c><00:10:26.000><c> a</c><00:10:26.240><c> cake</c><00:10:26.560><c> or</c><00:10:26.720><c> a</c><00:10:26.880><c> soup,</c>
+
+00:10:27.430 --> 00:10:27.440 align:start position:0%
+about if you're making a cake or a soup,
+ 
+
+00:10:27.440 --> 00:10:28.550 align:start position:0%
+about if you're making a cake or a soup,
+you<00:10:27.680><c> want</c><00:10:27.760><c> to</c><00:10:27.920><c> make</c><00:10:28.000><c> sure</c><00:10:28.079><c> that</c><00:10:28.320><c> the</c>
+
+00:10:28.550 --> 00:10:28.560 align:start position:0%
+you want to make sure that the
+ 
+
+00:10:28.560 --> 00:10:30.550 align:start position:0%
+you want to make sure that the
+ingredients<00:10:28.959><c> that</c><00:10:29.120><c> go</c><00:10:29.279><c> into</c><00:10:29.519><c> it</c><00:10:29.680><c> are</c><00:10:29.920><c> pure.</c>
+
+00:10:30.550 --> 00:10:30.560 align:start position:0%
+ingredients that go into it are pure.
+ 
+
+00:10:30.560 --> 00:10:31.990 align:start position:0%
+ingredients that go into it are pure.
+So,<00:10:30.880><c> we</c><00:10:31.120><c> want</c><00:10:31.200><c> to</c><00:10:31.360><c> make</c><00:10:31.519><c> sure</c><00:10:31.600><c> that</c><00:10:31.839><c> we're</c>
+
+00:10:31.990 --> 00:10:32.000 align:start position:0%
+So, we want to make sure that we're
+ 
+
+00:10:32.000 --> 00:10:34.310 align:start position:0%
+So, we want to make sure that we're
+using<00:10:32.240><c> the</c><00:10:32.480><c> pure</c><00:10:32.800><c> stuff</c><00:10:33.040><c> to</c><00:10:33.279><c> begin</c><00:10:33.440><c> with.</c>
+
+00:10:34.310 --> 00:10:34.320 align:start position:0%
+using the pure stuff to begin with.
+ 
+
+00:10:34.320 --> 00:10:35.829 align:start position:0%
+using the pure stuff to begin with.
+Then,<00:10:34.640><c> I</c><00:10:34.880><c> need</c><00:10:35.040><c> something</c><00:10:35.360><c> that's</c><00:10:35.600><c> going</c><00:10:35.680><c> to</c>
+
+00:10:35.829 --> 00:10:35.839 align:start position:0%
+Then, I need something that's going to
+ 
+
+00:10:35.839 --> 00:10:38.550 align:start position:0%
+Then, I need something that's going to
+give<00:10:36.000><c> me</c><00:10:36.160><c> some</c><00:10:36.480><c> sort</c><00:10:36.800><c> of</c><00:10:37.040><c> inspection</c><00:10:38.000><c> over</c><00:10:38.320><c> the</c>
+
+00:10:38.550 --> 00:10:38.560 align:start position:0%
+give me some sort of inspection over the
+ 
+
+00:10:38.560 --> 00:10:40.150 align:start position:0%
+give me some sort of inspection over the
+whole<00:10:38.720><c> thing.</c><00:10:39.200><c> So</c><00:10:39.519><c> something</c><00:10:39.760><c> that's</c><00:10:40.079><c> going</c>
+
+00:10:40.150 --> 00:10:40.160 align:start position:0%
+whole thing. So something that's going
+ 
+
+00:10:40.160 --> 00:10:42.310 align:start position:0%
+whole thing. So something that's going
+to<00:10:40.240><c> be</c><00:10:40.399><c> able</c><00:10:40.560><c> to</c><00:10:40.720><c> look</c><00:10:40.959><c> over</c><00:10:41.200><c> it</c><00:10:41.360><c> all,</c><00:10:42.000><c> look</c>
+
+00:10:42.310 --> 00:10:42.320 align:start position:0%
+to be able to look over it all, look
+ 
+
+00:10:42.320 --> 00:10:45.269 align:start position:0%
+to be able to look over it all, look
+here<00:10:42.959><c> and</c><00:10:43.279><c> see</c><00:10:43.839><c> if</c><00:10:44.079><c> there</c><00:10:44.399><c> are</c><00:10:44.720><c> improper</c>
+
+00:10:45.269 --> 00:10:45.279 align:start position:0%
+here and see if there are improper
+ 
+
+00:10:45.279 --> 00:10:47.670 align:start position:0%
+here and see if there are improper
+inputs<00:10:45.839><c> going</c><00:10:46.160><c> into</c><00:10:46.640><c> any</c><00:10:46.880><c> of</c><00:10:46.959><c> these</c><00:10:47.279><c> tools</c>
+
+00:10:47.670 --> 00:10:47.680 align:start position:0%
+inputs going into any of these tools
+ 
+
+00:10:47.680 --> 00:10:50.069 align:start position:0%
+inputs going into any of these tools
+that<00:10:47.920><c> are</c><00:10:48.079><c> coming</c><00:10:48.320><c> out</c><00:10:48.480><c> of</c><00:10:48.560><c> the</c><00:10:48.800><c> agent.</c><00:10:49.600><c> Also</c>
+
+00:10:50.069 --> 00:10:50.079 align:start position:0%
+that are coming out of the agent. Also
+ 
+
+00:10:50.079 --> 00:10:52.470 align:start position:0%
+that are coming out of the agent. Also
+be<00:10:50.240><c> able</c><00:10:50.399><c> to</c><00:10:50.560><c> look</c><00:10:51.200><c> and</c><00:10:51.600><c> check</c><00:10:51.920><c> for</c><00:10:52.160><c> these</c>
+
+00:10:52.470 --> 00:10:52.480 align:start position:0%
+be able to look and check for these
+ 
+
+00:10:52.480 --> 00:10:53.990 align:start position:0%
+be able to look and check for these
+prompt<00:10:52.800><c> injections</c><00:10:53.200><c> that</c><00:10:53.440><c> may</c><00:10:53.600><c> be</c><00:10:53.760><c> coming</c>
+
+00:10:53.990 --> 00:10:54.000 align:start position:0%
+prompt injections that may be coming
+ 
+
+00:10:54.000 --> 00:10:56.870 align:start position:0%
+prompt injections that may be coming
+into<00:10:54.320><c> the</c><00:10:54.560><c> system.</c><00:10:55.200><c> We</c><00:10:55.440><c> could</c><00:10:55.600><c> use</c><00:10:56.079><c> an</c><00:10:56.399><c> AI</c>
+
+00:10:56.870 --> 00:10:56.880 align:start position:0%
+into the system. We could use an AI
+ 
+
+00:10:56.880 --> 00:10:59.110 align:start position:0%
+into the system. We could use an AI
+firewall<00:10:57.440><c> or</c><00:10:57.600><c> an</c><00:10:57.839><c> AI</c><00:10:58.240><c> gateway,</c><00:10:58.800><c> whichever</c>
+
+00:10:59.110 --> 00:10:59.120 align:start position:0%
+firewall or an AI gateway, whichever
+ 
+
+00:10:59.120 --> 00:11:01.509 align:start position:0%
+firewall or an AI gateway, whichever
+term<00:10:59.440><c> you</c><00:10:59.680><c> prefer,</c><00:11:00.399><c> to</c><00:11:00.640><c> do</c><00:11:00.800><c> those</c><00:11:01.120><c> sort</c><00:11:01.360><c> of</c>
+
+00:11:01.509 --> 00:11:01.519 align:start position:0%
+term you prefer, to do those sort of
+ 
+
+00:11:01.519 --> 00:11:03.990 align:start position:0%
+term you prefer, to do those sort of
+checks<00:11:02.079><c> and</c><00:11:02.399><c> block.</c><00:11:02.959><c> So</c><00:11:03.200><c> it</c><00:11:03.360><c> will</c><00:11:03.519><c> look</c><00:11:03.680><c> and</c>
+
+00:11:03.990 --> 00:11:04.000 align:start position:0%
+checks and block. So it will look and
+ 
+
+00:11:04.000 --> 00:11:05.750 align:start position:0%
+checks and block. So it will look and
+see,<00:11:04.399><c> is</c><00:11:04.640><c> that</c><00:11:04.880><c> something</c><00:11:05.120><c> that</c><00:11:05.440><c> should</c><00:11:05.600><c> be</c>
+
+00:11:05.750 --> 00:11:05.760 align:start position:0%
+see, is that something that should be
+ 
+
+00:11:05.760 --> 00:11:07.829 align:start position:0%
+see, is that something that should be
+allowed<00:11:06.079><c> to</c><00:11:06.240><c> go</c><00:11:06.399><c> in?</c><00:11:06.880><c> Do</c><00:11:07.040><c> we</c><00:11:07.200><c> have</c><00:11:07.440><c> information</c>
+
+00:11:07.829 --> 00:11:07.839 align:start position:0%
+allowed to go in? Do we have information
+ 
+
+00:11:07.839 --> 00:11:09.509 align:start position:0%
+allowed to go in? Do we have information
+leaking<00:11:08.320><c> out</c><00:11:08.480><c> of</c><00:11:08.640><c> systems</c><00:11:08.959><c> that</c><00:11:09.200><c> shouldn't</c>
+
+00:11:09.509 --> 00:11:09.519 align:start position:0%
+leaking out of systems that shouldn't
+ 
+
+00:11:09.519 --> 00:11:12.069 align:start position:0%
+leaking out of systems that shouldn't
+be?<00:11:10.000><c> Are</c><00:11:10.240><c> we</c><00:11:10.399><c> making</c><00:11:10.720><c> improper</c><00:11:11.279><c> calls?</c><00:11:11.920><c> This</c>
+
+00:11:12.069 --> 00:11:12.079 align:start position:0%
+be? Are we making improper calls? This
+ 
+
+00:11:12.079 --> 00:11:13.829 align:start position:0%
+be? Are we making improper calls? This
+sort<00:11:12.240><c> of</c><00:11:12.399><c> thing.</c><00:11:12.640><c> So,</c><00:11:12.800><c> it's</c><00:11:12.959><c> an</c><00:11:13.120><c> enforcement</c>
+
+00:11:13.829 --> 00:11:13.839 align:start position:0%
+sort of thing. So, it's an enforcement
+ 
+
+00:11:13.839 --> 00:11:16.550 align:start position:0%
+sort of thing. So, it's an enforcement
+layer<00:11:14.079><c> here</c><00:11:14.240><c> as</c><00:11:14.480><c> well.</c><00:11:15.200><c> And</c><00:11:15.360><c> then</c><00:11:15.760><c> ultimately,</c>
+
+00:11:16.550 --> 00:11:16.560 align:start position:0%
+layer here as well. And then ultimately,
+ 
+
+00:11:16.560 --> 00:11:18.790 align:start position:0%
+layer here as well. And then ultimately,
+I<00:11:16.800><c> need</c><00:11:16.959><c> to</c><00:11:17.120><c> be</c><00:11:17.279><c> able</c><00:11:17.440><c> to</c><00:11:17.600><c> have</c><00:11:17.760><c> traceability</c>
+
+00:11:18.790 --> 00:11:18.800 align:start position:0%
+I need to be able to have traceability
+ 
+
+00:11:18.800 --> 00:11:21.030 align:start position:0%
+I need to be able to have traceability
+of<00:11:19.040><c> all</c><00:11:19.279><c> of</c><00:11:19.440><c> this.</c><00:11:19.920><c> So,</c><00:11:20.160><c> I</c><00:11:20.399><c> need</c><00:11:20.560><c> a</c><00:11:20.800><c> system</c>
+
+00:11:21.030 --> 00:11:21.040 align:start position:0%
+of all of this. So, I need a system
+ 
+
+00:11:21.040 --> 00:11:24.069 align:start position:0%
+of all of this. So, I need a system
+where<00:11:21.360><c> I'm</c><00:11:21.600><c> logging</c><00:11:22.640><c> immutable</c><00:11:23.279><c> logs.</c><00:11:23.760><c> That</c>
+
+00:11:24.069 --> 00:11:24.079 align:start position:0%
+where I'm logging immutable logs. That
+ 
+
+00:11:24.079 --> 00:11:25.829 align:start position:0%
+where I'm logging immutable logs. That
+means<00:11:24.320><c> that</c><00:11:24.560><c> they</c><00:11:24.800><c> can't</c><00:11:25.040><c> be</c><00:11:25.200><c> changed.</c><00:11:25.600><c> I</c>
+
+00:11:25.829 --> 00:11:25.839 align:start position:0%
+means that they can't be changed. I
+ 
+
+00:11:25.839 --> 00:11:27.750 align:start position:0%
+means that they can't be changed. I
+don't<00:11:25.920><c> want</c><00:11:26.000><c> a</c><00:11:26.240><c> bad</c><00:11:26.399><c> guy</c><00:11:26.640><c> to</c><00:11:26.800><c> come</c><00:11:26.880><c> in</c><00:11:27.040><c> here</c><00:11:27.440><c> and</c>
+
+00:11:27.750 --> 00:11:27.760 align:start position:0%
+don't want a bad guy to come in here and
+ 
+
+00:11:27.760 --> 00:11:29.990 align:start position:0%
+don't want a bad guy to come in here and
+change<00:11:28.000><c> the</c><00:11:28.320><c> information</c><00:11:28.720><c> that's</c><00:11:29.040><c> in</c><00:11:29.200><c> my</c><00:11:29.360><c> log.</c>
+
+00:11:29.990 --> 00:11:30.000 align:start position:0%
+change the information that's in my log.
+ 
+
+00:11:30.000 --> 00:11:31.829 align:start position:0%
+change the information that's in my log.
+I<00:11:30.240><c> want</c><00:11:30.320><c> to</c><00:11:30.480><c> be</c><00:11:30.560><c> able</c><00:11:30.720><c> to</c><00:11:30.800><c> prevent</c><00:11:31.120><c> that.</c><00:11:31.440><c> So,</c>
+
+00:11:31.829 --> 00:11:31.839 align:start position:0%
+I want to be able to prevent that. So,
+ 
+
+00:11:31.839 --> 00:11:33.670 align:start position:0%
+I want to be able to prevent that. So,
+when<00:11:32.160><c> actions</c><00:11:32.640><c> are</c><00:11:32.880><c> occurring</c><00:11:33.200><c> in</c><00:11:33.440><c> the</c>
+
+00:11:33.670 --> 00:11:33.680 align:start position:0%
+when actions are occurring in the
+ 
+
+00:11:33.680 --> 00:11:35.670 align:start position:0%
+when actions are occurring in the
+system,<00:11:34.320><c> it</c><00:11:34.560><c> needs</c><00:11:34.720><c> to</c><00:11:34.880><c> be</c><00:11:35.040><c> able</c><00:11:35.279><c> to</c><00:11:35.519><c> be</c>
+
+00:11:35.670 --> 00:11:35.680 align:start position:0%
+system, it needs to be able to be
+ 
+
+00:11:35.680 --> 00:11:37.829 align:start position:0%
+system, it needs to be able to be
+traceable.<00:11:36.320><c> so</c><00:11:36.560><c> we</c><00:11:36.720><c> can</c><00:11:36.880><c> go</c><00:11:37.040><c> back</c><00:11:37.200><c> later</c><00:11:37.519><c> and</c>
+
+00:11:37.829 --> 00:11:37.839 align:start position:0%
+traceable. so we can go back later and
+ 
+
+00:11:37.839 --> 00:11:40.790 align:start position:0%
+traceable. so we can go back later and
+understand<00:11:38.560><c> why</c><00:11:38.800><c> it</c><00:11:39.040><c> did</c><00:11:39.200><c> what</c><00:11:39.440><c> it</c><00:11:39.680><c> did.</c><00:11:40.560><c> I</c>
+
+00:11:40.790 --> 00:11:40.800 align:start position:0%
+understand why it did what it did. I
+ 
+
+00:11:40.800 --> 00:11:43.190 align:start position:0%
+understand why it did what it did. I
+also<00:11:41.120><c> want</c><00:11:41.279><c> to</c><00:11:41.519><c> scan</c><00:11:42.160><c> the</c><00:11:42.560><c> entire</c>
+
+00:11:43.190 --> 00:11:43.200 align:start position:0%
+also want to scan the entire
+ 
+
+00:11:43.200 --> 00:11:45.430 align:start position:0%
+also want to scan the entire
+environment,<00:11:44.079><c> be</c><00:11:44.320><c> able</c><00:11:44.480><c> to</c><00:11:44.640><c> look</c><00:11:44.800><c> across</c><00:11:45.200><c> all</c>
+
+00:11:45.430 --> 00:11:45.440 align:start position:0%
+environment, be able to look across all
+ 
+
+00:11:45.440 --> 00:11:46.870 align:start position:0%
+environment, be able to look across all
+of<00:11:45.600><c> these</c><00:11:45.839><c> different</c><00:11:46.079><c> things.</c><00:11:46.399><c> And</c><00:11:46.480><c> we've</c><00:11:46.720><c> got</c>
+
+00:11:46.870 --> 00:11:46.880 align:start position:0%
+of these different things. And we've got
+ 
+
+00:11:46.880 --> 00:11:48.310 align:start position:0%
+of these different things. And we've got
+different<00:11:47.120><c> tools</c><00:11:47.440><c> for</c><00:11:47.680><c> different</c><00:11:47.920><c> types</c><00:11:48.160><c> of</c>
+
+00:11:48.310 --> 00:11:48.320 align:start position:0%
+different tools for different types of
+ 
+
+00:11:48.320 --> 00:11:50.389 align:start position:0%
+different tools for different types of
+scanning.<00:11:48.959><c> We've</c><00:11:49.120><c> got</c><00:11:49.360><c> network</c><00:11:49.920><c> scanning</c>
+
+00:11:50.389 --> 00:11:50.399 align:start position:0%
+scanning. We've got network scanning
+ 
+
+00:11:50.399 --> 00:11:52.389 align:start position:0%
+scanning. We've got network scanning
+tools.<00:11:51.040><c> We've</c><00:11:51.200><c> got</c><00:11:51.440><c> endpoint</c><00:11:51.920><c> scanning</c>
+
+00:11:52.389 --> 00:11:52.399 align:start position:0%
+tools. We've got endpoint scanning
+ 
+
+00:11:52.399 --> 00:11:55.110 align:start position:0%
+tools. We've got endpoint scanning
+tools.<00:11:53.040><c> We've</c><00:11:53.279><c> got</c><00:11:53.440><c> tools</c><00:11:53.839><c> now</c><00:11:54.240><c> that</c><00:11:54.560><c> can</c><00:11:54.720><c> scan</c>
+
+00:11:55.110 --> 00:11:55.120 align:start position:0%
+tools. We've got tools now that can scan
+ 
+
+00:11:55.120 --> 00:11:57.670 align:start position:0%
+tools. We've got tools now that can scan
+AI<00:11:55.600><c> models</c><00:11:56.079><c> and</c><00:11:56.399><c> look</c><00:11:56.560><c> for</c><00:11:56.720><c> vulnerabilities</c>
+
+00:11:57.670 --> 00:11:57.680 align:start position:0%
+AI models and look for vulnerabilities
+ 
+
+00:11:57.680 --> 00:12:00.069 align:start position:0%
+AI models and look for vulnerabilities
+that<00:11:58.000><c> may</c><00:11:58.160><c> be</c><00:11:58.320><c> latent</c><00:11:58.800><c> and</c><00:11:59.040><c> hiding</c><00:11:59.440><c> inside</c><00:11:59.920><c> of</c>
+
+00:12:00.069 --> 00:12:00.079 align:start position:0%
+that may be latent and hiding inside of
+ 
+
+00:12:00.079 --> 00:12:02.470 align:start position:0%
+that may be latent and hiding inside of
+those.<00:12:01.120><c> Ultimately,</c><00:12:01.680><c> at</c><00:12:01.839><c> the</c><00:12:02.000><c> end</c><00:12:02.079><c> of</c><00:12:02.240><c> all</c>
+
+00:12:02.470 --> 00:12:02.480 align:start position:0%
+those. Ultimately, at the end of all
+ 
+
+00:12:02.480 --> 00:12:05.990 align:start position:0%
+those. Ultimately, at the end of all
+this,<00:12:03.120><c> we</c><00:12:03.440><c> need</c><00:12:04.000><c> still</c><00:12:04.399><c> a</c><00:12:04.720><c> human</c><00:12:04.959><c> in</c><00:12:05.120><c> the</c><00:12:05.279><c> loop.</c>
+
+00:12:05.990 --> 00:12:06.000 align:start position:0%
+this, we need still a human in the loop.
+ 
+
+00:12:06.000 --> 00:12:08.230 align:start position:0%
+this, we need still a human in the loop.
+We<00:12:06.240><c> need</c><00:12:06.639><c> an</c><00:12:06.880><c> ability</c><00:12:07.279><c> to</c><00:12:07.519><c> be</c><00:12:07.680><c> able</c><00:12:07.839><c> to</c><00:12:08.000><c> have</c><00:12:08.079><c> a</c>
+
+00:12:08.230 --> 00:12:08.240 align:start position:0%
+We need an ability to be able to have a
+ 
+
+00:12:08.240 --> 00:12:10.389 align:start position:0%
+We need an ability to be able to have a
+kill<00:12:08.560><c> switch.</c><00:12:08.880><c> If</c><00:12:09.040><c> someone</c><00:12:09.360><c> sees</c><00:12:09.920><c> this</c><00:12:10.240><c> thing</c>
+
+00:12:10.389 --> 00:12:10.399 align:start position:0%
+kill switch. If someone sees this thing
+ 
+
+00:12:10.399 --> 00:12:12.389 align:start position:0%
+kill switch. If someone sees this thing
+is<00:12:10.639><c> running</c><00:12:10.880><c> out</c><00:12:11.120><c> of</c><00:12:11.279><c> control,</c><00:12:11.920><c> what</c><00:12:12.160><c> it's</c>
+
+00:12:12.389 --> 00:12:12.399 align:start position:0%
+is running out of control, what it's
+ 
+
+00:12:12.399 --> 00:12:14.629 align:start position:0%
+is running out of control, what it's
+doing<00:12:12.560><c> is</c><00:12:12.880><c> not</c><00:12:13.040><c> right</c><00:12:13.279><c> and</c><00:12:13.519><c> we</c><00:12:13.760><c> can</c><00:12:14.000><c> go</c><00:12:14.320><c> see</c>
+
+00:12:14.629 --> 00:12:14.639 align:start position:0%
+doing is not right and we can go see
+ 
+
+00:12:14.639 --> 00:12:16.790 align:start position:0%
+doing is not right and we can go see
+what<00:12:14.959><c> it's</c><00:12:15.200><c> been</c><00:12:15.360><c> doing,</c><00:12:16.079><c> we</c><00:12:16.320><c> want</c><00:12:16.480><c> to</c><00:12:16.639><c> put</c>
+
+00:12:16.790 --> 00:12:16.800 align:start position:0%
+what it's been doing, we want to put
+ 
+
+00:12:16.800 --> 00:12:19.590 align:start position:0%
+what it's been doing, we want to put
+throttles<00:12:17.360><c> in</c><00:12:17.600><c> place</c><00:12:17.839><c> in</c><00:12:18.079><c> some</c><00:12:18.320><c> cases</c><00:12:18.959><c> so</c><00:12:19.120><c> that</c>
+
+00:12:19.590 --> 00:12:19.600 align:start position:0%
+throttles in place in some cases so that
+ 
+
+00:12:19.600 --> 00:12:22.069 align:start position:0%
+throttles in place in some cases so that
+if<00:12:19.920><c> maybe</c><00:12:20.079><c> it's</c><00:12:20.320><c> a</c><00:12:20.480><c> buying</c><00:12:20.880><c> application,</c><00:12:21.839><c> it</c>
+
+00:12:22.069 --> 00:12:22.079 align:start position:0%
+if maybe it's a buying application, it
+ 
+
+00:12:22.079 --> 00:12:23.990 align:start position:0%
+if maybe it's a buying application, it
+doesn't<00:12:22.480><c> just</c><00:12:22.720><c> suddenly</c><00:12:23.120><c> decide,</c><00:12:23.519><c> hey,</c><00:12:23.760><c> I</c>
+
+00:12:23.990 --> 00:12:24.000 align:start position:0%
+doesn't just suddenly decide, hey, I
+ 
+
+00:12:24.000 --> 00:12:25.430 align:start position:0%
+doesn't just suddenly decide, hey, I
+like<00:12:24.160><c> this.</c><00:12:24.399><c> I'm</c><00:12:24.639><c> going</c><00:12:24.720><c> to</c><00:12:24.800><c> buy</c><00:12:24.959><c> a</c><00:12:25.120><c> thousand</c>
+
+00:12:25.430 --> 00:12:25.440 align:start position:0%
+like this. I'm going to buy a thousand
+ 
+
+00:12:25.440 --> 00:12:27.350 align:start position:0%
+like this. I'm going to buy a thousand
+of<00:12:25.600><c> these</c><00:12:25.839><c> in</c><00:12:26.000><c> a</c><00:12:26.160><c> minute.</c><00:12:26.720><c> Maybe</c><00:12:26.959><c> we</c><00:12:27.200><c> don't</c>
+
+00:12:27.350 --> 00:12:27.360 align:start position:0%
+of these in a minute. Maybe we don't
+ 
+
+00:12:27.360 --> 00:12:29.030 align:start position:0%
+of these in a minute. Maybe we don't
+want<00:12:27.440><c> it</c><00:12:27.600><c> to</c><00:12:27.760><c> do</c><00:12:27.839><c> that.</c><00:12:28.079><c> So,</c><00:12:28.240><c> we</c><00:12:28.399><c> throttle</c><00:12:28.800><c> back</c>
+
+00:12:29.030 --> 00:12:29.040 align:start position:0%
+want it to do that. So, we throttle back
+ 
+
+00:12:29.040 --> 00:12:31.750 align:start position:0%
+want it to do that. So, we throttle back
+its<00:12:29.279><c> activity.</c><00:12:30.160><c> We</c><00:12:30.399><c> have</c><00:12:30.720><c> canary</c><00:12:31.200><c> deployments</c>
+
+00:12:31.750 --> 00:12:31.760 align:start position:0%
+its activity. We have canary deployments
+ 
+
+00:12:31.760 --> 00:12:33.750 align:start position:0%
+its activity. We have canary deployments
+where<00:12:32.000><c> we</c><00:12:32.320><c> sort</c><00:12:32.480><c> of</c><00:12:32.639><c> drop</c><00:12:32.880><c> the</c><00:12:33.120><c> canary</c><00:12:33.440><c> in</c><00:12:33.600><c> the</c>
+
+00:12:33.750 --> 00:12:33.760 align:start position:0%
+where we sort of drop the canary in the
+ 
+
+00:12:33.760 --> 00:12:36.069 align:start position:0%
+where we sort of drop the canary in the
+coal<00:12:34.000><c> mine</c><00:12:34.240><c> to</c><00:12:34.480><c> see</c><00:12:34.639><c> what</c><00:12:34.880><c> happens.</c><00:12:35.600><c> So</c><00:12:35.839><c> we're</c>
+
+00:12:36.069 --> 00:12:36.079 align:start position:0%
+coal mine to see what happens. So we're
+ 
+
+00:12:36.079 --> 00:12:38.470 align:start position:0%
+coal mine to see what happens. So we're
+going<00:12:36.160><c> to</c><00:12:36.320><c> see</c><00:12:36.560><c> if</c><00:12:37.200><c> this</c><00:12:37.519><c> system</c><00:12:37.920><c> dropped</c><00:12:38.240><c> into</c>
+
+00:12:38.470 --> 00:12:38.480 align:start position:0%
+going to see if this system dropped into
+ 
+
+00:12:38.480 --> 00:12:41.190 align:start position:0%
+going to see if this system dropped into
+an<00:12:38.800><c> environment</c><00:12:39.519><c> is</c><00:12:39.839><c> going</c><00:12:40.000><c> to</c><00:12:40.160><c> operate</c>
+
+00:12:41.190 --> 00:12:41.200 align:start position:0%
+an environment is going to operate
+ 
+
+00:12:41.200 --> 00:12:43.670 align:start position:0%
+an environment is going to operate
+properly<00:12:41.760><c> or</c><00:12:42.079><c> not.</c><00:12:42.880><c> A</c><00:12:43.120><c> lot</c><00:12:43.279><c> of</c><00:12:43.440><c> different</c>
+
+00:12:43.670 --> 00:12:43.680 align:start position:0%
+properly or not. A lot of different
+ 
+
+00:12:43.680 --> 00:12:45.750 align:start position:0%
+properly or not. A lot of different
+things<00:12:43.920><c> you</c><00:12:44.160><c> can</c><00:12:44.240><c> see</c><00:12:44.399><c> here.</c><00:12:45.040><c> The</c><00:12:45.279><c> agent</c>
+
+00:12:45.750 --> 00:12:45.760 align:start position:0%
+things you can see here. The agent
+ 
+
+00:12:45.760 --> 00:12:48.550 align:start position:0%
+things you can see here. The agent
+systems<00:12:46.320><c> are</c><00:12:46.639><c> complex.</c><00:12:47.600><c> The</c><00:12:48.000><c> number</c><00:12:48.240><c> of</c>
+
+00:12:48.550 --> 00:12:48.560 align:start position:0%
+systems are complex. The number of
+ 
+
+00:12:48.560 --> 00:12:50.870 align:start position:0%
+systems are complex. The number of
+threats<00:12:48.959><c> that</c><00:12:49.200><c> we</c><00:12:49.360><c> face</c><00:12:49.839><c> are</c><00:12:50.240><c> complex</c><00:12:50.639><c> and</c>
+
+00:12:50.870 --> 00:12:50.880 align:start position:0%
+threats that we face are complex and
+ 
+
+00:12:50.880 --> 00:12:54.389 align:start position:0%
+threats that we face are complex and
+numerous.<00:12:51.600><c> So</c><00:12:51.920><c> our</c><00:12:52.480><c> security</c><00:12:53.200><c> defenses</c><00:12:54.160><c> have</c>
+
+00:12:54.389 --> 00:12:54.399 align:start position:0%
+numerous. So our security defenses have
+ 
+
+00:12:54.399 --> 00:12:57.750 align:start position:0%
+numerous. So our security defenses have
+to<00:12:54.560><c> be</c><00:12:54.800><c> up</c><00:12:55.040><c> to</c><00:12:55.200><c> the</c><00:12:55.360><c> challenge.</c><00:12:56.560><c> Agentic</c><00:12:57.200><c> AI</c>
+
+00:12:57.750 --> 00:12:57.760 align:start position:0%
+to be up to the challenge. Agentic AI
+ 
+
+00:12:57.760 --> 00:12:59.829 align:start position:0%
+to be up to the challenge. Agentic AI
+multiplies<00:12:58.560><c> power</c>
+
+00:12:59.829 --> 00:12:59.839 align:start position:0%
+multiplies power
+ 
+
+00:12:59.839 --> 00:13:02.629 align:start position:0%
+multiplies power
+and<00:13:00.240><c> risk.</c><00:13:01.360><c> Zero</c><00:13:01.760><c> trust</c><00:13:02.079><c> gives</c><00:13:02.240><c> us</c><00:13:02.399><c> the</c>
+
+00:13:02.629 --> 00:13:02.639 align:start position:0%
+and risk. Zero trust gives us the
+ 
+
+00:13:02.639 --> 00:13:04.949 align:start position:0%
+and risk. Zero trust gives us the
+framework<00:13:02.959><c> to</c><00:13:03.200><c> keep</c><00:13:03.360><c> that</c><00:13:03.600><c> power</c><00:13:04.000><c> contained.</c>
+
+00:13:04.949 --> 00:13:04.959 align:start position:0%
+framework to keep that power contained.
+ 
+
+00:13:04.959 --> 00:13:07.110 align:start position:0%
+framework to keep that power contained.
+Every<00:13:05.279><c> agent</c><00:13:05.680><c> must</c><00:13:06.000><c> prove</c><00:13:06.240><c> who</c><00:13:06.480><c> it</c><00:13:06.639><c> is,</c>
+
+00:13:07.110 --> 00:13:07.120 align:start position:0%
+Every agent must prove who it is,
+ 
+
+00:13:07.120 --> 00:13:09.509 align:start position:0%
+Every agent must prove who it is,
+justify<00:13:07.600><c> what</c><00:13:07.839><c> it</c><00:13:08.000><c> wants,</c><00:13:08.480><c> and</c><00:13:08.800><c> earn</c><00:13:09.120><c> trust</c>
+
+00:13:09.509 --> 00:13:09.519 align:start position:0%
+justify what it wants, and earn trust
+ 
+
+00:13:09.519 --> 00:13:11.829 align:start position:0%
+justify what it wants, and earn trust
+continuously.<00:13:10.639><c> As</c><00:13:10.880><c> we</c><00:13:11.120><c> move</c><00:13:11.279><c> forward</c><00:13:11.600><c> with</c>
+
+00:13:11.829 --> 00:13:11.839 align:start position:0%
+continuously. As we move forward with
+ 
+
+00:13:11.839 --> 00:13:13.509 align:start position:0%
+continuously. As we move forward with
+autonomous<00:13:12.480><c> systems,</c><00:13:12.880><c> zero</c><00:13:13.200><c> trust</c>
+
+00:13:13.509 --> 00:13:13.519 align:start position:0%
+autonomous systems, zero trust
+ 
+
+00:13:13.519 --> 00:13:15.670 align:start position:0%
+autonomous systems, zero trust
+principles<00:13:14.000><c> deployed</c><00:13:14.480><c> correctly</c><00:13:15.279><c> serve</c><00:13:15.519><c> as</c>
+
+00:13:15.670 --> 00:13:15.680 align:start position:0%
+principles deployed correctly serve as
+ 
+
+00:13:15.680 --> 00:13:17.750 align:start position:0%
+principles deployed correctly serve as
+guard<00:13:16.000><c> rails</c><00:13:16.320><c> that</c><00:13:16.560><c> keep</c><00:13:16.800><c> innovation</c><00:13:17.440><c> in</c>
+
+00:13:17.750 --> 00:13:17.760 align:start position:0%
+guard rails that keep innovation in
+ 
+
+00:13:17.760 --> 00:13:20.389 align:start position:0%
+guard rails that keep innovation in
+alignment<00:13:18.399><c> with</c><00:13:18.720><c> our</c><00:13:18.959><c> intent</c><00:13:19.760><c> instead</c><00:13:20.079><c> of</c><00:13:20.160><c> the</c>
+
+00:13:20.389 --> 00:13:20.399 align:start position:0%
+alignment with our intent instead of the
+ 
+
+00:13:20.399 --> 00:13:23.639 align:start position:0%
+alignment with our intent instead of the
+bad<00:13:20.639><c> guys.</c>
+

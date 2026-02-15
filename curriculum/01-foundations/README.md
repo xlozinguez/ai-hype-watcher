@@ -40,7 +40,7 @@ Nate B Jones extends this with a concrete enterprise example ([#044](../../sourc
 
 Matt Shumer, writing in "Something Big Is Happening," provides the most concrete metric for tracking AI capability growth. METR (an AI evaluation organization) measures how long a model can work autonomously before needing human intervention. This capacity has been doubling every 7 months, and the doubling rate itself is compressing -- recently to every 4 months. As of early 2026, models can handle tasks requiring roughly 5 hours of human expert effort.
 
-The self-improvement loop amplifies this trajectory. OpenAI documented that GPT-5.3 Codex was "instrumental in creating itself." Dario Amodei described Anthropic engineers telling him "I don't write code anymore. I let the model write the code." AI is now meaningfully contributing to its own development, creating a feedback loop where each generation helps build the next generation faster.
+The self-improvement loop amplifies this trajectory. OpenAI documented that GPT-5.3 Codex was "instrumental in creating itself." Dario Amodei described Anthropic engineers telling him "I don't write code anymore. I let the model write the code." AI is now meaningfully contributing to its own development, creating a feedback loop where each generation helps build the next generation faster. In his 2026 interview with Dwarkesh Patel ([#056](../../sources/056-dwarkesh-patel-dario-amodei-interview.md)), Amodei makes his strongest public case yet that we are "near the end of the exponential" -- 90% confidence on matching Nobel Prize-level capabilities within 10 years, 50/50 on 1-2 years. He estimates current AI coding tools provide ~15-20% total factor productivity improvement, up from ~5% six months ago, and projects trillions of dollars in AI revenue before 2030.
 
 This is not speculative futurism -- it is a measured trend with consistent data points. But measured trends can still be disrupted by practical constraints (compute costs, energy, data quality), and extrapolation from exponentials has a long history of producing overconfident predictions. The METR doubling rate is the best single metric to watch, but watch it with appropriate skepticism.
 
@@ -172,6 +172,46 @@ Two paths are emerging from this shift. **Path 1: Specification through language
 
 The deeper argument concerns cognitive consequences. The Einstellung effect -- a bias where learning one way to solve problems blocks alternatives -- means that as the prompt becomes the default tool, every problem starts looking like something that needs instructions. Exploration feels like failed planning. Ambiguity feels like inefficiency. Studies show that frequent AI tool use correlates with reduced critical thinking, with cognitive offloading as the mediating factor. This connects directly to the vibe coding risks (Concept 7) and the specification bottleneck in [Module 02](../02-prompting-and-workflows/README.md): the chat input has become the assumed starting point, and language turned out to be more demanding than expected.
 
+### Concept 12a: Inference-Time Compute Scaling as a New Paradigm
+
+Google DeepMind's Gemini 3 Deep Think release ([#060](../../sources/060-prompt-engineering-100x-breakthrough.md)) reveals a paradigm shift that most coverage missed by fixating on benchmark numbers. The real story is a **100x reduction in compute** required for Olympiad-level performance between July 2025 and January 2026. This reframes the current era: the frontier is no longer "bigger models equal better" but "smarter inference-time compute allocation equals better."
+
+Deep Think is not a separate model -- it is a reasoning mode within Gemini 3 that dynamically allocates additional compute at inference time, exploring multiple hypotheses in parallel, testing each, and backtracking when paths fail. Simple questions get 2-3 reasoning rounds; complex physics problems may get 10 or more. The inference-time scaling curve continues improving into PhD-level exercises.
+
+The Althia research agent, built on Deep Think, demonstrates that the **agent orchestration layer is becoming more important than raw model capability**. Althia's generate-verify-revise loop achieved 91.9% on Advanced Proof Bench (previous record: 65.7%), outperforming raw Deep Think at every compute scale tested. Third-party results reinforce this: Poetic's agentic harness on Gemini 3 Pro beat earlier Deep Think at lower cost, and Ken Bulock's research showed that simply changing which tools a model has access to can yield 5-8% performance improvements -- gains not typically achievable even with a next-generation model upgrade.
+
+DeepMind also introduced an honest taxonomy for AI research capabilities (Level 0: reproducing known results through Level 4: landmark breakthrough) and explicitly stated they claim no Level 3 or Level 4 results. Out of 700 open problems, only 4 were autonomously solved -- a 6.5% success rate. This calibrated self-assessment is, as the source notes, "refreshingly honest in a field where companies routinely overclaim."
+
+### Concept 12b: "Future Overhyped, Present Underhyped" -- The Construction Industry Lens
+
+Tim Fairley ([#061](../../sources/061-fairley-ai-first-construction.md)) offers one of the clearest frameworks for separating AI value from hype, drawn from practitioner experience in construction -- a traditional industry far from Silicon Valley. His central thesis: AI's future is "massively overhyped" but its current capabilities are "largely underhyped." This nuanced position rejects both techno-utopianism and dismissiveness.
+
+Fairley redefines "AI-first" not as replacing humans but as "applying intelligence to tasks where previously it wouldn't have been economical to do so." A small contractor cannot afford seven project managers, but AI can perform some of those intelligence-intensive tasks at marginal cost. His AI sweet spot framework requires four characteristics: clear inputs/outputs, definable rules, human-verifiable outputs, and limited hallucination risk. Tasks that fail this test -- like lump-sum estimates on $2M contracts -- should not use AI.
+
+Most strikingly, Fairley admits that AI quantity takeoff tools charging $20-30 per drawing are often more expensive and less accurate than hiring an overseas contractor on Upwork. He abandoned an AI document control system mid-build after realizing a part-time hire would deliver "10 to 100 times better" results. This honest cost-benefit comparison is rare in AI adoption discourse and directly informs the calibration pattern.
+
+> "Intelligence was never actually the constraint to most construction companies to begin with. So, it's not automatically going to be the solution." -- Tim Fairley
+
+### Concept 12c: The Tool Era vs. Agentic Era Framing
+
+Griffonomics ([#065](../../sources/065-griffonomics-saaspocalypse.md)) frames the current market upheaval through a structural lens: the shift from the "tool era" to the "agentic era" of software. The tool era was about selling better washing machines (better UIs, more features for humans to operate). The agentic era is about hiring a butler who does the work directly. Companies that merely provide "a digital form for a human to type data into" -- dubbed "lazy SaaS" -- face extinction.
+
+This framing extends the SaaSpocalypse discussion (below) with a historical parallel. The $600B AI infrastructure buildout draws comparison to the late-1990s telecom bubble where billions were spent on fiber optic cables that sat dark for years. The bull counterargument: unlike passive fiber, GPU compute is at effectively 100% utilization with a 12:1 demand-to-supply ratio. The spending is framed as existential -- if Google slows, Microsoft wins.
+
+The video also surfaces the "hollow middle" problem: youth unemployment (ages 16-24) has spiked above 10% because the entry-level cognitive work that served as the first rung of the white-collar career ladder is exactly what agentic AI automates first. This breaks the apprenticeship pipeline (see Concept 10 in Module 06) and reinforces Harris's white-collar inversion thesis.
+
+### Concept 12d: The Chat-to-Code Capability Spectrum
+
+Brooke Wright ([#066](../../sources/066-brooke-wright-cowork-tutorial.md)) demonstrates the actual user experience of Claude Co-work -- Anthropic's bridge product between Claude Chat and Claude Code aimed at non-technical users. Wright frames Claude's product line as a capability spectrum: Chat is browser-based Q&A (no file access); Co-work adds file system access, parallel task execution, connectors, and plugins without requiring terminal knowledge; Code is the full-power CLI for developers. Co-work inherits architectural patterns from Claude Code (plan mode, sub-task parallelism, memory) wrapped in a desktop GUI.
+
+The video is significant for hype evaluation because it illustrates the gap between the stock-market narrative and demonstrated capabilities. Where investors saw an existential threat to SaaS (triggering billions in market cap losses), Wright shows what Co-work actually does in practice: sorting downloads, trimming podcast clips, analyzing transcripts. The distance between the panic and the product is itself a data point on hype dynamics. Wright's explicit positioning of Co-work for people who have "never opened a terminal" confirms Anthropic's strategy to extend agentic capabilities to a broader audience.
+
+### Concept 12e: The "Virtual Employee" Adoption Pattern
+
+Krakowski's OpenClaw walkthrough ([#058](../../sources/058-krakowski-openclaw-agents.md)) illustrates how agent technology is being marketed and adopted by non-technical business audiences. He frames agents as "employees" -- giving them email accounts, Slack channels, and project management boards -- creating intuitive onboarding but obscuring fundamental differences between agents and humans in terms of accountability and trust calibration.
+
+Despite claiming 14 autonomous agents, the reality is heavily human-directed: "I'm directing everything." Agents propose and draft; he reviews and approves. When agents cannot navigate websites due to bot detection, they open a browser and tell him which buttons to click. This matches the 70/30 human-agent split identified elsewhere -- even enthusiastic early adopters are not truly running autonomous operations. His surface-level treatment of prompt injection risk (implying model quality alone mitigates it) is a significant misunderstanding that contrasts sharply with the security frameworks in Module 06.
+
 ### Concept 13: The SaaSpocalypse -- Market Overreaction as Hype Signal
 
 David Gerard ([#039](../../sources/039-pivot-to-ai-saaspocalypse.md)) documents a sharp selloff in enterprise SaaS stocks triggered by Anthropic's Claude Co-work announcement -- a "research preview" that was enough to panic investors into 4-12% single-day drops for legal software companies, cascading into 20% declines across the broader SaaS sector. Gerard argues this was the bursting of a mini-bubble in already overvalued software companies, with AI as the trigger rather than the cause.
@@ -302,6 +342,12 @@ The video also surfaces a key principle: bounded, verifiable tasks (framework mi
 | [052: Claude Isn't Safe. This Anthropic Whistleblower Has the Proof.](../../sources/052-novara-media-anthropic-safety-crisis.md) | Novara Media | Safety-economy polycrisis, incentive distortion in safety discourse, geopolitical imperatives overriding safety, Eric Schmidt's red lines |
 | [053: From AI Curiosity to Operational Traction](../../sources/053-hr-com-ai-operational-traction-wfm.md) | HR.com / Jim Jensen | Assistive intelligence over autonomy, redefining work as decisions not tasks, autonomy tiers for AI deployment, capability overhang in enterprise HCM |
 | [054: The Cursor Situation](../../sources/054-java-brains-cursor-browser-hype.md) | Java Brains | FastRender browser debunking, integrator removal antipattern, bounded vs open-ended agent tasks, hype framing and trust erosion |
+| [056: Dario Amodei — The highest-stakes financial model in history](../../sources/056-dwarkesh-patel-dario-amodei-interview.md) | Dwarkesh Patel | "End of the exponential," 15-20% productivity improvement, compute economics, fast-but-not-instant diffusion |
+| [058: The TRUTH About OpenClaw AI Agents](../../sources/058-krakowski-openclaw-agents.md) | Jeremiah Krakowski | "Virtual employee" framing, human-in-the-loop reality, non-technical agent adoption, surface-level security awareness |
+| [060: The 100x AI Breakthrough No One is Talking About](../../sources/060-prompt-engineering-100x-breakthrough.md) | Prompt Engineering | 100x compute reduction, inference-time scaling, Althia generate-verify-revise, agent layer as capability multiplier |
+| [061: Become an AI-first construction company](../../sources/061-fairley-ai-first-construction.md) | Tim Fairley | "Future overhyped, present underhyped," AI sweet spot framework, honest cost comparison vs outsourcing |
+| [065: SaaS-pocalypse: The Death of Seat-Based Software](../../sources/065-griffonomics-saaspocalypse.md) | Griffonomics | Tool era vs agentic era, $600B infrastructure arms race, PE debt bomb, hollow middle youth unemployment |
+| [066: How to use Claude Cowork better than 99% of people](../../sources/066-brooke-wright-cowork-tutorial.md) | Brooke Wright | Chat-to-Code spectrum, Co-work as bridge product, SaaS disruption narrative vs demonstrated capabilities |
 
 ## Further Reading
 
