@@ -9,8 +9,9 @@ Unlike individual [source notes](../sources/), synthesis documents draw connecti
 | Date | Title | Sources Covered |
 |------|-------|----------------|
 | [2026-02-09](2026-02-09-ai-tools-strategy-hype.md) | AI Tools, Strategy, and Hype | #001-#018 (16 videos + 2 articles) |
-| [2026-02-12](2026-02-12-agentic-coding-state-of-play.md) | The State of Agentic Coding | #020-#024 (5 videos) |
+| [2026-02-11](2026-02-11-agentic-coding-state-of-play.md) | The State of Agentic Coding | #020-#024 (5 videos) |
 | [2026-02-12](2026-02-12-ai-economics-reality-check.md) | The AI Economics Reality Check | #032-#037 (6 videos) |
 | [2026-02-13](2026-02-13-ai-hype-reality-gap.md) | The Hype-Reality Gap: When Marketing Meets Engineering | #038-#043 (6 videos) |
 | [2026-02-14](2026-02-14-acceleration-without-infrastructure.md) | Acceleration Without Infrastructure | #044-#055 (12 videos) |
-| [2026-02-14](2026-02-14-batch2-synthesis.md) | The Agent Economy Takes Shape | #056-#067 (11 sources) |
+| [2026-02-15](2026-02-15-batch2-synthesis.md) | The Agent Economy Takes Shape | #056-#067 (11 sources) |
+| [2026-02-16](2026-02-16-cognitive-debt-and-the-future-of-software.md) | Cognitive Debt and the Future of Software | #071 (primary) + 12 cross-references |
