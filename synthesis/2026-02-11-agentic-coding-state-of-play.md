@@ -1,6 +1,6 @@
 # Synthesis: The State of Agentic Coding — February 2026
 
-**Date**: 2026-02-12
+**Date**: 2026-02-11
 **Sources**: 020-024 (5 videos from 2026-02-11)
 
 ---
