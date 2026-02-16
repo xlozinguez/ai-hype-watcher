@@ -14,4 +14,4 @@ Unlike individual [source notes](../sources/), synthesis documents draw connecti
 | [2026-02-13](2026-02-13-ai-hype-reality-gap.md) | The Hype-Reality Gap: When Marketing Meets Engineering | #038-#043 (6 videos) |
 | [2026-02-14](2026-02-14-acceleration-without-infrastructure.md) | Acceleration Without Infrastructure | #044-#055 (12 videos) |
 | [2026-02-14](2026-02-14-batch2-synthesis.md) | The Agent Economy Takes Shape | #056-#067 (11 sources) |
-| [2026-02-15](2026-02-15-cognitive-debt-and-the-future-of-software.md) | Cognitive Debt and the Future of Software | #071 (primary) + 12 cross-references |
+| [2026-02-16](2026-02-16-cognitive-debt-and-the-future-of-software.md) | Cognitive Debt and the Future of Software | #071 (primary) + 12 cross-references |

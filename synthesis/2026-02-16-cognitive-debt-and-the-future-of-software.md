@@ -1,6 +1,6 @@
 # Synthesis: Cognitive Debt and the Future of Software
 
-**Date**: 2026-02-15
+**Date**: 2026-02-16
 **Sources**: #071 (primary), with cross-references to #005, #012, #018, #029, #033, #042, #050, #056, #062, #068, #069, #070
 **Focus**: Martin Fowler's Deer Valley retreat fragments introduce cognitive debt as the unifying framework for understanding why AI velocity gains are neither as simple as boosters claim nor as doomed as skeptics fear — and what practitioners should actually do about it.
 
