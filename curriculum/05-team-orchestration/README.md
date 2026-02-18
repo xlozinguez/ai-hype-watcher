@@ -222,6 +222,16 @@ This directly parallels the antipattern in human teams where managers optimize f
 - **Example**: Brainqub3 ([#055](../../sources/055-brainqub3-multi-agent-measurement.md)) demonstrates this with FinanceBench tasks: when single-agent performance was already high, adding agents yielded diminishing returns and coordination collapse beyond 5-7 agents. When single-agent performance was low, multi-agent genuinely helped -- even under tool complexity pressure.
 - **Source**: [#055: Multi-Agent Measurement Rig](../../sources/055-brainqub3-multi-agent-measurement.md)
 
+### Concept 14: Swarm Anti-Patterns — Empirical Evidence Against "Agent Teams Are Magic"
+
+Jeremy McEntire ([#068](../../sources/068-jeremy-mcentire-multi-agent-physics.md)) provides the most rigorous empirical counter-evidence to the assumption that multi-agent systems outperform single agents. In a controlled experiment building the same backend services across four architectures, a single agent scored 28/28 while an "Organizational Swarm" (a gated pipeline mimicking corporate structure) scored 0/28 — failing to produce a single line of implementation code despite having 6 explicit anti-bikeshedding mechanisms.
+
+The core insight: **organizational dysfunction is substrate-independent**. You don't need humans to have politics — you just need information compression and divergent incentives. When multiple agents have overlapping authority and different optimization targets, they reproduce human coordination failures: bikeshedding, scope creep, authority conflicts, and communication overhead that exceeds productive output.
+
+McEntire's response is the PACT framework: contracts before code, tests as law. The framework enforces typed interface contracts and executable test suites as the only coordination mechanism between agents — eliminating subjective peer review ("looks good to me") which provides the substrate for bikeshedding. Tasks decompose into 2-7 components with typed interfaces, and agents iterate until tests pass.
+
+This reinforces Brainqub3's measurement findings (Concept 11) with a sharper edge: it's not just that multi-agent performance degrades at scale — it's that certain architectures (specifically those mimicking human organizational structures) can produce *zero* useful output. The prescription aligns: default to single agent, enforce contracts if you must use teams, and benchmark before committing to any swarm architecture.
+
 ## Common Pitfalls
 
 - **Using teams for simple tasks**: Agent teams add coordination overhead (shared task lists, peer messaging, multiple context windows) that is only justified for complex, interdependent work. For isolated one-off tasks -- file exploration, targeted code changes, focused refactoring -- sub-agents are faster, cheaper, and simpler. As Van Zyl advises: "If you just want to do like a once-off task, you should definitely use sub agents instead" ([3:50](https://www.youtube.com/watch?v=KCJsdQpcfic&t=230)).

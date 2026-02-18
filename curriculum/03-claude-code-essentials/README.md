@@ -79,6 +79,20 @@ IndyDevDan ([#015]) frames the ecosystem through both opportunity and responsibi
 
 Agrici Daniel's "Cloudy Ads" skill ([#043](../../sources/043-agrici-daniel-claude-ad-agency.md)) demonstrates the ecosystem's reach beyond software development. This skill packages an entire paid advertising workflow -- covering Google Ads, Meta, YouTube, LinkedIn, TikTok, and Microsoft Ads with over 190 audit checks and industry-specific templates. Its knowledge base draws from approximately 2,500 websites on advertising best practices, encoded as markdown files that the agent reads on demand. The skill uses a progressive questioning pattern (broad parameters first, then targeted follow-ups after reading relevant skill files) and delegates to parallel sub-agents for execution. When asked to produce a PDF report, the agent self-orchestrates: writing a Python script for HTML-to-PDF conversion, generating charts, self-reviewing for formatting issues, and fixing them autonomously. This demonstrates that skills can encode entire professional domains -- not just developer workflows -- into reusable, extensible Claude Code capabilities. The skill also demonstrates budget-aware reasoning: at $1,000/month it recommends Meta only, ruling out LinkedIn (too expensive) and Google Search (wrong goal), illustrating how constraint-based reasoning distinguishes a useful skill from a generic prompt.
 
+### Concept 4a: The Three-Level Skill Loading Model
+
+Mark Kashef ([#079](../../sources/079-mark-kashef-claude-skills-guide.md)), synthesizing Anthropic's 33-page official skills guide, reveals a three-level loading model that explains how skills manage context efficiently. **Level 1** (YAML front matter) is always loaded in the system prompt -- it contains only the name, description, and trigger words (under 1,000 characters). **Level 2** (procedural instructions) loads when Claude Code determines the skill might match the current task. **Level 3** (linked files -- scripts, references, assets) loads only when the skill is actively being executed. This progressive loading is the architectural mechanism behind the "lazy-loaded" property.
+
+Kashef uses an effective analogy: MCPs are the hands (tooling, connections to external services), while skills are the recipes (procedural knowledge of how to use those tools). Without skills, Claude Code "yolos" MCP server calls; with skills, it follows a crystallized procedure that was proven to work.
+
+He also identifies five design patterns for skills: sequential workflow (linear steps with rollback), multi-MCP coordination (orchestrating multiple MCPs in phases), iterative refinement (generate-audit-refine cycles), conditional branching (routing based on context), and domain-specific intelligence (embedded business rules and compliance checks). The YAML front matter is the make-or-break layer: the description must answer what the skill does *and* when it should be invoked, with specific trigger words rather than vague descriptions.
+
+### Concept 4b: Encoding Domain Expertise in Skills
+
+Tanmay Deshpande ([#090](../../sources/090-tanmay-deshpande-claude-skill-tradeoffs.md)) demonstrates a compelling pattern for skills that goes beyond developer workflows: encoding complex analytical frameworks as reusable skill invocations. His architecture trade-off analysis skill takes a one-paragraph scenario description -- such as a fintech startup deciding between microservices extraction, a modular monolith refactor, or monolith optimization -- and produces a comprehensive architecture decision record. The output includes weighted scoring across architecture characteristics, Roger Martin's "What Would Have to Be True" strategic framework, second-order effects analysis (Conway's Law implications, discipline tax), risk profiles, and a phased implementation roadmap.
+
+The key insight is that skills can encode domain expertise from management and architecture literature into automated workflows, making sophisticated analytical approaches accessible without requiring the user to know the frameworks by name. A junior architect running this skill gets exposure to frameworks they might not know to apply, leveling the analytical playing field. As Deshpande puts it: "Every architecture decision I have seen plays out the same way. Someone proposes microservices, someone else defends the monolith, 3 hours of whiteboarding later, the most senior person in the room wins and nobody documents why." The skill replaces that ad-hoc process with a structured, documented artifact that serves as a starting point for discussion rather than a final decision. This pattern generalizes: any complex decision-making process with consistent structure (trade-off analysis, risk assessment, technology selection, compliance checks) is a strong candidate for encoding as a Claude Code skill.
+
 ### Concept 5: Building Custom Skills
 
 Leon van Zyl ([#013]) demonstrates the full process of building a custom skill from scratch -- an image generation skill using Google's Nano Banana Pro model:
@@ -147,7 +161,17 @@ Three plugin economies are emerging: (1) **Anthropic-built plugins** as open-sou
 
 The broader significance: plugins position AI agents as a potentially superior interface to the fragmented SaaS landscape. When Anthropic launched plugins, companies like Salesforce, ServiceNow, and Adobe saw stock drops because plugins threaten to collapse the multi-tool workflow most knowledge workers endure into a single AI interface that accesses all tools through connections.
 
-### Concept 8c: Skill-to-Repeatable-Process Workflow
+### Concept 8b2: CoWork for Beginners -- The Accessibility Layer
+
+Eliot Prince ([#098](../../sources/098-eliot-prince-cowork-explained.md)) provides the most beginner-friendly introduction to Claude Cowork, framing it as "the hands" to Claude's "brain" -- the same underlying Claude Code architecture wrapped in a desktop interface that does not require coding knowledge. Prince walks through three progressively complex use cases: organizing screenshots with automatic renaming and folder creation, processing invoices into structured folders with a generated CSV tracker, and using the Chrome extension to browse authenticated web pages and generate analytics reports. His emphasis on folder-based permission sandboxing -- granting Cowork access to specific folders rather than broad directories -- provides a practical security boundary for non-technical users. Prince is honest about limitations: no memory across sessions, desktop-only operation, and token usage that can burn through credits quickly on heavier tasks. He also demonstrates the plugin/skills ecosystem and the ability to import Claude Projects into Cowork sessions. This complements Ben AI's plugin-focused coverage ([#063](../../sources/063-ben-ai-cowork-plugins.md)) and Brooke Wright's more advanced tutorial ([#066](../../sources/066-brooke-wright-cowork-tutorial.md)) by providing the entry-level onboarding path.
+
+### Concept 8c: CoWork as Operational Assistant
+
+Jack Roberts ([#083](../../sources/083-jack-roberts-cowork-use-cases.md)) demonstrates five progressively more powerful CoWork use cases aimed at non-technical business users: file management, browser automation, service connectors (Gmail, Calendar, Fireflies, Canva, Notion), skills creation, and plugins. His framing distinguishes CoWork from Code clearly: "Antigravity/Claude Code is hiring a developer to build you custom software. CoWork is hiring an assistant who uses your computer, your files, your logins and does the work for you."
+
+The most valuable pattern Roberts demonstrates is iterative skill creation from manual workflows: (1) have Claude perform a task through conversation, iterating until output quality is satisfactory, (2) refine rules and style preferences through back-and-forth dialogue, (3) enshrine the entire process as a skill for autonomous future execution. He also demonstrates multi-connector MCP chaining -- pulling meeting action items from Fireflies via MCP, then creating a Notion document with those items. When API access isn't available, CoWork's browser automation acts as a universal fallback, navigating YouTube to scrape comments or editing Canva designs directly.
+
+### Concept 8d: Skill-to-Repeatable-Process Workflow
 
 Bart Slodyczka ([#067](../../sources/067-bart-slodyczka-agent-teams-course.md)) provides a practical workflow for converting ad hoc team processes into reusable Claude Code skills:
 
@@ -158,6 +182,35 @@ Bart Slodyczka ([#067](../../sources/067-bart-slodyczka-agent-teams-course.md)) 
 5. Update the skill incrementally as the process evolves
 
 This creates a positive feedback loop: each team session improves the skill definition for future teams. The key principle: **do not write skills from scratch** -- run the process first, then have Claude generate the skill from the actual workflow. This ensures the skill captures the real process rather than an idealized version of it.
+
+### Concept 8e: Context Rot Awareness and the 60% Rule
+
+Dylan Davis ([#084](../../sources/084-dylan-davis-context-rot-60-rule.md)) provides practical context rot countermeasures specifically relevant to Claude Code users. Context window performance follows a degradation curve: up to ~60% capacity, Claude maintains effective instruction-following; between 60-95%, performance degrades progressively; past 95%, Claude triggers automatic compaction that loses nuance. The practical rule: treat 60% of the context window as the effective working limit.
+
+For Claude Code specifically, this means monitoring session length and proactively using `/compact` (see Concept 8, Level 1) before degradation begins. Davis's handoff strategy -- creating a structured summary covering what has been covered, key decisions, current status, and next steps -- translates directly to starting fresh Claude Code sessions with a well-crafted initial prompt that carries forward context from the previous session. This connects to the GSD framework (Concept 8, Level 5) and Simon Scrapes' context rot mitigation patterns.
+
+### Concept 8e2: Agent Memory Architecture -- Hybrid Search and the Search-Then-Get Pattern
+
+Damian Galarza ([#099](../../sources/099-damian-galarza-agent-memory-search.md)) provides a detailed technical breakdown of how AI agents search their memory, using OpenClaw's default memory system as a concrete implementation. The core architectural insight is that no single search approach is sufficient. Keyword search (grep, BM25) excels at exact matches -- error codes, function names, specific identifiers -- but misses semantic relationships. Semantic search (embeddings, vector databases) finds conceptually related content but fails on literal string matching. A counter-intuitive finding drives the analysis: the Claude Code team started with a vector database but found that grep-based agentic search actually performed better and was easier to maintain.
+
+OpenClaw's solution combines both via weighted score fusion: 0.7 times the vector similarity score plus 0.3 times the BM25 text score. Both searches use a 4x candidate multiplier (requesting 24 candidates when 6 results are needed) to give the fusion step more to work with, and results are filtered by a minimum threshold of 0.35. Memory files are chunked into roughly 400 tokens with 80-token overlap between chunks, and an embedding cache prevents redundant API calls by hashing chunk text and caching embeddings keyed by provider and model.
+
+The most practically relevant pattern is the **search-then-get** two-tool design: `memory_search` returns lightweight snippets (file path, line numbers, relevance score, 700-character preview), and `memory_get` retrieves specific sections by path and line range. This mirrors how humans search -- scan results for relevance, then read only what matters -- and prevents loading entire files into the context window. The system prompt describes `memory_search` as a "mandatory recall step" that agents must use before answering questions about prior work. This pattern connects directly to the context engineering principles in [Module 02](../02-prompting-and-workflows/README.md) and the 60% rule (Concept 8e): keeping token usage lean is not just about managing session length but also about how agents retrieve stored knowledge.
+
+### Concept 8f: The Four-Layer Browser Automation Architecture
+
+IndyDevDan ([#088](../../sources/088-indydevdan-browser-automation-stack.md)) presents "Bowser," a four-layer architecture for agentic browser automation and UI testing:
+
+- **Layer 1 -- Skills (Capability)**: Foundational tools like a Playwright browser skill (headless, parallel sessions, persistent profiles) and Claude's `--chrome` flag. Skills define what an agent can do.
+- **Layer 2 -- Subagents (Scale)**: Specialized agents wrapping a skill with a concrete workflow. The Browser QA agent parses user stories into steps, creates output directories, takes screenshots at each step, and reports pass/fail.
+- **Layer 3 -- Commands/Prompts (Orchestration)**: Custom slash commands like `/ui-review` that spawn agent teams, distribute user stories across parallel subagents, and collect results. This is the meta-prompting layer.
+- **Layer 4 -- Justfiles (Reusability)**: A task runner providing a single entry point for all agentic workflows with configurable parameters.
+
+Dan explicitly recommends CLIs (like the Playwright CLI) over MCP servers for browser automation. MCP servers consume more tokens and force you into their opinionated workflow. CLIs give freedom to build opinionated layers on top with better token efficiency. He also introduces "Higher-Order Prompts" (HOPs) -- prompts that take another prompt as a parameter, analogous to higher-order functions -- enabling reusable orchestration without duplicating boilerplate.
+
+### Concept 8g: Claude Code vs. No-Code Platforms
+
+Simon Scrapes ([#078](../../sources/078-simon-scrapes-n8n-failing.md)) provides an honest comparison of n8n and Claude Code, arguing they are complementary rather than competitive. Claude Code with MCP connections now matches or exceeds n8n's drag-and-drop speed for building workflows. But n8n's execution history log provides visual debugging that Claude Code cannot match -- non-technical team members can click through workflow runs and inspect data at each node. The optimal architecture: Claude Code for infrastructure (backends, front-ends, databases, authentication) and n8n for core business automations that need visual transparency. The n8n MCP server and n8n skills let Claude Code build and edit n8n workflows, bridging both tools.
 
 ### Concept 9: Advanced Claude Code Configuration -- Hooks, MCP CLI, and Insights
 
@@ -254,6 +307,18 @@ Beyond skills and CLAUDE.md, Claude Code supports several advanced configuration
 | [064: One Prompt Every AGENTIC Codebase Should Have](../../sources/064-indydevdan-agentic-prompt.md) | IndyDevDan | Setup hook (init/maintenance), deterministic code + agentic prompts, justfile as launchpad, install prompt as living document, encoding common issues |
 | [066: How to use Claude Cowork better than 99% of people](../../sources/066-brooke-wright-cowork-tutorial.md) | Brooke Wright | Co-work as bridge product, connectors and plugins as leverage layer, parallel task execution, safety patterns (deletion guardrails) |
 | [067: Learn 90% Of Claude Code Agent Teams](../../sources/067-bart-slodyczka-agent-teams-course.md) | Bart Slodyczka | Three modes of Claude Code (default/sub-agent/teams), skill-from-process workflow, model selection for cost optimization, shared memory files |
+| [020: How & When to Use Claude Code Agent Teams](../../sources/020-simon-scrapes-agent-teams.md) | Simon Scrapes | Agent teams vs. sub-agents, context rot as team motivation, shared task list collaboration, decision heuristics |
+| [024: Agentic coding in 2026](../../sources/024-jo-van-eyck-agentic-coding-2026.md) | Jo Van Eyck | Maturity ladder, fading vs. evergreen skills, cost warnings for multi-agent, developer skills evolution |
+| [026: 10 Claude Code tips I wish I knew from the start](../../sources/026-no-code-mba-claude-code-tips.md) | No Code MBA | Slash commands, /compact for context management, sub-agents, plan mode, security review command |
+| [030: Playwright CLI vs MCP](../../sources/030-playwright-cli-vs-mcp.md) | Playwright | CLI vs. MCP token efficiency (4x gain), file-mediated context control, lazy-loading pattern for browser automation |
+| [078: N8N is Failing Us...](../../sources/078-simon-scrapes-n8n-failing.md) | Simon Scrapes | Claude Code vs. n8n comparison, visual observability advantage, combined system architecture, MCP bridging |
+| [079: Anthropic's Full Claude Skills Guide](../../sources/079-mark-kashef-claude-skills-guide.md) | Mark Kashef | Three-level loading model, MCPs as hands / skills as recipes, five design patterns, YAML front matter best practices, skill testing framework |
+| [083: 5 INSANE Claude CoWork use cases](../../sources/083-jack-roberts-cowork-use-cases.md) | Jack Roberts | CoWork as operational assistant, iterative skill creation from manual workflows, multi-connector MCP chaining, browser automation as API bypass |
+| [084: The 60% Rule Stops Context Rot](../../sources/084-dylan-davis-context-rot-60-rule.md) | Dylan Davis | 60% rule for context windows, four warning signs of context rot, handoff strategy, Claude-specific compaction behavior |
+| [088: My 4-Layer Agentic Browser Automation Stack](../../sources/088-indydevdan-browser-automation-stack.md) | IndyDevDan | Four-layer architecture (skills/subagents/commands/justfiles), CLI over MCP for token efficiency, Higher-Order Prompts, agentic UI testing |
+| [090: I built Claude Skill for trade off analysis](../../sources/090-tanmay-deshpande-claude-skill-tradeoffs.md) | Tanmay Deshpande | Architecture decision automation via skills, encoding domain expertise (Roger Martin, Conway's Law), documentation gap solution |
+| [098: Claude COWORK Clearly Explained](../../sources/098-eliot-prince-cowork-explained.md) | Eliot Prince | Beginner-friendly Cowork walkthrough, folder-based permission sandboxing, progressive capability stack, plugin/connector ecosystem |
+| [099: How AI Agents Search Their Memory](../../sources/099-damian-galarza-agent-memory-search.md) | Damian Galarza | Hybrid search (keyword + semantic), search-then-get two-tool pattern, grep vs vector DB finding, weighted score fusion, embedding cache |
 
 ## Further Reading
 

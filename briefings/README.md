@@ -12,6 +12,8 @@ Dated entries covering recent AI development findings, tool updates, and critica
 | [2026-02-14](2026-02-14.md) | The measurement gap — multi-agent hype meets empirical reality, AI safety fractures deepen, and economic displacement compresses | critical, economics, security, patterns, tools |
 | [2026-02-15](2026-02-15.md) | The $690B question — hyperscaler capex doubles, 88% agent security incident rate, and "developers stopped writing code" claims meet reality | economics, critical, security, tools |
 | [2026-02-16](2026-02-16.md) | Cognitive debt gets a name, Claude Code hits $1B ARR, Salesforce cuts AI teams, AI-built platform leaks 1.6M agent credentials | synthesis, economics, security, critical |
+| [2026-02-17](2026-02-17.md) | 17-video playlist batch — specification bottleneck gets data, context management gets a number, skeptic case matures | critical, economics, patterns, tools |
+| [2026-02-18](2026-02-18.md) | OpenAI's three-front collapse — Nvidia pullback, Microsoft pivot, Marcus/Eisman bear case; OpenClaw saga concludes; expectations trap named | economics, critical, security, tools |
 
 ## Adding Briefings
 

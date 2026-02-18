@@ -34,6 +34,8 @@ Interface Studies ([#038](../../sources/038-interface-studies-prompt-interface.m
 
 DevForge ([#042](../../sources/042-devforge-vibe-coding-trap.md)) adds a concrete lifecycle argument: the senior developer pattern is to understand the problem first, design the solution yourself, then optionally use AI to speed up implementation while reviewing critically. AI is used for boilerplate, exploration, and implementation acceleration -- but never for core logic the developer needs to understand. This "design before generating" discipline is the specification-first pattern applied at the code level.
 
+Martin Fowler's Deer Valley retreat ([#071](../../sources/071-martin-fowler-future-software-dev.md)) pushes the specification-first thesis to its logical extreme through Drew Breunig's "spec-as-library" experiment: a timestamp-to-phrase converter defined entirely as a 500-line markdown specification and 500-line YAML test suite, with no implementation code, successfully implemented across seven programming languages by LLMs. The provocation: "What does software engineering look like when coding is free?" If specifications become the primary software artifact — with test suites as verification and implementation generated on demand — then specification skill is not just important, it is the entire job. Laura Tacho's observation from the same retreat reinforces this: "Developer Experience and Agent Experience intersect completely" — clear documentation, modularity, and descriptive naming benefit both humans and LLMs equally. There is no separate "AI optimization" discipline; investing in specification quality is investing in AI effectiveness.
+
 ### Concept 2: The Six-Step Prompting Framework
 
 Ali H. Salem, in "4 AI Skills That Set You Apart," provides the most actionable prompting structure in the source material -- a six-step framework that works across ChatGPT, Claude, Gemini, and other models:
@@ -106,6 +108,8 @@ Charlie Automates ([#040](../../sources/040-charlie-automates-claudemd-context.m
 
 Charlie also introduces context brackets for adaptive verbosity: as the context window fills, Claude automatically shifts from detailed responses (when fresh) to concise communication (at moderate usage) to code-only survival mode (when depleted). This addresses the common problem of verbose responses accelerating context exhaustion in long sessions.
 
+Dylan Davis ([#084](../../sources/084-dylan-davis-context-rot-60-rule.md)) independently validates Berglund's 60-70% rule and provides a concrete mental model: imagine the AI's memory as a whiteboard that gets progressively cluttered. He identifies four warning signs of context rot: (1) instructions getting ignored -- the AI stops following formatting constraints set earlier, (2) self-contradiction -- the AI reverses positions without justification, (3) fact disappearance -- specific data points are hallucinated or dropped, (4) automatic compaction -- Claude's visible "organizing my thoughts" summarization, which loses nuance. His four tactical countermeasures -- handoff summaries to fresh conversations, strategic file management to minimize token waste, experimentation to build intuition about task complexity limits, and proactive in-thread summaries every 5-15 exchanges -- translate the abstract 60% rule into daily practice.
+
 These strategies become the architectural foundation for the agentic patterns covered in [Module 04: Agentic Patterns](../04-agentic-patterns/README.md).
 
 ### Concept 6: Validation and Hallucination Reduction
@@ -140,6 +144,24 @@ Salem complements this with a structured three-step process for deciding *what* 
 3. **Start with your generalist AI, escalate to specialists**: Fit as many use cases as possible into one tool before adding complexity.
 
 The discipline here is restraint. As Salem warns: "Using AI for everything actually makes you less effective." The goal is selective, high-leverage automation, not universal AI application.
+
+### Concept 8: Handoff Drift and the PM-as-Prototyper
+
+Dhyey Mavani ([#070](../../sources/070-dhyey-mavani-handoff-drift.md)) describes a concrete workflow change at Anthropic that eliminates what he calls **Handoff Drift** -- the progressive degradation of intent as a specification passes through multiple handoffs (PM writes spec, design interprets the spec, engineering interprets the design, each handoff adds a week and introduces drift). At Anthropic, product managers don't write PRDs. They use Claude Code to build the first version of the feature themselves, then ship an experiment. The whole company dogfoods it for weeks, and only then do they ship.
+
+This is a concrete evolution of the specification-first pattern: the PM role expands from "specification writer" to "prototype builder." The skill is specification and intent communication, not programming. The prerequisite is an AI-friendly codebase (Tailwind instead of custom CSS, microservices architecture, reduced codebase size). If your experimentation cycle is 6 weeks and your competitor's is 3 days, they are running 13x more experiments per quarter. See also: [Module 06: Strategy and Economics](../06-strategy-and-economics/README.md) for the organizational implications.
+
+### Concept 9: Incremental Prompting vs. Monolithic Instructions
+
+Income stream surfers ([#072](../../sources/072-income-stream-surfers-antigravity-convex.md)) demonstrates a common failure mode and its antidote. Vibe coding fails when people dump a massive prompt and expect a working app. The solution: set up authentication, database, and backend incrementally -- each step verified before moving to the next. The creator proves that even weaker models (Gemini 3 Flash) can handle structured, step-by-step prompting. This echoes the specification-first philosophy at a more granular level: reduce the surface area that AI needs to handle at any one time, and verify each integration step before compounding complexity.
+
+Greg Isenberg ([#091](../../sources/091-greg-isenberg-claude-code-directory.md)) demonstrates a practical application of incremental prompting in a data enrichment context. His guest Frey Chu walks through building a profitable online directory using Claude Code and the open-source Crawl4AI web scraper -- a seven-step process that starts with scraping 71,000 rows from Google Maps, then runs sequential enrichment passes: business verification (71K down to 20K), website crawling to identify actual businesses (20K down to 725), then separate passes for inventory, images (validated via Claude Vision at $30 for 700 listings), amenities, and service areas. Each pass requires its own prompt iteration and edge case handling. The key insight for this module: Chu explicitly uses a "game plan" prompt before burning tokens on any major step, asking Claude Code to outline its approach before executing. This maps directly to the specification-first pattern applied to data workflows rather than code generation -- and demonstrates that the incremental prompting approach scales to non-trivial real-world data processing tasks.
+
+### Concept 10: The AI Slop Problem and Feelings-First Design
+
+Greg Isenberg and designer Sariah ([#075](../../sources/075-greg-isenberg-ai-slop-design.md)) identify a new problem created by vibe coding's success: everything looks the same. Functional apps can now be scaffolded quickly, but the results are visually homogeneous -- the "what it does" is solved, but "how it makes you feel" is the differentiator. Nobody downloads yet another generic app.
+
+Their solution is a design-first workflow that starts with emotional specifications before touching any visual tool: how should the app make users feel? These emotional specs become the filter for every subsequent design decision. The practical pipeline chains Claude (brand strategy and prompt generation) with Weavy AI (visual asset generation), Cosmos (mood boards), Figma (composition), and image models. A key insight: find one image you love and build the entire brand around it. This represents a specification-first pattern applied to design rather than code -- defining the outcome emotionally before using AI to generate assets.
 
 ## Patterns & Practices
 
@@ -225,6 +247,13 @@ The discipline here is restraint. As Salem warns: "Using AI for everything actua
 | [038: When the Interface Flattens Into a Prompt](../../sources/038-interface-studies-prompt-interface.md) | Interface Studies (Sal) | Specification as cognitive demand, two paths from the chat box, Einstellung effect, interface shapes thinking |
 | [040: Stop Feeding Claude Your Entire CLAUDE.md](../../sources/040-charlie-automates-claudemd-context.md) | Charlie Automates | Monolithic CLAUDE.md problem, domain-based rule segmentation, context brackets for adaptive verbosity, focus over intelligence |
 | [042: Vibe Coding is a Trap](../../sources/042-devforge-vibe-coding-trap.md) | DevForge | Understand-first pattern, mental models as the real asset, senior developer AI usage pattern, design before generating |
+| [031: 9 AI Concepts Explained](../../sources/031-bytebyteai-ai-concepts.md) | ByteByteAI | Prompt engineering techniques (few-shot, chain-of-thought), RAG as context strategy, tokenization basics |
+| [070: Handoff Drift](../../sources/070-dhyey-mavani-handoff-drift.md) | Dhyey Mavani | Handoff drift elimination, PM-as-prototyper pattern, AI-friendly codebase prerequisite, experimentation velocity |
+| [071: Future of Software Development](../../sources/071-martin-fowler-future-software-dev.md) | Martin Fowler (Deer Valley retreat) | Spec-as-library experiment, specification as primary artifact, developer experience = agent experience |
+| [072: Build ANYTHING: Google Antigravity + Convex + Clerk](../../sources/072-income-stream-surfers-antigravity-convex.md) | Income stream surfers | Incremental prompting vs. monolithic, backend-as-a-service stack, step-by-step verification |
+| [075: Stop Shipping AI Slop](../../sources/075-greg-isenberg-ai-slop-design.md) | Greg Isenberg / Sariah | AI slop problem, feelings-first design workflow, multi-tool AI brand pipeline, emotional specifications |
+| [084: The 60% Rule Stops Context Rot](../../sources/084-dylan-davis-context-rot-60-rule.md) | Dylan Davis | 60% rule for context windows, four warning signs of context rot, handoff strategy, strategic file management |
+| [091: Claude Code built me a $273/Day online directory](../../sources/091-greg-isenberg-claude-code-directory.md) | Greg Isenberg / Frey Chu | Sequential data enrichment passes, "game plan" prompting before execution, Claude Vision validation, directory building as incremental workflow |
 
 ## Further Reading
 

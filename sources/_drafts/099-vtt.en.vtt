@@ -1,0 +1,2840 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.240 --> 00:00:02.310 align:start position:0%
+ 
+In<00:00:00.480><c> my</c><00:00:00.640><c> previous</c><00:00:00.960><c> video,</c><00:00:01.280><c> I</c><00:00:01.439><c> went</c><00:00:01.600><c> over</c><00:00:01.760><c> how</c><00:00:02.000><c> AI</c>
+
+00:00:02.310 --> 00:00:02.320 align:start position:0%
+In my previous video, I went over how AI
+ 
+
+00:00:02.320 --> 00:00:04.870 align:start position:0%
+In my previous video, I went over how AI
+agent<00:00:02.720><c> can</c><00:00:02.879><c> store</c><00:00:03.200><c> memories.</c><00:00:04.160><c> But</c><00:00:04.560><c> this</c><00:00:04.720><c> is</c>
+
+00:00:04.870 --> 00:00:04.880 align:start position:0%
+agent can store memories. But this is
+ 
+
+00:00:04.880 --> 00:00:06.789 align:start position:0%
+agent can store memories. But this is
+only<00:00:05.120><c> half</c><00:00:05.279><c> the</c><00:00:05.520><c> problem.</c><00:00:06.160><c> These</c><00:00:06.400><c> files</c>
+
+00:00:06.789 --> 00:00:06.799 align:start position:0%
+only half the problem. These files
+ 
+
+00:00:06.799 --> 00:00:07.990 align:start position:0%
+only half the problem. These files
+aren't<00:00:07.120><c> useful</c><00:00:07.359><c> if</c><00:00:07.520><c> you</c><00:00:07.680><c> don't</c><00:00:07.759><c> have</c><00:00:07.839><c> an</c>
+
+00:00:07.990 --> 00:00:08.000 align:start position:0%
+aren't useful if you don't have an
+ 
+
+00:00:08.000 --> 00:00:09.509 align:start position:0%
+aren't useful if you don't have an
+effective<00:00:08.320><c> way</c><00:00:08.400><c> to</c><00:00:08.559><c> load</c><00:00:08.800><c> them</c><00:00:08.960><c> into</c><00:00:09.200><c> context</c>
+
+00:00:09.509 --> 00:00:09.519 align:start position:0%
+effective way to load them into context
+ 
+
+00:00:09.519 --> 00:00:11.830 align:start position:0%
+effective way to load them into context
+at<00:00:09.760><c> the</c><00:00:09.920><c> right</c><00:00:10.080><c> times.</c><00:00:10.880><c> So,</c><00:00:11.040><c> how</c><00:00:11.200><c> do</c><00:00:11.360><c> agents</c>
+
+00:00:11.830 --> 00:00:11.840 align:start position:0%
+at the right times. So, how do agents
+ 
+
+00:00:11.840 --> 00:00:13.749 align:start position:0%
+at the right times. So, how do agents
+actually<00:00:12.080><c> read</c><00:00:12.320><c> and</c><00:00:12.559><c> use</c><00:00:12.719><c> the</c><00:00:12.880><c> memory?</c><00:00:13.599><c> In</c>
+
+00:00:13.749 --> 00:00:13.759 align:start position:0%
+actually read and use the memory? In
+ 
+
+00:00:13.759 --> 00:00:15.589 align:start position:0%
+actually read and use the memory? In
+this<00:00:13.920><c> video,</c><00:00:14.160><c> we're</c><00:00:14.320><c> diving</c><00:00:14.639><c> into</c><00:00:14.880><c> how</c><00:00:15.200><c> agents</c>
+
+00:00:15.589 --> 00:00:15.599 align:start position:0%
+this video, we're diving into how agents
+ 
+
+00:00:15.599 --> 00:00:17.349 align:start position:0%
+this video, we're diving into how agents
+find<00:00:15.759><c> the</c><00:00:16.000><c> proper</c><00:00:16.320><c> memory</c><00:00:16.560><c> entries</c><00:00:16.960><c> at</c><00:00:17.199><c> the</c>
+
+00:00:17.349 --> 00:00:17.359 align:start position:0%
+find the proper memory entries at the
+ 
+
+00:00:17.359 --> 00:00:19.750 align:start position:0%
+find the proper memory entries at the
+right<00:00:17.520><c> time.</c><00:00:18.640><c> We're</c><00:00:18.880><c> covering</c><00:00:19.119><c> a</c><00:00:19.359><c> few</c><00:00:19.520><c> key</c>
+
+00:00:19.750 --> 00:00:19.760 align:start position:0%
+right time. We're covering a few key
+ 
+
+00:00:19.760 --> 00:00:21.910 align:start position:0%
+right time. We're covering a few key
+pillars.<00:00:20.560><c> First,</c><00:00:20.960><c> keyword</c><00:00:21.359><c> search</c><00:00:21.600><c> versus</c>
+
+00:00:21.910 --> 00:00:21.920 align:start position:0%
+pillars. First, keyword search versus
+ 
+
+00:00:21.920 --> 00:00:24.630 align:start position:0%
+pillars. First, keyword search versus
+semantic<00:00:22.400><c> search.</c><00:00:23.359><c> Second,</c><00:00:23.920><c> why</c><00:00:24.080><c> a</c><00:00:24.240><c> hybrid</c>
+
+00:00:24.630 --> 00:00:24.640 align:start position:0%
+semantic search. Second, why a hybrid
+ 
+
+00:00:24.640 --> 00:00:27.189 align:start position:0%
+semantic search. Second, why a hybrid
+approach<00:00:24.960><c> is</c><00:00:25.119><c> actually</c><00:00:25.359><c> the</c><00:00:25.600><c> answer.</c><00:00:26.560><c> Third,</c>
+
+00:00:27.189 --> 00:00:27.199 align:start position:0%
+approach is actually the answer. Third,
+ 
+
+00:00:27.199 --> 00:00:29.269 align:start position:0%
+approach is actually the answer. Third,
+reranking<00:00:27.840><c> and</c><00:00:28.080><c> what</c><00:00:28.240><c> it</c><00:00:28.400><c> means</c><00:00:28.560><c> for</c><00:00:28.720><c> your</c><00:00:28.880><c> AI</c>
+
+00:00:29.269 --> 00:00:29.279 align:start position:0%
+reranking and what it means for your AI
+ 
+
+00:00:29.279 --> 00:00:31.269 align:start position:0%
+reranking and what it means for your AI
+systems.<00:00:30.000><c> And</c><00:00:30.240><c> finally,</c><00:00:30.640><c> a</c><00:00:30.800><c> real</c><00:00:31.039><c> world</c>
+
+00:00:31.269 --> 00:00:31.279 align:start position:0%
+systems. And finally, a real world
+ 
+
+00:00:31.279 --> 00:00:33.030 align:start position:0%
+systems. And finally, a real world
+example.<00:00:31.920><c> We'll</c><00:00:32.160><c> take</c><00:00:32.239><c> a</c><00:00:32.399><c> look</c><00:00:32.480><c> at</c><00:00:32.640><c> how</c><00:00:32.719><c> it</c><00:00:32.960><c> all</c>
+
+00:00:33.030 --> 00:00:33.040 align:start position:0%
+example. We'll take a look at how it all
+ 
+
+00:00:33.040 --> 00:00:35.750 align:start position:0%
+example. We'll take a look at how it all
+works<00:00:33.280><c> inside</c><00:00:33.520><c> of</c><00:00:33.760><c> Open</c><00:00:34.079><c> Claw.</c>
+
+00:00:35.750 --> 00:00:35.760 align:start position:0%
+works inside of Open Claw.
+ 
+
+00:00:35.760 --> 00:00:37.350 align:start position:0%
+works inside of Open Claw.
+Finding<00:00:36.160><c> memory</c><00:00:36.399><c> entries</c><00:00:36.719><c> via</c><00:00:36.960><c> keyword</c>
+
+00:00:37.350 --> 00:00:37.360 align:start position:0%
+Finding memory entries via keyword
+ 
+
+00:00:37.360 --> 00:00:39.110 align:start position:0%
+Finding memory entries via keyword
+search<00:00:37.680><c> is</c><00:00:37.840><c> the</c><00:00:38.000><c> easiest</c><00:00:38.239><c> to</c><00:00:38.480><c> implement.</c>
+
+00:00:39.110 --> 00:00:39.120 align:start position:0%
+search is the easiest to implement.
+ 
+
+00:00:39.120 --> 00:00:41.190 align:start position:0%
+search is the easiest to implement.
+Cloud<00:00:39.520><c> Code</c><00:00:39.920><c> heavily</c><00:00:40.320><c> relies</c><00:00:40.640><c> on</c><00:00:40.800><c> tools</c><00:00:41.040><c> like</c>
+
+00:00:41.190 --> 00:00:41.200 align:start position:0%
+Cloud Code heavily relies on tools like
+ 
+
+00:00:41.200 --> 00:00:43.510 align:start position:0%
+Cloud Code heavily relies on tools like
+GP<00:00:41.600><c> to</c><00:00:41.760><c> find</c><00:00:41.920><c> what</c><00:00:42.079><c> it</c><00:00:42.239><c> needs.</c><00:00:42.879><c> It's</c><00:00:43.120><c> all</c><00:00:43.280><c> about</c>
+
+00:00:43.510 --> 00:00:43.520 align:start position:0%
+GP to find what it needs. It's all about
+ 
+
+00:00:43.520 --> 00:00:46.229 align:start position:0%
+GP to find what it needs. It's all about
+literal<00:00:44.079><c> word</c><00:00:44.320><c> matches.</c><00:00:45.440><c> Interestingly,</c><00:00:46.000><c> the</c>
+
+00:00:46.229 --> 00:00:46.239 align:start position:0%
+literal word matches. Interestingly, the
+ 
+
+00:00:46.239 --> 00:00:47.990 align:start position:0%
+literal word matches. Interestingly, the
+Cloud<00:00:46.559><c> Code</c><00:00:46.800><c> team</c><00:00:47.039><c> started</c><00:00:47.360><c> with</c><00:00:47.520><c> a</c><00:00:47.680><c> vector</c>
+
+00:00:47.990 --> 00:00:48.000 align:start position:0%
+Cloud Code team started with a vector
+ 
+
+00:00:48.000 --> 00:00:49.990 align:start position:0%
+Cloud Code team started with a vector
+database,<00:00:48.480><c> but</c><00:00:48.640><c> they</c><00:00:48.800><c> found</c><00:00:48.879><c> a</c><00:00:49.120><c> GP</c><00:00:49.360><c> at</c><00:00:49.440><c> aentic</c>
+
+00:00:49.990 --> 00:00:50.000 align:start position:0%
+database, but they found a GP at aentic
+ 
+
+00:00:50.000 --> 00:00:51.910 align:start position:0%
+database, but they found a GP at aentic
+search<00:00:50.320><c> actually</c><00:00:50.559><c> performed</c><00:00:50.960><c> better</c><00:00:51.440><c> and</c><00:00:51.760><c> was</c>
+
+00:00:51.910 --> 00:00:51.920 align:start position:0%
+search actually performed better and was
+ 
+
+00:00:51.920 --> 00:00:54.790 align:start position:0%
+search actually performed better and was
+easier<00:00:52.239><c> to</c><00:00:52.480><c> maintain.</c><00:00:53.680><c> A</c><00:00:53.920><c> step</c><00:00:54.079><c> up</c><00:00:54.239><c> from</c><00:00:54.480><c> basic</c>
+
+00:00:54.790 --> 00:00:54.800 align:start position:0%
+easier to maintain. A step up from basic
+ 
+
+00:00:54.800 --> 00:00:57.670 align:start position:0%
+easier to maintain. A step up from basic
+GP<00:00:55.120><c> is</c><00:00:55.280><c> an</c><00:00:55.440><c> algorithm</c><00:00:55.840><c> called</c><00:00:56.079><c> BM25.</c><00:00:57.360><c> Instead</c>
+
+00:00:57.670 --> 00:00:57.680 align:start position:0%
+GP is an algorithm called BM25. Instead
+ 
+
+00:00:57.680 --> 00:00:59.430 align:start position:0%
+GP is an algorithm called BM25. Instead
+of<00:00:57.760><c> just</c><00:00:58.000><c> finding</c><00:00:58.239><c> matches,</c><00:00:58.719><c> it</c><00:00:58.879><c> ranks</c><00:00:59.199><c> them</c>
+
+00:00:59.430 --> 00:00:59.440 align:start position:0%
+of just finding matches, it ranks them
+ 
+
+00:00:59.440 --> 00:01:01.830 align:start position:0%
+of just finding matches, it ranks them
+based<00:00:59.760><c> on</c><00:01:00.000><c> relevance.</c><00:01:00.960><c> It</c><00:01:01.120><c> factors</c><00:01:01.440><c> in</c><00:01:01.680><c> how</c>
+
+00:01:01.830 --> 00:01:01.840 align:start position:0%
+based on relevance. It factors in how
+ 
+
+00:01:01.840 --> 00:01:03.670 align:start position:0%
+based on relevance. It factors in how
+often<00:01:02.079><c> a</c><00:01:02.239><c> term</c><00:01:02.399><c> appears</c><00:01:02.719><c> and</c><00:01:02.960><c> how</c><00:01:03.120><c> unique</c><00:01:03.440><c> that</c>
+
+00:01:03.670 --> 00:01:03.680 align:start position:0%
+often a term appears and how unique that
+ 
+
+00:01:03.680 --> 00:01:05.910 align:start position:0%
+often a term appears and how unique that
+term<00:01:03.840><c> is</c><00:01:04.080><c> across</c><00:01:04.400><c> your</c><00:01:04.640><c> content.</c><00:01:05.680><c> This</c><00:01:05.840><c> is</c>
+
+00:01:05.910 --> 00:01:05.920 align:start position:0%
+term is across your content. This is
+ 
+
+00:01:05.920 --> 00:01:07.510 align:start position:0%
+term is across your content. This is
+what<00:01:06.159><c> powers</c><00:01:06.560><c> full</c><00:01:06.799><c> text</c><00:01:07.040><c> search</c><00:01:07.280><c> in</c>
+
+00:01:07.510 --> 00:01:07.520 align:start position:0%
+what powers full text search in
+ 
+
+00:01:07.520 --> 00:01:12.630 align:start position:0%
+what powers full text search in
+databases<00:01:07.920><c> like</c><00:01:08.240><c> Seagull's</c><00:01:08.880><c> FTS5</c><00:01:09.760><c> extension.</c>
+
+00:01:12.630 --> 00:01:12.640 align:start position:0%
+databases like Seagull's FTS5 extension.
+ 
+
+00:01:12.640 --> 00:01:14.230 align:start position:0%
+databases like Seagull's FTS5 extension.
+Keyword<00:01:13.119><c> search</c><00:01:13.360><c> looks</c><00:01:13.600><c> for</c><00:01:13.760><c> content</c><00:01:14.080><c> based</c>
+
+00:01:14.230 --> 00:01:14.240 align:start position:0%
+Keyword search looks for content based
+ 
+
+00:01:14.240 --> 00:01:15.990 align:start position:0%
+Keyword search looks for content based
+on<00:01:14.400><c> matching</c><00:01:14.799><c> keywords</c><00:01:15.200><c> you</c><00:01:15.360><c> provide</c><00:01:15.600><c> to</c><00:01:15.840><c> the</c>
+
+00:01:15.990 --> 00:01:16.000 align:start position:0%
+on matching keywords you provide to the
+ 
+
+00:01:16.000 --> 00:01:18.789 align:start position:0%
+on matching keywords you provide to the
+text.<00:01:17.040><c> Semantic</c><00:01:17.600><c> search</c><00:01:17.840><c> is</c><00:01:18.000><c> different.</c><00:01:18.640><c> The</c>
+
+00:01:18.789 --> 00:01:18.799 align:start position:0%
+text. Semantic search is different. The
+ 
+
+00:01:18.799 --> 00:01:21.350 align:start position:0%
+text. Semantic search is different. The
+goal<00:01:18.960><c> is</c><00:01:19.119><c> to</c><00:01:19.280><c> search</c><00:01:19.520><c> by</c><00:01:20.000><c> meaning</c><00:01:20.320><c> and</c><00:01:20.560><c> intent,</c>
+
+00:01:21.350 --> 00:01:21.360 align:start position:0%
+goal is to search by meaning and intent,
+ 
+
+00:01:21.360 --> 00:01:23.350 align:start position:0%
+goal is to search by meaning and intent,
+not<00:01:21.600><c> just</c><00:01:21.840><c> literal</c><00:01:22.240><c> words.</c>
+
+00:01:23.350 --> 00:01:23.360 align:start position:0%
+not just literal words.
+ 
+
+00:01:23.360 --> 00:01:25.429 align:start position:0%
+not just literal words.
+To<00:01:23.680><c> do</c><00:01:23.759><c> this,</c><00:01:24.000><c> the</c><00:01:24.240><c> text</c><00:01:24.479><c> gets</c><00:01:24.720><c> converted</c><00:01:25.119><c> into</c>
+
+00:01:25.429 --> 00:01:25.439 align:start position:0%
+To do this, the text gets converted into
+ 
+
+00:01:25.439 --> 00:01:27.590 align:start position:0%
+To do this, the text gets converted into
+embeddings.<00:01:26.479><c> An</c><00:01:26.640><c> embedding</c><00:01:27.040><c> is</c><00:01:27.200><c> a</c><00:01:27.360><c> list</c><00:01:27.439><c> of</c>
+
+00:01:27.590 --> 00:01:27.600 align:start position:0%
+embeddings. An embedding is a list of
+ 
+
+00:01:27.600 --> 00:01:29.190 align:start position:0%
+embeddings. An embedding is a list of
+numbers<00:01:27.840><c> that</c><00:01:28.080><c> represents</c><00:01:28.479><c> the</c><00:01:28.720><c> meaning</c><00:01:28.960><c> of</c>
+
+00:01:29.190 --> 00:01:29.200 align:start position:0%
+numbers that represents the meaning of
+ 
+
+00:01:29.200 --> 00:01:31.910 align:start position:0%
+numbers that represents the meaning of
+text.<00:01:30.159><c> For</c><00:01:30.240><c> example,</c><00:01:31.040><c> how</c><00:01:31.200><c> do</c><00:01:31.360><c> I</c><00:01:31.439><c> speed</c><00:01:31.680><c> up</c><00:01:31.840><c> my</c>
+
+00:01:31.910 --> 00:01:31.920 align:start position:0%
+text. For example, how do I speed up my
+ 
+
+00:01:31.920 --> 00:01:33.270 align:start position:0%
+text. For example, how do I speed up my
+app?<00:01:32.240><c> Might</c><00:01:32.479><c> become</c><00:01:32.640><c> a</c><00:01:32.799><c> vector</c><00:01:33.040><c> with</c>
+
+00:01:33.270 --> 00:01:33.280 align:start position:0%
+app? Might become a vector with
+ 
+
+00:01:33.280 --> 00:01:35.830 align:start position:0%
+app? Might become a vector with
+potentially<00:01:33.680><c> over</c><00:01:33.920><c> a</c><00:01:34.000><c> thousand</c><00:01:34.400><c> values.</c><00:01:35.520><c> Each</c>
+
+00:01:35.830 --> 00:01:35.840 align:start position:0%
+potentially over a thousand values. Each
+ 
+
+00:01:35.840 --> 00:01:37.990 align:start position:0%
+potentially over a thousand values. Each
+number<00:01:36.240><c> represents</c><00:01:36.799><c> some</c><00:01:37.119><c> aspect</c><00:01:37.520><c> of</c><00:01:37.759><c> meaning</c>
+
+00:01:37.990 --> 00:01:38.000 align:start position:0%
+number represents some aspect of meaning
+ 
+
+00:01:38.000 --> 00:01:40.069 align:start position:0%
+number represents some aspect of meaning
+behind<00:01:38.320><c> a</c><00:01:38.560><c> text.</c>
+
+00:01:40.069 --> 00:01:40.079 align:start position:0%
+behind a text.
+ 
+
+00:01:40.079 --> 00:01:42.310 align:start position:0%
+behind a text.
+Here's<00:01:40.400><c> the</c><00:01:40.560><c> magic.</c><00:01:41.280><c> Text</c><00:01:41.680><c> with</c><00:01:41.920><c> similar</c>
+
+00:01:42.310 --> 00:01:42.320 align:start position:0%
+Here's the magic. Text with similar
+ 
+
+00:01:42.320 --> 00:01:44.870 align:start position:0%
+Here's the magic. Text with similar
+meaning<00:01:42.720><c> ends</c><00:01:42.960><c> up</c><00:01:43.119><c> having</c><00:01:43.360><c> similar</c><00:01:43.840><c> numbers.</c>
+
+00:01:44.870 --> 00:01:44.880 align:start position:0%
+meaning ends up having similar numbers.
+ 
+
+00:01:44.880 --> 00:01:46.950 align:start position:0%
+meaning ends up having similar numbers.
+The<00:01:45.119><c> phrase,</c><00:01:45.360><c> "How</c><00:01:45.600><c> do</c><00:01:45.759><c> I</c><00:01:45.920><c> speed</c><00:01:46.079><c> up</c><00:01:46.240><c> my</c><00:01:46.399><c> app?"</c>
+
+00:01:46.950 --> 00:01:46.960 align:start position:0%
+The phrase, "How do I speed up my app?"
+ 
+
+00:01:46.960 --> 00:01:48.789 align:start position:0%
+The phrase, "How do I speed up my app?"
+and<00:01:47.280><c> tips</c><00:01:47.680><c> for</c><00:01:47.840><c> improving</c><00:01:48.240><c> applications</c>
+
+00:01:48.789 --> 00:01:48.799 align:start position:0%
+and tips for improving applications
+ 
+
+00:01:48.799 --> 00:01:50.710 align:start position:0%
+and tips for improving applications
+performance<00:01:49.600><c> produce</c><00:01:49.920><c> similar</c><00:01:50.320><c> lists</c><00:01:50.560><c> of</c>
+
+00:01:50.710 --> 00:01:50.720 align:start position:0%
+performance produce similar lists of
+ 
+
+00:01:50.720 --> 00:01:53.190 align:start position:0%
+performance produce similar lists of
+numbers,<00:01:51.520><c> but</c><00:01:51.920><c> best</c><00:01:52.159><c> restaurants</c><00:01:52.640><c> near</c><00:01:52.880><c> me</c>
+
+00:01:53.190 --> 00:01:53.200 align:start position:0%
+numbers, but best restaurants near me
+ 
+
+00:01:53.200 --> 00:01:54.950 align:start position:0%
+numbers, but best restaurants near me
+produce<00:01:53.600><c> vastly</c><00:01:54.000><c> different</c><00:01:54.320><c> numbers</c><00:01:54.720><c> because</c>
+
+00:01:54.950 --> 00:01:54.960 align:start position:0%
+produce vastly different numbers because
+ 
+
+00:01:54.960 --> 00:01:56.870 align:start position:0%
+produce vastly different numbers because
+it's<00:01:55.200><c> unrelated.</c>
+
+00:01:56.870 --> 00:01:56.880 align:start position:0%
+it's unrelated.
+ 
+
+00:01:56.880 --> 00:01:58.389 align:start position:0%
+it's unrelated.
+To<00:01:57.119><c> generate</c><00:01:57.439><c> those</c><00:01:57.680><c> embeddings,</c><00:01:58.159><c> you</c><00:01:58.320><c> can</c>
+
+00:01:58.389 --> 00:01:58.399 align:start position:0%
+To generate those embeddings, you can
+ 
+
+00:01:58.399 --> 00:02:00.069 align:start position:0%
+To generate those embeddings, you can
+use<00:01:58.560><c> an</c><00:01:58.799><c> external</c><00:01:59.119><c> service</c><00:01:59.439><c> or</c><00:01:59.600><c> an</c><00:01:59.840><c> open-</c>
+
+00:02:00.069 --> 00:02:00.079 align:start position:0%
+use an external service or an open-
+ 
+
+00:02:00.079 --> 00:02:03.350 align:start position:0%
+use an external service or an open-
+source<00:02:00.399><c> option.</c><00:02:01.520><c> OpenI's</c><00:02:02.240><c> embeddings</c><00:02:02.719><c> API</c><00:02:03.200><c> is</c>
+
+00:02:03.350 --> 00:02:03.360 align:start position:0%
+source option. OpenI's embeddings API is
+ 
+
+00:02:03.360 --> 00:02:05.270 align:start position:0%
+source option. OpenI's embeddings API is
+one<00:02:03.520><c> of</c><00:02:03.600><c> the</c><00:02:03.840><c> most</c><00:02:04.000><c> popular.</c><00:02:04.719><c> Their</c><00:02:04.880><c> embedding</c>
+
+00:02:05.270 --> 00:02:05.280 align:start position:0%
+one of the most popular. Their embedding
+ 
+
+00:02:05.280 --> 00:02:06.709 align:start position:0%
+one of the most popular. Their embedding
+model<00:02:05.520><c> has</c><00:02:05.759><c> been</c><00:02:05.920><c> trained</c><00:02:06.079><c> on</c><00:02:06.320><c> massive</c>
+
+00:02:06.709 --> 00:02:06.719 align:start position:0%
+model has been trained on massive
+ 
+
+00:02:06.719 --> 00:02:07.990 align:start position:0%
+model has been trained on massive
+amounts<00:02:06.960><c> of</c><00:02:07.119><c> text</c><00:02:07.360><c> to</c><00:02:07.600><c> understand</c>
+
+00:02:07.990 --> 00:02:08.000 align:start position:0%
+amounts of text to understand
+ 
+
+00:02:08.000 --> 00:02:09.430 align:start position:0%
+amounts of text to understand
+relationships<00:02:08.560><c> between</c><00:02:08.879><c> words</c><00:02:09.200><c> and</c>
+
+00:02:09.430 --> 00:02:09.440 align:start position:0%
+relationships between words and
+ 
+
+00:02:09.440 --> 00:02:11.910 align:start position:0%
+relationships between words and
+concepts.<00:02:10.479><c> You</c><00:02:10.720><c> send</c><00:02:10.879><c> a</c><00:02:11.120><c> text</c><00:02:11.360><c> and</c><00:02:11.599><c> get</c><00:02:11.760><c> back</c>
+
+00:02:11.910 --> 00:02:11.920 align:start position:0%
+concepts. You send a text and get back
+ 
+
+00:02:11.920 --> 00:02:13.670 align:start position:0%
+concepts. You send a text and get back
+an<00:02:12.080><c> embedding.</c>
+
+00:02:13.670 --> 00:02:13.680 align:start position:0%
+an embedding.
+ 
+
+00:02:13.680 --> 00:02:15.030 align:start position:0%
+an embedding.
+You<00:02:13.920><c> don't</c><00:02:14.000><c> need</c><00:02:14.160><c> to</c><00:02:14.319><c> understand</c><00:02:14.560><c> the</c><00:02:14.800><c> math</c>
+
+00:02:15.030 --> 00:02:15.040 align:start position:0%
+You don't need to understand the math
+ 
+
+00:02:15.040 --> 00:02:16.550 align:start position:0%
+You don't need to understand the math
+behind<00:02:15.280><c> how</c><00:02:15.440><c> embeddings</c><00:02:15.920><c> are</c><00:02:16.000><c> generated</c><00:02:16.400><c> to</c>
+
+00:02:16.550 --> 00:02:16.560 align:start position:0%
+behind how embeddings are generated to
+ 
+
+00:02:16.560 --> 00:02:18.790 align:start position:0%
+behind how embeddings are generated to
+use<00:02:16.800><c> them.</c><00:02:17.680><c> Once</c><00:02:17.920><c> you</c><00:02:18.000><c> have</c><00:02:18.080><c> a</c><00:02:18.239><c> way</c><00:02:18.319><c> to</c><00:02:18.480><c> map</c>
+
+00:02:18.790 --> 00:02:18.800 align:start position:0%
+use them. Once you have a way to map
+ 
+
+00:02:18.800 --> 00:02:20.470 align:start position:0%
+use them. Once you have a way to map
+text<00:02:19.040><c> to</c><00:02:19.200><c> meaning,</c><00:02:19.599><c> you</c><00:02:19.760><c> need</c><00:02:19.840><c> a</c><00:02:20.000><c> way</c><00:02:20.160><c> to</c><00:02:20.239><c> store</c>
+
+00:02:20.470 --> 00:02:20.480 align:start position:0%
+text to meaning, you need a way to store
+ 
+
+00:02:20.480 --> 00:02:22.630 align:start position:0%
+text to meaning, you need a way to store
+and<00:02:20.720><c> search</c><00:02:21.040><c> across</c><00:02:21.440><c> possibly</c><00:02:21.920><c> thousands</c><00:02:22.319><c> or</c>
+
+00:02:22.630 --> 00:02:22.640 align:start position:0%
+and search across possibly thousands or
+ 
+
+00:02:22.640 --> 00:02:24.790 align:start position:0%
+and search across possibly thousands or
+millions<00:02:22.959><c> of</c><00:02:23.120><c> embeddings.</c><00:02:24.239><c> This</c><00:02:24.400><c> is</c><00:02:24.480><c> where</c>
+
+00:02:24.790 --> 00:02:24.800 align:start position:0%
+millions of embeddings. This is where
+ 
+
+00:02:24.800 --> 00:02:27.510 align:start position:0%
+millions of embeddings. This is where
+vector<00:02:25.200><c> databases</c><00:02:25.680><c> come</c><00:02:25.840><c> in.</c><00:02:26.879><c> You</c><00:02:27.120><c> can</c><00:02:27.200><c> use</c><00:02:27.360><c> a</c>
+
+00:02:27.510 --> 00:02:27.520 align:start position:0%
+vector databases come in. You can use a
+ 
+
+00:02:27.520 --> 00:02:29.110 align:start position:0%
+vector databases come in. You can use a
+dedicated<00:02:28.000><c> vector</c><00:02:28.319><c> database</c><00:02:28.640><c> like</c><00:02:28.800><c> pine</c>
+
+00:02:29.110 --> 00:02:29.120 align:start position:0%
+dedicated vector database like pine
+ 
+
+00:02:29.120 --> 00:02:30.949 align:start position:0%
+dedicated vector database like pine
+cone.<00:02:29.760><c> Or</c><00:02:29.920><c> if</c><00:02:30.080><c> you're</c><00:02:30.239><c> just</c><00:02:30.400><c> starting</c><00:02:30.640><c> out,</c>
+
+00:02:30.949 --> 00:02:30.959 align:start position:0%
+cone. Or if you're just starting out,
+ 
+
+00:02:30.959 --> 00:02:32.710 align:start position:0%
+cone. Or if you're just starting out,
+popular<00:02:31.360><c> databases</c><00:02:31.840><c> like</c><00:02:32.000><c> Postgress</c><00:02:32.560><c> and</c>
+
+00:02:32.710 --> 00:02:32.720 align:start position:0%
+popular databases like Postgress and
+ 
+
+00:02:32.720 --> 00:02:34.949 align:start position:0%
+popular databases like Postgress and
+even<00:02:32.959><c> SQLite</c><00:02:33.599><c> have</c><00:02:33.840><c> extensions</c><00:02:34.319><c> to</c><00:02:34.560><c> support</c>
+
+00:02:34.949 --> 00:02:34.959 align:start position:0%
+even SQLite have extensions to support
+ 
+
+00:02:34.959 --> 00:02:37.670 align:start position:0%
+even SQLite have extensions to support
+vector<00:02:35.360><c> search.</c><00:02:36.319><c> These</c><00:02:36.560><c> are</c><00:02:36.720><c> PG</c><00:02:37.120><c> vector</c><00:02:37.440><c> and</c>
+
+00:02:37.670 --> 00:02:37.680 align:start position:0%
+vector search. These are PG vector and
+ 
+
+00:02:37.680 --> 00:02:40.790 align:start position:0%
+vector search. These are PG vector and
+SQLite<00:02:38.319><c> vect.</c><00:02:39.360><c> Open</c><00:02:39.680><c> claw</c><00:02:39.920><c> uses</c><00:02:40.160><c> SQLite</c><00:02:40.640><c> and</c>
+
+00:02:40.790 --> 00:02:40.800 align:start position:0%
+SQLite vect. Open claw uses SQLite and
+ 
+
+00:02:40.800 --> 00:02:42.710 align:start position:0%
+SQLite vect. Open claw uses SQLite and
+SQLite<00:02:41.280><c> vec.</c><00:02:41.680><c> We'll</c><00:02:41.920><c> dig</c><00:02:42.080><c> into</c><00:02:42.239><c> that</c><00:02:42.400><c> more</c><00:02:42.560><c> in</c>
+
+00:02:42.710 --> 00:02:42.720 align:start position:0%
+SQLite vec. We'll dig into that more in
+ 
+
+00:02:42.720 --> 00:02:44.630 align:start position:0%
+SQLite vec. We'll dig into that more in
+a<00:02:42.879><c> moment.</c><00:02:43.680><c> With</c><00:02:43.920><c> text</c><00:02:44.239><c> converted</c><00:02:44.560><c> to</c>
+
+00:02:44.630 --> 00:02:44.640 align:start position:0%
+a moment. With text converted to
+ 
+
+00:02:44.640 --> 00:02:46.070 align:start position:0%
+a moment. With text converted to
+embeddings<00:02:45.120><c> and</c><00:02:45.280><c> stored</c><00:02:45.519><c> in</c><00:02:45.680><c> the</c><00:02:45.760><c> vector</c>
+
+00:02:46.070 --> 00:02:46.080 align:start position:0%
+embeddings and stored in the vector
+ 
+
+00:02:46.080 --> 00:02:47.670 align:start position:0%
+embeddings and stored in the vector
+database,<00:02:46.560><c> let's</c><00:02:46.800><c> talk</c><00:02:46.879><c> about</c><00:02:47.040><c> how</c><00:02:47.280><c> search</c>
+
+00:02:47.670 --> 00:02:47.680 align:start position:0%
+database, let's talk about how search
+ 
+
+00:02:47.680 --> 00:02:50.550 align:start position:0%
+database, let's talk about how search
+actually<00:02:48.000><c> works.</c><00:02:49.280><c> A</c><00:02:49.519><c> typical</c><00:02:49.920><c> search</c><00:02:50.160><c> has</c><00:02:50.400><c> two</c>
+
+00:02:50.550 --> 00:02:50.560 align:start position:0%
+actually works. A typical search has two
+ 
+
+00:02:50.560 --> 00:02:52.869 align:start position:0%
+actually works. A typical search has two
+steps.<00:02:51.440><c> First,</c><00:02:51.840><c> you</c><00:02:52.000><c> take</c><00:02:52.160><c> the</c><00:02:52.319><c> user's</c><00:02:52.560><c> query</c>
+
+00:02:52.869 --> 00:02:52.879 align:start position:0%
+steps. First, you take the user's query
+ 
+
+00:02:52.879 --> 00:02:54.229 align:start position:0%
+steps. First, you take the user's query
+and<00:02:52.959><c> you</c><00:02:53.120><c> convert</c><00:02:53.360><c> it</c><00:02:53.519><c> into</c><00:02:53.680><c> an</c><00:02:53.840><c> embedding</c>
+
+00:02:54.229 --> 00:02:54.239 align:start position:0%
+and you convert it into an embedding
+ 
+
+00:02:54.239 --> 00:02:56.630 align:start position:0%
+and you convert it into an embedding
+itself.<00:02:55.360><c> Second,</c><00:02:55.680><c> you</c><00:02:55.840><c> take</c><00:02:56.000><c> that</c><00:02:56.239><c> embedding</c>
+
+00:02:56.630 --> 00:02:56.640 align:start position:0%
+itself. Second, you take that embedding
+ 
+
+00:02:56.640 --> 00:02:59.030 align:start position:0%
+itself. Second, you take that embedding
+and<00:02:56.800><c> search</c><00:02:57.040><c> across</c><00:02:57.280><c> the</c><00:02:57.440><c> vector</c><00:02:57.760><c> database.</c>
+
+00:02:59.030 --> 00:02:59.040 align:start position:0%
+and search across the vector database.
+ 
+
+00:02:59.040 --> 00:03:00.790 align:start position:0%
+and search across the vector database.
+This<00:02:59.280><c> search</c><00:02:59.599><c> uses</c><00:02:59.920><c> mathematical</c><00:03:00.480><c> distance</c>
+
+00:03:00.790 --> 00:03:00.800 align:start position:0%
+This search uses mathematical distance
+ 
+
+00:03:00.800 --> 00:03:02.949 align:start position:0%
+This search uses mathematical distance
+between<00:03:01.200><c> vectors,</c><00:03:01.920><c> how</c><00:03:02.159><c> close</c><00:03:02.319><c> or</c><00:03:02.560><c> far</c><00:03:02.720><c> apart</c>
+
+00:03:02.949 --> 00:03:02.959 align:start position:0%
+between vectors, how close or far apart
+ 
+
+00:03:02.959 --> 00:03:04.949 align:start position:0%
+between vectors, how close or far apart
+they<00:03:03.120><c> are</c><00:03:03.200><c> in</c><00:03:03.440><c> meaning.</c><00:03:04.319><c> The</c><00:03:04.480><c> most</c><00:03:04.720><c> common</c>
+
+00:03:04.949 --> 00:03:04.959 align:start position:0%
+they are in meaning. The most common
+ 
+
+00:03:04.959 --> 00:03:06.309 align:start position:0%
+they are in meaning. The most common
+approach<00:03:05.200><c> is</c><00:03:05.360><c> called</c><00:03:05.599><c> nearest</c><00:03:05.920><c> neighbor</c>
+
+00:03:06.309 --> 00:03:06.319 align:start position:0%
+approach is called nearest neighbor
+ 
+
+00:03:06.319 --> 00:03:08.390 align:start position:0%
+approach is called nearest neighbor
+search.<00:03:07.440><c> Think</c><00:03:07.599><c> of</c><00:03:07.680><c> it</c><00:03:07.840><c> like</c><00:03:08.080><c> plotting</c>
+
+00:03:08.390 --> 00:03:08.400 align:start position:0%
+search. Think of it like plotting
+ 
+
+00:03:08.400 --> 00:03:10.550 align:start position:0%
+search. Think of it like plotting
+coordinates<00:03:08.800><c> on</c><00:03:08.959><c> a</c><00:03:09.120><c> map.</c><00:03:09.760><c> Your</c><00:03:10.000><c> search</c><00:03:10.239><c> query</c>
+
+00:03:10.550 --> 00:03:10.560 align:start position:0%
+coordinates on a map. Your search query
+ 
+
+00:03:10.560 --> 00:03:12.710 align:start position:0%
+coordinates on a map. Your search query
+is<00:03:10.720><c> where</c><00:03:11.040><c> you</c><00:03:11.200><c> are.</c><00:03:11.920><c> The</c><00:03:12.159><c> content</c><00:03:12.400><c> in</c><00:03:12.560><c> the</c>
+
+00:03:12.710 --> 00:03:12.720 align:start position:0%
+is where you are. The content in the
+ 
+
+00:03:12.720 --> 00:03:13.910 align:start position:0%
+is where you are. The content in the
+database<00:03:13.040><c> are</c><00:03:13.280><c> all</c><00:03:13.440><c> the</c><00:03:13.519><c> other</c><00:03:13.680><c> text</c>
+
+00:03:13.910 --> 00:03:13.920 align:start position:0%
+database are all the other text
+ 
+
+00:03:13.920 --> 00:03:16.070 align:start position:0%
+database are all the other text
+embeddings.<00:03:14.640><c> The</c><00:03:14.879><c> closer</c><00:03:15.200><c> a</c><00:03:15.360><c> dot</c><00:03:15.599><c> is</c><00:03:15.760><c> on</c><00:03:15.920><c> the</c>
+
+00:03:16.070 --> 00:03:16.080 align:start position:0%
+embeddings. The closer a dot is on the
+ 
+
+00:03:16.080 --> 00:03:17.910 align:start position:0%
+embeddings. The closer a dot is on the
+map<00:03:16.239><c> to</c><00:03:16.400><c> your</c><00:03:16.640><c> position,</c><00:03:17.120><c> the</c><00:03:17.280><c> more</c><00:03:17.599><c> related</c>
+
+00:03:17.910 --> 00:03:17.920 align:start position:0%
+map to your position, the more related
+ 
+
+00:03:17.920 --> 00:03:20.710 align:start position:0%
+map to your position, the more related
+it<00:03:18.159><c> is.</c><00:03:19.200><c> The</c><00:03:19.440><c> difference</c><00:03:19.680><c> is</c><00:03:20.000><c> that</c><00:03:20.239><c> embeddings</c>
+
+00:03:20.710 --> 00:03:20.720 align:start position:0%
+it is. The difference is that embeddings
+ 
+
+00:03:20.720 --> 00:03:22.149 align:start position:0%
+it is. The difference is that embeddings
+have<00:03:20.879><c> hundreds</c><00:03:21.200><c> or</c><00:03:21.360><c> even</c><00:03:21.599><c> thousands</c><00:03:22.000><c> of</c>
+
+00:03:22.149 --> 00:03:22.159 align:start position:0%
+have hundreds or even thousands of
+ 
+
+00:03:22.159 --> 00:03:24.710 align:start position:0%
+have hundreds or even thousands of
+dimensions.<00:03:23.519><c> Searching</c><00:03:23.920><c> embeddings</c><00:03:24.400><c> one</c><00:03:24.560><c> at</c>
+
+00:03:24.710 --> 00:03:24.720 align:start position:0%
+dimensions. Searching embeddings one at
+ 
+
+00:03:24.720 --> 00:03:26.869 align:start position:0%
+dimensions. Searching embeddings one at
+a<00:03:24.879><c> time</c><00:03:25.040><c> works</c><00:03:25.280><c> for</c><00:03:25.519><c> small</c><00:03:25.760><c> data</c><00:03:26.000><c> sets,</c><00:03:26.480><c> but</c><00:03:26.720><c> at</c>
+
+00:03:26.869 --> 00:03:26.879 align:start position:0%
+a time works for small data sets, but at
+ 
+
+00:03:26.879 --> 00:03:29.430 align:start position:0%
+a time works for small data sets, but at
+scale<00:03:27.200><c> you</c><00:03:27.360><c> need</c><00:03:27.440><c> a</c><00:03:27.680><c> special</c><00:03:27.920><c> index.</c><00:03:29.040><c> Vector</c>
+
+00:03:29.430 --> 00:03:29.440 align:start position:0%
+scale you need a special index. Vector
+ 
+
+00:03:29.440 --> 00:03:31.589 align:start position:0%
+scale you need a special index. Vector
+databases<00:03:30.159><c> typically</c><00:03:30.720><c> use</c><00:03:30.879><c> an</c><00:03:31.120><c> approximate</c>
+
+00:03:31.589 --> 00:03:31.599 align:start position:0%
+databases typically use an approximate
+ 
+
+00:03:31.599 --> 00:03:33.990 align:start position:0%
+databases typically use an approximate
+nearest<00:03:32.000><c> neighbor</c><00:03:32.319><c> algorithm.</c><00:03:33.440><c> This</c><00:03:33.680><c> trades</c>
+
+00:03:33.990 --> 00:03:34.000 align:start position:0%
+nearest neighbor algorithm. This trades
+ 
+
+00:03:34.000 --> 00:03:35.750 align:start position:0%
+nearest neighbor algorithm. This trades
+some<00:03:34.239><c> accuracy</c><00:03:34.560><c> for</c><00:03:34.799><c> speed,</c><00:03:35.360><c> but</c><00:03:35.599><c> in</c>
+
+00:03:35.750 --> 00:03:35.760 align:start position:0%
+some accuracy for speed, but in
+ 
+
+00:03:35.760 --> 00:03:37.670 align:start position:0%
+some accuracy for speed, but in
+practice,<00:03:36.000><c> the</c><00:03:36.239><c> trade-off</c><00:03:36.560><c> is</c><00:03:36.720><c> negligible.</c>
+
+00:03:37.670 --> 00:03:37.680 align:start position:0%
+practice, the trade-off is negligible.
+ 
+
+00:03:37.680 --> 00:03:39.509 align:start position:0%
+practice, the trade-off is negligible.
+results<00:03:38.080><c> are</c><00:03:38.239><c> almost</c><00:03:38.560><c> identical</c><00:03:39.040><c> but</c>
+
+00:03:39.509 --> 00:03:39.519 align:start position:0%
+results are almost identical but
+ 
+
+00:03:39.519 --> 00:03:41.750 align:start position:0%
+results are almost identical but
+significantly<00:03:40.159><c> faster.</c>
+
+00:03:41.750 --> 00:03:41.760 align:start position:0%
+significantly faster.
+ 
+
+00:03:41.760 --> 00:03:43.430 align:start position:0%
+significantly faster.
+You<00:03:41.920><c> might</c><00:03:42.080><c> think</c><00:03:42.319><c> semantic</c><00:03:42.799><c> search</c><00:03:43.040><c> is</c><00:03:43.200><c> the</c>
+
+00:03:43.430 --> 00:03:43.440 align:start position:0%
+You might think semantic search is the
+ 
+
+00:03:43.440 --> 00:03:44.949 align:start position:0%
+You might think semantic search is the
+complete<00:03:43.680><c> answer</c><00:03:44.080><c> but</c><00:03:44.319><c> it</c><00:03:44.560><c> has</c><00:03:44.720><c> its</c>
+
+00:03:44.949 --> 00:03:44.959 align:start position:0%
+complete answer but it has its
+ 
+
+00:03:44.959 --> 00:03:47.350 align:start position:0%
+complete answer but it has its
+drawbacks.<00:03:46.080><c> Semantic</c><00:03:46.640><c> search</c><00:03:46.959><c> does</c><00:03:47.120><c> not</c>
+
+00:03:47.350 --> 00:03:47.360 align:start position:0%
+drawbacks. Semantic search does not
+ 
+
+00:03:47.360 --> 00:03:48.869 align:start position:0%
+drawbacks. Semantic search does not
+perform<00:03:47.680><c> well</c><00:03:47.840><c> for</c><00:03:48.080><c> literal</c><00:03:48.560><c> string</c>
+
+00:03:48.869 --> 00:03:48.879 align:start position:0%
+perform well for literal string
+ 
+
+00:03:48.879 --> 00:03:51.190 align:start position:0%
+perform well for literal string
+searches.<00:03:50.159><c> For</c><00:03:50.239><c> example,</c><00:03:50.640><c> looking</c><00:03:50.799><c> for</c><00:03:50.959><c> an</c>
+
+00:03:51.190 --> 00:03:51.200 align:start position:0%
+searches. For example, looking for an
+ 
+
+00:03:51.200 --> 00:03:52.470 align:start position:0%
+searches. For example, looking for an
+error<00:03:51.360><c> code</c><00:03:51.599><c> like</c><00:03:51.920><c> error</c><00:03:52.159><c> connection</c>
+
+00:03:52.470 --> 00:03:52.480 align:start position:0%
+error code like error connection
+ 
+
+00:03:52.480 --> 00:03:54.550 align:start position:0%
+error code like error connection
+refused.<00:03:53.120><c> Semantic</c><00:03:53.599><c> search</c><00:03:53.920><c> may</c><00:03:54.159><c> not</c><00:03:54.319><c> find</c>
+
+00:03:54.550 --> 00:03:54.560 align:start position:0%
+refused. Semantic search may not find
+ 
+
+00:03:54.560 --> 00:03:56.949 align:start position:0%
+refused. Semantic search may not find
+irrelevant<00:03:55.120><c> results.</c><00:03:56.400><c> If</c><00:03:56.560><c> you're</c><00:03:56.799><c> looking</c>
+
+00:03:56.949 --> 00:03:56.959 align:start position:0%
+irrelevant results. If you're looking
+ 
+
+00:03:56.959 --> 00:03:59.190 align:start position:0%
+irrelevant results. If you're looking
+for<00:03:57.120><c> a</c><00:03:57.280><c> function</c><00:03:57.680><c> like</c><00:03:57.920><c> say</c><00:03:58.159><c> use</c><00:03:58.480><c> state,</c><00:03:58.959><c> the</c>
+
+00:03:59.190 --> 00:03:59.200 align:start position:0%
+for a function like say use state, the
+ 
+
+00:03:59.200 --> 00:04:01.110 align:start position:0%
+for a function like say use state, the
+same<00:03:59.360><c> problem</c><00:03:59.599><c> might</c><00:03:59.840><c> happen.</c><00:04:00.720><c> It</c><00:04:00.959><c> can't</c>
+
+00:04:01.110 --> 00:04:01.120 align:start position:0%
+same problem might happen. It can't
+ 
+
+00:04:01.120 --> 00:04:03.270 align:start position:0%
+same problem might happen. It can't
+reliably<00:04:01.599><c> handle</c><00:04:01.920><c> exact</c><00:04:02.319><c> text</c><00:04:02.560><c> matches</c><00:04:03.040><c> and</c>
+
+00:04:03.270 --> 00:04:03.280 align:start position:0%
+reliably handle exact text matches and
+ 
+
+00:04:03.280 --> 00:04:06.070 align:start position:0%
+reliably handle exact text matches and
+specific<00:04:03.840><c> identifiers.</c><00:04:05.280><c> The</c><00:04:05.519><c> answer</c><00:04:05.760><c> is</c><00:04:05.920><c> to</c>
+
+00:04:06.070 --> 00:04:06.080 align:start position:0%
+specific identifiers. The answer is to
+ 
+
+00:04:06.080 --> 00:04:08.470 align:start position:0%
+specific identifiers. The answer is to
+combine<00:04:06.400><c> both</c><00:04:06.640><c> of</c><00:04:06.799><c> these</c><00:04:07.040><c> approaches.</c><00:04:08.159><c> Run</c>
+
+00:04:08.470 --> 00:04:08.480 align:start position:0%
+combine both of these approaches. Run
+ 
+
+00:04:08.480 --> 00:04:10.710 align:start position:0%
+combine both of these approaches. Run
+both<00:04:08.879><c> a</c><00:04:09.120><c> keyword</c><00:04:09.519><c> search</c><00:04:09.840><c> and</c><00:04:10.080><c> a</c><00:04:10.239><c> semantic</c>
+
+00:04:10.710 --> 00:04:10.720 align:start position:0%
+both a keyword search and a semantic
+ 
+
+00:04:10.720 --> 00:04:13.110 align:start position:0%
+both a keyword search and a semantic
+search<00:04:11.040><c> in</c><00:04:11.280><c> parallel.</c><00:04:12.159><c> Then</c><00:04:12.400><c> use</c><00:04:12.640><c> a</c><00:04:12.799><c> technique</c>
+
+00:04:13.110 --> 00:04:13.120 align:start position:0%
+search in parallel. Then use a technique
+ 
+
+00:04:13.120 --> 00:04:15.990 align:start position:0%
+search in parallel. Then use a technique
+called<00:04:13.439><c> fusion</c><00:04:13.920><c> to</c><00:04:14.159><c> combine</c><00:04:14.480><c> the</c><00:04:14.720><c> results.</c>
+
+00:04:15.990 --> 00:04:16.000 align:start position:0%
+called fusion to combine the results.
+ 
+
+00:04:16.000 --> 00:04:18.550 align:start position:0%
+called fusion to combine the results.
+There<00:04:16.160><c> are</c><00:04:16.320><c> two</c><00:04:16.560><c> common</c><00:04:16.880><c> approaches.</c><00:04:18.239><c> First,</c>
+
+00:04:18.550 --> 00:04:18.560 align:start position:0%
+There are two common approaches. First,
+ 
+
+00:04:18.560 --> 00:04:20.629 align:start position:0%
+There are two common approaches. First,
+there's<00:04:18.799><c> weighted</c><00:04:19.280><c> score</c><00:04:19.600><c> fusion.</c><00:04:20.479><c> This</c>
+
+00:04:20.629 --> 00:04:20.639 align:start position:0%
+there's weighted score fusion. This
+ 
+
+00:04:20.639 --> 00:04:22.469 align:start position:0%
+there's weighted score fusion. This
+takes<00:04:20.880><c> the</c><00:04:21.120><c> scores</c><00:04:21.359><c> from</c><00:04:21.680><c> both</c><00:04:21.919><c> searches</c><00:04:22.320><c> and</c>
+
+00:04:22.469 --> 00:04:22.479 align:start position:0%
+takes the scores from both searches and
+ 
+
+00:04:22.479 --> 00:04:24.870 align:start position:0%
+takes the scores from both searches and
+combines<00:04:22.960><c> them</c><00:04:23.120><c> with</c><00:04:23.360><c> weights.</c><00:04:24.320><c> Open</c><00:04:24.639><c> claw</c>
+
+00:04:24.870 --> 00:04:24.880 align:start position:0%
+combines them with weights. Open claw
+ 
+
+00:04:24.880 --> 00:04:27.189 align:start position:0%
+combines them with weights. Open claw
+uses<00:04:25.199><c> this</c><00:04:25.440><c> approach.</c><00:04:26.400><c> They</c><00:04:26.560><c> weigh</c><00:04:26.880><c> vector</c>
+
+00:04:27.189 --> 00:04:27.199 align:start position:0%
+uses this approach. They weigh vector
+ 
+
+00:04:27.199 --> 00:04:29.749 align:start position:0%
+uses this approach. They weigh vector
+scores<00:04:27.440><c> at</c><00:04:27.680><c> about</c><00:04:27.919><c> 70%</c><00:04:28.800><c> and</c><00:04:29.120><c> keyword</c><00:04:29.440><c> scores</c>
+
+00:04:29.749 --> 00:04:29.759 align:start position:0%
+scores at about 70% and keyword scores
+ 
+
+00:04:29.759 --> 00:04:31.510 align:start position:0%
+scores at about 70% and keyword scores
+at<00:04:30.000><c> 30%.</c>
+
+00:04:31.510 --> 00:04:31.520 align:start position:0%
+at 30%.
+ 
+
+00:04:31.520 --> 00:04:33.990 align:start position:0%
+at 30%.
+Second,<00:04:31.919><c> there's</c><00:04:32.240><c> reciprocal</c><00:04:32.960><c> rank</c><00:04:33.360><c> fusion</c>
+
+00:04:33.990 --> 00:04:34.000 align:start position:0%
+Second, there's reciprocal rank fusion
+ 
+
+00:04:34.000 --> 00:04:37.909 align:start position:0%
+Second, there's reciprocal rank fusion
+or<00:04:34.560><c> RRF.</c><00:04:36.000><c> You</c><00:04:36.240><c> take</c><00:04:36.479><c> two</c><00:04:36.880><c> separately</c><00:04:37.440><c> ranked</c>
+
+00:04:37.909 --> 00:04:37.919 align:start position:0%
+or RRF. You take two separately ranked
+ 
+
+00:04:37.919 --> 00:04:40.950 align:start position:0%
+or RRF. You take two separately ranked
+searches,<00:04:38.880><c> semantic</c><00:04:39.440><c> and</c><00:04:39.680><c> keyword.</c><00:04:40.720><c> Instead</c>
+
+00:04:40.950 --> 00:04:40.960 align:start position:0%
+searches, semantic and keyword. Instead
+ 
+
+00:04:40.960 --> 00:04:44.150 align:start position:0%
+searches, semantic and keyword. Instead
+of<00:04:41.120><c> using</c><00:04:41.440><c> raw</c><00:04:41.759><c> scores,</c><00:04:42.320><c> RRF</c><00:04:43.280><c> looks</c><00:04:43.600><c> at</c><00:04:43.840><c> where</c>
+
+00:04:44.150 --> 00:04:44.160 align:start position:0%
+of using raw scores, RRF looks at where
+ 
+
+00:04:44.160 --> 00:04:47.110 align:start position:0%
+of using raw scores, RRF looks at where
+each<00:04:44.400><c> result</c><00:04:44.800><c> ranked</c><00:04:45.120><c> in</c><00:04:45.440><c> both</c><00:04:45.680><c> searches.</c><00:04:46.880><c> A</c>
+
+00:04:47.110 --> 00:04:47.120 align:start position:0%
+each result ranked in both searches. A
+ 
+
+00:04:47.120 --> 00:04:48.629 align:start position:0%
+each result ranked in both searches. A
+result<00:04:47.360><c> that</c><00:04:47.600><c> ranked</c><00:04:47.919><c> number</c><00:04:48.160><c> two</c><00:04:48.400><c> in</c>
+
+00:04:48.629 --> 00:04:48.639 align:start position:0%
+result that ranked number two in
+ 
+
+00:04:48.639 --> 00:04:50.710 align:start position:0%
+result that ranked number two in
+semantic<00:04:49.199><c> search</c><00:04:49.520><c> and</c><00:04:49.840><c> number</c><00:04:50.160><c> three</c><00:04:50.400><c> in</c>
+
+00:04:50.710 --> 00:04:50.720 align:start position:0%
+semantic search and number three in
+ 
+
+00:04:50.720 --> 00:04:53.270 align:start position:0%
+semantic search and number three in
+keyword<00:04:51.440><c> gets</c><00:04:51.680><c> a</c><00:04:51.919><c> combined</c><00:04:52.320><c> score</c><00:04:52.720><c> based</c><00:04:53.040><c> on</c>
+
+00:04:53.270 --> 00:04:53.280 align:start position:0%
+keyword gets a combined score based on
+ 
+
+00:04:53.280 --> 00:04:55.830 align:start position:0%
+keyword gets a combined score based on
+both<00:04:53.520><c> of</c><00:04:53.680><c> those</c><00:04:53.840><c> positions.</c><00:04:55.280><c> Results</c><00:04:55.600><c> that</c>
+
+00:04:55.830 --> 00:04:55.840 align:start position:0%
+both of those positions. Results that
+ 
+
+00:04:55.840 --> 00:04:57.909 align:start position:0%
+both of those positions. Results that
+show<00:04:56.000><c> up</c><00:04:56.160><c> near</c><00:04:56.400><c> the</c><00:04:56.560><c> top</c><00:04:56.720><c> in</c><00:04:57.040><c> both</c><00:04:57.280><c> lists</c>
+
+00:04:57.909 --> 00:04:57.919 align:start position:0%
+show up near the top in both lists
+ 
+
+00:04:57.919 --> 00:04:59.590 align:start position:0%
+show up near the top in both lists
+naturally<00:04:58.400><c> bubble</c><00:04:58.720><c> up</c><00:04:58.880><c> to</c><00:04:59.040><c> the</c><00:04:59.199><c> top</c><00:04:59.280><c> of</c><00:04:59.440><c> the</c>
+
+00:04:59.590 --> 00:04:59.600 align:start position:0%
+naturally bubble up to the top of the
+ 
+
+00:04:59.600 --> 00:05:01.990 align:start position:0%
+naturally bubble up to the top of the
+final<00:04:59.840><c> results.</c>
+
+00:05:01.990 --> 00:05:02.000 align:start position:0%
+final results.
+ 
+
+00:05:02.000 --> 00:05:03.830 align:start position:0%
+final results.
+Weighted<00:05:02.400><c> fusion</c><00:05:02.800><c> gives</c><00:05:02.960><c> you</c><00:05:03.199><c> more</c><00:05:03.520><c> control</c>
+
+00:05:03.830 --> 00:05:03.840 align:start position:0%
+Weighted fusion gives you more control
+ 
+
+00:05:03.840 --> 00:05:05.990 align:start position:0%
+Weighted fusion gives you more control
+and<00:05:04.080><c> preserves</c><00:05:04.560><c> how</c><00:05:04.800><c> strong</c><00:05:05.120><c> each</c><00:05:05.520><c> individual</c>
+
+00:05:05.990 --> 00:05:06.000 align:start position:0%
+and preserves how strong each individual
+ 
+
+00:05:06.000 --> 00:05:09.830 align:start position:0%
+and preserves how strong each individual
+match<00:05:06.320><c> was.</c><00:05:07.440><c> RF</c><00:05:08.080><c> is</c><00:05:08.320><c> simpler,</c><00:05:08.800><c> but</c><00:05:09.360><c> treats</c><00:05:09.680><c> a</c>
+
+00:05:09.830 --> 00:05:09.840 align:start position:0%
+match was. RF is simpler, but treats a
+ 
+
+00:05:09.840 --> 00:05:11.990 align:start position:0%
+match was. RF is simpler, but treats a
+near-perfect<00:05:10.400><c> match</c><00:05:10.800><c> the</c><00:05:11.120><c> same</c><00:05:11.280><c> as</c><00:05:11.520><c> a</c><00:05:11.680><c> decent</c>
+
+00:05:11.990 --> 00:05:12.000 align:start position:0%
+near-perfect match the same as a decent
+ 
+
+00:05:12.000 --> 00:05:14.469 align:start position:0%
+near-perfect match the same as a decent
+one.<00:05:12.560><c> It</c><00:05:12.800><c> only</c><00:05:12.960><c> cares</c><00:05:13.280><c> about</c><00:05:13.520><c> position,</c><00:05:14.160><c> not</c>
+
+00:05:14.469 --> 00:05:14.479 align:start position:0%
+one. It only cares about position, not
+ 
+
+00:05:14.479 --> 00:05:17.909 align:start position:0%
+one. It only cares about position, not
+strength.<00:05:15.360><c> Choose</c><00:05:15.680><c> based</c><00:05:15.919><c> on</c><00:05:16.080><c> your</c><00:05:16.240><c> needs.</c>
+
+00:05:17.909 --> 00:05:17.919 align:start position:0%
+strength. Choose based on your needs.
+ 
+
+00:05:17.919 --> 00:05:19.990 align:start position:0%
+strength. Choose based on your needs.
+Now<00:05:18.080><c> that</c><00:05:18.320><c> we</c><00:05:18.400><c> have</c><00:05:18.479><c> a</c><00:05:18.639><c> combined</c><00:05:19.120><c> result</c><00:05:19.680><c> using</c>
+
+00:05:19.990 --> 00:05:20.000 align:start position:0%
+Now that we have a combined result using
+ 
+
+00:05:20.000 --> 00:05:23.189 align:start position:0%
+Now that we have a combined result using
+Fusion,<00:05:20.880><c> we</c><00:05:21.039><c> have</c><00:05:21.120><c> a</c><00:05:21.360><c> ranked</c><00:05:21.680><c> list.</c><00:05:22.560><c> But</c><00:05:22.960><c> this</c>
+
+00:05:23.189 --> 00:05:23.199 align:start position:0%
+Fusion, we have a ranked list. But this
+ 
+
+00:05:23.199 --> 00:05:25.909 align:start position:0%
+Fusion, we have a ranked list. But this
+ranking<00:05:23.600><c> is</c><00:05:23.759><c> based</c><00:05:23.919><c> on</c><00:05:24.160><c> purely</c><00:05:24.639><c> math,</c><00:05:25.520><c> vector</c>
+
+00:05:25.909 --> 00:05:25.919 align:start position:0%
+ranking is based on purely math, vector
+ 
+
+00:05:25.919 --> 00:05:28.070 align:start position:0%
+ranking is based on purely math, vector
+distances,<00:05:26.320><c> and</c><00:05:26.560><c> keyword</c><00:05:27.039><c> scores.</c><00:05:27.840><c> it</c>
+
+00:05:28.070 --> 00:05:28.080 align:start position:0%
+distances, and keyword scores. it
+ 
+
+00:05:28.080 --> 00:05:29.510 align:start position:0%
+distances, and keyword scores. it
+doesn't<00:05:28.240><c> have</c><00:05:28.400><c> the</c><00:05:28.560><c> ability</c><00:05:28.880><c> to</c><00:05:29.120><c> understand</c>
+
+00:05:29.510 --> 00:05:29.520 align:start position:0%
+doesn't have the ability to understand
+ 
+
+00:05:29.520 --> 00:05:30.950 align:start position:0%
+doesn't have the ability to understand
+nuance<00:05:29.919><c> of</c><00:05:30.080><c> what</c><00:05:30.160><c> the</c><00:05:30.320><c> user</c><00:05:30.560><c> is</c><00:05:30.720><c> actually</c>
+
+00:05:30.950 --> 00:05:30.960 align:start position:0%
+nuance of what the user is actually
+ 
+
+00:05:30.960 --> 00:05:33.270 align:start position:0%
+nuance of what the user is actually
+looking<00:05:31.199><c> for.</c><00:05:32.160><c> Reranking</c><00:05:32.720><c> is</c><00:05:32.880><c> a</c><00:05:33.039><c> technique</c>
+
+00:05:33.270 --> 00:05:33.280 align:start position:0%
+looking for. Reranking is a technique
+ 
+
+00:05:33.280 --> 00:05:34.790 align:start position:0%
+looking for. Reranking is a technique
+where<00:05:33.520><c> you</c><00:05:33.680><c> take</c><00:05:33.919><c> these</c><00:05:34.160><c> results</c><00:05:34.400><c> and</c><00:05:34.560><c> pass</c>
+
+00:05:34.790 --> 00:05:34.800 align:start position:0%
+where you take these results and pass
+ 
+
+00:05:34.800 --> 00:05:36.710 align:start position:0%
+where you take these results and pass
+them<00:05:34.960><c> to</c><00:05:35.120><c> a</c><00:05:35.280><c> model</c><00:05:35.520><c> that</c><00:05:35.759><c> can</c><00:05:35.919><c> evaluate</c><00:05:36.400><c> each</c>
+
+00:05:36.710 --> 00:05:36.720 align:start position:0%
+them to a model that can evaluate each
+ 
+
+00:05:36.720 --> 00:05:38.469 align:start position:0%
+them to a model that can evaluate each
+result<00:05:37.120><c> against</c><00:05:37.440><c> the</c><00:05:37.600><c> user's</c><00:05:38.080><c> original</c>
+
+00:05:38.469 --> 00:05:38.479 align:start position:0%
+result against the user's original
+ 
+
+00:05:38.479 --> 00:05:41.270 align:start position:0%
+result against the user's original
+query.<00:05:39.600><c> The</c><00:05:39.840><c> model</c><00:05:40.080><c> then</c><00:05:40.320><c> applies</c><00:05:40.639><c> a</c><00:05:40.880><c> nuance</c>
+
+00:05:41.270 --> 00:05:41.280 align:start position:0%
+query. The model then applies a nuance
+ 
+
+00:05:41.280 --> 00:05:43.909 align:start position:0%
+query. The model then applies a nuance
+judgment<00:05:41.680><c> about</c><00:05:42.000><c> relevance.</c><00:05:43.280><c> It</c><00:05:43.520><c> could</c><00:05:43.600><c> be</c><00:05:43.759><c> an</c>
+
+00:05:43.909 --> 00:05:43.919 align:start position:0%
+judgment about relevance. It could be an
+ 
+
+00:05:43.919 --> 00:05:47.189 align:start position:0%
+judgment about relevance. It could be an
+LLM<00:05:44.479><c> or</c><00:05:44.720><c> a</c><00:05:44.960><c> specialized</c><00:05:45.440><c> model</c><00:05:45.680><c> like</c><00:05:45.919><c> cohhere.</c>
+
+00:05:47.189 --> 00:05:47.199 align:start position:0%
+LLM or a specialized model like cohhere.
+ 
+
+00:05:47.199 --> 00:05:49.749 align:start position:0%
+LLM or a specialized model like cohhere.
+The<00:05:47.360><c> trade-off</c><00:05:48.000><c> cost</c><00:05:48.320><c> and</c><00:05:48.479><c> latency.</c><00:05:49.440><c> Adding</c>
+
+00:05:49.749 --> 00:05:49.759 align:start position:0%
+The trade-off cost and latency. Adding
+ 
+
+00:05:49.759 --> 00:05:51.749 align:start position:0%
+The trade-off cost and latency. Adding
+another<00:05:50.080><c> step</c><00:05:50.320><c> and</c><00:05:50.560><c> potentially</c><00:05:51.039><c> another</c><00:05:51.360><c> API</c>
+
+00:05:51.749 --> 00:05:51.759 align:start position:0%
+another step and potentially another API
+ 
+
+00:05:51.759 --> 00:05:53.510 align:start position:0%
+another step and potentially another API
+call<00:05:52.160><c> means</c><00:05:52.400><c> that</c><00:05:52.560><c> there's</c><00:05:52.800><c> more</c><00:05:52.960><c> time</c><00:05:53.199><c> before</c>
+
+00:05:53.510 --> 00:05:53.520 align:start position:0%
+call means that there's more time before
+ 
+
+00:05:53.520 --> 00:05:55.909 align:start position:0%
+call means that there's more time before
+getting<00:05:53.759><c> the</c><00:05:54.000><c> final</c><00:05:54.320><c> results.</c><00:05:55.520><c> If</c><00:05:55.680><c> you're</c>
+
+00:05:55.909 --> 00:05:55.919 align:start position:0%
+getting the final results. If you're
+ 
+
+00:05:55.919 --> 00:05:57.909 align:start position:0%
+getting the final results. If you're
+wondering<00:05:56.560><c> why</c><00:05:56.720><c> not</c><00:05:56.880><c> just</c><00:05:57.120><c> start</c><00:05:57.199><c> with</c><00:05:57.360><c> an</c><00:05:57.520><c> LM</c>
+
+00:05:57.909 --> 00:05:57.919 align:start position:0%
+wondering why not just start with an LM
+ 
+
+00:05:57.919 --> 00:05:59.189 align:start position:0%
+wondering why not just start with an LM
+for<00:05:58.080><c> search,</c><00:05:58.400><c> the</c><00:05:58.639><c> answer</c><00:05:58.800><c> is</c><00:05:58.880><c> going</c><00:05:58.960><c> to</c><00:05:59.039><c> be</c>
+
+00:05:59.189 --> 00:05:59.199 align:start position:0%
+for search, the answer is going to be
+ 
+
+00:05:59.199 --> 00:06:01.029 align:start position:0%
+for search, the answer is going to be
+speed<00:05:59.440><c> and</c><00:05:59.680><c> context</c><00:06:00.080><c> window</c><00:06:00.400><c> limits.</c><00:06:00.800><c> The</c>
+
+00:06:01.029 --> 00:06:01.039 align:start position:0%
+speed and context window limits. The
+ 
+
+00:06:01.039 --> 00:06:02.390 align:start position:0%
+speed and context window limits. The
+initial<00:06:01.280><c> search</c><00:06:01.520><c> needs</c><00:06:01.680><c> to</c><00:06:01.840><c> scan</c><00:06:02.080><c> thousands</c>
+
+00:06:02.390 --> 00:06:02.400 align:start position:0%
+initial search needs to scan thousands
+ 
+
+00:06:02.400 --> 00:06:04.950 align:start position:0%
+initial search needs to scan thousands
+of<00:06:02.560><c> embeddings</c><00:06:03.039><c> quickly.</c><00:06:03.919><c> Ranking</c><00:06:04.479><c> is</c><00:06:04.639><c> slower</c>
+
+00:06:04.950 --> 00:06:04.960 align:start position:0%
+of embeddings quickly. Ranking is slower
+ 
+
+00:06:04.960 --> 00:06:07.110 align:start position:0%
+of embeddings quickly. Ranking is slower
+but<00:06:05.199><c> more</c><00:06:05.440><c> accurate.</c><00:06:06.240><c> That's</c><00:06:06.479><c> fine.</c><00:06:06.880><c> You've</c>
+
+00:06:07.110 --> 00:06:07.120 align:start position:0%
+but more accurate. That's fine. You've
+ 
+
+00:06:07.120 --> 00:06:08.629 align:start position:0%
+but more accurate. That's fine. You've
+already<00:06:07.280><c> offloaded</c><00:06:07.759><c> the</c><00:06:07.919><c> bulk</c><00:06:08.080><c> of</c><00:06:08.160><c> the</c><00:06:08.319><c> search</c>
+
+00:06:08.629 --> 00:06:08.639 align:start position:0%
+already offloaded the bulk of the search
+ 
+
+00:06:08.639 --> 00:06:10.390 align:start position:0%
+already offloaded the bulk of the search
+and<00:06:08.800><c> you're</c><00:06:09.039><c> providing</c><00:06:09.360><c> it</c><00:06:09.520><c> with</c><00:06:09.680><c> a</c><00:06:09.919><c> refined</c>
+
+00:06:10.390 --> 00:06:10.400 align:start position:0%
+and you're providing it with a refined
+ 
+
+00:06:10.400 --> 00:06:12.950 align:start position:0%
+and you're providing it with a refined
+set<00:06:10.639><c> of</c><00:06:10.800><c> results</c><00:06:11.120><c> to</c><00:06:11.280><c> rerank.</c>
+
+00:06:12.950 --> 00:06:12.960 align:start position:0%
+set of results to rerank.
+ 
+
+00:06:12.960 --> 00:06:14.550 align:start position:0%
+set of results to rerank.
+Now,<00:06:13.280><c> let's</c><00:06:13.520><c> take</c><00:06:13.600><c> a</c><00:06:13.759><c> look</c><00:06:13.840><c> at</c><00:06:14.000><c> a</c><00:06:14.160><c> real</c><00:06:14.400><c> world</c>
+
+00:06:14.550 --> 00:06:14.560 align:start position:0%
+Now, let's take a look at a real world
+ 
+
+00:06:14.560 --> 00:06:17.270 align:start position:0%
+Now, let's take a look at a real world
+example<00:06:14.880><c> in</c><00:06:15.120><c> OpenClaw.</c><00:06:16.400><c> In</c><00:06:16.560><c> my</c><00:06:16.720><c> last</c><00:06:16.880><c> video,</c><00:06:17.120><c> I</c>
+
+00:06:17.270 --> 00:06:17.280 align:start position:0%
+example in OpenClaw. In my last video, I
+ 
+
+00:06:17.280 --> 00:06:18.710 align:start position:0%
+example in OpenClaw. In my last video, I
+mentioned<00:06:17.440><c> that</c><00:06:17.600><c> OpenClaw</c><00:06:18.080><c> uses</c><00:06:18.240><c> markdown</c>
+
+00:06:18.710 --> 00:06:18.720 align:start position:0%
+mentioned that OpenClaw uses markdown
+ 
+
+00:06:18.720 --> 00:06:20.629 align:start position:0%
+mentioned that OpenClaw uses markdown
+files<00:06:18.960><c> for</c><00:06:19.120><c> memory,</c><00:06:19.759><c> but</c><00:06:20.000><c> it</c><00:06:20.160><c> also</c><00:06:20.319><c> has</c><00:06:20.479><c> a</c>
+
+00:06:20.629 --> 00:06:20.639 align:start position:0%
+files for memory, but it also has a
+ 
+
+00:06:20.639 --> 00:06:22.870 align:start position:0%
+files for memory, but it also has a
+memory<00:06:20.960><c> management</c><00:06:21.440><c> feature.</c><00:06:22.240><c> It</c><00:06:22.560><c> supports</c>
+
+00:06:22.870 --> 00:06:22.880 align:start position:0%
+memory management feature. It supports
+ 
+
+00:06:22.880 --> 00:06:25.830 align:start position:0%
+memory management feature. It supports
+two<00:06:23.199><c> systems</c><00:06:23.520><c> for</c><00:06:23.919><c> memory</c><00:06:24.240><c> backend.</c><00:06:25.680><c> The</c>
+
+00:06:25.830 --> 00:06:25.840 align:start position:0%
+two systems for memory backend. The
+ 
+
+00:06:25.840 --> 00:06:27.990 align:start position:0%
+two systems for memory backend. The
+default<00:06:26.240><c> system</c><00:06:26.479><c> uses</c><00:06:26.800><c> SQLite</c><00:06:27.440><c> and</c><00:06:27.680><c> vector</c>
+
+00:06:27.990 --> 00:06:28.000 align:start position:0%
+default system uses SQLite and vector
+ 
+
+00:06:28.000 --> 00:06:29.749 align:start position:0%
+default system uses SQLite and vector
+embeddings.<00:06:28.800><c> An</c><00:06:29.039><c> optional</c><00:06:29.360><c> system</c><00:06:29.600><c> is</c>
+
+00:06:29.749 --> 00:06:29.759 align:start position:0%
+embeddings. An optional system is
+ 
+
+00:06:29.759 --> 00:06:32.070 align:start position:0%
+embeddings. An optional system is
+managed<00:06:30.080><c> by</c><00:06:30.240><c> QMD</c><00:06:31.039><c> which</c><00:06:31.199><c> is</c><00:06:31.280><c> an</c><00:06:31.520><c> open</c><00:06:31.680><c> source</c>
+
+00:06:32.070 --> 00:06:32.080 align:start position:0%
+managed by QMD which is an open source
+ 
+
+00:06:32.080 --> 00:06:34.790 align:start position:0%
+managed by QMD which is an open source
+library<00:06:32.400><c> by</c><00:06:32.560><c> Toby</c><00:06:32.960><c> Lutkkey.</c><00:06:34.240><c> In</c><00:06:34.400><c> this</c><00:06:34.560><c> video,</c>
+
+00:06:34.790 --> 00:06:34.800 align:start position:0%
+library by Toby Lutkkey. In this video,
+ 
+
+00:06:34.800 --> 00:06:36.710 align:start position:0%
+library by Toby Lutkkey. In this video,
+we're<00:06:34.960><c> going</c><00:06:35.039><c> to</c><00:06:35.120><c> cover</c><00:06:35.360><c> the</c><00:06:35.520><c> default</c><00:06:35.919><c> system.</c>
+
+00:06:36.710 --> 00:06:36.720 align:start position:0%
+we're going to cover the default system.
+ 
+
+00:06:36.720 --> 00:06:38.309 align:start position:0%
+we're going to cover the default system.
+The<00:06:36.960><c> default</c><00:06:37.280><c> memory</c><00:06:37.680><c> layer</c><00:06:37.840><c> requires</c><00:06:38.160><c> an</c>
+
+00:06:38.309 --> 00:06:38.319 align:start position:0%
+The default memory layer requires an
+ 
+
+00:06:38.319 --> 00:06:40.309 align:start position:0%
+The default memory layer requires an
+embedding<00:06:38.720><c> provider</c><00:06:39.039><c> to</c><00:06:39.199><c> be</c><00:06:39.360><c> configured.</c>
+
+00:06:40.309 --> 00:06:40.319 align:start position:0%
+embedding provider to be configured.
+ 
+
+00:06:40.319 --> 00:06:42.710 align:start position:0%
+embedding provider to be configured.
+Open<00:06:40.639><c> clause</c><00:06:40.960><c> supports</c><00:06:41.360><c> four</c><00:06:41.600><c> options.</c>
+
+00:06:42.710 --> 00:06:42.720 align:start position:0%
+Open clause supports four options.
+ 
+
+00:06:42.720 --> 00:06:46.469 align:start position:0%
+Open clause supports four options.
+First,<00:06:43.280><c> a</c><00:06:43.520><c> local</c><00:06:44.000><c> model</c><00:06:44.479><c> available</c><00:06:44.960><c> via</c><00:06:45.280><c> OAMA.</c>
+
+00:06:46.469 --> 00:06:46.479 align:start position:0%
+First, a local model available via OAMA.
+ 
+
+00:06:46.479 --> 00:06:48.469 align:start position:0%
+First, a local model available via OAMA.
+Second,<00:06:46.800><c> OpenAI</c><00:06:47.360><c> via</c><00:06:47.600><c> text</c><00:06:47.840><c> embedding</c><00:06:48.240><c> 3</c>
+
+00:06:48.469 --> 00:06:48.479 align:start position:0%
+Second, OpenAI via text embedding 3
+ 
+
+00:06:48.479 --> 00:06:50.950 align:start position:0%
+Second, OpenAI via text embedding 3
+small.<00:06:49.120><c> Third,</c><00:06:49.600><c> Google</c><00:06:49.840><c> Gemini</c><00:06:50.319><c> via</c><00:06:50.560><c> Gemini</c>
+
+00:06:50.950 --> 00:06:50.960 align:start position:0%
+small. Third, Google Gemini via Gemini
+ 
+
+00:06:50.960 --> 00:06:54.390 align:start position:0%
+small. Third, Google Gemini via Gemini
+embedding<00:06:51.520><c> 001.</c><00:06:52.560><c> And</c><00:06:52.720><c> fourth,</c><00:06:53.199><c> Voyage</c><00:06:53.680><c> AI</c><00:06:54.080><c> via</c>
+
+00:06:54.390 --> 00:06:54.400 align:start position:0%
+embedding 001. And fourth, Voyage AI via
+ 
+
+00:06:54.400 --> 00:06:57.110 align:start position:0%
+embedding 001. And fourth, Voyage AI via
+Voyage<00:06:54.880><c> for</c><00:06:55.120><c> large.</c><00:06:56.080><c> You</c><00:06:56.319><c> can</c><00:06:56.400><c> specify</c><00:06:56.800><c> which</c>
+
+00:06:57.110 --> 00:06:57.120 align:start position:0%
+Voyage for large. You can specify which
+ 
+
+00:06:57.120 --> 00:06:58.950 align:start position:0%
+Voyage for large. You can specify which
+provider<00:06:57.440><c> to</c><00:06:57.600><c> use</c><00:06:57.759><c> in</c><00:06:57.919><c> your</c><00:06:58.080><c> configuration</c><00:06:58.800><c> or</c>
+
+00:06:58.950 --> 00:06:58.960 align:start position:0%
+provider to use in your configuration or
+ 
+
+00:06:58.960 --> 00:07:01.350 align:start position:0%
+provider to use in your configuration or
+you<00:06:59.120><c> can</c><00:06:59.280><c> leave</c><00:06:59.360><c> it</c><00:06:59.599><c> set</c><00:06:59.759><c> to</c><00:06:59.919><c> auto.</c><00:07:00.800><c> In</c><00:07:01.039><c> auto</c>
+
+00:07:01.350 --> 00:07:01.360 align:start position:0%
+you can leave it set to auto. In auto
+ 
+
+00:07:01.360 --> 00:07:03.350 align:start position:0%
+you can leave it set to auto. In auto
+mode,<00:07:01.599><c> Open</c><00:07:01.919><c> Claw</c><00:07:02.240><c> checks</c><00:07:02.400><c> for</c><00:07:02.560><c> a</c><00:07:02.720><c> local</c><00:07:03.039><c> model</c>
+
+00:07:03.350 --> 00:07:03.360 align:start position:0%
+mode, Open Claw checks for a local model
+ 
+
+00:07:03.360 --> 00:07:05.749 align:start position:0%
+mode, Open Claw checks for a local model
+first.<00:07:04.160><c> If</c><00:07:04.400><c> it's</c><00:07:04.560><c> not</c><00:07:04.720><c> available,</c><00:07:05.199><c> it</c><00:07:05.440><c> tries</c>
+
+00:07:05.749 --> 00:07:05.759 align:start position:0%
+first. If it's not available, it tries
+ 
+
+00:07:05.759 --> 00:07:08.550 align:start position:0%
+first. If it's not available, it tries
+each<00:07:06.000><c> remote</c><00:07:06.319><c> provider</c><00:07:06.720><c> in</c><00:07:06.880><c> order.</c><00:07:07.599><c> OpenAI,</c>
+
+00:07:08.550 --> 00:07:08.560 align:start position:0%
+each remote provider in order. OpenAI,
+ 
+
+00:07:08.560 --> 00:07:11.510 align:start position:0%
+each remote provider in order. OpenAI,
+Gemini,<00:07:09.199><c> then</c><00:07:09.440><c> Voyage.</c><00:07:10.639><c> It</c><00:07:10.800><c> uses</c><00:07:11.120><c> whichever</c>
+
+00:07:11.510 --> 00:07:11.520 align:start position:0%
+Gemini, then Voyage. It uses whichever
+ 
+
+00:07:11.520 --> 00:07:13.670 align:start position:0%
+Gemini, then Voyage. It uses whichever
+API<00:07:12.000><c> key</c><00:07:12.160><c> is</c><00:07:12.319><c> configured.</c><00:07:13.039><c> If</c><00:07:13.199><c> none</c><00:07:13.440><c> are</c>
+
+00:07:13.670 --> 00:07:13.680 align:start position:0%
+API key is configured. If none are
+ 
+
+00:07:13.680 --> 00:07:15.189 align:start position:0%
+API key is configured. If none are
+available,<00:07:13.919><c> then</c><00:07:14.160><c> memory</c><00:07:14.479><c> search</c><00:07:14.720><c> is</c><00:07:14.880><c> simply</c>
+
+00:07:15.189 --> 00:07:15.199 align:start position:0%
+available, then memory search is simply
+ 
+
+00:07:15.199 --> 00:07:16.950 align:start position:0%
+available, then memory search is simply
+disabled.<00:07:15.680><c> The</c><00:07:15.919><c> default</c><00:07:16.240><c> system</c><00:07:16.560><c> stores</c>
+
+00:07:16.950 --> 00:07:16.960 align:start position:0%
+disabled. The default system stores
+ 
+
+00:07:16.960 --> 00:07:19.270 align:start position:0%
+disabled. The default system stores
+everything<00:07:17.199><c> in</c><00:07:17.360><c> a</c><00:07:17.520><c> single</c><00:07:17.759><c> SQLite</c><00:07:18.319><c> database.</c>
+
+00:07:19.270 --> 00:07:19.280 align:start position:0%
+everything in a single SQLite database.
+ 
+
+00:07:19.280 --> 00:07:21.990 align:start position:0%
+everything in a single SQLite database.
+A<00:07:19.520><c> few</c><00:07:19.680><c> key</c><00:07:19.919><c> tables</c><00:07:20.319><c> power</c><00:07:20.560><c> this.</c><00:07:21.440><c> The</c><00:07:21.599><c> files</c>
+
+00:07:21.990 --> 00:07:22.000 align:start position:0%
+A few key tables power this. The files
+ 
+
+00:07:22.000 --> 00:07:24.950 align:start position:0%
+A few key tables power this. The files
+table<00:07:22.639><c> tracks</c><00:07:23.039><c> each</c><00:07:23.280><c> memory</c><00:07:23.680><c> file.</c><00:07:24.479><c> It</c><00:07:24.639><c> stores</c>
+
+00:07:24.950 --> 00:07:24.960 align:start position:0%
+table tracks each memory file. It stores
+ 
+
+00:07:24.960 --> 00:07:27.029 align:start position:0%
+table tracks each memory file. It stores
+the<00:07:25.120><c> path,</c><00:07:25.599><c> a</c><00:07:25.840><c> content</c><00:07:26.160><c> hash,</c><00:07:26.479><c> and</c><00:07:26.639><c> the</c><00:07:26.880><c> last</c>
+
+00:07:27.029 --> 00:07:27.039 align:start position:0%
+the path, a content hash, and the last
+ 
+
+00:07:27.039 --> 00:07:29.430 align:start position:0%
+the path, a content hash, and the last
+modified<00:07:27.599><c> time.</c><00:07:28.319><c> This</c><00:07:28.479><c> enables</c><00:07:28.880><c> incremental</c>
+
+00:07:29.430 --> 00:07:29.440 align:start position:0%
+modified time. This enables incremental
+ 
+
+00:07:29.440 --> 00:07:31.909 align:start position:0%
+modified time. This enables incremental
+syncing.<00:07:30.560><c> The</c><00:07:30.800><c> chunks</c><00:07:31.280><c> table</c><00:07:31.520><c> is</c><00:07:31.759><c> where</c>
+
+00:07:31.909 --> 00:07:31.919 align:start position:0%
+syncing. The chunks table is where
+ 
+
+00:07:31.919 --> 00:07:34.070 align:start position:0%
+syncing. The chunks table is where
+things<00:07:32.160><c> get</c><00:07:32.400><c> interesting.</c>
+
+00:07:34.070 --> 00:07:34.080 align:start position:0%
+things get interesting.
+ 
+
+00:07:34.080 --> 00:07:36.950 align:start position:0%
+things get interesting.
+Openclaw<00:07:34.800><c> doesn't</c><00:07:35.120><c> embed</c><00:07:35.599><c> entire</c><00:07:36.080><c> files.</c>
+
+00:07:36.950 --> 00:07:36.960 align:start position:0%
+Openclaw doesn't embed entire files.
+ 
+
+00:07:36.960 --> 00:07:38.629 align:start position:0%
+Openclaw doesn't embed entire files.
+Instead,<00:07:37.280><c> it</c><00:07:37.440><c> breaks</c><00:07:37.680><c> markdown</c><00:07:38.080><c> files</c><00:07:38.400><c> into</c>
+
+00:07:38.629 --> 00:07:38.639 align:start position:0%
+Instead, it breaks markdown files into
+ 
+
+00:07:38.639 --> 00:07:41.430 align:start position:0%
+Instead, it breaks markdown files into
+chunks<00:07:38.960><c> of</c><00:07:39.120><c> roughly</c><00:07:39.520><c> 400</c><00:07:40.000><c> tokens</c><00:07:40.639><c> with</c><00:07:40.880><c> an</c><00:07:41.120><c> 80</c>
+
+00:07:41.430 --> 00:07:41.440 align:start position:0%
+chunks of roughly 400 tokens with an 80
+ 
+
+00:07:41.440 --> 00:07:44.710 align:start position:0%
+chunks of roughly 400 tokens with an 80
+token<00:07:41.759><c> overlap</c><00:07:42.319><c> between</c><00:07:42.639><c> chunks.</c><00:07:43.919><c> Each</c><00:07:44.240><c> chunk</c>
+
+00:07:44.710 --> 00:07:44.720 align:start position:0%
+token overlap between chunks. Each chunk
+ 
+
+00:07:44.720 --> 00:07:47.670 align:start position:0%
+token overlap between chunks. Each chunk
+stores<00:07:45.039><c> its</c><00:07:45.360><c> text,</c><00:07:46.240><c> the</c><00:07:46.400><c> embedding</c><00:07:46.880><c> vector,</c>
+
+00:07:47.670 --> 00:07:47.680 align:start position:0%
+stores its text, the embedding vector,
+ 
+
+00:07:47.680 --> 00:07:49.990 align:start position:0%
+stores its text, the embedding vector,
+and<00:07:48.000><c> the</c><00:07:48.319><c> line</c><00:07:48.560><c> range</c><00:07:48.880><c> it</c><00:07:49.120><c> came</c><00:07:49.280><c> from</c><00:07:49.520><c> in</c><00:07:49.759><c> the</c>
+
+00:07:49.990 --> 00:07:50.000 align:start position:0%
+and the line range it came from in the
+ 
+
+00:07:50.000 --> 00:07:52.710 align:start position:0%
+and the line range it came from in the
+original<00:07:50.319><c> file.</c><00:07:51.680><c> That</c><00:07:51.919><c> line</c><00:07:52.160><c> range</c><00:07:52.400><c> is</c><00:07:52.560><c> what</c>
+
+00:07:52.710 --> 00:07:52.720 align:start position:0%
+original file. That line range is what
+ 
+
+00:07:52.720 --> 00:07:54.469 align:start position:0%
+original file. That line range is what
+lets<00:07:52.960><c> the</c><00:07:53.039><c> agent</c><00:07:53.440><c> site</c><00:07:53.759><c> exactly</c><00:07:54.080><c> where</c><00:07:54.319><c> a</c>
+
+00:07:54.469 --> 00:07:54.479 align:start position:0%
+lets the agent site exactly where a
+ 
+
+00:07:54.479 --> 00:07:57.350 align:start position:0%
+lets the agent site exactly where a
+memory<00:07:54.879><c> came</c><00:07:55.039><c> from.</c>
+
+00:07:57.350 --> 00:07:57.360 align:start position:0%
+memory came from.
+ 
+
+00:07:57.360 --> 00:07:59.029 align:start position:0%
+memory came from.
+Then<00:07:57.599><c> there</c><00:07:57.759><c> are</c><00:07:57.919><c> two</c><00:07:58.160><c> virtual</c><00:07:58.560><c> tables</c><00:07:58.800><c> that</c>
+
+00:07:59.029 --> 00:07:59.039 align:start position:0%
+Then there are two virtual tables that
+ 
+
+00:07:59.039 --> 00:08:02.550 align:start position:0%
+Then there are two virtual tables that
+power<00:07:59.280><c> the</c><00:07:59.520><c> actual</c><00:07:59.919><c> search.</c><00:08:01.280><c> Chunks</c><00:08:01.759><c> FTS</c><00:08:02.400><c> is</c>
+
+00:08:02.550 --> 00:08:02.560 align:start position:0%
+power the actual search. Chunks FTS is
+ 
+
+00:08:02.560 --> 00:08:05.270 align:start position:0%
+power the actual search. Chunks FTS is
+an<00:08:02.720><c> FTS5</c><00:08:03.599><c> full</c><00:08:03.840><c> text</c><00:08:04.160><c> search</c><00:08:04.479><c> table.</c><00:08:05.120><c> It</c>
+
+00:08:05.270 --> 00:08:05.280 align:start position:0%
+an FTS5 full text search table. It
+ 
+
+00:08:05.280 --> 00:08:09.189 align:start position:0%
+an FTS5 full text search table. It
+enables<00:08:05.680><c> BM25</c><00:08:06.560><c> keyword</c><00:08:07.039><c> ranking.</c><00:08:08.319><c> Chunks</c><00:08:08.800><c> vec</c>
+
+00:08:09.189 --> 00:08:09.199 align:start position:0%
+enables BM25 keyword ranking. Chunks vec
+ 
+
+00:08:09.199 --> 00:08:11.189 align:start position:0%
+enables BM25 keyword ranking. Chunks vec
+is<00:08:09.360><c> a</c><00:08:09.520><c> SQLite</c><00:08:10.080><c> vect</c><00:08:10.319><c> table</c><00:08:10.639><c> that</c><00:08:10.879><c> stores</c>
+
+00:08:11.189 --> 00:08:11.199 align:start position:0%
+is a SQLite vect table that stores
+ 
+
+00:08:11.199 --> 00:08:13.909 align:start position:0%
+is a SQLite vect table that stores
+embeddings<00:08:11.759><c> as</c><00:08:12.000><c> flow</c><00:08:12.400><c> 32</c><00:08:12.800><c> arrays</c><00:08:13.199><c> for</c><00:08:13.440><c> cosign</c>
+
+00:08:13.909 --> 00:08:13.919 align:start position:0%
+embeddings as flow 32 arrays for cosign
+ 
+
+00:08:13.919 --> 00:08:16.230 align:start position:0%
+embeddings as flow 32 arrays for cosign
+similarity<00:08:14.560><c> search.</c><00:08:15.680><c> There's</c><00:08:15.919><c> also</c><00:08:16.080><c> an</c>
+
+00:08:16.230 --> 00:08:16.240 align:start position:0%
+similarity search. There's also an
+ 
+
+00:08:16.240 --> 00:08:18.790 align:start position:0%
+similarity search. There's also an
+embedding<00:08:16.720><c> cache</c><00:08:17.039><c> table.</c><00:08:17.919><c> This</c><00:08:18.319><c> caches</c>
+
+00:08:18.790 --> 00:08:18.800 align:start position:0%
+embedding cache table. This caches
+ 
+
+00:08:18.800 --> 00:08:21.189 align:start position:0%
+embedding cache table. This caches
+embeddings<00:08:19.280><c> by</c><00:08:19.440><c> a</c><00:08:19.599><c> hash</c><00:08:19.840><c> of</c><00:08:20.000><c> the</c><00:08:20.160><c> input</c><00:08:20.479><c> text.</c>
+
+00:08:21.189 --> 00:08:21.199 align:start position:0%
+embeddings by a hash of the input text.
+ 
+
+00:08:21.199 --> 00:08:23.830 align:start position:0%
+embeddings by a hash of the input text.
+It's<00:08:21.360><c> key</c><00:08:21.599><c> to</c><00:08:21.759><c> the</c><00:08:21.919><c> provider</c><00:08:22.400><c> and</c><00:08:22.639><c> model.</c><00:08:23.680><c> So</c>
+
+00:08:23.830 --> 00:08:23.840 align:start position:0%
+It's key to the provider and model. So
+ 
+
+00:08:23.840 --> 00:08:25.830 align:start position:0%
+It's key to the provider and model. So
+if<00:08:24.000><c> you</c><00:08:24.160><c> rechunk</c><00:08:24.639><c> a</c><00:08:24.879><c> file</c><00:08:25.120><c> but</c><00:08:25.360><c> that</c><00:08:25.599><c> text</c>
+
+00:08:25.830 --> 00:08:25.840 align:start position:0%
+if you rechunk a file but that text
+ 
+
+00:08:25.840 --> 00:08:27.589 align:start position:0%
+if you rechunk a file but that text
+hasn't<00:08:26.160><c> changed,</c><00:08:26.639><c> it</c><00:08:26.879><c> skips</c><00:08:27.120><c> the</c><00:08:27.199><c> embedding</c>
+
+00:08:27.589 --> 00:08:27.599 align:start position:0%
+hasn't changed, it skips the embedding
+ 
+
+00:08:27.599 --> 00:08:30.070 align:start position:0%
+hasn't changed, it skips the embedding
+API<00:08:27.919><c> call</c><00:08:28.160><c> entirely.</c><00:08:29.120><c> This</c><00:08:29.280><c> is</c><00:08:29.360><c> a</c><00:08:29.520><c> nice</c><00:08:29.759><c> cost</c>
+
+00:08:30.070 --> 00:08:30.080 align:start position:0%
+API call entirely. This is a nice cost
+ 
+
+00:08:30.080 --> 00:08:31.909 align:start position:0%
+API call entirely. This is a nice cost
+optimization<00:08:30.720><c> since</c><00:08:31.039><c> embedding</c><00:08:31.440><c> calls</c><00:08:31.759><c> can</c>
+
+00:08:31.909 --> 00:08:31.919 align:start position:0%
+optimization since embedding calls can
+ 
+
+00:08:31.919 --> 00:08:33.990 align:start position:0%
+optimization since embedding calls can
+add<00:08:32.080><c> up</c><00:08:32.240><c> pretty</c><00:08:32.479><c> quickly.</c>
+
+00:08:33.990 --> 00:08:34.000 align:start position:0%
+add up pretty quickly.
+ 
+
+00:08:34.000 --> 00:08:36.389 align:start position:0%
+add up pretty quickly.
+Now<00:08:34.240><c> for</c><00:08:34.479><c> search</c><00:08:34.800><c> itself,</c><00:08:35.680><c> when</c><00:08:35.919><c> the</c><00:08:36.080><c> agent</c>
+
+00:08:36.389 --> 00:08:36.399 align:start position:0%
+Now for search itself, when the agent
+ 
+
+00:08:36.399 --> 00:08:38.389 align:start position:0%
+Now for search itself, when the agent
+calls<00:08:36.640><c> the</c><00:08:36.800><c> memory</c><00:08:37.200><c> search</c><00:08:37.519><c> tool,</c><00:08:38.159><c> here's</c>
+
+00:08:38.389 --> 00:08:38.399 align:start position:0%
+calls the memory search tool, here's
+ 
+
+00:08:38.399 --> 00:08:40.790 align:start position:0%
+calls the memory search tool, here's
+what<00:08:38.640><c> happens</c><00:08:38.880><c> under</c><00:08:39.120><c> the</c><00:08:39.360><c> hood.</c><00:08:40.320><c> The</c><00:08:40.479><c> query</c>
+
+00:08:40.790 --> 00:08:40.800 align:start position:0%
+what happens under the hood. The query
+ 
+
+00:08:40.800 --> 00:08:42.310 align:start position:0%
+what happens under the hood. The query
+text<00:08:41.120><c> gets</c><00:08:41.279><c> embedded</c><00:08:41.760><c> using</c><00:08:42.000><c> the</c><00:08:42.159><c> same</c>
+
+00:08:42.310 --> 00:08:42.320 align:start position:0%
+text gets embedded using the same
+ 
+
+00:08:42.320 --> 00:08:44.630 align:start position:0%
+text gets embedded using the same
+provider<00:08:42.640><c> that</c><00:08:42.880><c> indexed</c><00:08:43.279><c> the</c><00:08:43.440><c> files.</c><00:08:44.240><c> Then</c>
+
+00:08:44.630 --> 00:08:44.640 align:start position:0%
+provider that indexed the files. Then
+ 
+
+00:08:44.640 --> 00:08:46.630 align:start position:0%
+provider that indexed the files. Then
+two<00:08:44.880><c> searches</c><00:08:45.200><c> run</c><00:08:45.440><c> in</c><00:08:45.600><c> parallel.</c><00:08:46.480><c> The</c>
+
+00:08:46.630 --> 00:08:46.640 align:start position:0%
+two searches run in parallel. The
+ 
+
+00:08:46.640 --> 00:08:48.710 align:start position:0%
+two searches run in parallel. The
+keyword<00:08:47.040><c> search</c><00:08:47.360><c> tokenizes</c><00:08:47.920><c> the</c><00:08:48.160><c> query</c><00:08:48.480><c> and</c>
+
+00:08:48.710 --> 00:08:48.720 align:start position:0%
+keyword search tokenizes the query and
+ 
+
+00:08:48.720 --> 00:08:52.710 align:start position:0%
+keyword search tokenizes the query and
+runs<00:08:49.040><c> them</c><00:08:49.200><c> against</c><00:08:49.440><c> the</c><00:08:49.600><c> FTS5</c><00:08:50.399><c> table.</c><00:08:51.680><c> BM25</c>
+
+00:08:52.710 --> 00:08:52.720 align:start position:0%
+runs them against the FTS5 table. BM25
+ 
+
+00:08:52.720 --> 00:08:55.430 align:start position:0%
+runs them against the FTS5 table. BM25
+ranks<00:08:53.040><c> the</c><00:08:53.279><c> results.</c><00:08:54.320><c> Those</c><00:08:54.560><c> raw</c><00:08:54.880><c> ranks</c><00:08:55.279><c> get</c>
+
+00:08:55.430 --> 00:08:55.440 align:start position:0%
+ranks the results. Those raw ranks get
+ 
+
+00:08:55.440 --> 00:08:57.910 align:start position:0%
+ranks the results. Those raw ranks get
+converted<00:08:56.080><c> from</c><00:08:56.320><c> a</c><00:08:56.480><c> 0</c><00:08:56.640><c> to1</c><00:08:57.120><c> score</c><00:08:57.440><c> using</c><00:08:57.760><c> the</c>
+
+00:08:57.910 --> 00:08:57.920 align:start position:0%
+converted from a 0 to1 score using the
+ 
+
+00:08:57.920 --> 00:09:02.310 align:start position:0%
+converted from a 0 to1 score using the
+formula<00:08:58.399><c> 1</c><00:08:58.880><c> /</c><00:08:59.440><c> 1</c><00:09:00.080><c> plus</c><00:09:00.320><c> the</c><00:09:00.560><c> rank.</c><00:09:01.839><c> The</c><00:09:02.000><c> vector</c>
+
+00:09:02.310 --> 00:09:02.320 align:start position:0%
+formula 1 / 1 plus the rank. The vector
+ 
+
+00:09:02.320 --> 00:09:04.150 align:start position:0%
+formula 1 / 1 plus the rank. The vector
+search<00:09:02.560><c> takes</c><00:09:02.800><c> the</c><00:09:02.959><c> query</c><00:09:03.200><c> embedding.</c><00:09:04.000><c> It</c>
+
+00:09:04.150 --> 00:09:04.160 align:start position:0%
+search takes the query embedding. It
+ 
+
+00:09:04.160 --> 00:09:06.470 align:start position:0%
+search takes the query embedding. It
+uses<00:09:04.640><c> SQLite's</c><00:09:05.360><c> vec</c><00:09:05.600><c> distance</c><00:09:06.000><c> cosine</c>
+
+00:09:06.470 --> 00:09:06.480 align:start position:0%
+uses SQLite's vec distance cosine
+ 
+
+00:09:06.480 --> 00:09:08.389 align:start position:0%
+uses SQLite's vec distance cosine
+functionality<00:09:07.360><c> to</c><00:09:07.680><c> find</c><00:09:07.839><c> the</c><00:09:08.000><c> nearest</c>
+
+00:09:08.389 --> 00:09:08.399 align:start position:0%
+functionality to find the nearest
+ 
+
+00:09:08.399 --> 00:09:10.949 align:start position:0%
+functionality to find the nearest
+chunks.<00:09:09.279><c> The</c><00:09:09.519><c> cosine</c><00:09:10.000><c> distance</c><00:09:10.320><c> gets</c><00:09:10.640><c> flipped</c>
+
+00:09:10.949 --> 00:09:10.959 align:start position:0%
+chunks. The cosine distance gets flipped
+ 
+
+00:09:10.959 --> 00:09:13.430 align:start position:0%
+chunks. The cosine distance gets flipped
+into<00:09:11.120><c> a</c><00:09:11.360><c> similarity</c><00:09:11.920><c> score</c><00:09:12.560><c> one</c><00:09:12.880><c> minus</c><00:09:13.279><c> the</c>
+
+00:09:13.430 --> 00:09:13.440 align:start position:0%
+into a similarity score one minus the
+ 
+
+00:09:13.440 --> 00:09:15.030 align:start position:0%
+into a similarity score one minus the
+distance.
+
+00:09:15.030 --> 00:09:15.040 align:start position:0%
+distance.
+ 
+
+00:09:15.040 --> 00:09:16.630 align:start position:0%
+distance.
+Both<00:09:15.279><c> searches</c><00:09:15.760><c> use</c><00:09:15.920><c> a</c><00:09:16.160><c> candidate</c>
+
+00:09:16.630 --> 00:09:16.640 align:start position:0%
+Both searches use a candidate
+ 
+
+00:09:16.640 --> 00:09:19.750 align:start position:0%
+Both searches use a candidate
+multiplier.<00:09:17.920><c> If</c><00:09:18.160><c> you</c><00:09:18.320><c> ask</c><00:09:18.560><c> for</c><00:09:18.800><c> six</c><00:09:19.120><c> results,</c>
+
+00:09:19.750 --> 00:09:19.760 align:start position:0%
+multiplier. If you ask for six results,
+ 
+
+00:09:19.760 --> 00:09:21.910 align:start position:0%
+multiplier. If you ask for six results,
+each<00:09:20.080><c> search</c><00:09:20.480><c> actually</c><00:09:20.800><c> returns</c><00:09:21.120><c> up</c><00:09:21.279><c> to</c><00:09:21.519><c> 24</c>
+
+00:09:21.910 --> 00:09:21.920 align:start position:0%
+each search actually returns up to 24
+ 
+
+00:09:21.920 --> 00:09:24.870 align:start position:0%
+each search actually returns up to 24
+candidates.<00:09:23.200><c> That</c><00:09:23.519><c> 4x</c><00:09:24.000><c> multiplier</c><00:09:24.480><c> gives</c><00:09:24.720><c> the</c>
+
+00:09:24.870 --> 00:09:24.880 align:start position:0%
+candidates. That 4x multiplier gives the
+ 
+
+00:09:24.880 --> 00:09:27.910 align:start position:0%
+candidates. That 4x multiplier gives the
+fusion<00:09:25.279><c> step</c><00:09:25.519><c> more</c><00:09:25.760><c> to</c><00:09:25.920><c> work</c><00:09:26.080><c> with.</c><00:09:27.519><c> Then</c><00:09:27.760><c> the</c>
+
+00:09:27.910 --> 00:09:27.920 align:start position:0%
+fusion step more to work with. Then the
+ 
+
+00:09:27.920 --> 00:09:31.190 align:start position:0%
+fusion step more to work with. Then the
+weighted<00:09:28.240><c> score</c><00:09:28.560><c> fusion</c><00:09:28.959><c> combines</c><00:09:29.360><c> them.</c>
+
+00:09:31.190 --> 00:09:31.200 align:start position:0%
+weighted score fusion combines them.
+ 
+
+00:09:31.200 --> 00:09:35.110 align:start position:0%
+weighted score fusion combines them.
+0.7<00:09:32.160><c> times</c><00:09:32.399><c> the</c><00:09:32.560><c> vector</c><00:09:32.959><c> score</c><00:09:33.680><c> plus</c><00:09:34.240><c> 0.3</c>
+
+00:09:35.110 --> 00:09:35.120 align:start position:0%
+0.7 times the vector score plus 0.3
+ 
+
+00:09:35.120 --> 00:09:37.350 align:start position:0%
+0.7 times the vector score plus 0.3
+times<00:09:35.360><c> the</c><00:09:35.600><c> text</c><00:09:35.839><c> score.</c>
+
+00:09:37.350 --> 00:09:37.360 align:start position:0%
+times the text score.
+ 
+
+00:09:37.360 --> 00:09:39.350 align:start position:0%
+times the text score.
+Results<00:09:37.680><c> that</c><00:09:37.920><c> appear</c><00:09:38.080><c> in</c><00:09:38.320><c> both</c><00:09:38.640><c> searches</c><00:09:39.120><c> get</c>
+
+00:09:39.350 --> 00:09:39.360 align:start position:0%
+Results that appear in both searches get
+ 
+
+00:09:39.360 --> 00:09:42.150 align:start position:0%
+Results that appear in both searches get
+both<00:09:39.680><c> scores</c><00:09:40.080><c> combined.</c><00:09:41.279><c> Results</c><00:09:41.680><c> from</c><00:09:41.920><c> only</c>
+
+00:09:42.150 --> 00:09:42.160 align:start position:0%
+both scores combined. Results from only
+ 
+
+00:09:42.160 --> 00:09:45.430 align:start position:0%
+both scores combined. Results from only
+one<00:09:42.399><c> search</c><00:09:42.880><c> get</c><00:09:43.200><c> zero</c><00:09:43.600><c> for</c><00:09:43.839><c> the</c><00:09:44.000><c> other.</c><00:09:45.120><c> After</c>
+
+00:09:45.430 --> 00:09:45.440 align:start position:0%
+one search get zero for the other. After
+ 
+
+00:09:45.440 --> 00:09:47.269 align:start position:0%
+one search get zero for the other. After
+fusion,<00:09:46.160><c> everything</c><00:09:46.480><c> is</c><00:09:46.640><c> sorted</c><00:09:46.959><c> by</c><00:09:47.120><c> the</c>
+
+00:09:47.269 --> 00:09:47.279 align:start position:0%
+fusion, everything is sorted by the
+ 
+
+00:09:47.279 --> 00:09:49.030 align:start position:0%
+fusion, everything is sorted by the
+final<00:09:47.519><c> score.</c><00:09:48.160><c> It's</c><00:09:48.399><c> filtered</c><00:09:48.720><c> by</c><00:09:48.880><c> the</c>
+
+00:09:49.030 --> 00:09:49.040 align:start position:0%
+final score. It's filtered by the
+ 
+
+00:09:49.040 --> 00:09:51.590 align:start position:0%
+final score. It's filtered by the
+minimum<00:09:49.279><c> threshold</c><00:09:49.680><c> of</c><00:09:49.839><c> 0.35</c><00:09:50.800><c> and</c><00:09:51.040><c> capped</c><00:09:51.360><c> the</c>
+
+00:09:51.590 --> 00:09:51.600 align:start position:0%
+minimum threshold of 0.35 and capped the
+ 
+
+00:09:51.600 --> 00:09:54.230 align:start position:0%
+minimum threshold of 0.35 and capped the
+requested<00:09:52.160><c> result</c><00:09:52.480><c> count.</c>
+
+00:09:54.230 --> 00:09:54.240 align:start position:0%
+requested result count.
+ 
+
+00:09:54.240 --> 00:09:55.910 align:start position:0%
+requested result count.
+Open<00:09:54.560><c> claw</c><00:09:54.800><c> exposes</c><00:09:55.200><c> two</c><00:09:55.360><c> tools</c><00:09:55.600><c> for</c><00:09:55.760><c> the</c>
+
+00:09:55.910 --> 00:09:55.920 align:start position:0%
+Open claw exposes two tools for the
+ 
+
+00:09:55.920 --> 00:09:58.150 align:start position:0%
+Open claw exposes two tools for the
+agent<00:09:56.240><c> to</c><00:09:56.399><c> interact</c><00:09:56.720><c> with</c><00:09:56.880><c> memory.</c><00:09:57.839><c> First,</c>
+
+00:09:58.150 --> 00:09:58.160 align:start position:0%
+agent to interact with memory. First,
+ 
+
+00:09:58.160 --> 00:10:00.310 align:start position:0%
+agent to interact with memory. First,
+there's<00:09:58.399><c> memory</c><00:09:58.800><c> search.</c><00:09:59.760><c> The</c><00:10:00.000><c> system</c>
+
+00:10:00.310 --> 00:10:00.320 align:start position:0%
+there's memory search. The system
+ 
+
+00:10:00.320 --> 00:10:03.430 align:start position:0%
+there's memory search. The system
+describes<00:10:00.800><c> it</c><00:10:00.959><c> as</c><00:10:01.120><c> a</c><00:10:01.360><c> mandatory</c><00:10:01.920><c> recall</c><00:10:02.320><c> step.</c>
+
+00:10:03.430 --> 00:10:03.440 align:start position:0%
+describes it as a mandatory recall step.
+ 
+
+00:10:03.440 --> 00:10:05.509 align:start position:0%
+describes it as a mandatory recall step.
+Its<00:10:03.680><c> prompt</c><00:10:04.160><c> tells</c><00:10:04.480><c> the</c><00:10:04.640><c> agent</c><00:10:04.959><c> to</c><00:10:05.120><c> search</c>
+
+00:10:05.509 --> 00:10:05.519 align:start position:0%
+Its prompt tells the agent to search
+ 
+
+00:10:05.519 --> 00:10:07.509 align:start position:0%
+Its prompt tells the agent to search
+memory<00:10:06.000><c> before</c><00:10:06.320><c> answering</c><00:10:06.800><c> questions</c><00:10:07.200><c> about</c>
+
+00:10:07.509 --> 00:10:07.519 align:start position:0%
+memory before answering questions about
+ 
+
+00:10:07.519 --> 00:10:10.310 align:start position:0%
+memory before answering questions about
+prior<00:10:07.920><c> work,</c><00:10:08.399><c> decisions,</c><00:10:09.120><c> dates,</c><00:10:09.760><c> people,</c>
+
+00:10:10.310 --> 00:10:10.320 align:start position:0%
+prior work, decisions, dates, people,
+ 
+
+00:10:10.320 --> 00:10:13.190 align:start position:0%
+prior work, decisions, dates, people,
+preferences,<00:10:10.800><c> or</c><00:10:11.040><c> to-dos.</c><00:10:12.320><c> The</c><00:10:12.560><c> tool</c><00:10:12.880><c> takes</c><00:10:13.040><c> a</c>
+
+00:10:13.190 --> 00:10:13.200 align:start position:0%
+preferences, or to-dos. The tool takes a
+ 
+
+00:10:13.200 --> 00:10:14.790 align:start position:0%
+preferences, or to-dos. The tool takes a
+query<00:10:13.440><c> string</c><00:10:13.680><c> and</c><00:10:13.920><c> optionally</c><00:10:14.240><c> a</c><00:10:14.480><c> max</c>
+
+00:10:14.790 --> 00:10:14.800 align:start position:0%
+query string and optionally a max
+ 
+
+00:10:14.800 --> 00:10:16.550 align:start position:0%
+query string and optionally a max
+results<00:10:15.120><c> count</c><00:10:15.519><c> and</c><00:10:15.680><c> a</c><00:10:15.839><c> minimum</c><00:10:16.240><c> score</c>
+
+00:10:16.550 --> 00:10:16.560 align:start position:0%
+results count and a minimum score
+ 
+
+00:10:16.560 --> 00:10:18.790 align:start position:0%
+results count and a minimum score
+threshold.<00:10:17.760><c> It</c><00:10:18.000><c> returns</c><00:10:18.240><c> an</c><00:10:18.480><c> array</c><00:10:18.640><c> of</c>
+
+00:10:18.790 --> 00:10:18.800 align:start position:0%
+threshold. It returns an array of
+ 
+
+00:10:18.800 --> 00:10:21.350 align:start position:0%
+threshold. It returns an array of
+snippets.<00:10:19.600><c> Each</c><00:10:19.839><c> has</c><00:10:20.079><c> the</c><00:10:20.240><c> file</c><00:10:20.560><c> path,</c><00:10:21.040><c> line</c>
+
+00:10:21.350 --> 00:10:21.360 align:start position:0%
+snippets. Each has the file path, line
+ 
+
+00:10:21.360 --> 00:10:23.190 align:start position:0%
+snippets. Each has the file path, line
+numbers,<00:10:21.839><c> relevant</c><00:10:22.240><c> score,</c><00:10:22.560><c> and</c><00:10:22.720><c> a</c><00:10:22.959><c> text</c>
+
+00:10:23.190 --> 00:10:23.200 align:start position:0%
+numbers, relevant score, and a text
+ 
+
+00:10:23.200 --> 00:10:26.389 align:start position:0%
+numbers, relevant score, and a text
+preview<00:10:23.600><c> of</c><00:10:23.760><c> up</c><00:10:23.920><c> to</c><00:10:24.160><c> 700</c><00:10:24.640><c> characters.</c><00:10:25.920><c> It</c><00:10:26.240><c> also</c>
+
+00:10:26.389 --> 00:10:26.399 align:start position:0%
+preview of up to 700 characters. It also
+ 
+
+00:10:26.399 --> 00:10:28.150 align:start position:0%
+preview of up to 700 characters. It also
+includes<00:10:26.800><c> citation</c><00:10:27.279><c> information</c><00:10:27.839><c> so</c><00:10:28.000><c> that</c>
+
+00:10:28.150 --> 00:10:28.160 align:start position:0%
+includes citation information so that
+ 
+
+00:10:28.160 --> 00:10:29.590 align:start position:0%
+includes citation information so that
+the<00:10:28.240><c> agent</c><00:10:28.560><c> can</c><00:10:28.720><c> reference</c><00:10:29.040><c> exactly</c><00:10:29.440><c> where</c>
+
+00:10:29.590 --> 00:10:29.600 align:start position:0%
+the agent can reference exactly where
+ 
+
+00:10:29.600 --> 00:10:31.829 align:start position:0%
+the agent can reference exactly where
+the<00:10:29.839><c> memory</c><00:10:30.160><c> came</c><00:10:30.399><c> from.</c><00:10:31.440><c> The</c><00:10:31.680><c> second</c>
+
+00:10:31.829 --> 00:10:31.839 align:start position:0%
+the memory came from. The second
+ 
+
+00:10:31.839 --> 00:10:34.230 align:start position:0%
+the memory came from. The second
+available<00:10:32.240><c> tool</c><00:10:32.480><c> is</c><00:10:32.640><c> the</c><00:10:32.800><c> memory</c><00:10:33.200><c> get</c><00:10:33.440><c> tool.</c>
+
+00:10:34.230 --> 00:10:34.240 align:start position:0%
+available tool is the memory get tool.
+ 
+
+00:10:34.240 --> 00:10:36.470 align:start position:0%
+available tool is the memory get tool.
+This<00:10:34.399><c> is</c><00:10:34.560><c> the</c><00:10:34.720><c> follow-up</c><00:10:35.200><c> tool.</c><00:10:36.079><c> After</c>
+
+00:10:36.470 --> 00:10:36.480 align:start position:0%
+This is the follow-up tool. After
+ 
+
+00:10:36.480 --> 00:10:38.630 align:start position:0%
+This is the follow-up tool. After
+finding<00:10:36.880><c> relevant</c><00:10:37.279><c> results</c><00:10:37.600><c> with</c><00:10:37.760><c> a</c><00:10:38.000><c> search,</c>
+
+00:10:38.630 --> 00:10:38.640 align:start position:0%
+finding relevant results with a search,
+ 
+
+00:10:38.640 --> 00:10:40.710 align:start position:0%
+finding relevant results with a search,
+the<00:10:38.800><c> agent</c><00:10:39.120><c> can</c><00:10:39.279><c> use</c><00:10:39.440><c> memory</c><00:10:39.839><c> get</c><00:10:40.240><c> to</c><00:10:40.399><c> read</c>
+
+00:10:40.710 --> 00:10:40.720 align:start position:0%
+the agent can use memory get to read
+ 
+
+00:10:40.720 --> 00:10:43.190 align:start position:0%
+the agent can use memory get to read
+specific<00:10:41.279><c> section</c><00:10:41.600><c> of</c><00:10:41.680><c> a</c><00:10:41.920><c> memory</c><00:10:42.240><c> file.</c><00:10:43.040><c> It</c>
+
+00:10:43.190 --> 00:10:43.200 align:start position:0%
+specific section of a memory file. It
+ 
+
+00:10:43.200 --> 00:10:45.269 align:start position:0%
+specific section of a memory file. It
+takes<00:10:43.440><c> a</c><00:10:43.600><c> file</c><00:10:43.839><c> path,</c><00:10:44.399><c> an</c><00:10:44.640><c> optional</c><00:10:44.959><c> starting</c>
+
+00:10:45.269 --> 00:10:45.279 align:start position:0%
+takes a file path, an optional starting
+ 
+
+00:10:45.279 --> 00:10:47.990 align:start position:0%
+takes a file path, an optional starting
+line<00:10:45.600><c> number,</c><00:10:45.839><c> and</c><00:10:46.079><c> an</c><00:10:46.240><c> optional</c><00:10:46.640><c> line</c><00:10:46.880><c> count.</c>
+
+00:10:47.990 --> 00:10:48.000 align:start position:0%
+line number, and an optional line count.
+ 
+
+00:10:48.000 --> 00:10:49.990 align:start position:0%
+line number, and an optional line count.
+This<00:10:48.320><c> lets</c><00:10:48.560><c> the</c><00:10:48.720><c> agent</c><00:10:49.120><c> pull</c><00:10:49.440><c> just</c><00:10:49.680><c> the</c><00:10:49.839><c> right</c>
+
+00:10:49.990 --> 00:10:50.000 align:start position:0%
+This lets the agent pull just the right
+ 
+
+00:10:50.000 --> 00:10:51.590 align:start position:0%
+This lets the agent pull just the right
+context<00:10:50.399><c> it</c><00:10:50.640><c> needs</c><00:10:50.880><c> without</c><00:10:51.120><c> loading</c><00:10:51.440><c> the</c>
+
+00:10:51.590 --> 00:10:51.600 align:start position:0%
+context it needs without loading the
+ 
+
+00:10:51.600 --> 00:10:54.470 align:start position:0%
+context it needs without loading the
+entire<00:10:51.920><c> files</c><00:10:52.240><c> into</c><00:10:52.480><c> the</c><00:10:52.640><c> context</c><00:10:53.120><c> window.</c>
+
+00:10:54.470 --> 00:10:54.480 align:start position:0%
+entire files into the context window.
+ 
+
+00:10:54.480 --> 00:10:56.710 align:start position:0%
+entire files into the context window.
+This<00:10:54.720><c> two-step</c><00:10:55.200><c> pattern</c><00:10:55.519><c> of</c><00:10:55.680><c> search</c><00:10:56.160><c> then</c><00:10:56.399><c> get</c>
+
+00:10:56.710 --> 00:10:56.720 align:start position:0%
+This two-step pattern of search then get
+ 
+
+00:10:56.720 --> 00:10:59.190 align:start position:0%
+This two-step pattern of search then get
+is<00:10:56.959><c> deliberate.</c><00:10:58.000><c> The</c><00:10:58.240><c> search</c><00:10:58.560><c> returns</c><00:10:58.959><c> just</c>
+
+00:10:59.190 --> 00:10:59.200 align:start position:0%
+is deliberate. The search returns just
+ 
+
+00:10:59.200 --> 00:11:00.630 align:start position:0%
+is deliberate. The search returns just
+enough<00:10:59.440><c> context</c><00:10:59.839><c> to</c><00:11:00.000><c> decide</c><00:11:00.320><c> what's</c>
+
+00:11:00.630 --> 00:11:00.640 align:start position:0%
+enough context to decide what's
+ 
+
+00:11:00.640 --> 00:11:02.550 align:start position:0%
+enough context to decide what's
+relevant.<00:11:01.360><c> Then</c><00:11:01.519><c> the</c><00:11:01.680><c> agent</c><00:11:02.000><c> fetches</c><00:11:02.399><c> only</c>
+
+00:11:02.550 --> 00:11:02.560 align:start position:0%
+relevant. Then the agent fetches only
+ 
+
+00:11:02.560 --> 00:11:05.030 align:start position:0%
+relevant. Then the agent fetches only
+the<00:11:02.880><c> specific</c><00:11:03.279><c> content</c><00:11:03.600><c> it</c><00:11:03.920><c> actually</c><00:11:04.160><c> needs.</c>
+
+00:11:05.030 --> 00:11:05.040 align:start position:0%
+the specific content it actually needs.
+ 
+
+00:11:05.040 --> 00:11:06.949 align:start position:0%
+the specific content it actually needs.
+It<00:11:05.279><c> keeps</c><00:11:05.519><c> the</c><00:11:05.680><c> context</c><00:11:06.000><c> window</c><00:11:06.399><c> lean</c><00:11:06.720><c> and</c>
+
+00:11:06.949 --> 00:11:06.959 align:start position:0%
+It keeps the context window lean and
+ 
+
+00:11:06.959 --> 00:11:08.710 align:start position:0%
+It keeps the context window lean and
+efficient.
+
+00:11:08.710 --> 00:11:08.720 align:start position:0%
+efficient.
+ 
+
+00:11:08.720 --> 00:11:10.230 align:start position:0%
+efficient.
+The<00:11:08.959><c> last</c><00:11:09.200><c> piece</c><00:11:09.360><c> of</c><00:11:09.440><c> the</c><00:11:09.600><c> puzzle</c><00:11:09.839><c> is</c><00:11:10.000><c> how</c>
+
+00:11:10.230 --> 00:11:10.240 align:start position:0%
+The last piece of the puzzle is how
+ 
+
+00:11:10.240 --> 00:11:12.470 align:start position:0%
+The last piece of the puzzle is how
+memory<00:11:10.560><c> files</c><00:11:10.880><c> become</c><00:11:11.120><c> searchable.</c><00:11:12.160><c> Open</c>
+
+00:11:12.470 --> 00:11:12.480 align:start position:0%
+memory files become searchable. Open
+ 
+
+00:11:12.480 --> 00:11:14.310 align:start position:0%
+memory files become searchable. Open
+claw<00:11:12.720><c> uses</c><00:11:13.040><c> an</c><00:11:13.200><c> incremental</c><00:11:13.760><c> sync</c><00:11:14.079><c> system</c>
+
+00:11:14.310 --> 00:11:14.320 align:start position:0%
+claw uses an incremental sync system
+ 
+
+00:11:14.320 --> 00:11:16.870 align:start position:0%
+claw uses an incremental sync system
+with<00:11:14.640><c> multiple</c><00:11:14.959><c> triggers.</c><00:11:15.839><c> A</c><00:11:16.079><c> file</c><00:11:16.399><c> watcher</c>
+
+00:11:16.870 --> 00:11:16.880 align:start position:0%
+with multiple triggers. A file watcher
+ 
+
+00:11:16.880 --> 00:11:19.190 align:start position:0%
+with multiple triggers. A file watcher
+monitors<00:11:17.279><c> the</c><00:11:17.440><c> memory</c><00:11:17.839><c> MD</c><00:11:18.240><c> file</c><00:11:18.640><c> and</c><00:11:18.959><c> the</c>
+
+00:11:19.190 --> 00:11:19.200 align:start position:0%
+monitors the memory MD file and the
+ 
+
+00:11:19.200 --> 00:11:21.590 align:start position:0%
+monitors the memory MD file and the
+memory<00:11:19.600><c> directory.</c><00:11:20.399><c> When</c><00:11:20.640><c> a</c><00:11:20.800><c> file</c><00:11:21.040><c> changes,</c>
+
+00:11:21.590 --> 00:11:21.600 align:start position:0%
+memory directory. When a file changes,
+ 
+
+00:11:21.600 --> 00:11:23.750 align:start position:0%
+memory directory. When a file changes,
+the<00:11:21.760><c> watcher</c><00:11:22.160><c> debounces</c><00:11:22.880><c> for</c><00:11:23.040><c> about</c><00:11:23.360><c> 1</c><00:11:23.519><c> and</c><00:11:23.600><c> a</c>
+
+00:11:23.750 --> 00:11:23.760 align:start position:0%
+the watcher debounces for about 1 and a
+ 
+
+00:11:23.760 --> 00:11:25.829 align:start position:0%
+the watcher debounces for about 1 and a
+half<00:11:24.000><c> seconds.</c><00:11:24.800><c> It</c><00:11:24.959><c> marks</c><00:11:25.200><c> the</c><00:11:25.360><c> index</c><00:11:25.680><c> as</c>
+
+00:11:25.829 --> 00:11:25.839 align:start position:0%
+half seconds. It marks the index as
+ 
+
+00:11:25.839 --> 00:11:27.910 align:start position:0%
+half seconds. It marks the index as
+dirty<00:11:26.160><c> and</c><00:11:26.320><c> then</c><00:11:26.480><c> it</c><00:11:26.640><c> triggers</c><00:11:26.959><c> a</c><00:11:27.120><c> sync.</c>
+
+00:11:27.910 --> 00:11:27.920 align:start position:0%
+dirty and then it triggers a sync.
+ 
+
+00:11:27.920 --> 00:11:29.670 align:start position:0%
+dirty and then it triggers a sync.
+During<00:11:28.160><c> the</c><00:11:28.320><c> sync,</c><00:11:28.640><c> OpenClaw</c><00:11:29.200><c> lists</c><00:11:29.440><c> all</c><00:11:29.519><c> the</c>
+
+00:11:29.670 --> 00:11:29.680 align:start position:0%
+During the sync, OpenClaw lists all the
+ 
+
+00:11:29.680 --> 00:11:31.670 align:start position:0%
+During the sync, OpenClaw lists all the
+memory<00:11:30.000><c> files.</c><00:11:30.640><c> It</c><00:11:30.800><c> compares</c><00:11:31.200><c> each</c><00:11:31.360><c> file's</c>
+
+00:11:31.670 --> 00:11:31.680 align:start position:0%
+memory files. It compares each file's
+ 
+
+00:11:31.680 --> 00:11:33.350 align:start position:0%
+memory files. It compares each file's
+content<00:11:32.000><c> hash</c><00:11:32.399><c> against</c><00:11:32.720><c> what's</c><00:11:32.959><c> stored</c><00:11:33.200><c> in</c>
+
+00:11:33.350 --> 00:11:33.360 align:start position:0%
+content hash against what's stored in
+ 
+
+00:11:33.360 --> 00:11:35.910 align:start position:0%
+content hash against what's stored in
+the<00:11:33.519><c> files</c><00:11:33.839><c> table.</c><00:11:34.640><c> If</c><00:11:34.880><c> the</c><00:11:35.040><c> hash</c><00:11:35.360><c> matches,</c>
+
+00:11:35.910 --> 00:11:35.920 align:start position:0%
+the files table. If the hash matches,
+ 
+
+00:11:35.920 --> 00:11:38.069 align:start position:0%
+the files table. If the hash matches,
+that<00:11:36.160><c> file</c><00:11:36.399><c> is</c><00:11:36.560><c> skipped</c><00:11:36.959><c> entirely.</c><00:11:37.760><c> Only</c>
+
+00:11:38.069 --> 00:11:38.079 align:start position:0%
+that file is skipped entirely. Only
+ 
+
+00:11:38.079 --> 00:11:39.509 align:start position:0%
+that file is skipped entirely. Only
+files<00:11:38.320><c> that</c><00:11:38.560><c> actually</c><00:11:38.880><c> changed</c><00:11:39.360><c> get</c>
+
+00:11:39.509 --> 00:11:39.519 align:start position:0%
+files that actually changed get
+ 
+
+00:11:39.519 --> 00:11:41.990 align:start position:0%
+files that actually changed get
+rechunked<00:11:40.079><c> and</c><00:11:40.320><c> re-mbed.</c><00:11:41.360><c> This</c><00:11:41.519><c> is</c><00:11:41.600><c> where</c><00:11:41.760><c> the</c>
+
+00:11:41.990 --> 00:11:42.000 align:start position:0%
+rechunked and re-mbed. This is where the
+ 
+
+00:11:42.000 --> 00:11:44.310 align:start position:0%
+rechunked and re-mbed. This is where the
+efficiency<00:11:42.480><c> happens.</c><00:11:43.519><c> When</c><00:11:43.680><c> a</c><00:11:43.839><c> file</c><00:11:44.079><c> does</c>
+
+00:11:44.310 --> 00:11:44.320 align:start position:0%
+efficiency happens. When a file does
+ 
+
+00:11:44.320 --> 00:11:46.230 align:start position:0%
+efficiency happens. When a file does
+need<00:11:44.480><c> updating,</c><00:11:45.040><c> it</c><00:11:45.120><c> gets</c><00:11:45.360><c> split</c><00:11:45.600><c> into</c><00:11:45.920><c> those</c>
+
+00:11:46.230 --> 00:11:46.240 align:start position:0%
+need updating, it gets split into those
+ 
+
+00:11:46.240 --> 00:11:49.430 align:start position:0%
+need updating, it gets split into those
+roughly<00:11:46.720><c> 400</c><00:11:47.200><c> token</c><00:11:47.600><c> chunks.</c><00:11:48.720><c> Each</c><00:11:49.040><c> chunk's</c>
+
+00:11:49.430 --> 00:11:49.440 align:start position:0%
+roughly 400 token chunks. Each chunk's
+ 
+
+00:11:49.440 --> 00:11:51.350 align:start position:0%
+roughly 400 token chunks. Each chunk's
+text<00:11:49.839><c> is</c><00:11:50.079><c> hashed</c><00:11:50.480><c> and</c><00:11:50.720><c> checked</c><00:11:50.959><c> against</c><00:11:51.200><c> the</c>
+
+00:11:51.350 --> 00:11:51.360 align:start position:0%
+text is hashed and checked against the
+ 
+
+00:11:51.360 --> 00:11:53.509 align:start position:0%
+text is hashed and checked against the
+embeddings<00:11:51.920><c> cache.</c><00:11:52.640><c> If</c><00:11:52.880><c> there's</c><00:11:53.040><c> a</c><00:11:53.200><c> cache</c>
+
+00:11:53.509 --> 00:11:53.519 align:start position:0%
+embeddings cache. If there's a cache
+ 
+
+00:11:53.519 --> 00:11:55.750 align:start position:0%
+embeddings cache. If there's a cache
+hit,<00:11:53.920><c> the</c><00:11:54.079><c> embedding</c><00:11:54.480><c> is</c><00:11:54.560><c> reused.</c><00:11:55.440><c> Otherwise,</c>
+
+00:11:55.750 --> 00:11:55.760 align:start position:0%
+hit, the embedding is reused. Otherwise,
+ 
+
+00:11:55.760 --> 00:11:57.350 align:start position:0%
+hit, the embedding is reused. Otherwise,
+a<00:11:56.000><c> new</c><00:11:56.160><c> embedding</c><00:11:56.480><c> is</c><00:11:56.640><c> generated</c><00:11:56.959><c> via</c><00:11:57.200><c> the</c>
+
+00:11:57.350 --> 00:11:57.360 align:start position:0%
+a new embedding is generated via the
+ 
+
+00:11:57.360 --> 00:11:59.590 align:start position:0%
+a new embedding is generated via the
+configured<00:11:57.839><c> provider.</c><00:11:58.959><c> All</c><00:11:59.120><c> of</c><00:11:59.200><c> this</c><00:11:59.360><c> runs</c>
+
+00:11:59.590 --> 00:11:59.600 align:start position:0%
+configured provider. All of this runs
+ 
+
+00:11:59.600 --> 00:12:01.269 align:start position:0%
+configured provider. All of this runs
+with<00:11:59.760><c> a</c><00:11:59.920><c> concurrency</c><00:12:00.480><c> limit</c><00:12:00.800><c> to</c><00:12:00.959><c> avoid</c>
+
+00:12:01.269 --> 00:12:01.279 align:start position:0%
+with a concurrency limit to avoid
+ 
+
+00:12:01.279 --> 00:12:04.150 align:start position:0%
+with a concurrency limit to avoid
+overwhelming<00:12:01.839><c> the</c><00:12:02.000><c> embedding</c><00:12:02.399><c> API.</c><00:12:03.839><c> There's</c>
+
+00:12:04.150 --> 00:12:04.160 align:start position:0%
+overwhelming the embedding API. There's
+ 
+
+00:12:04.160 --> 00:12:06.310 align:start position:0%
+overwhelming the embedding API. There's
+also<00:12:04.320><c> a</c><00:12:04.480><c> full</c><00:12:04.720><c> reindex</c><00:12:05.279><c> trigger.</c><00:12:05.920><c> If</c><00:12:06.160><c> the</c>
+
+00:12:06.310 --> 00:12:06.320 align:start position:0%
+also a full reindex trigger. If the
+ 
+
+00:12:06.320 --> 00:12:08.310 align:start position:0%
+also a full reindex trigger. If the
+embedding<00:12:06.720><c> provider</c><00:12:07.040><c> or</c><00:12:07.279><c> model</c><00:12:07.600><c> changes</c><00:12:08.000><c> or</c>
+
+00:12:08.310 --> 00:12:08.320 align:start position:0%
+embedding provider or model changes or
+ 
+
+00:12:08.320 --> 00:12:10.310 align:start position:0%
+embedding provider or model changes or
+if<00:12:08.480><c> the</c><00:12:08.639><c> chunk</c><00:12:08.959><c> size</c><00:12:09.279><c> configuration</c><00:12:09.839><c> changes,</c>
+
+00:12:10.310 --> 00:12:10.320 align:start position:0%
+if the chunk size configuration changes,
+ 
+
+00:12:10.320 --> 00:12:12.629 align:start position:0%
+if the chunk size configuration changes,
+OpenClaw<00:12:10.880><c> detects</c><00:12:11.279><c> the</c><00:12:11.440><c> mismatch</c><00:12:12.160><c> in</c><00:12:12.399><c> its</c>
+
+00:12:12.629 --> 00:12:12.639 align:start position:0%
+OpenClaw detects the mismatch in its
+ 
+
+00:12:12.639 --> 00:12:15.190 align:start position:0%
+OpenClaw detects the mismatch in its
+metadata<00:12:13.200><c> table.</c><00:12:14.000><c> It</c><00:12:14.240><c> rebuilds</c><00:12:14.720><c> the</c><00:12:14.880><c> entire</c>
+
+00:12:15.190 --> 00:12:15.200 align:start position:0%
+metadata table. It rebuilds the entire
+ 
+
+00:12:15.200 --> 00:12:17.990 align:start position:0%
+metadata table. It rebuilds the entire
+index<00:12:15.600><c> from</c><00:12:15.839><c> scratch.</c><00:12:16.959><c> It</c><00:12:17.279><c> does</c><00:12:17.440><c> this</c><00:12:17.600><c> safely</c>
+
+00:12:17.990 --> 00:12:18.000 align:start position:0%
+index from scratch. It does this safely
+ 
+
+00:12:18.000 --> 00:12:20.150 align:start position:0%
+index from scratch. It does this safely
+by<00:12:18.240><c> building</c><00:12:18.480><c> the</c><00:12:18.800><c> new</c><00:12:19.040><c> index</c><00:12:19.680><c> into</c><00:12:19.920><c> a</c>
+
+00:12:20.150 --> 00:12:20.160 align:start position:0%
+by building the new index into a
+ 
+
+00:12:20.160 --> 00:12:22.629 align:start position:0%
+by building the new index into a
+temporary<00:12:20.639><c> database.</c><00:12:21.600><c> Then</c><00:12:21.920><c> it</c><00:12:22.160><c> atomically</c>
+
+00:12:22.629 --> 00:12:22.639 align:start position:0%
+temporary database. Then it atomically
+ 
+
+00:12:22.639 --> 00:12:25.030 align:start position:0%
+temporary database. Then it atomically
+swaps<00:12:23.040><c> it</c><00:12:23.200><c> into</c><00:12:23.440><c> place.</c><00:12:24.480><c> For</c><00:12:24.720><c> session</c>
+
+00:12:25.030 --> 00:12:25.040 align:start position:0%
+swaps it into place. For session
+ 
+
+00:12:25.040 --> 00:12:27.030 align:start position:0%
+swaps it into place. For session
+transcripts,<00:12:25.839><c> there's</c><00:12:26.079><c> a</c><00:12:26.240><c> delta</c><00:12:26.639><c> tracking</c>
+
+00:12:27.030 --> 00:12:27.040 align:start position:0%
+transcripts, there's a delta tracking
+ 
+
+00:12:27.040 --> 00:12:29.670 align:start position:0%
+transcripts, there's a delta tracking
+system.<00:12:28.000><c> It</c><00:12:28.320><c> monitors</c><00:12:28.720><c> how</c><00:12:28.959><c> many</c><00:12:29.120><c> bytes</c><00:12:29.440><c> and</c>
+
+00:12:29.670 --> 00:12:29.680 align:start position:0%
+system. It monitors how many bytes and
+ 
+
+00:12:29.680 --> 00:12:31.509 align:start position:0%
+system. It monitors how many bytes and
+messages<00:12:30.000><c> have</c><00:12:30.240><c> accumulated</c><00:12:30.800><c> since</c><00:12:31.040><c> the</c><00:12:31.279><c> last</c>
+
+00:12:31.509 --> 00:12:31.519 align:start position:0%
+messages have accumulated since the last
+ 
+
+00:12:31.519 --> 00:12:34.310 align:start position:0%
+messages have accumulated since the last
+sync.<00:12:32.560><c> Once</c><00:12:32.800><c> a</c><00:12:33.040><c> threshold</c><00:12:33.519><c> has</c><00:12:33.760><c> crossed,</c><00:12:34.160><c> it</c>
+
+00:12:34.310 --> 00:12:34.320 align:start position:0%
+sync. Once a threshold has crossed, it
+ 
+
+00:12:34.320 --> 00:12:35.990 align:start position:0%
+sync. Once a threshold has crossed, it
+triggers<00:12:34.560><c> a</c><00:12:34.800><c> sync</c><00:12:35.040><c> for</c><00:12:35.200><c> just</c><00:12:35.440><c> those</c><00:12:35.680><c> session</c>
+
+00:12:35.990 --> 00:12:36.000 align:start position:0%
+triggers a sync for just those session
+ 
+
+00:12:36.000 --> 00:12:38.790 align:start position:0%
+triggers a sync for just those session
+files.<00:12:37.440><c> The</c><00:12:37.680><c> entire</c><00:12:38.000><c> system</c><00:12:38.240><c> ensures</c><00:12:38.639><c> that</c>
+
+00:12:38.790 --> 00:12:38.800 align:start position:0%
+files. The entire system ensures that
+ 
+
+00:12:38.800 --> 00:12:40.310 align:start position:0%
+files. The entire system ensures that
+the<00:12:38.959><c> agents</c><00:12:39.360><c> memory</c><00:12:39.600><c> stays</c><00:12:39.920><c> searchable</c>
+
+00:12:40.310 --> 00:12:40.320 align:start position:0%
+the agents memory stays searchable
+ 
+
+00:12:40.320 --> 00:12:42.389 align:start position:0%
+the agents memory stays searchable
+without<00:12:40.720><c> expensive</c><00:12:41.200><c> full</c><00:12:41.440><c> reindex</c><00:12:42.000><c> operation</c>
+
+00:12:42.389 --> 00:12:42.399 align:start position:0%
+without expensive full reindex operation
+ 
+
+00:12:42.399 --> 00:12:44.790 align:start position:0%
+without expensive full reindex operation
+on<00:12:42.639><c> every</c><00:12:42.880><c> change.</c><00:12:44.000><c> That's</c><00:12:44.240><c> the</c><00:12:44.480><c> complete</c>
+
+00:12:44.790 --> 00:12:44.800 align:start position:0%
+on every change. That's the complete
+ 
+
+00:12:44.800 --> 00:12:46.790 align:start position:0%
+on every change. That's the complete
+picture.<00:12:45.519><c> From</c><00:12:45.920><c> storing</c><00:12:46.320><c> memories</c><00:12:46.639><c> to</c>
+
+00:12:46.790 --> 00:12:46.800 align:start position:0%
+picture. From storing memories to
+ 
+
+00:12:46.800 --> 00:12:49.110 align:start position:0%
+picture. From storing memories to
+searching<00:12:47.200><c> them</c><00:12:47.440><c> to</c><00:12:47.680><c> keeping</c><00:12:47.920><c> them</c><00:12:48.079><c> in</c><00:12:48.320><c> sync,</c>
+
+00:12:49.110 --> 00:12:49.120 align:start position:0%
+searching them to keeping them in sync,
+ 
+
+00:12:49.120 --> 00:12:50.710 align:start position:0%
+searching them to keeping them in sync,
+OpenClaw's<00:12:49.760><c> memory</c><00:12:50.079><c> system</c><00:12:50.320><c> is</c><00:12:50.480><c> a</c>
+
+00:12:50.710 --> 00:12:50.720 align:start position:0%
+OpenClaw's memory system is a
+ 
+
+00:12:50.720 --> 00:12:52.230 align:start position:0%
+OpenClaw's memory system is a
+masterclass<00:12:51.200><c> in</c><00:12:51.440><c> practical</c><00:12:51.839><c> AI</c>
+
+00:12:52.230 --> 00:12:52.240 align:start position:0%
+masterclass in practical AI
+ 
+
+00:12:52.240 --> 00:12:53.910 align:start position:0%
+masterclass in practical AI
+architecture.
+
+00:12:53.910 --> 00:12:53.920 align:start position:0%
+architecture.
+ 
+
+00:12:53.920 --> 00:12:55.590 align:start position:0%
+architecture.
+Thanks<00:12:54.160><c> for</c><00:12:54.320><c> watching.</c><00:12:54.880><c> If</c><00:12:55.120><c> you</c><00:12:55.200><c> found</c><00:12:55.360><c> this</c>
+
+00:12:55.590 --> 00:12:55.600 align:start position:0%
+Thanks for watching. If you found this
+ 
+
+00:12:55.600 --> 00:12:57.350 align:start position:0%
+Thanks for watching. If you found this
+breakdown<00:12:56.079><c> helpful,</c><00:12:56.720><c> please</c><00:12:56.959><c> like</c><00:12:57.120><c> and</c>
+
+00:12:57.350 --> 00:12:57.360 align:start position:0%
+breakdown helpful, please like and
+ 
+
+00:12:57.360 --> 00:12:59.110 align:start position:0%
+breakdown helpful, please like and
+subscribe.<00:12:58.079><c> And</c><00:12:58.320><c> if</c><00:12:58.560><c> you're</c><00:12:58.720><c> curious</c><00:12:58.959><c> about</c>
+
+00:12:59.110 --> 00:12:59.120 align:start position:0%
+subscribe. And if you're curious about
+ 
+
+00:12:59.120 --> 00:13:00.870 align:start position:0%
+subscribe. And if you're curious about
+running<00:12:59.360><c> OpenClaw</c><00:12:59.920><c> yourself</c><00:13:00.240><c> or</c><00:13:00.560><c> want</c><00:13:00.720><c> to</c>
+
+00:13:00.870 --> 00:13:00.880 align:start position:0%
+running OpenClaw yourself or want to
+ 
+
+00:13:00.880 --> 00:13:02.310 align:start position:0%
+running OpenClaw yourself or want to
+learn<00:13:01.040><c> more</c><00:13:01.200><c> about</c><00:13:01.440><c> building</c><00:13:01.680><c> AI</c><00:13:02.079><c> systems</c>
+
+00:13:02.310 --> 00:13:02.320 align:start position:0%
+learn more about building AI systems
+ 
+
+00:13:02.320 --> 00:13:04.150 align:start position:0%
+learn more about building AI systems
+with<00:13:02.480><c> cloud</c><00:13:02.880><c> code,</c><00:13:03.279><c> check</c><00:13:03.440><c> out</c><00:13:03.600><c> the</c><00:13:03.760><c> links</c><00:13:04.000><c> in</c>
+
+00:13:04.150 --> 00:13:04.160 align:start position:0%
+with cloud code, check out the links in
+ 
+
+00:13:04.160 --> 00:13:05.829 align:start position:0%
+with cloud code, check out the links in
+the<00:13:04.320><c> description.</c><00:13:05.040><c> I'll</c><00:13:05.279><c> see</c><00:13:05.440><c> you</c><00:13:05.519><c> in</c><00:13:05.680><c> the</c>
+
+00:13:05.829 --> 00:13:05.839 align:start position:0%
+the description. I'll see you in the
+ 
+
+00:13:05.839 --> 00:13:09.000 align:start position:0%
+the description. I'll see you in the
+next<00:13:06.000><c> one.</c>
+
