@@ -114,6 +114,12 @@ For agents that run for extended periods -- hours or days of autonomous work -- 
 
 **Memory**: A key-value store local to the agent where intermediate results, structured data, or lengthy outputs can be parked and retrieved on demand rather than persisted in the context window across every call. This follows the same principle as skills: not everything needs to be in context all the time.
 
+Damian Galarza ([#099](../../sources/099-damian-galarza-agent-memory-search.md)) provides a detailed technical breakdown of how production agent memory systems actually work, using OpenClaw's implementation as a case study. The key architectural insight is that **no single search approach is sufficient** for agent memory retrieval. Keyword search (grep, BM25) excels at exact matches -- error codes, function names -- but misses semantic relationships. Semantic search (embeddings, vector databases) finds conceptually related content but fails on literal string matching. OpenClaw combines both via **weighted score fusion** (70% vector, 30% keyword), then optionally reranks results using an LLM for nuanced relevance judgment.
+
+The **search-then-get two-tool pattern** is particularly important for context management: `memory_search` returns lightweight previews (file path, line numbers, relevance score, 700-character snippet), and `memory_get` retrieves specific sections by path and line range. This mirrors how humans search -- scan results for relevance, then read only what matters -- and prevents loading entire files into the context window. The pattern keeps token usage efficient and directly supports the 60-70% context headroom principle.
+
+Additional implementation details from Galarza's analysis: chunking with overlap (400-token chunks with 80-token overlap) ensures ideas split across boundaries remain discoverable; embedding caches keyed by provider and model prevent redundant API calls; and a 4x candidate multiplier (requesting 24 candidates when 6 are needed) gives the fusion step more material to work with. Notably, the Claude Code team started with a vector database but found that grep-based agentic search actually performed better and was easier to maintain -- a counter-intuitive finding that reinforces the "start simple" principle.
+
 **Agent decomposition**: Split complex agents into composed sub-agents. If your agent has a complex document-search workflow, that should be its own agent. The parent agent can ask the sub-agent for a concise summary rather than carrying the full search context. As Berglund notes, this mirrors microservice decomposition -- agents naturally evolve from monoliths to composed systems.
 
 These strategies connect directly to Berglund's "60-70% rule": research consistently shows that filling a context window to 100% capacity does not give the best results. Performance peaks at roughly 60-70% of window capacity. Long-horizon strategies exist to maintain that headroom even as work accumulates.
@@ -163,6 +169,120 @@ Claude Code's improved plan mode (introduced in late 2025/early 2026) follows th
 
 The connection to the Ralph Wiggum loop (Concept 7) is direct: Beats provides the persistent state that enables long-running autonomous loops to survive context window resets. Each agent iteration reads the current task state, makes progress, updates the state, and terminates. The next iteration picks up seamlessly.
 
+### Concept 10: Continuous Agentic Pressure -- Agents as Always-On Infrastructure
+
+Eddie Aftandilian ([#069](../../sources/069-eddie-aftandilian-agentic-workflows.md)) describes a maturity shift from AI-as-tool to AI-as-infrastructure. GitHub deployed over 100 specialized agentic workflows on their own repository, and the key finding was that the real leverage wasn't in automating discrete tasks (issue triage, routine fixes) but in applying **continuous pressure** to areas of the codebase that are never really "done": code quality, test coverage, performance, dependency usage.
+
+The operational difference is fundamental: improvement stops being event-driven. It doesn't depend on someone prioritizing a tech-debt ticket or deciding to run a cleanup sprint. It just keeps happening in the background, with humans in the loop for review. Agents regularly propose structural refactors, analyze dependency patterns, open PRs for test coverage gaps, and keep documentation synchronized with code changes.
+
+This extends the agentic patterns in this module from session-scoped to repository-scoped. The Ralph loop (Concept 7) runs until tests pass and then stops. Continuous agentic pressure never stops -- it's a permanent layer of the development infrastructure. GitHub's approach uses many small, specialized workflows rather than one monolithic agent, with categories including:
+
+- **Analysis agents**: Read-only monitoring of metrics, health, and patterns
+- **Improvement agents**: Proactively propose changes via PRs
+- **Meta agents**: Monitor and improve other workflows' performance
+- **Documentation agents**: Keep docs synchronized with code changes
+
+The security implication is significant: always-on agents have a larger blast radius than on-demand tools. GitHub enforces read-only permissions by default, sandboxed execution, and sanitized outputs. Start with read-only analysis agents to build trust before granting write access.
+
+> "I think some form of continuous AI is going to become a normal part of how serious software projects operate." -- Eddie Aftandilian ([#069])
+
+### Concept 11: Delegation vs. Coordination -- Two Agent Philosophies
+
+Nate B Jones ([#086](../../sources/086-nate-b-jones-codex-vs-claude.md)) identifies a fundamental philosophical divergence in agent architecture, crystallized by the near-simultaneous release of OpenAI's Codex and Anthropic's Claude. Codex bets on **autonomous correctness through delegation** -- hand it off, walk away. Its three-layer architecture (orchestrator, executors, recovery layer) is designed to produce trustworthy output without human review. Claude bets on **integration and coordination** -- plugging into existing tools via MCP, coordinating agent teams with peer-to-peer communication, and extending beyond code into all knowledge work.
+
+Jones offers a three-question decision framework for choosing the right approach: (1) Can you tolerate errors, or is correctness non-negotiable? (2) Does the task live in one environment or span multiple tools? (3) Is the work independent or interdependent? Five separate contract reviews suit delegation in parallel; a product launch where press release, landing page, and email sequence must align suits coordination.
+
+The strategic implication: Codex's bet strengthens if individual agent capability grows fast enough to make coordination unnecessary. Claude's bet strengthens if real work stays fundamentally interdependent and the most valuable problems can never be cleanly decomposed. The MCP network effect compounds for Claude: every new integration makes the system more useful. Most teams will need both capabilities -- the durable meta-skill is rapidly assessing which problems are delegation-shaped and which are coordination-shaped.
+
+> "The gap between the releases might be tiny -- 20 minutes. But the gap around what these companies think agents can do could not be wider." -- Nate B Jones ([#086])
+
+### Concept 12: The Four-Layer Agentic Architecture
+
+IndyDevDan ([#088](../../sources/088-indydevdan-browser-automation-stack.md)) presents "Bowser," a four-layer architecture that demonstrates how to compose agentic capabilities into a reusable stack that solves entire classes of problems rather than individual tasks:
+
+**Layer 1 -- Skills (Capability)**: Foundational tools like a Playwright browser skill or a Claude browser skill. Skills define what an agent can do -- the raw capability.
+
+**Layer 2 -- Subagents (Scale)**: Specialized agents that wrap a skill with a concrete workflow. A Browser QA agent, for example, parses user stories into steps, creates output directories, takes screenshots at each step, and reports pass/fail. Subagents are where specialization and scale begin.
+
+**Layer 3 -- Commands/Prompts (Orchestration)**: Custom slash commands that spawn agent teams, distribute work across parallel subagents, and collect results. This is the meta-prompting layer -- teaching the orchestrator agent how to prompt subagents. Dan introduces the concept of a **Higher-Order Prompt (HOP)** -- a prompt that takes another prompt as a parameter, analogous to a higher-order function. The invariant workflow structure lives in the HOP; the varying task-specific steps are passed as parameters.
+
+**Layer 4 -- Justfiles (Reusability)**: A task runner that provides a single entry point for all agentic workflows with configurable parameters, letting teams and other agents discover and invoke any workflow.
+
+This layered approach is what separates "vibe coders" from "agentic engineers." As Dan puts it: "Agentic engineers know what their agents are doing, and they know it so well, they don't have to look. Vibe coders don't know, and they don't look."
+
+### Concept 13: Skill Design Patterns for Agent Systems
+
+Mark Kashef ([#079](../../sources/079-mark-kashef-claude-skills-guide.md)) synthesizes Anthropic's official 33-page skills guide into five design patterns that directly support agentic workflows:
+
+1. **Sequential workflow** -- Linear steps with rollback on failure (e.g., authentication flow)
+2. **Multi-MCP coordination** -- Orchestrating multiple MCPs in phases (e.g., Figma to Drive to Linear to Slack)
+3. **Iterative refinement** -- Generate, audit, refine cycles until a quality threshold is met
+4. **Conditional branching** -- Same input routed differently based on context
+5. **Domain-specific intelligence** -- Enterprise patterns with embedded business rules and compliance checks
+
+Skills operate on a three-level loading model that manages context efficiently: Level 1 (YAML front matter, always loaded, under 1,000 characters), Level 2 (procedural instructions, loaded on match), Level 3 (linked files, loaded on execution). This progressive loading preserves context window space -- critical for agents running multiple skills simultaneously.
+
+The iterative skill creation pattern demonstrated by Jack Roberts ([#083](../../sources/083-jack-roberts-cowork-use-cases.md)) provides a practical on-ramp: start by having the agent perform a task manually through conversation, refine the output through feedback, then enshrine the refined process as a reusable skill for autonomous execution.
+
+Tanmay Deshpande ([#090](../../sources/090-tanmay-deshpande-claude-skill-tradeoffs.md)) demonstrates a compelling application of the **domain-specific intelligence** pattern: a Claude Code skill that encodes a complete architecture trade-off analysis framework into a single invocation. The skill takes a one-paragraph scenario description and produces a comprehensive architecture decision record -- weighted scoring across architecture characteristics, Roger Martin's "What Would Have to Be True" strategic framework, second-order effects analysis (Conway's Law implications, discipline tax), risk profiles, and a phased implementation roadmap. This illustrates how skills can encode multi-step analytical frameworks from management and architecture literature, turning complex decision-making processes into repeatable, documented workflows. As Deshpande puts it: "The most senior person in the room wins and nobody documents why" -- the skill addresses both the documentation gap and the consistency problem in architecture decisions.
+
+### Concept 14: CLI Over MCP for Token Efficiency
+
+The Playwright team ([#030](../../sources/030-playwright-cli-vs-mcp.md)) introduces a file-mediated architecture that dramatically reduces token consumption for browser automation. The same task consumed 114,000 tokens via MCP versus 26,800 tokens via CLI -- a 4.3x reduction. The architectural difference: MCP returns all browser output directly to the LLM's context window, while CLI writes outputs to disk files and lets the agent decide what to read into context.
+
+IndyDevDan ([#088](../../sources/088-indydevdan-browser-automation-stack.md)) reinforces this choice, explicitly recommending CLIs over MCP servers for browser automation. MCP servers consume more tokens and force you into their opinionated workflow; CLIs give you freedom to build your own opinionated layer on top. The practical guidance: build skills on CLIs, then layer your own structure above.
+
+Peter Steinberger, creator of OpenClaw ([#094](../../sources/094-y-combinator-openclaw-viral-agent.md)), provides additional evidence for the CLI-first thesis. He deliberately avoided building MCP support into OpenClaw -- the fastest-growing open-source project in GitHub history -- and instead created **makeporter**, a tool that converts any MCP into a CLI on the fly. His reasoning: CLIs are what humans naturally use, bots are good at Unix, CLIs scale better, and you do not need to restart the agent to add new tools (unlike Claude Code or Codex with MCP). Steinberger views MCP as unnecessary complexity "invented for bots" rather than building on what already works. The fact that OpenClaw reached 160,000+ stars without any MCP support is a strong empirical signal that CLIs are sufficient for even the most ambitious agent projects.
+
+This applies broadly beyond browser automation. Any tool interaction where the agent does not need to reason about every piece of output benefits from the file-mediated pattern. Write output to disk, read selectively into context -- a lazy-loading pattern that preserves context budget for decisions that actually require intelligence.
+
+### Concept 15: Git Worktrees as Agent Infrastructure
+
+Joshua Morony ([#027](../../sources/027-joshua-morony-git-worktree.md)) makes the case that `git worktree` has become essential infrastructure for agentic coding. When AI agents execute multi-phase tasks autonomously for 15-60 minutes, they occupy the filesystem. The developer cannot safely work in the same codebase while agents make edits on the same branch.
+
+Worktrees solve this by creating separate filesystem checkouts that share the same git history. Each agent gets its own working directory, completely isolated from others. Morony integrates worktree creation directly into his agentic pipeline: each new work track automatically creates a dedicated worktree and branch, isolating agent work from the developer's main working directory. See also: [Module 05: Team Orchestration](../05-team-orchestration/README.md) for expanded coverage of worktrees in multi-agent setups.
+
+### Concept 16: WebMCP -- Structured Agent-Web Interaction
+
+Sam Witteveen ([#046](../../sources/046-sam-witteveen-webmcp.md)) breaks down WebMCP, a new standard jointly developed by Google and Microsoft that replaces the two fundamentally inefficient methods agents currently use to interact with websites: screenshot-based interaction (consuming thousands of tokens per image) and DOM/HTML parsing (translating raw markup into actionable information). WebMCP allows websites to expose structured tools directly to AI agents through the browser, turning each web page into what is effectively an MCP server.
+
+The architecture rests on three pillars: **Context** (data agents need, including content not currently visible), **Capabilities** (actions agents can take on the user's behalf), and **Coordination** (handoff between user and agent when ambiguity arises). Two complementary APIs are provided: a **Declarative API** that annotates existing HTML forms (making well-structured forms approximately 80% agent-ready with minimal work) and an **Imperative API** for complex JavaScript-driven interactions.
+
+For agent builders, WebMCP replaces what could be dozens of screenshot-and-click interactions with a single structured tool call, dramatically reducing token costs and improving reliability. This is available now behind a flag in Chrome with broader rollout expected in early-to-mid 2026.
+
+### Concept 17: The Generate-Verify-Revise Pattern
+
+Google DeepMind's Althia research agent ([#060](../../sources/060-prompt-engineering-100x-breakthrough.md)) formalizes a three-part agentic loop that outperforms raw model inference at every compute scale:
+
+1. **Generator**: Takes a research task and proposes a candidate solution
+2. **Verifier**: A separate natural-language mechanism that probes the logic for gaps and hallucinations (not surface-level plausibility checks)
+3. **Reviser**: Patches minor issues or triggers a complete restart back to the generator if critically flawed
+
+Althia achieved 91.9% on Advanced Proof Bench (previous record: 65.7%), and on the 29 of 30 problems where it returned a solution, conditional accuracy was 98.3%. Two features distinguish it from simpler loops: it uses web search to ground citations in real literature (addressing hallucinated citations), and it can explicitly admit when it cannot solve a problem rather than hallucinating a confident answer.
+
+The meta-lesson reinforced across the release: **the orchestration layer around the model is where the real capability gains come from**. Poetic's agentic harness on Gemini 3 Pro beat earlier Deep Think at lower cost. Tool selection alone can yield 5-8% improvements -- gains not typically achievable with a model generation upgrade. This validates investing in harness design (generate-verify-revise loops, tool access, orchestration logic) rather than waiting for the next model release.
+
+### Concept 18: Deterministic Scripts + Agentic Prompts as Architectural Pattern
+
+IndyDevDan ([#064](../../sources/064-indydevdan-agentic-prompt.md)) introduces a pattern applicable beyond codebase setup: combining deterministic code execution with agentic intelligence. The pattern structure is:
+
+1. Run deterministic steps first (scripts with predictable execution)
+2. Log everything from the deterministic execution
+3. Let an agentic prompt read the logs, validate results, and handle exceptions
+4. For interactive workflows, the agent asks human-in-the-loop questions for decisions that require judgment
+
+This pattern directly addresses the trust problem in agentic systems. As IndyDevDan frames it: "Agents when combined with code beats either alone." Deterministic hooks provide the reliability floor; agentic prompts provide the intelligence ceiling. The combination is strictly better than either approach in isolation.
+
+The encoding of common failure modes into the prompt creates a positive feedback loop: every time a new failure is discovered, it gets encoded as a problem/solution pair, making the agent progressively better at handling issues without human intervention. This turns prompts into evolving knowledge bases -- "living documents that execute."
+
+### Concept 19: REPL + Recursion as a Reasoning Primitive
+
+Brainqub3's analysis of the Recursive Language Models paper ([#048](../../sources/048-brainqub3-recursive-language-models.md)) introduces a deceptively simple agentic pattern for reasoning over complex, high-context documents. Instead of placing documents in the context window, the system assigns them to variables in a Python REPL. The model then operates through four primitives: **Read** (inspect the data object), **Evaluate** (run programmatic functions), **Print** (return results), and **Loop** (continue until solved). A recursive layer allows the orchestrating model to hand off sub-tasks to smaller models that focus on specific portions of the data.
+
+This pattern is particularly powerful for documents that are dependency graphs rather than linear text -- legal contracts, codebases, and policy documents with dense internal cross-references. Prior approaches (context stuffing, summarization, and RAG) break down when task complexity is high. The REPL + recursion approach enables intelligent search over the document graph rather than brute-force context consumption.
+
+The practical guidance: match the approach to the complexity. RLMs shine when tasks involve both long context and high complexity. For short context or simple retrieval, a direct LLM call often outperforms the overhead. Implement guardrails for recursion -- the paper limits recursion to one layer deep and uses synchronous workflows to prevent runaway costs.
+
 ## Patterns & Practices
 
 ### Pattern 1: Builder/Validator Task Execution
@@ -182,9 +302,9 @@ The connection to the Ralph Wiggum loop (Concept 7) is direct: Beats provides th
 ### Pattern 3: Skill-Augmented Agent Teams
 
 - **When to use**: When different sub-agents in a task system need different specialized capabilities.
-- **How it works**: Skills load on demand per-agent based on the task context (see [Module 03: Claude Code Essentials](../03-claude-code-essentials/README.md)). A front-end builder agent automatically activates design and accessibility skills. A backend builder activates database and API skills. Each agent gets the specialized knowledge it needs without bloating other agents' contexts.
+- **How it works**: Skills load on demand per-agent based on the task context (see [Module 03: Claude Code Essentials](../03-claude-code-essentials/README.md)). A front-end builder agent automatically activates design and accessibility skills. A backend builder activates database and API skills. Each agent gets the specialized knowledge it needs without bloating other agents' contexts. Mark Kashef's five design patterns ([#079]) provide a taxonomy for structuring these skills: sequential workflow, multi-MCP coordination, iterative refinement, conditional branching, and domain-specific intelligence.
 - **Example**: IndyDevDan ([#015]) describes skill composition patterns that emerge naturally from auto-activation: sequential chaining (one skill's output feeds another's input), parallel activation (multiple skills for different aspects of the same prompt), and nested composition (a higher-level skill orchestrating lower-level ones).
-- **Source**: [#015], [#001]
+- **Source**: [#015], [#001], [#079]
 
 ### Pattern 4: The Autonomous Loop Pattern (Ralph-Style)
 
@@ -221,46 +341,12 @@ The connection to the Ralph Wiggum loop (Concept 7) is direct: Beats provides th
 - **Example**: AI LABS ([#021]) demonstrates spawning adversarial agent pairs for research validation. After the primary agent completes research, an adversarial agent receives the same prompt with instructions to challenge conclusions and identify missing information. AI LABS also uses "predictive failure analysis" as a post-testing quality gate -- after tests pass, a separate agent analyzes the code for potential failure modes that tests might not cover.
 - **Source**: [#021]
 
-### Concept 10: WebMCP -- Structured Agent-Web Interaction
+### Pattern 9: The Four-Layer Stack Pattern
 
-Sam Witteveen ([#046](../../sources/046-sam-witteveen-webmcp.md)) breaks down WebMCP, a new standard jointly developed by Google and Microsoft that replaces the two fundamentally inefficient methods agents currently use to interact with websites: screenshot-based interaction (consuming thousands of tokens per image) and DOM/HTML parsing (translating raw markup into actionable information). WebMCP allows websites to expose structured tools directly to AI agents through the browser, turning each web page into what is effectively an MCP server.
-
-The architecture rests on three pillars: **Context** (data agents need, including content not currently visible), **Capabilities** (actions agents can take on the user's behalf), and **Coordination** (handoff between user and agent when ambiguity arises). Two complementary APIs are provided: a **Declarative API** that annotates existing HTML forms (making well-structured forms approximately 80% agent-ready with minimal work) and an **Imperative API** for complex JavaScript-driven interactions.
-
-For agent builders, WebMCP replaces what could be dozens of screenshot-and-click interactions with a single structured tool call, dramatically reducing token costs and improving reliability. This is available now behind a flag in Chrome with broader rollout expected in early-to-mid 2026.
-
-### Concept 11: The Generate-Verify-Revise Pattern
-
-Google DeepMind's Althia research agent ([#060](../../sources/060-prompt-engineering-100x-breakthrough.md)) formalizes a three-part agentic loop that outperforms raw model inference at every compute scale:
-
-1. **Generator**: Takes a research task and proposes a candidate solution
-2. **Verifier**: A separate natural-language mechanism that probes the logic for gaps and hallucinations (not surface-level plausibility checks)
-3. **Reviser**: Patches minor issues or triggers a complete restart back to the generator if critically flawed
-
-Althia achieved 91.9% on Advanced Proof Bench (previous record: 65.7%), and on the 29 of 30 problems where it returned a solution, conditional accuracy was 98.3%. Two features distinguish it from simpler loops: it uses web search to ground citations in real literature (addressing hallucinated citations), and it can explicitly admit when it cannot solve a problem rather than hallucinating a confident answer.
-
-The meta-lesson reinforced across the release: **the orchestration layer around the model is where the real capability gains come from**. Poetic's agentic harness on Gemini 3 Pro beat earlier Deep Think at lower cost. Tool selection alone can yield 5-8% improvements -- gains not typically achievable with a model generation upgrade. This validates investing in harness design (generate-verify-revise loops, tool access, orchestration logic) rather than waiting for the next model release.
-
-### Concept 11a: Deterministic Scripts + Agentic Prompts as Architectural Pattern
-
-IndyDevDan ([#064](../../sources/064-indydevdan-agentic-prompt.md)) introduces a pattern applicable beyond codebase setup: combining deterministic code execution with agentic intelligence. The pattern structure is:
-
-1. Run deterministic steps first (scripts with predictable execution)
-2. Log everything from the deterministic execution
-3. Let an agentic prompt read the logs, validate results, and handle exceptions
-4. For interactive workflows, the agent asks human-in-the-loop questions for decisions that require judgment
-
-This pattern directly addresses the trust problem in agentic systems. As IndyDevDan frames it: "Agents when combined with code beats either alone." Deterministic hooks provide the reliability floor; agentic prompts provide the intelligence ceiling. The combination is strictly better than either approach in isolation.
-
-The encoding of common failure modes into the prompt creates a positive feedback loop: every time a new failure is discovered, it gets encoded as a problem/solution pair, making the agent progressively better at handling issues without human intervention. This turns prompts into evolving knowledge bases -- "living documents that execute."
-
-### Concept 12: REPL + Recursion as a Reasoning Primitive
-
-Brainqub3's analysis of the Recursive Language Models paper ([#048](../../sources/048-brainqub3-recursive-language-models.md)) introduces a deceptively simple agentic pattern for reasoning over complex, high-context documents. Instead of placing documents in the context window, the system assigns them to variables in a Python REPL. The model then operates through four primitives: **Read** (inspect the data object), **Evaluate** (run programmatic functions), **Print** (return results), and **Loop** (continue until solved). A recursive layer allows the orchestrating model to hand off sub-tasks to smaller models that focus on specific portions of the data.
-
-This pattern is particularly powerful for documents that are dependency graphs rather than linear text -- legal contracts, codebases, and policy documents with dense internal cross-references. Prior approaches (context stuffing, summarization, and RAG) break down when task complexity is high. Context stuffing is expensive and can bury signal in noise. Summarization is lossy. RAG works for simple Q&A but cannot capture logical relationships needed for multihop reasoning. The REPL + recursion approach enables intelligent search over the document graph rather than brute-force context consumption.
-
-The practical guidance: match the approach to the complexity. RLMs shine when tasks involve both long context and high complexity. For short context or simple retrieval, a direct LLM call often outperforms the overhead. Implement guardrails for recursion -- the paper limits recursion to one layer deep and uses synchronous workflows to prevent runaway costs.
+- **When to use**: When you need to solve a class of problems (e.g., browser automation, UI testing, content generation) repeatedly across projects.
+- **How it works**: Build four composable layers: Skills (raw capability), Subagents (specialized workflow wrapping the skill), Commands (orchestration via Higher-Order Prompts), and Justfiles (reusable invocation). Each layer adds value without duplicating the one below. The HOP pattern keeps invariant structure in the orchestration layer while varying the task-specific steps.
+- **Example**: IndyDevDan's Bowser ([#088]) -- a Playwright browser skill (Layer 1) wrapped by a Browser QA subagent (Layer 2), orchestrated by a `/ui-review` command that distributes user stories across parallel subagents (Layer 3), invocable via `just ui-review` (Layer 4).
+- **Source**: [#088]
 
 ## Common Pitfalls
 
@@ -276,13 +362,17 @@ The practical guidance: match the approach to the complexity. RLMs shine when ta
 
 - **Treating all codebases with the same supervision level**: A prototype and a payment processing service should not have the same agent autonomy level. Without explicit policy, agent supervision becomes a free-for-all with inconsistent quality. Define policies per risk tier.
 
-- **Building monolithic skills instead of composable ones**: As IndyDevDan notes in [#015], prefer skill composition (sequential chaining, parallel activation) over building monolithic skills that try to do everything. Smaller, focused skills are easier to test, reuse, and combine.
+- **Building monolithic skills instead of composable ones**: As IndyDevDan notes in [#015], prefer skill composition (sequential chaining, parallel activation) over building monolithic skills that try to do everything. Smaller, focused skills are easier to test, reuse, and combine. The four-layer architecture ([#088]) demonstrates how composable skills scale into reusable stacks.
 
 - **Jumping to agent teams when sub-agents suffice**: Simon Scrapes ([#051](../../sources/051-simon-scrapes-claude-code-tips.md)) recommends a clear graduation model: start with single agents, graduate to sub-agents for delegation, then reach for agent teams only when genuine cross-collaboration is required. Agent teams add token cost (~5x) and coordination overhead. The additional complexity is overkill for simple delegation tasks.
 
 - **Running autonomous loops without deterministic halting conditions**: Van Eyck ([#024]) warns that agents will confidently report "all done, all tests pass" when the code doesn't even compile. The Ralph Wiggum loop's value is precisely that it replaces agent self-assessment with deterministic verification (actual compilation, actual test execution). Without this, autonomous loops produce false-positive completion signals and waste compute on work that never had a chance of succeeding.
 
 - **Neglecting the agent security surface**: IBM's zero trust framework for agentic AI ([#057](../../sources/057-ibm-zero-trust-ai-agents.md)) identifies six attack vectors specific to agent architectures: prompt injection, policy/model poisoning, interface interception (including MCP calls), tool/API compromise, credential theft, and privilege escalation. The "assume breach" mindset -- designing every control assuming the agent or its environment is already compromised -- becomes critical when autonomous agents have elevated privileges and can take real-world actions. Key mitigations: never embed credentials in agent code (use just-in-time credential vaults), maintain a vetted tool registry for all MCP tools and APIs, deploy AI firewalls at agent boundaries for input/output inspection, and log everything immutably for post-incident forensics.
+
+- **Expecting AI-generated codebases to remain maintainable at scale**: Tom Delalande ([#073](../../sources/073-tom-delalande-claude-agents-useless.md)) documents how Anthropic's own C compiler project reached a point where Claude could not make changes without breaking existing functionality. AI-generated codebases can exceed the model's own ability to modify them -- a critical concern for long-lived projects that depend on autonomous agent maintenance.
+
+- **Using MCP when CLI would be more efficient**: The Playwright team ([#030]) demonstrated a 4.3x token reduction using CLI over MCP for the same browser automation task. Default to CLI-based tools for coding agents; reserve MCP for custom agentic loops where the standardized protocol matters.
 
 ## Hands-On Exercises
 
@@ -298,6 +388,10 @@ The practical guidance: match the approach to the complexity. RLMs shine when ta
 
 6. **Write a meta-prompt**: Create a reusable meta-prompt for a workflow your team repeats (e.g., adding a new microservice, migrating a database schema). The meta-prompt should generate a structured plan with tasks, dependencies, and builder/validator assignments. Test it across two different instances of the workflow to verify consistency.
 
+7. **Build a four-layer stack**: Following the Bowser pattern ([#088]), create a skill for a repeatable task, wrap it in a subagent with a concrete workflow, write a command that orchestrates parallel subagent execution, and wrap everything in a Justfile entry. Test the full stack end-to-end.
+
+8. **Compare CLI vs MCP token usage**: Run the same browser automation task using both the Playwright CLI and MCP server. Compare token consumption, execution time, and output quality. Use this to calibrate your default tool choice for agent workflows.
+
 ## Source Material
 
 | Source | Creator | Key Topics |
@@ -308,16 +402,30 @@ The practical guidance: match the approach to the complexity. RLMs shine when ta
 | [015: I finally CRACKED Claude Agent Skills](../../sources/015-indydevdan-skills-engineering.md) | IndyDevDan | Skill composition patterns, chaining, context budget management |
 | [016: The Biggest AI Jump](../../sources/016-nate-b-jones-opus-46-jump.md) | Nate B Jones | Opus 4.6 capability leap, workflow inversion from "AI assists" to "AI leads" |
 | [018: The New AI-Driven SDLC](../../sources/018-circleci-ai-sdlc.md) | CircleCI (Jacob Schmitt) | Bottleneck shift from writing to evaluating, SDLC as network, infrastructure as enabler |
+| [020: How & When to Use Claude Code Agent Teams](../../sources/020-simon-scrapes-agent-teams.md) | Simon Scrapes | Context rot, hub-spoke vs mesh topology, complexity heuristic |
 | [021: Claude's Best Release Yet + 10 Tricks](../../sources/021-ai-labs-claude-code-tricks.md) | AI LABS | Adversarial agent pairs, predictive failure analysis, hooks for TDD enforcement, user stories for BDD |
 | [024: Agentic coding in 2026](../../sources/024-jo-van-eyck-agentic-coding-2026.md) | Jo Van Eyck | Ralph Wiggum loop deep dive, Beats persistent task management, autonomy slider, deterministic verification |
-| [043: Claude Code just replaced your ad agency](../../sources/043-agrici-daniel-claude-ad-agency.md) | Agrici Daniel | Autonomous multi-step tool orchestration within a skill, self-review and self-correction pattern, non-coding agentic workflow |
-| [046: The Rise of WebMCP](../../sources/046-sam-witteveen-webmcp.md) | Sam Witteveen | WebMCP structured agent-web interaction, declarative vs imperative APIs, replacing screenshot-based browsing with tool calls |
-| [048: Before You Build Another Agent, Understand This MIT Paper](../../sources/048-brainqub3-recursive-language-models.md) | Brainqub3 | REPL + recursion as reasoning primitive, context rot as two-dimensional, documents as dependency graphs, recursive delegation to smaller models |
-| [051: You're using Claude Code Wrong](../../sources/051-simon-scrapes-claude-code-tips.md) | Simon Scrapes | Agent teams vs sub-agents graduation model, hooks as zero-token checks, skill-augmented workflows |
-| [057: Securing AI Agents with Zero Trust](../../sources/057-ibm-zero-trust-ai-agents.md) | IBM Technology | Six agent attack vectors, assume-breach for agents, just-in-time credentials, tool registry, AI firewalls, immutable logging |
-| [060: The 100x AI Breakthrough No One is Talking About](../../sources/060-prompt-engineering-100x-breakthrough.md) | Prompt Engineering | Generate-verify-revise pattern (Althia), agent layer as capability multiplier, tool selection impact on performance |
+| [026: 10 Claude Code tips](../../sources/026-no-code-mba-claude-code-tips.md) | No Code MBA | Sub-agents as isolated workers, skills vs sub-agents distinction, plan mode for deliberate development |
+| [027: Devs can no longer avoid learning Git worktree](../../sources/027-joshua-morony-git-worktree.md) | Joshua Morony | Git worktrees as essential agent infrastructure, file system contention, automated worktree pipelines |
+| [030: Playwright CLI vs MCP](../../sources/030-playwright-cli-vs-mcp.md) | Playwright | CLI vs MCP token efficiency (4.3x reduction), file-mediated context control, capability surface trade-offs |
+| [043: Claude Code just replaced your ad agency](../../sources/043-agrici-daniel-claude-ad-agency.md) | Agrici Daniel | Autonomous multi-step tool orchestration within a skill, self-review and self-correction pattern |
+| [046: The Rise of WebMCP](../../sources/046-sam-witteveen-webmcp.md) | Sam Witteveen | WebMCP structured agent-web interaction, declarative vs imperative APIs |
+| [048: Before You Build Another Agent, Understand This MIT Paper](../../sources/048-brainqub3-recursive-language-models.md) | Brainqub3 | REPL + recursion as reasoning primitive, documents as dependency graphs, recursive delegation |
+| [051: You're using Claude Code Wrong](../../sources/051-simon-scrapes-claude-code-tips.md) | Simon Scrapes | Agent teams vs sub-agents graduation model, hooks as zero-token checks |
+| [057: Securing AI Agents with Zero Trust](../../sources/057-ibm-zero-trust-ai-agents.md) | IBM Technology | Six agent attack vectors, assume-breach for agents, just-in-time credentials, tool registry |
+| [060: The 100x AI Breakthrough No One is Talking About](../../sources/060-prompt-engineering-100x-breakthrough.md) | Prompt Engineering | Generate-verify-revise pattern (Althia), agent layer as capability multiplier |
 | [062: Every Level of Claude Code Explained](../../sources/062-simon-scrapes-claude-code-levels.md) | Simon Scrapes | GSD planning framework, context rot mitigation, RAWL autonomous loops, seven-level progression |
-| [064: One Prompt Every AGENTIC Codebase Should Have](../../sources/064-indydevdan-agentic-prompt.md) | IndyDevDan | Deterministic + agentic pattern, setup hooks, justfile as launchpad, encoding failure modes into prompts, living documents |
+| [064: One Prompt Every AGENTIC Codebase Should Have](../../sources/064-indydevdan-agentic-prompt.md) | IndyDevDan | Deterministic + agentic pattern, setup hooks, justfile as launchpad, encoding failure modes |
+| [068: The Organizational Physics of Multi-Agent Systems](../../sources/068-jeremy-mcentire-multi-agent-physics.md) | Jeremy McEntire | PACT framework, organizational dysfunction is substrate-independent, single agent outperforms swarms |
+| [069: How GitHub Uses AI Agents](../../sources/069-eddie-aftandilian-agentic-workflows.md) | Eddie Aftandilian | Continuous agentic pressure, 100+ specialized workflows, agents as always-on infrastructure |
+| [073: Claude Code Agents Are Completely Useless](../../sources/073-tom-delalande-claude-agents-useless.md) | Tom Delalande | Gap between demo and reproduction, hidden cost accounting, unmaintainability at scale |
+| [079: Anthropic's Full Claude Skills Guide](../../sources/079-mark-kashef-claude-skills-guide.md) | Mark Kashef | Three-level skill loading, five design patterns, YAML front matter best practices, skill testing |
+| [083: 5 INSANE Claude CoWork use cases](../../sources/083-jack-roberts-cowork-use-cases.md) | Jack Roberts | Iterative skill creation from manual workflows, multi-connector MCP chaining, browser automation |
+| [086: The 12-Point Gap Between Codex and Claude](../../sources/086-nate-b-jones-codex-vs-claude.md) | Nate B Jones | Delegation vs coordination philosophies, three-question decision framework, convergence with echoes |
+| [088: My 4-Layer Agentic Browser Automation Stack](../../sources/088-indydevdan-browser-automation-stack.md) | IndyDevDan | Four-layer architecture (Skills/Subagents/Commands/Justfiles), Higher-Order Prompts, CLI over MCP |
+| [090: I built Claude Skill for trade off analysis](../../sources/090-tanmay-deshpande-claude-skill-tradeoffs.md) | Tanmay Deshpande | Domain-specific skill encoding, architecture decision automation, multi-step analytical frameworks |
+| [094: OpenClaw Creator Explains How He Built The Viral Agent](../../sources/094-y-combinator-openclaw-viral-agent.md) | Y Combinator / Peter Steinberger | CLI-first agent tooling (makeporter), MCP avoidance, emergent agent problem-solving, local-first architecture |
+| [099: How AI Agents Search Their Memory](../../sources/099-damian-galarza-agent-memory-search.md) | Damian Galarza | Hybrid memory search (keyword + semantic), weighted score fusion, search-then-get pattern, chunking with overlap |
 
 ## Further Reading
 
