@@ -4,7 +4,7 @@ title: "I Gave Opus 4.6 an Entire Dev Team - Claude Code Agent Teams"
 creator: "Leon van Zyl"
 platform: "YouTube"
 url: "https://www.youtube.com/watch?v=KCJsdQpcfic"
-date: "2026-02-09"
+date: "2026-02-10"
 duration: "7:30"
 type: "video"
 tags: ["agent-teams", "multi-agent", "claude-code"]
@@ -13,7 +13,7 @@ curriculum_modules: ["05-team-orchestration"]
 
 # 014: I Gave Opus 4.6 an Entire Dev Team - Claude Code Agent Teams
 
-> **Creator**: Leon van Zyl | **Platform**: YouTube | **Date**: 2026-02-09 | **Duration**: ~7:30
+> **Creator**: Leon van Zyl | **Platform**: YouTube | **Date**: 2026-02-10 | **Duration**: ~7:30
 
 ## Summary
 

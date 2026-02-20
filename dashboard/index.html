@@ -1,0 +1,794 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Hype Watcher</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://d3js.org/d3.v7.min.js"></script>
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --bg: #0a0a0f; --bg-card: #111118; --bg-hover: #1a1a24;
+  --border: #2a2a3a; --text: #e4e4ef; --text-dim: #8888a0;
+  --cyan: #06b6d4; --amber: #f59e0b; --purple: #8b5cf6;
+  --green: #10b981; --red: #ef4444;
+  --glow-cyan: 0 0 12px rgba(6,182,212,0.4);
+  --glow-amber: 0 0 12px rgba(245,158,11,0.4);
+  --glow-purple: 0 0 12px rgba(139,92,246,0.4);
+}
+html, body { height: 100%; overflow: hidden; }
+body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--text); display: flex; flex-direction: column; }
+
+/* HEADER */
+header {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 12px 20px; border-bottom: 1px solid var(--border);
+  background: linear-gradient(180deg, #0f0f18, var(--bg));
+  flex-shrink: 0; z-index: 10;
+}
+header h1 { font-size: 18px; font-weight: 600; letter-spacing: -0.3px; }
+header h1 span { color: var(--cyan); }
+.view-tabs { display: flex; gap: 4px; }
+.view-tab {
+  padding: 6px 14px; border-radius: 6px; font-size: 13px; font-weight: 500;
+  background: transparent; color: var(--text-dim); border: 1px solid transparent;
+  cursor: pointer; transition: all 0.2s;
+}
+.view-tab:hover { color: var(--text); background: var(--bg-hover); }
+.view-tab.active { color: var(--cyan); border-color: var(--cyan); background: rgba(6,182,212,0.08); }
+
+/* LAYOUT */
+.layout { display: flex; flex: 1; overflow: hidden; }
+
+/* SIDEBAR */
+.sidebar {
+  width: 260px; min-width: 260px; border-right: 1px solid var(--border);
+  display: flex; flex-direction: column; overflow-y: auto; padding: 12px;
+  background: var(--bg-card); flex-shrink: 0;
+}
+.sidebar-section { margin-bottom: 16px; }
+.sidebar-section h3 { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.8px; color: var(--text-dim); margin-bottom: 8px; }
+.search-input {
+  width: 100%; padding: 8px 10px; border-radius: 6px; border: 1px solid var(--border);
+  background: var(--bg); color: var(--text); font-size: 13px; font-family: inherit;
+  outline: none; transition: border-color 0.2s;
+}
+.search-input:focus { border-color: var(--cyan); }
+.filter-list { max-height: 200px; overflow-y: auto; }
+.filter-item {
+  display: flex; align-items: center; gap: 6px; padding: 3px 0; cursor: pointer; font-size: 12px; color: var(--text-dim);
+  transition: color 0.15s;
+}
+.filter-item:hover { color: var(--text); }
+.filter-item input[type="checkbox"] { accent-color: var(--cyan); }
+.filter-item .count { margin-left: auto; font-size: 10px; opacity: 0.6; }
+.edge-toggles label { display: flex; align-items: center; gap: 6px; padding: 3px 0; font-size: 12px; color: var(--text-dim); cursor: pointer; }
+.edge-toggles input[type="checkbox"] { accent-color: var(--cyan); }
+
+/* MAIN */
+.main-canvas { flex: 1; position: relative; overflow: hidden; }
+.main-canvas svg, .main-canvas .view-container { width: 100%; height: 100%; }
+.view-container { display: none; overflow: auto; padding: 24px; }
+.view-container.active { display: block; }
+#graph-svg { display: block; }
+#graph-svg.hidden { display: none; }
+
+/* DETAIL PANEL */
+.detail-panel {
+  position: absolute; top: 0; right: -380px; width: 380px; height: 100%;
+  background: var(--bg-card); border-left: 1px solid var(--border);
+  transition: right 0.3s ease; z-index: 5; overflow-y: auto; padding: 20px;
+}
+.detail-panel.open { right: 0; }
+.detail-close { position: absolute; top: 12px; right: 12px; background: none; border: none; color: var(--text-dim); cursor: pointer; font-size: 18px; }
+.detail-close:hover { color: var(--text); }
+.detail-type { font-size: 10px; text-transform: uppercase; letter-spacing: 1px; font-weight: 600; margin-bottom: 6px; }
+.detail-type.source { color: var(--cyan); }
+.detail-type.tag { color: var(--amber); }
+.detail-type.module { color: var(--purple); }
+.detail-title { font-size: 18px; font-weight: 600; margin-bottom: 8px; line-height: 1.3; }
+.detail-meta { font-size: 12px; color: var(--text-dim); margin-bottom: 12px; }
+.detail-summary { font-size: 13px; line-height: 1.6; color: var(--text-dim); margin-bottom: 16px; }
+.detail-tags { display: flex; flex-wrap: wrap; gap: 4px; margin-bottom: 16px; }
+.detail-tag {
+  font-size: 11px; padding: 3px 8px; border-radius: 4px;
+  background: rgba(245,158,11,0.12); color: var(--amber); cursor: pointer;
+}
+.detail-tag:hover { background: rgba(245,158,11,0.25); }
+.detail-related { margin-top: 12px; }
+.detail-related h4 { font-size: 12px; font-weight: 600; color: var(--text-dim); margin-bottom: 8px; }
+.detail-related a {
+  display: block; font-size: 12px; color: var(--cyan); text-decoration: none;
+  padding: 4px 0; cursor: pointer;
+}
+.detail-related a:hover { text-decoration: underline; }
+.detail-link { display: inline-block; margin-top: 12px; font-size: 12px; color: var(--cyan); text-decoration: none; }
+.detail-link:hover { text-decoration: underline; }
+
+/* TOOLTIP */
+.tooltip {
+  position: absolute; pointer-events: none; background: #1a1a28; border: 1px solid var(--border);
+  border-radius: 8px; padding: 10px 14px; font-size: 12px; max-width: 280px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.5); z-index: 20; opacity: 0; transition: opacity 0.15s;
+}
+.tooltip.visible { opacity: 1; }
+.tooltip .tt-title { font-weight: 600; margin-bottom: 4px; }
+.tooltip .tt-meta { color: var(--text-dim); font-size: 11px; }
+
+/* FOOTER */
+footer {
+  padding: 8px 20px; border-top: 1px solid var(--border); font-size: 11px;
+  color: var(--text-dim); text-align: center; flex-shrink: 0;
+}
+
+/* GRAPH NODES */
+.node-source { fill: var(--cyan); }
+.node-tag { fill: var(--amber); }
+.node-module { fill: var(--purple); }
+.node-dimmed { opacity: 0.08; }
+.edge-line { stroke-opacity: 0.15; }
+.edge-line.edge-related { stroke: #ffffff; stroke-opacity: 0.4; }
+.edge-line.edge-curriculum { stroke: var(--purple); stroke-opacity: 0.3; stroke-dasharray: 4 3; }
+.edge-line.edge-tag { stroke: var(--amber); stroke-opacity: 0.15; stroke-dasharray: 2 2; }
+.edge-dimmed { stroke-opacity: 0.02 !important; }
+.hull { fill-opacity: 0.04; stroke-opacity: 0.15; stroke-width: 1; }
+.node-label { fill: var(--text); font-size: 10px; font-weight: 500; pointer-events: none; text-anchor: middle; }
+
+/* TIMELINE */
+.timeline-source { cursor: pointer; }
+.timeline-source:hover circle { r: 6; }
+.timeline-marker { stroke: var(--green); stroke-dasharray: 4 2; stroke-opacity: 0.4; }
+.timeline-label { font-size: 10px; fill: var(--text-dim); }
+.swimlane-label { font-size: 11px; fill: var(--text-dim); font-weight: 500; }
+.axis text { fill: var(--text-dim); font-size: 10px; }
+.axis line, .axis path { stroke: var(--border); }
+
+/* CURRICULUM CARDS */
+.curriculum-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 16px; }
+.curr-card {
+  background: var(--bg-card); border: 1px solid var(--border); border-radius: 10px;
+  padding: 20px; cursor: pointer; transition: all 0.2s;
+}
+.curr-card:hover { border-color: var(--purple); box-shadow: var(--glow-purple); }
+.curr-card h3 { font-size: 15px; font-weight: 600; color: var(--purple); margin-bottom: 8px; }
+.curr-card .source-count { font-size: 12px; color: var(--text-dim); margin-bottom: 12px; }
+.curr-dots { display: flex; flex-wrap: wrap; gap: 4px; }
+.curr-dot { width: 8px; height: 8px; border-radius: 50%; }
+
+/* TAG CLOUD */
+.tag-cloud { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; justify-content: center; padding: 40px 20px; }
+.tag-cloud-item {
+  padding: 6px 14px; border-radius: 6px; cursor: pointer; transition: all 0.2s;
+  background: rgba(245,158,11,0.08); color: var(--amber); border: 1px solid transparent;
+}
+.tag-cloud-item:hover { border-color: var(--amber); box-shadow: var(--glow-amber); }
+.tag-toggle-bar { display: flex; justify-content: center; gap: 8px; margin-bottom: 20px; }
+.tag-toggle-btn {
+  padding: 6px 14px; border-radius: 6px; font-size: 13px; font-weight: 500;
+  background: transparent; color: var(--text-dim); border: 1px solid var(--border);
+  cursor: pointer; transition: all 0.2s;
+}
+.tag-toggle-btn.active { color: var(--amber); border-color: var(--amber); background: rgba(245,158,11,0.08); }
+
+/* HEATMAP */
+.heatmap-container { overflow: auto; display: flex; justify-content: center; }
+.heatmap-cell { transition: opacity 0.15s; }
+.heatmap-cell:hover { stroke: var(--text); stroke-width: 1; }
+.heatmap-label { font-size: 9px; fill: var(--text-dim); }
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .sidebar { display: none; }
+  .detail-panel { width: 100%; right: -100%; }
+}
+</style>
+</head>
+<body>
+
+<header>
+  <h1><span>AI</span> Hype Watcher</h1>
+  <div class="view-tabs">
+    <button class="view-tab active" data-view="graph">Graph</button>
+    <button class="view-tab" data-view="timeline">Timeline</button>
+    <button class="view-tab" data-view="curriculum">Curriculum</button>
+    <button class="view-tab" data-view="tags">Tags</button>
+  </div>
+</header>
+
+<div class="layout">
+  <aside class="sidebar">
+    <div class="sidebar-section">
+      <h3>Search</h3>
+      <input class="search-input" type="text" placeholder="Search sources, tags..." id="search">
+    </div>
+    <div class="sidebar-section">
+      <h3>Edge Types</h3>
+      <div class="edge-toggles">
+        <label><input type="checkbox" data-edge="related" checked> Related (cross-ref)</label>
+        <label><input type="checkbox" data-edge="curriculum" checked> Curriculum</label>
+        <label><input type="checkbox" data-edge="tag"> Tag connections</label>
+      </div>
+    </div>
+    <div class="sidebar-section">
+      <h3>Tags</h3>
+      <div class="filter-list" id="tag-filters"></div>
+    </div>
+    <div class="sidebar-section">
+      <h3>Modules</h3>
+      <div class="filter-list" id="module-filters"></div>
+    </div>
+    <div class="sidebar-section">
+      <h3>Creators</h3>
+      <div class="filter-list" id="creator-filters"></div>
+    </div>
+  </aside>
+
+  <div class="main-canvas">
+    <svg id="graph-svg"></svg>
+    <div class="view-container" id="timeline-view"></div>
+    <div class="view-container" id="curriculum-view"></div>
+    <div class="view-container" id="tags-view"></div>
+
+    <div class="detail-panel" id="detail-panel">
+      <button class="detail-close" id="detail-close">&times;</button>
+      <div id="detail-content"></div>
+    </div>
+  </div>
+</div>
+
+<div class="tooltip" id="tooltip"></div>
+<footer id="footer"></footer>
+
+<script>
+(async function() {
+  // ── DATA ──
+  const data = await d3.json('data.json');
+  const nodeMap = new Map(data.nodes.map(n => [n.id, n]));
+  const edgeIndex = new Map(); // nodeId -> [{edge, other}]
+  data.edges.forEach(e => {
+    if (!edgeIndex.has(e.source)) edgeIndex.set(e.source, []);
+    if (!edgeIndex.has(e.target)) edgeIndex.set(e.target, []);
+    edgeIndex.get(e.source).push({ edge: e, other: e.target });
+    edgeIndex.get(e.target).push({ edge: e, other: e.source });
+  });
+
+  // Footer
+  document.getElementById('footer').textContent =
+    `${data.meta.source_count} sources · ${data.meta.tag_count} tags · ${data.nodes.filter(n=>n.type==='module').length} modules · ${data.synthesis.length} synthesis docs`;
+
+  // ── STATE ──
+  let currentView = 'graph';
+  let activeFilters = { tags: new Set(), modules: new Set(), creators: new Set() };
+  let edgeVisibility = { related: true, curriculum: true, tag: false };
+  let searchQuery = '';
+
+  // ── SIDEBAR ──
+  function buildSidebar() {
+    const tags = data.nodes.filter(n => n.type === 'tag').sort((a,b) => b.count - a.count);
+    const modules = data.nodes.filter(n => n.type === 'module').sort((a,b) => a.order - b.order);
+    const creators = [...new Set(data.nodes.filter(n => n.type === 'source').map(n => n.creator))].sort();
+
+    const tagEl = document.getElementById('tag-filters');
+    tagEl.innerHTML = tags.map(t =>
+      `<label class="filter-item"><input type="checkbox" data-filter="tags" value="${t.label}"> ${t.label} <span class="count">${t.count}</span></label>`
+    ).join('');
+
+    const modEl = document.getElementById('module-filters');
+    modEl.innerHTML = modules.map(m =>
+      `<label class="filter-item"><input type="checkbox" data-filter="modules" value="${m.id.replace('mod:','')}"> ${m.label} <span class="count">${data.edges.filter(e=>e.target===m.id&&e.type==='curriculum').length}</span></label>`
+    ).join('');
+
+    const creatorEl = document.getElementById('creator-filters');
+    creatorEl.innerHTML = creators.map(c => {
+      const count = data.nodes.filter(n => n.type === 'source' && n.creator === c).length;
+      return `<label class="filter-item"><input type="checkbox" data-filter="creators" value="${c}"> ${c} <span class="count">${count}</span></label>`;
+    }).join('');
+  }
+  buildSidebar();
+
+  // Sidebar filter events
+  document.querySelector('.sidebar').addEventListener('change', e => {
+    if (e.target.dataset.filter) {
+      const set = activeFilters[e.target.dataset.filter];
+      e.target.checked ? set.add(e.target.value) : set.delete(e.target.value);
+      applyFilters();
+    }
+    if (e.target.dataset.edge) {
+      edgeVisibility[e.target.dataset.edge] = e.target.checked;
+      applyFilters();
+    }
+  });
+
+  document.getElementById('search').addEventListener('input', e => {
+    searchQuery = e.target.value.toLowerCase();
+    applyFilters();
+  });
+
+  function isNodeVisible(node) {
+    if (searchQuery) {
+      const hay = ((node.title||'') + ' ' + (node.label||'') + ' ' + (node.creator||'') + ' ' + (node.tags||[]).join(' ')).toLowerCase();
+      if (!hay.includes(searchQuery)) return false;
+    }
+    if (node.type === 'source') {
+      if (activeFilters.tags.size > 0 && !node.tags.some(t => activeFilters.tags.has(t))) return false;
+      if (activeFilters.modules.size > 0 && !node.modules.some(m => activeFilters.modules.has(m))) return false;
+      if (activeFilters.creators.size > 0 && !activeFilters.creators.has(node.creator)) return false;
+      return true;
+    }
+    if (node.type === 'tag') {
+      if (activeFilters.tags.size > 0 && !activeFilters.tags.has(node.label)) return false;
+      return true;
+    }
+    if (node.type === 'module') {
+      if (activeFilters.modules.size > 0 && !activeFilters.modules.has(node.id.replace('mod:',''))) return false;
+      return true;
+    }
+    return true;
+  }
+
+  // ── VIEW SWITCHING ──
+  document.querySelectorAll('.view-tab').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.view-tab').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      currentView = btn.dataset.view;
+      document.getElementById('graph-svg').classList.toggle('hidden', currentView !== 'graph');
+      document.querySelectorAll('.view-container').forEach(v => v.classList.remove('active'));
+      if (currentView !== 'graph') {
+        document.getElementById(currentView + '-view').classList.add('active');
+      }
+      if (currentView === 'timeline') renderTimeline();
+      if (currentView === 'curriculum') renderCurriculum();
+      if (currentView === 'tags') renderTags();
+    });
+  });
+
+  // ── TOOLTIP ──
+  const tooltip = document.getElementById('tooltip');
+  function showTooltip(evt, html) {
+    tooltip.innerHTML = html;
+    tooltip.classList.add('visible');
+    const x = Math.min(evt.pageX + 12, window.innerWidth - 300);
+    const y = Math.min(evt.pageY + 12, window.innerHeight - 100);
+    tooltip.style.left = x + 'px';
+    tooltip.style.top = y + 'px';
+  }
+  function hideTooltip() { tooltip.classList.remove('visible'); }
+
+  // ── DETAIL PANEL ──
+  const detailPanel = document.getElementById('detail-panel');
+  const detailContent = document.getElementById('detail-content');
+  document.getElementById('detail-close').addEventListener('click', () => detailPanel.classList.remove('open'));
+
+  function showDetail(node) {
+    detailPanel.classList.add('open');
+    if (node.type === 'source') {
+      const related = data.edges.filter(e => e.type === 'related' && (e.source === node.id || e.target === node.id));
+      const relatedNodes = related.map(e => nodeMap.get(e.source === node.id ? e.target : e.source)).filter(Boolean);
+      detailContent.innerHTML = `
+        <div class="detail-type source">Source #${node.id}</div>
+        <div class="detail-title">${node.title}</div>
+        <div class="detail-meta">${node.creator} · ${node.date}</div>
+        <div class="detail-summary">${node.summary || 'No summary available.'}</div>
+        <div class="detail-tags">${(node.tags||[]).map(t => `<span class="detail-tag" data-tag="${t}">${t}</span>`).join('')}</div>
+        ${relatedNodes.length ? `<div class="detail-related"><h4>Related Sources</h4>${relatedNodes.map(r => `<a data-id="${r.id}">[${r.id}] ${r.title}</a>`).join('')}</div>` : ''}
+        ${node.url ? `<a class="detail-link" href="${node.url}" target="_blank">Open source &rarr;</a>` : ''}
+      `;
+    } else if (node.type === 'tag') {
+      const sources = data.edges.filter(e => e.type === 'tag' && e.target === node.id).map(e => nodeMap.get(e.source)).filter(Boolean);
+      detailContent.innerHTML = `
+        <div class="detail-type tag">Tag</div>
+        <div class="detail-title">${node.label}</div>
+        <div class="detail-meta">${node.count} sources</div>
+        <div class="detail-related"><h4>Sources</h4>${sources.map(s => `<a data-id="${s.id}">[${s.id}] ${s.title}</a>`).join('')}</div>
+      `;
+    } else if (node.type === 'module') {
+      const sources = data.edges.filter(e => e.type === 'curriculum' && e.target === node.id).map(e => nodeMap.get(e.source)).filter(Boolean);
+      detailContent.innerHTML = `
+        <div class="detail-type module">Module ${String(node.order).padStart(2,'0')}</div>
+        <div class="detail-title">${node.label}</div>
+        <div class="detail-meta">${sources.length} sources</div>
+        <div class="detail-related"><h4>Sources</h4>${sources.map(s => `<a data-id="${s.id}">[${s.id}] ${s.title}</a>`).join('')}</div>
+      `;
+    }
+    // Clickable related source links
+    detailContent.querySelectorAll('a[data-id]').forEach(a => {
+      a.addEventListener('click', () => { const n = nodeMap.get(a.dataset.id); if (n) showDetail(n); });
+    });
+    // Clickable tags
+    detailContent.querySelectorAll('.detail-tag').forEach(span => {
+      span.addEventListener('click', () => {
+        const n = nodeMap.get('tag:' + span.dataset.tag);
+        if (n) showDetail(n);
+      });
+    });
+  }
+
+  // ── FORCE GRAPH ──
+  const svg = d3.select('#graph-svg');
+  const canvas = document.querySelector('.main-canvas');
+  let width = canvas.clientWidth;
+  let height = canvas.clientHeight;
+  svg.attr('width', width).attr('height', height);
+
+  const g = svg.append('g');
+  const zoom = d3.zoom().scaleExtent([0.2, 5]).on('zoom', e => g.attr('transform', e.transform));
+  svg.call(zoom);
+
+  // Prepare simulation data
+  const simNodes = data.nodes.map(n => ({...n}));
+  const simNodeMap = new Map(simNodes.map(n => [n.id, n]));
+  const simEdges = data.edges.map(e => ({ ...e, source: e.source, target: e.target }));
+
+  // Node sizing
+  const connectionCount = new Map();
+  data.edges.forEach(e => {
+    connectionCount.set(e.source, (connectionCount.get(e.source)||0) + 1);
+    connectionCount.set(e.target, (connectionCount.get(e.target)||0) + 1);
+  });
+  function nodeRadius(n) {
+    if (n.type === 'module') return 18;
+    if (n.type === 'tag') return 4 + Math.sqrt(n.count || 1) * 2.5;
+    return 3 + Math.sqrt(connectionCount.get(n.id) || 1) * 1.8;
+  }
+
+  const simulation = d3.forceSimulation(simNodes)
+    .force('link', d3.forceLink(simEdges).id(d => d.id).distance(e => e.type === 'related' ? 60 : e.type === 'curriculum' ? 80 : 100).strength(e => e.type === 'related' ? 0.4 : e.type === 'curriculum' ? 0.2 : 0.05))
+    .force('charge', d3.forceManyBody().strength(-120))
+    .force('center', d3.forceCenter(width / 2, height / 2))
+    .force('collision', d3.forceCollide().radius(d => nodeRadius(d) + 2))
+    .alphaDecay(0.02);
+
+  // Consensus hulls
+  const hullGroup = g.append('g').attr('class', 'hulls');
+  const linkGroup = g.append('g').attr('class', 'links');
+  const nodeGroup = g.append('g').attr('class', 'nodes');
+  const labelGroup = g.append('g').attr('class', 'labels');
+
+  const linkElements = linkGroup.selectAll('line')
+    .data(simEdges).enter().append('line')
+    .attr('class', d => `edge-line edge-${d.type}`)
+    .style('display', d => edgeVisibility[d.type] ? null : 'none');
+
+  const nodeElements = nodeGroup.selectAll('g')
+    .data(simNodes).enter().append('g')
+    .attr('cursor', 'pointer')
+    .call(d3.drag()
+      .on('start', (e, d) => { if (!e.active) simulation.alphaTarget(0.1).restart(); d.fx = d.x; d.fy = d.y; })
+      .on('drag', (e, d) => { d.fx = e.x; d.fy = e.y; })
+      .on('end', (e, d) => { if (!e.active) simulation.alphaTarget(0); d.fx = null; d.fy = null; })
+    );
+
+  // Source circles
+  nodeElements.filter(d => d.type === 'source').append('circle')
+    .attr('r', d => nodeRadius(d))
+    .attr('class', 'node-source')
+    .style('filter', 'drop-shadow(0 0 4px rgba(6,182,212,0.3))');
+
+  // Tag rounded rects
+  nodeElements.filter(d => d.type === 'tag').append('rect')
+    .attr('rx', 4).attr('ry', 4)
+    .attr('width', d => nodeRadius(d) * 2).attr('height', d => nodeRadius(d) * 1.4)
+    .attr('x', d => -nodeRadius(d)).attr('y', d => -nodeRadius(d) * 0.7)
+    .attr('class', 'node-tag')
+    .style('filter', 'drop-shadow(0 0 4px rgba(245,158,11,0.3))');
+
+  // Module circles
+  nodeElements.filter(d => d.type === 'module').append('circle')
+    .attr('r', d => nodeRadius(d))
+    .attr('class', 'node-module')
+    .style('filter', 'drop-shadow(0 0 6px rgba(139,92,246,0.4))');
+
+  // Labels for tags and modules
+  const labels = labelGroup.selectAll('text')
+    .data(simNodes.filter(n => n.type !== 'source')).enter().append('text')
+    .attr('class', 'node-label')
+    .attr('dy', d => d.type === 'module' ? nodeRadius(d) + 14 : nodeRadius(d) + 12)
+    .text(d => d.label || '');
+
+  // Hover and click
+  nodeElements.on('mouseover', (evt, d) => {
+    const html = d.type === 'source'
+      ? `<div class="tt-title">[${d.id}] ${d.title}</div><div class="tt-meta">${d.creator} · ${d.date}</div>`
+      : `<div class="tt-title">${d.label}</div><div class="tt-meta">${d.type === 'tag' ? d.count + ' sources' : 'Module ' + d.order}</div>`;
+    showTooltip(evt, html);
+    highlightNeighborhood(d);
+  }).on('mouseout', () => {
+    hideTooltip();
+    clearHighlight();
+  }).on('click', (evt, d) => {
+    evt.stopPropagation();
+    showDetail(d);
+  });
+
+  svg.on('click', () => detailPanel.classList.remove('open'));
+
+  function highlightNeighborhood(d) {
+    const neighbors = new Set([d.id]);
+    (edgeIndex.get(d.id) || []).forEach(({other}) => neighbors.add(other));
+    nodeElements.classed('node-dimmed', n => !neighbors.has(n.id));
+    linkElements.classed('edge-dimmed', e => {
+      const sid = typeof e.source === 'object' ? e.source.id : e.source;
+      const tid = typeof e.target === 'object' ? e.target.id : e.target;
+      return !neighbors.has(sid) || !neighbors.has(tid);
+    });
+    labels.style('opacity', n => neighbors.has(n.id) ? 1 : 0.05);
+  }
+  function clearHighlight() {
+    nodeElements.classed('node-dimmed', false);
+    linkElements.classed('edge-dimmed', false);
+    labels.style('opacity', 1);
+  }
+
+  // Consensus hulls
+  function updateHulls() {
+    const tagSources = new Map(); // tagId -> [simNode]
+    data.edges.filter(e => e.type === 'tag').forEach(e => {
+      const sn = simNodeMap.get(typeof e.source === 'object' ? e.source.id : e.source);
+      if (!sn) return;
+      const tid = typeof e.target === 'object' ? e.target.id : e.target;
+      if (!tagSources.has(tid)) tagSources.set(tid, []);
+      tagSources.get(tid).push(sn);
+    });
+    const hullData = [];
+    tagSources.forEach((nodes, tagId) => {
+      if (nodes.length >= 5) {
+        const points = nodes.map(n => [n.x, n.y]);
+        const hull = d3.polygonHull(points);
+        if (hull) {
+          const tagNode = nodeMap.get(tagId);
+          hullData.push({ hull, count: nodes.length, label: tagNode ? tagNode.label : '' });
+        }
+      }
+    });
+    const hulls = hullGroup.selectAll('path').data(hullData);
+    hulls.exit().remove();
+    hulls.enter().append('path').attr('class', 'hull')
+      .merge(hulls)
+      .attr('d', d => 'M' + d.hull.map(p => p.join(',')).join('L') + 'Z')
+      .attr('fill', 'var(--cyan)')
+      .attr('stroke', 'var(--cyan)')
+      .attr('fill-opacity', d => Math.min(0.03 + d.count * 0.005, 0.12))
+      .attr('stroke-opacity', d => Math.min(0.1 + d.count * 0.01, 0.3));
+  }
+
+  simulation.on('tick', () => {
+    linkElements
+      .attr('x1', d => d.source.x).attr('y1', d => d.source.y)
+      .attr('x2', d => d.target.x).attr('y2', d => d.target.y);
+    nodeElements.attr('transform', d => `translate(${d.x},${d.y})`);
+    labels.attr('x', d => simNodeMap.get(d.id)?.x || 0).attr('y', d => simNodeMap.get(d.id)?.y || 0);
+    if (simulation.alpha() > 0.05) updateHulls();
+  });
+
+  // Apply filters to graph
+  function applyFilters() {
+    const hasFilter = activeFilters.tags.size > 0 || activeFilters.modules.size > 0 || activeFilters.creators.size > 0 || searchQuery;
+
+    nodeElements.transition().duration(300).style('opacity', d => {
+      if (!hasFilter) return 1;
+      return isNodeVisible(d) ? 1 : 0.06;
+    });
+    labels.transition().duration(300).style('opacity', d => {
+      if (!hasFilter) return 1;
+      return isNodeVisible(d) ? 1 : 0.06;
+    });
+    linkElements
+      .style('display', d => edgeVisibility[d.type] ? null : 'none')
+      .transition().duration(300).style('opacity', d => {
+        if (!hasFilter) return null;
+        const sid = typeof d.source === 'object' ? d.source.id : d.source;
+        const tid = typeof d.target === 'object' ? d.target.id : d.target;
+        const sn = nodeMap.get(sid);
+        const tn = nodeMap.get(tid);
+        return (sn && isNodeVisible(sn) && tn && isNodeVisible(tn)) ? null : 0.02;
+      });
+  }
+
+  // ── TIMELINE VIEW ──
+  function renderTimeline() {
+    const container = document.getElementById('timeline-view');
+    container.innerHTML = '';
+    const sources = data.nodes.filter(n => n.type === 'source' && n.date).sort((a,b) => a.date.localeCompare(b.date));
+    // Group by date for a date-row layout instead of creator swimlanes
+    const uniqueDates = [...new Set(sources.map(s => s.date))].sort();
+    const margin = { top: 60, right: 40, bottom: 40, left: 100 };
+    const rowHeight = 32;
+    const w = Math.max(container.clientWidth - 20, 800);
+    const h = Math.max(uniqueDates.length * rowHeight + margin.top + margin.bottom, 400);
+
+    const tSvg = d3.select(container).append('svg').attr('width', w).attr('height', h);
+
+    const y = d3.scaleBand().domain(uniqueDates).range([margin.top, h - margin.bottom]).padding(0.2);
+
+    // Date labels on left
+    tSvg.selectAll('.date-label').data(uniqueDates).enter()
+      .append('text').attr('class', 'swimlane-label')
+      .attr('x', margin.left - 10).attr('y', d => y(d) + y.bandwidth() / 2)
+      .attr('text-anchor', 'end').attr('dominant-baseline', 'middle')
+      .text(d => { const dt = new Date(d + 'T12:00:00'); return d3.timeFormat('%b %d')(dt); });
+
+    // Horizontal grid lines
+    tSvg.selectAll('.grid-line').data(uniqueDates).enter()
+      .append('line')
+      .attr('x1', margin.left).attr('x2', w - margin.right)
+      .attr('y1', d => y(d) + y.bandwidth() / 2).attr('y2', d => y(d) + y.bandwidth() / 2)
+      .attr('stroke', 'var(--border)').attr('stroke-opacity', 0.3);
+
+    // Synthesis markers
+    data.synthesis.forEach(s => {
+      if (!s.date || !uniqueDates.includes(s.date)) return;
+      tSvg.append('rect')
+        .attr('x', margin.left).attr('width', w - margin.left - margin.right)
+        .attr('y', y(s.date)).attr('height', y.bandwidth())
+        .attr('fill', 'var(--green)').attr('fill-opacity', 0.06).attr('rx', 4);
+      tSvg.append('text').attr('class', 'timeline-label')
+        .attr('x', w - margin.right + 5).attr('y', y(s.date) + y.bandwidth() / 2)
+        .attr('dominant-baseline', 'middle').attr('fill', 'var(--green)')
+        .attr('font-size', '9px').text('S');
+    });
+
+    // Source dots — spread horizontally within each date row
+    uniqueDates.forEach(date => {
+      const dateSources = sources.filter(s => s.date === date);
+      const dotSpacing = Math.min(24, (w - margin.left - margin.right - 20) / Math.max(dateSources.length, 1));
+      const startX = margin.left + 10;
+
+      tSvg.selectAll(null).data(dateSources).enter()
+        .append('g').attr('class', 'timeline-source')
+        .attr('transform', (d, i) => `translate(${startX + i * dotSpacing},${y(date) + y.bandwidth() / 2})`)
+        .each(function(d) {
+          d3.select(this).append('circle').attr('r', 5).attr('fill', 'var(--cyan)').style('filter', 'drop-shadow(0 0 3px rgba(6,182,212,0.4))');
+        })
+        .on('mouseover', (evt, d) => showTooltip(evt, `<div class="tt-title">[${d.id}] ${d.title}</div><div class="tt-meta">${d.creator} · ${d.date}</div>`))
+        .on('mouseout', hideTooltip)
+        .on('click', (evt, d) => showDetail(d));
+    });
+
+    // Legend
+    tSvg.append('text').attr('x', margin.left).attr('y', 20).attr('fill', 'var(--text-dim)').attr('font-size', '11px')
+      .text('Each row = one date · Dots = sources · Green highlight = synthesis published');
+  }
+
+  // ── CURRICULUM VIEW ──
+  function renderCurriculum() {
+    const container = document.getElementById('curriculum-view');
+    container.innerHTML = '<div class="curriculum-grid"></div>';
+    const grid = container.querySelector('.curriculum-grid');
+    const modules = data.nodes.filter(n => n.type === 'module').sort((a,b) => a.order - b.order);
+
+    modules.forEach(mod => {
+      const modSources = data.edges.filter(e => e.type === 'curriculum' && e.target === mod.id).map(e => nodeMap.get(e.source)).filter(Boolean);
+      const card = document.createElement('div');
+      card.className = 'curr-card';
+      card.innerHTML = `
+        <h3>Module ${String(mod.order).padStart(2,'0')}: ${mod.label}</h3>
+        <div class="source-count">${modSources.length} sources</div>
+        <div class="curr-dots">${modSources.map(s => {
+          const tag = (s.tags||[])[0] || '';
+          const color = tag.includes('agent') ? 'var(--cyan)' : tag.includes('econ') ? 'var(--amber)' : tag.includes('hype') ? 'var(--red)' : 'var(--purple)';
+          return `<div class="curr-dot" style="background:${color}" title="${s.title}"></div>`;
+        }).join('')}</div>
+      `;
+      card.addEventListener('click', () => {
+        // Switch to graph filtered to this module
+        activeFilters.modules.clear();
+        activeFilters.modules.add(mod.id.replace('mod:', ''));
+        document.querySelector(`[data-filter="modules"][value="${mod.id.replace('mod:','')}"]`).checked = true;
+        document.querySelector('[data-view="graph"]').click();
+        applyFilters();
+      });
+      grid.appendChild(card);
+    });
+  }
+
+  // ── TAGS VIEW ──
+  let tagSubView = 'cloud';
+  function renderTags() {
+    const container = document.getElementById('tags-view');
+    container.innerHTML = `
+      <div class="tag-toggle-bar">
+        <button class="tag-toggle-btn ${tagSubView==='cloud'?'active':''}" data-sub="cloud">Tag Cloud</button>
+        <button class="tag-toggle-btn ${tagSubView==='heatmap'?'active':''}" data-sub="heatmap">Co-occurrence</button>
+      </div>
+      <div id="tag-sub-content"></div>
+    `;
+    container.querySelectorAll('.tag-toggle-btn').forEach(btn => {
+      btn.addEventListener('click', () => { tagSubView = btn.dataset.sub; renderTags(); });
+    });
+    if (tagSubView === 'cloud') renderTagCloud();
+    else renderHeatmap();
+  }
+
+  function renderTagCloud() {
+    const el = document.getElementById('tag-sub-content');
+    const tags = data.nodes.filter(n => n.type === 'tag').sort((a,b) => b.count - a.count);
+    const maxCount = Math.max(...tags.map(t => t.count));
+    el.innerHTML = '<div class="tag-cloud">' + tags.map(t => {
+      const size = 12 + (t.count / maxCount) * 24;
+      return `<span class="tag-cloud-item" style="font-size:${size}px" data-tag="${t.label}">${t.label} (${t.count})</span>`;
+    }).join('') + '</div>';
+    el.querySelectorAll('.tag-cloud-item').forEach(span => {
+      span.addEventListener('click', () => {
+        activeFilters.tags.clear();
+        activeFilters.tags.add(span.dataset.tag);
+        const cb = document.querySelector(`[data-filter="tags"][value="${span.dataset.tag}"]`);
+        if (cb) cb.checked = true;
+        document.querySelector('[data-view="graph"]').click();
+        applyFilters();
+      });
+    });
+  }
+
+  function renderHeatmap() {
+    const el = document.getElementById('tag-sub-content');
+    el.innerHTML = '<div class="heatmap-container"></div>';
+    const tags = data.nodes.filter(n => n.type === 'tag').sort((a,b) => b.count - a.count).slice(0, 25);
+    const tagLabels = tags.map(t => t.label);
+    const sources = data.nodes.filter(n => n.type === 'source');
+
+    // Build co-occurrence matrix
+    const matrix = [];
+    for (let i = 0; i < tagLabels.length; i++) {
+      matrix[i] = [];
+      for (let j = 0; j < tagLabels.length; j++) {
+        const count = sources.filter(s => (s.tags||[]).includes(tagLabels[i]) && (s.tags||[]).includes(tagLabels[j])).length;
+        matrix[i][j] = i === j ? 0 : count;
+      }
+    }
+    const maxVal = Math.max(...matrix.flat());
+    const cellSize = 28;
+    const margin = { top: 140, left: 140 };
+    const size = cellSize * tagLabels.length;
+
+    const hSvg = d3.select(el.querySelector('.heatmap-container')).append('svg')
+      .attr('width', size + margin.left + 20).attr('height', size + margin.top + 20);
+    const hg = hSvg.append('g').attr('transform', `translate(${margin.left},${margin.top})`);
+
+    const color = d3.scaleSequential(d3.interpolateYlOrRd).domain([0, maxVal]);
+
+    // Cells
+    for (let i = 0; i < tagLabels.length; i++) {
+      for (let j = 0; j < tagLabels.length; j++) {
+        if (i === j) continue;
+        const v = matrix[i][j];
+        if (v === 0) continue;
+        hg.append('rect')
+          .attr('class', 'heatmap-cell')
+          .attr('x', j * cellSize).attr('y', i * cellSize)
+          .attr('width', cellSize - 1).attr('height', cellSize - 1)
+          .attr('fill', color(v)).attr('rx', 2)
+          .on('mouseover', (evt) => {
+            const shared = sources.filter(s => (s.tags||[]).includes(tagLabels[i]) && (s.tags||[]).includes(tagLabels[j]));
+            showTooltip(evt, `<div class="tt-title">${tagLabels[i]} + ${tagLabels[j]}</div><div class="tt-meta">${shared.length} shared: ${shared.slice(0,3).map(s=>'['+s.id+']').join(', ')}${shared.length>3?'...':''}</div>`);
+          })
+          .on('mouseout', hideTooltip);
+      }
+    }
+
+    // Labels
+    tagLabels.forEach((label, i) => {
+      hg.append('text').attr('class', 'heatmap-label').attr('x', -6).attr('y', i * cellSize + cellSize / 2)
+        .attr('text-anchor', 'end').attr('dominant-baseline', 'middle').text(label);
+      hg.append('text').attr('class', 'heatmap-label')
+        .attr('x', i * cellSize + cellSize / 2).attr('y', -6)
+        .attr('text-anchor', 'start').attr('dominant-baseline', 'middle')
+        .attr('transform', `rotate(-60, ${i * cellSize + cellSize / 2}, -6)`)
+        .text(label);
+    });
+  }
+
+  // ── RESIZE ──
+  window.addEventListener('resize', () => {
+    width = canvas.clientWidth; height = canvas.clientHeight;
+    svg.attr('width', width).attr('height', height);
+    simulation.force('center', d3.forceCenter(width / 2, height / 2));
+    simulation.alpha(0.1).restart();
+  });
+
+})();
+</script>
+</body>
+</html>

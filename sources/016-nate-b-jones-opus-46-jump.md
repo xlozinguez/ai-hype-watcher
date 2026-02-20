@@ -4,7 +4,7 @@ title: "Claude Opus 4.6: The Biggest AI Jump I've Covered--It's Not Close. (Here
 creator: "Nate B Jones"
 platform: "YouTube"
 url: "https://www.youtube.com/watch?v=JKk77rzOL34"
-date: "2026-01-27"
+date: "2026-02-11"
 duration: "20:00"
 type: "video"
 tags: ["ai-landscape", "claude-code", "agentic-coding"]
@@ -13,7 +13,7 @@ curriculum_modules: ["01-foundations", "04-agentic-patterns"]
 
 # 016: Claude Opus 4.6: The Biggest AI Jump I've Covered--It's Not Close
 
-> **Creator**: Nate B Jones | **Platform**: YouTube | **Date**: 2026-01-27 | **Duration**: ~20:00
+> **Creator**: Nate B Jones | **Platform**: YouTube | **Date**: 2026-02-11 | **Duration**: ~20:00
 
 ## Summary
 

@@ -29,4 +29,16 @@ Use `/scan-channels` to check for new relevant content:
 /scan-channels @indydevdan        # Scan a specific channel
 ```
 
-When relevant content is found, use `/synthesize-source` to create source notes.
+When relevant content is found, use `/ingest <url>` to create source notes.
+
+### Discover new content beyond the watchlist
+
+Use `/discover` to find content from creators not yet on the watchlist:
+
+```
+/discover claude code hooks         # Search YouTube for a specific topic
+/discover trending                  # Scan for trending topics across the tag taxonomy
+/discover channels                  # Scout for new channels to add to the watchlist
+```
+
+Discovery sessions are logged in [`discovery-log.md`](discovery-log.md).

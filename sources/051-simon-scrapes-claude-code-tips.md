@@ -4,7 +4,7 @@ title: "You're using Claude Code Wrong - These 10 Tips Will Change Everything"
 creator: "Simon Scrapes | AI Automation"
 platform: "YouTube"
 url: "https://www.youtube.com/watch?v=V9atNrDjnZs"
-date: "2026-02-12"
+date: "2026-02-13"
 duration: "20:27"
 type: "video"
 tags: ["claude-code", "agent-teams", "skills", "context-engineering", "skills-ecosystem", "validation"]
@@ -13,7 +13,7 @@ curriculum_modules: ["03-claude-code-essentials", "04-agentic-patterns", "05-tea
 
 # 051: You're using Claude Code Wrong - These 10 Tips Will Change Everything
 
-> **Creator**: Simon Scrapes | AI Automation | **Platform**: YouTube | **Date**: 2026-02-12 | **Duration**: 20:27
+> **Creator**: Simon Scrapes | AI Automation | **Platform**: YouTube | **Date**: 2026-02-13 | **Duration**: 20:27
 
 ## Summary
 

@@ -283,6 +283,39 @@ This pattern is particularly powerful for documents that are dependency graphs r
 
 The practical guidance: match the approach to the complexity. RLMs shine when tasks involve both long context and high complexity. For short context or simple retrieval, a direct LLM call often outperforms the overhead. Implement guardrails for recursion -- the paper limits recursion to one layer deep and uses synchronous workflows to prevent runaway costs.
 
+### Concept 20: Scaffolding as Temporary Tech Debt -- Build for the Future Model
+
+Boris Cherny, Claude Code's creator ([#103](../../sources/103-y-combinator-boris-cherny-claude-code.md)), articulates a core product philosophy with direct implications for agentic pattern design: **do not optimize for current model capabilities -- build for the model six months from now**. All product scaffolding -- code written to compensate for model limitations -- provides 10-20% performance gains but gets "wiped out with the next model." The Bitter Lesson (Sutton) hangs framed on the Claude Code team's wall: never bet against the model.
+
+This principle extends to agentic patterns. CLAUDE.md itself is scaffolding; Cherny recommends deleting it and starting fresh with each model upgrade, adding back instructions only when the model demonstrably goes off track. Anthropic's own CLAUDE.md is only two lines long. Plan mode -- one of Claude Code's most used features -- "all it does is it adds one sentence to the prompt that's like please don't code." The simpler the scaffolding, the more durable it is across model generations.
+
+The practical implication for agentic engineers: invest in patterns that leverage improving model capabilities (task decomposition, deterministic verification, context isolation) rather than patterns that compensate for model weaknesses (elaborate prompt engineering, excessive guardrails). The former compound in value as models improve; the latter become unnecessary overhead.
+
+> "There is no part of Claude Code that was around six months ago. It's just constantly rewritten." -- Boris Cherny ([#103])
+
+### Concept 21: The Five Levels of Agentic Maturity
+
+Nate B Jones ([#108](../../sources/108-nate-b-jones-five-levels-ai-coding.md)) presents Dan Shapiro's five-level framework for AI coding maturity, which maps directly onto the agentic patterns in this module:
+
+- **Level 0 -- Spicy Autocomplete**: AI fills in code suggestions. No agentic behavior.
+- **Level 1 -- Coding Intern**: AI handles isolated tasks with close supervision.
+- **Level 2 -- Junior Developer**: AI implements features with moderate oversight. Most self-described "AI-native" developers plateau here.
+- **Level 3 -- Developer as Manager**: The developer directs agents rather than writing code. This requires the builder/validator pattern (Concept 3), task systems (Concept 2), and lifecycle hooks (Concept 5).
+- **Level 4 -- Developer as Product Manager**: The bottleneck shifts entirely to specification quality. The patterns from this module become infrastructure that runs without direct supervision.
+- **Level 5 -- Dark Factory**: No human-written or human-reviewed code. StrongDM operates at this level with three engineers shipping production software, using external "scenarios" as holdout sets and digital twin environments for validation.
+
+The J-curve insight is critical: when AI tools are bolted onto existing workflows without redesigning those workflows, productivity *dips* before it rises. The METR study measured a 19% slowdown for experienced developers. Organizations seeing 25-30%+ gains are the ones that redesigned end-to-end -- which means adopting the patterns in this module, not just the tools.
+
+> "The bottleneck has moved from implementation speed to spec quality. And spec quality is a function of how deeply you understand the system, your customer, and your problem." -- Nate B Jones ([#108])
+
+### Concept 22: Skills as Workflow Automation in the Human-in-the-Loop Sweet Spot
+
+Ben AI ([#105](../../sources/105-ben-ai-cowork-guide.md)) identifies a gap that skills fill between fully automated pipelines and ad-hoc LLM conversations. Many day-to-day tasks are too context-dependent and iterative for rigid automation (n8n, Make.com workflows) but too repetitive for one-off conversations. Skills encode the process while keeping the human in the loop for decisions -- choosing from suggestions, approving steps, iterating on outputs.
+
+The practical workflow: walk through a task manually with Claude once, refine through feedback, then save it as a repeatable skill. Unlike projects or custom GPTs where context is locked to one configuration, multiple skills can be invoked within a single context window, enabling complex multi-step workflows. This extends the skill composition patterns from IndyDevDan ([#015]) into non-developer workflows -- content creation, ad copy, newsletters, and operational tasks.
+
+The key differentiator from the four-layer stack (Concept 12): Concept 12 targets developers building reusable agentic infrastructure. The human-in-the-loop skill pattern targets anyone who does repeatable knowledge work and can describe their process in plain language.
+
 ## Patterns & Practices
 
 ### Pattern 1: Builder/Validator Task Execution
@@ -426,6 +459,10 @@ The practical guidance: match the approach to the complexity. RLMs shine when ta
 | [090: I built Claude Skill for trade off analysis](../../sources/090-tanmay-deshpande-claude-skill-tradeoffs.md) | Tanmay Deshpande | Domain-specific skill encoding, architecture decision automation, multi-step analytical frameworks |
 | [094: OpenClaw Creator Explains How He Built The Viral Agent](../../sources/094-y-combinator-openclaw-viral-agent.md) | Y Combinator / Peter Steinberger | CLI-first agent tooling (makeporter), MCP avoidance, emergent agent problem-solving, local-first architecture |
 | [099: How AI Agents Search Their Memory](../../sources/099-damian-galarza-agent-memory-search.md) | Damian Galarza | Hybrid memory search (keyword + semantic), weighted score fusion, search-then-get pattern, chunking with overlap |
+| [101: I Built a Self-Improving Agent Swarm](../../sources/101-jaymin-west-self-improving-swarm.md) | Jaymin West | Coordinator-lead-builder hierarchy, forced delegation, self-improving agent tooling, git worktree isolation |
+| [103: Inside Claude Code With Its Creator Boris Cherny](../../sources/103-y-combinator-boris-cherny-claude-code.md) | Y Combinator / Boris Cherny | Scaffolding as temporary tech debt, build for future model, CLAUDE.md minimalism, plan mode mechanics |
+| [105: How to Use Claude Cowork Better Than 99% of People](../../sources/105-ben-ai-cowork-guide.md) | Ben AI | Skills as workflow automation, human-in-the-loop sweet spot, skill chaining in single context |
+| [108: The 5 Levels of AI Coding](../../sources/108-nate-b-jones-five-levels-ai-coding.md) | Nate B Jones | Five-level maturity framework, dark factory architecture, J-curve adoption, specification as bottleneck |
 
 ## Further Reading
 

@@ -4,7 +4,7 @@ title: "Opus 4.6 AND Chat GPT 5.3 SAME DAY???"
 creator: "ThePrimeTime"
 platform: "YouTube"
 url: "https://www.youtube.com/watch?v=wN13YeqEaqk"
-date: "2026-02-08"
+date: "2026-02-06"
 duration: ""
 type: "video"
 tags: ["ai-landscape", "claude-code", "chatgpt"]
@@ -13,7 +13,7 @@ curriculum_modules: ["01-foundations"]
 
 # 003: Opus 4.6 AND Chat GPT 5.3 SAME DAY???
 
-> **Creator**: ThePrimeTime (ThePrimeagen / Michael Paulson) | **Platform**: YouTube | **Date**: 2026-02-08
+> **Creator**: ThePrimeTime (ThePrimeagen / Michael Paulson) | **Platform**: YouTube | **Date**: 2026-02-06
 
 ## Summary
 

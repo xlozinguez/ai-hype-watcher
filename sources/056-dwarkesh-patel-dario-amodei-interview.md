@@ -4,7 +4,7 @@ title: "Dario Amodei — The highest-stakes financial model in history"
 creator: "Dwarkesh Patel"
 platform: "YouTube"
 url: "https://www.youtube.com/watch?v=n1E9IZfvGMA"
-date: "2026-02-12"
+date: "2026-02-13"
 duration: "2:22:20"
 type: "video"
 tags: ["ai-economics", "anthropic", "ai-landscape", "ai-safety", "infrastructure", "enterprise-ai", "capability-overhang"]
@@ -13,7 +13,7 @@ curriculum_modules: ["01-foundations", "06-strategy-and-economics"]
 
 # 056: Dario Amodei — The highest-stakes financial model in history
 
-> **Creator**: Dwarkesh Patel | **Platform**: YouTube | **Date**: 2026-02-12 | **Duration**: 2:22:20
+> **Creator**: Dwarkesh Patel | **Platform**: YouTube | **Date**: 2026-02-13 | **Duration**: 2:22:20
 
 ## Summary
 

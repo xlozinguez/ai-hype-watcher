@@ -4,7 +4,7 @@ title: "Let's Run GLM-5 - SUPER LARGE Local AI \"Coding King\" REVIEW"
 creator: "xCreate"
 platform: "YouTube"
 url: "https://www.youtube.com/watch?v=3XCYruBYr-0"
-date: "2026-02-11"
+date: "2026-02-12"
 duration: "20:17"
 type: "video"
 tags: ["ai-landscape", "infrastructure"]
@@ -13,7 +13,7 @@ curriculum_modules: ["01-foundations", "06-strategy-and-economics"]
 
 # 023: Let's Run GLM-5 - SUPER LARGE Local AI "Coding King" REVIEW
 
-> **Creator**: xCreate | **Platform**: YouTube | **Date**: 2026-02-11 | **Duration**: 20:17
+> **Creator**: xCreate | **Platform**: YouTube | **Date**: 2026-02-12 | **Duration**: 20:17
 
 ## Summary
 

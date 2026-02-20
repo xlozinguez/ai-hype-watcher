@@ -4,7 +4,7 @@ title: "Securing AI Agents with Zero Trust"
 creator: "IBM Technology"
 platform: "YouTube"
 url: "https://www.youtube.com/watch?v=d8d9EZHU7fw"
-date: "2026-02-12"
+date: "2026-02-10"
 duration: "13:33"
 type: "video"
 tags: ["security", "agentic-coding", "enterprise-ai", "multi-agent"]
@@ -13,7 +13,7 @@ curriculum_modules: ["06-strategy-and-economics", "04-agentic-patterns"]
 
 # 057: Securing AI Agents with Zero Trust
 
-> **Creator**: IBM Technology | **Platform**: YouTube | **Date**: 2026-02-12 | **Duration**: 13:33
+> **Creator**: IBM Technology | **Platform**: YouTube | **Date**: 2026-02-10 | **Duration**: 13:33
 
 ## Summary
 

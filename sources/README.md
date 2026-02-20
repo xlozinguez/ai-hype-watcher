@@ -107,6 +107,18 @@ Each source is synthesized (not transcribed) into a structured note with frontma
 | [097](097-yongyea-openai-microsoft-split.md) | OpenAI Just Lost Its Biggest Partner, Microsoft Abandon Sinking Ship | YongYea | video | ai-economics, ai-hype, openai, infrastructure |
 | [098](098-eliot-prince-cowork-explained.md) | Claude COWORK Clearly Explained (& how to use it for beginners) | Eliot Prince | video | claude-code, skills-ecosystem, enterprise-ai |
 | [099](099-damian-galarza-agent-memory-search.md) | How AI Agents Search Their Memory | Damian Galarza | video | context-engineering, agentic-coding, multi-agent |
+| [100](100-justin-sung-top-1-percent-thinking.md) | How To Think Like The Top 1% | Justin Sung | video | context-engineering, ai-landscape |
+| [101](101-jaymin-west-self-improving-swarm.md) | I Built a Self-Improving Agent Swarm. It Rewrote Its Own Code. | Jaymin West | video | multi-agent, agent-teams, agentic-coding, claude-code |
+| [102](102-brian-casel-openclaw-team.md) | My Multi-Agent Team with OpenClaw | Brian Casel | video | multi-agent, security, enterprise-ai, ai-economics |
+| [103](103-y-combinator-boris-cherny-claude-code.md) | Inside Claude Code With Its Creator Boris Cherny | Y Combinator | video | claude-code, anthropic, agentic-coding, ai-landscape, context-engineering |
+| [104](104-claudius-papirus-sonnet-catching-opus.md) | Claude Sonnet 4.6 is Catching Opus — and Breaking the Safety Tests | Claudius Papirus | video | ai-safety, ai-landscape, ai-hype, anthropic |
+| [105](105-ben-ai-cowork-guide.md) | How to Use Claude Cowork Better Than 99% of People (Full Guide) | Ben AI | video | claude-code, skills, mcp, agentic-coding |
+| [106](106-defcon-patrick-walsh-shadow-data.md) | DEF CON 33 - Exploiting Shadow Data from AI Models and Embeddings | Patrick Walsh | video | security, ai-safety, enterprise-ai |
+| [107](107-primetime-anthropic-compiler.md) | The Real Reason Anthropic built a Compiler | The PrimeTime | video | ai-hype, anthropic, agentic-coding, multi-agent |
+| [108](108-nate-b-jones-five-levels-ai-coding.md) | The 5 Levels of AI Coding (Why Most of You Won't Make It Past Level 2) | Nate B Jones | video | agentic-coding, ai-sdlc, vibe-coding, specification, ai-hype, capability-overhang, revenue-per-employee |
+| [109](109-themitmonk-chatgpt-hacks.md) | 5 Hacks To Use ChatGPT So Well It's Almost Unfair | theMITmonk | video | chatgpt, prompt-engineering, context-engineering |
+| [110](110-nate-b-jones-ai-career-opportunity.md) | Why the Biggest AI Career Opportunity Just Appeared—and Almost Nobody Sees It | Nate B Jones | video | ai-hype, ai-economics, ai-landscape, enterprise-ai, capability-overhang |
+| [111](111-prof-g-china-ai-anthropic-pentagon.md) | China's AI Is 20x Cheaper — And Catching Up | Prof G Markets (Scott Galloway) | video | ai-economics, ai-landscape, ai-safety, anthropic, infrastructure |
 
 ## Adding Sources
 

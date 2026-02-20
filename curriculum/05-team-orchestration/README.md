@@ -232,6 +232,39 @@ McEntire's response is the PACT framework: contracts before code, tests as law. 
 
 This reinforces Brainqub3's measurement findings (Concept 11) with a sharper edge: it's not just that multi-agent performance degrades at scale — it's that certain architectures (specifically those mimicking human organizational structures) can produce *zero* useful output. The prescription aligns: default to single agent, enforce contracts if you must use teams, and benchmark before committing to any swarm architecture.
 
+### Concept 15: Self-Improving Agent Swarms
+
+Jaymin West ([#101](../../sources/101-jaymin-west-self-improving-swarm.md)) demonstrates Overstory, a custom agent swarm system built on top of Claude Code that extends the team orchestration concepts in this module with two significant innovations: a three-tier agent hierarchy and recursive self-modification.
+
+**The Coordinator-Lead-Builder Hierarchy**: Overstory uses three tiers rather than the two-tier lead/teammate model of standard Claude Code agent teams. A single coordinator orchestrates the entire workflow, team leads gather context and decompose work, and builder agents make actual code changes. Critically, lead agents are **deliberately prevented from editing files** -- they must delegate to builders. This forced delegation pattern keeps context windows fresh and prevents agents from accumulating too much state. As West puts it: "I would rather an agent with a fresh context window try and fix a problem than an agent dig itself into a hole trying to fix five problems at once."
+
+**Self-Improving Code in Real Time**: During a demo run processing nine GitHub issues with 22 agents, the swarm implemented a mandatory code review loop that did not exist before the session started. Once merged, subsequent agents used the new review process. This is recursive self-improvement at the tooling layer -- the code the agents wrote changed how the agents themselves operated within the same session.
+
+The tradeoff is unpredictability. West is candid: swarms are "highly unpredictable," agents occasionally go rogue, and the system requires significant trust. The Overstory framework includes guardrails (denying edit tools to leads, nudges for course correction), but the fundamental unpredictability of many LLMs running concurrently remains an open problem. This reinforces the measurement-first principle from Brainqub3 (Concept 11) -- self-improving swarms should be benchmarked empirically, not deployed on faith.
+
+### Concept 16: Persistent Always-On Agent Teams
+
+Brian Casel ([#102](../../sources/102-brian-casel-openclaw-team.md)) demonstrates a fundamentally different deployment model from session-based Claude Code agent teams: persistent, always-on agents running 24/7 on dedicated hardware. His four-agent team (developer, marketer, system admin, general assistant) operates through Slack bots on a dedicated Mac Mini, maintaining workspace state, memory, and session logs across interactions.
+
+This shifts the paradigm from "tool I use when coding" to "teammate who works on their own workstation." The **hiring metaphor** provides an intuitive security framework: dedicated machine, separate email, scoped GitHub access, isolated file sharing via separate Dropbox accounts. You would not give a new hire access to your personal laptop, so why give it to an agent?
+
+Key operational details that distinguish this from session-based teams:
+- **Model selection per role**: Opus for developer and system admin (reasoning-heavy), Sonnet for marketer and general assistant (speed and cost)
+- **Cost transparency**: $200+ in API tokens in the first two days, routed through OpenRouter for centralized tracking
+- **Async communication**: Agents communicate via Slack channels rather than terminal sessions, enabling non-blocking human oversight
+
+This extends Krakowski's non-technical multi-agent patterns (Concept 12a) with more sophisticated role specialization and security practices. The economic calculation is explicit: compare token costs to hiring for delegatable work. The ROI only works if agents fill real operational gaps, not novelty tasks.
+
+### Concept 17: Sustained Multi-Agent Execution at Scale
+
+ThePrimeTime ([#107](../../sources/107-primetime-anthropic-compiler.md)) provides a critical analysis of Anthropic's C compiler project that, beneath the marketing critique, reveals a genuine milestone in sustained multi-agent execution: 16 Claude agents running mostly autonomously for two weeks, producing a 100,000-line Rust-based C compiler across approximately 2,000 sessions at $20,000 in API costs.
+
+The key enabler was comprehensive test infrastructure. The project started with GCC's 37-year-old torture test suite as a golden reference and used the actual GCC compiler as an online oracle for validation. This reinforces the deterministic verification principle from Module 04 -- autonomous coding at scale requires comprehensive test infrastructure and reference implementations, not just capable models.
+
+The critique is equally instructive: the resulting compiler cannot boot Linux, sometimes fails on Hello World, and produces less efficient code than GCC with all optimizations disabled. The $0.20-per-line cost provides a concrete benchmark for evaluating agent team ROI on large-scale projects. As PrimeTime notes, honest framing of what was genuinely achieved -- sustained autonomous multi-agent coordination -- would generate more goodwill than overclaiming "from scratch" development.
+
+This connects to the confusing-scale-with-quality pitfall (see Common Pitfalls below) and provides a concrete data point for the baseline-first evaluation pattern (Pattern 6): always measure what a single well-specified agent can produce before committing to 16-agent deployments.
+
 ## Common Pitfalls
 
 - **Using teams for simple tasks**: Agent teams add coordination overhead (shared task lists, peer messaging, multiple context windows) that is only justified for complex, interdependent work. For isolated one-off tasks -- file exploration, targeted code changes, focused refactoring -- sub-agents are faster, cheaper, and simpler. As Van Zyl advises: "If you just want to do like a once-off task, you should definitely use sub agents instead" ([3:50](https://www.youtube.com/watch?v=KCJsdQpcfic&t=230)).
@@ -285,6 +318,10 @@ This reinforces Brainqub3's measurement findings (Concept 11) with a sharper edg
 | [058: The TRUTH About OpenClaw AI Agents](../../sources/058-krakowski-openclaw-agents.md) | Jeremiah Krakowski | Non-technical multi-agent adoption, Slack-based agent communication, dedicated hardware isolation, human-in-the-loop reality at 14 agents |
 | [062: Every Level of Claude Code Explained](../../sources/062-simon-scrapes-claude-code-levels.md) | Simon Scrapes | Agent teams as level 6, autonomous pipelines as level 7, context rot mitigation via GSD/RAWL, seven-level progression framework |
 | [067: Learn 90% Of Claude Code Agent Teams](../../sources/067-bart-slodyczka-agent-teams-course.md) | Bart Slodyczka | Three modes (default/sub-agent/teams), tmux setup, race condition protection, model selection per teammate, shared memory files, skill-from-process workflow |
+| [068: The Organizational Physics of Multi-Agent Systems](../../sources/068-jeremy-mcentire-multi-agent-physics.md) | Jeremy McEntire | PACT framework, organizational dysfunction is substrate-independent, single agent outperforms swarms, contracts before code |
+| [101: I Built a Self-Improving Agent Swarm](../../sources/101-jaymin-west-self-improving-swarm.md) | Jaymin West | Coordinator-lead-builder hierarchy, forced delegation, self-improving agent tooling, 22 agents on 9 issues |
+| [102: My Multi-Agent Team with OpenClaw](../../sources/102-brian-casel-openclaw-team.md) | Brian Casel | Persistent always-on agents, hiring metaphor for security, Slack-based communication, $200+/2 days cost reality |
+| [107: The Real Reason Anthropic Built a Compiler](../../sources/107-primetime-anthropic-compiler.md) | ThePrimeTime | 16 agents for 2 weeks, $20K/100K lines, test infrastructure as enabler, honest vs overclaimed framing |
 
 ## Further Reading
 

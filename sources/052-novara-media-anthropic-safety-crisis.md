@@ -4,7 +4,7 @@ title: "Claude Isn't Safe. This Anthropic Whistleblower Has the Proof."
 creator: "Novara Media"
 platform: "YouTube"
 url: "https://www.youtube.com/watch?v=lNNH-Ox_r04"
-date: "2026-02-12"
+date: "2026-02-11"
 duration: "19:36"
 type: "video"
 tags: ["ai-safety", "ai-hype", "ai-economics", "anthropic", "ai-landscape"]
@@ -13,7 +13,7 @@ curriculum_modules: ["01-foundations", "06-strategy-and-economics"]
 
 # 052: Claude Isn't Safe. This Anthropic Whistleblower Has the Proof.
 
-> **Creator**: Novara Media (Aaron Bastani & Michael Walker) | **Platform**: YouTube | **Date**: 2026-02-12 | **Duration**: 19:36
+> **Creator**: Novara Media (Aaron Bastani & Michael Walker) | **Platform**: YouTube | **Date**: 2026-02-11 | **Duration**: 19:36
 
 ## Summary
 

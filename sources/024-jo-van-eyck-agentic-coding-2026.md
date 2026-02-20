@@ -4,7 +4,7 @@ title: "You are Not Ready: Agentic coding in 2026"
 creator: "Jo Van Eyck"
 platform: "YouTube"
 url: "https://www.youtube.com/watch?v=6W_-YWHKwZ4"
-date: "2026-02-11"
+date: "2026-02-08"
 duration: "31:04"
 type: "video"
 tags: ["agentic-coding", "claude-code", "multi-agent", "agent-teams", "context-engineering", "prompt-engineering", "skills", "capability-overhang"]
@@ -13,7 +13,7 @@ curriculum_modules: ["03-claude-code-essentials", "04-agentic-patterns", "05-tea
 
 # 024: You are Not Ready: Agentic coding in 2026
 
-> **Creator**: Jo Van Eyck | **Platform**: YouTube | **Date**: 2026-02-11 | **Duration**: 31:04
+> **Creator**: Jo Van Eyck | **Platform**: YouTube | **Date**: 2026-02-08 | **Duration**: 31:04
 
 ## Summary
 

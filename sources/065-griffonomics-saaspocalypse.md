@@ -4,7 +4,7 @@ title: "SaaS-pocalypse: The Death of Seat-Based Software vs. The $600B AI Arms R
 creator: "Griffonomics"
 platform: "YouTube"
 url: "https://www.youtube.com/watch?v=g8kSm3YvV7E"
-date: "2026-02-12"
+date: "2026-02-13"
 duration: "34:39"
 type: "video"
 tags: ["ai-economics", "ai-hype", "enterprise-ai", "infrastructure", "ai-landscape", "capability-overhang", "vibe-coding", "revenue-per-employee"]
@@ -13,7 +13,7 @@ curriculum_modules: ["01-foundations", "06-strategy-and-economics"]
 
 # 065: SaaS-pocalypse: The Death of Seat-Based Software vs. The $600B AI Arms Race
 
-> **Creator**: Griffonomics | **Platform**: YouTube | **Date**: 2026-02-12 | **Duration**: 34:39
+> **Creator**: Griffonomics | **Platform**: YouTube | **Date**: 2026-02-13 | **Duration**: 34:39
 
 ## Summary
 

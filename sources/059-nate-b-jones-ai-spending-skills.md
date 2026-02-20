@@ -4,7 +4,7 @@ title: "Why $650 Billion in AI Spending ISN'T Enough. The 4 Skills that Survive 
 creator: "Nate B Jones"
 platform: "YouTube"
 url: "https://www.youtube.com/watch?v=NCgdpbEvNVA"
-date: "2026-02-13"
+date: "2026-02-14"
 duration: "22:00"
 type: "video"
 tags: ["ai-economics", "infrastructure", "enterprise-ai", "ai-hype", "capability-overhang", "ai-landscape", "agentic-coding"]
@@ -13,7 +13,7 @@ curriculum_modules: ["01-foundations", "06-strategy-and-economics"]
 
 # 059: Why $650 Billion in AI Spending ISN'T Enough. The 4 Skills that Survive and What This Means for You.
 
-> **Creator**: Nate B Jones | **Platform**: YouTube | **Date**: 2026-02-13 | **Duration**: 22:00
+> **Creator**: Nate B Jones | **Platform**: YouTube | **Date**: 2026-02-14 | **Duration**: 22:00
 
 ## Summary
 

@@ -4,7 +4,7 @@ title: "How to use Claude Cowork better than 99% of people (full tutorial)"
 creator: "Brooke Wright"
 platform: "YouTube"
 url: "https://www.youtube.com/watch?v=oC1e0sqhJew"
-date: "2026-02-12"
+date: "2026-02-11"
 duration: "21:19"
 type: "video"
 tags: ["claude-code", "enterprise-ai", "skills-ecosystem", "ai-economics", "capability-overhang"]
@@ -13,7 +13,7 @@ curriculum_modules: ["01-foundations", "03-claude-code-essentials"]
 
 # 066: How to use Claude Cowork better than 99% of people (full tutorial)
 
-> **Creator**: Brooke Wright | **Platform**: YouTube | **Date**: 2026-02-12 | **Duration**: 21:19
+> **Creator**: Brooke Wright | **Platform**: YouTube | **Date**: 2026-02-11 | **Duration**: 21:19
 
 ## Summary
 

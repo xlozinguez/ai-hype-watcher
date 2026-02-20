@@ -67,3 +67,4 @@
 | `/scan-channels` | Ingest Mode C runs this workflow internally |
 | `/compile-curriculum` | Run separately after ingesting new sources |
 | `/daily-briefing` | Run separately; can reference newly ingested sources |
+| `/playlist` | For full YouTube playlists — automates URL extraction, batch VTT download, team orchestration, and complete post-ingest pipeline |
