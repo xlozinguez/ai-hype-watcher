@@ -34,6 +34,8 @@ Interface Studies ([#038](../../sources/038-interface-studies-prompt-interface.m
 
 DevForge ([#042](../../sources/042-devforge-vibe-coding-trap.md)) adds a concrete lifecycle argument: the senior developer pattern is to understand the problem first, design the solution yourself, then optionally use AI to speed up implementation while reviewing critically. AI is used for boilerplate, exploration, and implementation acceleration -- but never for core logic the developer needs to understand. This "design before generating" discipline is the specification-first pattern applied at the code level.
 
+Jones ([#108](../../sources/108-nate-b-jones-five-levels-ai-coding.md)) frames the specification bottleneck through Shapiro's five-level AI coding maturity model. At Level 4-5 ("developer as PM" and "dark factory"), the constraining resource shifts entirely from implementation speed to specification quality. Writing specs detailed enough for autonomous agents requires deep systems thinking, customer understanding, and domain expertise. For brownfield legacy systems, the first step is not deploying agents but reverse-engineering specifications from running code and institutional knowledge. As Jones puts it: "The bottleneck has moved from implementation speed to spec quality. And spec quality is a function of how deeply you understand the system, your customer, and your problem."
+
 Martin Fowler's Deer Valley retreat ([#071](../../sources/071-martin-fowler-future-software-dev.md)) pushes the specification-first thesis to its logical extreme through Drew Breunig's "spec-as-library" experiment: a timestamp-to-phrase converter defined entirely as a 500-line markdown specification and 500-line YAML test suite, with no implementation code, successfully implemented across seven programming languages by LLMs. The provocation: "What does software engineering look like when coding is free?" If specifications become the primary software artifact — with test suites as verification and implementation generated on demand — then specification skill is not just important, it is the entire job. Laura Tacho's observation from the same retreat reinforces this: "Developer Experience and Agent Experience intersect completely" — clear documentation, modularity, and descriptive naming benefit both humans and LLMs equally. There is no separate "AI optimization" discipline; investing in specification quality is investing in AI effectiveness.
 
 ### Concept 2: The Six-Step Prompting Framework
@@ -84,6 +86,8 @@ Salem introduces the concept of "sticky AI workflows" -- systems that compound A
 
 3. **Use Projects in your AI platform.** Both ChatGPT and Claude support "Projects" where every chat inherits the same instructions and files. You stop re-explaining the same background, get more consistent outputs, and can reuse context across multiple chats without information bleeding into unrelated work.
 
+theMITmonk ([#109](../../sources/109-themitmonk-chatgpt-hacks.md)) formalizes this with the "ESP" framework for building persistent AI context: **Extract** (voice-mode interview to capture background, tone, strategy, blind spots), **Synthesize** (organize transcript into a structured summary for custom instructions), **Projects** (domain-separated workspaces with uploaded files and customized instructions). This transforms a stateless chat tool into a context-persistent system. The domain separation is critical: mixing consulting, personal, and health contexts in a single workspace causes context contamination and degraded output quality. Each project should have its own tailored instructions and reference materials.
+
 The compounding dynamic is critical. A prompt you use once has linear value. A prompt you save, refine, and reuse compounds. A workflow that builds on previous outputs and feeds into the next task creates exponential leverage. Power users are not doing more work -- they are doing the same work with accumulated infrastructure.
 
 ### Concept 5: Context Window Discipline
@@ -127,6 +131,8 @@ Salem's validation framework provides three practical layers for reducing halluc
 
 > "You never fully get rid of hallucinations because LLMs are probabilistic in nature and no technique today can enforce causality." -- Ali H. Salem
 
+theMITmonk ([#109](../../sources/109-themitmonk-chatgpt-hacks.md)) adds a complementary technique: adversarial prompting to counter AI's default agreeableness. Three approaches: magic triggers ("audit using first principles," "act as my fierce competitor"), shadow boxing (simulated debates between opposing personas within the same conversation), and blind spot checks ("based on what you know about me, what are the gaps in my reasoning?"). As he puts it: "Most people use ChatGPT for validation, but you should use it for violation." This pairs naturally with Salem's cross-model critique -- adversarial prompting within a single model, cross-model critique between models.
+
 This honest framing is important. Validation reduces risk; it does not eliminate it. Building this understanding into your workflow prevents both over-trust (accepting everything uncritically) and over-skepticism (rejecting AI output entirely because it sometimes hallucinates).
 
 ### Concept 7: Software Vision and the Automation Decision
@@ -157,7 +163,19 @@ Income stream surfers ([#072](../../sources/072-income-stream-surfers-antigravit
 
 Greg Isenberg ([#091](../../sources/091-greg-isenberg-claude-code-directory.md)) demonstrates a practical application of incremental prompting in a data enrichment context. His guest Frey Chu walks through building a profitable online directory using Claude Code and the open-source Crawl4AI web scraper -- a seven-step process that starts with scraping 71,000 rows from Google Maps, then runs sequential enrichment passes: business verification (71K down to 20K), website crawling to identify actual businesses (20K down to 725), then separate passes for inventory, images (validated via Claude Vision at $30 for 700 listings), amenities, and service areas. Each pass requires its own prompt iteration and edge case handling. The key insight for this module: Chu explicitly uses a "game plan" prompt before burning tokens on any major step, asking Claude Code to outline its approach before executing. This maps directly to the specification-first pattern applied to data workflows rather than code generation -- and demonstrates that the incremental prompting approach scales to non-trivial real-world data processing tasks.
 
-### Concept 10: The AI Slop Problem and Feelings-First Design
+### Concept 10: Meta-Cognitive Frameworks for Prompt Design
+
+Justin Sung ([#100](../../sources/100-justin-sung-top-1-percent-thinking.md)) provides six "meta models" -- mental frameworks that govern how you apply any framework, including prompting and specification. While not explicitly about AI, they map directly onto the challenges of prompt design and context engineering:
+
+**Nonlinearity**: Most real-world problems involve multifactorial relationships. Linear thinking -- "if I prompt A, I get B" -- systematically misses variables. The remedy: map all factors before simplifying the prompt. This directly parallels context engineering -- oversimplifying a prompt strips out variables the model needs.
+
+**Framing bias**: The way a problem is presented shapes how you think about it. If you can only see one framing, you are almost certainly missing the breakthrough perspective. This is the essence of prompt engineering: reframing a problem for the model rather than accepting the first framing that feels logical. The Toyota Andon cord example -- reframing "efficiency = never stopping the line" to "efficiency = constantly learning" -- illustrates how reframing can unlock entirely new solution spaces.
+
+**Delayed discomfort**: Avoiding cognitive difficulty upfront does not eliminate it -- it shifts the cost (often amplified) to the future. This maps directly to the specification-first pattern: skipping thorough specification to start prompting immediately creates deferred rework that compounds. As Sung puts it: "The discomfort is there regardless. It's just do you pay that upfront or do you pay that later?"
+
+These meta-cognitive principles apply at every level of AI interaction -- from crafting a single prompt to designing an entire agentic workflow. They explain why specification-first development works (it forces upfront cognitive investment) and why vibe coding often fails (it defers that investment to debugging time).
+
+### Concept 11: The AI Slop Problem and Feelings-First Design
 
 Greg Isenberg and designer Sariah ([#075](../../sources/075-greg-isenberg-ai-slop-design.md)) identify a new problem created by vibe coding's success: everything looks the same. Functional apps can now be scaffolded quickly, but the results are visually homogeneous -- the "what it does" is solved, but "how it makes you feel" is the differentiator. Nobody downloads yet another generic app.
 
@@ -254,6 +272,9 @@ Their solution is a design-first workflow that starts with emotional specificati
 | [075: Stop Shipping AI Slop](../../sources/075-greg-isenberg-ai-slop-design.md) | Greg Isenberg / Sariah | AI slop problem, feelings-first design workflow, multi-tool AI brand pipeline, emotional specifications |
 | [084: The 60% Rule Stops Context Rot](../../sources/084-dylan-davis-context-rot-60-rule.md) | Dylan Davis | 60% rule for context windows, four warning signs of context rot, handoff strategy, strategic file management |
 | [091: Claude Code built me a $273/Day online directory](../../sources/091-greg-isenberg-claude-code-directory.md) | Greg Isenberg / Frey Chu | Sequential data enrichment passes, "game plan" prompting before execution, Claude Vision validation, directory building as incremental workflow |
+| [100: How To Think Like The Top 1%](../../sources/100-justin-sung-top-1-percent-thinking.md) | Justin Sung | Meta-cognitive frameworks for prompt design, nonlinear thinking, framing bias, delayed discomfort as specification principle |
+| [108: The 5 Levels of AI Coding](../../sources/108-nate-b-jones-five-levels-ai-coding.md) | Nate B Jones | Specification as bottleneck at Level 4-5, dark factory pattern, reverse-engineering specs for brownfield systems |
+| [109: 5 Hacks To Use ChatGPT So Well It's Almost Unfair](../../sources/109-themitmonk-chatgpt-hacks.md) | theMITmonk | ESP framework for persistent context, adversarial prompting, domain-separated projects, voice mode for unstructured thinking |
 
 ## Further Reading
 

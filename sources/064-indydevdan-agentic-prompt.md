@@ -4,7 +4,7 @@ title: "One Prompt Every AGENTIC Codebase Should Have (For Engineering Teams)"
 creator: "IndyDevDan"
 platform: "YouTube"
 url: "https://www.youtube.com/watch?v=3_mwKbYvbUg"
-date: "2026-02-12"
+date: "2026-01-26"
 duration: "22:36"
 type: "video"
 tags: ["agentic-coding", "claude-code", "prompt-engineering", "context-engineering", "ai-sdlc"]
@@ -13,7 +13,7 @@ curriculum_modules: ["03-claude-code-essentials", "04-agentic-patterns"]
 
 # 064: One Prompt Every AGENTIC Codebase Should Have (For Engineering Teams)
 
-> **Creator**: IndyDevDan (Dan Disler) | **Platform**: YouTube | **Date**: 2026-02-12 | **Duration**: 22:36
+> **Creator**: IndyDevDan (Dan Disler) | **Platform**: YouTube | **Date**: 2026-01-26 | **Duration**: 22:36
 
 ## Summary
 

@@ -4,7 +4,7 @@ title: "Episode 61: From AI Curiosity to Operational Traction: Where Work Tech G
 creator: "HR.com (Brent Skinner & Jim Jensen)"
 platform: "YouTube"
 url: "https://www.youtube.com/watch?v=snK7p4MMKcs"
-date: "2026-02-01"
+date: "2026-02-12"
 duration: "24:46"
 type: "video"
 tags: ["enterprise-ai", "ai-hype", "capability-overhang"]

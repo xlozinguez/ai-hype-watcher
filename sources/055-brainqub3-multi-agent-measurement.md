@@ -4,7 +4,7 @@ title: "I Built an Open-Source Rig That Measures Multi-Agent Architectures"
 creator: "Brainqub3"
 platform: "YouTube"
 url: "https://www.youtube.com/watch?v=hp45iivRoUc"
-date: "2026-02-12"
+date: "2026-02-13"
 duration: "36:38"
 type: "video"
 tags: ["multi-agent", "agent-teams", "enterprise-ai", "agentic-coding"]
@@ -13,7 +13,7 @@ curriculum_modules: ["05-team-orchestration", "06-strategy-and-economics"]
 
 # 055: I Built an Open-Source Rig That Measures Multi-Agent Architectures
 
-> **Creator**: Brainqub3 | **Platform**: YouTube | **Date**: 2026-02-12 | **Duration**: 36:38
+> **Creator**: Brainqub3 | **Platform**: YouTube | **Date**: 2026-02-13 | **Duration**: 36:38
 
 ## Summary
 

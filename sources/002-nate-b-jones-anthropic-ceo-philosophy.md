@@ -4,7 +4,7 @@ title: "Anthropic's CEO Bet the Company on This Philosophy. The Data Says He Was
 creator: "Nate B Jones"
 platform: "YouTube"
 url: "https://www.youtube.com/watch?v=iL3uDrk-i_E"
-date: "2026-02-01"
+date: "2026-02-06"
 duration: ""
 type: "video"
 tags: ["anthropic", "ai-safety", "enterprise-ai"]
@@ -13,7 +13,7 @@ curriculum_modules: ["06-strategy-and-economics"]
 
 # 002: Anthropic's CEO Bet the Company on This Philosophy. The Data Says He Was Right.
 
-> **Creator**: Nate B Jones | **Platform**: YouTube | **Date**: 2026-02-01
+> **Creator**: Nate B Jones | **Platform**: YouTube | **Date**: 2026-02-06
 
 ## Summary
 

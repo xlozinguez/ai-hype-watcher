@@ -4,7 +4,7 @@ title: "The Cursor Situation"
 creator: "Java Brains"
 platform: "YouTube"
 url: "https://www.youtube.com/watch?v=yzqNWVvd2BM"
-date: "2026-02-12"
+date: "2026-02-13"
 duration: "18:46"
 type: "video"
 tags: ["ai-hype", "agentic-coding", "cursor", "multi-agent", "ai-economics"]
@@ -13,7 +13,7 @@ curriculum_modules: ["01-foundations", "05-team-orchestration", "06-strategy-and
 
 # 054: The Cursor Situation
 
-> **Creator**: Java Brains | **Platform**: YouTube | **Date**: 2026-02-12 | **Duration**: 18:46
+> **Creator**: Java Brains | **Platform**: YouTube | **Date**: 2026-02-13 | **Duration**: 18:46
 
 ## Summary
 

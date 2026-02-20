@@ -4,7 +4,7 @@ title: "Become an AI-first construction company: Strategy, Systems and Use-Cases
 creator: "Tim Fairley"
 platform: "YouTube"
 url: "https://www.youtube.com/watch?v=DdtEcsR35Yg"
-date: "2026-02-12"
+date: "2026-02-14"
 duration: "33:50"
 type: "video"
 tags: ["enterprise-ai", "ai-hype", "capability-overhang"]
@@ -13,7 +13,7 @@ curriculum_modules: ["01-foundations", "06-strategy-and-economics"]
 
 # 061: Become an AI-first construction company: Strategy, Systems and Use-Cases
 
-> **Creator**: Tim Fairley | **Platform**: YouTube | **Date**: 2026-02-12 | **Duration**: 33:50
+> **Creator**: Tim Fairley | **Platform**: YouTube | **Date**: 2026-02-14 | **Duration**: 33:50
 
 ## Summary
 

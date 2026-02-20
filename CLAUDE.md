@@ -45,6 +45,8 @@ watchlist/        → YouTube channel watchlist and scanning config
 | `/daily-briefing` | Generate a dated findings briefing |
 | `/youtube-transcriber` | Extract YouTube video transcript via Playwright and prepare for synthesis |
 | `/scan-channels` | Scan YouTube watchlist RSS feeds for new relevant content |
+| `/discover` | Browse YouTube beyond the watchlist — topic search, trending scan, or channel scouting |
+| `/playlist` | Process an entire YouTube playlist — batch subtitles, parallel synthesis, full post-ingest pipeline |
 | `/pr-description` | Generate a PR description summarizing new knowledge introduced by source notes |
 
 ## Common Workflows
@@ -55,7 +57,12 @@ watchlist/        → YouTube channel watchlist and scanning config
 /ingest <article-url>       # Fetch + synthesize
 ```
 
-### Batch ingestion (playlist or multiple URLs)
+### Playlist ingestion
+```
+/playlist <youtube-playlist-url>   # Full automated pipeline with agent teams
+```
+
+### Batch ingestion (multiple individual URLs)
 1. Download VTT files: `yt-dlp --write-auto-sub --sub-lang en --skip-download -o "sources/_drafts/NNN-vtt" <url>`
 2. Convert VTTs to raw transcripts in parallel via Task subagents
 3. Launch parallel Task agents for synthesis — each writes its own source file

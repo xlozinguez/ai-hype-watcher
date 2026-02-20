@@ -4,7 +4,7 @@ title: "I finally CRACKED Claude Agent Skills (Breakdown For Engineers)"
 creator: "IndyDevDan"
 platform: "YouTube"
 url: "https://www.youtube.com/watch?v=kFpLzCVLA20"
-date: "2026-01-29"
+date: "2025-10-27"
 duration: "27:13"
 type: "video"
 tags: ["skills", "claude-code", "agentic-coding", "skills-ecosystem"]
@@ -13,7 +13,7 @@ curriculum_modules: ["03-claude-code-essentials", "04-agentic-patterns"]
 
 # 015: I finally CRACKED Claude Agent Skills (Breakdown For Engineers)
 
-> **Creator**: IndyDevDan (Dan Disler) | **Platform**: YouTube | **Date**: 2026-01-29 | **Duration**: 27:13
+> **Creator**: IndyDevDan (Dan Disler) | **Platform**: YouTube | **Date**: 2025-10-27 | **Duration**: 27:13
 
 ## Summary
 

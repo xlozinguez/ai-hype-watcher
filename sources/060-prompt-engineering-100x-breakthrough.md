@@ -4,7 +4,7 @@ title: "The 100x AI Breakthrough No One is Talking About"
 creator: "Prompt Engineering"
 platform: "YouTube"
 url: "https://www.youtube.com/watch?v=MNiF8pPTao8"
-date: "2026-02-12"
+date: "2026-02-14"
 duration: "15:16"
 type: "video"
 tags: ["ai-landscape", "agentic-coding", "ai-economics", "infrastructure"]
@@ -13,7 +13,7 @@ curriculum_modules: ["01-foundations", "04-agentic-patterns"]
 
 # 060: The 100x AI Breakthrough No One is Talking About
 
-> **Creator**: Prompt Engineering | **Platform**: YouTube | **Date**: 2026-02-12 | **Duration**: 15:16
+> **Creator**: Prompt Engineering | **Platform**: YouTube | **Date**: 2026-02-14 | **Duration**: 15:16
 
 ## Summary
 

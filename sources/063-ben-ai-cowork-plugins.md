@@ -4,7 +4,7 @@ title: "Claude Cowork Just Became 10x Better (Plugins Guide)"
 creator: "Ben AI"
 platform: "YouTube"
 url: "https://www.youtube.com/watch?v=sgSrcSUck7U"
-date: "2026-02-12"
+date: "2026-02-14"
 duration: "12:14"
 type: "video"
 tags: ["skills", "skills-ecosystem", "enterprise-ai", "ai-economics", "mcp", "anthropic"]
@@ -13,7 +13,7 @@ curriculum_modules: ["03-claude-code-essentials", "06-strategy-and-economics"]
 
 # 063: Claude Cowork Just Became 10x Better (Plugins Guide)
 
-> **Creator**: Ben AI | **Platform**: YouTube | **Date**: 2026-02-12 | **Duration**: 12:14
+> **Creator**: Ben AI | **Platform**: YouTube | **Date**: 2026-02-14 | **Duration**: 12:14
 
 ## Summary
 

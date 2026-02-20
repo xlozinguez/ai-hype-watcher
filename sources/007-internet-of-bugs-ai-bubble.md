@@ -4,7 +4,7 @@ title: "Super Bowl Commercial Bubble Curse: AIs Imitate Dot-Coms"
 creator: "Carl Brown (Internet of Bugs)"
 platform: "YouTube"
 url: "https://www.youtube.com/watch?v=Z68ncMsEgsI"
-date: "2026-02-09"
+date: "2026-02-08"
 duration: ""
 type: "video"
 tags: ["ai-hype", "ai-economics"]
@@ -13,7 +13,7 @@ curriculum_modules: ["01-foundations", "06-strategy-and-economics"]
 
 # 007: Super Bowl Commercial Bubble Curse: AIs Imitate Dot-Coms
 
-> **Creator**: Carl Brown (Internet of Bugs) | **Platform**: YouTube | **Date**: 2026-02-09 | **Duration**: N/A
+> **Creator**: Carl Brown (Internet of Bugs) | **Platform**: YouTube | **Date**: 2026-02-08 | **Duration**: N/A
 
 ## Summary
 

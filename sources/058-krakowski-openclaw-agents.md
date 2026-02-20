@@ -4,7 +4,7 @@ title: "The TRUTH About OpenClaw AI Agents (And How I'm Using Them)"
 creator: "Jeremiah Krakowski"
 platform: "YouTube"
 url: "https://www.youtube.com/watch?v=yKdqXV3QEZ8"
-date: "2026-02-12"
+date: "2026-02-13"
 duration: "21:57"
 type: "video"
 tags: ["ai-hype", "multi-agent", "security", "enterprise-ai", "ai-economics"]
@@ -13,7 +13,7 @@ curriculum_modules: ["01-foundations", "05-team-orchestration", "06-strategy-and
 
 # 058: The TRUTH About OpenClaw AI Agents (And How I'm Using Them)
 
-> **Creator**: Jeremiah Krakowski | **Platform**: YouTube | **Date**: 2026-02-12 | **Duration**: 21:57
+> **Creator**: Jeremiah Krakowski | **Platform**: YouTube | **Date**: 2026-02-13 | **Duration**: 21:57
 
 ## Summary
 

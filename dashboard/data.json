@@ -1,0 +1,6521 @@
+{
+  "nodes": [
+    {
+      "id": "001",
+      "type": "source",
+      "title": "Claude Code Task System: ANTI-HYPE Agentic Coding (Advanced)",
+      "creator": "IndyDevDan",
+      "date": "2026-02-02",
+      "tags": [
+        "agentic-coding",
+        "task-system",
+        "builder-validator",
+        "meta-prompts"
+      ],
+      "modules": [
+        "04-agentic-patterns"
+      ],
+      "summary": "IndyDevDan (Dan Disler), a seasoned software engineer and early adopter of generative AI tools, presents an in-depth walkthrough of Claude Code's Task System and how it enables multi-agent orchestration for real engineering workflows. True to his \"anti-hype\" brand, the video focuses on practical, principled patterns rather than speculative claims about AI capabilities.",
+      "url": "https://www.youtube.com/watch?v=4_2j5wgt_ds"
+    },
+    {
+      "id": "002",
+      "type": "source",
+      "title": "Anthropic's CEO Bet the Company on This Philosophy. The Data Says He Was Right.",
+      "creator": "Nate B Jones",
+      "date": "2026-02-06",
+      "tags": [
+        "anthropic",
+        "ai-safety",
+        "enterprise-ai"
+      ],
+      "modules": [
+        "06-strategy-and-economics"
+      ],
+      "summary": "Nate B Jones examines Dario Amodei's founding philosophy for Anthropic and presents data showing that the company's safety-first, efficiency-focused strategy has been validated by commercial results. The core argument: Amodei bet that safety and commercial success were not in tension, and the data now proves he was right.",
+      "url": "https://www.youtube.com/watch?v=iL3uDrk-i_E"
+    },
+    {
+      "id": "003",
+      "type": "source",
+      "title": "Opus 4.6 AND Chat GPT 5.3 SAME DAY???",
+      "creator": "ThePrimeTime",
+      "date": "2026-02-06",
+      "tags": [
+        "ai-landscape",
+        "claude-code",
+        "chatgpt"
+      ],
+      "modules": [
+        "01-foundations"
+      ],
+      "summary": "ThePrimeagen (Michael Paulson), a former Netflix engineer and popular programming content creator, reacts to and analyzes the unprecedented same-day release of two major AI models: Anthropic's Claude Opus 4.6 and OpenAI's GPT-5.3 Codex. On February 5, 2026, the two models launched within approximately 20 minutes of each other -- the closest head-to-head release window in AI model history.",
+      "url": "https://www.youtube.com/watch?v=wN13YeqEaqk"
+    },
+    {
+      "id": "004",
+      "type": "source",
+      "title": "Claude Code's New Agent Teams Are Insane (Opus 4.6)",
+      "creator": "Bart Slodyczka",
+      "date": "2026-02-06",
+      "tags": [
+        "agent-teams",
+        "multi-agent",
+        "claude-code"
+      ],
+      "modules": [
+        "05-team-orchestration"
+      ],
+      "summary": "Bart Slodyczka demonstrates and compares two approaches to building applications with Claude Code: using a single agent versus the new Agent Teams feature introduced in Claude Opus 4.6. He builds the same task manager application with both approaches and evaluates the results side by side, covering setup, real-time development, and final feature comparison.",
+      "url": "https://www.youtube.com/watch?v=VWngYUC63po"
+    },
+    {
+      "id": "005",
+      "type": "source",
+      "title": "90% of People Fail at Vibe Coding. Here's the Actual Reason: You're Skipping the Hard Part.",
+      "creator": "Nate B Jones",
+      "date": "2026-02-07",
+      "tags": [
+        "vibe-coding",
+        "specification",
+        "prompt-engineering"
+      ],
+      "modules": [
+        "02-prompting-and-workflows"
+      ],
+      "summary": "Nate B Jones argues that vibe coding -- using AI to build software with natural language -- has crossed a critical threshold where the friction has dropped enough that building software has stopped feeling like work and started to feel like play. This shift produces fundamentally different outcomes: weirder, more creative software born from playfulness rather than strategy.",
+      "url": "https://www.youtube.com/watch?v=sLz4mAyykeE"
+    },
+    {
+      "id": "006",
+      "type": "source",
+      "title": "4 AI Skills That Set You Apart From 90% Of People",
+      "creator": "Ali H. Salem",
+      "date": "2026-02-07",
+      "tags": [
+        "prompt-engineering",
+        "validation",
+        "ai-landscape"
+      ],
+      "modules": [
+        "02-prompting-and-workflows"
+      ],
+      "summary": "Ali H. Salem, a director at a tech company, breaks down four practical AI skills that separate power users from everyone else, plus a bonus method for identifying what tasks to automate and what to leave alone.",
+      "url": "https://www.youtube.com/watch?v=wuOCa50e3fk"
+    },
+    {
+      "id": "007",
+      "type": "source",
+      "title": "Super Bowl Commercial Bubble Curse: AIs Imitate Dot-Coms",
+      "creator": "Carl Brown (Internet of Bugs)",
+      "date": "2026-02-08",
+      "tags": [
+        "ai-hype",
+        "ai-economics"
+      ],
+      "modules": [
+        "01-foundations",
+        "06-strategy-and-economics"
+      ],
+      "summary": "Carl Brown, a veteran software developer and host of the Internet of Bugs YouTube channel, examines the historical pattern of tech industry Super Bowl advertising as a leading indicator of bubble bursts. The video draws a direct line from the \"Dot-Com Super Bowl\" of 2000 through the \"Crypto Bowl\" of 2022 to Super Bowl LX in 2026, where AI companies accounted for 23% of all ads (15 out of 66 commercials).",
+      "url": "https://www.youtube.com/watch?v=Z68ncMsEgsI"
+    },
+    {
+      "id": "008",
+      "type": "source",
+      "title": "OpenAI Is Slowing Hiring / Anthropic Engineers Stopped Writing Code / The Capability Overhang",
+      "creator": "Nate B Jones",
+      "date": "2026-02-04",
+      "tags": [
+        "capability-overhang",
+        "ai-landscape",
+        "agentic-coding",
+        "task-system"
+      ],
+      "modules": [
+        "01-foundations",
+        "04-agentic-patterns"
+      ],
+      "summary": "Nate B Jones documents a convergence of model releases, orchestration patterns, and proof points that together crossed multiple thresholds in December 2025, creating what AI accelerationists call a \"phase transition.\" Three frontier models released within six days (Gemini 3 Pro, GPT 5.1/5.2 Codex Max, Claude Opus 4.5) were all optimized for sustained autonomous work over hours or days rather than minutes. Combined with viral orchestration patterns like Ralph (a bash loop that runs Claude Code persistently using git commits as memory) and Anthropic's native Task System, the result is a fundamentally new category of AI-assisted work.",
+      "url": "https://www.youtube.com/watch?v=dZxyeYBxPBA"
+    },
+    {
+      "id": "009",
+      "type": "source",
+      "title": "Why the Smartest AI Teams Are Panic-Buying Compute: The 36-Month AI Infrastructure Crisis",
+      "creator": "Nate B Jones",
+      "date": "2026-02-08",
+      "tags": [
+        "infrastructure",
+        "ai-economics",
+        "enterprise-ai"
+      ],
+      "modules": [
+        "06-strategy-and-economics"
+      ],
+      "summary": "Nate B Jones presents a detailed analysis of what he calls a structural crisis in global AI infrastructure -- not a prediction, but an observation of current conditions. The world economy has reorganized around AI capabilities, making it the biggest capex project in human history, and those capabilities depend entirely on inference compute that is now physically constrained with no relief expected before 2028.",
+      "url": "https://www.youtube.com/watch?v=pSgy2P2q790"
+    },
+    {
+      "id": "010",
+      "type": "source",
+      "title": "Claude Code Multi-Agent Orchestration with Opus 4.6, Tmux and Agent Sandboxes",
+      "creator": "IndyDevDan (Dan Disler)",
+      "date": "2026-02-09",
+      "tags": [
+        "multi-agent",
+        "agent-teams",
+        "agentic-coding",
+        "claude-code"
+      ],
+      "modules": [
+        "05-team-orchestration"
+      ],
+      "summary": "IndyDevDan demonstrates the new Claude Code multi-agent orchestration capabilities powered by Opus 4.6. The video goes beyond benchmarks to show practical usage: spinning up teams of specialized agents that work in parallel, each with their own context window, model, and tasks.",
+      "url": "https://www.youtube.com/watch?v=RpUTF_U4kiw"
+    },
+    {
+      "id": "011",
+      "type": "source",
+      "title": "Prompt Engineering is dead.",
+      "creator": "Confluent Developer (Tim Berglund)",
+      "date": "2026-02-10",
+      "tags": [
+        "context-engineering",
+        "prompt-engineering",
+        "agentic-coding",
+        "mcp"
+      ],
+      "modules": [
+        "02-prompting-and-workflows",
+        "04-agentic-patterns"
+      ],
+      "summary": "Tim Berglund returns to the Confluent Developer lightboard to argue that prompt engineering \u2014 the art of crafting the perfect instruction to an LLM \u2014 is being superseded by **context engineering**, a broader discipline concerned with managing everything that goes into an LLM's context window. The shift matters because agentic applications aren't single-prompt interactions anymore; they're iterative, tool-calling, resource-retrieving workflows that accumulate context over time.",
+      "url": "https://www.youtube.com/watch?v=Cs7QiSi8KLY"
+    },
+    {
+      "id": "012",
+      "type": "source",
+      "title": "Going Slower Feels Safer, But Your Domain Expertise Won't Save You Anymore. Here's What Will.",
+      "creator": "Nate B Jones",
+      "date": "2026-02-09",
+      "tags": [
+        "capability-overhang",
+        "ai-landscape",
+        "agentic-coding"
+      ],
+      "modules": [
+        "01-foundations",
+        "06-strategy-and-economics"
+      ],
+      "summary": "Nate B Jones argues that AI is collapsing professional futures along two dimensions simultaneously -- horizontal and temporal -- and that most knowledge workers are misreading the implications. The horizontal collapse compresses formerly distinct career paths (engineering, product management, marketing, finance, design, operations) into a single meta-competency: orchestrating AI agents to get work done.",
+      "url": "https://www.youtube.com/watch?v=q6p-_W6_VoM"
+    },
+    {
+      "id": "013",
+      "type": "source",
+      "title": "Stop Using Claude Code Without Skills",
+      "creator": "Leon van Zyl",
+      "date": "2026-02-09",
+      "tags": [
+        "skills",
+        "claude-code",
+        "skills-ecosystem"
+      ],
+      "modules": [
+        "03-claude-code-essentials"
+      ],
+      "summary": "Leon van Zyl provides a comprehensive, hands-on introduction to the Claude Code skills system -- from discovering and installing skills to building custom skills from scratch. The central thesis is that skills dramatically extend what Claude Code can accomplish by teaching it capabilities it does not possess natively, such as image generation, without permanently occupying context window space the way MCP server tool definitions do.",
+      "url": "https://www.youtube.com/watch?v=vIUJ4Hd7be0"
+    },
+    {
+      "id": "014",
+      "type": "source",
+      "title": "I Gave Opus 4.6 an Entire Dev Team - Claude Code Agent Teams",
+      "creator": "Leon van Zyl",
+      "date": "2026-02-10",
+      "tags": [
+        "agent-teams",
+        "multi-agent",
+        "claude-code"
+      ],
+      "modules": [
+        "05-team-orchestration"
+      ],
+      "summary": "Leon van Zyl demonstrates Claude Code's experimental Agent Teams feature, building a fitness tracker app called \"Claude Fit\" with a five-member team of specialized agents. The video provides one of the clearest explanations of how agent teams differ architecturally from sub-agents: sub-agents are one-way reporting mechanisms where each agent works in isolation and reports back to the parent, while agent teams share a task list and have direct peer-to-peer messaging capabilities.",
+      "url": "https://www.youtube.com/watch?v=KCJsdQpcfic"
+    },
+    {
+      "id": "015",
+      "type": "source",
+      "title": "I finally CRACKED Claude Agent Skills (Breakdown For Engineers)",
+      "creator": "IndyDevDan",
+      "date": "2025-10-27",
+      "tags": [
+        "skills",
+        "claude-code",
+        "agentic-coding",
+        "skills-ecosystem"
+      ],
+      "modules": [
+        "03-claude-code-essentials",
+        "04-agentic-patterns"
+      ],
+      "summary": "IndyDevDan breaks down the Claude Code skills system as an engineering discipline, moving beyond the \"install and use\" level to examine how skills work architecturally and how to build them with the rigor of a software engineer. The video covers the full anatomy of a skill (SKILL.md frontmatter with name, description, allowed-tools, and argument-hint fields), the discovery and auto-activation mechanism, and -- most importantly -- why skills represent a fundamentally different architectural choice from MCP servers.",
+      "url": "https://www.youtube.com/watch?v=kFpLzCVLA20"
+    },
+    {
+      "id": "016",
+      "type": "source",
+      "title": "Claude Opus 4.6: The Biggest AI Jump I've Covered--It's Not Close. (Here's What You Need to Know)",
+      "creator": "Nate B Jones",
+      "date": "2026-02-11",
+      "tags": [
+        "ai-landscape",
+        "claude-code",
+        "agentic-coding"
+      ],
+      "modules": [
+        "01-foundations",
+        "04-agentic-patterns"
+      ],
+      "summary": "Nate B Jones makes the case that Claude Opus 4.6 represents the single largest capability jump in AI coding he has ever covered -- and not by a small margin. While previous model releases brought incremental improvements, Opus 4.6 crosses a qualitative threshold where the model's behavior feels fundamentally different: sustained reasoning over long tasks, dramatically fewer hallucinations, and reliable handling of complex multi-file changes that would have tripped up earlier models.",
+      "url": "https://www.youtube.com/watch?v=JKk77rzOL34"
+    },
+    {
+      "id": "017",
+      "type": "source",
+      "title": "Be Careful w/ Skills",
+      "creator": "ThePrimeagen",
+      "date": "2026-02-11",
+      "tags": [
+        "security",
+        "skills",
+        "skills-ecosystem"
+      ],
+      "modules": [
+        "06-strategy-and-economics",
+        "03-claude-code-essentials"
+      ],
+      "summary": "ThePrimeagen examines the security risks lurking in the Claude Code skills ecosystem, reacting to findings that 36% of publicly available agent skills contain security vulnerabilities. The video serves as a sharp counterpoint to the enthusiasm around skills marketplaces, arguing that the convenience of installing third-party skills comes with real and underappreciated supply chain risks.",
+      "url": "https://www.youtube.com/watch?v=Y2otN_NY75Y"
+    },
+    {
+      "id": "018",
+      "type": "source",
+      "title": "The New AI-Driven SDLC",
+      "creator": "CircleCI (Jacob Schmitt)",
+      "date": "2025-10-10",
+      "tags": [
+        "ai-sdlc",
+        "agentic-coding",
+        "enterprise-ai"
+      ],
+      "modules": [
+        "06-strategy-and-economics",
+        "04-agentic-patterns"
+      ],
+      "summary": "Jacob Schmitt from CircleCI describes how AI is reshaping the entire Software Development Life Cycle, transforming it from a sequential, linear process into an interconnected network where work occurs simultaneously across multiple stages. The article walks through each traditional SDLC phase -- planning, design, development, testing, deployment, and maintenance -- and shows how AI tools are collapsing boundaries between them.",
+      "url": "https://circleci.com/blog/ai-sdlc/"
+    },
+    {
+      "id": "019",
+      "type": "source",
+      "title": "Something Big Is Happening",
+      "creator": "Matt Shumer",
+      "date": "2026-02-09",
+      "tags": [
+        "ai-landscape",
+        "capability-overhang",
+        "ai-economics"
+      ],
+      "modules": [
+        "01-foundations",
+        "06-strategy-and-economics"
+      ],
+      "summary": "Matt Shumer describes a world where AI systems now autonomously complete complex software projects without human intervention, and argues that this represents a qualitative break from everything that came before. The article traces a rapid progression: in 2022, AI could not reliably do basic arithmetic; by 2023, it passed the bar exam; by 2024, it wrote working software and explained graduate-level science; and as of February 2026, the latest models (GPT-5.3 Codex, Claude Opus 4.6) demonstrate something Shumer characterizes as \"judgment\" and \"taste\" -- the ability to make architectural decisions, iterate on their own output, and produce work that previously required experienced human engineers.",
+      "url": "https://shumer.dev/something-big-is-happening"
+    },
+    {
+      "id": "020",
+      "type": "source",
+      "title": "How & When to Use Claude Code Agent Teams in 13 Mins (Opus 4.6)",
+      "creator": "Simon Scrapes | AI Automation",
+      "date": "2026-02-11",
+      "tags": [
+        "agent-teams",
+        "multi-agent",
+        "claude-code",
+        "agentic-coding",
+        "context-engineering",
+        "task-system"
+      ],
+      "modules": [
+        "05-team-orchestration",
+        "04-agentic-patterns",
+        "03-claude-code-essentials"
+      ],
+      "summary": "Simon Scrapes provides a practical guide to Claude Code's agent teams feature, explaining the progression from single agents to sub-agents to full agent teams. The video addresses a critical limitation of single-agent workflows: context rot.",
+      "url": "https://www.youtube.com/watch?v=y9IYtWELMHw"
+    },
+    {
+      "id": "021",
+      "type": "source",
+      "title": "Claude's Best Release Yet + 10 Tricks That Gave Me An Unfair Advantage",
+      "creator": "AI LABS",
+      "date": "2026-02-11",
+      "tags": [
+        "claude-code",
+        "agentic-coding",
+        "context-engineering",
+        "mcp",
+        "skills",
+        "multi-agent",
+        "validation",
+        "agent-teams"
+      ],
+      "modules": [
+        "03-claude-code-essentials",
+        "04-agentic-patterns",
+        "05-team-orchestration"
+      ],
+      "summary": "AI LABS presents ten advanced techniques for using Claude Code more effectively, drawing from their team's daily production use across development, research, and automation tasks. The video emphasizes that Claude Code's effectiveness depends heavily on how it's configured and contextualized rather than just the model's inherent capabilities.",
+      "url": "https://www.youtube.com/watch?v=TmsH-RIHvas"
+    },
+    {
+      "id": "022",
+      "type": "source",
+      "title": "Developers are forced to use AI",
+      "creator": "Traversy Media (Brad Traversy)",
+      "date": "2026-02-11",
+      "tags": [
+        "vibe-coding",
+        "ai-landscape",
+        "career-collapse"
+      ],
+      "modules": [
+        "01-foundations"
+      ],
+      "summary": "Brad Traversy reflects on how AI has fundamentally changed the experience of software development, particularly the emotional satisfaction of building something from scratch. While he initially felt a renewed spark when AI improved his productivity during burnout, over months he realized the work no longer felt fully his own.",
+      "url": "https://www.youtube.com/watch?v=UaB0gWFwuEU"
+    },
+    {
+      "id": "023",
+      "type": "source",
+      "title": "Let's Run GLM-5 - SUPER LARGE Local AI \"Coding King\" REVIEW",
+      "creator": "xCreate",
+      "date": "2026-02-12",
+      "tags": [
+        "ai-landscape",
+        "infrastructure"
+      ],
+      "modules": [
+        "01-foundations",
+        "06-strategy-and-economics"
+      ],
+      "summary": "xCreate reviews GLM-5, the latest 744B parameter open-source model from ZhipuAI, deployed on a Mac Studio with 512GB RAM. The model represents a significant evolution from GLM 4.7 (355B parameters), now featuring 40B active parameters trained on 28.5 trillion tokens.",
+      "url": "https://www.youtube.com/watch?v=3XCYruBYr-0"
+    },
+    {
+      "id": "024",
+      "type": "source",
+      "title": "You are Not Ready: Agentic coding in 2026",
+      "creator": "Jo Van Eyck",
+      "date": "2026-02-08",
+      "tags": [
+        "agentic-coding",
+        "claude-code",
+        "multi-agent",
+        "agent-teams",
+        "context-engineering",
+        "prompt-engineering",
+        "skills",
+        "capability-overhang"
+      ],
+      "modules": [
+        "03-claude-code-essentials",
+        "04-agentic-patterns",
+        "05-team-orchestration"
+      ],
+      "summary": "Jo Van Eyck delivers a comprehensive state-of-the-art overview of agentic coding in early 2026, arguing that most software engineers are underestimating the current capabilities and pace of change. Speaking as a self-described \"AI skeptic\" with 15 years of software engineering experience, Van Eyck identifies five key innovations that have shifted the landscape in recent months: LLMs fine-tuned specifically for agentic work, the Ralph Wiggum loop (deterministic verification wrapped around agents), Beats (persistent task management), Gas Town (multi-agent orchestration), and OpenClaw (AI personal assistant proof-of-concept).",
+      "url": "https://www.youtube.com/watch?v=6W_-YWHKwZ4"
+    },
+    {
+      "id": "025",
+      "type": "source",
+      "title": "AI productivity bubble: 'There is a reckoning coming for employers' | Natasha Bernal",
+      "creator": "The Tech Report",
+      "date": "2026-02-11",
+      "tags": [
+        "ai-hype",
+        "ai-economics",
+        "enterprise-ai",
+        "capability-overhang"
+      ],
+      "modules": [
+        "01-foundations",
+        "06-strategy-and-economics"
+      ],
+      "summary": "Tech journalist Natasha Bernal joins The Tech Report to discuss a Harvard Business Review study revealing that early AI adopters in the workplace are already showing signs of burnout. The core finding is counterintuitive: employees who most enthusiastically embraced AI tools \u2014 even without mandates \u2014 ended up with expanded workloads that wouldn't contract back to manageable levels, trapping them in unsustainable work patterns.",
+      "url": "https://www.youtube.com/watch?v=ncQPkMqfBU0"
+    },
+    {
+      "id": "026",
+      "type": "source",
+      "title": "10 Claude Code tips I wish I knew from the start",
+      "creator": "No Code MBA",
+      "date": "2026-02-02",
+      "tags": [
+        "claude-code",
+        "skills",
+        "context-engineering",
+        "agentic-coding"
+      ],
+      "modules": [
+        "03-claude-code-essentials",
+        "04-agentic-patterns"
+      ],
+      "summary": "No Code MBA delivers a beginner-oriented walkthrough of ten Claude Code features and workflow tips, aimed at developers and non-developers who are starting to build with Claude Code and want to avoid the initial learning curve. The video prioritizes breadth over depth, introducing slash commands, sub-agents, skills, plan mode, CLAUDE.md configuration, and IDE integration as a cohesive starter toolkit.",
+      "url": "https://www.youtube.com/watch?v=BEIulrjHzMI"
+    },
+    {
+      "id": "027",
+      "type": "source",
+      "title": "Devs can no longer avoid learning Git worktree",
+      "creator": "Joshua Morony",
+      "date": "2026-02-04",
+      "tags": [
+        "agentic-coding",
+        "ai-sdlc"
+      ],
+      "modules": [
+        "04-agentic-patterns"
+      ],
+      "summary": "Joshua Morony makes the case that `git worktree` \u2014 a feature many developers have long ignored \u2014 has become essential in the age of agentic AI coding. The core problem: when AI agents execute multi-phase tasks autonomously for 15-60 minutes, they occupy your file system.",
+      "url": "https://www.youtube.com/watch?v=S8_AsOuAwLo"
+    },
+    {
+      "id": "028",
+      "type": "source",
+      "title": "Will AI REPLACE Software Developers..?",
+      "creator": "Caleb Writes Code",
+      "date": "2026-02-11",
+      "tags": [
+        "ai-landscape",
+        "ai-hype",
+        "capability-overhang",
+        "agentic-coding",
+        "ai-economics"
+      ],
+      "modules": [
+        "01-foundations",
+        "06-strategy-and-economics"
+      ],
+      "summary": "Caleb presents a data-driven analysis of the developer job market, using the Indeed Hiring Lab's job posting index to contextualize the \"will AI replace developers\" question against concrete labor market trends. His central argument is nuanced: the US developer job market is recovering toward pre-pandemic baselines but has not yet returned to February 2020 levels, and the simultaneous rise of AI coding agents introduces a genuine question about whether that baseline is even the right target anymore.",
+      "url": "https://www.youtube.com/watch?v=7OqJjAzYXGc"
+    },
+    {
+      "id": "029",
+      "type": "source",
+      "title": "We Studied 150 Developers Using AI (Here's What's Actually Changed...)",
+      "creator": "Modern Software Engineering (Dave Farley)",
+      "date": "2026-01-27",
+      "tags": [
+        "ai-hype",
+        "ai-sdlc",
+        "enterprise-ai",
+        "vibe-coding"
+      ],
+      "modules": [
+        "01-foundations",
+        "06-strategy-and-economics"
+      ],
+      "summary": "Dave Farley presents findings from a pre-registered controlled experiment he co-authored, studying 151 participants (95% professional developers) to measure the downstream maintainability of AI-assisted code. Unlike most AI productivity studies that stop at \"did the developer finish faster,\" this research specifically measured what happens when a different developer has to understand and modify the code later -- a much better proxy for real-world software costs given that maintenance represents 50-80% of total ownership cost.",
+      "url": "https://www.youtube.com/watch?v=b9EbCb5A408"
+    },
+    {
+      "id": "030",
+      "type": "source",
+      "title": "Playwright CLI vs MCP - a new tool for your coding agent",
+      "creator": "Playwright",
+      "date": "2026-02-06",
+      "tags": [
+        "mcp",
+        "claude-code",
+        "context-engineering",
+        "agentic-coding"
+      ],
+      "modules": [
+        "03-claude-code-essentials",
+        "04-agentic-patterns"
+      ],
+      "summary": "The Playwright team introduces their new CLI tool as an alternative to the existing Playwright MCP server for browser automation within coding agents. The video provides a head-to-head comparison of both approaches running the same task \u2014 navigating to the Playwright docs site, searching for locators, verifying documentation across four language tabs, and capturing screenshots \u2014 then analyzes the token consumption difference: 26,800 tokens for CLI versus 114,000 tokens for MCP, a roughly 4x efficiency gain.",
+      "url": "https://www.youtube.com/watch?v=Be0ceKN81S8"
+    },
+    {
+      "id": "031",
+      "type": "source",
+      "title": "9 AI Concepts Explained in 7 minutes: AI Agents, RAGs, Tokenization, RLHF, Diffusion, LoRA...",
+      "creator": "ByteByteAI",
+      "date": "2026-02-05",
+      "tags": [
+        "ai-landscape",
+        "prompt-engineering",
+        "agentic-coding",
+        "context-engineering"
+      ],
+      "modules": [
+        "01-foundations",
+        "02-prompting-and-workflows"
+      ],
+      "summary": "ByteByteAI delivers a rapid-fire primer on nine foundational AI concepts that recur across real-world AI systems. The video is aimed at practitioners who encounter these terms in product announcements, research papers, and engineering discussions but lack a concise mental model for each.",
+      "url": "https://www.youtube.com/watch?v=nVnxG10D5W0"
+    },
+    {
+      "id": "032",
+      "type": "source",
+      "title": "OpenClaw: 160,000 Developers Just Showed Us What People Actually Want From AI (It's NOT Chatbots)",
+      "creator": "Nate B Jones",
+      "date": "2026-02-12",
+      "tags": [
+        "ai-landscape",
+        "security",
+        "enterprise-ai",
+        "capability-overhang",
+        "skills-ecosystem",
+        "ai-hype"
+      ],
+      "modules": [
+        "01-foundations",
+        "06-strategy-and-economics"
+      ],
+      "summary": "Nate B Jones delivers his third deep-dive on the OpenClaw project (formerly Claudebot, then Moltbot), shifting focus from the security crisis and emergent behaviors covered in his earlier videos to the demand signal embedded in the project's skills marketplace. With 145,000+ GitHub stars, 100,000+ users granting autonomous agent access, and 3,000 community-built skills generating 50,000 monthly installs, OpenClaw has become an unintentional \"revealed preference engine\" showing what people actually want from AI agents.",
+      "url": "https://www.youtube.com/watch?v=q-sClVMYY4w"
+    },
+    {
+      "id": "033",
+      "type": "source",
+      "title": "Why CEOs Are Getting AI Wrong \u2014 with Ethan Mollick",
+      "creator": "Prof G Conversations (Scott Galloway / Ethan Mollick)",
+      "date": "2026-02-12",
+      "tags": [
+        "enterprise-ai",
+        "ai-landscape",
+        "ai-hype",
+        "ai-economics",
+        "capability-overhang"
+      ],
+      "modules": [
+        "01-foundations",
+        "06-strategy-and-economics"
+      ],
+      "summary": "Ethan Mollick, Wharton professor and author of the \"One Useful Thing\" Substack, joins Scott Galloway for a wide-ranging conversation about why enterprise AI adoption is stalling despite significant individual productivity gains. Mollick argues that roughly 50% of American workers already use AI, reporting 3x productivity on tasks they apply it to, but they are hiding this usage from their employers out of fear that demonstrated efficiency will lead to layoffs.",
+      "url": "https://www.youtube.com/watch?v=-xNq_wJHsls"
+    },
+    {
+      "id": "034",
+      "type": "source",
+      "title": "Hater Season: Cal Newport on AI Reporting",
+      "creator": "Better Offline (Ed Zitron / Cal Newport)",
+      "date": "2026-02-12",
+      "tags": [
+        "ai-hype",
+        "ai-economics",
+        "vibe-coding",
+        "ai-landscape"
+      ],
+      "modules": [
+        "01-foundations",
+        "06-strategy-and-economics"
+      ],
+      "summary": "Ed Zitron hosts Cal Newport for a wide-ranging conversation dissecting how AI is covered in the media. Newport, who straddles both the tech commentary and computer science worlds, introduces a taxonomy of problematic AI reporting patterns: \"astonishment reporting,\" \"vibe reporting,\" and \"mining digital ick.\" The pair argue that most mainstream AI coverage lacks the two essential questions \u2014 what technical breakthrough made this possible, and what are the concrete implications \u2014 leading to emotional rather than informational journalism.",
+      "url": "https://www.youtube.com/watch?v=85uXDLzuvdk"
+    },
+    {
+      "id": "035",
+      "type": "source",
+      "title": "\"Engineers are becoming sorcerers\" | The future of software development with OpenAI's Sherwin Wu",
+      "creator": "Lenny's Podcast (Sherwin Wu)",
+      "date": "2026-02-12",
+      "tags": [
+        "openai",
+        "enterprise-ai",
+        "ai-landscape",
+        "agentic-coding",
+        "capability-overhang",
+        "ai-economics",
+        "ai-sdlc",
+        "vibe-coding"
+      ],
+      "modules": [
+        "01-foundations",
+        "06-strategy-and-economics"
+      ],
+      "summary": "Sherwin Wu, who leads developer-facing products at OpenAI, joins Lenny Rachitsky for a wide-ranging conversation about how AI is transforming software engineering from the inside. Wu shares that 95% of OpenAI engineers use Codex and 100% of their PRs are reviewed by Codex, providing a rare insider look at how a frontier AI company dogfoods its own tools.",
+      "url": "https://www.youtube.com/watch?v=B26CwKm5C1k"
+    },
+    {
+      "id": "036",
+      "type": "source",
+      "title": "Did AI Just Kill Software?",
+      "creator": "Prof G Markets (Scott Galloway)",
+      "date": "2026-02-09",
+      "tags": [
+        "ai-hype",
+        "ai-economics",
+        "enterprise-ai",
+        "ai-landscape",
+        "anthropic",
+        "openai"
+      ],
+      "modules": [
+        "01-foundations",
+        "06-strategy-and-economics"
+      ],
+      "summary": "Scott Galloway and Ed Elson analyze the dramatic selloff in software stocks following a wave of new AI product announcements from Anthropic and OpenAI. The software ETF (IGV) dropped 20% in a single month, with individual names like Shopify falling 14% and Adobe nearly 40% over the past year.",
+      "url": "https://www.youtube.com/watch?v=ERAoSEC4skY"
+    },
+    {
+      "id": "037",
+      "type": "source",
+      "title": "Google Goes All-In on the AI Arms Race",
+      "creator": "Prof G Markets (Scott Galloway)",
+      "date": "2026-02-11",
+      "tags": [
+        "ai-economics",
+        "infrastructure",
+        "ai-hype",
+        "ai-landscape"
+      ],
+      "modules": [
+        "01-foundations",
+        "06-strategy-and-economics"
+      ],
+      "summary": "This Prof G Markets episode covers Google's record-breaking $32 billion debt raise, the escalating AI capex arms race among Big Tech, the AI-driven memory chip shortage, and growing public backlash against AI and data centers. Guest analyst Gil Lurria (DA Davidson) frames the debt offering as strategic signaling in a \"winner take most\" AI competition, while Doug Olaflin (SemiAnalysis) explains how AI infrastructure demand is creating a historic memory chip supply crunch.",
+      "url": "https://www.youtube.com/watch?v=cJ803xOqP_k"
+    },
+    {
+      "id": "038",
+      "type": "source",
+      "title": "When the Interface Flattens Into a Prompt",
+      "creator": "Interface Studies",
+      "date": "2026-02-07",
+      "tags": [
+        "ai-landscape",
+        "prompt-engineering",
+        "context-engineering",
+        "specification",
+        "vibe-coding",
+        "ai-hype"
+      ],
+      "modules": [
+        "01-foundations",
+        "02-prompting-and-workflows"
+      ],
+      "summary": "Interface Studies host Sal examines what happens when software interfaces collapse from visual GUIs into a single text input box. The video starts from Ted Nelson's observation that everything on a computer screen is a construct -- not technology itself, but something people imagined and built.",
+      "url": "https://www.youtube.com/watch?v=ccT0jjd36I4"
+    },
+    {
+      "id": "039",
+      "type": "source",
+      "title": "SaaSpocalypse: investors overspend badly and blame AI",
+      "creator": "Pivot to AI",
+      "date": "2026-02-12",
+      "tags": [
+        "ai-hype",
+        "ai-economics",
+        "enterprise-ai",
+        "vibe-coding",
+        "anthropic"
+      ],
+      "modules": [
+        "01-foundations",
+        "06-strategy-and-economics"
+      ],
+      "summary": "David Gerard analyzes the \"SaaSpocalypse\" \u2014 a sharp selloff in enterprise SaaS stocks triggered by Anthropic's launch of Claude Co-work and its industry-specific skills for legal officers. Despite Co-work being labeled a \"research preview\" (meaning even Anthropic didn't consider it production-ready), the announcement was enough to panic investors.",
+      "url": "https://www.youtube.com/watch?v=_DYFmohEZHw"
+    },
+    {
+      "id": "040",
+      "type": "source",
+      "title": "Stop Feeding Claude Your Entire CLAUDE.md",
+      "creator": "Charlie Automates",
+      "date": "2026-02-11",
+      "tags": [
+        "claude-code",
+        "context-engineering",
+        "skills-ecosystem"
+      ],
+      "modules": [
+        "03-claude-code-essentials",
+        "02-prompting-and-workflows"
+      ],
+      "summary": "Charlie Automates presents a focused argument against monolithic CLAUDE.md files and introduces Carl (Context Augmentation Reinforcement Layer), a plugin built by Chris Kaylor at CNC Strategic, that dynamically loads only relevant subsets of your instructions based on prompt context. The core thesis is that loading all project rules into every conversation is not just wasteful -- it actively degrades output quality by diluting the model's attention across irrelevant instructions.",
+      "url": "https://www.youtube.com/watch?v=xUgagCicr7c"
+    },
+    {
+      "id": "041",
+      "type": "source",
+      "title": "The new Claude just generated the worst C compiler ever...",
+      "creator": "Awesome",
+      "date": "2026-02-11",
+      "tags": [
+        "ai-hype",
+        "agent-teams",
+        "anthropic",
+        "ai-economics",
+        "multi-agent"
+      ],
+      "modules": [
+        "05-team-orchestration",
+        "06-strategy-and-economics"
+      ],
+      "summary": "A critical analysis of Anthropic's blog post \"Building a C compiler with a team of parallel Claudes,\" which used 16 agent instances working in parallel to produce a C compiler over ~2,000 code sessions at a cost of $20,000. The creator argues the experiment reveals more about AI limitations than capabilities: the resulting 100,000-line compiler lacks its own assembler and linker (relying on GCC for both), cannot compile a 16-bit mode needed to boot Linux, sometimes fails on simple programs like Hello World, and produces less efficient code than GCC with all optimizations disabled.",
+      "url": "https://www.youtube.com/watch?v=mb5Lx4auBKI"
+    },
+    {
+      "id": "042",
+      "type": "source",
+      "title": "Vibe Coding is a Trap (What Senior Devs See That You Don't)",
+      "creator": "DevForge",
+      "date": "2026-02-11",
+      "tags": [
+        "vibe-coding",
+        "ai-hype",
+        "ai-sdlc"
+      ],
+      "modules": [
+        "01-foundations",
+        "02-prompting-and-workflows"
+      ],
+      "summary": "DevForge argues that vibe coding -- shipping AI-generated code without understanding how it works -- creates a dangerous illusion of productivity. The video walks through a concrete production failure (a Black Friday crash caused by an AI-generated search feature with no debouncing), then builds a case that the speed gains from AI-assisted coding are illusory when measured across the full lifecycle of code: initial writing, debugging, refactoring, and production maintenance.",
+      "url": "https://www.youtube.com/watch?v=ya6520zh4pQ"
+    },
+    {
+      "id": "043",
+      "type": "source",
+      "title": "Claude Code just replaced your ad agency - here's how",
+      "creator": "Agrici Daniel",
+      "date": "2026-02-12",
+      "tags": [
+        "claude-code",
+        "skills",
+        "skills-ecosystem",
+        "prompt-engineering",
+        "context-engineering",
+        "mcp"
+      ],
+      "modules": [
+        "03-claude-code-essentials",
+        "04-agentic-patterns"
+      ],
+      "summary": "Agrici Daniel demonstrates \"Cloudy Ads,\" a comprehensive Claude Code skill he built for paid advertising audit and campaign planning. The skill covers Google Ads, Meta, YouTube, LinkedIn, TikTok, and Microsoft Ads with over 190 audit checks, industry-specific templates, and parallel sub-agent delegation.",
+      "url": "https://www.youtube.com/watch?v=Kf7ejOtl5KU"
+    },
+    {
+      "id": "044",
+      "type": "source",
+      "title": "I Just Did a Full Day of Analyst Work in 10 Minutes. The $120K Job Description Just Changed Forever.",
+      "creator": "Nate B Jones",
+      "date": "2026-02-13",
+      "tags": [
+        "enterprise-ai",
+        "ai-economics",
+        "capability-overhang",
+        "anthropic"
+      ],
+      "modules": [
+        "01-foundations",
+        "06-strategy-and-economics"
+      ],
+      "summary": "Nate B Jones argues that Claude's integration into Excel and PowerPoint -- launched broadly in January-February 2026 -- is the most consequential yet under-discussed AI development of the week. He demonstrates that the same Opus 4.6 intelligence powering headline coding benchmarks now lives inside the productivity tools that a billion-plus knowledge workers use daily.",
+      "url": "https://www.youtube.com/watch?v=U1oHRqUkI1E"
+    },
+    {
+      "id": "045",
+      "type": "source",
+      "title": "Sam Altman said what???",
+      "creator": "ThePrimeTime",
+      "date": "2026-02-13",
+      "tags": [
+        "ai-safety",
+        "ai-economics",
+        "ai-hype",
+        "openai",
+        "ai-landscape"
+      ],
+      "modules": [
+        "01-foundations",
+        "06-strategy-and-economics"
+      ],
+      "summary": "ThePrimeTime reacts to highlights from OpenAI's developer town hall where Sam Altman fielded questions from approximately 50 AI builders. The video covers three key moments: Altman's prediction that GPT-5.2-level intelligence will be 100x cheaper by end of 2027, Theo's question about LLM monoculture locking developers into dominant frameworks, and \u2014 most critically \u2014 Altman's candid admission that AI-enabled bioterrorism could be the thing that goes \"visibly really wrong\" in 2026.",
+      "url": "https://www.youtube.com/watch?v=pfknyZhiMnU"
+    },
+    {
+      "id": "046",
+      "type": "source",
+      "title": "The Rise of WebMCP",
+      "creator": "Sam Witteveen",
+      "date": "2026-02-12",
+      "tags": [
+        "mcp",
+        "agentic-coding",
+        "ai-landscape",
+        "enterprise-ai"
+      ],
+      "modules": [
+        "01-foundations",
+        "04-agentic-patterns"
+      ],
+      "summary": "Sam Witteveen breaks down WebMCP, a new standard jointly developed by Google and Microsoft that shipped as an early preview in Chrome. WebMCP allows websites to expose structured tools directly to AI agents through the browser, eliminating the need for DOM scraping or screenshot-based interaction.",
+      "url": "https://www.youtube.com/watch?v=35oWt7u2b-g"
+    },
+    {
+      "id": "047",
+      "type": "source",
+      "title": "OpenAI's AI Browser Is a Security Nightmare",
+      "creator": "TheStandupPod",
+      "date": "2026-02-13",
+      "tags": [
+        "security",
+        "ai-hype",
+        "openai",
+        "chatgpt"
+      ],
+      "modules": [
+        "06-strategy-and-economics",
+        "01-foundations"
+      ],
+      "summary": "TheStandupPod panel (TJ, Casey, Trash, and others) dissects OpenAI's launch of an AI-powered browser built on Chromium, available only on macOS. The discussion quickly moves past the product announcement into a sustained critique of the fundamental security model: an AI agent with full browser access can be manipulated through prompt injection to access banking credentials, exfiltrate local files via `file://` protocol, and execute unauthorized actions on authenticated sessions.",
+      "url": "https://www.youtube.com/watch?v=C5U_AQStlbg"
+    },
+    {
+      "id": "048",
+      "type": "source",
+      "title": "Before You Build Another Agent, Understand This MIT Paper",
+      "creator": "Brainqub3",
+      "date": "2026-01-15",
+      "tags": [
+        "context-engineering",
+        "agentic-coding",
+        "ai-landscape"
+      ],
+      "modules": [
+        "01-foundations",
+        "04-agentic-patterns"
+      ],
+      "summary": "Brainqub3 breaks down the Recursive Language Models (RLM) paper by Alex Zhang, Tim Kraska (MIT), and Omar Khattab, arguing it represents a paradigm shift for AI agents working with complex, high-context tasks outside of software engineering. The core insight is that complex documents like legal contracts and codebases should be modeled as dependency graphs rather than linear text, and that a surprisingly simple mechanism \u2014 code execution plus recursion \u2014 can unlock reliable reasoning over them.",
+      "url": "https://www.youtube.com/watch?v=m1Tc5Xzw1tM"
+    },
+    {
+      "id": "049",
+      "type": "source",
+      "title": "Anthropic Found Out Why AIs Go Insane",
+      "creator": "Two Minute Papers (Dr. Karoly Zsolnai-Feher)",
+      "date": "2026-02-12",
+      "tags": [
+        "ai-safety",
+        "anthropic",
+        "ai-landscape"
+      ],
+      "modules": [
+        "01-foundations"
+      ],
+      "summary": "This video breaks down the Anthropic-affiliated research paper \"The Assistant Axis: Situating and Stabilizing the Default Persona of Language Models\" (January 2026), which identifies a geometric direction in model activation space \u2014 the \"assistant axis\" \u2014 that encodes how closely a model adheres to its helpful-assistant persona. The key finding: models naturally drift away from this axis during extended conversations, certain topic areas, and in response to emotionally charged interactions, leading to bizarre, unsafe, or delusional outputs.",
+      "url": "https://www.youtube.com/watch?v=eGpIXJ0C4ds"
+    },
+    {
+      "id": "050",
+      "type": "source",
+      "title": "We're Not Ready for What AI Is About to Do to the Economy",
+      "creator": "Sam Harris",
+      "date": "2026-02-13",
+      "tags": [
+        "ai-hype",
+        "ai-economics",
+        "ai-landscape",
+        "capability-overhang",
+        "revenue-per-employee"
+      ],
+      "modules": [
+        "01-foundations",
+        "06-strategy-and-economics"
+      ],
+      "summary": "Sam Harris reacts to Mustafa Suleyman's bombshell Financial Times interview in which the Microsoft AI CEO predicts that \"most if not all professional tasks\" \u2014 legal, accounting, project management, marketing \u2014 will be fully automated by AI within 12 to 18 months. Harris takes the prediction seriously, noting Suleyman's credibility as a DeepMind co-founder, and spends the conversation working through the cascading economic and political consequences of that timeline if it holds.",
+      "url": "https://www.youtube.com/watch?v=2rldvywEU8o"
+    },
+    {
+      "id": "051",
+      "type": "source",
+      "title": "You're using Claude Code Wrong - These 10 Tips Will Change Everything",
+      "creator": "Simon Scrapes | AI Automation",
+      "date": "2026-02-13",
+      "tags": [
+        "claude-code",
+        "agent-teams",
+        "skills",
+        "context-engineering",
+        "skills-ecosystem",
+        "validation"
+      ],
+      "modules": [
+        "03-claude-code-essentials",
+        "04-agentic-patterns",
+        "05-team-orchestration"
+      ],
+      "summary": "Simon Scrapes presents ten Claude Code techniques organized as a progressive stack, where each tip builds on the previous ones to create compounding returns. Unlike isolated trick compilations, the video emphasizes how agent teams, skills, hooks, slash commands, plugins, and CLAUDE.md discipline form an interconnected system.",
+      "url": "https://www.youtube.com/watch?v=V9atNrDjnZs"
+    },
+    {
+      "id": "052",
+      "type": "source",
+      "title": "Claude Isn't Safe. This Anthropic Whistleblower Has the Proof.",
+      "creator": "Novara Media",
+      "date": "2026-02-11",
+      "tags": [
+        "ai-safety",
+        "ai-hype",
+        "ai-economics",
+        "anthropic",
+        "ai-landscape"
+      ],
+      "modules": [
+        "01-foundations",
+        "06-strategy-and-economics"
+      ],
+      "summary": "This Novara Media segment examines Mrinank Sharma's resignation from Anthropic's Safeguards Research Team, using it as a springboard to discuss the intersection of AI safety risks, economic disruption, and geopolitical pressures driving unchecked AI development. Sharma, who led the team responsible for jailbreak robustness, automated red-teaming, and misuse monitoring, resigned with a public letter warning the \"world is in peril\" and that employees at Anthropic \"constantly face pressures to set aside what matters most.\" He is reportedly bound by an NDA, limiting what he can disclose.",
+      "url": "https://www.youtube.com/watch?v=lNNH-Ox_r04"
+    },
+    {
+      "id": "053",
+      "type": "source",
+      "title": "Episode 61: From AI Curiosity to Operational Traction: Where Work Tech Gets Real",
+      "creator": "HR.com (Brent Skinner & Jim Jensen)",
+      "date": "2026-02-12",
+      "tags": [
+        "enterprise-ai",
+        "ai-hype",
+        "capability-overhang"
+      ],
+      "modules": [
+        "01-foundations",
+        "06-strategy-and-economics"
+      ],
+      "summary": "Brent Skinner, host of HR.com's \"Future of Payroll and Workforce Management\" podcast, interviews Jim Jensen, CEO and founder of Traxxion.AI, a next-generation workforce management (WFM) platform. The conversation explores the gap between AI experimentation and operational value in enterprise HCM (Human Capital Management), with Jensen drawing on 35+ years of industry experience including executive roles at Ultimate Software and DayForce.",
+      "url": "https://www.youtube.com/watch?v=snK7p4MMKcs"
+    },
+    {
+      "id": "054",
+      "type": "source",
+      "title": "The Cursor Situation",
+      "creator": "Java Brains",
+      "date": "2026-02-13",
+      "tags": [
+        "ai-hype",
+        "agentic-coding",
+        "cursor",
+        "multi-agent",
+        "ai-economics"
+      ],
+      "modules": [
+        "01-foundations",
+        "05-team-orchestration",
+        "06-strategy-and-economics"
+      ],
+      "summary": "Java Brains dissects Cursor's blog post \"Scaling Long-Running Autonomous Coding,\" in which the company claimed to have built a web browser from scratch in one week using hundreds of concurrent AI agents powered by GPT-5.2. The video systematically dismantles the claim on three fronts: the browser does not compile, it was not built \"from scratch,\" and the estimated cost of $8-16 million in API tokens produced non-functional code.",
+      "url": "https://www.youtube.com/watch?v=yzqNWVvd2BM"
+    },
+    {
+      "id": "055",
+      "type": "source",
+      "title": "I Built an Open-Source Rig That Measures Multi-Agent Architectures",
+      "creator": "Brainqub3",
+      "date": "2026-02-13",
+      "tags": [
+        "multi-agent",
+        "agent-teams",
+        "enterprise-ai",
+        "agentic-coding"
+      ],
+      "modules": [
+        "05-team-orchestration",
+        "06-strategy-and-economics"
+      ],
+      "summary": "Brainqub3 presents Brain Cube Agent Labs, an open-source measurement rig for empirically comparing multi-agent architectures against a single-agent baseline. The tool is anchored on the Google Research paper \"Towards a Science of Scaling Agent Systems\" (arXiv 2512.08296), which derived a mixed-effects predictive model using coordination metrics such as efficiency, overhead, error amplification, redundancy, and message density.",
+      "url": "https://www.youtube.com/watch?v=hp45iivRoUc"
+    },
+    {
+      "id": "056",
+      "type": "source",
+      "title": "Dario Amodei \u2014 The highest-stakes financial model in history",
+      "creator": "Dwarkesh Patel",
+      "date": "2026-02-13",
+      "tags": [
+        "ai-economics",
+        "anthropic",
+        "ai-landscape",
+        "ai-safety",
+        "infrastructure",
+        "enterprise-ai",
+        "capability-overhang"
+      ],
+      "modules": [
+        "01-foundations",
+        "06-strategy-and-economics"
+      ],
+      "summary": "Dwarkesh Patel interviews Anthropic CEO Dario Amodei in a wide-ranging, deeply probing two-hour conversation that covers the state of AI scaling, the economics of frontier AI labs, AI's diffusion into the economy, geopolitics, safety governance, and Anthropic's internal culture. This is not a puff piece -- Dwarkesh repeatedly pushes back on Amodei's claims, challenging him on whether \"country of geniuses in a data center\" is imminent or whether the evidence better supports a more moderate timeline.",
+      "url": "https://www.youtube.com/watch?v=n1E9IZfvGMA"
+    },
+    {
+      "id": "057",
+      "type": "source",
+      "title": "Securing AI Agents with Zero Trust",
+      "creator": "IBM Technology",
+      "date": "2026-02-10",
+      "tags": [
+        "security",
+        "agentic-coding",
+        "enterprise-ai",
+        "multi-agent"
+      ],
+      "modules": [
+        "06-strategy-and-economics",
+        "04-agentic-patterns"
+      ],
+      "summary": "A cybersecurity architect from IBM walks through how zero trust principles \u2014 long co-opted as vendor marketing \u2014 map directly onto the new threat surfaces created by agentic AI systems. The video first recaps core zero trust tenets (verify then trust, least privilege, assume breach, pervasive controls) and then systematically applies each to an agentic architecture where AI agents use non-human identities, call tools, spawn sub-agents, and move data autonomously.",
+      "url": "https://www.youtube.com/watch?v=d8d9EZHU7fw"
+    },
+    {
+      "id": "058",
+      "type": "source",
+      "title": "The TRUTH About OpenClaw AI Agents (And How I'm Using Them)",
+      "creator": "Jeremiah Krakowski",
+      "date": "2026-02-13",
+      "tags": [
+        "ai-hype",
+        "multi-agent",
+        "security",
+        "enterprise-ai",
+        "ai-economics"
+      ],
+      "modules": [
+        "01-foundations",
+        "05-team-orchestration",
+        "06-strategy-and-economics"
+      ],
+      "summary": "Jeremiah Krakowski, an online business coach and marketer, presents his personal setup for running OpenClaw agents (formerly Claudebot/Moltbot) as \"virtual employees\" for his business. He walks through his hardware choices (an M1 Mac Mini purchased off eBay for under $300, plus cloud VPS instances on Hetzner), his communication layer (Slack channels per agent, Jump Desktop for remote access), and the various agent-built tools he uses daily -- a kanban project management board, ad generators, email writers, content calendars, and a telehealth platform for a client.",
+      "url": "https://www.youtube.com/watch?v=yKdqXV3QEZ8"
+    },
+    {
+      "id": "059",
+      "type": "source",
+      "title": "Why $650 Billion in AI Spending ISN'T Enough. The 4 Skills that Survive and What This Means for You.",
+      "creator": "Nate B Jones",
+      "date": "2026-02-14",
+      "tags": [
+        "ai-economics",
+        "infrastructure",
+        "enterprise-ai",
+        "ai-hype",
+        "capability-overhang",
+        "ai-landscape",
+        "agentic-coding"
+      ],
+      "modules": [
+        "01-foundations",
+        "06-strategy-and-economics"
+      ],
+      "summary": "Nate B Jones argues that the dominant narrative around AI infrastructure spending has undergone a violent inversion in a matter of weeks. Six months ago, the consensus -- anchored by Goldman Sachs research notes, Sequoia's \"$600 billion question\" analysis, and widespread financial media coverage -- was that Big Tech's AI spending had decoupled from reality and was a bubble.",
+      "url": "https://www.youtube.com/watch?v=NCgdpbEvNVA"
+    },
+    {
+      "id": "060",
+      "type": "source",
+      "title": "The 100x AI Breakthrough No One is Talking About",
+      "creator": "Prompt Engineering",
+      "date": "2026-02-14",
+      "tags": [
+        "ai-landscape",
+        "agentic-coding",
+        "ai-economics",
+        "infrastructure"
+      ],
+      "modules": [
+        "01-foundations",
+        "04-agentic-patterns"
+      ],
+      "summary": "Prompt Engineering breaks down Google DeepMind's Gemini 3 Deep Think release, arguing that most coverage fixated on benchmark numbers while missing the three distinct announcements bundled together: the Deep Think v2 product update for subscribers, the Althia research agent, and two arXiv papers documenting 18 solved research problems. The video's central thesis is that the real story is the widening gap between what ships to consumers and what is happening in the research lab.",
+      "url": "https://www.youtube.com/watch?v=MNiF8pPTao8"
+    },
+    {
+      "id": "061",
+      "type": "source",
+      "title": "Become an AI-first construction company: Strategy, Systems and Use-Cases",
+      "creator": "Tim Fairley",
+      "date": "2026-02-14",
+      "tags": [
+        "enterprise-ai",
+        "ai-hype",
+        "capability-overhang"
+      ],
+      "modules": [
+        "01-foundations",
+        "06-strategy-and-economics"
+      ],
+      "summary": "Tim Fairley delivers a grounded, practitioner-level guide to AI adoption in the construction industry, offering one of the clearest frameworks for separating genuine AI value from hype in a traditional industry context. His central thesis is that AI's future is \"massively overhyped\" but its current capabilities are \"largely underhyped\" -- a nuanced position that rejects both techno-utopianism and dismissiveness.",
+      "url": "https://www.youtube.com/watch?v=DdtEcsR35Yg"
+    },
+    {
+      "id": "062",
+      "type": "source",
+      "title": "Every Level of Claude Code Explained in 39 Minutes",
+      "creator": "Simon Scrapes",
+      "date": "2026-02-07",
+      "tags": [
+        "claude-code",
+        "skills",
+        "context-engineering",
+        "mcp",
+        "agentic-coding",
+        "multi-agent",
+        "agent-teams",
+        "skills-ecosystem"
+      ],
+      "modules": [
+        "03-claude-code-essentials",
+        "04-agentic-patterns",
+        "05-team-orchestration"
+      ],
+      "summary": "Simon Scrapes presents a structured progression through seven levels of Claude Code mastery, from basic prompting with intent all the way to fully autonomous pipelines. Drawing from 150+ hours of hands-on usage and studying resources from Claude Code creator Boris Cherny, he walks through each level using a practical running example: building a social media content creation system.",
+      "url": "https://www.youtube.com/watch?v=Y09u_S3w2c8"
+    },
+    {
+      "id": "063",
+      "type": "source",
+      "title": "Claude Cowork Just Became 10x Better (Plugins Guide)",
+      "creator": "Ben AI",
+      "date": "2026-02-14",
+      "tags": [
+        "skills",
+        "skills-ecosystem",
+        "enterprise-ai",
+        "ai-economics",
+        "mcp",
+        "anthropic"
+      ],
+      "modules": [
+        "03-claude-code-essentials",
+        "06-strategy-and-economics"
+      ],
+      "summary": "Ben AI walks through Anthropic's new plugins system for Claude Cowork (the non-developer-facing counterpart to Claude Code), arguing that plugins represent a fundamental shift in how businesses interact with software. Plugins bundle skills, connections (MCPs, built-in connectors, browser access, local files), and slash commands into department-specific packages \u2014 effectively turning Claude into a single interface that sits between a user and all their SaaS tools.",
+      "url": "https://www.youtube.com/watch?v=sgSrcSUck7U"
+    },
+    {
+      "id": "064",
+      "type": "source",
+      "title": "One Prompt Every AGENTIC Codebase Should Have (For Engineering Teams)",
+      "creator": "IndyDevDan",
+      "date": "2026-01-26",
+      "tags": [
+        "agentic-coding",
+        "claude-code",
+        "prompt-engineering",
+        "context-engineering",
+        "ai-sdlc"
+      ],
+      "modules": [
+        "03-claude-code-essentials",
+        "04-agentic-patterns"
+      ],
+      "summary": "IndyDevDan argues that every agentic codebase should have a standardized install/maintain prompt -- a natural language document that combines deterministic setup scripts with agentic intelligence to handle codebase installation, onboarding, and ongoing maintenance. The video introduces Claude Code's new setup hook (supporting `init` and `maintenance` lifecycle events) and demonstrates how to layer agentic prompts on top of these hooks to create interactive, self-healing installation workflows.",
+      "url": "https://www.youtube.com/watch?v=3_mwKbYvbUg"
+    },
+    {
+      "id": "065",
+      "type": "source",
+      "title": "SaaS-pocalypse: The Death of Seat-Based Software vs. The $600B AI Arms Race",
+      "creator": "Griffonomics",
+      "date": "2026-02-13",
+      "tags": [
+        "ai-economics",
+        "ai-hype",
+        "enterprise-ai",
+        "infrastructure",
+        "ai-landscape",
+        "capability-overhang",
+        "vibe-coding",
+        "revenue-per-employee"
+      ],
+      "modules": [
+        "01-foundations",
+        "06-strategy-and-economics"
+      ],
+      "summary": "Griffonomics presents a deep-dive analysis of the violent bifurcation happening in the tech sector: traditional SaaS companies built on seat-based pricing are being decimated while AI infrastructure players hit all-time highs. The video frames this as a structural shift from the \"tool era\" to the \"agentic era\" of software, where AI agents replace human workers and collapse the per-seat revenue model that powered the SaaS industry for two decades.",
+      "url": "https://www.youtube.com/watch?v=g8kSm3YvV7E"
+    },
+    {
+      "id": "066",
+      "type": "source",
+      "title": "How to use Claude Cowork better than 99% of people (full tutorial)",
+      "creator": "Brooke Wright",
+      "date": "2026-02-11",
+      "tags": [
+        "claude-code",
+        "enterprise-ai",
+        "skills-ecosystem",
+        "ai-economics",
+        "capability-overhang"
+      ],
+      "modules": [
+        "01-foundations",
+        "03-claude-code-essentials"
+      ],
+      "summary": "Brooke Wright, a consultant who helps women entrepreneurs build AI-first businesses, walks through five real-world use cases of Claude Co-work \u2014 Anthropic's bridge product between Claude Chat and Claude Code aimed at non-technical users. The video is a practitioner tutorial demonstrating file organization, podcast-to-shorts video clipping, content gap analysis via Google Drive connectors, email campaign auditing with a marketing plugin, and productivity dashboard setup pulling from calendar and Notion.",
+      "url": "https://www.youtube.com/watch?v=oC1e0sqhJew"
+    },
+    {
+      "id": "067",
+      "type": "source",
+      "title": "Learn 90% Of Claude Code Agent Teams in 22 Minutes (Opus 4.6)",
+      "creator": "Bart Slodyczka",
+      "date": "2026-02-13",
+      "tags": [
+        "agent-teams",
+        "multi-agent",
+        "claude-code",
+        "context-engineering",
+        "skills"
+      ],
+      "modules": [
+        "05-team-orchestration",
+        "03-claude-code-essentials"
+      ],
+      "summary": "Bart Slodyczka delivers a comprehensive walkthrough of Claude Code's agent teams feature, structured as a course covering the full lifecycle: conceptual overview, environment setup, session management, team interaction via tmux, graceful shutdown, and reusable skills for future teams. The video is positioned as a follow-up to his earlier agent teams demo ([004](004-bart-slodyczka-agent-teams.md)), shifting from \"look what this can do\" to \"here's how to use it properly.\"  The core pedagogical contribution is a clear three-mode mental model for Claude Code usage: default mode (single session), sub-agent mode (delegated tasks within one session), and agent teams mode (multiple independent sessions with peer communication).",
+      "url": "https://www.youtube.com/watch?v=cSkoaCCmq0w"
+    },
+    {
+      "id": "068",
+      "type": "source",
+      "title": "The Organizational Physics of Multi-Agent Systems",
+      "creator": "Jeremy McEntire",
+      "date": "2026-02-14",
+      "tags": [
+        "multi-agent",
+        "agent-teams",
+        "agentic-coding",
+        "ai-hype"
+      ],
+      "modules": [
+        "05-team-orchestration",
+        "04-agentic-patterns"
+      ],
+      "summary": "Jeremy McEntire, author of *The Cage and the Mirror*, shares results from a controlled experiment comparing four multi-agent architectures building the same backend services. The results are striking: a single agent scored 28/28, while the \"Organizational Swarm\" (a gated pipeline mimicking corporate structure) scored 0/28 \u2014 failing to produce a single line of implementation code.",
+      "url": "https://www.linkedin.com/posts/jandrewmcentire_the-organizational-physics-of-multi-agent-activity-7428538265881948161-wiBo"
+    },
+    {
+      "id": "069",
+      "type": "source",
+      "title": "GitHub Agentic Workflows \u2014 Continuous AI as Repository Infrastructure",
+      "creator": "Eddie Aftandilian",
+      "date": "2026-02-14",
+      "tags": [
+        "agentic-coding",
+        "ai-sdlc",
+        "enterprise-ai",
+        "multi-agent"
+      ],
+      "modules": [
+        "04-agentic-patterns",
+        "06-strategy-and-economics"
+      ],
+      "summary": "Eddie Aftandilian, Principal Researcher at GitHub Next, describes how GitHub has deployed over 100 agentic workflows on their own `gh-aw` repository and how the experience changed how they think about AI in development. The key insight is not the announcement itself but what happened operationally: the real leverage wasn't in automating discrete tasks (issue triage, routine automation) but in applying **continuous pressure** to areas of the codebase that are never really \"done\" \u2014 code quality, test coverage, performance, dependency usage.",
+      "url": "https://github.github.io/gh-aw/blog/2026-01-12-welcome-to-pelis-agent-factory/"
+    },
+    {
+      "id": "070",
+      "type": "source",
+      "title": "Handoff Drift \u2014 Why Anthropic PMs Vibe Code Instead of Writing PRDs",
+      "creator": "Dhyey Mavani",
+      "date": "2026-02-14",
+      "tags": [
+        "ai-sdlc",
+        "vibe-coding",
+        "capability-overhang",
+        "enterprise-ai"
+      ],
+      "modules": [
+        "06-strategy-and-economics",
+        "02-prompting-and-workflows"
+      ],
+      "summary": "Dhyey Mavani describes a concrete workflow change at Anthropic: product managers don't write PRDs. Instead, they use Claude Code to build the first version of the feature themselves, then ship an experiment.",
+      "url": "https://www.linkedin.com/in/dhyey-mavani/"
+    },
+    {
+      "id": "071",
+      "type": "source",
+      "title": "Future of Software Development \u2014 Deer Valley Retreat Fragments",
+      "creator": "Martin Fowler",
+      "date": "2026-02-13",
+      "tags": [
+        "ai-sdlc",
+        "vibe-coding",
+        "capability-overhang",
+        "context-engineering",
+        "enterprise-ai",
+        "ai-hype"
+      ],
+      "modules": [
+        "01-foundations",
+        "02-prompting-and-workflows",
+        "06-strategy-and-economics"
+      ],
+      "summary": "Martin Fowler publishes three sets of fragments from a February 2026 workshop in Deer Valley, Utah \u2014 a gathering of ~50 participants (Thoughtworks employees, industry experts, and clients) convened to discuss how AI and LLMs are reshaping software development. The event coincided with the 25th anniversary of the Agile Manifesto, lending the discussion historical weight.",
+      "url": "https://martinfowler.com/bliki/FutureOfSoftwareDevelopment.html"
+    },
+    {
+      "id": "072",
+      "type": "source",
+      "title": "Build ANYTHING: Google Antigravity + Convex + Clerk",
+      "creator": "Income stream surfers",
+      "date": "2026-02-14",
+      "tags": [
+        "vibe-coding",
+        "ai-landscape"
+      ],
+      "modules": [
+        "02-prompting-and-workflows"
+      ],
+      "summary": "A practical walkthrough demonstrating how to scaffold a full SaaS application in roughly 15 minutes using Google AI Studio (Antigravity), Convex as a backend/database, and Clerk for authentication. The creator responds to a common viewer complaint \u2014 \"vibe coding never works for me\" \u2014 by showing that the real issue is trying to build everything in a single giant prompt rather than incrementally setting up the project's foundation first.",
+      "url": "https://www.youtube.com/watch?v=tamKDJ9n91k"
+    },
+    {
+      "id": "073",
+      "type": "source",
+      "title": "Claude Code Agents Are Completely Useless",
+      "creator": "Tom Delalande",
+      "date": "2026-02-15",
+      "tags": [
+        "ai-hype",
+        "agentic-coding",
+        "anthropic"
+      ],
+      "modules": [
+        "01-foundations",
+        "04-agentic-patterns"
+      ],
+      "summary": "A sharp, technically grounded critique of Anthropic's high-profile C compiler project built by Claude Code agents. Tom Delalande systematically tests the claims in the project's repository \u2014 that it can compile Hello World and the Linux kernel \u2014 and finds significant gaps between marketing and reality.",
+      "url": "https://www.youtube.com/watch?v=2_b8HM-OfMU"
+    },
+    {
+      "id": "074",
+      "type": "source",
+      "title": "The End of Programming as we Know It",
+      "creator": "NeetCode",
+      "date": "2026-02-15",
+      "tags": [
+        "ai-landscape",
+        "capability-overhang",
+        "vibe-coding"
+      ],
+      "modules": [
+        "01-foundations",
+        "06-strategy-and-economics"
+      ],
+      "summary": "NeetCode revisits Tim O'Reilly's year-old article \"The End of Programming as We Know It\" through the lens of what has actually changed in the intervening months. The video is notably honest and introspective \u2014 the creator openly admits he was wrong about certain assessments and frames his perspective as neither pro-AI nor anti-AI, but in pursuit of reality.",
+      "url": "https://www.youtube.com/watch?v=7z4Nl1WjE9I"
+    },
+    {
+      "id": "075",
+      "type": "source",
+      "title": "Stop Shipping AI Slop. Design with Weavy AI, Claude etc.",
+      "creator": "Greg Isenberg",
+      "date": "2026-02-13",
+      "tags": [
+        "vibe-coding",
+        "ai-landscape",
+        "prompt-engineering"
+      ],
+      "modules": [
+        "02-prompting-and-workflows"
+      ],
+      "summary": "A detailed walkthrough with designer Sariah (who sold her last company to Snap) demonstrating how to transform a generic vibe-coded app into a professionally branded product. The core argument is that vibe coding has solved the \"what does the app do\" problem but has created a new problem: everything looks the same and nobody wants to download yet another generic app.",
+      "url": "https://www.youtube.com/watch?v=9OnN4O4uapI"
+    },
+    {
+      "id": "076",
+      "type": "source",
+      "title": "The Job Market Split Nobody's Talking About",
+      "creator": "Nate B Jones",
+      "date": "2026-02-15",
+      "tags": [
+        "ai-economics",
+        "capability-overhang",
+        "enterprise-ai",
+        "ai-landscape",
+        "specification"
+      ],
+      "modules": [
+        "01-foundations",
+        "06-strategy-and-economics"
+      ],
+      "summary": "Nate B Jones presents a comprehensive framework for understanding how AI is restructuring the job market \u2014 not just for software engineers, but for all knowledge workers. The central thesis is that the bottleneck in software (and by extension all knowledge work) has shifted from production to specification.",
+      "url": "https://www.youtube.com/watch?v=RtMLnCMv3do"
+    },
+    {
+      "id": "077",
+      "type": "source",
+      "title": "The A.I. Job Loss Hoax",
+      "creator": "Wall Street Millennial",
+      "date": "2026-02-15",
+      "tags": [
+        "ai-hype",
+        "ai-economics",
+        "capability-overhang",
+        "vibe-coding"
+      ],
+      "modules": [
+        "01-foundations",
+        "06-strategy-and-economics"
+      ],
+      "summary": "Wall Street Millennial delivers a data-driven debunking of the narrative that AI is imminently replacing human jobs, with a particular focus on software engineering. The video argues that AI CEOs like Dario Amodei deliberately amplify job displacement fears because their business models depend on enterprises believing AI can replace workers \u2014 the only way to justify large AI spending.",
+      "url": "https://www.youtube.com/watch?v=17KvQYyrBEQ"
+    },
+    {
+      "id": "078",
+      "type": "source",
+      "title": "N8N is Failing Us\u2026",
+      "creator": "Simon Scrapes",
+      "date": "2026-02-15",
+      "tags": [
+        "agentic-coding",
+        "claude-code",
+        "mcp",
+        "enterprise-ai"
+      ],
+      "modules": [
+        "03-claude-code-essentials",
+        "06-strategy-and-economics"
+      ],
+      "summary": "Simon Scrapes \u2014 who has taught n8n for over two years \u2014 provides an honest comparison of n8n and Claude Code, arguing they are complementary tools rather than competitors. The video identifies three gaps where Claude Code has surpassed n8n (speed of building, product capability, scalability) while defending n8n's irreplaceable strength in visual observability and debugging for non-technical teams.",
+      "url": "https://www.youtube.com/watch?v=5U3D6o6Gi_g"
+    },
+    {
+      "id": "079",
+      "type": "source",
+      "title": "Anthropic's Full Claude Skills Guide In 22 Minutes",
+      "creator": "Mark Kashef",
+      "date": "2026-02-15",
+      "tags": [
+        "skills",
+        "claude-code",
+        "skills-ecosystem",
+        "mcp",
+        "context-engineering"
+      ],
+      "modules": [
+        "03-claude-code-essentials",
+        "04-agentic-patterns"
+      ],
+      "summary": "Mark Kashef synthesizes Anthropic's 33-page official skills guide into a visual, diagrammed walkthrough covering all six chapters: fundamentals, planning and design, testing and iteration, distribution and sharing, patterns and troubleshooting, and resources. The video goes beyond summarization by providing concrete good vs.",
+      "url": "https://www.youtube.com/watch?v=TzJecWCbex0"
+    },
+    {
+      "id": "080",
+      "type": "source",
+      "title": "Biggest Breakthroughs in Computer Science: 2025",
+      "creator": "Quanta Magazine",
+      "date": "2026-02-15",
+      "tags": [
+        "ai-landscape",
+        "infrastructure"
+      ],
+      "modules": [
+        "01-foundations"
+      ],
+      "summary": "Quanta Magazine highlights three major breakthroughs in computer science from 2025 that challenge long-held theoretical assumptions. While not directly about AI, these advances in hash table design, quantum error correction, and computational space-time trade-offs represent fundamental shifts in how we think about computing efficiency \u2014 with potential downstream implications for the infrastructure that powers AI systems.",
+      "url": "https://www.youtube.com/watch?v=DFwppvrL_pE"
+    },
+    {
+      "id": "081",
+      "type": "source",
+      "title": "Why OpenAI Just 'Acquired' The Biggest Open Source Agent",
+      "creator": "Prompt Engineering",
+      "date": "2026-02-16",
+      "tags": [
+        "ai-landscape",
+        "openai",
+        "security",
+        "multi-agent"
+      ],
+      "modules": [
+        "01-foundations",
+        "06-strategy-and-economics"
+      ],
+      "summary": "Prompt Engineering covers the breaking news of OpenClaw creator Peter Steinberg joining OpenAI while OpenClaw transitions to an independent foundation. The video traces the turbulent timeline of the project \u2014 from personal project to viral phenomenon to forced name changes (Claudebot \u2192 Moldbot \u2192 OpenClaw) \u2014 and analyzes the strategic implications for OpenAI, Anthropic, and the personal agent ecosystem.",
+      "url": "https://www.youtube.com/watch?v=X7aCE47PgmM"
+    },
+    {
+      "id": "082",
+      "type": "source",
+      "title": "Only 40 lines of code",
+      "creator": "The PrimeTime",
+      "date": "2026-02-16",
+      "tags": [
+        "ai-landscape",
+        "infrastructure"
+      ],
+      "modules": [
+        "01-foundations",
+        "06-strategy-and-economics"
+      ],
+      "summary": "ThePrimeTime walks through a fascinating OpenJDK commit where a 40-line code change eliminated a 400x performance gap in getting thread CPU time. The fix replaced a convoluted approach that read from `/proc` files, did string parsing, and ran `scanf` operations with a direct `clock_gettime` syscall.",
+      "url": "https://www.youtube.com/watch?v=R3ydGMRtnqU"
+    },
+    {
+      "id": "083",
+      "type": "source",
+      "title": "5 INSANE Claude CoWork use cases (Build Anything)",
+      "creator": "Jack Roberts",
+      "date": "2026-02-16",
+      "tags": [
+        "claude-code",
+        "skills",
+        "mcp",
+        "skills-ecosystem"
+      ],
+      "modules": [
+        "03-claude-code-essentials",
+        "04-agentic-patterns"
+      ],
+      "summary": "Jack Roberts delivers a practical walkthrough of Claude Cowork (Anthropic's desktop agent product), demonstrating five progressively more powerful use cases: file management, browser automation, service connectors (Gmail, Calendar, Fireflies, Canva, Notion), skills creation, and plugins. The video is aimed at entrepreneurs and non-technical business users, positioning Cowork as a \"500 IQ personal assistant\" rather than a coding tool.",
+      "url": "https://www.youtube.com/watch?v=EZdSVpgtjG0"
+    },
+    {
+      "id": "084",
+      "type": "source",
+      "title": "This Simple 60% Rule Stops Context Rot in ChatGPT, Claude & Gemini",
+      "creator": "Dylan Davis",
+      "date": "2026-01-17",
+      "tags": [
+        "context-engineering",
+        "prompt-engineering",
+        "chatgpt"
+      ],
+      "modules": [
+        "02-prompting-and-workflows",
+        "03-claude-code-essentials"
+      ],
+      "summary": "Dylan Davis explains the phenomenon of \"context rot\" -- the progressive degradation of AI performance as conversations grow longer and fill up the model's context window. He introduces the \"60% rule\": once you've used approximately 60% of a model's context window, performance starts to degrade noticeably, and by 95% it degrades rapidly.",
+      "url": "https://www.youtube.com/watch?v=xaQG-eD9d58"
+    },
+    {
+      "id": "085",
+      "type": "source",
+      "title": "AI Isn't The Future. It's Medieval Alchemy.",
+      "creator": "Medieval Mindset",
+      "date": "2026-02-09",
+      "tags": [
+        "ai-hype",
+        "ai-economics",
+        "infrastructure"
+      ],
+      "modules": [
+        "01-foundations",
+        "06-strategy-and-economics"
+      ],
+      "summary": "Medieval Mindset draws an extended historical parallel between the modern AI industry and medieval alchemy, arguing that the same psychological patterns -- grandiose promises of universal transformation, a black-box process nobody fully understands, and charismatic leaders selling future implications over present reality -- recur across a thousand years of human history. The video is a humanities-inflected critique of AI hype, grounding familiar industry talking points in specific medieval figures and texts.",
+      "url": "https://www.youtube.com/watch?v=Sb1RMuwbzhE"
+    },
+    {
+      "id": "086",
+      "type": "source",
+      "title": "The 12-Point Gap Between Codex and Claude That Nobody's Talking About",
+      "creator": "Nate B Jones",
+      "date": "2026-02-16",
+      "tags": [
+        "ai-landscape",
+        "agentic-coding",
+        "enterprise-ai",
+        "multi-agent"
+      ],
+      "modules": [
+        "01-foundations",
+        "04-agentic-patterns",
+        "06-strategy-and-economics"
+      ],
+      "summary": "Nate B Jones analyzes the philosophical divergence between OpenAI's Codex and Anthropic's Claude, which shipped within 20 minutes of each other. Rather than framing this as a benchmark horse race, Jones argues the real story is two fundamentally different visions of what AI agents should do: Codex bets on autonomous correctness through delegation (hand it off, walk away), while Claude bets on integration and coordination across existing workflows and tools.",
+      "url": "https://www.youtube.com/watch?v=41UDGsBEjoI"
+    },
+    {
+      "id": "087",
+      "type": "source",
+      "title": "Daniel Guetta on the Guts of AI, Agentic AI & Why LLMs Hallucinate",
+      "creator": "Steve Eisman",
+      "date": "2026-02-16",
+      "tags": [
+        "ai-landscape",
+        "ai-hype",
+        "ai-economics",
+        "enterprise-ai"
+      ],
+      "modules": [
+        "01-foundations",
+        "06-strategy-and-economics"
+      ],
+      "summary": "Steve Eisman (of \"The Big Short\" fame) interviews Columbia Business School professor Daniel Guetta for an accessible, investor-oriented deep dive into how LLMs actually work \u2014 from embeddings and transformers to hallucinations and agentic AI. The conversation bridges the gap between Wall Street's AI narrative and technical reality, offering a non-hype perspective on what these models can and cannot do.",
+      "url": "https://www.youtube.com/watch?v=Rv_rPAQ3M9Q"
+    },
+    {
+      "id": "088",
+      "type": "source",
+      "title": "My 4-Layer Agentic Browser Automation Stack (Skill, Subagent, Prompt, ????)",
+      "creator": "IndyDevDan",
+      "date": "2026-02-16",
+      "tags": [
+        "skills",
+        "agentic-coding",
+        "multi-agent",
+        "claude-code"
+      ],
+      "modules": [
+        "03-claude-code-essentials",
+        "04-agentic-patterns"
+      ],
+      "summary": "IndyDevDan presents \"Bowser,\" a four-layer architecture for agentic browser automation and UI testing built on Claude Code. The layers \u2014 Skills (capability), Subagents (scale), Commands/Prompts (orchestration), and Justfiles (reusability) \u2014 form a composable stack that solves entire classes of problems rather than individual tasks.",
+      "url": "https://www.youtube.com/watch?v=efctPj6bjCY"
+    },
+    {
+      "id": "tag:agent-teams",
+      "type": "tag",
+      "label": "agent-teams",
+      "count": 12
+    },
+    {
+      "id": "tag:agentic-coding",
+      "type": "tag",
+      "label": "agentic-coding",
+      "count": 32
+    },
+    {
+      "id": "tag:ai-economics",
+      "type": "tag",
+      "label": "ai-economics",
+      "count": 28
+    },
+    {
+      "id": "tag:ai-hype",
+      "type": "tag",
+      "label": "ai-hype",
+      "count": 29
+    },
+    {
+      "id": "tag:ai-landscape",
+      "type": "tag",
+      "label": "ai-landscape",
+      "count": 36
+    },
+    {
+      "id": "tag:ai-safety",
+      "type": "tag",
+      "label": "ai-safety",
+      "count": 5
+    },
+    {
+      "id": "tag:ai-sdlc",
+      "type": "tag",
+      "label": "ai-sdlc",
+      "count": 9
+    },
+    {
+      "id": "tag:anthropic",
+      "type": "tag",
+      "label": "anthropic",
+      "count": 10
+    },
+    {
+      "id": "tag:builder-validator",
+      "type": "tag",
+      "label": "builder-validator",
+      "count": 1
+    },
+    {
+      "id": "tag:capability-overhang",
+      "type": "tag",
+      "label": "capability-overhang",
+      "count": 22
+    },
+    {
+      "id": "tag:career-collapse",
+      "type": "tag",
+      "label": "career-collapse",
+      "count": 1
+    },
+    {
+      "id": "tag:chatgpt",
+      "type": "tag",
+      "label": "chatgpt",
+      "count": 3
+    },
+    {
+      "id": "tag:claude-code",
+      "type": "tag",
+      "label": "claude-code",
+      "count": 23
+    },
+    {
+      "id": "tag:context-engineering",
+      "type": "tag",
+      "label": "context-engineering",
+      "count": 18
+    },
+    {
+      "id": "tag:cursor",
+      "type": "tag",
+      "label": "cursor",
+      "count": 1
+    },
+    {
+      "id": "tag:enterprise-ai",
+      "type": "tag",
+      "label": "enterprise-ai",
+      "count": 29
+    },
+    {
+      "id": "tag:infrastructure",
+      "type": "tag",
+      "label": "infrastructure",
+      "count": 10
+    },
+    {
+      "id": "tag:mcp",
+      "type": "tag",
+      "label": "mcp",
+      "count": 10
+    },
+    {
+      "id": "tag:meta-prompts",
+      "type": "tag",
+      "label": "meta-prompts",
+      "count": 1
+    },
+    {
+      "id": "tag:multi-agent",
+      "type": "tag",
+      "label": "multi-agent",
+      "count": 18
+    },
+    {
+      "id": "tag:openai",
+      "type": "tag",
+      "label": "openai",
+      "count": 5
+    },
+    {
+      "id": "tag:prompt-engineering",
+      "type": "tag",
+      "label": "prompt-engineering",
+      "count": 10
+    },
+    {
+      "id": "tag:revenue-per-employee",
+      "type": "tag",
+      "label": "revenue-per-employee",
+      "count": 2
+    },
+    {
+      "id": "tag:security",
+      "type": "tag",
+      "label": "security",
+      "count": 6
+    },
+    {
+      "id": "tag:skills",
+      "type": "tag",
+      "label": "skills",
+      "count": 14
+    },
+    {
+      "id": "tag:skills-ecosystem",
+      "type": "tag",
+      "label": "skills-ecosystem",
+      "count": 12
+    },
+    {
+      "id": "tag:specification",
+      "type": "tag",
+      "label": "specification",
+      "count": 3
+    },
+    {
+      "id": "tag:task-system",
+      "type": "tag",
+      "label": "task-system",
+      "count": 3
+    },
+    {
+      "id": "tag:validation",
+      "type": "tag",
+      "label": "validation",
+      "count": 3
+    },
+    {
+      "id": "tag:vibe-coding",
+      "type": "tag",
+      "label": "vibe-coding",
+      "count": 15
+    },
+    {
+      "id": "mod:01-foundations",
+      "type": "module",
+      "label": "Foundations",
+      "order": 1
+    },
+    {
+      "id": "mod:02-prompting-and-workflows",
+      "type": "module",
+      "label": "Prompting & Workflows",
+      "order": 2
+    },
+    {
+      "id": "mod:03-claude-code-essentials",
+      "type": "module",
+      "label": "Claude Code Essentials",
+      "order": 3
+    },
+    {
+      "id": "mod:04-agentic-patterns",
+      "type": "module",
+      "label": "Agentic Patterns",
+      "order": 4
+    },
+    {
+      "id": "mod:05-team-orchestration",
+      "type": "module",
+      "label": "Team Orchestration",
+      "order": 5
+    },
+    {
+      "id": "mod:06-strategy-and-economics",
+      "type": "module",
+      "label": "Strategy & Economics",
+      "order": 6
+    }
+  ],
+  "edges": [
+    {
+      "source": "001",
+      "target": "004",
+      "type": "related"
+    },
+    {
+      "source": "001",
+      "target": "tag:agentic-coding",
+      "type": "tag"
+    },
+    {
+      "source": "001",
+      "target": "tag:task-system",
+      "type": "tag"
+    },
+    {
+      "source": "001",
+      "target": "tag:builder-validator",
+      "type": "tag"
+    },
+    {
+      "source": "001",
+      "target": "tag:meta-prompts",
+      "type": "tag"
+    },
+    {
+      "source": "001",
+      "target": "mod:04-agentic-patterns",
+      "type": "curriculum"
+    },
+    {
+      "source": "002",
+      "target": "003",
+      "type": "related"
+    },
+    {
+      "source": "002",
+      "target": "005",
+      "type": "related"
+    },
+    {
+      "source": "002",
+      "target": "tag:anthropic",
+      "type": "tag"
+    },
+    {
+      "source": "002",
+      "target": "tag:ai-safety",
+      "type": "tag"
+    },
+    {
+      "source": "002",
+      "target": "tag:enterprise-ai",
+      "type": "tag"
+    },
+    {
+      "source": "002",
+      "target": "mod:06-strategy-and-economics",
+      "type": "curriculum"
+    },
+    {
+      "source": "003",
+      "target": "002",
+      "type": "related"
+    },
+    {
+      "source": "003",
+      "target": "004",
+      "type": "related"
+    },
+    {
+      "source": "003",
+      "target": "tag:ai-landscape",
+      "type": "tag"
+    },
+    {
+      "source": "003",
+      "target": "tag:claude-code",
+      "type": "tag"
+    },
+    {
+      "source": "003",
+      "target": "tag:chatgpt",
+      "type": "tag"
+    },
+    {
+      "source": "003",
+      "target": "mod:01-foundations",
+      "type": "curriculum"
+    },
+    {
+      "source": "004",
+      "target": "001",
+      "type": "related"
+    },
+    {
+      "source": "004",
+      "target": "003",
+      "type": "related"
+    },
+    {
+      "source": "004",
+      "target": "tag:agent-teams",
+      "type": "tag"
+    },
+    {
+      "source": "004",
+      "target": "tag:multi-agent",
+      "type": "tag"
+    },
+    {
+      "source": "004",
+      "target": "tag:claude-code",
+      "type": "tag"
+    },
+    {
+      "source": "004",
+      "target": "mod:05-team-orchestration",
+      "type": "curriculum"
+    },
+    {
+      "source": "005",
+      "target": "002",
+      "type": "related"
+    },
+    {
+      "source": "005",
+      "target": "001",
+      "type": "related"
+    },
+    {
+      "source": "005",
+      "target": "tag:vibe-coding",
+      "type": "tag"
+    },
+    {
+      "source": "005",
+      "target": "tag:specification",
+      "type": "tag"
+    },
+    {
+      "source": "005",
+      "target": "tag:prompt-engineering",
+      "type": "tag"
+    },
+    {
+      "source": "005",
+      "target": "mod:02-prompting-and-workflows",
+      "type": "curriculum"
+    },
+    {
+      "source": "006",
+      "target": "007",
+      "type": "related"
+    },
+    {
+      "source": "006",
+      "target": "008",
+      "type": "related"
+    },
+    {
+      "source": "006",
+      "target": "tag:prompt-engineering",
+      "type": "tag"
+    },
+    {
+      "source": "006",
+      "target": "tag:validation",
+      "type": "tag"
+    },
+    {
+      "source": "006",
+      "target": "tag:ai-landscape",
+      "type": "tag"
+    },
+    {
+      "source": "006",
+      "target": "mod:02-prompting-and-workflows",
+      "type": "curriculum"
+    },
+    {
+      "source": "007",
+      "target": "008",
+      "type": "related"
+    },
+    {
+      "source": "007",
+      "target": "009",
+      "type": "related"
+    },
+    {
+      "source": "007",
+      "target": "tag:ai-hype",
+      "type": "tag"
+    },
+    {
+      "source": "007",
+      "target": "tag:ai-economics",
+      "type": "tag"
+    },
+    {
+      "source": "007",
+      "target": "mod:01-foundations",
+      "type": "curriculum"
+    },
+    {
+      "source": "007",
+      "target": "mod:06-strategy-and-economics",
+      "type": "curriculum"
+    },
+    {
+      "source": "008",
+      "target": "009",
+      "type": "related"
+    },
+    {
+      "source": "008",
+      "target": "010",
+      "type": "related"
+    },
+    {
+      "source": "008",
+      "target": "006",
+      "type": "related"
+    },
+    {
+      "source": "008",
+      "target": "tag:capability-overhang",
+      "type": "tag"
+    },
+    {
+      "source": "008",
+      "target": "tag:ai-landscape",
+      "type": "tag"
+    },
+    {
+      "source": "008",
+      "target": "tag:agentic-coding",
+      "type": "tag"
+    },
+    {
+      "source": "008",
+      "target": "tag:task-system",
+      "type": "tag"
+    },
+    {
+      "source": "008",
+      "target": "mod:01-foundations",
+      "type": "curriculum"
+    },
+    {
+      "source": "008",
+      "target": "mod:04-agentic-patterns",
+      "type": "curriculum"
+    },
+    {
+      "source": "009",
+      "target": "008",
+      "type": "related"
+    },
+    {
+      "source": "009",
+      "target": "007",
+      "type": "related"
+    },
+    {
+      "source": "009",
+      "target": "tag:infrastructure",
+      "type": "tag"
+    },
+    {
+      "source": "009",
+      "target": "tag:ai-economics",
+      "type": "tag"
+    },
+    {
+      "source": "009",
+      "target": "tag:enterprise-ai",
+      "type": "tag"
+    },
+    {
+      "source": "009",
+      "target": "mod:06-strategy-and-economics",
+      "type": "curriculum"
+    },
+    {
+      "source": "010",
+      "target": "008",
+      "type": "related"
+    },
+    {
+      "source": "010",
+      "target": "006",
+      "type": "related"
+    },
+    {
+      "source": "010",
+      "target": "tag:multi-agent",
+      "type": "tag"
+    },
+    {
+      "source": "010",
+      "target": "tag:agent-teams",
+      "type": "tag"
+    },
+    {
+      "source": "010",
+      "target": "tag:agentic-coding",
+      "type": "tag"
+    },
+    {
+      "source": "010",
+      "target": "tag:claude-code",
+      "type": "tag"
+    },
+    {
+      "source": "010",
+      "target": "mod:05-team-orchestration",
+      "type": "curriculum"
+    },
+    {
+      "source": "011",
+      "target": "tag:context-engineering",
+      "type": "tag"
+    },
+    {
+      "source": "011",
+      "target": "tag:prompt-engineering",
+      "type": "tag"
+    },
+    {
+      "source": "011",
+      "target": "tag:agentic-coding",
+      "type": "tag"
+    },
+    {
+      "source": "011",
+      "target": "tag:mcp",
+      "type": "tag"
+    },
+    {
+      "source": "011",
+      "target": "mod:02-prompting-and-workflows",
+      "type": "curriculum"
+    },
+    {
+      "source": "011",
+      "target": "mod:04-agentic-patterns",
+      "type": "curriculum"
+    },
+    {
+      "source": "012",
+      "target": "008",
+      "type": "related"
+    },
+    {
+      "source": "012",
+      "target": "005",
+      "type": "related"
+    },
+    {
+      "source": "012",
+      "target": "009",
+      "type": "related"
+    },
+    {
+      "source": "012",
+      "target": "006",
+      "type": "related"
+    },
+    {
+      "source": "012",
+      "target": "tag:capability-overhang",
+      "type": "tag"
+    },
+    {
+      "source": "012",
+      "target": "tag:ai-landscape",
+      "type": "tag"
+    },
+    {
+      "source": "012",
+      "target": "tag:agentic-coding",
+      "type": "tag"
+    },
+    {
+      "source": "012",
+      "target": "mod:01-foundations",
+      "type": "curriculum"
+    },
+    {
+      "source": "012",
+      "target": "mod:06-strategy-and-economics",
+      "type": "curriculum"
+    },
+    {
+      "source": "013",
+      "target": "001",
+      "type": "related"
+    },
+    {
+      "source": "013",
+      "target": "011",
+      "type": "related"
+    },
+    {
+      "source": "013",
+      "target": "004",
+      "type": "related"
+    },
+    {
+      "source": "013",
+      "target": "tag:skills",
+      "type": "tag"
+    },
+    {
+      "source": "013",
+      "target": "tag:claude-code",
+      "type": "tag"
+    },
+    {
+      "source": "013",
+      "target": "tag:skills-ecosystem",
+      "type": "tag"
+    },
+    {
+      "source": "013",
+      "target": "mod:03-claude-code-essentials",
+      "type": "curriculum"
+    },
+    {
+      "source": "014",
+      "target": "004",
+      "type": "related"
+    },
+    {
+      "source": "014",
+      "target": "010",
+      "type": "related"
+    },
+    {
+      "source": "014",
+      "target": "001",
+      "type": "related"
+    },
+    {
+      "source": "014",
+      "target": "013",
+      "type": "related"
+    },
+    {
+      "source": "014",
+      "target": "tag:agent-teams",
+      "type": "tag"
+    },
+    {
+      "source": "014",
+      "target": "tag:multi-agent",
+      "type": "tag"
+    },
+    {
+      "source": "014",
+      "target": "tag:claude-code",
+      "type": "tag"
+    },
+    {
+      "source": "014",
+      "target": "mod:05-team-orchestration",
+      "type": "curriculum"
+    },
+    {
+      "source": "015",
+      "target": "013",
+      "type": "related"
+    },
+    {
+      "source": "015",
+      "target": "001",
+      "type": "related"
+    },
+    {
+      "source": "015",
+      "target": "011",
+      "type": "related"
+    },
+    {
+      "source": "015",
+      "target": "010",
+      "type": "related"
+    },
+    {
+      "source": "015",
+      "target": "tag:skills",
+      "type": "tag"
+    },
+    {
+      "source": "015",
+      "target": "tag:claude-code",
+      "type": "tag"
+    },
+    {
+      "source": "015",
+      "target": "tag:agentic-coding",
+      "type": "tag"
+    },
+    {
+      "source": "015",
+      "target": "tag:skills-ecosystem",
+      "type": "tag"
+    },
+    {
+      "source": "015",
+      "target": "mod:03-claude-code-essentials",
+      "type": "curriculum"
+    },
+    {
+      "source": "015",
+      "target": "mod:04-agentic-patterns",
+      "type": "curriculum"
+    },
+    {
+      "source": "016",
+      "target": "003",
+      "type": "related"
+    },
+    {
+      "source": "016",
+      "target": "008",
+      "type": "related"
+    },
+    {
+      "source": "016",
+      "target": "005",
+      "type": "related"
+    },
+    {
+      "source": "016",
+      "target": "019",
+      "type": "related"
+    },
+    {
+      "source": "016",
+      "target": "tag:ai-landscape",
+      "type": "tag"
+    },
+    {
+      "source": "016",
+      "target": "tag:claude-code",
+      "type": "tag"
+    },
+    {
+      "source": "016",
+      "target": "tag:agentic-coding",
+      "type": "tag"
+    },
+    {
+      "source": "016",
+      "target": "mod:01-foundations",
+      "type": "curriculum"
+    },
+    {
+      "source": "016",
+      "target": "mod:04-agentic-patterns",
+      "type": "curriculum"
+    },
+    {
+      "source": "017",
+      "target": "003",
+      "type": "related"
+    },
+    {
+      "source": "017",
+      "target": "010",
+      "type": "related"
+    },
+    {
+      "source": "017",
+      "target": "011",
+      "type": "related"
+    },
+    {
+      "source": "017",
+      "target": "tag:security",
+      "type": "tag"
+    },
+    {
+      "source": "017",
+      "target": "tag:skills",
+      "type": "tag"
+    },
+    {
+      "source": "017",
+      "target": "tag:skills-ecosystem",
+      "type": "tag"
+    },
+    {
+      "source": "017",
+      "target": "mod:06-strategy-and-economics",
+      "type": "curriculum"
+    },
+    {
+      "source": "017",
+      "target": "mod:03-claude-code-essentials",
+      "type": "curriculum"
+    },
+    {
+      "source": "018",
+      "target": "008",
+      "type": "related"
+    },
+    {
+      "source": "018",
+      "target": "005",
+      "type": "related"
+    },
+    {
+      "source": "018",
+      "target": "011",
+      "type": "related"
+    },
+    {
+      "source": "018",
+      "target": "019",
+      "type": "related"
+    },
+    {
+      "source": "018",
+      "target": "tag:ai-sdlc",
+      "type": "tag"
+    },
+    {
+      "source": "018",
+      "target": "tag:agentic-coding",
+      "type": "tag"
+    },
+    {
+      "source": "018",
+      "target": "tag:enterprise-ai",
+      "type": "tag"
+    },
+    {
+      "source": "018",
+      "target": "mod:06-strategy-and-economics",
+      "type": "curriculum"
+    },
+    {
+      "source": "018",
+      "target": "mod:04-agentic-patterns",
+      "type": "curriculum"
+    },
+    {
+      "source": "019",
+      "target": "008",
+      "type": "related"
+    },
+    {
+      "source": "019",
+      "target": "016",
+      "type": "related"
+    },
+    {
+      "source": "019",
+      "target": "007",
+      "type": "related"
+    },
+    {
+      "source": "019",
+      "target": "009",
+      "type": "related"
+    },
+    {
+      "source": "019",
+      "target": "tag:ai-landscape",
+      "type": "tag"
+    },
+    {
+      "source": "019",
+      "target": "tag:capability-overhang",
+      "type": "tag"
+    },
+    {
+      "source": "019",
+      "target": "tag:ai-economics",
+      "type": "tag"
+    },
+    {
+      "source": "019",
+      "target": "mod:01-foundations",
+      "type": "curriculum"
+    },
+    {
+      "source": "019",
+      "target": "mod:06-strategy-and-economics",
+      "type": "curriculum"
+    },
+    {
+      "source": "020",
+      "target": "004",
+      "type": "related"
+    },
+    {
+      "source": "020",
+      "target": "010",
+      "type": "related"
+    },
+    {
+      "source": "020",
+      "target": "014",
+      "type": "related"
+    },
+    {
+      "source": "020",
+      "target": "tag:agent-teams",
+      "type": "tag"
+    },
+    {
+      "source": "020",
+      "target": "tag:multi-agent",
+      "type": "tag"
+    },
+    {
+      "source": "020",
+      "target": "tag:claude-code",
+      "type": "tag"
+    },
+    {
+      "source": "020",
+      "target": "tag:agentic-coding",
+      "type": "tag"
+    },
+    {
+      "source": "020",
+      "target": "tag:context-engineering",
+      "type": "tag"
+    },
+    {
+      "source": "020",
+      "target": "tag:task-system",
+      "type": "tag"
+    },
+    {
+      "source": "020",
+      "target": "mod:05-team-orchestration",
+      "type": "curriculum"
+    },
+    {
+      "source": "020",
+      "target": "mod:04-agentic-patterns",
+      "type": "curriculum"
+    },
+    {
+      "source": "020",
+      "target": "mod:03-claude-code-essentials",
+      "type": "curriculum"
+    },
+    {
+      "source": "021",
+      "target": "001",
+      "type": "related"
+    },
+    {
+      "source": "021",
+      "target": "010",
+      "type": "related"
+    },
+    {
+      "source": "021",
+      "target": "013",
+      "type": "related"
+    },
+    {
+      "source": "021",
+      "target": "015",
+      "type": "related"
+    },
+    {
+      "source": "021",
+      "target": "tag:claude-code",
+      "type": "tag"
+    },
+    {
+      "source": "021",
+      "target": "tag:agentic-coding",
+      "type": "tag"
+    },
+    {
+      "source": "021",
+      "target": "tag:context-engineering",
+      "type": "tag"
+    },
+    {
+      "source": "021",
+      "target": "tag:mcp",
+      "type": "tag"
+    },
+    {
+      "source": "021",
+      "target": "tag:skills",
+      "type": "tag"
+    },
+    {
+      "source": "021",
+      "target": "tag:multi-agent",
+      "type": "tag"
+    },
+    {
+      "source": "021",
+      "target": "tag:validation",
+      "type": "tag"
+    },
+    {
+      "source": "021",
+      "target": "tag:agent-teams",
+      "type": "tag"
+    },
+    {
+      "source": "021",
+      "target": "mod:03-claude-code-essentials",
+      "type": "curriculum"
+    },
+    {
+      "source": "021",
+      "target": "mod:04-agentic-patterns",
+      "type": "curriculum"
+    },
+    {
+      "source": "021",
+      "target": "mod:05-team-orchestration",
+      "type": "curriculum"
+    },
+    {
+      "source": "022",
+      "target": "005",
+      "type": "related"
+    },
+    {
+      "source": "022",
+      "target": "012",
+      "type": "related"
+    },
+    {
+      "source": "022",
+      "target": "tag:vibe-coding",
+      "type": "tag"
+    },
+    {
+      "source": "022",
+      "target": "tag:ai-landscape",
+      "type": "tag"
+    },
+    {
+      "source": "022",
+      "target": "tag:career-collapse",
+      "type": "tag"
+    },
+    {
+      "source": "022",
+      "target": "mod:01-foundations",
+      "type": "curriculum"
+    },
+    {
+      "source": "023",
+      "target": "tag:ai-landscape",
+      "type": "tag"
+    },
+    {
+      "source": "023",
+      "target": "tag:infrastructure",
+      "type": "tag"
+    },
+    {
+      "source": "023",
+      "target": "mod:01-foundations",
+      "type": "curriculum"
+    },
+    {
+      "source": "023",
+      "target": "mod:06-strategy-and-economics",
+      "type": "curriculum"
+    },
+    {
+      "source": "024",
+      "target": "004",
+      "type": "related"
+    },
+    {
+      "source": "024",
+      "target": "005",
+      "type": "related"
+    },
+    {
+      "source": "024",
+      "target": "008",
+      "type": "related"
+    },
+    {
+      "source": "024",
+      "target": "010",
+      "type": "related"
+    },
+    {
+      "source": "024",
+      "target": "011",
+      "type": "related"
+    },
+    {
+      "source": "024",
+      "target": "012",
+      "type": "related"
+    },
+    {
+      "source": "024",
+      "target": "015",
+      "type": "related"
+    },
+    {
+      "source": "024",
+      "target": "tag:agentic-coding",
+      "type": "tag"
+    },
+    {
+      "source": "024",
+      "target": "tag:claude-code",
+      "type": "tag"
+    },
+    {
+      "source": "024",
+      "target": "tag:multi-agent",
+      "type": "tag"
+    },
+    {
+      "source": "024",
+      "target": "tag:agent-teams",
+      "type": "tag"
+    },
+    {
+      "source": "024",
+      "target": "tag:context-engineering",
+      "type": "tag"
+    },
+    {
+      "source": "024",
+      "target": "tag:prompt-engineering",
+      "type": "tag"
+    },
+    {
+      "source": "024",
+      "target": "tag:skills",
+      "type": "tag"
+    },
+    {
+      "source": "024",
+      "target": "tag:capability-overhang",
+      "type": "tag"
+    },
+    {
+      "source": "024",
+      "target": "mod:03-claude-code-essentials",
+      "type": "curriculum"
+    },
+    {
+      "source": "024",
+      "target": "mod:04-agentic-patterns",
+      "type": "curriculum"
+    },
+    {
+      "source": "024",
+      "target": "mod:05-team-orchestration",
+      "type": "curriculum"
+    },
+    {
+      "source": "025",
+      "target": "007",
+      "type": "related"
+    },
+    {
+      "source": "025",
+      "target": "009",
+      "type": "related"
+    },
+    {
+      "source": "025",
+      "target": "012",
+      "type": "related"
+    },
+    {
+      "source": "025",
+      "target": "022",
+      "type": "related"
+    },
+    {
+      "source": "025",
+      "target": "019",
+      "type": "related"
+    },
+    {
+      "source": "025",
+      "target": "tag:ai-hype",
+      "type": "tag"
+    },
+    {
+      "source": "025",
+      "target": "tag:ai-economics",
+      "type": "tag"
+    },
+    {
+      "source": "025",
+      "target": "tag:enterprise-ai",
+      "type": "tag"
+    },
+    {
+      "source": "025",
+      "target": "tag:capability-overhang",
+      "type": "tag"
+    },
+    {
+      "source": "025",
+      "target": "mod:01-foundations",
+      "type": "curriculum"
+    },
+    {
+      "source": "025",
+      "target": "mod:06-strategy-and-economics",
+      "type": "curriculum"
+    },
+    {
+      "source": "026",
+      "target": "013",
+      "type": "related"
+    },
+    {
+      "source": "026",
+      "target": "024",
+      "type": "related"
+    },
+    {
+      "source": "026",
+      "target": "021",
+      "type": "related"
+    },
+    {
+      "source": "026",
+      "target": "004",
+      "type": "related"
+    },
+    {
+      "source": "026",
+      "target": "tag:claude-code",
+      "type": "tag"
+    },
+    {
+      "source": "026",
+      "target": "tag:skills",
+      "type": "tag"
+    },
+    {
+      "source": "026",
+      "target": "tag:context-engineering",
+      "type": "tag"
+    },
+    {
+      "source": "026",
+      "target": "tag:agentic-coding",
+      "type": "tag"
+    },
+    {
+      "source": "026",
+      "target": "mod:03-claude-code-essentials",
+      "type": "curriculum"
+    },
+    {
+      "source": "026",
+      "target": "mod:04-agentic-patterns",
+      "type": "curriculum"
+    },
+    {
+      "source": "027",
+      "target": "010",
+      "type": "related"
+    },
+    {
+      "source": "027",
+      "target": "024",
+      "type": "related"
+    },
+    {
+      "source": "027",
+      "target": "001",
+      "type": "related"
+    },
+    {
+      "source": "027",
+      "target": "tag:agentic-coding",
+      "type": "tag"
+    },
+    {
+      "source": "027",
+      "target": "tag:ai-sdlc",
+      "type": "tag"
+    },
+    {
+      "source": "027",
+      "target": "mod:04-agentic-patterns",
+      "type": "curriculum"
+    },
+    {
+      "source": "028",
+      "target": "008",
+      "type": "related"
+    },
+    {
+      "source": "028",
+      "target": "012",
+      "type": "related"
+    },
+    {
+      "source": "028",
+      "target": "022",
+      "type": "related"
+    },
+    {
+      "source": "028",
+      "target": "025",
+      "type": "related"
+    },
+    {
+      "source": "028",
+      "target": "024",
+      "type": "related"
+    },
+    {
+      "source": "028",
+      "target": "tag:ai-landscape",
+      "type": "tag"
+    },
+    {
+      "source": "028",
+      "target": "tag:ai-hype",
+      "type": "tag"
+    },
+    {
+      "source": "028",
+      "target": "tag:capability-overhang",
+      "type": "tag"
+    },
+    {
+      "source": "028",
+      "target": "tag:agentic-coding",
+      "type": "tag"
+    },
+    {
+      "source": "028",
+      "target": "tag:ai-economics",
+      "type": "tag"
+    },
+    {
+      "source": "028",
+      "target": "mod:01-foundations",
+      "type": "curriculum"
+    },
+    {
+      "source": "028",
+      "target": "mod:06-strategy-and-economics",
+      "type": "curriculum"
+    },
+    {
+      "source": "029",
+      "target": "025",
+      "type": "related"
+    },
+    {
+      "source": "029",
+      "target": "022",
+      "type": "related"
+    },
+    {
+      "source": "029",
+      "target": "005",
+      "type": "related"
+    },
+    {
+      "source": "029",
+      "target": "007",
+      "type": "related"
+    },
+    {
+      "source": "029",
+      "target": "024",
+      "type": "related"
+    },
+    {
+      "source": "029",
+      "target": "tag:ai-hype",
+      "type": "tag"
+    },
+    {
+      "source": "029",
+      "target": "tag:ai-sdlc",
+      "type": "tag"
+    },
+    {
+      "source": "029",
+      "target": "tag:enterprise-ai",
+      "type": "tag"
+    },
+    {
+      "source": "029",
+      "target": "tag:vibe-coding",
+      "type": "tag"
+    },
+    {
+      "source": "029",
+      "target": "mod:01-foundations",
+      "type": "curriculum"
+    },
+    {
+      "source": "029",
+      "target": "mod:06-strategy-and-economics",
+      "type": "curriculum"
+    },
+    {
+      "source": "030",
+      "target": "tag:mcp",
+      "type": "tag"
+    },
+    {
+      "source": "030",
+      "target": "tag:claude-code",
+      "type": "tag"
+    },
+    {
+      "source": "030",
+      "target": "tag:context-engineering",
+      "type": "tag"
+    },
+    {
+      "source": "030",
+      "target": "tag:agentic-coding",
+      "type": "tag"
+    },
+    {
+      "source": "030",
+      "target": "mod:03-claude-code-essentials",
+      "type": "curriculum"
+    },
+    {
+      "source": "030",
+      "target": "mod:04-agentic-patterns",
+      "type": "curriculum"
+    },
+    {
+      "source": "031",
+      "target": "tag:ai-landscape",
+      "type": "tag"
+    },
+    {
+      "source": "031",
+      "target": "tag:prompt-engineering",
+      "type": "tag"
+    },
+    {
+      "source": "031",
+      "target": "tag:agentic-coding",
+      "type": "tag"
+    },
+    {
+      "source": "031",
+      "target": "tag:context-engineering",
+      "type": "tag"
+    },
+    {
+      "source": "031",
+      "target": "mod:01-foundations",
+      "type": "curriculum"
+    },
+    {
+      "source": "031",
+      "target": "mod:02-prompting-and-workflows",
+      "type": "curriculum"
+    },
+    {
+      "source": "032",
+      "target": "002",
+      "type": "related"
+    },
+    {
+      "source": "032",
+      "target": "005",
+      "type": "related"
+    },
+    {
+      "source": "032",
+      "target": "007",
+      "type": "related"
+    },
+    {
+      "source": "032",
+      "target": "008",
+      "type": "related"
+    },
+    {
+      "source": "032",
+      "target": "009",
+      "type": "related"
+    },
+    {
+      "source": "032",
+      "target": "017",
+      "type": "related"
+    },
+    {
+      "source": "032",
+      "target": "025",
+      "type": "related"
+    },
+    {
+      "source": "032",
+      "target": "tag:ai-landscape",
+      "type": "tag"
+    },
+    {
+      "source": "032",
+      "target": "tag:security",
+      "type": "tag"
+    },
+    {
+      "source": "032",
+      "target": "tag:enterprise-ai",
+      "type": "tag"
+    },
+    {
+      "source": "032",
+      "target": "tag:capability-overhang",
+      "type": "tag"
+    },
+    {
+      "source": "032",
+      "target": "tag:skills-ecosystem",
+      "type": "tag"
+    },
+    {
+      "source": "032",
+      "target": "tag:ai-hype",
+      "type": "tag"
+    },
+    {
+      "source": "032",
+      "target": "mod:01-foundations",
+      "type": "curriculum"
+    },
+    {
+      "source": "032",
+      "target": "mod:06-strategy-and-economics",
+      "type": "curriculum"
+    },
+    {
+      "source": "033",
+      "target": "002",
+      "type": "related"
+    },
+    {
+      "source": "033",
+      "target": "007",
+      "type": "related"
+    },
+    {
+      "source": "033",
+      "target": "025",
+      "type": "related"
+    },
+    {
+      "source": "033",
+      "target": "029",
+      "type": "related"
+    },
+    {
+      "source": "033",
+      "target": "019",
+      "type": "related"
+    },
+    {
+      "source": "033",
+      "target": "028",
+      "type": "related"
+    },
+    {
+      "source": "033",
+      "target": "tag:enterprise-ai",
+      "type": "tag"
+    },
+    {
+      "source": "033",
+      "target": "tag:ai-landscape",
+      "type": "tag"
+    },
+    {
+      "source": "033",
+      "target": "tag:ai-hype",
+      "type": "tag"
+    },
+    {
+      "source": "033",
+      "target": "tag:ai-economics",
+      "type": "tag"
+    },
+    {
+      "source": "033",
+      "target": "tag:capability-overhang",
+      "type": "tag"
+    },
+    {
+      "source": "033",
+      "target": "mod:01-foundations",
+      "type": "curriculum"
+    },
+    {
+      "source": "033",
+      "target": "mod:06-strategy-and-economics",
+      "type": "curriculum"
+    },
+    {
+      "source": "034",
+      "target": "007",
+      "type": "related"
+    },
+    {
+      "source": "034",
+      "target": "025",
+      "type": "related"
+    },
+    {
+      "source": "034",
+      "target": "028",
+      "type": "related"
+    },
+    {
+      "source": "034",
+      "target": "029",
+      "type": "related"
+    },
+    {
+      "source": "034",
+      "target": "005",
+      "type": "related"
+    },
+    {
+      "source": "034",
+      "target": "009",
+      "type": "related"
+    },
+    {
+      "source": "034",
+      "target": "tag:ai-hype",
+      "type": "tag"
+    },
+    {
+      "source": "034",
+      "target": "tag:ai-economics",
+      "type": "tag"
+    },
+    {
+      "source": "034",
+      "target": "tag:vibe-coding",
+      "type": "tag"
+    },
+    {
+      "source": "034",
+      "target": "tag:ai-landscape",
+      "type": "tag"
+    },
+    {
+      "source": "034",
+      "target": "mod:01-foundations",
+      "type": "curriculum"
+    },
+    {
+      "source": "034",
+      "target": "mod:06-strategy-and-economics",
+      "type": "curriculum"
+    },
+    {
+      "source": "035",
+      "target": "008",
+      "type": "related"
+    },
+    {
+      "source": "035",
+      "target": "025",
+      "type": "related"
+    },
+    {
+      "source": "035",
+      "target": "029",
+      "type": "related"
+    },
+    {
+      "source": "035",
+      "target": "018",
+      "type": "related"
+    },
+    {
+      "source": "035",
+      "target": "022",
+      "type": "related"
+    },
+    {
+      "source": "035",
+      "target": "005",
+      "type": "related"
+    },
+    {
+      "source": "035",
+      "target": "007",
+      "type": "related"
+    },
+    {
+      "source": "035",
+      "target": "tag:openai",
+      "type": "tag"
+    },
+    {
+      "source": "035",
+      "target": "tag:enterprise-ai",
+      "type": "tag"
+    },
+    {
+      "source": "035",
+      "target": "tag:ai-landscape",
+      "type": "tag"
+    },
+    {
+      "source": "035",
+      "target": "tag:agentic-coding",
+      "type": "tag"
+    },
+    {
+      "source": "035",
+      "target": "tag:capability-overhang",
+      "type": "tag"
+    },
+    {
+      "source": "035",
+      "target": "tag:ai-economics",
+      "type": "tag"
+    },
+    {
+      "source": "035",
+      "target": "tag:ai-sdlc",
+      "type": "tag"
+    },
+    {
+      "source": "035",
+      "target": "tag:vibe-coding",
+      "type": "tag"
+    },
+    {
+      "source": "035",
+      "target": "mod:01-foundations",
+      "type": "curriculum"
+    },
+    {
+      "source": "035",
+      "target": "mod:06-strategy-and-economics",
+      "type": "curriculum"
+    },
+    {
+      "source": "036",
+      "target": "007",
+      "type": "related"
+    },
+    {
+      "source": "036",
+      "target": "002",
+      "type": "related"
+    },
+    {
+      "source": "036",
+      "target": "025",
+      "type": "related"
+    },
+    {
+      "source": "036",
+      "target": "019",
+      "type": "related"
+    },
+    {
+      "source": "036",
+      "target": "028",
+      "type": "related"
+    },
+    {
+      "source": "036",
+      "target": "tag:ai-hype",
+      "type": "tag"
+    },
+    {
+      "source": "036",
+      "target": "tag:ai-economics",
+      "type": "tag"
+    },
+    {
+      "source": "036",
+      "target": "tag:enterprise-ai",
+      "type": "tag"
+    },
+    {
+      "source": "036",
+      "target": "tag:ai-landscape",
+      "type": "tag"
+    },
+    {
+      "source": "036",
+      "target": "tag:anthropic",
+      "type": "tag"
+    },
+    {
+      "source": "036",
+      "target": "tag:openai",
+      "type": "tag"
+    },
+    {
+      "source": "036",
+      "target": "mod:01-foundations",
+      "type": "curriculum"
+    },
+    {
+      "source": "036",
+      "target": "mod:06-strategy-and-economics",
+      "type": "curriculum"
+    },
+    {
+      "source": "037",
+      "target": "007",
+      "type": "related"
+    },
+    {
+      "source": "037",
+      "target": "009",
+      "type": "related"
+    },
+    {
+      "source": "037",
+      "target": "025",
+      "type": "related"
+    },
+    {
+      "source": "037",
+      "target": "028",
+      "type": "related"
+    },
+    {
+      "source": "037",
+      "target": "019",
+      "type": "related"
+    },
+    {
+      "source": "037",
+      "target": "tag:ai-economics",
+      "type": "tag"
+    },
+    {
+      "source": "037",
+      "target": "tag:infrastructure",
+      "type": "tag"
+    },
+    {
+      "source": "037",
+      "target": "tag:ai-hype",
+      "type": "tag"
+    },
+    {
+      "source": "037",
+      "target": "tag:ai-landscape",
+      "type": "tag"
+    },
+    {
+      "source": "037",
+      "target": "mod:01-foundations",
+      "type": "curriculum"
+    },
+    {
+      "source": "037",
+      "target": "mod:06-strategy-and-economics",
+      "type": "curriculum"
+    },
+    {
+      "source": "038",
+      "target": "005",
+      "type": "related"
+    },
+    {
+      "source": "038",
+      "target": "011",
+      "type": "related"
+    },
+    {
+      "source": "038",
+      "target": "006",
+      "type": "related"
+    },
+    {
+      "source": "038",
+      "target": "022",
+      "type": "related"
+    },
+    {
+      "source": "038",
+      "target": "034",
+      "type": "related"
+    },
+    {
+      "source": "038",
+      "target": "tag:ai-landscape",
+      "type": "tag"
+    },
+    {
+      "source": "038",
+      "target": "tag:prompt-engineering",
+      "type": "tag"
+    },
+    {
+      "source": "038",
+      "target": "tag:context-engineering",
+      "type": "tag"
+    },
+    {
+      "source": "038",
+      "target": "tag:specification",
+      "type": "tag"
+    },
+    {
+      "source": "038",
+      "target": "tag:vibe-coding",
+      "type": "tag"
+    },
+    {
+      "source": "038",
+      "target": "tag:ai-hype",
+      "type": "tag"
+    },
+    {
+      "source": "038",
+      "target": "mod:01-foundations",
+      "type": "curriculum"
+    },
+    {
+      "source": "038",
+      "target": "mod:02-prompting-and-workflows",
+      "type": "curriculum"
+    },
+    {
+      "source": "039",
+      "target": "036",
+      "type": "related"
+    },
+    {
+      "source": "039",
+      "target": "007",
+      "type": "related"
+    },
+    {
+      "source": "039",
+      "target": "025",
+      "type": "related"
+    },
+    {
+      "source": "039",
+      "target": "034",
+      "type": "related"
+    },
+    {
+      "source": "039",
+      "target": "005",
+      "type": "related"
+    },
+    {
+      "source": "039",
+      "target": "029",
+      "type": "related"
+    },
+    {
+      "source": "039",
+      "target": "tag:ai-hype",
+      "type": "tag"
+    },
+    {
+      "source": "039",
+      "target": "tag:ai-economics",
+      "type": "tag"
+    },
+    {
+      "source": "039",
+      "target": "tag:enterprise-ai",
+      "type": "tag"
+    },
+    {
+      "source": "039",
+      "target": "tag:vibe-coding",
+      "type": "tag"
+    },
+    {
+      "source": "039",
+      "target": "tag:anthropic",
+      "type": "tag"
+    },
+    {
+      "source": "039",
+      "target": "mod:01-foundations",
+      "type": "curriculum"
+    },
+    {
+      "source": "039",
+      "target": "mod:06-strategy-and-economics",
+      "type": "curriculum"
+    },
+    {
+      "source": "040",
+      "target": "011",
+      "type": "related"
+    },
+    {
+      "source": "040",
+      "target": "013",
+      "type": "related"
+    },
+    {
+      "source": "040",
+      "target": "026",
+      "type": "related"
+    },
+    {
+      "source": "040",
+      "target": "024",
+      "type": "related"
+    },
+    {
+      "source": "040",
+      "target": "015",
+      "type": "related"
+    },
+    {
+      "source": "040",
+      "target": "tag:claude-code",
+      "type": "tag"
+    },
+    {
+      "source": "040",
+      "target": "tag:context-engineering",
+      "type": "tag"
+    },
+    {
+      "source": "040",
+      "target": "tag:skills-ecosystem",
+      "type": "tag"
+    },
+    {
+      "source": "040",
+      "target": "mod:03-claude-code-essentials",
+      "type": "curriculum"
+    },
+    {
+      "source": "040",
+      "target": "mod:02-prompting-and-workflows",
+      "type": "curriculum"
+    },
+    {
+      "source": "041",
+      "target": "004",
+      "type": "related"
+    },
+    {
+      "source": "041",
+      "target": "010",
+      "type": "related"
+    },
+    {
+      "source": "041",
+      "target": "014",
+      "type": "related"
+    },
+    {
+      "source": "041",
+      "target": "020",
+      "type": "related"
+    },
+    {
+      "source": "041",
+      "target": "007",
+      "type": "related"
+    },
+    {
+      "source": "041",
+      "target": "025",
+      "type": "related"
+    },
+    {
+      "source": "041",
+      "target": "028",
+      "type": "related"
+    },
+    {
+      "source": "041",
+      "target": "036",
+      "type": "related"
+    },
+    {
+      "source": "041",
+      "target": "tag:ai-hype",
+      "type": "tag"
+    },
+    {
+      "source": "041",
+      "target": "tag:agent-teams",
+      "type": "tag"
+    },
+    {
+      "source": "041",
+      "target": "tag:anthropic",
+      "type": "tag"
+    },
+    {
+      "source": "041",
+      "target": "tag:ai-economics",
+      "type": "tag"
+    },
+    {
+      "source": "041",
+      "target": "tag:multi-agent",
+      "type": "tag"
+    },
+    {
+      "source": "041",
+      "target": "mod:05-team-orchestration",
+      "type": "curriculum"
+    },
+    {
+      "source": "041",
+      "target": "mod:06-strategy-and-economics",
+      "type": "curriculum"
+    },
+    {
+      "source": "042",
+      "target": "tag:vibe-coding",
+      "type": "tag"
+    },
+    {
+      "source": "042",
+      "target": "tag:ai-hype",
+      "type": "tag"
+    },
+    {
+      "source": "042",
+      "target": "tag:ai-sdlc",
+      "type": "tag"
+    },
+    {
+      "source": "042",
+      "target": "mod:01-foundations",
+      "type": "curriculum"
+    },
+    {
+      "source": "042",
+      "target": "mod:02-prompting-and-workflows",
+      "type": "curriculum"
+    },
+    {
+      "source": "043",
+      "target": "013",
+      "type": "related"
+    },
+    {
+      "source": "043",
+      "target": "015",
+      "type": "related"
+    },
+    {
+      "source": "043",
+      "target": "017",
+      "type": "related"
+    },
+    {
+      "source": "043",
+      "target": "011",
+      "type": "related"
+    },
+    {
+      "source": "043",
+      "target": "tag:claude-code",
+      "type": "tag"
+    },
+    {
+      "source": "043",
+      "target": "tag:skills",
+      "type": "tag"
+    },
+    {
+      "source": "043",
+      "target": "tag:skills-ecosystem",
+      "type": "tag"
+    },
+    {
+      "source": "043",
+      "target": "tag:prompt-engineering",
+      "type": "tag"
+    },
+    {
+      "source": "043",
+      "target": "tag:context-engineering",
+      "type": "tag"
+    },
+    {
+      "source": "043",
+      "target": "tag:mcp",
+      "type": "tag"
+    },
+    {
+      "source": "043",
+      "target": "mod:03-claude-code-essentials",
+      "type": "curriculum"
+    },
+    {
+      "source": "043",
+      "target": "mod:04-agentic-patterns",
+      "type": "curriculum"
+    },
+    {
+      "source": "044",
+      "target": "016",
+      "type": "related"
+    },
+    {
+      "source": "044",
+      "target": "012",
+      "type": "related"
+    },
+    {
+      "source": "044",
+      "target": "008",
+      "type": "related"
+    },
+    {
+      "source": "044",
+      "target": "tag:enterprise-ai",
+      "type": "tag"
+    },
+    {
+      "source": "044",
+      "target": "tag:ai-economics",
+      "type": "tag"
+    },
+    {
+      "source": "044",
+      "target": "tag:capability-overhang",
+      "type": "tag"
+    },
+    {
+      "source": "044",
+      "target": "tag:anthropic",
+      "type": "tag"
+    },
+    {
+      "source": "044",
+      "target": "mod:01-foundations",
+      "type": "curriculum"
+    },
+    {
+      "source": "044",
+      "target": "mod:06-strategy-and-economics",
+      "type": "curriculum"
+    },
+    {
+      "source": "045",
+      "target": "003",
+      "type": "related"
+    },
+    {
+      "source": "045",
+      "target": "017",
+      "type": "related"
+    },
+    {
+      "source": "045",
+      "target": "002",
+      "type": "related"
+    },
+    {
+      "source": "045",
+      "target": "tag:ai-safety",
+      "type": "tag"
+    },
+    {
+      "source": "045",
+      "target": "tag:ai-economics",
+      "type": "tag"
+    },
+    {
+      "source": "045",
+      "target": "tag:ai-hype",
+      "type": "tag"
+    },
+    {
+      "source": "045",
+      "target": "tag:openai",
+      "type": "tag"
+    },
+    {
+      "source": "045",
+      "target": "tag:ai-landscape",
+      "type": "tag"
+    },
+    {
+      "source": "045",
+      "target": "mod:01-foundations",
+      "type": "curriculum"
+    },
+    {
+      "source": "045",
+      "target": "mod:06-strategy-and-economics",
+      "type": "curriculum"
+    },
+    {
+      "source": "046",
+      "target": "tag:mcp",
+      "type": "tag"
+    },
+    {
+      "source": "046",
+      "target": "tag:agentic-coding",
+      "type": "tag"
+    },
+    {
+      "source": "046",
+      "target": "tag:ai-landscape",
+      "type": "tag"
+    },
+    {
+      "source": "046",
+      "target": "tag:enterprise-ai",
+      "type": "tag"
+    },
+    {
+      "source": "046",
+      "target": "mod:01-foundations",
+      "type": "curriculum"
+    },
+    {
+      "source": "046",
+      "target": "mod:04-agentic-patterns",
+      "type": "curriculum"
+    },
+    {
+      "source": "047",
+      "target": "017",
+      "type": "related"
+    },
+    {
+      "source": "047",
+      "target": "tag:security",
+      "type": "tag"
+    },
+    {
+      "source": "047",
+      "target": "tag:ai-hype",
+      "type": "tag"
+    },
+    {
+      "source": "047",
+      "target": "tag:openai",
+      "type": "tag"
+    },
+    {
+      "source": "047",
+      "target": "tag:chatgpt",
+      "type": "tag"
+    },
+    {
+      "source": "047",
+      "target": "mod:06-strategy-and-economics",
+      "type": "curriculum"
+    },
+    {
+      "source": "047",
+      "target": "mod:01-foundations",
+      "type": "curriculum"
+    },
+    {
+      "source": "048",
+      "target": "011",
+      "type": "related"
+    },
+    {
+      "source": "048",
+      "target": "004",
+      "type": "related"
+    },
+    {
+      "source": "048",
+      "target": "tag:context-engineering",
+      "type": "tag"
+    },
+    {
+      "source": "048",
+      "target": "tag:agentic-coding",
+      "type": "tag"
+    },
+    {
+      "source": "048",
+      "target": "tag:ai-landscape",
+      "type": "tag"
+    },
+    {
+      "source": "048",
+      "target": "mod:01-foundations",
+      "type": "curriculum"
+    },
+    {
+      "source": "048",
+      "target": "mod:04-agentic-patterns",
+      "type": "curriculum"
+    },
+    {
+      "source": "049",
+      "target": "002",
+      "type": "related"
+    },
+    {
+      "source": "049",
+      "target": "tag:ai-safety",
+      "type": "tag"
+    },
+    {
+      "source": "049",
+      "target": "tag:anthropic",
+      "type": "tag"
+    },
+    {
+      "source": "049",
+      "target": "tag:ai-landscape",
+      "type": "tag"
+    },
+    {
+      "source": "049",
+      "target": "mod:01-foundations",
+      "type": "curriculum"
+    },
+    {
+      "source": "050",
+      "target": "012",
+      "type": "related"
+    },
+    {
+      "source": "050",
+      "target": "028",
+      "type": "related"
+    },
+    {
+      "source": "050",
+      "target": "025",
+      "type": "related"
+    },
+    {
+      "source": "050",
+      "target": "036",
+      "type": "related"
+    },
+    {
+      "source": "050",
+      "target": "039",
+      "type": "related"
+    },
+    {
+      "source": "050",
+      "target": "tag:ai-hype",
+      "type": "tag"
+    },
+    {
+      "source": "050",
+      "target": "tag:ai-economics",
+      "type": "tag"
+    },
+    {
+      "source": "050",
+      "target": "tag:ai-landscape",
+      "type": "tag"
+    },
+    {
+      "source": "050",
+      "target": "tag:capability-overhang",
+      "type": "tag"
+    },
+    {
+      "source": "050",
+      "target": "tag:revenue-per-employee",
+      "type": "tag"
+    },
+    {
+      "source": "050",
+      "target": "mod:01-foundations",
+      "type": "curriculum"
+    },
+    {
+      "source": "050",
+      "target": "mod:06-strategy-and-economics",
+      "type": "curriculum"
+    },
+    {
+      "source": "051",
+      "target": "020",
+      "type": "related"
+    },
+    {
+      "source": "051",
+      "target": "013",
+      "type": "related"
+    },
+    {
+      "source": "051",
+      "target": "015",
+      "type": "related"
+    },
+    {
+      "source": "051",
+      "target": "017",
+      "type": "related"
+    },
+    {
+      "source": "051",
+      "target": "tag:claude-code",
+      "type": "tag"
+    },
+    {
+      "source": "051",
+      "target": "tag:agent-teams",
+      "type": "tag"
+    },
+    {
+      "source": "051",
+      "target": "tag:skills",
+      "type": "tag"
+    },
+    {
+      "source": "051",
+      "target": "tag:context-engineering",
+      "type": "tag"
+    },
+    {
+      "source": "051",
+      "target": "tag:skills-ecosystem",
+      "type": "tag"
+    },
+    {
+      "source": "051",
+      "target": "tag:validation",
+      "type": "tag"
+    },
+    {
+      "source": "051",
+      "target": "mod:03-claude-code-essentials",
+      "type": "curriculum"
+    },
+    {
+      "source": "051",
+      "target": "mod:04-agentic-patterns",
+      "type": "curriculum"
+    },
+    {
+      "source": "051",
+      "target": "mod:05-team-orchestration",
+      "type": "curriculum"
+    },
+    {
+      "source": "052",
+      "target": "002",
+      "type": "related"
+    },
+    {
+      "source": "052",
+      "target": "007",
+      "type": "related"
+    },
+    {
+      "source": "052",
+      "target": "039",
+      "type": "related"
+    },
+    {
+      "source": "052",
+      "target": "tag:ai-safety",
+      "type": "tag"
+    },
+    {
+      "source": "052",
+      "target": "tag:ai-hype",
+      "type": "tag"
+    },
+    {
+      "source": "052",
+      "target": "tag:ai-economics",
+      "type": "tag"
+    },
+    {
+      "source": "052",
+      "target": "tag:anthropic",
+      "type": "tag"
+    },
+    {
+      "source": "052",
+      "target": "tag:ai-landscape",
+      "type": "tag"
+    },
+    {
+      "source": "052",
+      "target": "mod:01-foundations",
+      "type": "curriculum"
+    },
+    {
+      "source": "052",
+      "target": "mod:06-strategy-and-economics",
+      "type": "curriculum"
+    },
+    {
+      "source": "053",
+      "target": "007",
+      "type": "related"
+    },
+    {
+      "source": "053",
+      "target": "025",
+      "type": "related"
+    },
+    {
+      "source": "053",
+      "target": "tag:enterprise-ai",
+      "type": "tag"
+    },
+    {
+      "source": "053",
+      "target": "tag:ai-hype",
+      "type": "tag"
+    },
+    {
+      "source": "053",
+      "target": "tag:capability-overhang",
+      "type": "tag"
+    },
+    {
+      "source": "053",
+      "target": "mod:01-foundations",
+      "type": "curriculum"
+    },
+    {
+      "source": "053",
+      "target": "mod:06-strategy-and-economics",
+      "type": "curriculum"
+    },
+    {
+      "source": "054",
+      "target": "007",
+      "type": "related"
+    },
+    {
+      "source": "054",
+      "target": "042",
+      "type": "related"
+    },
+    {
+      "source": "054",
+      "target": "029",
+      "type": "related"
+    },
+    {
+      "source": "054",
+      "target": "tag:ai-hype",
+      "type": "tag"
+    },
+    {
+      "source": "054",
+      "target": "tag:agentic-coding",
+      "type": "tag"
+    },
+    {
+      "source": "054",
+      "target": "tag:cursor",
+      "type": "tag"
+    },
+    {
+      "source": "054",
+      "target": "tag:multi-agent",
+      "type": "tag"
+    },
+    {
+      "source": "054",
+      "target": "tag:ai-economics",
+      "type": "tag"
+    },
+    {
+      "source": "054",
+      "target": "mod:01-foundations",
+      "type": "curriculum"
+    },
+    {
+      "source": "054",
+      "target": "mod:05-team-orchestration",
+      "type": "curriculum"
+    },
+    {
+      "source": "054",
+      "target": "mod:06-strategy-and-economics",
+      "type": "curriculum"
+    },
+    {
+      "source": "055",
+      "target": "010",
+      "type": "related"
+    },
+    {
+      "source": "055",
+      "target": "004",
+      "type": "related"
+    },
+    {
+      "source": "055",
+      "target": "020",
+      "type": "related"
+    },
+    {
+      "source": "055",
+      "target": "tag:multi-agent",
+      "type": "tag"
+    },
+    {
+      "source": "055",
+      "target": "tag:agent-teams",
+      "type": "tag"
+    },
+    {
+      "source": "055",
+      "target": "tag:enterprise-ai",
+      "type": "tag"
+    },
+    {
+      "source": "055",
+      "target": "tag:agentic-coding",
+      "type": "tag"
+    },
+    {
+      "source": "055",
+      "target": "mod:05-team-orchestration",
+      "type": "curriculum"
+    },
+    {
+      "source": "055",
+      "target": "mod:06-strategy-and-economics",
+      "type": "curriculum"
+    },
+    {
+      "source": "056",
+      "target": "002",
+      "type": "related"
+    },
+    {
+      "source": "056",
+      "target": "009",
+      "type": "related"
+    },
+    {
+      "source": "056",
+      "target": "019",
+      "type": "related"
+    },
+    {
+      "source": "056",
+      "target": "033",
+      "type": "related"
+    },
+    {
+      "source": "056",
+      "target": "036",
+      "type": "related"
+    },
+    {
+      "source": "056",
+      "target": "039",
+      "type": "related"
+    },
+    {
+      "source": "056",
+      "target": "050",
+      "type": "related"
+    },
+    {
+      "source": "056",
+      "target": "052",
+      "type": "related"
+    },
+    {
+      "source": "056",
+      "target": "tag:ai-economics",
+      "type": "tag"
+    },
+    {
+      "source": "056",
+      "target": "tag:anthropic",
+      "type": "tag"
+    },
+    {
+      "source": "056",
+      "target": "tag:ai-landscape",
+      "type": "tag"
+    },
+    {
+      "source": "056",
+      "target": "tag:ai-safety",
+      "type": "tag"
+    },
+    {
+      "source": "056",
+      "target": "tag:infrastructure",
+      "type": "tag"
+    },
+    {
+      "source": "056",
+      "target": "tag:enterprise-ai",
+      "type": "tag"
+    },
+    {
+      "source": "056",
+      "target": "tag:capability-overhang",
+      "type": "tag"
+    },
+    {
+      "source": "056",
+      "target": "mod:01-foundations",
+      "type": "curriculum"
+    },
+    {
+      "source": "056",
+      "target": "mod:06-strategy-and-economics",
+      "type": "curriculum"
+    },
+    {
+      "source": "057",
+      "target": "017",
+      "type": "related"
+    },
+    {
+      "source": "057",
+      "target": "047",
+      "type": "related"
+    },
+    {
+      "source": "057",
+      "target": "032",
+      "type": "related"
+    },
+    {
+      "source": "057",
+      "target": "055",
+      "type": "related"
+    },
+    {
+      "source": "057",
+      "target": "tag:security",
+      "type": "tag"
+    },
+    {
+      "source": "057",
+      "target": "tag:agentic-coding",
+      "type": "tag"
+    },
+    {
+      "source": "057",
+      "target": "tag:enterprise-ai",
+      "type": "tag"
+    },
+    {
+      "source": "057",
+      "target": "tag:multi-agent",
+      "type": "tag"
+    },
+    {
+      "source": "057",
+      "target": "mod:06-strategy-and-economics",
+      "type": "curriculum"
+    },
+    {
+      "source": "057",
+      "target": "mod:04-agentic-patterns",
+      "type": "curriculum"
+    },
+    {
+      "source": "058",
+      "target": "032",
+      "type": "related"
+    },
+    {
+      "source": "058",
+      "target": "017",
+      "type": "related"
+    },
+    {
+      "source": "058",
+      "target": "004",
+      "type": "related"
+    },
+    {
+      "source": "058",
+      "target": "025",
+      "type": "related"
+    },
+    {
+      "source": "058",
+      "target": "033",
+      "type": "related"
+    },
+    {
+      "source": "058",
+      "target": "tag:ai-hype",
+      "type": "tag"
+    },
+    {
+      "source": "058",
+      "target": "tag:multi-agent",
+      "type": "tag"
+    },
+    {
+      "source": "058",
+      "target": "tag:security",
+      "type": "tag"
+    },
+    {
+      "source": "058",
+      "target": "tag:enterprise-ai",
+      "type": "tag"
+    },
+    {
+      "source": "058",
+      "target": "tag:ai-economics",
+      "type": "tag"
+    },
+    {
+      "source": "058",
+      "target": "mod:01-foundations",
+      "type": "curriculum"
+    },
+    {
+      "source": "058",
+      "target": "mod:05-team-orchestration",
+      "type": "curriculum"
+    },
+    {
+      "source": "058",
+      "target": "mod:06-strategy-and-economics",
+      "type": "curriculum"
+    },
+    {
+      "source": "059",
+      "target": "009",
+      "type": "related"
+    },
+    {
+      "source": "059",
+      "target": "065",
+      "type": "related"
+    },
+    {
+      "source": "059",
+      "target": "037",
+      "type": "related"
+    },
+    {
+      "source": "059",
+      "target": "056",
+      "type": "related"
+    },
+    {
+      "source": "059",
+      "target": "012",
+      "type": "related"
+    },
+    {
+      "source": "059",
+      "target": "008",
+      "type": "related"
+    },
+    {
+      "source": "059",
+      "target": "tag:ai-economics",
+      "type": "tag"
+    },
+    {
+      "source": "059",
+      "target": "tag:infrastructure",
+      "type": "tag"
+    },
+    {
+      "source": "059",
+      "target": "tag:enterprise-ai",
+      "type": "tag"
+    },
+    {
+      "source": "059",
+      "target": "tag:ai-hype",
+      "type": "tag"
+    },
+    {
+      "source": "059",
+      "target": "tag:capability-overhang",
+      "type": "tag"
+    },
+    {
+      "source": "059",
+      "target": "tag:ai-landscape",
+      "type": "tag"
+    },
+    {
+      "source": "059",
+      "target": "tag:agentic-coding",
+      "type": "tag"
+    },
+    {
+      "source": "059",
+      "target": "mod:01-foundations",
+      "type": "curriculum"
+    },
+    {
+      "source": "059",
+      "target": "mod:06-strategy-and-economics",
+      "type": "curriculum"
+    },
+    {
+      "source": "060",
+      "target": "003",
+      "type": "related"
+    },
+    {
+      "source": "060",
+      "target": "048",
+      "type": "related"
+    },
+    {
+      "source": "060",
+      "target": "055",
+      "type": "related"
+    },
+    {
+      "source": "060",
+      "target": "009",
+      "type": "related"
+    },
+    {
+      "source": "060",
+      "target": "tag:ai-landscape",
+      "type": "tag"
+    },
+    {
+      "source": "060",
+      "target": "tag:agentic-coding",
+      "type": "tag"
+    },
+    {
+      "source": "060",
+      "target": "tag:ai-economics",
+      "type": "tag"
+    },
+    {
+      "source": "060",
+      "target": "tag:infrastructure",
+      "type": "tag"
+    },
+    {
+      "source": "060",
+      "target": "mod:01-foundations",
+      "type": "curriculum"
+    },
+    {
+      "source": "060",
+      "target": "mod:04-agentic-patterns",
+      "type": "curriculum"
+    },
+    {
+      "source": "061",
+      "target": "033",
+      "type": "related"
+    },
+    {
+      "source": "061",
+      "target": "053",
+      "type": "related"
+    },
+    {
+      "source": "061",
+      "target": "025",
+      "type": "related"
+    },
+    {
+      "source": "061",
+      "target": "029",
+      "type": "related"
+    },
+    {
+      "source": "061",
+      "target": "050",
+      "type": "related"
+    },
+    {
+      "source": "061",
+      "target": "tag:enterprise-ai",
+      "type": "tag"
+    },
+    {
+      "source": "061",
+      "target": "tag:ai-hype",
+      "type": "tag"
+    },
+    {
+      "source": "061",
+      "target": "tag:capability-overhang",
+      "type": "tag"
+    },
+    {
+      "source": "061",
+      "target": "mod:01-foundations",
+      "type": "curriculum"
+    },
+    {
+      "source": "061",
+      "target": "mod:06-strategy-and-economics",
+      "type": "curriculum"
+    },
+    {
+      "source": "062",
+      "target": "051",
+      "type": "related"
+    },
+    {
+      "source": "062",
+      "target": "020",
+      "type": "related"
+    },
+    {
+      "source": "062",
+      "target": "001",
+      "type": "related"
+    },
+    {
+      "source": "062",
+      "target": "013",
+      "type": "related"
+    },
+    {
+      "source": "062",
+      "target": "015",
+      "type": "related"
+    },
+    {
+      "source": "062",
+      "target": "040",
+      "type": "related"
+    },
+    {
+      "source": "062",
+      "target": "024",
+      "type": "related"
+    },
+    {
+      "source": "062",
+      "target": "tag:claude-code",
+      "type": "tag"
+    },
+    {
+      "source": "062",
+      "target": "tag:skills",
+      "type": "tag"
+    },
+    {
+      "source": "062",
+      "target": "tag:context-engineering",
+      "type": "tag"
+    },
+    {
+      "source": "062",
+      "target": "tag:mcp",
+      "type": "tag"
+    },
+    {
+      "source": "062",
+      "target": "tag:agentic-coding",
+      "type": "tag"
+    },
+    {
+      "source": "062",
+      "target": "tag:multi-agent",
+      "type": "tag"
+    },
+    {
+      "source": "062",
+      "target": "tag:agent-teams",
+      "type": "tag"
+    },
+    {
+      "source": "062",
+      "target": "tag:skills-ecosystem",
+      "type": "tag"
+    },
+    {
+      "source": "062",
+      "target": "mod:03-claude-code-essentials",
+      "type": "curriculum"
+    },
+    {
+      "source": "062",
+      "target": "mod:04-agentic-patterns",
+      "type": "curriculum"
+    },
+    {
+      "source": "062",
+      "target": "mod:05-team-orchestration",
+      "type": "curriculum"
+    },
+    {
+      "source": "063",
+      "target": "013",
+      "type": "related"
+    },
+    {
+      "source": "063",
+      "target": "015",
+      "type": "related"
+    },
+    {
+      "source": "063",
+      "target": "039",
+      "type": "related"
+    },
+    {
+      "source": "063",
+      "target": "036",
+      "type": "related"
+    },
+    {
+      "source": "063",
+      "target": "043",
+      "type": "related"
+    },
+    {
+      "source": "063",
+      "target": "032",
+      "type": "related"
+    },
+    {
+      "source": "063",
+      "target": "tag:skills",
+      "type": "tag"
+    },
+    {
+      "source": "063",
+      "target": "tag:skills-ecosystem",
+      "type": "tag"
+    },
+    {
+      "source": "063",
+      "target": "tag:enterprise-ai",
+      "type": "tag"
+    },
+    {
+      "source": "063",
+      "target": "tag:ai-economics",
+      "type": "tag"
+    },
+    {
+      "source": "063",
+      "target": "tag:mcp",
+      "type": "tag"
+    },
+    {
+      "source": "063",
+      "target": "tag:anthropic",
+      "type": "tag"
+    },
+    {
+      "source": "063",
+      "target": "mod:03-claude-code-essentials",
+      "type": "curriculum"
+    },
+    {
+      "source": "063",
+      "target": "mod:06-strategy-and-economics",
+      "type": "curriculum"
+    },
+    {
+      "source": "064",
+      "target": "001",
+      "type": "related"
+    },
+    {
+      "source": "064",
+      "target": "015",
+      "type": "related"
+    },
+    {
+      "source": "064",
+      "target": "010",
+      "type": "related"
+    },
+    {
+      "source": "064",
+      "target": "024",
+      "type": "related"
+    },
+    {
+      "source": "064",
+      "target": "040",
+      "type": "related"
+    },
+    {
+      "source": "064",
+      "target": "tag:agentic-coding",
+      "type": "tag"
+    },
+    {
+      "source": "064",
+      "target": "tag:claude-code",
+      "type": "tag"
+    },
+    {
+      "source": "064",
+      "target": "tag:prompt-engineering",
+      "type": "tag"
+    },
+    {
+      "source": "064",
+      "target": "tag:context-engineering",
+      "type": "tag"
+    },
+    {
+      "source": "064",
+      "target": "tag:ai-sdlc",
+      "type": "tag"
+    },
+    {
+      "source": "064",
+      "target": "mod:03-claude-code-essentials",
+      "type": "curriculum"
+    },
+    {
+      "source": "064",
+      "target": "mod:04-agentic-patterns",
+      "type": "curriculum"
+    },
+    {
+      "source": "065",
+      "target": "007",
+      "type": "related"
+    },
+    {
+      "source": "065",
+      "target": "009",
+      "type": "related"
+    },
+    {
+      "source": "065",
+      "target": "025",
+      "type": "related"
+    },
+    {
+      "source": "065",
+      "target": "036",
+      "type": "related"
+    },
+    {
+      "source": "065",
+      "target": "037",
+      "type": "related"
+    },
+    {
+      "source": "065",
+      "target": "039",
+      "type": "related"
+    },
+    {
+      "source": "065",
+      "target": "050",
+      "type": "related"
+    },
+    {
+      "source": "065",
+      "target": "tag:ai-economics",
+      "type": "tag"
+    },
+    {
+      "source": "065",
+      "target": "tag:ai-hype",
+      "type": "tag"
+    },
+    {
+      "source": "065",
+      "target": "tag:enterprise-ai",
+      "type": "tag"
+    },
+    {
+      "source": "065",
+      "target": "tag:infrastructure",
+      "type": "tag"
+    },
+    {
+      "source": "065",
+      "target": "tag:ai-landscape",
+      "type": "tag"
+    },
+    {
+      "source": "065",
+      "target": "tag:capability-overhang",
+      "type": "tag"
+    },
+    {
+      "source": "065",
+      "target": "tag:vibe-coding",
+      "type": "tag"
+    },
+    {
+      "source": "065",
+      "target": "tag:revenue-per-employee",
+      "type": "tag"
+    },
+    {
+      "source": "065",
+      "target": "mod:01-foundations",
+      "type": "curriculum"
+    },
+    {
+      "source": "065",
+      "target": "mod:06-strategy-and-economics",
+      "type": "curriculum"
+    },
+    {
+      "source": "066",
+      "target": "039",
+      "type": "related"
+    },
+    {
+      "source": "066",
+      "target": "036",
+      "type": "related"
+    },
+    {
+      "source": "066",
+      "target": "044",
+      "type": "related"
+    },
+    {
+      "source": "066",
+      "target": "013",
+      "type": "related"
+    },
+    {
+      "source": "066",
+      "target": "051",
+      "type": "related"
+    },
+    {
+      "source": "066",
+      "target": "tag:claude-code",
+      "type": "tag"
+    },
+    {
+      "source": "066",
+      "target": "tag:enterprise-ai",
+      "type": "tag"
+    },
+    {
+      "source": "066",
+      "target": "tag:skills-ecosystem",
+      "type": "tag"
+    },
+    {
+      "source": "066",
+      "target": "tag:ai-economics",
+      "type": "tag"
+    },
+    {
+      "source": "066",
+      "target": "tag:capability-overhang",
+      "type": "tag"
+    },
+    {
+      "source": "066",
+      "target": "mod:01-foundations",
+      "type": "curriculum"
+    },
+    {
+      "source": "066",
+      "target": "mod:03-claude-code-essentials",
+      "type": "curriculum"
+    },
+    {
+      "source": "067",
+      "target": "004",
+      "type": "related"
+    },
+    {
+      "source": "067",
+      "target": "020",
+      "type": "related"
+    },
+    {
+      "source": "067",
+      "target": "010",
+      "type": "related"
+    },
+    {
+      "source": "067",
+      "target": "014",
+      "type": "related"
+    },
+    {
+      "source": "067",
+      "target": "015",
+      "type": "related"
+    },
+    {
+      "source": "067",
+      "target": "tag:agent-teams",
+      "type": "tag"
+    },
+    {
+      "source": "067",
+      "target": "tag:multi-agent",
+      "type": "tag"
+    },
+    {
+      "source": "067",
+      "target": "tag:claude-code",
+      "type": "tag"
+    },
+    {
+      "source": "067",
+      "target": "tag:context-engineering",
+      "type": "tag"
+    },
+    {
+      "source": "067",
+      "target": "tag:skills",
+      "type": "tag"
+    },
+    {
+      "source": "067",
+      "target": "mod:05-team-orchestration",
+      "type": "curriculum"
+    },
+    {
+      "source": "067",
+      "target": "mod:03-claude-code-essentials",
+      "type": "curriculum"
+    },
+    {
+      "source": "068",
+      "target": "067",
+      "type": "related"
+    },
+    {
+      "source": "068",
+      "target": "010",
+      "type": "related"
+    },
+    {
+      "source": "068",
+      "target": "004",
+      "type": "related"
+    },
+    {
+      "source": "068",
+      "target": "020",
+      "type": "related"
+    },
+    {
+      "source": "068",
+      "target": "tag:multi-agent",
+      "type": "tag"
+    },
+    {
+      "source": "068",
+      "target": "tag:agent-teams",
+      "type": "tag"
+    },
+    {
+      "source": "068",
+      "target": "tag:agentic-coding",
+      "type": "tag"
+    },
+    {
+      "source": "068",
+      "target": "tag:ai-hype",
+      "type": "tag"
+    },
+    {
+      "source": "068",
+      "target": "mod:05-team-orchestration",
+      "type": "curriculum"
+    },
+    {
+      "source": "068",
+      "target": "mod:04-agentic-patterns",
+      "type": "curriculum"
+    },
+    {
+      "source": "069",
+      "target": "018",
+      "type": "related"
+    },
+    {
+      "source": "069",
+      "target": "064",
+      "type": "related"
+    },
+    {
+      "source": "069",
+      "target": "001",
+      "type": "related"
+    },
+    {
+      "source": "069",
+      "target": "tag:agentic-coding",
+      "type": "tag"
+    },
+    {
+      "source": "069",
+      "target": "tag:ai-sdlc",
+      "type": "tag"
+    },
+    {
+      "source": "069",
+      "target": "tag:enterprise-ai",
+      "type": "tag"
+    },
+    {
+      "source": "069",
+      "target": "tag:multi-agent",
+      "type": "tag"
+    },
+    {
+      "source": "069",
+      "target": "mod:04-agentic-patterns",
+      "type": "curriculum"
+    },
+    {
+      "source": "069",
+      "target": "mod:06-strategy-and-economics",
+      "type": "curriculum"
+    },
+    {
+      "source": "070",
+      "target": "005",
+      "type": "related"
+    },
+    {
+      "source": "070",
+      "target": "018",
+      "type": "related"
+    },
+    {
+      "source": "070",
+      "target": "042",
+      "type": "related"
+    },
+    {
+      "source": "070",
+      "target": "tag:ai-sdlc",
+      "type": "tag"
+    },
+    {
+      "source": "070",
+      "target": "tag:vibe-coding",
+      "type": "tag"
+    },
+    {
+      "source": "070",
+      "target": "tag:capability-overhang",
+      "type": "tag"
+    },
+    {
+      "source": "070",
+      "target": "tag:enterprise-ai",
+      "type": "tag"
+    },
+    {
+      "source": "070",
+      "target": "mod:06-strategy-and-economics",
+      "type": "curriculum"
+    },
+    {
+      "source": "070",
+      "target": "mod:02-prompting-and-workflows",
+      "type": "curriculum"
+    },
+    {
+      "source": "071",
+      "target": "068",
+      "type": "related"
+    },
+    {
+      "source": "071",
+      "target": "070",
+      "type": "related"
+    },
+    {
+      "source": "071",
+      "target": "005",
+      "type": "related"
+    },
+    {
+      "source": "071",
+      "target": "029",
+      "type": "related"
+    },
+    {
+      "source": "071",
+      "target": "050",
+      "type": "related"
+    },
+    {
+      "source": "071",
+      "target": "018",
+      "type": "related"
+    },
+    {
+      "source": "071",
+      "target": "tag:ai-sdlc",
+      "type": "tag"
+    },
+    {
+      "source": "071",
+      "target": "tag:vibe-coding",
+      "type": "tag"
+    },
+    {
+      "source": "071",
+      "target": "tag:capability-overhang",
+      "type": "tag"
+    },
+    {
+      "source": "071",
+      "target": "tag:context-engineering",
+      "type": "tag"
+    },
+    {
+      "source": "071",
+      "target": "tag:enterprise-ai",
+      "type": "tag"
+    },
+    {
+      "source": "071",
+      "target": "tag:ai-hype",
+      "type": "tag"
+    },
+    {
+      "source": "071",
+      "target": "mod:01-foundations",
+      "type": "curriculum"
+    },
+    {
+      "source": "071",
+      "target": "mod:02-prompting-and-workflows",
+      "type": "curriculum"
+    },
+    {
+      "source": "071",
+      "target": "mod:06-strategy-and-economics",
+      "type": "curriculum"
+    },
+    {
+      "source": "072",
+      "target": "005",
+      "type": "related"
+    },
+    {
+      "source": "072",
+      "target": "042",
+      "type": "related"
+    },
+    {
+      "source": "072",
+      "target": "tag:vibe-coding",
+      "type": "tag"
+    },
+    {
+      "source": "072",
+      "target": "tag:ai-landscape",
+      "type": "tag"
+    },
+    {
+      "source": "072",
+      "target": "mod:02-prompting-and-workflows",
+      "type": "curriculum"
+    },
+    {
+      "source": "073",
+      "target": "041",
+      "type": "related"
+    },
+    {
+      "source": "073",
+      "target": "007",
+      "type": "related"
+    },
+    {
+      "source": "073",
+      "target": "029",
+      "type": "related"
+    },
+    {
+      "source": "073",
+      "target": "tag:ai-hype",
+      "type": "tag"
+    },
+    {
+      "source": "073",
+      "target": "tag:agentic-coding",
+      "type": "tag"
+    },
+    {
+      "source": "073",
+      "target": "tag:anthropic",
+      "type": "tag"
+    },
+    {
+      "source": "073",
+      "target": "mod:01-foundations",
+      "type": "curriculum"
+    },
+    {
+      "source": "073",
+      "target": "mod:04-agentic-patterns",
+      "type": "curriculum"
+    },
+    {
+      "source": "074",
+      "target": "028",
+      "type": "related"
+    },
+    {
+      "source": "074",
+      "target": "012",
+      "type": "related"
+    },
+    {
+      "source": "074",
+      "target": "034",
+      "type": "related"
+    },
+    {
+      "source": "074",
+      "target": "tag:ai-landscape",
+      "type": "tag"
+    },
+    {
+      "source": "074",
+      "target": "tag:capability-overhang",
+      "type": "tag"
+    },
+    {
+      "source": "074",
+      "target": "tag:vibe-coding",
+      "type": "tag"
+    },
+    {
+      "source": "074",
+      "target": "mod:01-foundations",
+      "type": "curriculum"
+    },
+    {
+      "source": "074",
+      "target": "mod:06-strategy-and-economics",
+      "type": "curriculum"
+    },
+    {
+      "source": "075",
+      "target": "042",
+      "type": "related"
+    },
+    {
+      "source": "075",
+      "target": "038",
+      "type": "related"
+    },
+    {
+      "source": "075",
+      "target": "005",
+      "type": "related"
+    },
+    {
+      "source": "075",
+      "target": "tag:vibe-coding",
+      "type": "tag"
+    },
+    {
+      "source": "075",
+      "target": "tag:ai-landscape",
+      "type": "tag"
+    },
+    {
+      "source": "075",
+      "target": "tag:prompt-engineering",
+      "type": "tag"
+    },
+    {
+      "source": "075",
+      "target": "mod:02-prompting-and-workflows",
+      "type": "curriculum"
+    },
+    {
+      "source": "076",
+      "target": "050",
+      "type": "related"
+    },
+    {
+      "source": "076",
+      "target": "059",
+      "type": "related"
+    },
+    {
+      "source": "076",
+      "target": "065",
+      "type": "related"
+    },
+    {
+      "source": "076",
+      "target": "005",
+      "type": "related"
+    },
+    {
+      "source": "076",
+      "target": "012",
+      "type": "related"
+    },
+    {
+      "source": "076",
+      "target": "071",
+      "type": "related"
+    },
+    {
+      "source": "076",
+      "target": "tag:ai-economics",
+      "type": "tag"
+    },
+    {
+      "source": "076",
+      "target": "tag:capability-overhang",
+      "type": "tag"
+    },
+    {
+      "source": "076",
+      "target": "tag:enterprise-ai",
+      "type": "tag"
+    },
+    {
+      "source": "076",
+      "target": "tag:ai-landscape",
+      "type": "tag"
+    },
+    {
+      "source": "076",
+      "target": "tag:specification",
+      "type": "tag"
+    },
+    {
+      "source": "076",
+      "target": "mod:01-foundations",
+      "type": "curriculum"
+    },
+    {
+      "source": "076",
+      "target": "mod:06-strategy-and-economics",
+      "type": "curriculum"
+    },
+    {
+      "source": "077",
+      "target": "019",
+      "type": "related"
+    },
+    {
+      "source": "077",
+      "target": "007",
+      "type": "related"
+    },
+    {
+      "source": "077",
+      "target": "025",
+      "type": "related"
+    },
+    {
+      "source": "077",
+      "target": "028",
+      "type": "related"
+    },
+    {
+      "source": "077",
+      "target": "050",
+      "type": "related"
+    },
+    {
+      "source": "077",
+      "target": "056",
+      "type": "related"
+    },
+    {
+      "source": "077",
+      "target": "042",
+      "type": "related"
+    },
+    {
+      "source": "077",
+      "target": "tag:ai-hype",
+      "type": "tag"
+    },
+    {
+      "source": "077",
+      "target": "tag:ai-economics",
+      "type": "tag"
+    },
+    {
+      "source": "077",
+      "target": "tag:capability-overhang",
+      "type": "tag"
+    },
+    {
+      "source": "077",
+      "target": "tag:vibe-coding",
+      "type": "tag"
+    },
+    {
+      "source": "077",
+      "target": "mod:01-foundations",
+      "type": "curriculum"
+    },
+    {
+      "source": "077",
+      "target": "mod:06-strategy-and-economics",
+      "type": "curriculum"
+    },
+    {
+      "source": "078",
+      "target": "020",
+      "type": "related"
+    },
+    {
+      "source": "078",
+      "target": "051",
+      "type": "related"
+    },
+    {
+      "source": "078",
+      "target": "062",
+      "type": "related"
+    },
+    {
+      "source": "078",
+      "target": "046",
+      "type": "related"
+    },
+    {
+      "source": "078",
+      "target": "066",
+      "type": "related"
+    },
+    {
+      "source": "078",
+      "target": "tag:agentic-coding",
+      "type": "tag"
+    },
+    {
+      "source": "078",
+      "target": "tag:claude-code",
+      "type": "tag"
+    },
+    {
+      "source": "078",
+      "target": "tag:mcp",
+      "type": "tag"
+    },
+    {
+      "source": "078",
+      "target": "tag:enterprise-ai",
+      "type": "tag"
+    },
+    {
+      "source": "078",
+      "target": "mod:03-claude-code-essentials",
+      "type": "curriculum"
+    },
+    {
+      "source": "078",
+      "target": "mod:06-strategy-and-economics",
+      "type": "curriculum"
+    },
+    {
+      "source": "079",
+      "target": "013",
+      "type": "related"
+    },
+    {
+      "source": "079",
+      "target": "015",
+      "type": "related"
+    },
+    {
+      "source": "079",
+      "target": "040",
+      "type": "related"
+    },
+    {
+      "source": "079",
+      "target": "043",
+      "type": "related"
+    },
+    {
+      "source": "079",
+      "target": "062",
+      "type": "related"
+    },
+    {
+      "source": "079",
+      "target": "063",
+      "type": "related"
+    },
+    {
+      "source": "079",
+      "target": "017",
+      "type": "related"
+    },
+    {
+      "source": "079",
+      "target": "tag:skills",
+      "type": "tag"
+    },
+    {
+      "source": "079",
+      "target": "tag:claude-code",
+      "type": "tag"
+    },
+    {
+      "source": "079",
+      "target": "tag:skills-ecosystem",
+      "type": "tag"
+    },
+    {
+      "source": "079",
+      "target": "tag:mcp",
+      "type": "tag"
+    },
+    {
+      "source": "079",
+      "target": "tag:context-engineering",
+      "type": "tag"
+    },
+    {
+      "source": "079",
+      "target": "mod:03-claude-code-essentials",
+      "type": "curriculum"
+    },
+    {
+      "source": "079",
+      "target": "mod:04-agentic-patterns",
+      "type": "curriculum"
+    },
+    {
+      "source": "080",
+      "target": "009",
+      "type": "related"
+    },
+    {
+      "source": "080",
+      "target": "037",
+      "type": "related"
+    },
+    {
+      "source": "080",
+      "target": "060",
+      "type": "related"
+    },
+    {
+      "source": "080",
+      "target": "tag:ai-landscape",
+      "type": "tag"
+    },
+    {
+      "source": "080",
+      "target": "tag:infrastructure",
+      "type": "tag"
+    },
+    {
+      "source": "080",
+      "target": "mod:01-foundations",
+      "type": "curriculum"
+    },
+    {
+      "source": "081",
+      "target": "032",
+      "type": "related"
+    },
+    {
+      "source": "081",
+      "target": "058",
+      "type": "related"
+    },
+    {
+      "source": "081",
+      "target": "047",
+      "type": "related"
+    },
+    {
+      "source": "081",
+      "target": "045",
+      "type": "related"
+    },
+    {
+      "source": "081",
+      "target": "017",
+      "type": "related"
+    },
+    {
+      "source": "081",
+      "target": "tag:ai-landscape",
+      "type": "tag"
+    },
+    {
+      "source": "081",
+      "target": "tag:openai",
+      "type": "tag"
+    },
+    {
+      "source": "081",
+      "target": "tag:security",
+      "type": "tag"
+    },
+    {
+      "source": "081",
+      "target": "tag:multi-agent",
+      "type": "tag"
+    },
+    {
+      "source": "081",
+      "target": "mod:01-foundations",
+      "type": "curriculum"
+    },
+    {
+      "source": "081",
+      "target": "mod:06-strategy-and-economics",
+      "type": "curriculum"
+    },
+    {
+      "source": "082",
+      "target": "003",
+      "type": "related"
+    },
+    {
+      "source": "082",
+      "target": "017",
+      "type": "related"
+    },
+    {
+      "source": "082",
+      "target": "009",
+      "type": "related"
+    },
+    {
+      "source": "082",
+      "target": "tag:ai-landscape",
+      "type": "tag"
+    },
+    {
+      "source": "082",
+      "target": "tag:infrastructure",
+      "type": "tag"
+    },
+    {
+      "source": "082",
+      "target": "mod:01-foundations",
+      "type": "curriculum"
+    },
+    {
+      "source": "082",
+      "target": "mod:06-strategy-and-economics",
+      "type": "curriculum"
+    },
+    {
+      "source": "083",
+      "target": "063",
+      "type": "related"
+    },
+    {
+      "source": "083",
+      "target": "066",
+      "type": "related"
+    },
+    {
+      "source": "083",
+      "target": "013",
+      "type": "related"
+    },
+    {
+      "source": "083",
+      "target": "015",
+      "type": "related"
+    },
+    {
+      "source": "083",
+      "target": "043",
+      "type": "related"
+    },
+    {
+      "source": "083",
+      "target": "tag:claude-code",
+      "type": "tag"
+    },
+    {
+      "source": "083",
+      "target": "tag:skills",
+      "type": "tag"
+    },
+    {
+      "source": "083",
+      "target": "tag:mcp",
+      "type": "tag"
+    },
+    {
+      "source": "083",
+      "target": "tag:skills-ecosystem",
+      "type": "tag"
+    },
+    {
+      "source": "083",
+      "target": "mod:03-claude-code-essentials",
+      "type": "curriculum"
+    },
+    {
+      "source": "083",
+      "target": "mod:04-agentic-patterns",
+      "type": "curriculum"
+    },
+    {
+      "source": "084",
+      "target": "011",
+      "type": "related"
+    },
+    {
+      "source": "084",
+      "target": "040",
+      "type": "related"
+    },
+    {
+      "source": "084",
+      "target": "048",
+      "type": "related"
+    },
+    {
+      "source": "084",
+      "target": "024",
+      "type": "related"
+    },
+    {
+      "source": "084",
+      "target": "064",
+      "type": "related"
+    },
+    {
+      "source": "084",
+      "target": "tag:context-engineering",
+      "type": "tag"
+    },
+    {
+      "source": "084",
+      "target": "tag:prompt-engineering",
+      "type": "tag"
+    },
+    {
+      "source": "084",
+      "target": "tag:chatgpt",
+      "type": "tag"
+    },
+    {
+      "source": "084",
+      "target": "mod:02-prompting-and-workflows",
+      "type": "curriculum"
+    },
+    {
+      "source": "084",
+      "target": "mod:03-claude-code-essentials",
+      "type": "curriculum"
+    },
+    {
+      "source": "085",
+      "target": "007",
+      "type": "related"
+    },
+    {
+      "source": "085",
+      "target": "034",
+      "type": "related"
+    },
+    {
+      "source": "085",
+      "target": "050",
+      "type": "related"
+    },
+    {
+      "source": "085",
+      "target": "052",
+      "type": "related"
+    },
+    {
+      "source": "085",
+      "target": "056",
+      "type": "related"
+    },
+    {
+      "source": "085",
+      "target": "009",
+      "type": "related"
+    },
+    {
+      "source": "085",
+      "target": "tag:ai-hype",
+      "type": "tag"
+    },
+    {
+      "source": "085",
+      "target": "tag:ai-economics",
+      "type": "tag"
+    },
+    {
+      "source": "085",
+      "target": "tag:infrastructure",
+      "type": "tag"
+    },
+    {
+      "source": "085",
+      "target": "mod:01-foundations",
+      "type": "curriculum"
+    },
+    {
+      "source": "085",
+      "target": "mod:06-strategy-and-economics",
+      "type": "curriculum"
+    },
+    {
+      "source": "086",
+      "target": "003",
+      "type": "related"
+    },
+    {
+      "source": "086",
+      "target": "016",
+      "type": "related"
+    },
+    {
+      "source": "086",
+      "target": "010",
+      "type": "related"
+    },
+    {
+      "source": "086",
+      "target": "044",
+      "type": "related"
+    },
+    {
+      "source": "086",
+      "target": "065",
+      "type": "related"
+    },
+    {
+      "source": "086",
+      "target": "tag:ai-landscape",
+      "type": "tag"
+    },
+    {
+      "source": "086",
+      "target": "tag:agentic-coding",
+      "type": "tag"
+    },
+    {
+      "source": "086",
+      "target": "tag:enterprise-ai",
+      "type": "tag"
+    },
+    {
+      "source": "086",
+      "target": "tag:multi-agent",
+      "type": "tag"
+    },
+    {
+      "source": "086",
+      "target": "mod:01-foundations",
+      "type": "curriculum"
+    },
+    {
+      "source": "086",
+      "target": "mod:04-agentic-patterns",
+      "type": "curriculum"
+    },
+    {
+      "source": "086",
+      "target": "mod:06-strategy-and-economics",
+      "type": "curriculum"
+    },
+    {
+      "source": "087",
+      "target": "033",
+      "type": "related"
+    },
+    {
+      "source": "087",
+      "target": "050",
+      "type": "related"
+    },
+    {
+      "source": "087",
+      "target": "056",
+      "type": "related"
+    },
+    {
+      "source": "087",
+      "target": "007",
+      "type": "related"
+    },
+    {
+      "source": "087",
+      "target": "059",
+      "type": "related"
+    },
+    {
+      "source": "087",
+      "target": "tag:ai-landscape",
+      "type": "tag"
+    },
+    {
+      "source": "087",
+      "target": "tag:ai-hype",
+      "type": "tag"
+    },
+    {
+      "source": "087",
+      "target": "tag:ai-economics",
+      "type": "tag"
+    },
+    {
+      "source": "087",
+      "target": "tag:enterprise-ai",
+      "type": "tag"
+    },
+    {
+      "source": "087",
+      "target": "mod:01-foundations",
+      "type": "curriculum"
+    },
+    {
+      "source": "087",
+      "target": "mod:06-strategy-and-economics",
+      "type": "curriculum"
+    },
+    {
+      "source": "088",
+      "target": "015",
+      "type": "related"
+    },
+    {
+      "source": "088",
+      "target": "010",
+      "type": "related"
+    },
+    {
+      "source": "088",
+      "target": "064",
+      "type": "related"
+    },
+    {
+      "source": "088",
+      "target": "030",
+      "type": "related"
+    },
+    {
+      "source": "088",
+      "target": "062",
+      "type": "related"
+    },
+    {
+      "source": "088",
+      "target": "017",
+      "type": "related"
+    },
+    {
+      "source": "088",
+      "target": "tag:skills",
+      "type": "tag"
+    },
+    {
+      "source": "088",
+      "target": "tag:agentic-coding",
+      "type": "tag"
+    },
+    {
+      "source": "088",
+      "target": "tag:multi-agent",
+      "type": "tag"
+    },
+    {
+      "source": "088",
+      "target": "tag:claude-code",
+      "type": "tag"
+    },
+    {
+      "source": "088",
+      "target": "mod:03-claude-code-essentials",
+      "type": "curriculum"
+    },
+    {
+      "source": "088",
+      "target": "mod:04-agentic-patterns",
+      "type": "curriculum"
+    }
+  ],
+  "synthesis": [
+    {
+      "id": "2026-02-09-ai-tools-strategy-hype",
+      "date": "2026-02-09",
+      "title": "AI Tools, Strategy, and Hype: A Synthesis",
+      "themes": [
+        "The Same-Day Arms Race",
+        "The December 2025 Phase Transition",
+        "The C Compiler Milestone and Production Deployments",
+        "Agent Teams in Practice",
+        "Multi-Agent Orchestration at Scale",
+        "Skills: The Decision Framework and Composability Hierarchy",
+        "Skills in Practice",
+        "Skills Security: The Supply Chain Crisis",
+        "The Task System, Ralph, and Builder/Validator Pattern",
+        "Key Opinions (Theme A)",
+        "Anthropic's \"Do More With Less\" Philosophy",
+        "The Capability Overhang",
+        "AI Is Collapsing Futures",
+        "\"Something Big Is Happening\" \u2014 The February 2020 Analogy",
+        "Vibe Working and Revenue Per Employee",
+        "The AI-Driven SDLC",
+        "The Four AI Skills That Matter",
+        "Vibe Coding: Play, Specification, and Judgment",
+        "Key Opinions (Theme B)",
+        "The Super Bowl Bubble Curse",
+        "The Global Inference Crisis",
+        "Key Opinions (Theme C)"
+      ],
+      "source_ids": [
+        "001",
+        "002",
+        "003",
+        "004",
+        "005",
+        "006",
+        "007",
+        "008",
+        "009",
+        "010",
+        "012",
+        "013",
+        "014",
+        "015",
+        "016",
+        "017",
+        "018",
+        "019"
+      ]
+    },
+    {
+      "id": "2026-02-11-agentic-coding-state-of-play",
+      "date": "2026-02-11",
+      "title": "The State of Agentic Coding \u2014 February 2026",
+      "themes": [
+        "Multi-Agent Orchestration Is Crossing a Threshold",
+        "The Developer Identity Crisis",
+        "Verification and Guard Rails as Core Competency",
+        "Local AI as an Alternative Compute Path"
+      ],
+      "source_ids": [
+        "020",
+        "021",
+        "022",
+        "023",
+        "024"
+      ]
+    },
+    {
+      "id": "2026-02-12-ai-economics-reality-check",
+      "date": "2026-02-12",
+      "title": "The AI Economics Reality Check \u2014 February 2026",
+      "themes": [
+        "The Demand Is Real, But Misunderstood",
+        "The Economics Do Not Add Up (Yet)",
+        "The Information Environment Is Polluted",
+        "The Enterprise Gap Is Structural",
+        "The Market Is Sending Contradictory Signals"
+      ],
+      "source_ids": [
+        "032",
+        "033",
+        "034",
+        "035",
+        "036",
+        "037"
+      ]
+    },
+    {
+      "id": "2026-02-13-ai-hype-reality-gap",
+      "date": "2026-02-13",
+      "title": "The Hype-Reality Gap: When Marketing Meets Engineering",
+      "themes": [
+        "The Demonstration Gap",
+        "The Interface Question",
+        "The Investment Bubble",
+        "The Junior-Senior Divide",
+        "Practical Value vs. Marketing Value"
+      ],
+      "source_ids": []
+    },
+    {
+      "id": "2026-02-14-acceleration-without-infrastructure",
+      "date": "2026-02-14",
+      "title": "Acceleration Without Infrastructure",
+      "themes": [
+        "The Judgment Premium: When Production Is Free, Evaluation Is Everything",
+        "Multi-Agent Systems: The Coordination Tax Nobody Budgeted For",
+        "The Safety-Deployment Gap",
+        "Tooling Maturation: From Hacks to Standards",
+        "The Economic Emergency: Success as Crisis"
+      ],
+      "source_ids": []
+    },
+    {
+      "id": "2026-02-15-batch2-synthesis",
+      "date": "2026-02-15",
+      "title": "The Agent Economy Takes Shape",
+      "themes": [
+        "The Orchestration Layer Is the Real Product",
+        "The Trust Problem: From \"Move Fast\" to \"Verify Everything\"",
+        "The Productivity Measurement Crisis",
+        "The SaaS Extinction Event -- Real Threat or Market Panic?",
+        "The Democratization Paradox",
+        "The Inference-Time Paradigm Shift"
+      ],
+      "source_ids": []
+    },
+    {
+      "id": "2026-02-16-cognitive-debt-and-the-future-of-software",
+      "date": "2026-02-16",
+      "title": "Cognitive Debt and the Future of Software",
+      "themes": [
+        "Cognitive Debt: The Hidden Cost of AI Velocity",
+        "Specification Is Becoming the Software",
+        "Developer Experience = Agent Experience",
+        "The Mid-Level Hollow-Out",
+        "The Sustainability Question: Burnout as Productivity Tax"
+      ],
+      "source_ids": [
+        "001",
+        "005",
+        "012",
+        "018",
+        "029",
+        "033",
+        "042",
+        "050",
+        "056",
+        "062",
+        "068",
+        "069",
+        "070",
+        "071"
+      ]
+    },
+    {
+      "id": "2026-02-17-playlist-themes",
+      "date": "2026-02-17",
+      "title": "The Specification Reckoning \u2014 17 Sources Converge on What Comes After Vibe Coding",
+      "themes": [
+        "The Specification Bottleneck \u2014 Production Is Free, Specification Is Everything",
+        "Context as Infrastructure \u2014 The 60% Rule and Layered Architectures",
+        "The Hype-Reality Reckoning",
+        "The Agent Wars \u2014 Codex vs. Claude and What It Means",
+        "Practical Skill Architecture \u2014 The Maturation of Claude Code"
+      ],
+      "source_ids": [
+        "005",
+        "018",
+        "040",
+        "062",
+        "071",
+        "072",
+        "073",
+        "074",
+        "075",
+        "076",
+        "077",
+        "078",
+        "079",
+        "081",
+        "083",
+        "084",
+        "085",
+        "086",
+        "088"
+      ]
+    }
+  ],
+  "meta": {
+    "generated": "2026-02-16T23:18:09.126488+00:00",
+    "source_count": 88,
+    "tag_count": 30
+  }
+}
