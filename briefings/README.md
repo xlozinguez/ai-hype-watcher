@@ -15,6 +15,7 @@ Dated entries covering recent AI development findings, tool updates, and critica
 | [2026-02-17](2026-02-17.md) | 17-video playlist batch — specification bottleneck gets data, context management gets a number, skeptic case matures | critical, economics, patterns, tools |
 | [2026-02-18](2026-02-18.md) | OpenAI's three-front collapse — Nvidia pullback, Microsoft pivot, Marcus/Eisman bear case; OpenClaw saga concludes; expectations trap named | economics, critical, security, tools |
 | [2026-02-19](2026-02-19.md) | Self-improving swarms, Claude Code origin story, shadow data exploits, safety test saturation, AI market panic reflexivity | agent-teams, claude-code, security, economics, critical |
+| [2026-02-21](2026-02-21.md) | 25-source batch — AI bubble goes mainstream, context engineering taught as discipline, skills security crisis, dark factory economics, Boris Cherny on post-coding future | economics, critical, security, tools, patterns |
 
 ## Adding Briefings
 

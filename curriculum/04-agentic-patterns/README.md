@@ -463,6 +463,20 @@ The key differentiator from the four-layer stack (Concept 12): Concept 12 target
 | [103: Inside Claude Code With Its Creator Boris Cherny](../../sources/103-y-combinator-boris-cherny-claude-code.md) | Y Combinator / Boris Cherny | Scaffolding as temporary tech debt, build for future model, CLAUDE.md minimalism, plan mode mechanics |
 | [105: How to Use Claude Cowork Better Than 99% of People](../../sources/105-ben-ai-cowork-guide.md) | Ben AI | Skills as workflow automation, human-in-the-loop sweet spot, skill chaining in single context |
 | [108: The 5 Levels of AI Coding](../../sources/108-nate-b-jones-five-levels-ai-coding.md) | Nate B Jones | Five-level maturity framework, dark factory architecture, J-curve adoption, specification as bottleneck |
+| [113: I was an AI skeptic. Then I tried plan mode](../../sources/113-matt-pocock-plan-mode.md) | Matt Pocock | Plan-execute-test-commit loop, plan mode as context loading, concise plans via CLAUDE.md |
+| [115: Ship working code while you sleep with the Ralph Wiggum technique](../../sources/115-matt-pocock-ralph-wiggum-technique.md) | Matt Pocock | Ralph as bash loop, PRD as desired state, progress.txt as sprint memory, task sizing |
+| [116: LIVE: Chat with AI Coding Wizard Dex Horthy](../../sources/116-matt-pocock-dex-horthy-interview.md) | Matt Pocock / Dex Horthy | Smart zone vs dumb zone, quadratic attention scaling, Ralph as control loop, tracer bullet task sizing |
+| [118: No Vibes Allowed: Solving Hard Problems in Complex Codebases](../../sources/118-dex-horthy-no-vibes-complex-codebases.md) | Dex Horthy | Research-Plan-Implement workflow, intentional compaction, dumb zone at 40% context, sub-agents for context control |
+| [119: $1,000 a Day in AI Costs. Three Engineers. No Writing Code.](../../sources/119-nate-b-jones-ai-costs-dark-factory.md) | Nate B Jones | Token as unit of computing, Jevons' paradox applied to AI, three developer career tracks, token economics as core competency |
+| [120: How to Make the Best of AI Programming Assistants](../../sources/120-dave-farley-ai-programming-assistants.md) | Dave Farley | Nyquist-Shannon theorem applied to AI coding, CI as sampling strategy, production-feedback gap |
+| [124: Skills.sh Just Launched. It's Already a Massive Security Risk](../../sources/124-kathy-zant-skills-sh-security.md) | Kathy Zant | Skills marketplace supply-chain risks, prompt injection via alt text, "find skills" meta-danger, WordPress security parallels |
+| [126: How I use Claude Code for real engineering](../../sources/126-matt-pocock-claude-code-engineering.md) | Matt Pocock | Plan mode first workflow, multi-phase planning, GitHub issues as external memory, context chaining |
+| [127: 50 days with OpenClaw](../../sources/127-velvetshark-openclaw-50-days.md) | VelvetShark | Markdown-first architecture, context separation via channels, multi-model routing, long-term agent adoption reality |
+| [128: The $285B Sell-Off Was Just the Beginning](../../sources/128-nate-b-jones-285b-selloff.md) | Nate B Jones | Agent web fork, agent wallets and commerce, agent-readable content, infrastructure primitives convergence |
+| [129: One Claude Code Agent? That's Your First Mistake](../../sources/129-leon-van-zyl-multi-agent-claude.md) | Leon van Zyl | Git worktrees for parallel AI development, parallel experimentation workflow, side-by-side model comparison |
+| [134: Google DeepMind's Experimental Platform for Humans and LLM Agents](../../sources/134-prolific-deepmind-agent-platform.md) | Prolific / Google DeepMind | Deliberate Lab for human-AI group research, mirror vs mask duality, LLM agent negotiation strategies |
+| [135: His Claude Code Workflow Is Insane](../../sources/135-john-kim-claude-code-workflow.md) | John Kim | Boris Cherny's 13-tip workflow, parallel instance management, shared CLAUDE.md, custom sub-agents for post-processing |
+| [136: Head of Claude Code: What happens after coding is solved](../../sources/136-lennys-podcast-boris-cherny-after-coding.md) | Lenny's Podcast / Boris Cherny | Coding as solved problem, printing-press analogy, latent demand, bitter lesson applied to AI products |
 
 ## Further Reading
 

@@ -119,6 +119,31 @@ Each source is synthesized (not transcribed) into a structured note with frontma
 | [109](109-themitmonk-chatgpt-hacks.md) | 5 Hacks To Use ChatGPT So Well It's Almost Unfair | theMITmonk | video | chatgpt, prompt-engineering, context-engineering |
 | [110](110-nate-b-jones-ai-career-opportunity.md) | Why the Biggest AI Career Opportunity Just Appeared—and Almost Nobody Sees It | Nate B Jones | video | ai-hype, ai-economics, ai-landscape, enterprise-ai, capability-overhang |
 | [111](111-prof-g-china-ai-anthropic-pentagon.md) | China's AI Is 20x Cheaper — And Catching Up | Prof G Markets (Scott Galloway) | video | ai-economics, ai-landscape, ai-safety, anthropic, infrastructure |
+| [112](112-matt-pocock-llm-tokens.md) | Most devs don't understand how LLM tokens work | Matt Pocock | video | ai-landscape, prompt-engineering, context-engineering |
+| [113](113-matt-pocock-plan-mode.md) | I was an AI skeptic. Then I tried plan mode | Matt Pocock | video | agentic-coding, claude-code, context-engineering, prompt-engineering |
+| [114](114-matt-pocock-context-windows.md) | Most devs don't understand how context windows work | Matt Pocock | video | context-engineering, agentic-coding, claude-code |
+| [115](115-matt-pocock-ralph-wiggum-technique.md) | Ship working code while you sleep with the Ralph Wiggum technique | Matt Pocock | video | agentic-coding, claude-code, context-engineering, ai-sdlc |
+| [116](116-matt-pocock-dex-horthy-interview.md) | LIVE: Chat with AI Coding Wizard Dex Horthy | Matt Pocock | video | agentic-coding, context-engineering, claude-code, ai-sdlc, enterprise-ai |
+| [117](117-primetime-ai-agent-hit-piece.md) | AI Agent writes hit piece | The PrimeTime | video | ai-hype, security, agentic-coding, ai-safety |
+| [118](118-dex-horthy-no-vibes-complex-codebases.md) | No Vibes Allowed: Solving Hard Problems in Complex Codebases | Dex Horthy (AI Engineer) | video | context-engineering, agentic-coding, ai-sdlc, claude-code, specification |
+| [119](119-nate-b-jones-ai-costs-dark-factory.md) | $1,000 a Day in AI Costs. Three Engineers. No Writing Code. | Nate B Jones | video | ai-economics, capability-overhang, enterprise-ai, ai-landscape, revenue-per-employee, agentic-coding, infrastructure |
+| [120](120-dave-farley-ai-programming-assistants.md) | How to Make the Best of AI Programming Assistants | Modern Software Engineering (Dave Farley) | video | ai-sdlc, vibe-coding, ai-hype, agentic-coding |
+| [121](121-pivot-to-ai-aws-vibe-coding-outage.md) | Amazon Web Services vibe-codes itself an outage or two | Pivot to AI | video | ai-hype, vibe-coding, enterprise-ai, infrastructure, security |
+| [122](122-upper-echelon-rent-a-human-moltbook.md) | Dystopian Puppetry - Rent-A-Human and Moltbook | Upper Echelon | video | ai-hype, ai-landscape, security, ai-economics |
+| [123](123-steve-eisman-software-bloodbath.md) | Flight to Safety Begins, Private Credit Cracks & the Software Bloodbath | Steve Eisman | video | ai-economics, ai-hype, enterprise-ai, infrastructure, ai-landscape |
+| [124](124-kathy-zant-skills-sh-security.md) | Skills.sh Just Launched. It's Already a Massive Security Risk | Kathy Zant | video | security, skills-ecosystem, ai-safety, agentic-coding, claude-code |
+| [125](125-ed-zitron-ai-bubble-wework.md) | AI Bubble: 'This is dumber than WeWork' - Ed Zitron | The Tech Report | video | ai-hype, ai-economics, infrastructure, anthropic, openai, enterprise-ai |
+| [126](126-matt-pocock-claude-code-engineering.md) | How I use Claude Code for real engineering | Matt Pocock | video | claude-code, agentic-coding, context-engineering, prompt-engineering |
+| [127](127-velvetshark-openclaw-50-days.md) | 50 days with OpenClaw: The hype, the reality & what actually broke | VelvetShark | video | ai-landscape, multi-agent, security, enterprise-ai, ai-hype |
+| [128](128-nate-b-jones-285b-selloff.md) | The $285B Sell-Off Was Just the Beginning | Nate B Jones | video | ai-landscape, ai-economics, security, infrastructure, enterprise-ai |
+| [129](129-leon-van-zyl-multi-agent-claude.md) | One Claude Code Agent? That's Your First Mistake | Leon van Zyl | video | agentic-coding, claude-code, multi-agent, vibe-coding |
+| [130](130-ibm-technology-prompt-caching.md) | What is Prompt Caching? Optimize LLM Latency | IBM Technology | video | prompt-engineering, context-engineering, infrastructure |
+| [131](131-ali-abdaal-systems-thinking.md) | Success Is Hard Until You Build Systems Like This | Ali Abdaal | video | ai-landscape, enterprise-ai |
+| [132](132-the-atlantic-ai-panic-cycle.md) | The AI-Panic Cycle—And What's Actually Different Now | The Atlantic (Charlie Warzel / Anil Dash) | video | ai-hype, ai-economics, ai-landscape, agentic-coding, security |
+| [133](133-infographics-show-openai-money.md) | What Happens When OpenAI Runs Out of Money | The Infographics Show | video | ai-economics, ai-hype, openai, infrastructure |
+| [134](134-prolific-deepmind-agent-platform.md) | Google DeepMind's Experimental Platform for Humans and LLM Agents | Prolific | video | multi-agent, ai-landscape, enterprise-ai, ai-safety |
+| [135](135-john-kim-claude-code-workflow.md) | His Claude Code Workflow Is Insane | John Kim | video | claude-code, agentic-coding, context-engineering, skills-ecosystem, multi-agent |
+| [136](136-lennys-podcast-boris-cherny-after-coding.md) | Head of Claude Code: What happens after coding is solved | Lenny's Podcast (Boris Cherny) | video | claude-code, anthropic, agentic-coding, ai-landscape, context-engineering, ai-sdlc, capability-overhang, specification, multi-agent |
 
 ## Adding Sources
 

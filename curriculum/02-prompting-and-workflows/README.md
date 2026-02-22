@@ -275,6 +275,8 @@ Their solution is a design-first workflow that starts with emotional specificati
 | [100: How To Think Like The Top 1%](../../sources/100-justin-sung-top-1-percent-thinking.md) | Justin Sung | Meta-cognitive frameworks for prompt design, nonlinear thinking, framing bias, delayed discomfort as specification principle |
 | [108: The 5 Levels of AI Coding](../../sources/108-nate-b-jones-five-levels-ai-coding.md) | Nate B Jones | Specification as bottleneck at Level 4-5, dark factory pattern, reverse-engineering specs for brownfield systems |
 | [109: 5 Hacks To Use ChatGPT So Well It's Almost Unfair](../../sources/109-themitmonk-chatgpt-hacks.md) | theMITmonk | ESP framework for persistent context, adversarial prompting, domain-separated projects, voice mode for unstructured thinking |
+| [113: I was an AI skeptic. Then I tried plan mode](../../sources/113-matt-pocock-plan-mode.md) | Matt Pocock | Plan mode as prompting discipline, think-before-act pattern, structured workflow for AI skeptics |
+| [130: What is Prompt Caching? Optimize LLM Latency](../../sources/130-ibm-technology-prompt-caching.md) | IBM Technology | Prompt caching mechanics, latency optimization, cost reduction for repeated context |
 
 ## Further Reading
 
