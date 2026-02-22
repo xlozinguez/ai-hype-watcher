@@ -460,6 +460,17 @@ The video also surfaces a key principle: bounded, verifiable tasks (framework mi
 | [107: The Real Reason Anthropic Built a Compiler](../../sources/107-primetime-anthropic-compiler.md) | The PrimeTime | Marketing vs. reality gap, GCC test suite as prerequisite, 16-agent sustained execution as real achievement, honest framing advocacy |
 | [108: The 5 Levels of AI Coding](../../sources/108-nate-b-jones-five-levels-ai-coding.md) | Nate B Jones | Five-level maturity framework, dark factory pattern, J-curve adoption, specification as bottleneck, talent pipeline collapse, AI-native org economics |
 | [110: Why the Biggest AI Career Opportunity Just Appeared](../../sources/110-nate-b-jones-ai-career-opportunity.md) | Nate B Jones | AI scare trade, reflexive market dynamics, three categories of AI exposure, domain translator role, performative AI partnerships |
+| [111: China's AI Is 20x Cheaper — And Catching Up](../../sources/111-prof-g-china-ai-anthropic-pentagon.md) | Prof G Markets (Scott Galloway) | China AI cost advantage, geopolitical AI competition, Anthropic Pentagon dynamics |
+| [112: Most devs don't understand how LLM tokens work](../../sources/112-matt-pocock-llm-tokens.md) | Matt Pocock | Tokenization mechanics, BPE encoding, token cost implications |
+| [114: Most devs don't understand how context windows work](../../sources/114-matt-pocock-context-windows.md) | Matt Pocock | Context window mechanics, attention patterns, practical limits |
+| [117: AI Agent writes hit piece](../../sources/117-primetime-ai-agent-hit-piece.md) | The PrimeTime | AI agent autonomy risks, AI-generated misinformation, security implications |
+| [118: No Vibes Allowed: Solving Hard Problems in Complex Codebases](../../sources/118-dex-horthy-no-vibes-complex-codebases.md) | Dex Horthy (AI Engineer) | Structured AI-assisted development, complex codebase strategies, specification-driven approach |
+| [119: $1,000 a Day in AI Costs. Three Engineers. No Writing Code.](../../sources/119-nate-b-jones-ai-costs-dark-factory.md) | Nate B Jones | Dark factory economics, AI cost structures, revenue-per-employee metrics |
+| [120: How to Make the Best of AI Programming Assistants](../../sources/120-dave-farley-ai-programming-assistants.md) | Dave Farley (Modern Software Engineering) | AI assistant best practices, vibe coding critique, engineering discipline with AI |
+| [121: Amazon Web Services vibe-codes itself an outage or two](../../sources/121-pivot-to-ai-aws-vibe-coding-outage.md) | Pivot to AI | AWS vibe coding outage, enterprise AI risks, infrastructure reliability |
+| [122: Dystopian Puppetry - Rent-A-Human and Moltbook](../../sources/122-upper-echelon-rent-a-human-moltbook.md) | Upper Echelon | Rent-a-human concept, Moltbook security failures, AI hype dynamics |
+| [132: The AI-Panic Cycle—And What's Actually Different Now](../../sources/132-the-atlantic-ai-panic-cycle.md) | The Atlantic (Charlie Warzel / Anil Dash) | AI panic cycles, historical pattern analysis, what is genuinely different |
+| [136: Head of Claude Code: What happens after coding is solved](../../sources/136-lennys-podcast-boris-cherny-after-coding.md) | Lenny's Podcast / Boris Cherny | Post-coding future, Claude Code vision, capability overhang, specification as bottleneck |
 
 ## Further Reading
 

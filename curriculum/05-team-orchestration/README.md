@@ -322,6 +322,9 @@ This connects to the confusing-scale-with-quality pitfall (see Common Pitfalls b
 | [101: I Built a Self-Improving Agent Swarm](../../sources/101-jaymin-west-self-improving-swarm.md) | Jaymin West | Coordinator-lead-builder hierarchy, forced delegation, self-improving agent tooling, 22 agents on 9 issues |
 | [102: My Multi-Agent Team with OpenClaw](../../sources/102-brian-casel-openclaw-team.md) | Brian Casel | Persistent always-on agents, hiring metaphor for security, Slack-based communication, $200+/2 days cost reality |
 | [107: The Real Reason Anthropic Built a Compiler](../../sources/107-primetime-anthropic-compiler.md) | ThePrimeTime | 16 agents for 2 weeks, $20K/100K lines, test infrastructure as enabler, honest vs overclaimed framing |
+| [127: 50 days with OpenClaw](../../sources/127-velvetshark-openclaw-50-days.md) | VelvetShark | Long-term multi-agent adoption reality, markdown-first architecture, context separation via channels, multi-model routing for cost control |
+| [129: One Claude Code Agent? That's Your First Mistake](../../sources/129-leon-van-zyl-multi-agent-claude.md) | Leon van Zyl | Git worktrees for parallel AI development, side-by-side model comparison, parallel experimentation workflow |
+| [134: Google DeepMind's Experimental Platform for Humans and LLM Agents](../../sources/134-prolific-deepmind-agent-platform.md) | Prolific / Google DeepMind | Deliberate Lab for human-AI group research, LLM agents in group settings, mirror vs mask duality, concessionary trading strategies |
 
 ## Further Reading
 

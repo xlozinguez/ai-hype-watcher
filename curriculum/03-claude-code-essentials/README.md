@@ -337,6 +337,16 @@ Beyond skills and CLAUDE.md, Claude Code supports several advanced configuration
 | [099: How AI Agents Search Their Memory](../../sources/099-damian-galarza-agent-memory-search.md) | Damian Galarza | Hybrid search (keyword + semantic), search-then-get two-tool pattern, grep vs vector DB finding, weighted score fusion, embedding cache |
 | [103: Inside Claude Code With Its Creator Boris Cherny](../../sources/103-y-combinator-boris-cherny-claude-code.md) | Y Combinator / Boris Cherny | Creator's philosophy on minimal CLAUDE.md, plan mode mechanics, scaffolding as tech debt, sub-agent calibration, build for the future model, latent demand as product principle |
 | [105: How to Use Claude Cowork Better Than 99% of People](../../sources/105-ben-ai-cowork-guide.md) | Ben AI | Skills as successor to projects/custom GPTs, human-in-the-loop sweet spot, skill chaining in single context window, skill marketplace ecosystem, converting legacy prompts to skills |
+| [112: Most devs don't understand how LLM tokens work](../../sources/112-matt-pocock-llm-tokens.md) | Matt Pocock | Token mechanics for context budgeting, BPE encoding, token cost awareness for skills and CLAUDE.md |
+| [113: I was an AI skeptic. Then I tried plan mode](../../sources/113-matt-pocock-plan-mode.md) | Matt Pocock | Plan mode as Claude Code workflow, think-before-act discipline, context engineering through planning |
+| [114: Most devs don't understand how context windows work](../../sources/114-matt-pocock-context-windows.md) | Matt Pocock | Context window mechanics, attention degradation, practical limits for Claude Code sessions |
+| [115: Ship working code while you sleep with the Ralph Wiggum technique](../../sources/115-matt-pocock-ralph-wiggum-technique.md) | Matt Pocock | Autonomous overnight coding, bash loop orchestration, context management for long-running agents |
+| [116: LIVE: Chat with AI Coding Wizard Dex Horthy](../../sources/116-matt-pocock-dex-horthy-interview.md) | Matt Pocock / Dex Horthy | Context engineering practices, Claude Code workflow patterns, specification-driven development |
+| [118: No Vibes Allowed: Solving Hard Problems in Complex Codebases](../../sources/118-dex-horthy-no-vibes-complex-codebases.md) | Dex Horthy (AI Engineer) | Complex codebase strategies, structured AI-assisted development, context engineering at scale |
+| [126: How I use Claude Code for real engineering](../../sources/126-matt-pocock-claude-code-engineering.md) | Matt Pocock | Claude Code engineering workflow, context engineering practices, agentic coding patterns |
+| [130: What is Prompt Caching? Optimize LLM Latency](../../sources/130-ibm-technology-prompt-caching.md) | IBM Technology | Prompt caching for context optimization, latency reduction, cost management for repeated context |
+| [135: His Claude Code Workflow Is Insane](../../sources/135-john-kim-claude-code-workflow.md) | John Kim | Claude Code workflow patterns, skills ecosystem usage, context management techniques |
+| [136: Head of Claude Code: What happens after coding is solved](../../sources/136-lennys-podcast-boris-cherny-after-coding.md) | Lenny's Podcast / Boris Cherny | Post-coding vision, Claude Code roadmap, context engineering philosophy, specification as bottleneck |
 
 ## Further Reading
 
