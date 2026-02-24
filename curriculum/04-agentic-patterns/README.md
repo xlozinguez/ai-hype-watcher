@@ -240,7 +240,11 @@ This applies broadly beyond browser automation. Any tool interaction where the a
 
 Joshua Morony ([#027](../../sources/027-joshua-morony-git-worktree.md)) makes the case that `git worktree` has become essential infrastructure for agentic coding. When AI agents execute multi-phase tasks autonomously for 15-60 minutes, they occupy the filesystem. The developer cannot safely work in the same codebase while agents make edits on the same branch.
 
-Worktrees solve this by creating separate filesystem checkouts that share the same git history. Each agent gets its own working directory, completely isolated from others. Morony integrates worktree creation directly into his agentic pipeline: each new work track automatically creates a dedicated worktree and branch, isolating agent work from the developer's main working directory. See also: [Module 05: Team Orchestration](../05-team-orchestration/README.md) for expanded coverage of worktrees in multi-agent setups.
+Worktrees solve this by creating separate filesystem checkouts that share the same git history. Each agent gets its own working directory, completely isolated from others. Morony integrates worktree creation directly into his agentic pipeline: each new work track automatically creates a dedicated worktree and branch, isolating agent work from the developer's main working directory.
+
+Matt Pocock ([#137](../../sources/137-matt-pocock-worktree-workflow.md)) takes this further with Claude Code's native `claude --worktree` command, which automatically creates a worktree at `.claude/worktrees/` with a randomly generated name. The agent's lifecycle is scoped to the worktree -- on exit, the user chooses to keep or remove it. Pocock identifies a significant gotcha: worktrees branch from the current branch (typically main), so agents may accidentally push commits to main unless explicitly told to push to a named branch. His recommendation: use worktrees for every Claude session, always push to a named branch, and protect your main branch. Subagents also support worktrees, enabling orchestrated parallel workflows where each subagent owns its own branch and produces a PR back to main. As Pocock puts it: "I'm not sure why you wouldn't want to use git work trees like every single time you use Claude."
+
+See also: [Module 05: Team Orchestration](../05-team-orchestration/README.md) for expanded coverage of worktrees in multi-agent setups.
 
 ### Concept 16: WebMCP -- Structured Agent-Web Interaction
 
@@ -315,6 +319,24 @@ Ben AI ([#105](../../sources/105-ben-ai-cowork-guide.md)) identifies a gap that 
 The practical workflow: walk through a task manually with Claude once, refine through feedback, then save it as a repeatable skill. Unlike projects or custom GPTs where context is locked to one configuration, multiple skills can be invoked within a single context window, enabling complex multi-step workflows. This extends the skill composition patterns from IndyDevDan ([#015]) into non-developer workflows -- content creation, ad copy, newsletters, and operational tasks.
 
 The key differentiator from the four-layer stack (Concept 12): Concept 12 targets developers building reusable agentic infrastructure. The human-in-the-loop skill pattern targets anyone who does repeatable knowledge work and can describe their process in plain language.
+
+### Concept 23: The Heartbeat Pattern for Persistent Autonomous Agents
+
+Stephen G. Pope ([#142](../../sources/142-stephen-pope-free-openclaw.md)) demonstrates "Popebot," an open-source agent framework that introduces the **heartbeat pattern** -- a configurable cron job that runs agent instructions on a regular interval (e.g., every 10-30 minutes). This enables persistent autonomous operation for tasks like email checking, research monitoring, API polling, or self-improvement reviews without requiring a continuously running agent session.
+
+The architectural innovation is using **GitHub as both version control and orchestration layer**. All agent modifications are tracked as git commits, changes can require human approval via pull requests, and the agent's "swarm" of jobs runs as GitHub Actions workflows with built-in logging and auditability. Path-based auto-merge rules let operators control which changes the agent can make autonomously versus which require review. This provides a transparent, auditable alternative to opaque agent execution -- as Pope notes: "We're not just setting up an agent that's able to modify itself with no transparency."
+
+The zero-cost stack (Ollama for local inference, Docker for sandboxing, GitHub Actions for orchestration with 2,000 free hours) makes the pattern accessible without API fees or dedicated hardware. This extends the Ralph Wiggum loop (Concept 7) from "run until tests pass" to "run continuously on a schedule," bridging the gap between session-scoped agents and the always-on infrastructure described by Aftandilian (Concept 10).
+
+### Concept 24: Agent Harness Customization -- Opinionated vs. Minimal Design
+
+IndyDevDan ([#146](../../sources/146-indydevdan-pi-coding-agent.md)) presents Pi, an open-source agentic coding tool, as a case study in the fundamental design tension between opinionated and minimal agent harnesses. Claude Code ships with a 10,000-token system prompt, five safety modes, and polished defaults. Pi takes the opposite approach: a 200-token system prompt, no safety modes, and just four tools (read, write, edit, bash). The philosophy is "if I don't need it, it won't be built."
+
+The key insight is that **the agent harness matters as much as the model**. Dan demonstrates a "till done" extension that forces the agent to create and complete task items before executing work, blocks tool calls until a task list exists, and requires engineer approval to clear tasks. This deterministic workflow enforcement extracts reliable results even from cheaper models like Haiku -- compensating for model limitations through harness design rather than model selection.
+
+Pi's extension system enables **stackable customization**: composable TypeScript files that hook into the agent lifecycle for custom UI, tool counters, sub-agent support, and task management. This composable approach -- stacking capabilities in isolation, then combining for specific workflows -- reinforces the principle from Concept 12 (the four-layer stack) that agentic engineering is about building reusable, composable layers rather than monolithic tools.
+
+The practical recommendation is hedging: use Claude Code (80% of the time) for its excellent defaults and enterprise features, but maintain fluency with open-source alternatives like Pi for deep customization, model flexibility, and experimental workflows. As Dan frames the progression: base agent, improved agent, context engineering, customized agents, orchestrator agent -- each level builds on the last. "Knowing what your agent is doing is engineering. Not knowing is vibe coding."
 
 ## Patterns & Practices
 
@@ -477,6 +499,9 @@ The key differentiator from the four-layer stack (Concept 12): Concept 12 target
 | [134: Google DeepMind's Experimental Platform for Humans and LLM Agents](../../sources/134-prolific-deepmind-agent-platform.md) | Prolific / Google DeepMind | Deliberate Lab for human-AI group research, mirror vs mask duality, LLM agent negotiation strategies |
 | [135: His Claude Code Workflow Is Insane](../../sources/135-john-kim-claude-code-workflow.md) | John Kim | Boris Cherny's 13-tip workflow, parallel instance management, shared CLAUDE.md, custom sub-agents for post-processing |
 | [136: Head of Claude Code: What happens after coding is solved](../../sources/136-lennys-podcast-boris-cherny-after-coding.md) | Lenny's Podcast / Boris Cherny | Coding as solved problem, printing-press analogy, latent demand, bitter lesson applied to AI products |
+| [137: I'm using claude --worktree for everything now](../../sources/137-matt-pocock-worktree-workflow.md) | Matt Pocock | Native `claude --worktree` integration, branch naming gotcha, worktree-scoped agent lifecycle, free parallelization |
+| [142: I Built a FREE OpenClaw](../../sources/142-stephen-pope-free-openclaw.md) | Stephen G. Pope | Heartbeat pattern, GitHub-as-orchestration, zero-cost agent stack, Docker-based security and scalability |
+| [146: The Pi Coding Agent](../../sources/146-indydevdan-pi-coding-agent.md) | IndyDevDan | Opinionated vs minimal agent harness, "till done" pattern, stackable extensions, meta-agents building agents |
 
 ## Further Reading
 

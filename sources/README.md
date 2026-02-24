@@ -144,6 +144,18 @@ Each source is synthesized (not transcribed) into a structured note with frontma
 | [134](134-prolific-deepmind-agent-platform.md) | Google DeepMind's Experimental Platform for Humans and LLM Agents | Prolific | video | multi-agent, ai-landscape, enterprise-ai, ai-safety |
 | [135](135-john-kim-claude-code-workflow.md) | His Claude Code Workflow Is Insane | John Kim | video | claude-code, agentic-coding, context-engineering, skills-ecosystem, multi-agent |
 | [136](136-lennys-podcast-boris-cherny-after-coding.md) | Head of Claude Code: What happens after coding is solved | Lenny's Podcast (Boris Cherny) | video | claude-code, anthropic, agentic-coding, ai-landscape, context-engineering, ai-sdlc, capability-overhang, specification, multi-agent |
+| [137](137-matt-pocock-worktree-workflow.md) | I'm using claude --worktree for everything now | Matt Pocock | video | claude-code, agentic-coding, multi-agent |
+| [138](138-neuralnine-coding-habit.md) | I Started A Coding Habit & You Should Too... | NeuralNine | video | vibe-coding, agentic-coding, ai-sdlc |
+| [139](139-nate-b-jones-model-security.md) | Anthropic Tested 16 Models. Instructions Didn't Stop Them (When Security is a Structural Failure) | Nate B Jones | video | ai-safety, security, ai-hype, enterprise-ai, agentic-coding |
+| [140](140-naval-artificial-intelligence.md) | On Artificial Intelligence | Naval | video | ai-landscape, vibe-coding, ai-economics, ai-hype, capability-overhang |
+| [141](141-harvard-ai-learning-shortcuts.md) | Harvard Thinking: Preserving learning in the age of AI shortcuts | Harvard University | video | ai-hype, ai-landscape, vibe-coding |
+| [142](142-stephen-pope-free-openclaw.md) | I Built a FREE OpenClaw (no Mac Mini or API Fees) | Stephen G. Pope | video | agentic-coding, multi-agent, ai-economics |
+| [143](143-nate-b-jones-google-ai-cost.md) | Google's New AI Is Smarter Than Everyone's But It Costs HALF as Much. Here's Why They Don't Care. | Nate B Jones | video | ai-economics, ai-landscape, ai-hype, infrastructure |
+| [144](144-wall-street-millennial-ai-software-replacement.md) | No, A.I. Is Not Going To Replace Software | Wall Street Millennial | video | ai-hype, vibe-coding, ai-economics, ai-landscape |
+| [145](145-primetime-google-mad.md) | Is Google allowed be mad at this? | The PrimeTime | video | ai-hype, ai-economics, openai |
+| [146](146-indydevdan-pi-coding-agent.md) | The Pi Coding Agent: The ONLY REAL Claude Code COMPETITOR | IndyDevDan | video | agentic-coding, claude-code, multi-agent, context-engineering |
+| [147](147-modern-mba-dotcom-bubble.md) | Why AI is the New Dot-Com Bubble | Modern MBA | video | ai-hype, ai-economics, infrastructure |
+| [148](148-daily-ai-show-memory-hacks-burnout.md) | Claude Code Memory Hacks and AI Burnout | The Daily AI Show | video | claude-code, context-engineering, ai-landscape |
 
 ## Adding Sources
 

@@ -122,6 +122,8 @@ As AI LABS emphasizes, the critical distinction is between **branches** and **wo
 
 Git worktrees solve this by giving each agent a separate filesystem checkout while sharing the same git history and object database. Use `git worktree add ../agent-1-worktree branch-name` to create an isolated working directory for each agent. Each worktree can be on a different branch, and changes in one worktree are completely invisible to other worktrees until committed and merged.
 
+Claude Code's native `claude --worktree` command ([#137](../../sources/137-matt-pocock-worktree-workflow.md)) simplifies this for team orchestration. Each invocation automatically creates a worktree at `.claude/worktrees/` with the agent's lifecycle scoped to it -- on exit, the user chooses to keep or remove it. Matt Pocock identifies a critical gotcha: worktrees branch from the current branch, so agents may accidentally push to main unless explicitly told to push to a named branch. Subagents also support worktrees, enabling orchestrated parallel workflows where each subagent owns its own branch and produces a PR back to main. Combined with the team patterns in this module, this means each team member can operate in its own worktree with full filesystem isolation, producing clean PRs rather than conflicting uncommitted changes.
+
 This is a hard infrastructure requirement for any multi-agent setup that modifies files concurrently. Without worktrees, you will encounter file corruption, lost edits, and unpredictable behavior as agents overwrite each other's work.
 
 ### Concept 10: Fleet Orchestration with Gas Town
@@ -255,7 +257,23 @@ Key operational details that distinguish this from session-based teams:
 
 This extends Krakowski's non-technical multi-agent patterns (Concept 12a) with more sophisticated role specialization and security practices. The economic calculation is explicit: compare token costs to hiring for delegatable work. The ROI only works if agents fill real operational gaps, not novelty tasks.
 
-### Concept 17: Sustained Multi-Agent Execution at Scale
+### Concept 17: Zero-Cost Multi-Agent Infrastructure
+
+Stephen G. Pope ([#142](../../sources/142-stephen-pope-free-openclaw.md)) demonstrates that multi-agent orchestration does not require expensive API fees or dedicated hardware. His "Popebot" framework uses Ollama for free local LLM inference, Docker containers for sandboxed execution, and GitHub Actions as a job runner (with 2,000 free hours per month). The architecture scales from a single laptop to hundreds of distributed agents through Docker's three-container design (event handler, reverse proxy, runner), where runners can be multiplied across cloud infrastructure.
+
+The most architecturally significant decision is using **GitHub as the primary orchestration platform** for multi-agent coordination. All agent modifications are tracked as git commits, providing built-in logging, history, and auditability across every agent in the fleet. Changes can be auto-merged or require human approval via pull requests, with path-based rules controlling which changes agents can make autonomously. This provides a transparent coordination layer that solves the observability problem (Concept 7) through existing infrastructure rather than custom tooling.
+
+This extends the cost discussion from Concept 12a (Krakowski's $200/month + hardware) and Concept 16 (Casel's $200+/2 days) with a genuinely zero-cost alternative for teams willing to accept the performance trade-offs of local models. For experimentation and learning, it removes the financial barrier entirely.
+
+### Concept 17a: Open-Source Agent Teams and Chains
+
+IndyDevDan ([#146](../../sources/146-indydevdan-pi-coding-agent.md)) demonstrates multi-agent orchestration through Pi, an open-source agentic coding tool, revealing patterns that complement and extend Claude Code's native team capabilities. Pi supports YAML-configurable agent teams (scout, planner, builder, reviewer, documenter, red team) and agent chains/pipelines where agents execute sequentially, each building on the previous agent's output.
+
+The most significant pattern is the **meta-agent** -- a Pi agent with eight domain-expert sub-agents, each specialized in a different aspect of the tool. The orchestrator queries these experts in parallel and uses their knowledge to generate new Pi agents. This is the "agent coding path" progression: base agent, improved agent, context engineering, customized agents, orchestrator agent. Each level builds on the last.
+
+The practical recommendation for team orchestration is to "think in ANDs, not ORs": use Claude Code for its native team features and enterprise support (80% of work), but maintain fluency with open-source alternatives for deep customization, model flexibility, and experimental workflows that Claude Code's opinionated design may not support. This hedging strategy prevents vendor lock-in while keeping access to the most advanced team orchestration features.
+
+### Concept 18: Sustained Multi-Agent Execution at Scale
 
 ThePrimeTime ([#107](../../sources/107-primetime-anthropic-compiler.md)) provides a critical analysis of Anthropic's C compiler project that, beneath the marketing critique, reveals a genuine milestone in sustained multi-agent execution: 16 Claude agents running mostly autonomously for two weeks, producing a 100,000-line Rust-based C compiler across approximately 2,000 sessions at $20,000 in API costs.
 
@@ -325,6 +343,9 @@ This connects to the confusing-scale-with-quality pitfall (see Common Pitfalls b
 | [127: 50 days with OpenClaw](../../sources/127-velvetshark-openclaw-50-days.md) | VelvetShark | Long-term multi-agent adoption reality, markdown-first architecture, context separation via channels, multi-model routing for cost control |
 | [129: One Claude Code Agent? That's Your First Mistake](../../sources/129-leon-van-zyl-multi-agent-claude.md) | Leon van Zyl | Git worktrees for parallel AI development, side-by-side model comparison, parallel experimentation workflow |
 | [134: Google DeepMind's Experimental Platform for Humans and LLM Agents](../../sources/134-prolific-deepmind-agent-platform.md) | Prolific / Google DeepMind | Deliberate Lab for human-AI group research, LLM agents in group settings, mirror vs mask duality, concessionary trading strategies |
+| [137: I'm using claude --worktree for everything now](../../sources/137-matt-pocock-worktree-workflow.md) | Matt Pocock | Native `claude --worktree` for team isolation, branch naming gotcha, subagent worktree support |
+| [142: I Built a FREE OpenClaw](../../sources/142-stephen-pope-free-openclaw.md) | Stephen G. Pope | Zero-cost multi-agent infrastructure, GitHub-as-orchestration, Docker-based scaling, heartbeat pattern |
+| [146: The Pi Coding Agent](../../sources/146-indydevdan-pi-coding-agent.md) | IndyDevDan | Open-source agent teams via YAML, agent chains/pipelines, meta-agents, opinionated vs minimal harness design |
 
 ## Further Reading
 

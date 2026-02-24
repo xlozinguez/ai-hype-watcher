@@ -205,6 +205,8 @@ Dylan Davis ([#084](../../sources/084-dylan-davis-context-rot-60-rule.md)) provi
 
 For Claude Code specifically, this means monitoring session length and proactively using `/compact` (see Concept 8, Level 1) before degradation begins. Davis's handoff strategy -- creating a structured summary covering what has been covered, key decisions, current status, and next steps -- translates directly to starting fresh Claude Code sessions with a well-crafted initial prompt that carries forward context from the previous session. This connects to the GSD framework (Concept 8, Level 5) and Simon Scrapes' context rot mitigation patterns.
 
+The Daily AI Show ([#148](../../sources/148-daily-ai-show-memory-hacks-burnout.md)) surfaces two practical extensions to context rot management. First, the "lost in the weeds" problem: Claude Code fixates on micro-level fixes and loses sight of overarching project goals. Brian compares it to treating a disease on one tree's bark when you have 10,000 trees. The proposed solution is maintaining a separate "project objective" markdown file referenced from CLAUDE.md, giving the agent a persistent high-level grounding paragraph -- a lightweight alternative to full skills for maintaining strategic context. Second, the show introduces claude-mem (github.com/thedotmac/claude-mem), a third-party tool that captures tool usage during sessions, compresses context using the Claude Agent SDK, and injects recent observations at the start of new sessions. Andy's counterpoint is important: "A universal all-knowing memory is not actually the solution, rarely" -- selective, structured memory outperforms comprehensive capture. The show also raises a warning about cognitive overload from multi-agent workflows: running multiple agent instances across terminals creates an interrupt-driven workflow that degrades human flow and focus, and UC Berkeley research found AI tools intensified work rather than reducing it, with workers doing more outside their domain, finding it harder to stop, and breaks disappearing.
+
 ### Concept 8e2: Agent Memory Architecture -- Hybrid Search and the Search-Then-Get Pattern
 
 Damian Galarza ([#099](../../sources/099-damian-galarza-agent-memory-search.md)) provides a detailed technical breakdown of how AI agents search their memory, using OpenClaw's default memory system as a concrete implementation. The core architectural insight is that no single search approach is sufficient. Keyword search (grep, BM25) excels at exact matches -- error codes, function names, specific identifiers -- but misses semantic relationships. Semantic search (embeddings, vector databases) finds conceptually related content but fails on literal string matching. A counter-intuitive finding drives the analysis: the Claude Code team started with a vector database but found that grep-based agentic search actually performed better and was easier to maintain.
@@ -223,6 +225,16 @@ IndyDevDan ([#088](../../sources/088-indydevdan-browser-automation-stack.md)) pr
 - **Layer 4 -- Justfiles (Reusability)**: A task runner providing a single entry point for all agentic workflows with configurable parameters.
 
 Dan explicitly recommends CLIs (like the Playwright CLI) over MCP servers for browser automation. MCP servers consume more tokens and force you into their opinionated workflow. CLIs give freedom to build opinionated layers on top with better token efficiency. He also introduces "Higher-Order Prompts" (HOPs) -- prompts that take another prompt as a parameter, analogous to higher-order functions -- enabling reusable orchestration without duplicating boilerplate.
+
+### Concept 8f2: Worktree-Based Parallelization
+
+Matt Pocock ([#137](../../sources/137-matt-pocock-worktree-workflow.md)) champions Claude Code's built-in git worktree support as a fundamental workflow enabler. Running `claude --worktree` automatically creates a worktree at `.claude/worktrees/` with a randomly generated name, allowing multiple agents to work in parallel on separate branches without interfering with each other. Each worktree's lifecycle is scoped to a single agent session -- on exit, the user chooses to keep or remove the worktree. Subagents can also use worktrees, enabling orchestrated parallel workflows where each subagent produces its own PR.
+
+> "I'm not sure why you wouldn't want to use git work trees like every single time you use Claude because it just means that you can guarantee that every single time you have an idea or you want to do something you can just like instantly ping up a new work tree, get things working and just like ping that back to main as a PR." -- Matt Pocock ([06:16](https://www.youtube.com/watch?v=yv8VZpov8bk&t=376))
+
+Pocock identifies a significant gotcha: worktrees branch from the current branch (typically main), so the agent's commits land on main by default. Without branch protection, this can result in accidental pushes to main. The fix: always prompt or hook the agent to push to a named branch, and protect your main branch. This connects to the hooks pattern (Concept 9) -- a PreToolUse hook could enforce branch naming conventions for worktree agents.
+
+The broader implication aligns with Pocock's observation that "AI coding is not that different from human coding. It's just that you need to be a lot more aware of the constraints." Git worktrees are a 30-year-old tool that becomes dramatically more valuable in agentic workflows -- the same pattern of existing infrastructure gaining new leverage from AI integration.
 
 ### Concept 8g: Claude Code vs. No-Code Platforms
 
@@ -295,6 +307,10 @@ Beyond skills and CLAUDE.md, Claude Code supports several advanced configuration
 
 - **Loading too many MCP server tool schemas into context**: When many MCP servers are installed, their combined tool definitions consume significant context window space in every session. AI LABS ([#021]) recommends the experimental MCP CLI mode as a mitigation -- tools are invoked via CLI rather than loaded as schemas. Alternatively, audit which MCP servers are truly needed per-session and disable the rest. The cost is real: a dozen MCP servers might consume thousands of tokens before the agent even begins working on the actual task.
 
+- **Confusing parallelism with productivity**: Running multiple Claude Code agents simultaneously across terminals feels productive but can degrade human cognitive performance. The Daily AI Show ([#148](../../sources/148-daily-ai-show-memory-hacks-burnout.md)) reports that UC Berkeley research found AI tools intensified work rather than reducing it -- workers did more outside their original domain, breaks disappeared, and the intrinsically rewarding dopamine hit masked unsustainable overwork patterns. Each agent interruption erodes the quality of thinking in other threads. Start with focused sequential work; add parallelism only when you have the orchestration infrastructure (worktrees, shared task files, clear specifications) to manage it without constant context-switching.
+
+- **Letting Claude Code lose the forest for the trees**: Claude Code tends to fixate on micro-level fixes and lose sight of overarching project goals ([#148](../../sources/148-daily-ai-show-memory-hacks-burnout.md)). A separate "project objective" markdown file referenced from CLAUDE.md provides persistent high-level grounding. This is lighter than a full skill but prevents the agent from spending hours on edge cases that do not serve the project's actual purpose.
+
 ## Hands-On Exercises
 
 1. **Audit your context window**: Start a Claude Code session and ask it to describe what is in its context. Count how many MCP tool definitions are loaded. Identify any that could be converted to on-demand skills based on usage frequency.
@@ -347,6 +363,8 @@ Beyond skills and CLAUDE.md, Claude Code supports several advanced configuration
 | [130: What is Prompt Caching? Optimize LLM Latency](../../sources/130-ibm-technology-prompt-caching.md) | IBM Technology | Prompt caching for context optimization, latency reduction, cost management for repeated context |
 | [135: His Claude Code Workflow Is Insane](../../sources/135-john-kim-claude-code-workflow.md) | John Kim | Claude Code workflow patterns, skills ecosystem usage, context management techniques |
 | [136: Head of Claude Code: What happens after coding is solved](../../sources/136-lennys-podcast-boris-cherny-after-coding.md) | Lenny's Podcast / Boris Cherny | Post-coding vision, Claude Code roadmap, context engineering philosophy, specification as bottleneck |
+| [137: I'm using claude --worktree for everything now](../../sources/137-matt-pocock-worktree-workflow.md) | Matt Pocock | Worktree-based parallelization, branch isolation for agents, subagent + worktree orchestration, branch naming gotcha |
+| [148: Claude Code Memory Hacks and AI Burnout](../../sources/148-daily-ai-show-memory-hacks-burnout.md) | The Daily AI Show | claude-mem for persistent memory, project objective files, "lost in the weeds" problem, multi-agent cognitive overload, AI work intensification |
 
 ## Further Reading
 
