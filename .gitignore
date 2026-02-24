@@ -13,5 +13,11 @@ Thumbs.db
 .env
 .env.local
 
+# Drafts (VTTs, raw transcripts, working files)
+sources/_drafts/
+
+# Playwright MCP logs
+.playwright-mcp/
+
 # Node (if any tooling is added later)
 node_modules/
