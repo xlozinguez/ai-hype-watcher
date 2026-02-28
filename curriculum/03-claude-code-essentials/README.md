@@ -215,6 +215,20 @@ Ben AI ([#158](../../sources/158-ben-ai-skill-engineering.md)) presents the most
 
 The engineering framework: (1) define name and trigger -- how the agent recognizes when to use the skill, (2) set a concise objective, (3) specify connectors/MCPs and how to use them, (4) lay out step-by-step process with human-in-the-loop checkpoints and reference file usage per step, (5) add rules that predict failure modes and enforce reference file usage, (6) enable progressive updates -- instruct the skill to save approved outputs as examples and update rules based on corrections. The emphasis on self-improving feedback loops ("skills are never finished and get better with use") is a key differentiator from static configuration.
 
+### Concept 8d4: Agent Memory Architecture -- From Sessions to Persistence
+
+Damian Galarza ([#182](../../sources/182-damian-galarza-agent-memory.md)) breaks down how AI agents achieve persistent memory despite being inherently stateless. The two-layer architecture -- session memory (conversation history) and long-term memory (what survives between sessions) -- is the foundation. Using Google's November 2025 white paper on context engineering, he categorizes memory into three types: **episodic** (what happened in past interactions), **semantic** (facts and user preferences), and **procedural** (workflows and learned routines).
+
+OpenClaw's implementation demonstrates that memory does not require complex infrastructure. Three components -- a `memory.md` file (semantic store, 200-line cap, loaded into every prompt), daily logs (episodic, append-only), and session snapshots (raw conversation excerpts from the last 15 meaningful messages) -- are all markdown files. Four mechanisms activate these: bootstrap loading at session start, pre-compaction flush (a write-ahead log pattern that converts context loss into a checkpoint by writing to the daily log before compaction fires), session snapshot on `/new` or `/reset`, and direct user instruction ("remember this"). Claude Code's recently shipped memory feature uses the same markdown-based approach, validating the simplicity of this pattern.
+
+Galarza identifies three questions that define any memory system: What is worth remembering? Where does it go? When does it get written? This connects to his earlier work on hybrid memory search ([#099](../../sources/099-damian-galarza-agent-memory-search.md)), completing the picture: memory is not just about storing information but about writing it at the right moments and retrieving it efficiently.
+
+### Concept 8d5: Cowork Scheduled Tasks and the Customize Tab
+
+Eliot Prince ([#183](../../sources/183-eliot-prince-cowork-scheduled-tasks.md)) documents three new Claude Cowork features that extend the platform's automation capabilities. **Scheduled tasks** allow users to set up repeatable prompts that run automatically on a schedule (hourly, daily, weekly) as long as the computer is on and Cowork is open -- positioning Cowork as a middle ground between manual prompting and dedicated automation platforms like Make.com or N8N. The **Customize tab** consolidates skills, integrations, and plugins in one location, replacing the previous scattered settings approach. **Plugins** bundle multiple skills and connectors into department-like AI employees (finance, marketing, customer support), extending the concept from Ben AI's plugin coverage ([#063](../../sources/063-ben-ai-cowork-plugins.md)).
+
+The scheduled tasks feature has a critical limitation: tasks require the machine to be running with Cowork open -- they are not cloud-hosted background jobs. This contrasts with Leon van Zyl's cloud agents ([#169](../../sources/169-leon-van-zyl-claude-desktop-app.md)), which continue working after closing the desktop app. Prince also demonstrates that Cowork can perform basic video editing (stitching files, removing silences), illustrating how the platform's capabilities continue to expand beyond text-based workflows.
+
 ### Concept 8e: Context Rot Awareness and the 60% Rule
 
 Dylan Davis ([#084](../../sources/084-dylan-davis-context-rot-60-rule.md)) provides practical context rot countermeasures specifically relevant to Claude Code users. Context window performance follows a degradation curve: up to ~60% capacity, Claude maintains effective instruction-following; between 60-95%, performance degrades progressively; past 95%, Claude triggers automatic compaction that loses nuance. The practical rule: treat 60% of the context window as the effective working limit.
@@ -251,6 +265,18 @@ Matt Pocock ([#137](../../sources/137-matt-pocock-worktree-workflow.md)) champio
 Pocock identifies a significant gotcha: worktrees branch from the current branch (typically main), so the agent's commits land on main by default. Without branch protection, this can result in accidental pushes to main. The fix: always prompt or hook the agent to push to a named branch, and protect your main branch. This connects to the hooks pattern (Concept 9) -- a PreToolUse hook could enforce branch naming conventions for worktree agents.
 
 The broader implication aligns with Pocock's observation that "AI coding is not that different from human coding. It's just that you need to be a lot more aware of the constraints." Git worktrees are a 30-year-old tool that becomes dramatically more valuable in agentic workflows -- the same pattern of existing infrastructure gaining new leverage from AI integration.
+
+### Concept 8f2a: Context Overhead in Long-Running Agents -- The OpenClaw Warning
+
+Roman from Agentic Lab ([#179](../../sources/179-agentic-lab-openclaw-architecture.md)) quantifies a problem that all Claude Code users should understand: context overhead accumulation in long-running agents. OpenClaw starts with ~7,000 tokens of fixed overhead on day one -- impressively low. But after a month of daily use, memory files grow, skills accumulate, and session summaries pile up, reaching ~45,000 tokens of fixed overhead. Research on context rot shows this causes 40-90% performance degradation and ~$0.52 extra per message. By contrast, a single-purpose email agent needs only ~1,400 tokens of fixed context.
+
+Roman advocates building "sniper agents" -- purpose-specific agents optimized for one task -- rather than using a generalist for everything. The four-category framework for understanding any agent harness (what triggers the agent, what gets injected on every turn, what tools it can call, what it outputs) provides a practical diagnostic tool for Claude Code users. Applied to Claude Code sessions: your CLAUDE.md, loaded skills, MCP tool definitions, and conversation history all compete for the same context space. Monitoring how much fixed context accumulates over time is essential for maintaining performance. This reinforces the principles from Concept 1 (minimal CLAUDE.md), Concept 6 (token efficiency), and Concept 8e (60% rule) with concrete data: a generalist agent with 45,000+ tokens of overhead will dramatically underperform a focused agent with 1,400 tokens.
+
+### Concept 8f2b: Parallel Agent Workflows via Multiple Checkouts
+
+Keyhole Software's Zach Bartner ([#186](../../sources/186-keyhole-software-claude-code-delivery.md)) demonstrates a practical multi-agent workflow for professional software delivery: cloning the same repository multiple times, each running a separate Claude Code session with a distinct role -- one for feature development, one for unit tests, one for documentation, one for code review. Each agent works on its own branch. The developer becomes an orchestrator/conductor managing concurrent workstreams.
+
+Bartner emphasizes starting in plan mode for initial conversations to see the model's reasoning and questions before it writes any code -- switching to auto-edit only after the specification is solid. His context window management discipline is concrete: at 54% usage, he discusses the trade-off of when to compress, recommending saving full chat transcripts to files that the agent can reference later (preserving complete context outside the window). His conservative productivity estimate -- 10-20% improvement -- is notable for its realism compared to the 10x claims that dominate AI discourse. As he frames it: "In professional terms, a consistent 15-20% improvement in output would be career-transforming in any field." He also warns against letting agents run arbitrary git commands: "Agents have been observed attempting hard deletes of branches when they think they are being helpful." Branch protection is essential.
 
 ### Concept 8f3: The Claude Code Desktop App
 
@@ -322,7 +348,14 @@ Beyond skills and CLAUDE.md, Claude Code supports several advanced configuration
 - **Example**: Instead of writing a skill from scratch, ask Claude Code to use the Skill Creator skill: "Create a skill that generates database migration files following our team's conventions." The meta-skill produces the scaffolding; you refine the domain knowledge.
 - **Source**: [#013]
 
-### Pattern 5: The Always-Running Agent Workflow
+### Pattern 5: The Personal Vault as Context Infrastructure
+
+- **When to use**: When you need deeply personalized Claude Code output that draws on accumulated knowledge, preferences, and project context across sessions.
+- **How it works**: Maintain a structured markdown vault (Obsidian or similar) with bidirectional links. Use the Obsidian CLI or similar tool to give Claude Code read-only access to both file contents and inter-relationships. Build custom slash commands that load relevant context slices for different workflows. Maintain strict "human writes, agent reads" discipline -- never let the agent write into the vault to avoid contaminating pattern detection.
+- **Example**: Vinh Nguyen ([#174](../../sources/174-greg-isenberg-obsidian-claude-code.md)) built commands like `/context` (loads full life/work context), `/today` (morning review pulling calendar, tasks, and recent notes), `/trace` (tracks how an idea evolved over time across the vault), and `/drift` (compares stated intentions against actual behavior over 30-60 days). The agent discovers connections across domains that would be impractical for a human to trace manually. The vault becomes a persistent, structured, always-available knowledge base that eliminates the need to re-explain context in every new session.
+- **Source**: [#174](../../sources/174-greg-isenberg-obsidian-claude-code.md)
+
+### Pattern 5a: The Always-Running Agent Workflow
 
 - **When to use**: When working on any project where you want to maximize throughput between human and AI.
 - **How it works**: Mitchell Hashimoto's core principle: always have an agent doing something while you work. If you are coding, an agent is planning. If an agent is coding, you are reviewing. Occasionally run two agents in competition on harder tasks (Claude vs. Codex) but cap at two because cleanup overhead becomes counterproductive. Match review intensity to stakes: review everything for production systems, ship without reading for throwaway projects (wedding sites, prototypes).
@@ -426,6 +459,11 @@ Beyond skills and CLAUDE.md, Claude Code supports several advanced configuration
 | [165: Mitchell Hashimoto's New Way of Writing Code](../../sources/165-pragmatic-engineer-hashimoto-ai-coding.md) | The Pragmatic Engineer / Mitchell Hashimoto | Always-running agent workflow, effort-for-effort review, competing agents on hard tasks, open source trust crisis |
 | [168: 10 CLI Tools I'm using alongside Claude Code](../../sources/168-starmorph-cli-tools-claude-code.md) | StarMorph AI | Terminal-first development environment, LazyGit for agent observability, system monitoring for agent workloads |
 | [169: Claude Code Just Became a Full IDE](../../sources/169-leon-van-zyl-claude-desktop-app.md) | Leon van Zyl | Desktop app as full development environment, local and cloud agents in parallel, live preview and auto-verify |
+| [174: Using Obsidian and Claude Code as a Personal Thinking Partner](../../sources/174-greg-isenberg-obsidian-claude-code.md) | Greg Isenberg / Vinh Nguyen | Obsidian vault as context infrastructure, CLI bridge for semantic relationships, human-writes/agent-reads discipline, custom command suite |
+| [179: OpenClaw Agent Architecture Explained](../../sources/179-agentic-lab-openclaw-architecture.md) | Agentic Lab / Roman | Four-category agent framework, context overhead accumulation (7K to 45K tokens), sniper agents vs. generalists, 40-90% degradation data |
+| [182: How AI Agent Memory Systems Work](../../sources/182-damian-galarza-agent-memory.md) | Damian Galarza | Two-layer memory architecture, three memory types (episodic/semantic/procedural), markdown-based persistence, pre-compaction flush pattern |
+| [183: Claude Cowork Scheduled Tasks, Skills Tab, and Video Editing](../../sources/183-eliot-prince-cowork-scheduled-tasks.md) | Eliot Prince | Scheduled task automation, Customize tab consolidation, plugin bundles as department roles, video editing capability |
+| [186: Using Claude Code for Real Software Delivery](../../sources/186-keyhole-software-claude-code-delivery.md) | Keyhole Software / Zach Bartner | Parallel agent workflows via multiple checkouts, sacrificial first prompt, plan mode discipline, conservative 15-20% productivity estimate |
 
 ## Further Reading
 

@@ -273,9 +273,35 @@ The most significant pattern is the **meta-agent** -- a Pi agent with eight doma
 
 The practical recommendation for team orchestration is to "think in ANDs, not ORs": use Claude Code for its native team features and enterprise support (80% of work), but maintain fluency with open-source alternatives for deep customization, model flexibility, and experimental workflows that Claude Code's opinionated design may not support. This hedging strategy prevents vendor lock-in while keeping access to the most advanced team orchestration features.
 
-### Concept 18: Sustained Multi-Agent Execution at Scale
+### Concept 18: Multi-Agent Orchestration as Management Skill
 
-ThePrimeTime ([#107](../../sources/107-primetime-anthropic-compiler.md)) provides a critical analysis of Anthropic's C compiler project that, beneath the marketing critique, reveals a genuine milestone in sustained multi-agent execution: 16 Claude agents running mostly autonomously for two weeks, producing a 100,000-line Rust-based C compiler across approximately 2,000 sessions at $20,000 in API costs.
+Mihail Eric ([#178](../../sources/178-eo-multi-agent-orchestration.md)), who teaches Stanford's first AI-across-the-SDLC course, argues that orchestrating multiple agents is fundamentally a management skill -- not a technical one. The same context-switching and task isolation abilities that make good human managers translate directly to multi-agent coordination. People who have managed human developers tend to be the best at managing agent teams because they already have these skills.
+
+Eric provides a grounded counterpoint to the "run 10 agents at once" hype with an **incremental addition** approach: start with one agent doing a complex task well, then add a second agent on an isolated change (e.g., fixing a logo), then a third on another independent task. Only scale up when you are confident each agent is performing reliably. The key is ensuring tasks are truly independent -- task B should not depend on task A.
+
+The **agent-friendly codebase** prerequisite is critical for team effectiveness: comprehensive test coverage (tests are contracts for correctness), consistent README documentation that matches the code, consistent design patterns (not two different APIs for the same operation), and proper linting/style checking. Without these, agents compound errors -- one misunderstanding in step 1 gets magnified in step 2. This reinforces Pocock's deep modules thesis (Module 04, Concept 24) with a team-specific dimension: codebases that are hard for individual agents become impossible for agent teams.
+
+> "Really knowing how to properly handle multiple agents is like the last boss in a game. If you can do that really well, then you are literally the top 0.1% of users." -- Mihail Eric ([#178])
+
+### Concept 19: Parallel Agents via Multiple Repository Checkouts
+
+Zach Bartner ([#186](../../sources/186-keyhole-software-claude-code-delivery.md)) demonstrates a practical multi-agent workflow used in professional consulting: clone the same repository multiple times, each running a separate Claude Code session with a distinct role -- one for feature development, one for unit tests, one for documentation, one for code review. Each agent works on its own branch.
+
+This is a lower-ceremony alternative to git worktrees (Concept 9) and agent teams (Concept 1) that works well for small teams and individual practitioners. The developer becomes an orchestrator/conductor managing concurrent workstreams -- monitoring progress, catching errors, and merging results. Bartner frames the productivity gain conservatively: "a consistent 15-20% improvement in output would be career-transforming in any field."
+
+The approach reinforces the incremental addition principle from Concept 18: start with one agent, verify quality, then spin up parallel sessions for independent work. The critical operational insight: never let agents run arbitrary git commands. Branch protection is essential -- agents have been observed attempting hard deletes of branches when they think they are being helpful.
+
+### Concept 20: The Do-Make-Know Framework Applied to Teams
+
+Dylan Davis ([#177](../../sources/177-dylan-davis-claude-cowork-system.md)) presents a three-level framework that maps naturally to team orchestration decisions. At the "Do" level, a single agent handles a single task -- no team needed. At the "Make" level, a single input triggers multi-system orchestration with sub-agents working in parallel on independent deliverables. At the "Know" level, persistent memory files compound insights across sessions, enabling teams to build on previous work.
+
+For team orchestration, the "Make" level is the key decision point: Davis recommends explicitly instructing the AI to spawn sub-agents for independent tasks (one drafting an email, another building a spreadsheet, a third creating a PDF summary). The benefits are speed, higher quality from dedicated context windows (~200K tokens each), and prevention of context overflow. The **changelog pattern** -- having each agent log every action to a shared file -- provides lightweight coordination and prevents duplicate work across compaction boundaries.
+
+This framework provides a practical on-ramp for the three-mode mental model (Concept 12): "Do" maps to default mode, "Make" to sub-agent mode, and "Know" to the persistent state layer that enables cross-session team coordination.
+
+### Concept 21: Sustained Multi-Agent Execution at Scale
+
+ThePrimeTime ([#107](../../sources/107-primetime-anthropic-compiler.md)) provides a critical analysis of Anthropic's C compiler project that, beneath the marketing critique, reveals a genuine milestone in sustained multi-agent execution (previously Concept 18): 16 Claude agents running mostly autonomously for two weeks, producing a 100,000-line Rust-based C compiler across approximately 2,000 sessions at $20,000 in API costs.
 
 The key enabler was comprehensive test infrastructure. The project started with GCC's 37-year-old torture test suite as a golden reference and used the actual GCC compiler as an online oracle for validation. This reinforces the deterministic verification principle from Module 04 -- autonomous coding at scale requires comprehensive test infrastructure and reference implementations, not just capable models.
 
@@ -306,6 +332,12 @@ This connects to the confusing-scale-with-quality pitfall (see Common Pitfalls b
 - **Ignoring initial bugs**: Team output may require refinement fixes that single-agent output does not. In Bart's experiment, the agent team's task manager needed a JavaScript fix before buttons worked, while the single-agent version worked immediately. Budget time for integration testing and quick fixes after team builds.
 
 - **No session resumption**: Agent teams do not survive session interruptions. The `/resume` and `/rewind` commands do not restore teammates. If your terminal closes or your connection drops, the team state is lost. For long-running work, use the observability system to track progress so you can reconstruct state if needed.
+
+- **Launching many agents simultaneously instead of incrementally**: Eric ([#178](../../sources/178-eo-multi-agent-orchestration.md)) warns against starting with 10 parallel agents. Start with one agent doing a complex task well, verify quality, then add agents one at a time for isolated tasks. The error compounding risk is real: one misunderstanding in step 1 gets doubled down in step 2.
+
+- **Neglecting codebase readiness for multi-agent work**: Agent teams amplify codebase quality problems. Without comprehensive tests, consistent patterns, and accurate documentation, each agent introduces errors that compound across the team. Invest in codebase fundamentals before scaling agent count -- tests are contracts for correctness.
+
+- **Letting agents run arbitrary git commands**: Bartner ([#186](../../sources/186-keyhole-software-claude-code-delivery.md)) reports agents attempting hard deletes of branches when they think they are being helpful. Branch protection is essential for any multi-agent setup that touches version control.
 
 ## Hands-On Exercises
 
@@ -346,6 +378,9 @@ This connects to the confusing-scale-with-quality pitfall (see Common Pitfalls b
 | [137: I'm using claude --worktree for everything now](../../sources/137-matt-pocock-worktree-workflow.md) | Matt Pocock | Native `claude --worktree` for team isolation, branch naming gotcha, subagent worktree support |
 | [142: I Built a FREE OpenClaw](../../sources/142-stephen-pope-free-openclaw.md) | Stephen G. Pope | Zero-cost multi-agent infrastructure, GitHub-as-orchestration, Docker-based scaling, heartbeat pattern |
 | [146: The Pi Coding Agent](../../sources/146-indydevdan-pi-coding-agent.md) | IndyDevDan | Open-source agent teams via YAML, agent chains/pipelines, meta-agents, opinionated vs minimal harness design |
+| [177: Three-Level Framework for Claude Co-Work Automation](../../sources/177-dylan-davis-claude-cowork-system.md) | Dylan Davis | Do/Make/Know framework, changelog pattern for coordination, sub-agent parallelization for independent tasks |
+| [178: Multi-Agent Orchestration for AI-Native Engineers](../../sources/178-eo-multi-agent-orchestration.md) | EO / Mihail Eric | Agent management as human management skill, incremental agent addition, agent-friendly codebase prerequisites |
+| [186: Using Claude Code for Real Software Delivery](../../sources/186-keyhole-software-claude-code-delivery.md) | Keyhole Software / Zach Bartner | Parallel agents via multiple checkouts, sacrificial first prompt, developer as conductor/orchestrator |
 
 ## Further Reading
 
