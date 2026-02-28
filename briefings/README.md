@@ -17,6 +17,7 @@ Dated entries covering recent AI development findings, tool updates, and critica
 | [2026-02-19](2026-02-19.md) | Self-improving swarms, Claude Code origin story, shadow data exploits, safety test saturation, AI market panic reflexivity | agent-teams, claude-code, security, economics, critical |
 | [2026-02-21](2026-02-21.md) | 25-source batch — AI bubble goes mainstream, context engineering taught as discipline, skills security crisis, dark factory economics, Boris Cherny on post-coding future | economics, critical, security, tools, patterns |
 | [2026-02-23](2026-02-23.md) | 12-source batch — difficulty taxonomy, dot-com parallel fully mapped, agentic tool diversity, Harvard AI education data | economics, critical, tools, patterns, education |
+| [2026-02-28](2026-02-28.md) | 23-source batch — CLAUDE.md backlash, AI agents hit mainstream economics, builder-philosopher split, intent engineering named, security goes operational | patterns, economics, critical, security |
 
 ## Adding Briefings
 

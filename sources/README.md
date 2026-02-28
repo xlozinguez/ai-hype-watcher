@@ -156,6 +156,29 @@ Each source is synthesized (not transcribed) into a structured note with frontma
 | [146](146-indydevdan-pi-coding-agent.md) | The Pi Coding Agent: The ONLY REAL Claude Code COMPETITOR | IndyDevDan | video | agentic-coding, claude-code, multi-agent, context-engineering |
 | [147](147-modern-mba-dotcom-bubble.md) | Why AI is the New Dot-Com Bubble | Modern MBA | video | ai-hype, ai-economics, infrastructure |
 | [148](148-daily-ai-show-memory-hacks-burnout.md) | Claude Code Memory Hacks and AI Burnout | The Daily AI Show | video | claude-code, context-engineering, ai-landscape |
+| [149](149-leon-van-zyl-n8n-claude-code.md) | Stop Using Claude Code Without This Tool | Leon van Zyl | video | claude-code, mcp, agentic-coding |
+| [150](150-gothamchess-chatbot-chess.md) | Claude Tried Chess. It's TERRIFYING. | GothamChess | video | ai-hype, ai-landscape |
+| [151](151-logically-answered-copilot-failure.md) | No One Is Using CoPilot... | Logically Answered | video | ai-hype, ai-economics, enterprise-ai |
+| [152](152-matt-pocock-never-run-init.md) | Never Run claude /init | Matt Pocock | video | claude-code, context-engineering, prompt-engineering |
+| [153](153-theo-delete-claudemd.md) | Delete your CLAUDE.md (and your AGENT.md too) | Theo (t3.gg) | video | claude-code, context-engineering, prompt-engineering, ai-hype |
+| [154](154-diy-smart-code-claude-code-features.md) | Why Most Developers Are Using Claude Code Wrong | DIY Smart Code | video | claude-code, skills, context-engineering, mcp |
+| [155](155-nate-b-jones-intent-engineering.md) | Prompt Engineering Is Dead. Context Engineering Is Dying. | Nate B Jones | video | context-engineering, enterprise-ai, ai-economics, ai-hype |
+| [156](156-ezra-klein-ai-agents-economy.md) | How Fast Will A.I. Agents Rip Through the Economy? | The Ezra Klein Show | video | ai-economics, ai-landscape, ai-hype, ai-safety, enterprise-ai |
+| [157](157-matt-pocock-hooks-cli-enforcement.md) | How to actually force Claude Code to use the right CLI | Matt Pocock | video | claude-code, context-engineering |
+| [158](158-ben-ai-skill-engineering.md) | How to build Claude Skills Better than 99% of People | Ben AI | video | skills, claude-code, context-engineering, prompt-engineering |
+| [159](159-mo-bitar-vibecoding-handwriting.md) | After two years of vibecoding, I'm back to writing by hand | Mo Bitar | video | vibe-coding, ai-hype, agentic-coding |
+| [160](160-missing-semester-agentic-coding.md) | Lecture 7: Agentic Coding | Missing Semester | video | agentic-coding, claude-code, context-engineering, mcp |
+| [161](161-nate-b-jones-ai-napster-moment.md) | Anthropic and AI's Napster Moment | Nate B Jones | video | ai-economics, ai-landscape, ai-hype, enterprise-ai, security |
+| [162](162-openai-openclaw-steinberger.md) | Builders Unscripted: Peter Steinberger, Creator of OpenClaw | OpenAI | video | ai-landscape, agentic-coding, security, openai |
+| [163](163-primetime-openclaw-inbox.md) | Openclaw deletes entire inbox | The PrimeTime | video | agentic-coding, ai-hype, security |
+| [164](164-matt-pocock-codebase-ai-ready.md) | Your codebase is NOT ready for AI | Matt Pocock | video | agentic-coding, context-engineering, ai-sdlc |
+| [165](165-pragmatic-engineer-hashimoto-ai-coding.md) | Mitchell Hashimoto's new way of writing code | The Pragmatic Engineer | video | agentic-coding, claude-code, vibe-coding, ai-landscape |
+| [166](166-nevara-discovery-calls-dead.md) | Discovery Calls Are Dead in 2026 | Nevara | video | ai-landscape, enterprise-ai, ai-hype |
+| [167](167-nate-b-jones-ai-economics-capability-gap.md) | Don't Fall For the Stock Market Hype | Nate B Jones | video | ai-economics, ai-hype, capability-overhang, ai-landscape |
+| [168](168-starmorph-cli-tools-claude-code.md) | 10 CLI Tools I'm using alongside Claude Code | StarMorph AI | video | claude-code, agentic-coding |
+| [169](169-leon-van-zyl-claude-desktop-app.md) | Claude Code Just Became a Full IDE | Leon van Zyl | video | claude-code, agentic-coding, vibe-coding |
+| [170](170-nate-b-jones-four-prompting-disciplines.md) | Everyone Learned Prompting. Almost Nobody Learned the Other 3. | Nate B Jones | video | prompt-engineering, context-engineering, specification, enterprise-ai |
+| [171](171-primetime-cloudflare-lava-lamps.md) | Cloudflare's Lavalamp Obsession | The PrimeTime | video | security, infrastructure |
 
 ## Adding Sources
 

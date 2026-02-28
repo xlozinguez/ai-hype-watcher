@@ -402,11 +402,59 @@ NeetCode ([#074](../../sources/074-neetcode-end-of-programming.md)) draws a crit
 
 NeetCode also provides a philosophical frame for calibrating expectations: pursuing AGI is like approaching infinity — the closer you get, the more you realize the distance hasn't changed. The hedonic treadmill absorbs technological gains. If someone in 2005 had described AWS and autoscaling, you would have predicted far fewer programmers and near-utopia. Neither happened.
 
+### Concept 11k: Intent Engineering -- The Missing Enterprise Discipline
+
+Nate B Jones ([#155](../../sources/155-nate-b-jones-intent-engineering.md)) introduces "intent engineering" as the third discipline in the AI evolution. Prompt engineering (individual, session-based) gave way to context engineering (information-state design), which is now being succeeded by intent engineering -- the practice of encoding organizational purpose, goals, values, trade-offs, and decision boundaries into machine-readable, machine-actionable infrastructure.
+
+The Klarna case study crystallizes the problem: their AI agent resolved 2.3 million conversations across 23 markets, cutting resolution time from 11 minutes to 2 -- then destroyed customer relationships because nobody encoded the real organizational intent (retention and trust) versus the measurable objective (ticket speed). The 700 laid-off human agents carried institutional knowledge -- when to bend policy, when to invest extra time -- that was never documented. Jones frames this as the central unsolved problem in enterprise AI: 74% of companies report no tangible value from AI, and 84% have not redesigned jobs around AI capabilities.
+
+Jones ([#170](../../sources/170-nate-b-jones-four-prompting-disciplines.md)) further elaborates this into a four-discipline stack: (1) **prompt craft** (table stakes), (2) **context engineering** (curating the optimal token set), (3) **intent engineering** (encoding organizational purpose), and (4) **specification engineering** (writing documents autonomous agents can execute against over extended time horizons). He identifies five learnable specification primitives: self-contained problem statements, acceptance criteria, constraint architecture, decomposition, and evaluation design. The shift from synchronous to autonomous AI work demands fundamentally different communication discipline -- one that benefits human-to-human collaboration as much as human-to-AI interaction.
+
+Jack Clark, Anthropic co-founder ([#156](../../sources/156-ezra-klein-ai-agents-economy.md)), corroborates this from inside the lab. He reports that the divergent experiences people have with Claude Code -- "I can't believe how easy this is" vs. "this is a lot harder than I thought" -- come down entirely to specification quality. Clark's own project failed with a vague prompt but succeeded when he first had Claude interview him to produce a detailed specification. The message-in-a-bottle metaphor: instructions must be detailed enough to survive being sent into an autonomous system.
+
+### Concept 11l: The Capability-Dissipation Gap
+
+Nate B Jones ([#167](../../sources/167-nate-b-jones-ai-economics-capability-gap.md)) introduces a structural framework that both AI doomers and boomers miss: the **capability-dissipation gap**. Two curves on the same chart -- AI capability (exponential, rising fast) and societal dissipation (flat, governed by inertia). The gap between them explains the current moment: stunning capabilities alongside modest economic disruption, a stock market that cannot decide between pricing utopia and catastrophe, and doom/boom narratives that both sound compelling.
+
+Four forces of social inertia slow AI's economic impact: (1) regulatory inertia (financial services, healthcare, government procurement move in years), (2) organizational inertia (headcount decisions filtered through HR, employment law, union agreements), (3) cultural inertia (most people still do not use AI daily), and (4) trust inertia (building verification systems at scale requires capital most organizations lack). The asymmetric opportunity concentrates in the wide gap between what AI can do and how slowly it is being adopted.
+
+The bull case for this gap is concrete: economist models show the doom scenario requires implausibly extreme assumptions (no policy response, no price-driven consumption increase), and AI-compressed service costs (mortgages, tax prep, insurance) could return $4,000-$7,000 per median household annually. Business formation continues accelerating at 532,000 new applications in January 2026.
+
+### Concept 11m: The Abstraction Stack and Leveraged Programmers
+
+Naval Ravikant ([#140](../../sources/140-naval-artificial-intelligence.md)) frames AI coding as a new layer in the abstraction stack from transistors to assembly to C to high-level languages. Knowledge of the layer below always provides advantage -- AI users who understand software engineering will always outperform pure vibe coders. A programmer with a fleet of AI agents is 5-10x more productive, but outcomes are "supernormally distributed" -- the best engineer will "run circles around vibe coders."
+
+Naval's contrarian take on prompt engineering provides useful counterbalance: AI adapts to users faster than users can adapt to AI, and a structured thinker who speaks articulate English can specify what they want without learning esoteric commands. The exception is competitive environments where bleeding-edge tooling provides marginal advantage. This positions skills like taste, domain expertise, and structured thinking as more durable than specific AI tool fluency.
+
+### Concept 11n: The AI Education Crisis and Self-Regulation Failure
+
+Harvard faculty ([#141](../../sources/141-harvard-ai-learning-shortcuts.md)) present empirical evidence that compounds the apprenticeship crisis (Concept 10): a survey of 7,000 high school students found nearly half felt they were over-relying on AI, with over 40% reporting failed attempts to limit their own usage -- paralleling technology addiction patterns. When professor Michael Brenner discovered Gemini could solve his entire applied mathematics problem set, he redesigned the course to have students invent problems chatbots could not solve. By semester's end, 60 students had generated 600 problems beyond AI capability, learning more deeply than any prior cohort.
+
+The "machines talking to machines" failure mode -- a student uses AI to write an essay, a professor uses AI to respond, neither engages with the content -- represents the ultimate degradation of the learning process. The panel's prescription: AI should be a reason for students to tackle harder problems, not easier ones. Metacognition (understanding what human minds do better than AI and vice versa) should become a central educational purpose.
+
+### Concept 11o: Enterprise AI Product-Market Failure
+
+Logically Answered ([#151](../../sources/151-logically-answered-copilot-failure.md)) documents Microsoft Copilot's commercial failure as a case study in the gap between AI infrastructure spending and product-market fit. Despite 450 million Microsoft 365 seats, only 3.3% have paid for Copilot. Only 6% of Fortune 500 companies that technically "adopted" it completed enterprise-wide rollouts. Microsoft's own engineers were instructed to evaluate Claude Code alongside GitHub Copilot, with teams responsible for Windows, Office, Edge, and Surface all told to use Claude.
+
+When voluntary adoption failed, Microsoft pivoted to bundling Copilot into plans with significant price increases (45% for personal) and hiding the non-Copilot option behind the cancellation flow -- a practice that prompted an Australian government lawsuit. This provides a concrete counter-example to the narrative that AI adoption is inevitable once tools are available: even the dominant enterprise software vendor, with unmatched distribution and $80B+ in AI spending, cannot force adoption of a product users find inferior.
+
+### Concept 11p: Model Distillation and the Performance Shadow
+
+Nate B Jones ([#161](../../sources/161-nate-b-jones-ai-napster-moment.md)) analyzes Anthropic's disclosure that three Chinese labs ran millions of automated conversations to extract training data, arguing the real story is not geopolitical but economic. AI capabilities stored as weights are infinitely copyable: one lab spent roughly $2 million extracting capabilities that cost $2 billion to develop -- a 1,000:1 return. This incentive is universal and applies to every non-hyperscaler lab.
+
+The critical enterprise implication is the **performance shadow**: distilled models perform comparably on short, well-defined tasks but degrade significantly on sustained agentic work -- the exact use cases where AI value is increasingly concentrated. A distilled model encountering an unexpected error at hour 8 of an agentic run either fails, loops, or produces a strategically incorrect workaround. No current benchmark suite captures this gap, making it the most undermeasured risk in enterprise AI procurement. The practical guidance: test for generality rather than benchmarks, match model provenance to task scope, and treat model routing as a competitive advantage.
+
+### Concept 11q: B2B Buyer Behavior Transformation
+
+Nevara ([#166](../../sources/166-nevara-discovery-calls-dead.md)) documents how AI is fundamentally reshaping enterprise purchasing. When an SEO vendor cold-called a marketing leader, he built an AI agent to solve the same problem before they could schedule a discovery meeting. This pattern -- buyers solving their own problems with AI faster than vendors can pitch solutions -- represents a structural shift. The traditional discovery call relied on salespeople as knowledge gatekeepers; buyers can now query Claude or Gemini about competitors, pricing, and implementation details in seconds.
+
+For enterprise software vendors, the implication is that speed-to-lead becomes the new competitive moat, and the first person to talk to a prospect must answer substantive questions immediately rather than routing to a later discovery call. This connects to the margin compression thesis (Concept 8): AI does not eliminate SaaS demand but fundamentally changes how it is evaluated and purchased.
+
 ### Concept 12: The Accelerating Capability Curve
 
 Matt Shumer provides the quantitative backbone for the urgency arguments ([#019](../../sources/019-matt-shumer-something-big.md)). METR data shows AI task completion capacity -- measured by how long a model can work autonomously before needing human intervention -- has been doubling every 7 months, and that rate is compressing to every 4 months. The current capability is roughly 5 hours of autonomous expert-level work. Extrapolating even conservatively, autonomous multi-day work is a near-term reality.
 
-The self-improvement loop compounds this: GPT-5.3 Codex was "instrumental in creating itself," and Anthropic's CEO says AI writes "much of the code" at Anthropic. Each generation of AI helps build the next generation faster, creating a feedback loop where linear progress becomes exponential acceleration.
+The self-improvement loop compounds this: GPT-5.3 Codex was "instrumental in creating itself," and Anthropic's CEO says AI writes "much of the code" at Anthropic. Jack Clark ([#156](../../sources/156-ezra-klein-ai-agents-economy.md)) confirms that the majority of Anthropic's code is now written by Claude, with a path toward 99% by year's end -- even as the company continues hiring more engineers. Clark identifies this recursive self-improvement as the "pivotal point in the story," requiring extraordinary caution. Each generation of AI helps build the next generation faster, creating a feedback loop where linear progress becomes exponential acceleration.
 
 Multiple creators ([#012](../../sources/012-nate-b-jones-career-collapse.md), [#019](../../sources/019-matt-shumer-something-big.md)) converge on the same conclusion: there is a brief window -- possibly months, not years -- where individuals who aggressively adopt AI tools gain a significant competitive edge. This window closes as adoption becomes universal.
 
@@ -721,6 +769,16 @@ The cost reality also explains why local inference (Concept 16) becomes strategi
 | [144: No, A.I. Is Not Going To Replace Software](../../sources/144-wall-street-millennial-ai-software-replacement.md) | Wall Street Millennial | C compiler deception breakdown, say-do gap (hiring vs predictions), SaaS apocalypse debunking, CEO hype as IPO promotion |
 | [145: Is Google allowed to be mad at this?](../../sources/145-primetime-google-mad.md) | ThePrimeTime | Model distillation as competitive threat, IP irony (scraping vs claiming theft), "democratic AI" as market control narrative |
 | [147: Why AI is the New Dot-Com Bubble](../../sources/147-modern-mba-dotcom-bubble.md) | Modern MBA | Full-stack dot-com parallel, OpenAI as Netscape, circular financing, VC evolution from IPO rush to private inflation |
+| [140: On Artificial Intelligence](../../sources/140-naval-artificial-intelligence.md) | Naval | Vibe coding as new product management, leveraged programmers, abstraction stack, "no demand for average," AI creativity limits |
+| [141: Harvard Thinking: Preserving learning in the age of AI shortcuts](../../sources/141-harvard-ai-learning-shortcuts.md) | Harvard University | AI self-regulation crisis in students, redesigning assignments to outrun AI, metacognition as educational purpose, social-emotional learning irreplaceability |
+| [151: No One Is Using CoPilot...](../../sources/151-logically-answered-copilot-failure.md) | Logically Answered | Copilot 3.3% adoption, forced bundling strategy, internal credibility crisis, $80B+ spending without product-market fit |
+| [155: Prompt Engineering Is Dead. Context Engineering Is Dying.](../../sources/155-nate-b-jones-intent-engineering.md) | Nate B Jones | Intent engineering, three-layer intent gap, Klarna case study, organizational purpose as machine-actionable infrastructure |
+| [156: How Fast Will A.I. Agents Rip Through the Economy?](../../sources/156-ezra-klein-ai-agents-economy.md) | The Ezra Klein Show / Jack Clark | From talkers to doers, specification bottleneck, entry-level displacement, recursive self-improvement, absence of public AI agenda |
+| [161: Anthropic and AI's Napster Moment](../../sources/161-nate-b-jones-ai-napster-moment.md) | Nate B Jones | Model distillation economics (1000:1 return), performance shadow on agentic work, manifold problem, time edge as only defense |
+| [166: Discovery Calls Are Dead in 2026](../../sources/166-nevara-discovery-calls-dead.md) | Nevara / Austin Schmidt | B2B buyer behavior transformation, death of knowledge gatekeeping in sales, AEO vs SEO barbell strategy |
+| [167: The $7,000 Raise AI Is Giving You](../../sources/167-nate-b-jones-ai-economics-capability-gap.md) | Nate B Jones | Capability-dissipation gap, four forces of social inertia, bear vs bull case steelmanning, deflation as stimulus |
+| [170: The 4 Skills That Actually 10x Output](../../sources/170-nate-b-jones-four-prompting-disciplines.md) | Nate B Jones | Four disciplines of prompting, synchronous-to-autonomous shift, five specification primitives, specification engineering |
+| [171: Cloudflare's Lavalamp Obsession](../../sources/171-primetime-cloudflare-lava-lamps.md) | ThePrimeTime | Physical entropy for cryptographic randomness, defense in depth for randomness infrastructure, CSPRNG vs PRNG |
 
 ## Further Reading
 
