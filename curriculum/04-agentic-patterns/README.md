@@ -354,9 +354,67 @@ The practical workflow: identify CLAUDE.md rules that enforce deterministic beha
 
 Ben AI ([#158](../../sources/158-ben-ai-skill-engineering.md)) extends the skill design patterns (Concept 13) with a structured engineering framework: define triggers, set objectives, specify tool/MCP usage, lay out step-by-step processes with human-in-the-loop checkpoints, add rules for edge cases, and enable progressive self-improvement. The most significant addition is **self-improving skills** -- instructing skills to save approved outputs as examples and update rules based on user corrections, creating a positive feedback loop that makes skills progressively better with use.
 
-### Concept 27: Agent Harness Customization -- Opinionated vs. Minimal Design
+### Concept 27: The Do-Make-Know Framework for Progressive Agent Autonomy
 
-IndyDevDan ([#146](../../sources/146-indydevdan-pi-coding-agent.md)) presents Pi, an open-source agentic coding tool, as a case study in the fundamental design tension between opinionated and minimal agent harnesses. (Note: this concept was previously numbered 24 and has been renumbered to accommodate new concepts above.) Claude Code ships with a 10,000-token system prompt, five safety modes, and polished defaults. Pi takes the opposite approach: a 200-token system prompt, no safety modes, and just four tools (read, write, edit, bash). The philosophy is "if I don't need it, it won't be built."
+Dylan Davis ([#177](../../sources/177-dylan-davis-claude-cowork-system.md)) presents a three-level framework for moving from ad-hoc AI assistance to fully autonomous, memory-enhanced workflows:
+
+- **Do** (single task execution): Give the agent a single task (rename files, format a document). This is the entry point.
+- **Make** (multi-system orchestration): Drop a single input (e.g., a meeting transcript) and have the AI orchestrate across multiple systems (Gmail, calendar, CRM) to produce finished deliverables. This level uses sub-agents for parallelization.
+- **Know** (compounding memory): Add a persistent memory file that accumulates insights across sessions -- client preferences, recurring themes, key decisions -- transforming the AI from a disposable tool into a reusable asset that compounds in value.
+
+Two operational patterns from Davis are particularly useful for long-running agents. First, **changelog files**: have the agent log every action to a changelog.txt so it can resume correctly after context compaction without redoing work. This is a lightweight alternative to the search-then-get pattern (Concept 6) for session-scoped work. Second, **append-only memory**: never remove previous entries from the memory file; structure entries with communication preferences, themes, and decisions so the agent can pick up recurring engagement context.
+
+The framework connects directly to the long-horizon strategies in Concept 6: the Do level operates within a single context window, Make uses sub-agent decomposition for parallelism, and Know implements the memory pattern with markdown files -- validating the simplicity principle from Galarza's analysis ([#099], [#182]).
+
+### Concept 28: Sniper Agents vs. Generalist Agents -- Context Budget as Design Constraint
+
+Agentic Lab ([#179](../../sources/179-agentic-lab-openclaw-architecture.md)) quantifies the context rot problem in generalist agent architectures and argues for purpose-built alternatives. Using OpenClaw as a case study, Roman demonstrates that a generalist agent starts with approximately 7,000 tokens of fixed overhead on day one -- impressively low. But after a month of daily use, memory files grow, skills accumulate, and session summaries pile up, reaching approximately 45,000 tokens of fixed overhead. After six months, the number can reach tens of thousands more. Research on context rot shows this causes 40-90% performance degradation and approximately $0.52 extra per message.
+
+By contrast, a single-purpose "sniper agent" -- an email agent, for example -- needs only approximately 1,400 tokens of fixed context. This is a 30x reduction in overhead, with proportional improvements in performance and cost.
+
+The architectural insight: every agent harness can be understood through four questions: (1) What triggers the agent? (heartbeats, cron jobs, webhooks), (2) What gets injected into context on every turn? (system prompt, conversation history, tool schemas), (3) What tools can the agent call? (memory retrieval, computer control, skills/plugins), and (4) What does the agent output or write? (messages, files, memory updates). This framework applies to designing any custom agent.
+
+The prescription aligns with Berglund's 60-70% rule (Concept 6): build purpose-specific agents with minimal context overhead rather than generalists that accumulate context rot. The four-category framework provides a practical design checklist for any agent architecture.
+
+### Concept 29: Agent Management as Human Management
+
+Mihail Eric ([#178](../../sources/178-eo-multi-agent-orchestration.md)), who leads AI at a startup and teaches Stanford's first AI-across-the-SDLC course, argues that orchestrating multiple agents is fundamentally a management skill -- the same context-switching and task isolation abilities that make good human managers translate directly to multi-agent coordination. People who have managed human developers tend to be the best at managing agent teams because they already have these skills.
+
+Eric provides a grounded counterpoint to the "run 10 agents at once" hype, advocating for **incremental agent addition**: start with one agent doing a complex task well, then add a second agent on an isolated change, then a third on another independent task. Only scale up when you are confident each agent is performing reliably. The key is ensuring tasks are truly independent -- task B should not depend on task A.
+
+The error compounding risk is significant: "Agents can compound errors very quickly. If an agent has one misunderstanding in code, and then it sees that misunderstanding it created in step 1, it can double down and create another error in step 2." This reinforces the case for agent-friendly codebases (Concept 24) -- comprehensive test coverage, consistent design patterns, accurate documentation, and proper linting are prerequisites, not optional extras.
+
+### Concept 30: Markdown-Based Agent Memory -- Three Questions That Define Any Memory System
+
+Damian Galarza ([#182](../../sources/182-damian-galarza-agent-memory.md)) breaks down how AI agents achieve persistent memory despite being inherently stateless, building on his earlier memory search analysis ([#099]). The architecture has two layers: session memory (conversation history, subject to compaction) and long-term memory (what survives between sessions).
+
+Drawing on Google's November 2025 white paper on context engineering, Galarza categorizes memory into three types: **episodic** (what happened in past interactions), **semantic** (facts and user preferences), and **procedural** (workflows and learned routines). An effective memory system must filter what is worth remembering, consolidate duplicate or contradictory entries, and overwrite outdated information.
+
+Using OpenClaw as a case study, Galarza shows the entire memory system is built on markdown files rather than vector databases -- validating the "start simple" principle from Concept 6. Four mechanisms trigger reads and writes at the right moments: bootstrap loading at session start, pre-compaction flush (a write-ahead log pattern borrowed from database design that converts a destructive operation into a checkpoint), session snapshot on reset, and direct user instruction.
+
+The practical guidance is concise: "You don't need a complex setup to give an agent memory. You just need clear instructions to three questions. What's worth remembering? Where does it go? And when does it get written?" Claude Code's own memory feature uses the same markdown-based approach.
+
+### Concept 31: The Agentic Trap -- Over-Optimization as a Failure Mode
+
+Peter Steinberger ([#162](../../sources/162-openai-openclaw-steinberger.md)) identifies a common failure mode he calls "the agentic trap": developers get stuck between their first touchpoint with AI tools and becoming truly productive because they obsessively optimize their setup rather than building. The optimization feels productive but is not.
+
+Steinberger's counter-approach is radically simple: 10 parallel git checkouts (not even worktrees), conversational prompting, and the habit of always asking "do you have any questions?" to surface the model's assumptions before it starts building. He ships code he does not read because most code is "boring" data transformation, focusing his attention on architecture and performance-critical paths.
+
+The emergent problem-solving capability of agents is illustrated by Steinberger's voice message story: OpenClaw received a WhatsApp voice message it was never designed to handle. The model identified the file as Opus codec by inspecting the file header, used FFmpeg to convert it, found an OpenAI API key in the environment, used cURL to call the Whisper API for transcription, and replied with the text. This demonstrates that agents with tool access exhibit problem-solving behavior that transcends their explicit programming -- reinforcing the generate-verify-revise principle (Concept 17) at a micro level.
+
+Steinberger also reframes open-source contributions as "prompt requests" -- the intent behind a PR matters more than the code itself. This aligns with the broader shift from evaluating code to evaluating specifications (Concept 8).
+
+> "The agentic trap... a lot of people get stuck in there trying to super optimize their setup. It doesn't really make you more productive, but it feels like you're more productive." -- Peter Steinberger ([#162])
+
+### Concept 32: Scheduled Tasks and Plugin Bundles as Agent Capabilities
+
+Eliot Prince ([#183](../../sources/183-eliot-prince-cowork-scheduled-tasks.md)) demonstrates scheduled tasks in Claude Cowork -- automated prompts that run on a configurable schedule (hourly, daily, weekly) as long as the computer is on. This bridges the gap between session-scoped agents and the heartbeat pattern (Concept 23): scheduled tasks are simpler to configure but require the machine to remain active, while the heartbeat pattern via GitHub Actions runs independently of the user's hardware.
+
+Plugins bundle multiple skills and connectors into department-like AI employees (finance, marketing, customer support), extending the skill composition patterns from Concept 13. Rather than configuring individual skills, plugins package related tools into functional roles -- a higher-level abstraction that simplifies adoption for non-technical users while maintaining the composability principles of the four-layer stack (Concept 12).
+
+### Concept 33: Agent Harness Customization -- Opinionated vs. Minimal Design
+
+IndyDevDan ([#146](../../sources/146-indydevdan-pi-coding-agent.md)) presents Pi, an open-source agentic coding tool, as a case study in the fundamental design tension between opinionated and minimal agent harnesses. Claude Code ships with a 10,000-token system prompt, five safety modes, and polished defaults. Pi takes the opposite approach: a 200-token system prompt, no safety modes, and just four tools (read, write, edit, bash). The philosophy is "if I don't need it, it won't be built."
 
 The key insight is that **the agent harness matters as much as the model**. Dan demonstrates a "till done" extension that forces the agent to create and complete task items before executing work, blocks tool calls until a task list exists, and requires engineer approval to clear tasks. This deterministic workflow enforcement extracts reliable results even from cheaper models like Haiku -- compensating for model limitations through harness design rather than model selection.
 
@@ -461,6 +519,12 @@ The practical recommendation is hedging: use Claude Code (80% of the time) for i
 
 - **Running too many concurrent agents as a human operator**: The Daily AI Show ([#148](../../sources/148-daily-ai-show-memory-hacks-burnout.md)) surfaces research showing that AI tools intensify work rather than reduce it, and that managing multiple agent instances creates an interrupt-driven workflow that degrades human cognitive quality. Each agent interruption erodes flow and focus. Limit concurrent agent instances to what you can meaningfully oversee rather than maximizing parallelism.
 
+- **Scaling agents before ensuring codebase readiness**: Mihail Eric ([#178](../../sources/178-eo-multi-agent-orchestration.md)) emphasizes that agents can only operate reliably on "explicitly defined contracts of software." Without comprehensive test coverage, consistent design patterns, accurate documentation, and proper linting, agents compound errors -- one misunderstanding in step 1 gets magnified in step 2. Invest in codebase fundamentals before scaling agent count.
+
+- **Building generalist agents when specialists would perform better**: Agentic Lab ([#179](../../sources/179-agentic-lab-openclaw-architecture.md)) quantifies the penalty: a generalist agent with 45,000+ tokens of fixed overhead experiences 40-90% performance degradation compared to a purpose-built agent with 1,400 tokens. Build single-purpose "sniper agents" for specific tasks rather than one agent that does everything poorly.
+
+- **Falling into the agentic trap**: Peter Steinberger ([#162](../../sources/162-openai-openclaw-steinberger.md)) identifies a common failure mode where developers obsessively optimize their AI tooling setup instead of building. The optimization feels productive but is not. The counter-approach: start building with radically simple setups and let complexity emerge from real needs.
+
 ## Hands-On Exercises
 
 1. **Build a builder/validator workflow**: Create a task that implements a simple feature (e.g., add a new API endpoint). Define a builder agent with full tool access and a validator agent with read-only access. Execute the task and observe how the validator reviews the builder's work. Evaluate whether the validator catches intentionally introduced issues.
@@ -543,7 +607,14 @@ The practical recommendation is hedging: use Claude Code (80% of the time) for i
 | [163: OpenClaw Deletes Entire Inbox](../../sources/163-primetime-openclaw-inbox.md) | ThePrimeTime | Agent interrupt problem, destructive permissions on external systems, kill switch requirement |
 | [164: Your codebase is NOT ready for AI](../../sources/164-matt-pocock-codebase-ai-ready.md) | Matt Pocock | Deep modules for AI navigation, graybox module pattern, AI as perpetual new starter |
 | [165: Mitchell Hashimoto's new way of writing code](../../sources/165-pragmatic-engineer-hashimoto-ai-coding.md) | The Pragmatic Engineer / Mitchell Hashimoto | Always-on agent pattern, competing agents, effort-for-effort review, open source trust crisis from AI |
+| [162: Peter Steinberger on Building OpenClaw](../../sources/162-openai-openclaw-steinberger.md) | OpenAI / Peter Steinberger | The agentic trap, prompt requests, emergent agent problem-solving, cross-model workflows |
 | [169: Claude Code Just Became a Full IDE](../../sources/169-leon-van-zyl-claude-desktop-app.md) | Leon van Zyl | Desktop app as development environment, parallel local and cloud agents, auto-verify with screenshots |
+| [174: Using Obsidian and Claude Code as a Personal Thinking Partner](../../sources/174-greg-isenberg-obsidian-claude-code.md) | Greg Isenberg / Vinh Nguyen | Personal vault as agent context, strict read-only separation, custom slash commands for vault interaction |
+| [177: Three-Level Framework for Claude Co-Work Automation](../../sources/177-dylan-davis-claude-cowork-system.md) | Dylan Davis | Do/Make/Know progressive autonomy, changelog files, append-only memory, sub-agent parallelization |
+| [178: Multi-Agent Orchestration for AI-Native Engineers](../../sources/178-eo-multi-agent-orchestration.md) | EO / Mihail Eric | Incremental agent addition, agent management as human management, agent-friendly codebases, error compounding |
+| [179: OpenClaw Agent Architecture Explained](../../sources/179-agentic-lab-openclaw-architecture.md) | Agentic Lab | Sniper agents vs generalists, four-category agent framework, context rot quantification (40-90%), heartbeat/cron triggers |
+| [182: How AI Agent Memory Systems Work](../../sources/182-damian-galarza-agent-memory.md) | Damian Galarza | Three memory types (episodic/semantic/procedural), pre-compaction flush, markdown-based memory, write-ahead log pattern |
+| [183: Claude Cowork Scheduled Tasks and Video Editing](../../sources/183-eliot-prince-cowork-scheduled-tasks.md) | Eliot Prince | Scheduled tasks as lightweight automation, plugins as role bundles, Customize tab consolidation |
 
 ## Further Reading
 
