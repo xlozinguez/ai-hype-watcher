@@ -1,6 +1,6 @@
 ---
 source_id: "163"
-title: "Openclaw deletes entire inbox"
+title: "OpenClaw Deletes Meta AI Safety Lead's Inbox — Agent Permissions Gone Wrong"
 creator: "The PrimeTime"
 platform: "YouTube"
 url: "https://www.youtube.com/watch?v=JiA4fvoeUfI"
@@ -11,7 +11,7 @@ tags: ["agentic-coding", "ai-hype", "security"]
 curriculum_modules: ["01-foundations", "04-agentic-patterns"]
 ---
 
-# 163: OpenClaw Deletes Entire Inbox
+# 163: OpenClaw Deletes Meta AI Safety Lead's Inbox — Agent Permissions Gone Wrong
 
 > **Creator**: The PrimeTime | **Platform**: YouTube | **Date**: 2026-02-25 | **Duration**: 9:18
 

@@ -1,6 +1,6 @@
 ---
 source_id: "165"
-title: "Mitchell Hashimoto's new way of writing code"
+title: "Mitchell Hashimoto on AI Coding, Ghostty, and the Open Source Quality Crisis"
 creator: "The Pragmatic Engineer"
 platform: "YouTube"
 url: "https://www.youtube.com/watch?v=WjckELpzLOU"
@@ -11,7 +11,7 @@ tags: ["agentic-coding", "claude-code", "vibe-coding", "ai-landscape"]
 curriculum_modules: ["03-claude-code-essentials", "04-agentic-patterns", "01-foundations"]
 ---
 
-# 165: Mitchell Hashimoto's new way of writing code
+# 165: Mitchell Hashimoto on AI Coding, Ghostty, and the Open Source Quality Crisis
 
 > **Creator**: The Pragmatic Engineer | **Platform**: YouTube | **Date**: 2026-02-25 | **Duration**: 1:58:23
 

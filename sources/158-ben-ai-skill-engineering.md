@@ -1,6 +1,6 @@
 ---
 source_id: "158"
-title: "How to build Claude Skills Better than 99% of People"
+title: "Skill Engineering Framework — Anatomy, Progressive Disclosure, and Iteration"
 creator: "Ben AI"
 platform: "YouTube"
 url: "https://www.youtube.com/watch?v=X3uum6W2xEI"
@@ -11,7 +11,7 @@ tags: ["skills", "claude-code", "context-engineering", "prompt-engineering"]
 curriculum_modules: ["03-claude-code-essentials", "04-agentic-patterns"]
 ---
 
-# 158: How to build Claude Skills Better than 99% of People
+# 158: Skill Engineering Framework — Anatomy, Progressive Disclosure, and Iteration
 
 > **Creator**: Ben AI | **Platform**: YouTube | **Date**: 2026-02-24 | **Duration**: 18:36
 

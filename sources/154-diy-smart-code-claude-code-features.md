@@ -1,6 +1,6 @@
 ---
 source_id: "154"
-title: "Why Most Developers Are Using Claude Code Wrong (Here's What You're Missing)!"
+title: "Five Claude Code Features — CLAUDE.md, Skills, Subagents, Hooks, and MCP"
 creator: "DIY Smart Code"
 platform: "YouTube"
 url: "https://www.youtube.com/watch?v=xuZ2meWfcKg"
@@ -11,7 +11,7 @@ tags: ["claude-code", "skills", "context-engineering", "mcp"]
 curriculum_modules: ["03-claude-code-essentials", "04-agentic-patterns"]
 ---
 
-# 154: Why Most Developers Are Using Claude Code Wrong (Here's What You're Missing)!
+# 154: Five Claude Code Features — CLAUDE.md, Skills, Subagents, Hooks, and MCP
 
 > **Creator**: DIY Smart Code | **Platform**: YouTube | **Date**: 2026-02-22 | **Duration**: 12:20
 

@@ -1,6 +1,6 @@
 ---
 source_id: "152"
-title: "Never Run claude /init"
+title: "Why Auto-Generated CLAUDE.md Wastes Your Context Window"
 creator: "Matt Pocock"
 platform: "YouTube"
 url: "https://www.youtube.com/watch?v=9tmsq-Gvx6g"
@@ -11,7 +11,7 @@ tags: ["claude-code", "context-engineering", "prompt-engineering"]
 curriculum_modules: ["03-claude-code-essentials", "02-prompting-and-workflows"]
 ---
 
-# 152: Never Run claude /init
+# 152: Why Auto-Generated CLAUDE.md Wastes Your Context Window
 
 > **Creator**: Matt Pocock | **Platform**: YouTube | **Date**: 2026-02-24 | **Duration**: 10:37
 

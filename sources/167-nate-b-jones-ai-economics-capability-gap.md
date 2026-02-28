@@ -1,6 +1,6 @@
 ---
 source_id: "167"
-title: "Don't Fall For the Stock Market Hype. The $7,000 Raise AI Is Giving You (That Nobody Mentions)"
+title: "The Capability-Dissipation Gap — Why AI Adoption Lags Exponential Progress"
 creator: "Nate B Jones"
 platform: "YouTube"
 url: "https://www.youtube.com/watch?v=q6pbQ5li5Cg"
@@ -11,7 +11,7 @@ tags: ["ai-economics", "ai-hype", "capability-overhang", "ai-landscape"]
 curriculum_modules: ["01-foundations", "06-strategy-and-economics"]
 ---
 
-# 167: Don't Fall For the Stock Market Hype. The $7,000 Raise AI Is Giving You (That Nobody Mentions)
+# 167: The Capability-Dissipation Gap — Why AI Adoption Lags Exponential Progress
 
 > **Creator**: Nate B Jones | **Platform**: YouTube | **Date**: 2026-02-26 | **Duration**: 32:31
 

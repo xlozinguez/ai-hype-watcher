@@ -1,6 +1,6 @@
 ---
 source_id: "164"
-title: "Your codebase is NOT ready for AI (here's how to fix it)"
+title: "Deep Modules for AI — Designing Codebases Agents Can Navigate"
 creator: "Matt Pocock"
 platform: "YouTube"
 url: "https://www.youtube.com/watch?v=uC44zFz7JSM"
@@ -11,7 +11,7 @@ tags: ["agentic-coding", "context-engineering", "ai-sdlc"]
 curriculum_modules: ["02-prompting-and-workflows", "04-agentic-patterns"]
 ---
 
-# 164: Your codebase is NOT ready for AI (here's how to fix it)
+# 164: Deep Modules for AI — Designing Codebases Agents Can Navigate
 
 > **Creator**: Matt Pocock | **Platform**: YouTube | **Date**: 2026-02-26 | **Duration**: 8:50
 

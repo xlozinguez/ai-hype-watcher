@@ -1,6 +1,6 @@
 ---
 source_id: "168"
-title: "10 CLI Tools I'm using alongside Claude Code"
+title: "Terminal Toolkit — 10 CLI Tools for Agent-Centric Development"
 creator: "StarMorph AI"
 platform: "YouTube"
 url: "https://www.youtube.com/watch?v=3NzCBIcIqD0"
@@ -11,7 +11,7 @@ tags: ["claude-code", "agentic-coding"]
 curriculum_modules: ["03-claude-code-essentials"]
 ---
 
-# 168: 10 CLI Tools I'm using alongside Claude Code
+# 168: Terminal Toolkit — 10 CLI Tools for Agent-Centric Development
 
 > **Creator**: StarMorph AI | **Platform**: YouTube | **Date**: 2026-02-22 | **Duration**: 9:51
 

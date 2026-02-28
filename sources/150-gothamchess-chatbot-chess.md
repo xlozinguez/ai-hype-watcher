@@ -1,6 +1,6 @@
 ---
 source_id: "150"
-title: "Claude Tried Chess. It's TERRIFYING."
+title: "Chatbot Chess Championship — LLM Limitations Exposed Through Games"
 creator: "GothamChess"
 platform: "YouTube"
 url: "https://www.youtube.com/watch?v=hzzPs17gavs"
@@ -11,7 +11,7 @@ tags: ["ai-hype", "ai-landscape"]
 curriculum_modules: ["01-foundations"]
 ---
 
-# 150: Claude Tried Chess. It's TERRIFYING.
+# 150: Chatbot Chess Championship — LLM Limitations Exposed Through Games
 
 > **Creator**: GothamChess | **Platform**: YouTube | **Date**: 2026-02-21 | **Duration**: 21:53
 

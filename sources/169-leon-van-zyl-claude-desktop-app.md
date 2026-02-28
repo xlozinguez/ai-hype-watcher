@@ -1,6 +1,6 @@
 ---
 source_id: "169"
-title: "Claude Code Just Became a Full IDE"
+title: "Claude Code Desktop App — GUI Features, Worktrees, and Live Preview"
 creator: "Leon van Zyl"
 platform: "YouTube"
 url: "https://www.youtube.com/watch?v=zrT5wPwwQ60"
@@ -11,7 +11,7 @@ tags: ["claude-code", "agentic-coding", "vibe-coding"]
 curriculum_modules: ["03-claude-code-essentials", "04-agentic-patterns"]
 ---
 
-# 169: Claude Code Just Became a Full IDE
+# 169: Claude Code Desktop App — GUI Features, Worktrees, and Live Preview
 
 > **Creator**: Leon van Zyl | **Platform**: YouTube | **Date**: 2026-02-26 | **Duration**: 16:57
 

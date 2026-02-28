@@ -1,6 +1,6 @@
 ---
 source_id: "166"
-title: "Discovery Calls Are Dead in 2026"
+title: "AI Replaces Discovery Calls — B2B Buyer Behavior Shift in 2026"
 creator: "Nevara"
 platform: "YouTube"
 url: "https://www.youtube.com/watch?v=17coZ0m37oI"
@@ -11,7 +11,7 @@ tags: ["ai-landscape", "enterprise-ai", "ai-hype"]
 curriculum_modules: ["06-strategy-and-economics", "01-foundations"]
 ---
 
-# 166: Discovery Calls Are Dead in 2026
+# 166: AI Replaces Discovery Calls — B2B Buyer Behavior Shift in 2026
 
 > **Creator**: Nevara | **Platform**: YouTube | **Date**: 2026-02-26 | **Duration**: 41:26
 

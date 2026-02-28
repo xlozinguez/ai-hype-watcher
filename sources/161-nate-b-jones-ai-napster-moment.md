@@ -1,6 +1,6 @@
 ---
 source_id: "161"
-title: "Anthropic and AI's Napster Moment: Your AI Model Was Probably Built on Stolen Intelligence"
+title: "Model Distillation Theft — Chinese Labs Extract Claude's Training at Scale"
 creator: "Nate B Jones"
 platform: "YouTube"
 url: "https://www.youtube.com/watch?v=0v9ixCWNhPo"
@@ -11,7 +11,7 @@ tags: ["ai-economics", "ai-landscape", "ai-hype", "enterprise-ai", "security"]
 curriculum_modules: ["01-foundations", "06-strategy-and-economics"]
 ---
 
-# 161: Anthropic and AI's Napster Moment
+# 161: Model Distillation Theft — Chinese Labs Extract Claude's Training at Scale
 
 > **Creator**: Nate B Jones | **Platform**: YouTube | **Date**: 2026-02-25 | **Duration**: 35:40
 

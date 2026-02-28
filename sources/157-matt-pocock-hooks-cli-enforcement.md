@@ -1,6 +1,6 @@
 ---
 source_id: "157"
-title: "How to actually force Claude Code to use the right CLI (don't use CLAUDE.md)"
+title: "Hooks Over CLAUDE.md — Deterministic CLI Enforcement for Agents"
 creator: "Matt Pocock"
 platform: "YouTube"
 url: "https://www.youtube.com/watch?v=3CSi8QAoN-s"
@@ -11,7 +11,7 @@ tags: ["claude-code", "context-engineering"]
 curriculum_modules: ["03-claude-code-essentials", "04-agentic-patterns"]
 ---
 
-# 157: How to actually force Claude Code to use the right CLI (don't use CLAUDE.md)
+# 157: Hooks Over CLAUDE.md — Deterministic CLI Enforcement for Agents
 
 > **Creator**: Matt Pocock | **Platform**: YouTube | **Date**: 2026-02-25 | **Duration**: 06:51
 

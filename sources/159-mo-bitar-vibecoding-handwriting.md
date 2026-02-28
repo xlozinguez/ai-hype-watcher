@@ -1,6 +1,6 @@
 ---
 source_id: "159"
-title: "After two years of vibecoding, I'm back to writing by hand"
+title: "Two Years of Vibe Coding — Why AI-Generated Codebases Fall Apart"
 creator: "Mo Bitar"
 platform: "YouTube"
 url: "https://www.youtube.com/watch?v=SKTsNV41DYg"
@@ -11,7 +11,7 @@ tags: ["vibe-coding", "ai-hype", "agentic-coding"]
 curriculum_modules: ["01-foundations", "02-prompting-and-workflows"]
 ---
 
-# 159: After Two Years of Vibecoding, I'm Back to Writing by Hand
+# 159: Two Years of Vibe Coding — Why AI-Generated Codebases Fall Apart
 
 > **Creator**: Mo Bitar | **Platform**: YouTube | **Date**: 2026-01-23 | **Duration**: 11:54
 

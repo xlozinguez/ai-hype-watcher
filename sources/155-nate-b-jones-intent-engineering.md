@@ -1,6 +1,6 @@
 ---
 source_id: "155"
-title: "Prompt Engineering Is Dead. Context Engineering Is Dying. What Comes Next Changes Everything."
+title: "Intent Engineering — Encoding Organizational Purpose for Autonomous Agents"
 creator: "Nate B Jones"
 platform: "YouTube"
 url: "https://www.youtube.com/watch?v=QWzLPn164w0"
@@ -11,7 +11,7 @@ tags: ["context-engineering", "enterprise-ai", "ai-economics", "ai-hype"]
 curriculum_modules: ["01-foundations", "06-strategy-and-economics"]
 ---
 
-# 155: Prompt Engineering Is Dead. Context Engineering Is Dying. What Comes Next Changes Everything.
+# 155: Intent Engineering — Encoding Organizational Purpose for Autonomous Agents
 
 > **Creator**: Nate B Jones | **Platform**: YouTube | **Date**: 2026-02-24 | **Duration**: 29:40
 

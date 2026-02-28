@@ -1,6 +1,6 @@
 ---
 source_id: "151"
-title: "No One Is Using CoPilot..."
+title: "Microsoft Copilot's $13B Adoption Failure — 3.3% Uptake at 450M Seats"
 creator: "Logically Answered"
 platform: "YouTube"
 url: "https://www.youtube.com/watch?v=5-tzLvOu9lo"
@@ -11,7 +11,7 @@ tags: ["ai-hype", "ai-economics", "enterprise-ai"]
 curriculum_modules: ["01-foundations", "06-strategy-and-economics"]
 ---
 
-# 151: No One Is Using CoPilot...
+# 151: Microsoft Copilot's $13B Adoption Failure — 3.3% Uptake at 450M Seats
 
 > **Creator**: Logically Answered | **Platform**: YouTube | **Date**: 2026-02-23 | **Duration**: 13:46
 

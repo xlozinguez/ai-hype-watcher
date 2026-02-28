@@ -1,6 +1,6 @@
 ---
 source_id: "171"
-title: "Cloudflare's Lavalamp Obsession"
+title: "Cryptographic Randomness — Why Cloudflare Uses Lava Lamps for Entropy"
 creator: "The PrimeTime"
 platform: "YouTube"
 url: "https://www.youtube.com/watch?v=hxY6DewNpao"
@@ -11,7 +11,7 @@ tags: ["security", "infrastructure"]
 curriculum_modules: ["06-strategy-and-economics"]
 ---
 
-# 171: Cloudflare's Lavalamp Obsession
+# 171: Cryptographic Randomness — Why Cloudflare Uses Lava Lamps for Entropy
 
 > **Creator**: The PrimeTime | **Platform**: YouTube | **Date**: 2026-02-27 | **Duration**: 10:27
 

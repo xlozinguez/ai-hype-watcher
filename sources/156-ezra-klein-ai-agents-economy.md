@@ -1,6 +1,6 @@
 ---
 source_id: "156"
-title: "How Fast Will A.I. Agents Rip Through the Economy?"
+title: "Anthropic's Jack Clark on Agent Economics, Job Displacement, and AI Policy"
 creator: "The Ezra Klein Show"
 platform: "YouTube"
 url: "https://www.youtube.com/watch?v=lIJelwO8yHQ"
@@ -11,7 +11,7 @@ tags: ["ai-economics", "ai-landscape", "ai-hype", "ai-safety", "enterprise-ai"]
 curriculum_modules: ["01-foundations", "06-strategy-and-economics"]
 ---
 
-# 156: How Fast Will A.I. Agents Rip Through the Economy?
+# 156: Anthropic's Jack Clark on Agent Economics, Job Displacement, and AI Policy
 
 > **Creator**: The Ezra Klein Show | **Platform**: YouTube | **Date**: 2026-02-24 | **Duration**: 1:38:00
 

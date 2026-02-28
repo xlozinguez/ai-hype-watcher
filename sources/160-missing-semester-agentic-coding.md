@@ -1,6 +1,6 @@
 ---
 source_id: "160"
-title: "Lecture 7: Agentic Coding"
+title: "MIT Missing Semester — Agentic Coding Fundamentals and Context Management"
 creator: "Missing Semester"
 platform: "YouTube"
 url: "https://www.youtube.com/watch?v=sTdz6PZoAnw"
@@ -11,7 +11,7 @@ tags: ["agentic-coding", "claude-code", "context-engineering", "mcp"]
 curriculum_modules: ["03-claude-code-essentials", "04-agentic-patterns"]
 ---
 
-# 160: Lecture 7 — Agentic Coding (Missing Semester)
+# 160: MIT Missing Semester — Agentic Coding Fundamentals and Context Management
 
 > **Creator**: Missing Semester | **Platform**: YouTube | **Date**: 2026-02-19 | **Duration**: 1:00:34
 

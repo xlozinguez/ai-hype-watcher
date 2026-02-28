@@ -1,4 +1,4 @@
-# Synthesis: The CLAUDE.md Rebellion — When Best Practices Become Anti-Patterns
+# Synthesis: Context File Backlash, Mainstream Agent Economics, and the Builder-Philosopher Split
 
 **Date**: 2026-02-28
 **Sources**: #149-#171 (23 videos from playlist batch)

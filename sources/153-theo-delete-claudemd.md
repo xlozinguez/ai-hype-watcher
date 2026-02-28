@@ -1,6 +1,6 @@
 ---
 source_id: "153"
-title: "Delete your CLAUDE.md (and your AGENT.md too)"
+title: "Study Shows CLAUDE.md Files Barely Help (+4%) and Increase Costs 20%"
 creator: "Theo (t3.gg)"
 platform: "YouTube"
 url: "https://www.youtube.com/watch?v=GcNu6wrLTJc"
@@ -11,7 +11,7 @@ tags: ["claude-code", "context-engineering", "prompt-engineering", "ai-hype"]
 curriculum_modules: ["03-claude-code-essentials", "02-prompting-and-workflows"]
 ---
 
-# 153: Delete your CLAUDE.md (and your AGENT.md too)
+# 153: Study Shows CLAUDE.md Files Barely Help (+4%) and Increase Costs 20%
 
 > **Creator**: Theo (t3.gg) | **Platform**: YouTube | **Date**: 2026-02-23 | **Duration**: 29:15
 

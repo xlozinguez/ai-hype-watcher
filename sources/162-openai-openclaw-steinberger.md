@@ -1,6 +1,6 @@
 ---
 source_id: "162"
-title: "Builders Unscripted: Ep. 1 - Peter Steinberger, Creator of OpenClaw"
+title: "Peter Steinberger on Building OpenClaw — 90K Contributions, Unread Code, and the Agentic Trap"
 creator: "OpenAI (Builders Unscripted)"
 platform: "YouTube"
 url: "https://www.youtube.com/watch?v=9jgcT0Fqt7U"
@@ -11,7 +11,7 @@ tags: ["agentic-coding", "ai-landscape", "security", "vibe-coding", "openai", "s
 curriculum_modules: ["01-foundations", "04-agentic-patterns", "06-strategy-and-economics"]
 ---
 
-# 162: Builders Unscripted: Ep. 1 - Peter Steinberger, Creator of OpenClaw
+# 162: Peter Steinberger on Building OpenClaw — 90K Contributions, Unread Code, and the Agentic Trap
 
 > **Creator**: OpenAI (Builders Unscripted) | **Platform**: YouTube | **Date**: 2026-02-24 | **Duration**: 31:28
 

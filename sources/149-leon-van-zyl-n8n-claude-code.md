@@ -1,6 +1,6 @@
 ---
 source_id: "149"
-title: "Stop Using Claude Code Without This Tool"
+title: "n8n as MCP Server — Workflow Automation Meets Claude Code"
 creator: "Leon van Zyl"
 platform: "YouTube"
 url: "https://www.youtube.com/watch?v=CQeKmG1o85E"
@@ -11,7 +11,7 @@ tags: ["claude-code", "mcp", "agentic-coding"]
 curriculum_modules: ["03-claude-code-essentials", "04-agentic-patterns"]
 ---
 
-# 149: Stop Using Claude Code Without This Tool
+# 149: n8n as MCP Server — Workflow Automation Meets Claude Code
 
 > **Creator**: Leon van Zyl | **Platform**: YouTube | **Date**: 2026-02-23 | **Duration**: 15:59
 

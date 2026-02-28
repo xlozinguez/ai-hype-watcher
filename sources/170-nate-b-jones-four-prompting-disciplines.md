@@ -1,6 +1,6 @@
 ---
 source_id: "170"
-title: "Everyone Learned Prompting. Almost Nobody Learned the 4 Skills That Actually 10x Output."
+title: "Four Prompting Disciplines — From Prompt Craft to Specification Engineering"
 creator: "Nate B Jones"
 platform: "YouTube"
 url: "https://www.youtube.com/watch?v=BpibZSMGtdY"
@@ -11,7 +11,7 @@ tags: ["prompt-engineering", "context-engineering", "specification", "enterprise
 curriculum_modules: ["02-prompting-and-workflows", "06-strategy-and-economics"]
 ---
 
-# 170: Everyone Learned Prompting. Almost Nobody Learned the 4 Skills That Actually 10x Output.
+# 170: Four Prompting Disciplines — From Prompt Craft to Specification Engineering
 
 > **Creator**: Nate B Jones | **Platform**: YouTube | **Date**: 2026-02-27 | **Duration**: 41:11
 
