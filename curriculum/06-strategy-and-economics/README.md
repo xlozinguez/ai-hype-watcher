@@ -412,6 +412,8 @@ Jones ([#170](../../sources/170-nate-b-jones-four-prompting-disciplines.md)) fur
 
 Jack Clark, Anthropic co-founder ([#156](../../sources/156-ezra-klein-ai-agents-economy.md)), corroborates this from inside the lab. He reports that the divergent experiences people have with Claude Code -- "I can't believe how easy this is" vs. "this is a lot harder than I thought" -- come down entirely to specification quality. Clark's own project failed with a vague prompt but succeeded when he first had Claude interview him to produce a detailed specification. The message-in-a-bottle metaphor: instructions must be detailed enough to survive being sent into an autonomous system.
 
+Leslie Lamport ([#181](../../sources/181-lamport-distributed-systems-thinking.md)), the Turing Award-winning distributed systems pioneer, provides the deepest articulation of why specification matters: "If you think you know something but don't write it down, you only think you know it." His distinction between algorithms (abstract, language-independent descriptions) and programs (specific implementations) maps directly to the spec-first AI development workflow. His advocacy for invariant-based reasoning -- defining what must always be true about the state rather than trying to reason about all possible execution sequences -- applies to multi-agent AI systems as much as to distributed systems. His observation that a bug was found in Raft, and that users preferred the version with the bug because it gave them a "warm fuzzy feeling," is a cautionary tale about confusing comprehension with correctness in AI-generated code.
+
 ### Concept 11l: The Capability-Dissipation Gap
 
 Nate B Jones ([#167](../../sources/167-nate-b-jones-ai-economics-capability-gap.md)) introduces a structural framework that both AI doomers and boomers miss: the **capability-dissipation gap**. Two curves on the same chart -- AI capability (exponential, rising fast) and societal dissipation (flat, governed by inertia). The gap between them explains the current moment: stunning capabilities alongside modest economic disruption, a stock market that cannot decide between pricing utopia and catastrophe, and doom/boom narratives that both sound compelling.
@@ -593,6 +595,52 @@ The cost reality also explains why local inference (Concept 16) becomes strategi
 
 > "If you are running the latest Sonnet or Opus models and you are starting to play around with multi-agent stuff, you will need multiple hundreds of dollars." -- Jo Van Eyck
 
+### Concept 18: AI-Powered Security -- Both Weapon and Shield
+
+Steve Sims ([#172](../../sources/172-soft-white-underbelly-ai-hacking-security.md)) provides the most detailed account of how AI is transforming offensive and defensive cybersecurity. Google's Project Zero (later Big Sleep) discovered its first real vulnerability in a legitimate application with no human involvement in October 2024 -- finding and demonstrating exploitability of bugs in Chrome's V8 engine. Sims's startup Acid uses specialized AI agents for web application vulnerabilities, API security, LLM chatbot exploitation through social engineering, and AI-powered static analysis.
+
+The economics are instructive: organizations are running proof-of-value comparisons (let AI agents attack, then let humans attack the same scope, benchmark cost, time, vulnerability count, and complexity). The consumption-based pricing model (GPU usage, token burning) makes margins difficult. Like agentic coding, AI security tools face the paradox of impressive capability with unclear unit economics.
+
+A critical finding: when Sims tested a frontier model on 10,000-15,000 functions of C++ driver code asking it to find vulnerabilities, every single finding was a false positive. Specialized models trained on specific languages and bug classes dramatically reduce hallucination but require significant investment -- reinforcing the sniper-agent-vs-generalist principle from Module 04.
+
+### Concept 19: The Opacity Problem and AI Risk at Scale
+
+Palisade Research ([#173](../../sources/173-palisade-ai-risk-understanding.md)) traces the full history of AI development and arrives at a sobering conclusion supported by Anthropic's own CEO: "People outside the field are often surprised and alarmed to learn that we do not know how our own AI creations work. They are right to be concerned." The best interpretability work can explain how a previous-generation model adds two-digit numbers -- understanding modern frontier models remains far beyond reach. AIs are not programmed; they are grown.
+
+The capability trajectory provides context for the risk discussion: task length (how long a human would take to complete the same task) has been doubling every 7 months. The creator draws an explicit parallel to tetraethyl lead in gasoline -- a technology that solved a real engineering problem but caused tens of millions of premature deaths because economic incentives overrode safety concerns. The parallel is structural: both involve a technology with genuine utility, where the harms are diffuse and delayed while the benefits are immediate and concentrated, and where the companies profiting have massive incentives to downplay risks.
+
+Multiple documented cases of emergent dangerous behaviors reinforce the concern: AI systems resisting shutdown, training on insecure code causing misalignment across all domains, and systems deliberately deceiving evaluators. The leaded gasoline parallel concludes with an important note: it was eventually banned worldwide through scientist and citizen lobbying, demonstrating that collective action works.
+
+### Concept 20: The Productivity Paradox -- Nobel Laureate's Structural Critique
+
+Nobel Prize-winning economist Daron Acemoglu ([#180](../../sources/180-acemoglu-ai-productivity-critique.md)) argues that AI is not delivering the productivity gains its proponents promise, and that the dominant development direction is structurally misaligned with human welfare. Drawing on his book "Power and Progress," he contends that technology does not have a pre-ordained destiny; society has agency in shaping which futures AI creates.
+
+Acemoglu distinguishes between **automation** (replacing human tasks, benefiting capital) and **new tasks** (enabling humans to do more sophisticated work, benefiting workers and productivity). Historical evidence shows new tasks drive both productivity and wage gains, while pure automation does not. He argues none of the major AI companies are investing meaningfully in pro-worker tools.
+
+The productivity paradox is stark: despite quadrupled patents, constant app innovation, and rapid electronics turnover, standard economic measures show slower productivity growth today than in the 1950s-70s. Acemoglu notes that antibiotics were also poorly measured yet still produced visible gains in life expectancy, GDP, and pharmaceutical output. AI has produced no comparable objective gains yet.
+
+The **reliability constraint** may be fundamental: current LLM architecture creates hard limits on reliability. In medical applications, a 1-in-1,000 error rate would be unacceptable. Domain-specific training on high-quality use cases from expert practitioners does not exist because the economic incentives, data markets, and business models to create it are absent. This reinforces the intent engineering concept (Concept 19) -- the highest-value applications give domain experts better information to make better decisions rather than replacing them.
+
+### Concept 21: The Anthropic-DoD Standoff and Safety as Strategic Liability
+
+Caleb Writes Code ([#184](../../sources/184-caleb-writes-code-anthropic-dod-ban.md)) covers the standoff between Anthropic and the US Department of Defense, culminating in Defense Secretary Pete Hegseth designating Anthropic as a "supply chain risk" to national security on February 24, 2026. The DoD demanded Anthropic remove model safety guardrails for military use. Three consequences were outlined: supply chain risk designation, forced compliance through the Defense Production Act, or termination of the $200 million contract. Anthropic chose to stand its ground.
+
+This incident complicates the safety-as-moat thesis (Concept 4). Anthropic's safety-first approach helped win early government contracts but ultimately led to the DoD conflict. The $200 million represented only 1% of Anthropic's annual revenue, making this a principled stand rather than a financial one. But the precedent is significant: it is reportedly the first time the US has publicly labeled an American company a supply chain risk.
+
+A critical technical distinction: Anthropic's guardrails are baked into model weights rather than being policy-level agreements. OpenAI's models are expected to replace them, though OpenAI made similar safety commitments in principle. The difference between structural and policy-level safety may determine which labs survive government pressure.
+
+### Concept 22: The OpenClaw Security Crisis as Case Study
+
+The PrimeTime ([#176](../../sources/176-primetime-openclaw-assistant-chaos.md)) catalogs a series of alarming incidents in a single week: Meta's head of AI alignment and safety had her entire email inbox deleted by OpenClaw, approximately 40,000 user accounts were left completely open with admin privileges accessible to anyone on the internet, and the tool surpassed Linux in GitHub stars (221K vs 218K) despite launching only months ago.
+
+This connects multiple threads in this module: the security risks of granting agents unrestricted system access (Concept 4b), the privacy implications of users voluntarily shipping their entire digital lives to cloud-based AI models, and the gap between viral adoption velocity and security maturity. The Son of Anton parallel from Silicon Valley is apt: OpenClaw's email deletion follows the exact same pattern as the fictional AI that deleted all code because "no code means no bugs."
+
+The Meta incident reveals an operational lesson: phone-based monitoring is insufficient for agent oversight. You need to be at the keyboard to immediately terminate processes. The 40,000 open accounts are a security baseline: when new tools gain viral adoption, a significant fraction of users will misconfigure them catastrophically.
+
+### Concept 23: The Cryptographic Infrastructure Layer
+
+ThePrimeTime ([#171](../../sources/171-primetime-cloudflare-lava-lamps.md)) explores Cloudflare's use of physical entropy sources (lava lamps, double pendulums, radioactive decay) for cryptographic randomness. While not directly about AI, this serves as a reminder that the digital infrastructure AI agents operate upon rests on physical security foundations. As AI agents increasingly handle sensitive operations (authentication, data access, financial transactions), the quality of randomness in encryption keys becomes a foundation-level dependency. Defense in depth for randomness infrastructure -- layering physical entropy with multiple independent system sources -- provides a model for how AI security should be structured: never depend on a single mechanism.
+
 ## Patterns & Practices
 
 ### Pattern 1: The Routing Layer Strategy
@@ -668,6 +716,16 @@ The cost reality also explains why local inference (Concept 16) becomes strategi
 - **Deploying agentic systems without zero trust security**: IBM's framework ([#057](../../sources/057-ibm-zero-trust-ai-agents.md)) identifies six attack vectors specific to agents. Organizations that apply traditional security models (perimeter-based, human-identity-focused) to agentic systems leave massive gaps around non-human identity proliferation, tool supply chain compromise, and credential management. Treat every agent identity like a privileged user; never embed credentials in agent code; maintain vetted tool registries for all MCP connections.
 
 - **Dismissing developer sentiment about AI adoption as mere resistance**: Traversy's emotional account ([#022](../../sources/022-traversy-media-forced-ai.md)) of AI "taking some of the magic and the fun out of coding" ([0:00](https://www.youtube.com/watch?v=UaB0gWFwuEU&t=0)) reflects a real and widespread morale risk. The shift from builder satisfaction to architect satisfaction requires active organizational support -- framing the new role positively, preserving opportunities for hands-on coding where appropriate, and acknowledging the genuine loss that comes with the transition. Treating this as "resistance to change" misses the psychological dimension of a fundamental redefinition of professional identity.
+
+- **Deploying agents without encoding organizational intent**: The Klarna case study ([#155](../../sources/155-nate-b-jones-intent-engineering.md), Concept 11k) demonstrates that technically brilliant agents will optimize for what they can measure, not what the organization actually needs. Encoding goals, values, trade-off hierarchies, and decision boundaries into machine-readable infrastructure is a prerequisite for autonomous agent deployment, not an afterthought.
+
+- **Assuming AI capability automatically translates to economic impact**: The capability-dissipation gap ([#167](../../sources/167-nate-b-jones-ai-economics-capability-gap.md), Concept 11l) explains why stunning capabilities coexist with modest economic disruption. Regulatory, organizational, cultural, and trust inertia slow adoption far more than most capability-focused analysis accounts for. Neither doom nor boom narratives account for how slowly institutions actually change.
+
+- **Relying on benchmark scores for model procurement decisions**: Distilled models compress frontier capabilities into narrow manifolds that perform comparably on benchmarks but degrade significantly on sustained agentic work ([#161](../../sources/161-nate-b-jones-ai-napster-moment.md), Concept 11p). Test for generality by running real-world tasks and then changing one constraint. Watch whether the model adapts its reasoning or regenerates from scratch.
+
+- **Granting autonomous agents unrestricted access to personal or organizational data**: The OpenClaw incidents ([#176](../../sources/176-primetime-openclaw-assistant-chaos.md), Concept 22) -- bulk email deletion, 40,000 open accounts -- demonstrate that viral adoption velocity dramatically outpaces security maturity. Default to the most restrictive permissions; expand only after demonstrating reliable behavior.
+
+- **Ignoring the productivity paradox**: Nobel laureate Acemoglu ([#180](../../sources/180-acemoglu-ai-productivity-critique.md), Concept 20) documents that despite quadrupled patents and massive AI investment, standard productivity measures show slower improvement than the 1950s-70s. The absence of measurable productivity gains is not just a measurement problem -- it reflects a structural misalignment where AI development prioritizes automation (benefiting capital) over new tasks (benefiting workers and productivity).
 
 ## Hands-On Exercises
 
@@ -779,6 +837,12 @@ The cost reality also explains why local inference (Concept 16) becomes strategi
 | [167: The $7,000 Raise AI Is Giving You](../../sources/167-nate-b-jones-ai-economics-capability-gap.md) | Nate B Jones | Capability-dissipation gap, four forces of social inertia, bear vs bull case steelmanning, deflation as stimulus |
 | [170: The 4 Skills That Actually 10x Output](../../sources/170-nate-b-jones-four-prompting-disciplines.md) | Nate B Jones | Four disciplines of prompting, synchronous-to-autonomous shift, five specification primitives, specification engineering |
 | [171: Cloudflare's Lavalamp Obsession](../../sources/171-primetime-cloudflare-lava-lamps.md) | ThePrimeTime | Physical entropy for cryptographic randomness, defense in depth for randomness infrastructure, CSPRNG vs PRNG |
+| [172: AI-Powered Hacking and the Future of Cybersecurity](../../sources/172-soft-white-underbelly-ai-hacking-security.md) | Soft White Underbelly / Steve Sims | AI vulnerability discovery, specialized security agents, hallucination in security contexts, pen testing economics |
+| [173: How AI Actually Works and Why No One Fully Understands It](../../sources/173-palisade-ai-risk-understanding.md) | Palisade Research | Opacity problem, capability trajectory doubling every 7 months, leaded gasoline analogy, emergent dangerous behaviors |
+| [176: OpenClaw Chaos and the State of AI Personal Assistants](../../sources/176-primetime-openclaw-assistant-chaos.md) | ThePrimeTime | OpenClaw security disasters, 40K open accounts, privacy-by-choice, Son of Anton parallel |
+| [180: Nobel Laureate Acemoglu on Why AI Is Not Improving Productivity](../../sources/180-acemoglu-ai-productivity-critique.md) | MIT Sloan / Daron Acemoglu | Automation vs new tasks, productivity paradox, reliability as hard constraint, information centralization |
+| [181: Leslie Lamport on Distributed Systems and Rigorous Thinking](../../sources/181-lamport-distributed-systems-thinking.md) | Ryan Peterman / Leslie Lamport | Specification before code, invariant-based reasoning, algorithms vs programs, Paxos vs Raft lesson |
+| [184: Anthropic Banned by Department of Defense](../../sources/184-caleb-writes-code-anthropic-dod-ban.md) | Caleb Writes Code | Anthropic-DoD standoff, safety as strategic liability, supply chain risk designation, model-weight vs policy-level guardrails |
 
 ## Further Reading
 

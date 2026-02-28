@@ -179,6 +179,21 @@ Each source is synthesized (not transcribed) into a structured note with frontma
 | [169](169-leon-van-zyl-claude-desktop-app.md) | Claude Code Desktop App — GUI Features, Worktrees, and Live Preview | Leon van Zyl | video | claude-code, agentic-coding, vibe-coding |
 | [170](170-nate-b-jones-four-prompting-disciplines.md) | Four Prompting Disciplines — From Prompt Craft to Specification Engineering | Nate B Jones | video | prompt-engineering, context-engineering, specification, enterprise-ai |
 | [171](171-primetime-cloudflare-lava-lamps.md) | Cryptographic Randomness — Why Cloudflare Uses Lava Lamps for Entropy | The PrimeTime | video | security, infrastructure |
+| [172](172-soft-white-underbelly-ai-hacking-security.md) | AI-Powered Hacking and the Future of Cybersecurity | Soft White Underbelly | video | security, ai-landscape, ai-hype, enterprise-ai |
+| [173](173-palisade-ai-risk-understanding.md) | How AI Actually Works and Why No One Fully Understands It | Palisade Research | video | ai-landscape, ai-safety, ai-hype, infrastructure |
+| [174](174-greg-isenberg-obsidian-claude-code.md) | Using Obsidian and Claude Code as a Personal Thinking Partner | Greg Isenberg | video | claude-code, context-engineering, agentic-coding, prompt-engineering |
+| [175](175-vinh-nguyen-ai-skill-tax.md) | AI as Exoskeleton — The Hidden Skill Tax of AI-Assisted Coding | Vinh Nguyen | video | ai-hype, vibe-coding, ai-landscape, ai-safety |
+| [176](176-primetime-openclaw-assistant-chaos.md) | OpenClaw Chaos and the State of AI Personal Assistants | The PrimeTime | video | ai-hype, security, vibe-coding, ai-landscape |
+| [177](177-dylan-davis-claude-cowork-system.md) | Three-Level Framework for Claude Co-Work Automation | Dylan Davis | video | agentic-coding, multi-agent, context-engineering, claude-code |
+| [178](178-eo-multi-agent-orchestration.md) | Multi-Agent Orchestration for AI-Native Engineers | EO | video | multi-agent, agent-teams, agentic-coding, ai-sdlc, ai-landscape |
+| [179](179-agentic-lab-openclaw-architecture.md) | OpenClaw Agent Architecture Explained | Agentic Lab | video | agentic-coding, context-engineering, multi-agent |
+| [180](180-acemoglu-ai-productivity-critique.md) | Nobel Laureate Acemoglu on Why AI Is Not Improving Productivity | MIT Sloan Management Review | video | ai-economics, ai-hype, enterprise-ai, ai-landscape |
+| [181](181-lamport-distributed-systems-thinking.md) | Leslie Lamport on Distributed Systems, Abstraction, and Rigorous Thinking | Ryan Peterman | video | ai-sdlc, specification |
+| [182](182-damian-galarza-agent-memory.md) | How AI Agent Memory Systems Work: Sessions, Compaction, and Persistence | Damian Galarza | video | context-engineering, agentic-coding, claude-code |
+| [183](183-eliot-prince-cowork-scheduled-tasks.md) | Claude Cowork Scheduled Tasks, Skills Tab, and Video Editing | Eliot Prince | video | claude-code, agentic-coding, skills |
+| [184](184-caleb-writes-code-anthropic-dod-ban.md) | Anthropic Banned by Department of Defense: AI Safety vs Military Access | Caleb Writes Code | video | ai-safety, anthropic, ai-landscape |
+| [185](185-nate-b-jones-ai-education-parenting.md) | The Calculator Moment for Everything: AI, Education, and Raising Kids Who Can Think | Nate B Jones | video | ai-landscape, vibe-coding, ai-hype |
+| [186](186-keyhole-software-claude-code-delivery.md) | Using Claude Code for Real Software Delivery: From Specification to Parallel Agents | Keyhole Software | video | claude-code, agentic-coding, specification, multi-agent, prompt-engineering |
 
 ## Adding Sources
 

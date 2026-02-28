@@ -18,6 +18,7 @@ Dated entries covering recent AI development findings, tool updates, and critica
 | [2026-02-21](2026-02-21.md) | 25-source batch — AI bubble goes mainstream, context engineering taught as discipline, skills security crisis, dark factory economics, Boris Cherny on post-coding future | economics, critical, security, tools, patterns |
 | [2026-02-23](2026-02-23.md) | 12-source batch — difficulty taxonomy, dot-com parallel fully mapped, agentic tool diversity, Harvard AI education data | economics, critical, tools, patterns, education |
 | [2026-02-27](2026-02-27.md) | 23-source batch — CLAUDE.md backlash, AI agents hit mainstream economics, builder-philosopher split, intent engineering named, security goes operational | patterns, economics, critical, security |
+| [2026-02-28](2026-02-28.md) | 15-source batch — OpenClaw cascading failures, Acemoglu productivity critique, Anthropic DoD ban, agent orchestration playbook, memory architecture | security, economics, critical, patterns, tools |
 
 ## Adding Briefings
 

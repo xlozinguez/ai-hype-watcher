@@ -20,3 +20,4 @@ Unlike individual [source notes](../sources/), synthesis documents draw connecti
 | [2026-02-21](2026-02-21-playlist-themes.md) | The Reckoning — Bubble Economics Meet Engineering Reality | #112-#135 (24 videos from playlist batch) |
 | [2026-02-23](2026-02-23-playlist-themes.md) | The Difficulty Taxonomy — What AI Actually Automates | #137-#148 (12 videos from playlist batch) |
 | [2026-02-27](2026-02-27-playlist-themes.md) | Context File Backlash, Mainstream Agent Economics, and the Builder-Philosopher Split | #149-#171 (23 videos from playlist batch) |
+| [2026-02-28](2026-02-28-playlist-themes.md) | OpenClaw Fallout, Acemoglu's Productivity Critique, and the Agent Orchestration Playbook | #172-#186 (15 videos from playlist batch) |
