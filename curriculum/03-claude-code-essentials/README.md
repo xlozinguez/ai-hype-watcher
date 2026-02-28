@@ -29,7 +29,11 @@ Charlie Automates ([#040](../../sources/040-charlie-automates-claudemd-context.m
 
 Boris Cherny, Claude Code's creator ([#103](../../sources/103-y-combinator-boris-cherny-claude-code.md)), takes the minimalism principle to its logical extreme: Anthropic's own CLAUDE.md is only two lines long (enable auto-merge, post PRs to Slack). Cherny's personal CLAUDE.md is similarly minimal, and the team's is only a couple thousand tokens. His recommendation: delete your CLAUDE.md and start fresh with each model upgrade, adding instructions back only when the model demonstrably goes off track. This connects to his broader philosophy that CLAUDE.md is "scaffolding" -- code written to compensate for model limitations that provides 10-20% performance gains but gets "wiped out with the next model." The Bitter Lesson (Sutton) hangs framed on the Claude Code team's wall: never bet against the model.
 
-Simon Scrapes ([#051](../../sources/051-simon-scrapes-claude-code-tips.md)) independently arrives at the same principle with a memorable formulation: "Keep CLAUDE.md lean and point to where the detail lives. Don't dump the detail itself." His recommendation is to keep CLAUDE.md under 20-30 lines and use it as an index that points to skills and reference files that Claude loads on demand. This preserves a clean, scannable root configuration while keeping detailed context available when needed without eating into the token budget of every session.
+Simon Scrapes ([#051](../../sources/051-simon-scrapes-claude-code-tips.md)) independently arrives at the same principle with a memorable formulation: "Keep CLAUDE.md lean and point to where the detail lives. Don't dump the detail itself."
+
+Empirical evidence now supports these practitioner intuitions. Theo ([#153](../../sources/153-theo-delete-claudemd.md)) examines a study ("Are Repository-Level Context Files Helpful for Coding Agents?") that benchmarked context file impact across Sonnet 4.5, GPT-5, o1-mini, and Qwen 3. Developer-provided context files improved performance by only +4%, LLM-generated files degraded it by -3%, and both increased costs by over 20%. Theo's explanation centers on the **pink elephant problem**: mentioning a technology in a context file -- even to say "don't use this" -- makes the model more likely to reach for it. His practical approach: use CLAUDE.md as a diagnostic tool. Add an instruction telling the agent to flag surprising things it encounters, then use 80% of these proposals to fix the codebase rather than updating the context file. Matt Pocock ([#152](../../sources/152-matt-pocock-never-run-init.md)) adds a concrete framework: LLMs have a realistic instruction budget of 300-500 instructions, and every CLAUDE.md statement counts against it regardless of relevance. Information that exists in source code (package.json scripts, file structure, imports) is trivially discoverable during the agent's exploration phase and should never be duplicated.
+
+DIY Smart Code ([#154](../../sources/154-diy-smart-code-claude-code-features.md)) provides the clearest decision matrix for where to put configuration. Each feature answers a single question: Should Claude always know it? (CLAUDE.md -- high context cost.) Should it know it sometimes? (Skills -- low cost until invoked.) Should it run in isolation? (Subagents -- zero context cost.) Should it happen automatically on events? (Hooks -- zero context cost.) Does Claude need external tools? (MCP servers -- moderate cost.) The context window cost hierarchy that follows -- CLAUDE.md is the most expensive, hooks and subagents are free -- provides a practical guide for migrating configuration out of CLAUDE.md. His recommendation is to keep CLAUDE.md under 20-30 lines and use it as an index that points to skills and reference files that Claude loads on demand. This preserves a clean, scannable root configuration while keeping detailed context available when needed without eating into the token budget of every session.
 
 Charlie introduces Carl (Context Augmentation Reinforcement Layer), a plugin that addresses this by splitting rules into domain-based groups (global, dev, content, clients, agents) and loading only the domains whose keywords match the current prompt. The same 734-line CLAUDE.md reduced to 28 rules for a content task and 23 rules for a dev task. Carl also provides star commands for manual style overrides (`*brief` for bullet-point-only output, `*dev` for code-over-explanation) and context brackets that automatically adjust verbosity as the context window fills -- from detailed responses when fresh, to concise at moderate usage, to code-only survival mode when depleted. Install with a single `npx carl-core` command.
 
@@ -199,6 +203,18 @@ Bart Slodyczka ([#067](../../sources/067-bart-slodyczka-agent-teams-course.md)) 
 
 This creates a positive feedback loop: each team session improves the skill definition for future teams. The key principle: **do not write skills from scratch** -- run the process first, then have Claude generate the skill from the actual workflow. This ensures the skill captures the real process rather than an idealized version of it.
 
+### Concept 8d2: Deterministic Enforcement -- Hooks Over CLAUDE.md Rules
+
+Matt Pocock ([#157](../../sources/157-matt-pocock-hooks-cli-enforcement.md)) makes a sharp distinction between probabilistic and deterministic enforcement. CLAUDE.md rules are instructions to the LLM -- they consume context tokens every session and only reduce the probability of unwanted behavior. Hooks are shell commands that execute on events -- they deterministically block or transform behavior with zero context cost. Negative instructions ("never run git push") are especially wasteful in CLAUDE.md because they burn instruction budget without guaranteeing prevention.
+
+The practical workflow: take a CLAUDE.md instruction like "use pnpm not npm," convert it into a pre-tool-use hook with a bash script that intercepts npm commands and exits with code 2 (blocked), then remove the instruction from CLAUDE.md to free up instruction budget. Claude Code automatically retries with the correct tool. The broader philosophy: move enforcement out of the LLM's instruction budget and into deterministic feedback loops. Extend the pattern to linting -- ESLint rules enforce style preferences as deterministic feedback, further reducing CLAUDE.md bloat.
+
+### Concept 8d3: Advanced Skill Engineering
+
+Ben AI ([#158](../../sources/158-ben-ai-skill-engineering.md)) presents the most comprehensive skill engineering framework. The anatomy of a skill consists of a skill.md (the process instruction) plus optional reference files -- text files (style guides, ICP documents, example outputs), MCP instruction files, non-text assets (images, presentations), and code scripts (Python/JS functions). The skill.md should stay clean and process-focused; all additional context belongs in reference files.
+
+The engineering framework: (1) define name and trigger -- how the agent recognizes when to use the skill, (2) set a concise objective, (3) specify connectors/MCPs and how to use them, (4) lay out step-by-step process with human-in-the-loop checkpoints and reference file usage per step, (5) add rules that predict failure modes and enforce reference file usage, (6) enable progressive updates -- instruct the skill to save approved outputs as examples and update rules based on corrections. The emphasis on self-improving feedback loops ("skills are never finished and get better with use") is a key differentiator from static configuration.
+
 ### Concept 8e: Context Rot Awareness and the 60% Rule
 
 Dylan Davis ([#084](../../sources/084-dylan-davis-context-rot-60-rule.md)) provides practical context rot countermeasures specifically relevant to Claude Code users. Context window performance follows a degradation curve: up to ~60% capacity, Claude maintains effective instruction-following; between 60-95%, performance degrades progressively; past 95%, Claude triggers automatic compaction that loses nuance. The practical rule: treat 60% of the context window as the effective working limit.
@@ -236,9 +252,29 @@ Pocock identifies a significant gotcha: worktrees branch from the current branch
 
 The broader implication aligns with Pocock's observation that "AI coding is not that different from human coding. It's just that you need to be a lot more aware of the constraints." Git worktrees are a 30-year-old tool that becomes dramatically more valuable in agentic workflows -- the same pattern of existing infrastructure gaining new leverage from AI integration.
 
+### Concept 8f3: The Claude Code Desktop App
+
+Leon van Zyl ([#169](../../sources/169-leon-van-zyl-claude-desktop-app.md)) demonstrates how the Claude Code Desktop app has evolved into a full development environment. The app now supports running multiple agents across multiple projects simultaneously, with permission modes (ask, auto-accept edits, planning, bypass), file/image attachments, connectors, and a plugin marketplace. Two notable capabilities: **cloud agents** that continue working after closing the desktop app (with completed work merged back via PRs), and **live preview with auto-verify** where Claude screenshots the app after each change and self-corrects visual issues. The desktop app represents Anthropic's strategy to extend Claude Code beyond terminal-native developers.
+
+### Concept 8f4: Terminal Companion Tooling
+
+StarMorph AI ([#168](../../sources/168-starmorph-cli-tools-claude-code.md)) surfaces a growing ecosystem of CLI tools that complement Claude Code as terminal-centric workflows become standard. LazyGit provides real-time git monitoring as Claude Code modifies the codebase -- watching diffs, managing branches, and reviewing commit history. btop and mactop provide system-level observability critical when running multiple agent instances. Zoxide (smart directory navigation), Eza (enhanced ls), Glow (markdown reader), and Ranger (terminal file browser) reduce friction in terminal-first development. As Hashimoto ([#165](../../sources/165-pragmatic-engineer-hashimoto-ai-coding.md)) notes: "AI gave a huge boost to terminals which is a funny thing. The amount of time spent in a terminal has gone up."
+
+### Concept 8f5: The Pi Alternative -- Open-Source Agent Harness
+
+IndyDevDan ([#146](../../sources/146-indydevdan-pi-coding-agent.md)) presents Pi as the only true open-source competitor to Claude Code, filling a gap for advanced engineers who need deeper control. Pi ships with a 200-token system prompt (vs. Claude Code's 10,000-token), no safety modes (YOLO by default), and just four tools (read, write, edit, bash). Its stackable extension system allows composable customization -- the "till done" pattern forces the agent to create and complete task items before executing work, demonstrating how controlling the agent harness can extract reliable results even from cheaper models like Haiku.
+
+Dan's recommendation is "think in ANDs, not ORs": use Claude Code for its excellent out-of-the-box experience and enterprise features (80% of daily work), but hedge with Pi for deep customization, model flexibility, and experimental next-generation workflows (20%). The tier progression -- base agent, multi-agent orchestration (YAML-configurable teams), meta-agents that build other agents -- demonstrates what is possible when the agent harness is fully programmable.
+
+### Concept 8f6: Academic Foundation -- The LLM + Agent Harness Architecture
+
+MIT's Missing Semester course ([#160](../../sources/160-missing-semester-agentic-coding.md)) provides the most pedagogically clear explanation of what coding agents actually are: an underlying language model (a probability distribution over completions given prompts) wrapped in an agent harness that calls the LLM in a loop, dispatches tool calls, feeds results back as context, and repeats. Understanding this loop is essential for using agents effectively. The lecture emphasizes test-driven agent development (write a failing test first, then instruct the agent to make it pass) and selective tool approval (allow file edits autonomously but require approval for bash commands). The instructor's candid assessment -- "sometimes verifying code can actually be harder than just writing the correct code yourself" -- provides a useful heuristic for deciding when to delegate and when to code directly.
+
 ### Concept 8g: Claude Code vs. No-Code Platforms
 
 Simon Scrapes ([#078](../../sources/078-simon-scrapes-n8n-failing.md)) provides an honest comparison of n8n and Claude Code, arguing they are complementary rather than competitive. Claude Code with MCP connections now matches or exceeds n8n's drag-and-drop speed for building workflows. But n8n's execution history log provides visual debugging that Claude Code cannot match -- non-technical team members can click through workflow runs and inspect data at each node. The optimal architecture: Claude Code for infrastructure (backends, front-ends, databases, authentication) and n8n for core business automations that need visual transparency. The n8n MCP server and n8n skills let Claude Code build and edit n8n workflows, bridging both tools.
+
+Leon van Zyl ([#149](../../sources/149-leon-van-zyl-n8n-claude-code.md)) demonstrates three specific integration patterns that bridge the tools: (1) converting n8n workflow prototypes into full applications via Claude Code, (2) exposing n8n workflows as MCP servers using n8n's built-in MCP trigger node -- giving Claude Code access to n8n's entire integration ecosystem (Gmail, Slack, databases) without writing custom code, and (3) using Claude Code hooks (specifically the "stop" hook) to trigger n8n webhooks that forward notifications to Telegram or Slack when agent tasks complete. This solves the practical problem of babysitting long-running agent tasks.
 
 ### Concept 9: Advanced Claude Code Configuration -- Hooks, MCP CLI, and Insights
 
@@ -286,7 +322,21 @@ Beyond skills and CLAUDE.md, Claude Code supports several advanced configuration
 - **Example**: Instead of writing a skill from scratch, ask Claude Code to use the Skill Creator skill: "Create a skill that generates database migration files following our team's conventions." The meta-skill produces the scaffolding; you refine the domain knowledge.
 - **Source**: [#013]
 
-### Pattern 5: Hooks for Test-Driven Agent Workflows
+### Pattern 5: The Always-Running Agent Workflow
+
+- **When to use**: When working on any project where you want to maximize throughput between human and AI.
+- **How it works**: Mitchell Hashimoto's core principle: always have an agent doing something while you work. If you are coding, an agent is planning. If an agent is coding, you are reviewing. Occasionally run two agents in competition on harder tasks (Claude vs. Codex) but cap at two because cleanup overhead becomes counterproductive. Match review intensity to stakes: review everything for production systems, ship without reading for throwaway projects (wedding sites, prototypes).
+- **Example**: While implementing a feature manually, spin up a Claude Code session in plan mode for the next feature. When the plan is ready, switch: start reviewing the plan while the first agent begins implementing. This creates a continuous pipeline of work.
+- **Source**: [#165](../../sources/165-pragmatic-engineer-hashimoto-ai-coding.md)
+
+### Pattern 6: Hooks for Deterministic CLI Enforcement
+
+- **When to use**: When the agent consistently uses the wrong CLI tool (npm instead of pnpm, yarn instead of bun) despite CLAUDE.md instructions.
+- **How it works**: Create a pre-tool-use hook matching the bash tool. A simple bash script checks if the command starts with the unwanted tool, echoes a redirect message, and exits with code 2 to block execution. Claude Code automatically retries with the correct tool. Remove the corresponding instruction from CLAUDE.md to free instruction budget.
+- **Example**: A hook script checks if the command starts with "npm", echoes "use pnpm, not npm", and exits with code 2. The hook configuration lives in `.claude/settings.json`. This deterministic enforcement replaces a probabilistic CLAUDE.md rule while consuming zero context tokens.
+- **Source**: [#157](../../sources/157-matt-pocock-hooks-cli-enforcement.md)
+
+### Pattern 7: Hooks for Test-Driven Agent Workflows
 
 - **When to use**: When you want agents to implement code but not modify your test suite.
 - **How it works**: Create a PreToolUse hook that checks if the agent is about to write to test files. Return exit code 2 to block the write. This enforces a workflow where humans write tests (defining behavior) and agents write implementation (satisfying the tests). The deterministic enforcement via hooks is more reliable than prompting the agent not to touch tests -- the agent cannot bypass a hook that returns exit code 2.
@@ -365,6 +415,17 @@ Beyond skills and CLAUDE.md, Claude Code supports several advanced configuration
 | [136: Head of Claude Code: What happens after coding is solved](../../sources/136-lennys-podcast-boris-cherny-after-coding.md) | Lenny's Podcast / Boris Cherny | Post-coding vision, Claude Code roadmap, context engineering philosophy, specification as bottleneck |
 | [137: I'm using claude --worktree for everything now](../../sources/137-matt-pocock-worktree-workflow.md) | Matt Pocock | Worktree-based parallelization, branch isolation for agents, subagent + worktree orchestration, branch naming gotcha |
 | [148: Claude Code Memory Hacks and AI Burnout](../../sources/148-daily-ai-show-memory-hacks-burnout.md) | The Daily AI Show | claude-mem for persistent memory, project objective files, "lost in the weeds" problem, multi-agent cognitive overload, AI work intensification |
+| [146: The Pi Coding Agent](../../sources/146-indydevdan-pi-coding-agent.md) | IndyDevDan | Pi as open-source Claude Code alternative, stackable extensions, "till done" task enforcement, meta-agents building agents, 80/20 CC/Pi split |
+| [149: Stop Using Claude Code Without This Tool](../../sources/149-leon-van-zyl-n8n-claude-code.md) | Leon van Zyl | N8n + Claude Code integration, MCP server trigger for n8n workflows, hooks for completion notifications, rapid prototyping layer |
+| [152: Never Run claude /init](../../sources/152-matt-pocock-never-run-init.md) | Matt Pocock | Four phases of agent context usage, 300-500 instruction budget, discoverable vs. undiscoverable information, skills as alternative |
+| [153: Delete your CLAUDE.md](../../sources/153-theo-delete-claudemd.md) | Theo (t3.gg) | Study showing +4%/-3% context file impact, 20%+ cost increase, pink elephant problem, CLAUDE.md as diagnostic tool |
+| [154: Why Most Developers Are Using Claude Code Wrong](../../sources/154-diy-smart-code-claude-code-features.md) | DIY Smart Code | Five-feature decision matrix, context window cost hierarchy, hierarchical CLAUDE.md cascade |
+| [157: How to actually force Claude Code to use the right CLI](../../sources/157-matt-pocock-hooks-cli-enforcement.md) | Matt Pocock | Deterministic vs. probabilistic enforcement, hooks replacing CLAUDE.md rules, exit code 2 workflow, instruction budget as finite resource |
+| [158: How to build Claude Skills Better than 99% of People](../../sources/158-ben-ai-skill-engineering.md) | Ben AI | Skill engineering framework, progressive disclosure mechanism, reference file types, self-improving feedback loops |
+| [160: Lecture 7: Agentic Coding](../../sources/160-missing-semester-agentic-coding.md) | Missing Semester (MIT) | LLM + agent harness architecture, test-driven agent development, context management as core skill, pedagogical clarity |
+| [165: Mitchell Hashimoto's New Way of Writing Code](../../sources/165-pragmatic-engineer-hashimoto-ai-coding.md) | The Pragmatic Engineer / Mitchell Hashimoto | Always-running agent workflow, effort-for-effort review, competing agents on hard tasks, open source trust crisis |
+| [168: 10 CLI Tools I'm using alongside Claude Code](../../sources/168-starmorph-cli-tools-claude-code.md) | StarMorph AI | Terminal-first development environment, LazyGit for agent observability, system monitoring for agent workloads |
+| [169: Claude Code Just Became a Full IDE](../../sources/169-leon-van-zyl-claude-desktop-app.md) | Leon van Zyl | Desktop app as full development environment, local and cloud agents in parallel, live preview and auto-verify |
 
 ## Further Reading
 

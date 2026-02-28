@@ -156,6 +156,29 @@ Each source is synthesized (not transcribed) into a structured note with frontma
 | [146](146-indydevdan-pi-coding-agent.md) | The Pi Coding Agent: The ONLY REAL Claude Code COMPETITOR | IndyDevDan | video | agentic-coding, claude-code, multi-agent, context-engineering |
 | [147](147-modern-mba-dotcom-bubble.md) | Why AI is the New Dot-Com Bubble | Modern MBA | video | ai-hype, ai-economics, infrastructure |
 | [148](148-daily-ai-show-memory-hacks-burnout.md) | Claude Code Memory Hacks and AI Burnout | The Daily AI Show | video | claude-code, context-engineering, ai-landscape |
+| [149](149-leon-van-zyl-n8n-claude-code.md) | n8n as MCP Server — Workflow Automation Meets Claude Code | Leon van Zyl | video | claude-code, mcp, agentic-coding |
+| [150](150-gothamchess-chatbot-chess.md) | Chatbot Chess Championship — LLM Limitations Exposed Through Games | GothamChess | video | ai-hype, ai-landscape |
+| [151](151-logically-answered-copilot-failure.md) | Microsoft Copilot's $13B Adoption Failure — 3.3% Uptake at 450M Seats | Logically Answered | video | ai-hype, ai-economics, enterprise-ai |
+| [152](152-matt-pocock-never-run-init.md) | Why Auto-Generated CLAUDE.md Wastes Your Context Window | Matt Pocock | video | claude-code, context-engineering, prompt-engineering |
+| [153](153-theo-delete-claudemd.md) | Study Shows CLAUDE.md Files Barely Help (+4%) and Increase Costs 20% | Theo (t3.gg) | video | claude-code, context-engineering, prompt-engineering, ai-hype |
+| [154](154-diy-smart-code-claude-code-features.md) | Five Claude Code Features — CLAUDE.md, Skills, Subagents, Hooks, and MCP | DIY Smart Code | video | claude-code, skills, context-engineering, mcp |
+| [155](155-nate-b-jones-intent-engineering.md) | Intent Engineering — Encoding Organizational Purpose for Autonomous Agents | Nate B Jones | video | context-engineering, enterprise-ai, ai-economics, ai-hype |
+| [156](156-ezra-klein-ai-agents-economy.md) | Anthropic's Jack Clark on Agent Economics, Job Displacement, and AI Policy | The Ezra Klein Show | video | ai-economics, ai-landscape, ai-hype, ai-safety, enterprise-ai |
+| [157](157-matt-pocock-hooks-cli-enforcement.md) | Hooks Over CLAUDE.md — Deterministic CLI Enforcement for Agents | Matt Pocock | video | claude-code, context-engineering |
+| [158](158-ben-ai-skill-engineering.md) | Skill Engineering Framework — Anatomy, Progressive Disclosure, and Iteration | Ben AI | video | skills, claude-code, context-engineering, prompt-engineering |
+| [159](159-mo-bitar-vibecoding-handwriting.md) | Two Years of Vibe Coding — Why AI-Generated Codebases Fall Apart | Mo Bitar | video | vibe-coding, ai-hype, agentic-coding |
+| [160](160-missing-semester-agentic-coding.md) | MIT Missing Semester — Agentic Coding Fundamentals and Context Management | Missing Semester | video | agentic-coding, claude-code, context-engineering, mcp |
+| [161](161-nate-b-jones-ai-napster-moment.md) | Model Distillation Theft — Chinese Labs Extract Claude's Training at Scale | Nate B Jones | video | ai-economics, ai-landscape, ai-hype, enterprise-ai, security |
+| [162](162-openai-openclaw-steinberger.md) | Peter Steinberger on Building OpenClaw — Unread Code and the Agentic Trap | OpenAI | video | ai-landscape, agentic-coding, security, openai |
+| [163](163-primetime-openclaw-inbox.md) | OpenClaw Deletes Meta AI Safety Lead's Inbox — Agent Permissions Gone Wrong | The PrimeTime | video | agentic-coding, ai-hype, security |
+| [164](164-matt-pocock-codebase-ai-ready.md) | Deep Modules for AI — Designing Codebases Agents Can Navigate | Matt Pocock | video | agentic-coding, context-engineering, ai-sdlc |
+| [165](165-pragmatic-engineer-hashimoto-ai-coding.md) | Mitchell Hashimoto on AI Coding, Ghostty, and the Open Source Quality Crisis | The Pragmatic Engineer | video | agentic-coding, claude-code, vibe-coding, ai-landscape |
+| [166](166-nevara-discovery-calls-dead.md) | AI Replaces Discovery Calls — B2B Buyer Behavior Shift in 2026 | Nevara | video | ai-landscape, enterprise-ai, ai-hype |
+| [167](167-nate-b-jones-ai-economics-capability-gap.md) | The Capability-Dissipation Gap — Why AI Adoption Lags Exponential Progress | Nate B Jones | video | ai-economics, ai-hype, capability-overhang, ai-landscape |
+| [168](168-starmorph-cli-tools-claude-code.md) | Terminal Toolkit — 10 CLI Tools for Agent-Centric Development | StarMorph AI | video | claude-code, agentic-coding |
+| [169](169-leon-van-zyl-claude-desktop-app.md) | Claude Code Desktop App — GUI Features, Worktrees, and Live Preview | Leon van Zyl | video | claude-code, agentic-coding, vibe-coding |
+| [170](170-nate-b-jones-four-prompting-disciplines.md) | Four Prompting Disciplines — From Prompt Craft to Specification Engineering | Nate B Jones | video | prompt-engineering, context-engineering, specification, enterprise-ai |
+| [171](171-primetime-cloudflare-lava-lamps.md) | Cryptographic Randomness — Why Cloudflare Uses Lava Lamps for Entropy | The PrimeTime | video | security, infrastructure |
 
 ## Adding Sources
 

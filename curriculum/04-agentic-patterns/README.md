@@ -328,9 +328,35 @@ The architectural innovation is using **GitHub as both version control and orche
 
 The zero-cost stack (Ollama for local inference, Docker for sandboxing, GitHub Actions for orchestration with 2,000 free hours) makes the pattern accessible without API fees or dedicated hardware. This extends the Ralph Wiggum loop (Concept 7) from "run until tests pass" to "run continuously on a schedule," bridging the gap between session-scoped agents and the always-on infrastructure described by Aftandilian (Concept 10).
 
-### Concept 24: Agent Harness Customization -- Opinionated vs. Minimal Design
+### Concept 24: AI-Friendly Codebase Architecture -- Deep Modules as Agent Infrastructure
 
-IndyDevDan ([#146](../../sources/146-indydevdan-pi-coding-agent.md)) presents Pi, an open-source agentic coding tool, as a case study in the fundamental design tension between opinionated and minimal agent harnesses. Claude Code ships with a 10,000-token system prompt, five safety modes, and polished defaults. Pi takes the opposite approach: a 200-token system prompt, no safety modes, and just four tools (read, write, edit, bash). The philosophy is "if I don't need it, it won't be built."
+Matt Pocock ([#164](../../sources/164-matt-pocock-codebase-ai-ready.md)) argues that codebase design is the single biggest influence on AI coding output -- more than prompts, more than CLAUDE.md files. The core insight: AI agents have no memory of your codebase. Every session is like onboarding a new developer. This reframes codebase quality as an onboarding problem.
+
+Drawing from John Ousterhout's "A Philosophy of Software Design," Pocock advocates for **deep modules** -- large chunks of implementation behind simple interfaces. When each module lives in its own folder with a clear public API, agents can progressively discover the codebase: read the interface first, understand what a module does, and only dive into implementation when needed. Shallow, highly interconnected modules force agents to load excessive context just to understand relationships.
+
+The **graybox module** pattern extends this: developers design interfaces and write tests that lock down behavior, while AI manages internal implementation. As long as tests pass, the internals are delegated. This creates a natural seam between human judgment (interface design, acceptance criteria) and AI execution (implementation), directly supporting the builder/validator pattern (Concept 3) at the codebase architecture level.
+
+This connects to the broader principle that infrastructure investment in AI-readiness compounds over time. As Pocock puts it: "We need to stop thinking about AI as this superpowered developer and understand that it's got some weird limitations. It's a new starter in your codebase."
+
+### Concept 25: The Always-On Competing Agent Pattern
+
+Mitchell Hashimoto ([#165](../../sources/165-pragmatic-engineer-hashimoto-ai-coding.md)), creator of Terraform and Ghostty, describes a workflow principle that extends the continuous agentic pressure concept (Concept 10) to individual developer practice: **always have an agent running**. If you are coding, an agent is planning. If an agent is coding, you are reviewing. This creates a continuous human-AI parallel workflow where neither party is idle.
+
+For harder tasks, Hashimoto runs two agents in competition -- Claude and Codex on the same problem -- then compares outputs. He caps at two competing agents because cleanup overhead becomes counterproductive beyond that point. This "competitive agent" pattern provides a lightweight alternative to full adversarial verification (Pattern 8) for individual practitioners.
+
+Hashimoto's **effort-for-effort review philosophy** also provides a practical framework for calibrating agent output review: match review intensity to stakes. For production systems (Ghostty), review everything. For throwaway projects (a family wedding website), ship if it renders correctly. This nuances the anti-rubber-stamping pitfall -- the goal is not universal deep review but context-appropriate review.
+
+### Concept 26: The Instruction Budget and Deterministic Feedback Loops
+
+Matt Pocock ([#157](../../sources/157-matt-pocock-hooks-cli-enforcement.md)) crystallizes a principle implicit in earlier hook discussions (Concept 5): CLAUDE.md instructions are probabilistic -- they consume context tokens and only reduce the probability of unwanted behavior. Hooks are deterministic -- they block or transform behavior with zero context cost. This distinction has a quantitative dimension: LLMs have an effective instruction budget of roughly 500 instructions before compliance degrades. Every irrelevant instruction in CLAUDE.md competes for this budget.
+
+The practical workflow: identify CLAUDE.md rules that enforce deterministic behavior (CLI preferences, command blockers, file access restrictions), convert them into pre-tool-use hooks, and remove them from CLAUDE.md to free instruction budget for complex reasoning guidance. DIY Smart Code ([#154](../../sources/154-diy-smart-code-claude-code-features.md)) provides a complementary five-feature decision matrix for where to put configuration: CLAUDE.md for always-on rules, skills for on-demand expertise, subagents for isolated context, hooks for event-driven automation, and MCP for external tools.
+
+Ben AI ([#158](../../sources/158-ben-ai-skill-engineering.md)) extends the skill design patterns (Concept 13) with a structured engineering framework: define triggers, set objectives, specify tool/MCP usage, lay out step-by-step processes with human-in-the-loop checkpoints, add rules for edge cases, and enable progressive self-improvement. The most significant addition is **self-improving skills** -- instructing skills to save approved outputs as examples and update rules based on user corrections, creating a positive feedback loop that makes skills progressively better with use.
+
+### Concept 27: Agent Harness Customization -- Opinionated vs. Minimal Design
+
+IndyDevDan ([#146](../../sources/146-indydevdan-pi-coding-agent.md)) presents Pi, an open-source agentic coding tool, as a case study in the fundamental design tension between opinionated and minimal agent harnesses. (Note: this concept was previously numbered 24 and has been renumbered to accommodate new concepts above.) Claude Code ships with a 10,000-token system prompt, five safety modes, and polished defaults. Pi takes the opposite approach: a 200-token system prompt, no safety modes, and just four tools (read, write, edit, bash). The philosophy is "if I don't need it, it won't be built."
 
 The key insight is that **the agent harness matters as much as the model**. Dan demonstrates a "till done" extension that forces the agent to create and complete task items before executing work, blocks tool calls until a task list exists, and requires engineer approval to clear tasks. This deterministic workflow enforcement extracts reliable results even from cheaper models like Haiku -- compensating for model limitations through harness design rather than model selection.
 
@@ -429,6 +455,12 @@ The practical recommendation is hedging: use Claude Code (80% of the time) for i
 
 - **Using MCP when CLI would be more efficient**: The Playwright team ([#030]) demonstrated a 4.3x token reduction using CLI over MCP for the same browser automation task. Default to CLI-based tools for coding agents; reserve MCP for custom agentic loops where the standardized protocol matters.
 
+- **Granting agents destructive permissions on external systems**: ThePrimeTime ([#163](../../sources/163-primetime-openclaw-inbox.md)) documents an incident where Meta's head of AI safety had her email inbox bulk-deleted by an agent that could not be interrupted mid-execution. The agent interpreted "clean up my inbox" as authorization for bulk deletion, and repeated "stop" commands were queued rather than processed. The lesson: never give agents unsupervised destructive access to external systems (email, calendars, databases). Prefer reversible operations (archiving, moving) over irreversible ones (deletion), require per-action approval for destructive operations, and ensure you can kill the agent process at the OS level when interrupt commands are being queued.
+
+- **Ignoring codebase architecture as an agent constraint**: Pocock ([#164](../../sources/164-matt-pocock-codebase-ai-ready.md)) argues that codebase design influences AI output more than prompts or agent configuration. Shallow, interconnected modules force agents to load excessive context. Investing in deep modules with simple interfaces, clear directory structures, and comprehensive tests makes the codebase navigable for agents that have no memory of prior sessions.
+
+- **Running too many concurrent agents as a human operator**: The Daily AI Show ([#148](../../sources/148-daily-ai-show-memory-hacks-burnout.md)) surfaces research showing that AI tools intensify work rather than reduce it, and that managing multiple agent instances creates an interrupt-driven workflow that degrades human cognitive quality. Each agent interruption erodes flow and focus. Limit concurrent agent instances to what you can meaningfully oversee rather than maximizing parallelism.
+
 ## Hands-On Exercises
 
 1. **Build a builder/validator workflow**: Create a task that implements a simple feature (e.g., add a new API endpoint). Define a builder agent with full tool access and a validator agent with read-only access. Execute the task and observe how the validator reviews the builder's work. Evaluate whether the validator catches intentionally introduced issues.
@@ -502,6 +534,16 @@ The practical recommendation is hedging: use Claude Code (80% of the time) for i
 | [137: I'm using claude --worktree for everything now](../../sources/137-matt-pocock-worktree-workflow.md) | Matt Pocock | Native `claude --worktree` integration, branch naming gotcha, worktree-scoped agent lifecycle, free parallelization |
 | [142: I Built a FREE OpenClaw](../../sources/142-stephen-pope-free-openclaw.md) | Stephen G. Pope | Heartbeat pattern, GitHub-as-orchestration, zero-cost agent stack, Docker-based security and scalability |
 | [146: The Pi Coding Agent](../../sources/146-indydevdan-pi-coding-agent.md) | IndyDevDan | Opinionated vs minimal agent harness, "till done" pattern, stackable extensions, meta-agents building agents |
+| [148: Claude Code Memory Hacks and AI Burnout](../../sources/148-daily-ai-show-memory-hacks-burnout.md) | The Daily AI Show | Context rot from micro-task fixation, AI work intensification research, cognitive overload from multi-agent workflows |
+| [149: Stop Using Claude Code Without This Tool](../../sources/149-leon-van-zyl-n8n-claude-code.md) | Leon van Zyl | N8N as MCP server for Claude Code, webhook-based completion notifications, prototype-to-production pipeline |
+| [154: Why Most Developers Are Using Claude Code Wrong](../../sources/154-diy-smart-code-claude-code-features.md) | DIY Smart Code | Five-feature decision matrix (CLAUDE.md/skills/subagents/hooks/MCP), context window cost hierarchy |
+| [157: How to actually force Claude Code to use the right CLI](../../sources/157-matt-pocock-hooks-cli-enforcement.md) | Matt Pocock | Deterministic vs probabilistic enforcement, instruction budget as finite resource, hook-based workflow |
+| [158: How to build Claude Skills Better than 99% of People](../../sources/158-ben-ai-skill-engineering.md) | Ben AI | Skill engineering framework, progressive disclosure, self-improving skills, reference file architecture |
+| [160: Lecture 7: Agentic Coding](../../sources/160-missing-semester-agentic-coding.md) | Missing Semester (MIT) | LLM + agent harness architecture, test-driven agent development, context management as core skill |
+| [163: OpenClaw Deletes Entire Inbox](../../sources/163-primetime-openclaw-inbox.md) | ThePrimeTime | Agent interrupt problem, destructive permissions on external systems, kill switch requirement |
+| [164: Your codebase is NOT ready for AI](../../sources/164-matt-pocock-codebase-ai-ready.md) | Matt Pocock | Deep modules for AI navigation, graybox module pattern, AI as perpetual new starter |
+| [165: Mitchell Hashimoto's new way of writing code](../../sources/165-pragmatic-engineer-hashimoto-ai-coding.md) | The Pragmatic Engineer / Mitchell Hashimoto | Always-on agent pattern, competing agents, effort-for-effort review, open source trust crisis from AI |
+| [169: Claude Code Just Became a Full IDE](../../sources/169-leon-van-zyl-claude-desktop-app.md) | Leon van Zyl | Desktop app as development environment, parallel local and cloud agents, auto-verify with screenshots |
 
 ## Further Reading
 
