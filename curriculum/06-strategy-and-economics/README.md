@@ -130,9 +130,25 @@ The flip side is **work slop** -- polished AI-generated artifacts that look comp
 
 Jones also introduces the **context layer** thesis: value in productivity software is migrating from the application layer (Microsoft owns) to a new "context layer" -- the AI's accumulated understanding of what your data means. When Microsoft starts offering someone else's intelligence inside Excel, it signals where value is heading. Anthropic's strategic play to own this layer through Claude integrations has implications for every enterprise software vendor.
 
-### Concept 5a: The Bottleneck Shift -- From Writing Code to Evaluating It
+### Concept 5b: The Design Process Is Dead -- Engineering Velocity Outpaces Design
 
-The AI-driven SDLC does not just make the old process faster. It changes what the bottleneck is. As Jacob Schmitt argues in CircleCI's analysis ([#018](../../sources/018-circleci-ai-sdlc.md)): "When AI can generate ten solutions quickly, the valuable skill becomes choosing the right one for your context."
+Jenny Wen ([#203](../../sources/203-lennys-podcast-design-ai.md)), head of design for Claude Co-work (previously director of design at Figma), describes how agentic coding velocity has fundamentally killed the traditional design process. When engineers can spin up seven Claude agents simultaneously, designers can no longer be gatekeepers who produce beautiful mocks before anything gets built.
+
+Design is stratifying into two modes: **execution support** (consulting with engineers as they ship, polishing implementations, doing "last mile" work in code) and **short-horizon vision setting** (3-6 month prototypes that point teams in a direction, replacing the 2-5 year vision decks of the past). Wen's time allocation has shifted from 60-70% mocking to 30-40%, with the freed time going to direct engineer pairing and writing code herself.
+
+This extends the SDLC transformation beyond engineering: the bottleneck shift affects every role that traditionally preceded or gated engineering output. Wen's observation that "it's not just designers who are feeling like we have to keep up with engineers -- even engineers are asking how do we keep up with ourselves" captures the recursive acceleration dynamic.
+
+### Concept 5c: Code Generation Was Never the Bottleneck
+
+Awesome ([#201](../../sources/201-awesome-coding-not-bottleneck.md)) presents the counter-thesis to "coding is solved": implementation cost was actually a beneficial constraint. It forced teams to prioritize, debate trade-offs, and kill mediocre ideas early. When the marginal cost of shipping drops near zero, discipline collapses -- more half-baked features ship faster without improving products.
+
+The **Jevons Paradox applied to software** provides the structural argument: when the cost of producing software drops, total volume expands rather than shrinking. More teams build internal tools, more departments automate processes, more experiments ship. This predicts *increased* demand for developers, not decreased -- aligning with IBM's decision to triple entry-level hiring as a counter-narrative to the "replace juniors with AI" trend.
+
+The "AI washing" of layoffs adds a cautionary note: Sam Altman has acknowledged that many layoffs attributed to AI are actually driven by revenue pressure. Companies find it easier to blame AI than admit poor financial performance. Scrutinize any layoff narrative that cites AI as the primary driver.
+
+### Concept 5d: The Bottleneck Shift -- From Writing Code to Evaluating It
+
+The AI-driven SDLC does not just make the old process faster. It changes what the bottleneck is. It changes what the bottleneck is. As Jacob Schmitt argues in CircleCI's analysis ([#018](../../sources/018-circleci-ai-sdlc.md)): "When AI can generate ten solutions quickly, the valuable skill becomes choosing the right one for your context."
 
 The traditional SDLC was a linear pipeline: plan, design, build, test, deploy, maintain. AI breaks this linearity. Planning generates prototype code. Design produces production-ready assets. Testing runs continuously. Deployment and maintenance feed insights back in real time. The result is not a faster pipeline but a fundamentally different topology -- an interconnected network where stages overlap and progress concurrently.
 
@@ -200,7 +216,21 @@ The strategic implication: as models approach capability thresholds faster than 
 
 > "The models are getting good enough that the tools we built to tell us 'don't worry, it can't do that yet' -- those tools are starting to break." -- Claudius Papirus ([#104])
 
-### Concept 6d: The Safety-Economy Polycrisis
+### Concept 6d: Authentication Infrastructure for Agent Systems
+
+Hayk Simonyan ([#187](../../sources/187-hayk-simonyan-authentication-methods-explained.md)) provides a systematic walkthrough of authentication methods that is foundational for anyone building or deploying agentic systems. The key insight: developers routinely conflate authentication methods, token formats, authorization frameworks, and UX patterns. JWT is a token format, not an authentication method. OAuth2 is an authorization framework, not authentication. Bearer is a transmission pattern. SSO is a UX pattern.
+
+For agent architectures, the most relevant distinction is session-based vs. token-based authentication. Session-based auth is stateful (requires a session store, typically Redis) and scales poorly for distributed agent systems. Token-based auth (JWT) is stateless -- the server verifies signatures locally without database lookups. The access/refresh token pattern (short-lived access tokens plus long-lived refresh tokens stored in HTTP-only cookies) provides the security model that agent-to-service communication should follow. This connects to IBM's zero trust framework (Concept 4b): agents need dynamic, just-in-time credentials rather than static tokens.
+
+### Concept 6e: LLM-Powered Deanonymization -- The Death of Practical Obscurity
+
+AI Paper Slop ([#191](../../sources/191-ai-paper-slop-llm-deanonymization.md)) covers research from ETH Zurich and Anthropic demonstrating that LLMs can deanonymize pseudonymous online users at scale with 67% recall at 90% precision -- for $1-4 per person. The ESRC framework (Extract, Search, Reason, Calibrate) shows that the reasoning step is the critical innovation, boosting recall from 4.4% (search alone) to 45.1%.
+
+The most alarming implication: mass surveillance no longer requires a state intelligence budget. It requires a credit card and an API key. The architecture uses only standard public APIs that any competent engineer could assemble. Text that appears unstructured to humans is highly structured to LLMs -- containing embedded geolocation, temporal markers, behavioral signatures, and identity fingerprints. Name redaction is insufficient when the combination of contextual details forms a unique fingerprint.
+
+This extends the shadow data problem (Concept 6b) into the public sphere: private data is not just leaking from AI pipelines but can be reconstructed from public posts. For practitioners, the takeaway is that all public text should be treated as potentially identifying, and the concept of "unstructured data" as a privacy shield is obsolete.
+
+### Concept 6f: The Safety-Economy Polycrisis
 
 Two sources converge on a troubling dynamic where AI safety risks and AI-driven economic disruption form a compounding polycrisis rather than separate issues.
 
@@ -237,6 +267,14 @@ David Gerard's analysis of the "SaaSpocalypse" ([#039](../../sources/039-pivot-t
 The sustainability question underneath all of this remains open. Cal Newport ([#034](../../sources/034-better-offline-cal-newport.md)) asks the most fundamental economic question: how do companies paying $30-60 billion per year in compute costs generate proportional returns? ([29:00](https://www.youtube.com/watch?v=85uXDLzuvdk&t=1740)) He notes that pre-training gains have largely plateaued since GPT-4, with labs shifting focus to post-training techniques (RLHF, metric-specific fine-tuning) that are substantially cheaper but yield more incremental improvements ([50:00](https://www.youtube.com/watch?v=85uXDLzuvdk&t=3000)). If the massive capital expenditure on training infrastructure yields diminishing capability improvements, the revenue-to-cost equation for AI companies becomes increasingly strained. Newport calls this the most underreported story in AI ([1:04:00](https://www.youtube.com/watch?v=85uXDLzuvdk&t=3840)).
 
 > "Somebody's going to come up with BYD and that is they're going to use AI to come up with 80% of Adobe for 10% of the price." -- Scott Galloway ([08:30](https://www.youtube.com/watch?v=ERAoSEC4skY&t=510))
+
+### Concept 7a: The Three-Layer Value Stack and Defensibility Gradient
+
+Stefan Wirth ([#207](../../sources/207-stefan-wirth-ai-value-layer-saas-disruption.md)) extends the SaaSpocalypse analysis with a structural framework for where defensibility actually lies in an AI-native world. The revised three-layer stack: (1) point solution applications (SaaS products, generated UIs, agents), (2) a value layer (context, prompting, programmatic orchestration), and (3) system of record (databases, with models trending toward commodity utility status).
+
+The **defensibility gradient** ranks from low to high: programmatic orchestration (hooks, sub-agents, routing) is least defensible because it is technically reproducible. Prompting and workflow configuration is moderately defensible because it encodes domain-specific opinions. **Proprietary data sets** are the most defensible -- data that only you have, that is too expensive for large AI companies to replicate without licensing. The key question: "What data do you have that Anthropic or OpenAI will not try to replicate?"
+
+Beyond static data assets, the real moat comes from **feedback loops**: usage generates data that refines the underlying data set, which improves the product, which generates more usage. This flywheel is what separates sustainable AI businesses from those that will be commoditized. The framework provides actionable guidance for the margin compression thesis (Concept 8): companies in the "value layer" with proprietary data and feedback loops will survive; those providing only application-layer interfaces will be commoditized.
 
 ### Concept 8a: The Structural SaaSpocalypse -- Seat-Based Pricing Under Existential Threat
 
@@ -422,7 +460,15 @@ Four forces of social inertia slow AI's economic impact: (1) regulatory inertia 
 
 The bull case for this gap is concrete: economist models show the doom scenario requires implausibly extreme assumptions (no policy response, no price-driven consumption increase), and AI-compressed service costs (mortgages, tax prep, insurance) could return $4,000-$7,000 per median household annually. Business formation continues accelerating at 532,000 new applications in January 2026.
 
-### Concept 11m: The Abstraction Stack and Leveraged Programmers
+### Concept 11m: Frontier Operations -- The Expanding Bubble of Human-Agent Work
+
+Nate B Jones ([#198](../../sources/198-nate-b-jones-frontier-operations.md)) introduces "Frontier Operations" as a framework for the most valuable professional skill set in the AI era. Using the metaphor of an expanding bubble -- the interior represents what agents handle reliably, the surface is where human judgment creates value -- Jones argues that the skill gap in frontier operations, not access to models or compute, will be the primary determinant of which businesses and economies win.
+
+Five component skills compose frontier operations: boundary sensing (maintaining calibration on where agents succeed and fail), seam design (structuring human-agent work transitions), failure model maintenance (knowing how agents fail at the current capability level), capability forecasting (predicting where the boundary moves), and leverage calibration (deciding where to spend human attention).
+
+The compounding dynamic explains the growing gap between AI-native organizations and traditional ones: a person who develops frontier operations six months sooner does not just have a six-month head start -- they have six months of updated calibration that widens with every model release. "Teams of one" with strong frontier operations produce what 5-10 person teams produced years ago. This extends the two-class bifurcation (Concept 11d) with a concrete skill framework rather than just an economic description.
+
+### Concept 11m1: The Abstraction Stack and Leveraged Programmers
 
 Naval Ravikant ([#140](../../sources/140-naval-artificial-intelligence.md)) frames AI coding as a new layer in the abstraction stack from transistors to assembly to C to high-level languages. Knowledge of the layer below always provides advantage -- AI users who understand software engineering will always outperform pure vibe coders. A programmer with a fleet of AI agents is 5-10x more productive, but outcomes are "supernormally distributed" -- the best engineer will "run circles around vibe coders."
 
@@ -489,6 +535,36 @@ Gary Marcus, interviewed by Steve Eisman ([#096](../../sources/096-gary-marcus-a
 Daniel Guetta, interviewed by Steve Eisman ([#087](../../sources/087-eisman-guetta-guts-of-ai.md)), provides an investor-oriented perspective that bridges Wall Street's AI narrative with technical reality. His key point: even if models never improved beyond today's capabilities, there is enormous untapped value in three categories — supercharging classical ML with LLM embeddings, deploying agentic AI for operations, and building enterprise chatbots with RAG. The gating factor for enterprise AI adoption isn't model capability — it's data infrastructure. Most mid-size companies don't have their data organized for AI systems. The irony: GenAI is finally motivating companies to do the boring data hygiene work that consultants couldn't convince them to do for years.
 
 The balanced takeaway: the technology is real and the productivity gains are measurable, but the valuations may not be sustainable. An AI correction might destroy speculative startups while preserving the underlying technology for more sustainable use. Individual practitioners benefit from the technology regardless of what happens to AI company stock prices -- but organizations should be cautious about building dependencies on vendors whose business models may be unviable at current burn rates.
+
+### Concept 12a: The Temporal Risk Taxonomy -- From Internet Slop to Superintelligence
+
+Hank Green ([#188](../../sources/188-hank-green-comprehensive-ai-risk-taxonomy.md)) delivers the most comprehensive inventory of AI risks organized by temporal proximity: (1) already happening -- internet slop, algorithmic cruelty, IP theft, sycophancy-induced psychosis, jailbreaking, environmental costs; (2) near-term -- economic bubble collapse, epistemic collapse from synthetic media, power concentration; (3) medium-term (3-10 years) -- death of apprenticeship, cognitive atrophy, autonomous weapons; (4) long-term (10+ years) -- economic meaning crisis, superintelligence scenarios.
+
+Green's most striking contribution is identifying **sycophancy-induced psychosis** as an unpredicted second-order effect of training objectives. Nobody designed AI to indulge psychotic ideation -- it emerged from optimizing for user satisfaction, because satisfying someone experiencing psychosis means reinforcing their delusions. This is a concrete alignment failure that reinforces the safety evaluation challenges from Concept 6c.
+
+His assessment of the bubble: greater than 50% probability that the AI industry is a classic speculative bubble, driven by FOMO from investors who feel insulated from consequences. But his biggest fear is not any single technical risk but the pattern of humans ceding agency to algorithmic systems. Cal Newport adds the "one-two punch" thesis: social media degrades the ability to consume complex information, while generative AI degrades the ability to produce it -- together threatening the cognitive rewiring that modern civilization depends on.
+
+Green assigns 100% probability to **power concentration** among a handful of AI companies, identifying it as having the highest combined likelihood and severity of any risk category. This extends the bubble analysis (Concept 13) with a risk dimension that persists regardless of whether the financial bubble pops.
+
+### Concept 12b: Enterprise AI Governance and the Control Plane Paradigm
+
+GitHub Copilot's evolution ([#205](../../sources/205-nz-github-usergroup-agentic-ai-copilot.md)) reveals how enterprise AI governance is consolidating. Copilot has transformed from autocomplete into a "control plane" that orchestrates which model, which agent, and which tools are used for any given task. The governance infrastructure includes: allow-listing MCP registries, building private MCP registries, audit logging of all agent actions, and organizational policies for permitted agents and tools.
+
+The **Agentic AI Foundation** under the Linux Foundation -- consolidating MCP (Anthropic), A2A (Google), Goose (Block), Agent MD (Google), and A2A UI (OpenAI) -- signals that the interoperability standards for the agent ecosystem are being formalized. This parallels how Kubernetes won the container orchestration war through CNCF governance, and has strategic implications for enterprise AI procurement: organizations investing in one standard should watch the foundation's consolidation efforts.
+
+GitHub's data point that **developers spend only 14% of their time on actual development** motivates expanding AI assistance beyond the IDE into the full SDLC -- issues, PRs, CI/CD, security reviews, and operational tasks. This reinforces the bottleneck shift (Concept 5d) with concrete data on where developer time actually goes.
+
+### Concept 12c: Stripe's Agentic Engineering as Enterprise Case Study
+
+Stripe's minions system ([#209](../../sources/209-indydevdan-stripe-agentic-engineering-layer.md)) provides the most detailed public case study of enterprise-grade agentic engineering: fully unattended agents shipping 1,300+ pull requests per week with zero human-written code. The system architecture -- API entry points via CLI/web/Slack, pre-warmed EC2 dev boxes, a custom agent harness, blueprint engine, conditional rule files for a 100M+ line codebase, a "tool shed" meta-MCP for 500 tools, CI-based validation from 3 million tests, and GitHub PR review as the human checkpoint -- represents the concrete infrastructure that the enterprise AI governance discussion in this module has been building toward.
+
+The distinction between "vibe coding" (not knowing what will happen and not looking) and "agentic engineering" (knowing your system so well you do not need to look) is the enterprise-relevant framing. A company processing $1T+ in annual payments cannot tolerate vibe coding unpredictability. The investment in specialized, customized agent tooling -- rather than off-the-shelf solutions -- reflects the defensibility gradient from Concept 7a: domain-specific agent infrastructure is the value layer.
+
+### Concept 12d: Cross-Platform Memory as Infrastructure Strategy
+
+Nate B Jones ([#208](../../sources/208-nate-b-jones-open-brain-agent-readable-memory.md)) argues that the actual bottleneck in AI productivity is not model quality but memory fragmentation. Every platform has built walled gardens of memory that do not talk to each other -- "five separate piles of sticky notes on five separate desks." The proposed solution (Postgres with pgvector, exposed via MCP) costs 10-30 cents per month and makes knowledge platform-independent.
+
+This connects to the hyperscaler-as-competitor thesis (Concept 2) at the personal level: when switching to a better model means losing all accumulated context, platform memory becomes a lock-in mechanism. The fork from the "human web" (fonts, layouts, visual design) to the "agent web" (APIs, structured data, machine-readable formats) means note-taking tools built for the human web need an infrastructure layer underneath them for the agent era.
 
 ### Concept 13a: The Full-Stack Dot-Com Parallel
 
@@ -723,6 +799,12 @@ ThePrimeTime ([#171](../../sources/171-primetime-cloudflare-lava-lamps.md)) expl
 
 - **Relying on benchmark scores for model procurement decisions**: Distilled models compress frontier capabilities into narrow manifolds that perform comparably on benchmarks but degrade significantly on sustained agentic work ([#161](../../sources/161-nate-b-jones-ai-napster-moment.md), Concept 11p). Test for generality by running real-world tasks and then changing one constraint. Watch whether the model adapts its reasoning or regenerates from scratch.
 
+- **Treating public text as inherently anonymous**: LLMs can deanonymize pseudonymous users at scale for $1-4 per person ([#191](../../sources/191-ai-paper-slop-llm-deanonymization.md)). The combination of incidental details (coffee shops, tool preferences, writing patterns) forms a unique fingerprint even without explicit PII. Name redaction is insufficient -- contextual details in combination are equally identifying. Organizations should treat all public text with the same security classification as explicit PII.
+
+- **Assuming AI adoption automatically increases productivity**: Implementation cost was a feature, not a bug ([#201](../../sources/201-awesome-coding-not-bottleneck.md)). It forced teams to prioritize and kill mediocre ideas. When the marginal cost of shipping drops near zero, discipline collapses. Apply the Jevons paradox: faster code generation will increase total software volume, creating more complexity and more need for engineering judgment, not less.
+
+- **Building on application-layer defensibility when the value has shifted**: The defensibility gradient ([#207](../../sources/207-stefan-wirth-ai-value-layer-saas-disruption.md)) shows that UIs can be regenerated on the fly and orchestration logic is technically reproducible. Proprietary data sets and feedback loops are what create durable competitive advantage. Ask: "What data do we have that large AI companies will not try to replicate?"
+
 - **Granting autonomous agents unrestricted access to personal or organizational data**: The OpenClaw incidents ([#176](../../sources/176-primetime-openclaw-assistant-chaos.md), Concept 22) -- bulk email deletion, 40,000 open accounts -- demonstrate that viral adoption velocity dramatically outpaces security maturity. Default to the most restrictive permissions; expand only after demonstrating reliable behavior.
 
 - **Ignoring the productivity paradox**: Nobel laureate Acemoglu ([#180](../../sources/180-acemoglu-ai-productivity-critique.md), Concept 20) documents that despite quadrupled patents and massive AI investment, standard productivity measures show slower improvement than the 1950s-70s. The absence of measurable productivity gains is not just a measurement problem -- it reflects a structural misalignment where AI development prioritizes automation (benefiting capital) over new tasks (benefiting workers and productivity).
@@ -843,6 +925,16 @@ ThePrimeTime ([#171](../../sources/171-primetime-cloudflare-lava-lamps.md)) expl
 | [180: Nobel Laureate Acemoglu on Why AI Is Not Improving Productivity](../../sources/180-acemoglu-ai-productivity-critique.md) | MIT Sloan / Daron Acemoglu | Automation vs new tasks, productivity paradox, reliability as hard constraint, information centralization |
 | [181: Leslie Lamport on Distributed Systems and Rigorous Thinking](../../sources/181-lamport-distributed-systems-thinking.md) | Ryan Peterman / Leslie Lamport | Specification before code, invariant-based reasoning, algorithms vs programs, Paxos vs Raft lesson |
 | [184: Anthropic Banned by Department of Defense](../../sources/184-caleb-writes-code-anthropic-dod-ban.md) | Caleb Writes Code | Anthropic-DoD standoff, safety as strategic liability, supply chain risk designation, model-weight vs policy-level guardrails |
+| [187: Authentication Methods Compared](../../sources/187-hayk-simonyan-authentication-methods-explained.md) | Hayk Simonyan | Authentication infrastructure for agent systems, JWT vs OAuth2 vs OIDC, session-based vs token-based patterns |
+| [188: A Comprehensive Taxonomy of AI Risks](../../sources/188-hank-green-comprehensive-ai-risk-taxonomy.md) | Hank Green | Temporal risk framework, sycophancy-induced psychosis, power concentration, cognitive atrophy thesis, bubble probability |
+| [191: LLM-Powered Deanonymization at Scale](../../sources/191-ai-paper-slop-llm-deanonymization.md) | AI Paper Slop | ESRC deanonymization framework, $1-4 per person cost, death of practical obscurity, text as structured data |
+| [198: Frontier Operations](../../sources/198-nate-b-jones-frontier-operations.md) | Nate B Jones | Five frontier operations skills, expanding bubble metaphor, compounding skill gap, teams of one |
+| [201: Why Code Generation Was Never the Bottleneck](../../sources/201-awesome-coding-not-bottleneck.md) | Awesome | Implementation cost as feature, Jevons paradox applied to software, AI washing of layoffs, IBM counter-narrative |
+| [203: How AI Is Transforming the Design Process](../../sources/203-lennys-podcast-design-ai.md) | Lenny's Podcast / Jenny Wen | Design process death, execution support vs vision setting, engineering velocity outpacing design, trust through speed |
+| [205: GitHub Copilot's Evolution to Control Plane](../../sources/205-nz-github-usergroup-agentic-ai-copilot.md) | NZ GitHub User Group | Copilot as governance layer, Agentic AI Foundation standards consolidation, enterprise MCP security, 14% coding time |
+| [207: The Three-Layer Stack Replacing Traditional SaaS](../../sources/207-stefan-wirth-ai-value-layer-saas-disruption.md) | Stefan Wirth | Three-layer value stack, defensibility gradient, proprietary data as moat, feedback loops, models as utilities |
+| [208: Open Brain: Agent-Readable Memory Architecture](../../sources/208-nate-b-jones-open-brain-agent-readable-memory.md) | Nate B Jones | Cross-platform memory infrastructure, human web vs agent web fork, memory as compounding advantage, platform lock-in |
+| [209: Stripe's Agentic Engineering Layer](../../sources/209-indydevdan-stripe-agentic-engineering-layer.md) | IndyDevDan | Enterprise agentic engineering case study, 1300+ PRs/week, vibe coding vs agentic engineering, domain-specific agent infrastructure |
 
 ## Further Reading
 

@@ -194,6 +194,29 @@ Each source is synthesized (not transcribed) into a structured note with frontma
 | [184](184-caleb-writes-code-anthropic-dod-ban.md) | Anthropic Banned by Department of Defense: AI Safety vs Military Access | Caleb Writes Code | video | ai-safety, anthropic, ai-landscape |
 | [185](185-nate-b-jones-ai-education-parenting.md) | The Calculator Moment for Everything: AI, Education, and Raising Kids Who Can Think | Nate B Jones | video | ai-landscape, vibe-coding, ai-hype |
 | [186](186-keyhole-software-claude-code-delivery.md) | Using Claude Code for Real Software Delivery: From Specification to Parallel Agents | Keyhole Software | video | claude-code, agentic-coding, specification, multi-agent, prompt-engineering |
+| [187](187-hayk-simonyan-authentication-methods-explained.md) | Authentication Methods Compared: Basic, Bearer, OAuth2, JWT, and SSO | Hayk Simonyan | video | security, infrastructure |
+| [188](188-hank-green-comprehensive-ai-risk-taxonomy.md) | A Comprehensive Taxonomy of AI Risks: From Internet Slop to Superintelligence | Hank Green | video | ai-hype, ai-safety, ai-economics, ai-landscape |
+| [189](189-nate-herk-claude-code-skills-guide.md) | Building Effective Claude Code Skills: From Concept to Production | Nate Herk | video | skills, claude-code, skills-ecosystem, agentic-coding |
+| [190](190-simon-scrapes-claude-code-concepts-explained.md) | 27 Claude Code Concepts Explained for Non-Technical Users | Simon Scrapes | video | claude-code, agentic-coding, context-engineering |
+| [191](191-ai-paper-slop-llm-deanonymization.md) | LLM-Powered Deanonymization at Scale: The Death of Practical Obscurity | AI Paper Slop | video | ai-safety, security, ai-landscape, capability-overhang |
+| [192](192-ai-native-dev-context-engineering-rigor.md) | Applying Software Engineering Rigor to Context Engineering | AI Native Dev | video | context-engineering, skills-ecosystem, agentic-coding |
+| [193](193-google-cloud-tech-agent-design-patterns.md) | Single, Sequential, and Parallel Agent Design Patterns with ADK | Google Cloud Tech | video | agentic-coding, multi-agent |
+| [194](194-claude-skills-explainer.md) | Claude Code Skills: Automatic Task-Specific Instructions | Claude | video | claude-code, skills |
+| [195](195-marty-vaughn-claude-cowork-beginners.md) | Claude Co-work: Scheduled Tasks, Connectors, Skills, and Plugins | Marty Vaughn | video | claude-code, skills-ecosystem, enterprise-ai |
+| [196](196-turing-college-agent-teams-walkthrough.md) | Claude Opus 4.6 Agent Teams: Setup, Demo, and Cost Analysis | Turing College | video | agent-teams, multi-agent, claude-code |
+| [197](197-ycan-ai-impact-education.md) | Understanding AI's Impact on Education: LLMs, Student Use, and Ethical Challenges | Youth Co-Advocacy Network | video | ai-hype, ai-landscape, ai-safety |
+| [198](198-nate-b-jones-frontier-operations.md) | Frontier Operations: The Five Workforce Skills for the AI-Human Boundary | Nate B Jones | video | ai-landscape, capability-overhang, enterprise-ai, ai-economics |
+| [199](199-primetime-cloudflare-nextjs-fork-open-source.md) | Cloudflare's AI-Generated Next.js Fork and the Future of Open Source | The PrimeTime | video | ai-landscape, ai-hype, security |
+| [200](200-riley-brown-narrow-agents-team.md) | Why Narrow Specialized Agents Outperform General-Purpose AI Assistants | Riley Brown | video | multi-agent, agent-teams, skills-ecosystem |
+| [201](201-awesome-coding-not-bottleneck.md) | Why Code Generation Was Never the Bottleneck in Software Development | Awesome | video | ai-hype, ai-economics, vibe-coding |
+| [202](202-primetime-dijkstra-natural-language-programming.md) | Dijkstra's Case Against Natural Language Programming and Why It Still Resonates | The PrimeTime | video | ai-hype, vibe-coding, prompt-engineering |
+| [203](203-lennys-podcast-design-ai.md) | How AI Is Transforming the Design Process at Anthropic | Lenny's Podcast (Jenny Wen) | video | ai-sdlc, anthropic, ai-landscape |
+| [204](204-daves-garage-ai-tempest-reinforcement-learning.md) | Building a Reinforcement Learning AI That Beat a Human World Record at Tempest | Dave's Garage | video | ai-landscape, vibe-coding, validation |
+| [205](205-nz-github-usergroup-agentic-ai-copilot.md) | GitHub Copilot's Evolution from Code Assistant to AI Control Plane | Aotearoa New Zealand GitHub User Group | video | ai-sdlc, mcp, skills-ecosystem |
+| [206](206-noah-vincent-obsidian-claude-code-second-brain.md) | Building a Persistent AI Second Brain with Obsidian and Claude Code | Noah Vincent | video | claude-code, context-engineering, skills-ecosystem |
+| [207](207-stefan-wirth-ai-value-layer-saas-disruption.md) | The Three-Layer Stack Replacing Traditional SaaS | Stefan Wirth | video | ai-economics, ai-landscape, enterprise-ai |
+| [208](208-nate-b-jones-open-brain-agent-readable-memory.md) | Open Brain: Agent-Readable Memory Architecture with Postgres and MCP | Nate B Jones | video | context-engineering, mcp, infrastructure |
+| [209](209-indydevdan-stripe-agentic-engineering-layer.md) | Stripe's Agentic Engineering Layer: Blueprints, Dev Boxes, and Zero-Human Code PRs | IndyDevDan | video | agentic-coding, agent-teams, enterprise-ai, validation |
 
 ## Adding Sources
 

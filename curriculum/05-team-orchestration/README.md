@@ -283,15 +283,35 @@ The **agent-friendly codebase** prerequisite is critical for team effectiveness:
 
 > "Really knowing how to properly handle multiple agents is like the last boss in a game. If you can do that really well, then you are literally the top 0.1% of users." -- Mihail Eric ([#178])
 
-### Concept 19: Parallel Agents via Multiple Repository Checkouts
+### Concept 19: Foundational Multi-Agent Patterns -- Single, Sequential, Parallel
 
-Zach Bartner ([#186](../../sources/186-keyhole-software-claude-code-delivery.md)) demonstrates a practical multi-agent workflow used in professional consulting: clone the same repository multiple times, each running a separate Claude Code session with a distinct role -- one for feature development, one for unit tests, one for documentation, one for code review. Each agent works on its own branch.
+Google Cloud Tech ([#193](../../sources/193-google-cloud-tech-agent-design-patterns.md)) formalizes three foundational multi-agent design patterns using Google's Agent Development Kit (ADK) that provide the conceptual taxonomy underpinning the more advanced team patterns in this module:
+
+1. **Single agent**: One agent with tools, relying on the model's reasoning for step sequencing. Flexible but unreliable for complex multi-step logic -- LLMs are non-deterministic, so you cannot guarantee consistent execution order.
+2. **Sequential agent**: An assembly-line model where sub-agents execute in fixed order via shared session state. Provides high control and predictability but cannot adapt to dynamic situations.
+3. **Parallel agent**: Multiple agents run concurrently on independent subtasks, with a final aggregator agent combining results. Reduces latency but requires budgeting for the synthesis step.
+
+The **shared session state** -- a "scratch pad" where one agent writes and the next reads via variable interpolation -- maps directly to the shared task list (Concept 2) at a lower level of abstraction. The sequential pattern corresponds to the dependency DAG with linear dependencies; the parallel pattern corresponds to independent tasks in the DAG that can run concurrently. Understanding these foundational patterns helps practitioners choose the right orchestration level: single agent for simple tasks, sequential for ordered workflows, parallel for independent subtasks, and full agent teams (Concept 1) for complex interdependent work.
+
+### Concept 20: Emergent Agents and Cost Reality in Team Orchestration
+
+Turing College ([#196](../../sources/196-turing-college-agent-teams-walkthrough.md)) provides a practical walkthrough that reveals two important dynamics of agent teams in practice.
+
+**Emergent agent allocation**: The system spawns agents that were never explicitly specified. In the demo, a "researcher" agent appeared during the second iteration -- emerging from the reviewer's feedback that statistics needed verification. This demonstrates that Claude's team orchestration dynamically allocates specialized roles beyond what the user explicitly requests, extending the team composition concepts from Concept 3 with a self-organizing dimension.
+
+**Cost reality at the task level**: A single complex agent teams task costs approximately $7-8, consuming roughly 50% of a Pro plan session or fitting 8-10 tasks into a five-hour Max plan window. This provides a granular data point that complements the broader cost warnings in Concept 17 (Multi-Agent Cost Reality in Module 06). The recommendation: reserve agent teams for tasks with multiple distinct components requiring different expertise and built-in quality control. For focused work, single agents or sub-agents remain dramatically more cost-efficient.
+
+The built-in quality loop is also notable: the reviewer agent produces actionable items that feed back to the lead for a second pass, addressing all flagged issues. This is the devil's advocate pattern (Concept 4) in production, with concrete evidence of its effectiveness and cost.
+
+### Concept 21: Parallel Agents via Multiple Repository Checkouts
+
+Zach Bartner ([#186](../../sources/186-keyhole-software-claude-code-delivery.md)) demonstrates a practical multi-agent workflow used in professional consulting used in professional consulting: clone the same repository multiple times, each running a separate Claude Code session with a distinct role -- one for feature development, one for unit tests, one for documentation, one for code review. Each agent works on its own branch.
 
 This is a lower-ceremony alternative to git worktrees (Concept 9) and agent teams (Concept 1) that works well for small teams and individual practitioners. The developer becomes an orchestrator/conductor managing concurrent workstreams -- monitoring progress, catching errors, and merging results. Bartner frames the productivity gain conservatively: "a consistent 15-20% improvement in output would be career-transforming in any field."
 
 The approach reinforces the incremental addition principle from Concept 18: start with one agent, verify quality, then spin up parallel sessions for independent work. The critical operational insight: never let agents run arbitrary git commands. Branch protection is essential -- agents have been observed attempting hard deletes of branches when they think they are being helpful.
 
-### Concept 20: The Do-Make-Know Framework Applied to Teams
+### Concept 22: The Do-Make-Know Framework Applied to Teams
 
 Dylan Davis ([#177](../../sources/177-dylan-davis-claude-cowork-system.md)) presents a three-level framework that maps naturally to team orchestration decisions. At the "Do" level, a single agent handles a single task -- no team needed. At the "Make" level, a single input triggers multi-system orchestration with sub-agents working in parallel on independent deliverables. At the "Know" level, persistent memory files compound insights across sessions, enabling teams to build on previous work.
 
@@ -299,7 +319,7 @@ For team orchestration, the "Make" level is the key decision point: Davis recomm
 
 This framework provides a practical on-ramp for the three-mode mental model (Concept 12): "Do" maps to default mode, "Make" to sub-agent mode, and "Know" to the persistent state layer that enables cross-session team coordination.
 
-### Concept 21: Sustained Multi-Agent Execution at Scale
+### Concept 23: Sustained Multi-Agent Execution at Scale
 
 ThePrimeTime ([#107](../../sources/107-primetime-anthropic-compiler.md)) provides a critical analysis of Anthropic's C compiler project that, beneath the marketing critique, reveals a genuine milestone in sustained multi-agent execution (previously Concept 18): 16 Claude agents running mostly autonomously for two weeks, producing a 100,000-line Rust-based C compiler across approximately 2,000 sessions at $20,000 in API costs.
 
@@ -308,6 +328,28 @@ The key enabler was comprehensive test infrastructure. The project started with 
 The critique is equally instructive: the resulting compiler cannot boot Linux, sometimes fails on Hello World, and produces less efficient code than GCC with all optimizations disabled. The $0.20-per-line cost provides a concrete benchmark for evaluating agent team ROI on large-scale projects. As PrimeTime notes, honest framing of what was genuinely achieved -- sustained autonomous multi-agent coordination -- would generate more goodwill than overclaiming "from scratch" development.
 
 This connects to the confusing-scale-with-quality pitfall (see Common Pitfalls below) and provides a concrete data point for the baseline-first evaluation pattern (Pattern 6): always measure what a single well-specified agent can produce before committing to 16-agent deployments.
+
+### Concept 24: The Skill Ceiling and Narrow Agent Team Design
+
+Riley Brown ([#200](../../sources/200-riley-brown-narrow-agents-team.md)) provides empirical evidence for how to design agent teams from a production deployment of 15 specialized agents. His central finding: as the number of skills added to a single agent increases beyond 7-10, dependability decreases -- the agent stops using skills at the right time, context gets clouded, and integrations get misapplied.
+
+The design framework for team composition is KPI-driven rather than role-driven: each agent optimizes for 2-4 measurable goals (Brown's YouTube agent optimizes for subscribers, views, and conversions). This narrow focus makes skill selection disciplined (does it serve the goals?), agent evaluation trivial (pass/fail against KPIs), and agent replacement easy (cut underperforming agents without disrupting the team).
+
+Brown's **journal agent** pattern provides a lightweight shared memory layer that avoids the overhead of peer-to-peer messaging (Concept 1). A dedicated agent monitors all activity, asks for context, and creates a running log in Notion. All other agents read this journal for relevant updates. This creates cross-agent context sharing without requiring the full agent teams infrastructure -- useful for persistent agent deployments where agents run on separate hardware or schedules rather than in coordinated team sessions.
+
+The distinction between persistent agents (running on dedicated hardware with memory and identity, like OpenClaw) and per-task sandboxes (fresh environments spun up for each task, like Manus) represents a fundamental architectural choice for team deployment that extends the infrastructure discussion in Concept 6.
+
+### Concept 25: In-Loop vs. Out-of-Loop Multi-Agent Orchestration
+
+Stripe's minions system ([#209](../../sources/209-indydevdan-stripe-agentic-engineering-layer.md)) introduces a distinction that refines how teams should think about agent orchestration at scale:
+
+**In-loop**: The engineer sits at the terminal prompting back and forth, useful for building the system of agents itself and for highly specialized work. This maps to the individual agent interaction patterns in Concept 5.
+
+**Out-of-loop**: Fully unattended agents operating in parallel on dedicated sandboxes, shipping 1,300+ pull requests per week with zero human-written code. Engineers appear at the beginning (planning/prompting) and end (PR review), never in the middle. Each minion runs in its own pre-warmed EC2 instance with the full codebase, spinning up in 10 seconds.
+
+The progression from in-loop to out-of-loop is the natural evolution of team orchestration maturity. IndyDevDan's recommendation -- spend more than 50% of engineering time building the system of agents rather than coding the application -- reframes the team lead role from "person who coordinates agents on tasks" to "person who builds the infrastructure that enables autonomous agent execution."
+
+Stripe's **conditional rule files** (activated via glob patterns as agents traverse subdirectories) and **tool shed** (a meta-MCP that selects from 500 tools per task) solve the context and tool management problems that emerge when scaling from small teams (5 agents) to fleet-level orchestration (hundreds of concurrent agents). This extends the infrastructure discussion in Concept 6 beyond tmux and E2B into production-grade agent fleet management.
 
 ## Common Pitfalls
 
@@ -381,6 +423,10 @@ This connects to the confusing-scale-with-quality pitfall (see Common Pitfalls b
 | [177: Three-Level Framework for Claude Co-Work Automation](../../sources/177-dylan-davis-claude-cowork-system.md) | Dylan Davis | Do/Make/Know framework, changelog pattern for coordination, sub-agent parallelization for independent tasks |
 | [178: Multi-Agent Orchestration for AI-Native Engineers](../../sources/178-eo-multi-agent-orchestration.md) | EO / Mihail Eric | Agent management as human management skill, incremental agent addition, agent-friendly codebase prerequisites |
 | [186: Using Claude Code for Real Software Delivery](../../sources/186-keyhole-software-claude-code-delivery.md) | Keyhole Software / Zach Bartner | Parallel agents via multiple checkouts, sacrificial first prompt, developer as conductor/orchestrator |
+| [193: Single, Sequential, and Parallel Agent Design Patterns](../../sources/193-google-cloud-tech-agent-design-patterns.md) | Google Cloud Tech | Three foundational patterns, shared session state coordination, pattern selection heuristics |
+| [196: Claude Opus 4.6 Agent Teams: Setup, Demo, and Cost Analysis](../../sources/196-turing-college-agent-teams-walkthrough.md) | Turing College | Emergent agent allocation, $7-8 per complex task cost reality, built-in reviewer quality loop |
+| [200: Why Narrow Specialized Agents Outperform General-Purpose AI](../../sources/200-riley-brown-narrow-agents-team.md) | Riley Brown | 7-10 skill ceiling per agent, KPI-driven team design, journal agent shared memory, persistent vs per-task agents |
+| [209: Stripe's Agentic Engineering Layer](../../sources/209-indydevdan-stripe-agentic-engineering-layer.md) | IndyDevDan | In-loop vs out-of-loop orchestration, 1,300+ PRs/week fleet, tool shed meta-MCP, conditional rule files, agent sandboxes |
 
 ## Further Reading
 
