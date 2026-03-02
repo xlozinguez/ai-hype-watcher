@@ -422,6 +422,79 @@ Pi's extension system enables **stackable customization**: composable TypeScript
 
 The practical recommendation is hedging: use Claude Code (80% of the time) for its excellent defaults and enterprise features, but maintain fluency with open-source alternatives like Pi for deep customization, model flexibility, and experimental workflows. As Dan frames the progression: base agent, improved agent, context engineering, customized agents, orchestrator agent -- each level builds on the last. "Knowing what your agent is doing is engineering. Not knowing is vibe coding."
 
+### Concept 34: The Blueprint Engine Pattern -- Interleaving Code and Agents
+
+Stripe's "minions" system ([#209](../../sources/209-indydevdan-stripe-agentic-engineering-layer.md)) introduces a production-tested pattern that extends the four-layer stack (Concept 12) into enterprise-scale agentic engineering. The **blueprint engine** interleaves deterministic code steps (linters, git operations, test execution, template generation) with non-deterministic agent reasoning (implementing features, fixing CI failures). As IndyDevDan summarizes: "Agents plus code beats agents alone, and agents plus code beats code alone."
+
+The architectural insight: adding an agent to steps where determinism suffices makes the system worse, more brittle, and more expensive. Stripe's conditional rule files -- activated automatically via glob patterns as agents traverse specific subdirectories -- solve the context loading problem for a 100M+ line codebase without requiring a single monolithic context file. Their "tool shed" meta-MCP selects from nearly 500 tools on a per-task basis, preventing token explosion from loading all tool definitions simultaneously. This is meta-agentics: tools that select tools, prompts that create prompts, agents that build agents.
+
+The in-loop vs. out-of-loop distinction refines the patterns in this module. In-loop agents operate with the engineer at the terminal, useful for building the system itself. Out-of-loop agents -- Stripe's minions -- run fully unattended on dedicated EC2 sandboxes, each with the full codebase pre-warmed in 10 seconds. Engineers appear at the beginning (planning/prompting) and end (PR review), never in the middle. IndyDevDan's recommendation: spend more than 50% of engineering time building the system of agents rather than coding the application directly.
+
+> "You work on the agents, not the application. This is a weird mindset shift that you need to make if you're going to be building with agents." -- IndyDevDan ([#209])
+
+### Concept 35: Context as Code -- Software Engineering Rigor for Context Engineering
+
+Drew Knox ([#192](../../sources/192-ai-native-dev-context-engineering-rigor.md)) argues that context -- CLAUDE.md files, skills, rules -- is the new code, and it deserves the same engineering discipline. He systematically maps every SDLC practice to a context engineering analog:
+
+- **Static analysis** becomes LLM-as-judge validation against best practices
+- **Unit tests** become eval scenarios -- prompts paired with grading rubrics, run N times to measure statistical improvement
+- **Integration tests** become full-repo coding scenarios that stress-test all context together
+- **Observability** means mining agent session logs for failure patterns (search for "sorry" and "you're absolutely right" as failure indicators)
+- **Build automation** means CI/CD that detects when PRs should trigger context updates
+- **Package managers** handle reusable context with version-pinning challenges
+
+The "dumb zone" concept is particularly actionable: too much context degrades agent performance. Evals help detect when context should be *deleted*, not just added. Python style guides were essential six months ago, but Claude Opus 4.6 writes good Python without them. Running evals without changing context also catches model regressions -- a recent Gemini version stopped reading tools and context entirely.
+
+This connects to the instruction budget concept (Concept 26) at a systems level: context is not free, it expires, and it should be managed with the same lifecycle practices as code.
+
+### Concept 36: The Skill Ceiling and Narrow Agent Design
+
+Riley Brown ([#200](../../sources/200-riley-brown-narrow-agents-team.md)) provides empirical evidence for the sniper agent principle (Concept 28) from a non-developer perspective. After building hundreds of agent workflows, Brown found that as the number of skills added to a single agent increases beyond 7-10, dependability decreases -- the agent stops using skills at the right time, context gets clouded, and personality gets jumbled.
+
+The prescription is narrow agents with specific KPIs: Brown's YouTube agent optimizes for subscribers, views, and conversions. This narrow focus makes evaluation trivial (pass/fail against KPIs), makes skill selection disciplined (does it serve the goals?), and makes agent replacement easy (cut underperforming agents without disrupting others).
+
+Brown's **journal agent** pattern is an architectural innovation for lightweight team coordination: a dedicated agent monitors all activity, asks for context, and creates a running log in Notion. All other agents read this journal -- the email newsletter agent reads it for product updates, the YouTube agent reads it for content ideas. This creates a shared memory layer without requiring direct inter-agent communication, complementing the markdown-based memory patterns from Concept 30.
+
+The intent-over-prompts shift Brown describes -- referencing Emmett Shear's observation that "prompts are so late 2025, we are giving models intents now" -- connects directly to the intent engineering concept covered in Module 06.
+
+### Concept 37: Foundational Agent Design Patterns -- Single, Sequential, Parallel
+
+Google Cloud Tech ([#193](../../sources/193-google-cloud-tech-agent-design-patterns.md)) formalizes three foundational multi-agent patterns using the Agent Development Kit (ADK), providing a taxonomy that underpins the more advanced patterns in this module:
+
+1. **Single agent**: One agent with tools, using the model's reasoning to determine step sequence. Flexible but unreliable for complex multi-step logic because LLMs are non-deterministic.
+2. **Sequential agent**: An assembly-line model where specialized sub-agents execute in fixed order, communicating via shared session state (variable interpolation). High control and predictability but inflexible.
+3. **Parallel agent**: Multiple agents run concurrently on independent subtasks, with a final aggregator combining results. Reduces latency but requires a synthesis step.
+
+The shared session state -- a "scratch pad" where one agent writes findings and the next reads from it -- is the key coordination primitive. This maps directly to the task system's dependency DAG (Concept 2) and provides the conceptual foundation for understanding when to escalate from single agents to sub-agents to full teams (see Module 05).
+
+### Concept 38: Frontier Operations -- The Moving Boundary Between Human and Agent Work
+
+Nate B Jones ([#198](../../sources/198-nate-b-jones-frontier-operations.md)) introduces "Frontier Operations" as a framework for the meta-skill that makes all other agentic patterns effective. Using the metaphor of an expanding bubble -- the interior represents what agents handle reliably, the exterior is what still requires humans, and the surface is where the high-value work happens -- Jones identifies five component skills:
+
+1. **Boundary Sensing**: Maintaining accurate, current intuition about where agents succeed and fail. A product manager calibrated to November's models who has not updated is either over-trusting or under-using February's models.
+2. **Seam Design**: Structuring work so transitions between human and agent phases are clean, verifiable, and recoverable. This is the architectural skill behind the builder/validator pattern (Concept 3) and blueprint engine (Concept 34).
+3. **Failure Model Maintenance**: Maintaining a differentiated mental model of how agents fail at the current capability level -- not generic skepticism but knowing that task type A fails via mode X with check Y.
+4. **Capability Forecasting**: Making reasonable 6-12 month predictions about where the boundary will move and investing learning accordingly.
+5. **Leverage Calibration**: Deciding where to spend human attention in an agent-rich environment with 10:1 human-to-agent ratios.
+
+Unlike every prior workforce skill (literacy, numeracy, coding), frontier operations has no fixed destination because the bubble keeps expanding. The skill gap compounds: a person who develops frontier operations six months sooner does not just have a six-month head start -- they have six months of updated calibration that widens with every model release.
+
+### Concept 39: Cross-Platform Agent Memory Infrastructure
+
+Nate B Jones ([#208](../../sources/208-nate-b-jones-open-brain-agent-readable-memory.md)) proposes "Open Brain" -- a database-backed, MCP-accessible knowledge system that solves the memory fragmentation problem across AI tools. The core argument: every platform (Claude, ChatGPT, Cursor, Grok) has built walled gardens of memory that do not talk to each other, and this fragmentation -- not model quality -- is the actual bottleneck in AI productivity.
+
+The architecture uses Postgres with pgvector for embeddings, exposed via an MCP server. Capture happens from any tool; retrieval works from any MCP-compatible client via semantic search, recent listing, or pattern stats. Running cost: 10-30 cents per month. This extends the markdown-based memory patterns (Concept 30) into a persistent, searchable, platform-independent system that compounds with every thought captured.
+
+Jones frames this as the fork from the "human web" (fonts, layouts, pages) to the "agent web" (APIs, structured data, machine-to-machine readability). Note-taking tools built for the human web need an infrastructure layer underneath them for the agent era. The key quote: "Memory architecture determines agent capabilities much more than model selection does."
+
+### Concept 40: Representation and Scaffolding as Agent Design Principles
+
+Dave Plummer ([#204](../../sources/204-daves-garage-ai-tempest-reinforcement-learning.md)) provides a case study from reinforcement learning that yields two principles broadly applicable to agentic pattern design:
+
+1. **Representation matters more than scale**: Plummer's RL agent broke through a plateau not with more compute or larger models (the model has under 1 million parameters) but by encoding the problem in polar coordinates matching Tempest's circular geometry and adding cross-attention for selective focus. The lesson for agentic coding: matching your data representation to the problem structure -- directory layout, API design, test structure -- can matter more than model selection.
+
+2. **Expert bootstrapping with decay**: A hand-coded expert system provides initial training data, then its influence decays as the neural network proves competence. This "training wheels that fade" pattern mirrors how human developers scaffold AI agents with initial structure (CLAUDE.md rules, detailed skills) that should be pruned as models improve -- exactly what the eval-driven context pruning from Concept 35 enables.
+
 ## Patterns & Practices
 
 ### Pattern 1: Builder/Validator Task Execution
@@ -487,6 +560,20 @@ The practical recommendation is hedging: use Claude Code (80% of the time) for i
 - **Example**: IndyDevDan's Bowser ([#088]) -- a Playwright browser skill (Layer 1) wrapped by a Browser QA subagent (Layer 2), orchestrated by a `/ui-review` command that distributes user stories across parallel subagents (Layer 3), invocable via `just ui-review` (Layer 4).
 - **Source**: [#088]
 
+### Pattern 10: The Blueprint Engine -- Interleaving Deterministic and Agentic Steps
+
+- **When to use**: When you have repeatable workflows where some steps are deterministic (linting, testing, git operations) and others require judgment (implementation, debugging, design decisions).
+- **How it works**: Build workflow definitions that alternate between code steps (executed deterministically) and agent steps (handled by LLM reasoning). Deterministic steps provide guardrails and checkpoints; agent steps provide flexibility and creativity. Each step type handles what it does best.
+- **Example**: Stripe's minions ([#209](../../sources/209-indydevdan-stripe-agentic-engineering-layer.md)) use blueprints that run linters and template generators as code, then hand off feature implementation to agents, then run CI tests as code, then hand debugging back to agents. The blueprint ensures the agent never skips deterministic validation.
+- **Source**: [#209]
+
+### Pattern 11: Eval-Driven Context Lifecycle
+
+- **When to use**: When managing skills, CLAUDE.md files, or rule files across projects and wanting to ensure context is helping, not hurting.
+- **How it works**: Write 5 eval scenarios per context piece (prompt + grading rubric). Run evals with and without the context to prove it helps. Run periodically to detect when models have improved enough to make specific context unnecessary. Use CI/CD to trigger context update PRs when code changes.
+- **Example**: AI Native Dev ([#192](../../sources/192-ai-native-dev-context-engineering-rigor.md)) discovered that Python style guides were no longer needed after Opus 4.6 improved -- evals confirmed the context added no value and could be deleted, saving tokens.
+- **Source**: [#192]
+
 ## Common Pitfalls
 
 - **Relying on automatic task system activation instead of deliberate meta-prompts**: The task system activates automatically for large, complex prompts, but automatic activation lacks the organizational context and standards baked into a well-crafted meta-prompt. Deliberate meta-prompts enforce specific patterns (builder/validator pairs, dependency structures, validation criteria) and produce more consistent results.
@@ -524,6 +611,12 @@ The practical recommendation is hedging: use Claude Code (80% of the time) for i
 - **Building generalist agents when specialists would perform better**: Agentic Lab ([#179](../../sources/179-agentic-lab-openclaw-architecture.md)) quantifies the penalty: a generalist agent with 45,000+ tokens of fixed overhead experiences 40-90% performance degradation compared to a purpose-built agent with 1,400 tokens. Build single-purpose "sniper agents" for specific tasks rather than one agent that does everything poorly.
 
 - **Falling into the agentic trap**: Peter Steinberger ([#162](../../sources/162-openai-openclaw-steinberger.md)) identifies a common failure mode where developers obsessively optimize their AI tooling setup instead of building. The optimization feels productive but is not. The counter-approach: start building with radically simple setups and let complexity emerge from real needs.
+
+- **Overloading agents with too many skills**: Riley Brown ([#200](../../sources/200-riley-brown-narrow-agents-team.md)) found that agent dependability degrades beyond 7-10 skills. Build multiple narrow agents with specific KPIs rather than one comprehensive agent that does everything poorly. This reinforces the sniper agent principle (Concept 28) with empirical evidence from production workflows.
+
+- **Treating context as write-once**: Context has a lifecycle just like code. Drew Knox ([#192](../../sources/192-ai-native-dev-context-engineering-rigor.md)) demonstrates that context which was essential six months ago may now degrade performance. Use evals to detect when context should be deleted, and automate freshness checks via CI/CD.
+
+- **Making everything an agent call when deterministic code would suffice**: Stripe's blueprint engine ([#209](../../sources/209-indydevdan-stripe-agentic-engineering-layer.md)) demonstrates that adding an agent to steps where determinism suffices makes the system worse, more brittle, and more expensive. Reserve agent reasoning for creative steps; use code for linting, testing, git operations, and template generation.
 
 ## Hands-On Exercises
 
@@ -615,6 +708,14 @@ The practical recommendation is hedging: use Claude Code (80% of the time) for i
 | [179: OpenClaw Agent Architecture Explained](../../sources/179-agentic-lab-openclaw-architecture.md) | Agentic Lab | Sniper agents vs generalists, four-category agent framework, context rot quantification (40-90%), heartbeat/cron triggers |
 | [182: How AI Agent Memory Systems Work](../../sources/182-damian-galarza-agent-memory.md) | Damian Galarza | Three memory types (episodic/semantic/procedural), pre-compaction flush, markdown-based memory, write-ahead log pattern |
 | [183: Claude Cowork Scheduled Tasks and Video Editing](../../sources/183-eliot-prince-cowork-scheduled-tasks.md) | Eliot Prince | Scheduled tasks as lightweight automation, plugins as role bundles, Customize tab consolidation |
+| [189: Building Effective Claude Code Skills](../../sources/189-nate-herk-claude-code-skills-guide.md) | Nate Herk | Six-step skill building framework, progressive context loading, token optimization through observation, feedback cycle |
+| [192: Applying Software Engineering Rigor to Context Engineering](../../sources/192-ai-native-dev-context-engineering-rigor.md) | AI Native Dev | Context as code, eval-driven context lifecycle, dumb zone detection, CI/CD for context freshness |
+| [193: Single, Sequential, and Parallel Agent Design Patterns](../../sources/193-google-cloud-tech-agent-design-patterns.md) | Google Cloud Tech | Three foundational patterns (single/sequential/parallel), shared session state, pattern selection heuristics |
+| [198: Frontier Operations](../../sources/198-nate-b-jones-frontier-operations.md) | Nate B Jones | Five frontier operations skills, expanding bubble metaphor, boundary sensing, seam design, leverage calibration |
+| [200: Why Narrow Specialized Agents Outperform General-Purpose AI](../../sources/200-riley-brown-narrow-agents-team.md) | Riley Brown | 7-10 skill ceiling, journal agent for shared memory, intent over prompts, KPI-based agent evaluation |
+| [204: Building a Reinforcement Learning AI That Beat a Human World Record](../../sources/204-daves-garage-ai-tempest-reinforcement-learning.md) | Dave's Garage | Representation over scale, expert bootstrapping with decay, vibe coding boundaries |
+| [208: Open Brain: Agent-Readable Memory Architecture](../../sources/208-nate-b-jones-open-brain-agent-readable-memory.md) | Nate B Jones | Cross-platform memory via Postgres/pgvector/MCP, human web vs agent web fork, memory as compounding advantage |
+| [209: Stripe's Agentic Engineering Layer](../../sources/209-indydevdan-stripe-agentic-engineering-layer.md) | IndyDevDan | Blueprint engine, in-loop vs out-of-loop agents, tool shed meta-MCP, conditional rule files, agent sandboxes |
 
 ## Further Reading
 
