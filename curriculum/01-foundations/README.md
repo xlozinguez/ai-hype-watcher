@@ -497,7 +497,6 @@ The video also surfaces a key principle: bounded, verifiable tasks (framework mi
 | [019: Something Big Is Happening](../../sources/019-matt-shumer-something-big.md) | Matt Shumer | METR doubling rate, self-improvement loop, general-purpose disruption |
 | [022: Developers are forced to use AI](../../sources/022-traversy-media-forced-ai.md) | Brad Traversy (Traversy Media) | Developer identity crisis, forced adoption, architect metaphor, builder satisfaction loss |
 | [023: GLM-5 Local AI Review](../../sources/023-xcreate-glm5-review.md) | xCreate | Open-source frontier models, local inference, MLA memory optimization, MIT licensing |
-| [024: Agentic coding in 2026](../../sources/024-jo-van-eyck-agentic-coding-2026.md) | Jo Van Eyck | Maturity ladder, fading vs evergreen skills, developer skills evolution |
 | [032: OpenClaw Skills Marketplace](../../sources/032-nate-b-jones-openclaw.md) | Nate B Jones | Revealed preference engine, demand for digital employees, specification quality, 70/30 human-agent split |
 | [033: Why CEOs Are Getting AI Wrong](../../sources/033-prof-g-ethan-mollick-ai-wrong.md) | Prof G / Ethan Mollick | Hidden adoption gap, efficiency vs capability expansion, three endgame scenarios, apprenticeship crisis |
 | [034: Hater Season: Cal Newport on AI Reporting](../../sources/034-better-offline-cal-newport.md) | Better Offline / Cal Newport | Taxonomy of bad AI reporting, two-question test, pre-training plateau, vibe coding reality gap |
