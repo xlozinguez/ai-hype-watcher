@@ -48,6 +48,9 @@ watchlist/        → YouTube channel watchlist and scanning config
 | `/discover` | Browse YouTube beyond the watchlist — topic search, trending scan, or channel scouting |
 | `/playlist` | Process an entire YouTube playlist — batch subtitles, parallel synthesis, full post-ingest pipeline |
 | `/pr-description` | Generate a PR description summarizing new knowledge introduced by source notes |
+| `/ask` | Answer a natural language question using curriculum modules and source notes with citations |
+| `/find-sources` | Search and filter sources by tag, creator, module, date range, keyword, or recency |
+| `/digest` | Thematic digest of a source range — new territory vs. reinforced coverage, with theme clusters |
 
 ## Common Workflows
 
