@@ -1,5 +1,5 @@
 ---
-source_id: "138"
+source_id: "214"
 title: "Spec-Driven Development: AI Assisted Coding Explained"
 creator: "IBM Technology"
 platform: "YouTube"
@@ -11,7 +11,7 @@ tags: ["specification", "vibe-coding", "ai-sdlc", "prompt-engineering"]
 curriculum_modules: ["02-prompting-and-workflows", "06-strategy-and-economics"]
 ---
 
-# 138: Spec-Driven Development: AI Assisted Coding Explained
+# 214: Spec-Driven Development: AI Assisted Coding Explained
 
 > **Creator**: IBM Technology | **Platform**: YouTube | **Date**: 2026-02-28 | **Duration**: 8:59
 

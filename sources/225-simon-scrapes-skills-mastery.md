@@ -1,5 +1,5 @@
 ---
-source_id: "149"
+source_id: "225"
 title: "How to Use Claude Code Skills Like the 1% (it's easy actually)"
 creator: "Simon Scrapes"
 platform: "YouTube"
@@ -11,7 +11,7 @@ tags: ["skills", "claude-code", "skills-ecosystem", "context-engineering"]
 curriculum_modules: ["03-claude-code-essentials", "06-strategy-and-economics"]
 ---
 
-# 149: How to Use Claude Code Skills Like the 1%
+# 225: How to Use Claude Code Skills Like the 1%
 
 > **Creator**: Simon Scrapes | **Platform**: YouTube | **Date**: 2026-03-04 | **Duration**: 16:33
 

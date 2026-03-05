@@ -1,5 +1,5 @@
 ---
-source_id: "144"
+source_id: "220"
 title: "How Top Engineers Stop AI Agents From Writing Slop"
 creator: "Jaymin West"
 platform: "YouTube"
@@ -11,7 +11,7 @@ tags: ["agentic-coding", "validation", "builder-validator", "multi-agent", "spec
 curriculum_modules: ["04-agentic-patterns", "05-team-orchestration"]
 ---
 
-# 144: How Top Engineers Stop AI Agents From Writing Slop
+# 220: How Top Engineers Stop AI Agents From Writing Slop
 
 > **Creator**: Jaymin West | **Platform**: YouTube | **Date**: 2026-03-02 | **Duration**: 12:05
 

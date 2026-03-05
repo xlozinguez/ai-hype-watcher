@@ -1,5 +1,5 @@
 ---
-source_id: "164"
+source_id: "240"
 title: "OpenClaw Too Expensive? Try This Instead (97% Reduction)"
 creator: "Bart Slodyczka"
 platform: "YouTube"
@@ -11,7 +11,7 @@ tags: ["ai-economics", "enterprise-ai", "context-engineering"]
 curriculum_modules: ["06-strategy-and-economics"]
 ---
 
-# 164: OpenClaw Too Expensive? Try This Instead (97% Reduction)
+# 240: OpenClaw Too Expensive? Try This Instead (97% Reduction)
 
 > **Creator**: Bart Slodyczka | **Platform**: YouTube | **Date**: 2026-02-28 | **Duration**: 34:56
 

@@ -1,5 +1,5 @@
 ---
-source_id: "148"
+source_id: "224"
 title: "Build Your AI Second Brain with Obsidian + Claude Code (Free Setup)"
 creator: "Noah Vincent"
 platform: "YouTube"
@@ -11,7 +11,7 @@ tags: ["claude-code", "context-engineering", "agentic-coding"]
 curriculum_modules: ["03-claude-code-essentials"]
 ---
 
-# 148: Build Your AI Second Brain with Obsidian + Claude Code
+# 224: Build Your AI Second Brain with Obsidian + Claude Code
 
 > **Creator**: Noah Vincent | **Platform**: YouTube | **Date**: 2026-03-04 | **Duration**: 25:49
 

@@ -1,5 +1,5 @@
 ---
-source_id: "163"
+source_id: "239"
 title: "Claude MCP Tool That Cuts Token Costs by 99% — jCodeMunch"
 creator: "J. Gravelle"
 platform: "YouTube"
@@ -11,7 +11,7 @@ tags: ["mcp", "claude-code", "ai-economics", "context-engineering"]
 curriculum_modules: ["03-claude-code-essentials", "06-strategy-and-economics"]
 ---
 
-# 163: Claude MCP Tool That Cuts Token Costs by 99% — jCodeMunch
+# 239: Claude MCP Tool That Cuts Token Costs by 99% — jCodeMunch
 
 > **Creator**: J. Gravelle | **Platform**: YouTube | **Date**: 2026-03-01 | **Duration**: 8:17
 

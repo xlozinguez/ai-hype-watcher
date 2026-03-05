@@ -1,5 +1,5 @@
 ---
-source_id: "142"
+source_id: "218"
 title: "Dario Amodei Made One Mistake. Sam Altman Got $110 Billion. Here's the Full Story."
 creator: "Nate B Jones"
 platform: "YouTube"
@@ -11,7 +11,7 @@ tags: ["ai-economics", "ai-landscape", "enterprise-ai", "infrastructure", "ai-hy
 curriculum_modules: ["01-foundations", "06-strategy-and-economics"]
 ---
 
-# 142: Dario Amodei Made One Mistake. Sam Altman Got $110 Billion. Here's the Full Story.
+# 218: Dario Amodei Made One Mistake. Sam Altman Got $110 Billion. Here's the Full Story.
 
 > **Creator**: Nate B Jones | **Platform**: YouTube | **Date**: 2026-03-03 | **Duration**: 26:20
 

@@ -1,5 +1,5 @@
 ---
-source_id: "146"
+source_id: "222"
 title: "Anthropic Just Dropped Claude Code Skills 2.0"
 creator: "Ray Amjad"
 platform: "YouTube"
@@ -11,7 +11,7 @@ tags: ["skills", "claude-code", "validation"]
 curriculum_modules: ["03-claude-code-essentials", "04-agentic-patterns"]
 ---
 
-# 146: Anthropic Just Dropped Claude Code Skills 2.0
+# 222: Anthropic Just Dropped Claude Code Skills 2.0
 
 > **Creator**: Ray Amjad | **Platform**: YouTube | **Date**: 2026-03-04 | **Duration**: 12:48
 

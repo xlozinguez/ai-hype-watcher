@@ -1,5 +1,5 @@
 ---
-source_id: "145"
+source_id: "221"
 title: "The 7 phases of AI-driven development"
 creator: "Matt Pocock"
 platform: "YouTube"
@@ -11,7 +11,7 @@ tags: ["agentic-coding", "specification", "ai-sdlc", "vibe-coding"]
 curriculum_modules: ["02-prompting-and-workflows", "04-agentic-patterns"]
 ---
 
-# 145: The 7 phases of AI-driven development
+# 221: The 7 phases of AI-driven development
 
 > **Creator**: Matt Pocock | **Platform**: YouTube | **Date**: 2026-03-03 | **Duration**: 8:26
 

@@ -1,5 +1,5 @@
 ---
-source_id: "137"
+source_id: "213"
 title: "Super Nested Claude Code Is Vibecoding On STEROIDS"
 creator: "All About AI"
 platform: "YouTube"
@@ -11,7 +11,7 @@ tags: ["multi-agent", "agentic-coding", "claude-code", "agent-teams", "vibe-codi
 curriculum_modules: ["04-agentic-patterns", "05-team-orchestration"]
 ---
 
-# 137: Super Nested Claude Code Is Vibecoding On STEROIDS
+# 213: Super Nested Claude Code Is Vibecoding On STEROIDS
 
 > **Creator**: All About AI | **Platform**: YouTube | **Date**: 2026-03-02 | **Duration**: 16:32
 

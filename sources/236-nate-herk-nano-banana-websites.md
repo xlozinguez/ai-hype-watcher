@@ -1,5 +1,5 @@
 ---
-source_id: "160"
+source_id: "236"
 title: "The NEW Nano Banana 2 + Claude Code = $10k Websites"
 creator: "Nate Herk"
 platform: "YouTube"
@@ -11,7 +11,7 @@ tags: ["claude-code", "skills", "vibe-coding"]
 curriculum_modules: ["03-claude-code-essentials"]
 ---
 
-# 160: Nano Banana 2 + Claude Code = $10k Websites
+# 236: Nano Banana 2 + Claude Code = $10k Websites
 
 > **Creator**: Nate Herk | **Platform**: YouTube | **Date**: 2026-03-03 | **Duration**: 20:15
 

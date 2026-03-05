@@ -1,5 +1,5 @@
 ---
-source_id: "150"
+source_id: "226"
 title: "The Dangerous Illusion of AI Coding? - Jeremy Howard"
 creator: "Machine Learning Street Talk (Jeremy Howard)"
 platform: "YouTube"
@@ -11,7 +11,7 @@ tags: ["ai-hype", "vibe-coding", "ai-sdlc", "capability-overhang", "ai-landscape
 curriculum_modules: ["01-foundations", "02-prompting-and-workflows", "06-strategy-and-economics"]
 ---
 
-# 150: The Dangerous Illusion of AI Coding? - Jeremy Howard
+# 226: The Dangerous Illusion of AI Coding? - Jeremy Howard
 
 > **Creator**: Machine Learning Street Talk (Jeremy Howard) | **Platform**: YouTube | **Date**: 2026-03-03 | **Duration**: 1:26:40
 

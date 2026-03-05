@@ -1,5 +1,5 @@
 ---
-source_id: "156"
+source_id: "232"
 title: "Build BEAUTIFUL Diagrams with Claude Code (Full Workflow)"
 creator: "Cole Medin"
 platform: "YouTube"
@@ -11,7 +11,7 @@ tags: ["claude-code", "skills", "validation"]
 curriculum_modules: ["03-claude-code-essentials", "04-agentic-patterns"]
 ---
 
-# 156: Build BEAUTIFUL Diagrams with Claude Code (Full Workflow)
+# 232: Build BEAUTIFUL Diagrams with Claude Code (Full Workflow)
 
 > **Creator**: Cole Medin | **Platform**: YouTube | **Date**: 2026-03-02 | **Duration**: 9:53
 

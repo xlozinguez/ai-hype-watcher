@@ -1,5 +1,5 @@
 ---
-source_id: "161"
+source_id: "237"
 title: "The Rise of Design Engineering | Raphael Salaja | MIT Startup Week"
 creator: "Warp (Raphael Salaja)"
 platform: "YouTube"
@@ -11,7 +11,7 @@ tags: ["ai-sdlc", "vibe-coding", "ai-hype"]
 curriculum_modules: ["01-foundations", "06-strategy-and-economics"]
 ---
 
-# 161: The Rise of Design Engineering | Raphael Salaja | MIT Startup Week
+# 237: The Rise of Design Engineering | Raphael Salaja | MIT Startup Week
 
 > **Creator**: Warp (Raphael Salaja) | **Platform**: YouTube | **Date**: 2026-02-16 | **Duration**: 42:06
 

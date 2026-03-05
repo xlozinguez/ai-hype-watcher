@@ -1,5 +1,5 @@
 ---
-source_id: "153"
+source_id: "229"
 title: "Cloudflare just slop forked Next.js..."
 creator: "Fireship"
 platform: "YouTube"
@@ -11,7 +11,7 @@ tags: ["ai-sdlc", "ai-landscape", "vibe-coding"]
 curriculum_modules: ["01-foundations", "06-strategy-and-economics"]
 ---
 
-# 153: Cloudflare just slop forked Next.js...
+# 229: Cloudflare just slop forked Next.js...
 
 > **Creator**: Fireship | **Platform**: YouTube | **Date**: 2026-03-02 | **Duration**: 5:17
 

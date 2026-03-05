@@ -1,5 +1,5 @@
 ---
-source_id: "155"
+source_id: "231"
 title: "From Writing Code to Managing Agents — Most Engineers Aren't Ready"
 creator: "EO (Mihail Eric)"
 platform: "YouTube"
@@ -11,7 +11,7 @@ tags: ["ai-sdlc", "agentic-coding", "multi-agent", "ai-landscape", "capability-o
 curriculum_modules: ["01-foundations", "04-agentic-patterns", "05-team-orchestration", "06-strategy-and-economics"]
 ---
 
-# 155: From Writing Code to Managing Agents — Most Engineers Aren't Ready
+# 231: From Writing Code to Managing Agents — Most Engineers Aren't Ready
 
 > **Creator**: EO (Mihail Eric) | **Platform**: YouTube | **Date**: 2026-02-26 | **Duration**: 14:20
 

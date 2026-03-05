@@ -1,5 +1,5 @@
 ---
-source_id: "140"
+source_id: "216"
 title: "How to Build an Internal Locus of Control"
 creator: "Therapy in a Nutshell"
 platform: "YouTube"
@@ -11,7 +11,7 @@ tags: ["ai-landscape", "capability-overhang"]
 curriculum_modules: ["01-foundations"]
 ---
 
-# 140: How to Build an Internal Locus of Control
+# 216: How to Build an Internal Locus of Control
 
 > **Creator**: Therapy in a Nutshell | **Platform**: YouTube | **Date**: 2025-04-10 | **Duration**: 20:13
 

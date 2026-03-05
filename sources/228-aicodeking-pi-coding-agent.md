@@ -1,5 +1,5 @@
 ---
-source_id: "152"
+source_id: "228"
 title: "Pi Coding Agent: RIP Claude Code & OpenCode! This Opensource Coding Agent is JUST WAY BETTER!"
 creator: "AICodeKing"
 platform: "YouTube"
@@ -11,7 +11,7 @@ tags: ["agentic-coding", "multi-agent", "context-engineering", "skills"]
 curriculum_modules: ["03-claude-code-essentials", "04-agentic-patterns"]
 ---
 
-# 152: Pi Coding Agent: RIP Claude Code & OpenCode!
+# 228: Pi Coding Agent: RIP Claude Code & OpenCode!
 
 > **Creator**: AICodeKing | **Platform**: YouTube | **Date**: 2026-03-05 | **Duration**: 14:07
 

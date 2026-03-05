@@ -1,5 +1,5 @@
 ---
-source_id: "159"
+source_id: "235"
 title: "Claude Skills: Build Your First AI Marketing Team in 16 Minutes (Claude Code)"
 creator: "Grace Leung"
 platform: "YouTube"
@@ -11,7 +11,7 @@ tags: ["skills", "claude-code", "multi-agent", "agent-teams"]
 curriculum_modules: ["03-claude-code-essentials", "05-team-orchestration"]
 ---
 
-# 159: Claude Skills — Build Your First AI Marketing Team
+# 235: Claude Skills — Build Your First AI Marketing Team
 
 > **Creator**: Grace Leung | **Platform**: YouTube | **Date**: 2026-02-21 | **Duration**: 16:42
 

@@ -1,5 +1,5 @@
 ---
-source_id: "147"
+source_id: "223"
 title: "Everyone You Know Is About to Try Claude (I Showed 3 People for 5 Minutes — All 3 Switched)"
 creator: "Nate B Jones"
 platform: "YouTube"
@@ -11,7 +11,7 @@ tags: ["ai-landscape", "prompt-engineering", "context-engineering", "ai-hype"]
 curriculum_modules: ["01-foundations", "02-prompting-and-workflows"]
 ---
 
-# 147: Everyone You Know Is About to Try Claude
+# 223: Everyone You Know Is About to Try Claude
 
 > **Creator**: Nate B Jones | **Platform**: YouTube | **Date**: 2026-03-04 | **Duration**: 20:55
 

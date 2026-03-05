@@ -1,5 +1,5 @@
 ---
-source_id: "143"
+source_id: "219"
 title: "The Unbeatable Local AI Coding Workflow (Full 2026 Setup)"
 creator: "Zen van Riel"
 platform: "YouTube"
@@ -11,7 +11,7 @@ tags: ["claude-code", "agentic-coding", "context-engineering"]
 curriculum_modules: ["03-claude-code-essentials"]
 ---
 
-# 143: The Unbeatable Local AI Coding Workflow (Full 2026 Setup)
+# 219: The Unbeatable Local AI Coding Workflow (Full 2026 Setup)
 
 > **Creator**: Zen van Riel | **Platform**: YouTube | **Date**: 2026-03-01 | **Duration**: 16:33
 

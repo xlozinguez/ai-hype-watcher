@@ -1,5 +1,5 @@
 ---
-source_id: "157"
+source_id: "233"
 title: "Building the Future of coding, OpenCode with Dax Raad"
 creator: "NeetCode (Dax Raad)"
 platform: "YouTube"
@@ -11,7 +11,7 @@ tags: ["agentic-coding", "ai-landscape", "ai-hype", "vibe-coding", "context-engi
 curriculum_modules: ["01-foundations", "02-prompting-and-workflows", "04-agentic-patterns"]
 ---
 
-# 157: Building the Future of Coding — OpenCode with Dax Raad
+# 233: Building the Future of Coding — OpenCode with Dax Raad
 
 > **Creator**: NeetCode (Dax Raad) | **Platform**: YouTube | **Date**: 2026-03-03 | **Duration**: 1:12:51
 

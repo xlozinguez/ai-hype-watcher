@@ -1,5 +1,5 @@
 ---
-source_id: "154"
+source_id: "230"
 title: "Claude Code - Full Tutorial for Beginners"
 creator: "Tech With Tim"
 platform: "YouTube"
@@ -11,7 +11,7 @@ tags: ["claude-code", "vibe-coding"]
 curriculum_modules: ["03-claude-code-essentials"]
 ---
 
-# 154: Claude Code — Full Tutorial for Beginners
+# 230: Claude Code — Full Tutorial for Beginners
 
 > **Creator**: Tech With Tim | **Platform**: YouTube | **Date**: 2026-02-27 | **Duration**: 35:48
 

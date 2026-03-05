@@ -1,5 +1,5 @@
 ---
-source_id: "162"
+source_id: "238"
 title: "Making Claude Code Actually Remember Things"
 creator: "Artem Zhutov"
 platform: "YouTube"
@@ -11,7 +11,7 @@ tags: ["claude-code", "context-engineering", "mcp", "skills"]
 curriculum_modules: ["03-claude-code-essentials", "04-agentic-patterns"]
 ---
 
-# 162: Making Claude Code Actually Remember Things
+# 238: Making Claude Code Actually Remember Things
 
 > **Creator**: Artem Zhutov | **Platform**: YouTube | **Date**: 2026-02-28 | **Duration**: 42:10
 

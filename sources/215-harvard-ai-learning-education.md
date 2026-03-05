@@ -1,5 +1,5 @@
 ---
-source_id: "139"
+source_id: "215"
 title: "Harvard Thinking: Preserving learning in the age of AI shortcuts"
 creator: "Harvard University"
 platform: "YouTube"
@@ -11,7 +11,7 @@ tags: ["ai-hype", "ai-landscape", "ai-safety"]
 curriculum_modules: ["01-foundations", "06-strategy-and-economics"]
 ---
 
-# 139: Harvard Thinking: Preserving learning in the age of AI shortcuts
+# 215: Harvard Thinking: Preserving learning in the age of AI shortcuts
 
 > **Creator**: Harvard University | **Platform**: YouTube | **Date**: 2026-02-19 | **Duration**: 28:23
 

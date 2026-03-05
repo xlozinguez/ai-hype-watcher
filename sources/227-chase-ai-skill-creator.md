@@ -1,5 +1,5 @@
 ---
-source_id: "151"
+source_id: "227"
 title: "Claude Code Skills Just Got a MASSIVE Upgrade"
 creator: "Chase AI"
 platform: "YouTube"
@@ -11,7 +11,7 @@ tags: ["claude-code", "skills", "validation", "agentic-coding"]
 curriculum_modules: ["03-claude-code-essentials", "04-agentic-patterns"]
 ---
 
-# 151: Claude Code Skills Just Got a MASSIVE Upgrade
+# 227: Claude Code Skills Just Got a MASSIVE Upgrade
 
 > **Creator**: Chase AI | **Platform**: YouTube | **Date**: 2026-03-04 | **Duration**: 12:19
 

@@ -222,7 +222,7 @@ Mark Kashef ([#079](../../sources/079-mark-kashef-claude-skills-guide.md)) synth
 
 Skills operate on a three-level loading model that manages context efficiently: Level 1 (YAML front matter, always loaded, under 1,000 characters), Level 2 (procedural instructions, loaded on match), Level 3 (linked files, loaded on execution). This progressive loading preserves context window space -- critical for agents running multiple skills simultaneously.
 
-The iterative skill creation pattern demonstrated by Jack Roberts ([#083](../../sources/083-jack-roberts-cowork-use-cases.md)) provides a practical on-ramp: start by having the agent perform a task manually through conversation, refine the output through feedback, then enshrine the refined process as a reusable skill for autonomous execution.
+The iterative skill creation pattern demonstrated by Jack Roberts ([#083](../../sources/083-jack-roberts-cowork-use-cases.md)) provides a practical on-ramp: start by having the agent perform a task manually through conversation, refine the output through feedback, then enshrine the refined process as a reusable skill for autonomous execution. Nate Herk ([#189](../../sources/189-nate-herk-claude-code-skills-guide.md)) formalizes this into a six-step framework: (1) name and trigger, (2) goal, (3) step-by-step process, (4) reference files, (5) rules and guardrails, (6) self-improvement loop. A critical optimization insight from Herk: watching early skill executions reveals enormous token waste -- hardcoding stable values (list IDs, API endpoints) and delegating search-heavy tasks to sub-agents can dramatically reduce per-invocation cost.
 
 Tanmay Deshpande ([#090](../../sources/090-tanmay-deshpande-claude-skill-tradeoffs.md)) demonstrates a compelling application of the **domain-specific intelligence** pattern: a Claude Code skill that encodes a complete architecture trade-off analysis framework into a single invocation. The skill takes a one-paragraph scenario description and produces a comprehensive architecture decision record -- weighted scoring across architecture characteristics, Roger Martin's "What Would Have to Be True" strategic framework, second-order effects analysis (Conway's Law implications, discipline tax), risk profiles, and a phased implementation roadmap. This illustrates how skills can encode multi-step analytical frameworks from management and architecture literature, turning complex decision-making processes into repeatable, documented workflows. As Deshpande puts it: "The most senior person in the room wins and nobody documents why" -- the skill addresses both the documentation gap and the consistency problem in architecture decisions.
 
@@ -240,7 +240,11 @@ This applies broadly beyond browser automation. Any tool interaction where the a
 
 Joshua Morony ([#027](../../sources/027-joshua-morony-git-worktree.md)) makes the case that `git worktree` has become essential infrastructure for agentic coding. When AI agents execute multi-phase tasks autonomously for 15-60 minutes, they occupy the filesystem. The developer cannot safely work in the same codebase while agents make edits on the same branch.
 
-Worktrees solve this by creating separate filesystem checkouts that share the same git history. Each agent gets its own working directory, completely isolated from others. Morony integrates worktree creation directly into his agentic pipeline: each new work track automatically creates a dedicated worktree and branch, isolating agent work from the developer's main working directory. See also: [Module 05: Team Orchestration](../05-team-orchestration/README.md) for expanded coverage of worktrees in multi-agent setups.
+Worktrees solve this by creating separate filesystem checkouts that share the same git history. Each agent gets its own working directory, completely isolated from others. Morony integrates worktree creation directly into his agentic pipeline: each new work track automatically creates a dedicated worktree and branch, isolating agent work from the developer's main working directory.
+
+Matt Pocock ([#137](../../sources/137-matt-pocock-worktree-workflow.md)) takes this further with Claude Code's native `claude --worktree` command, which automatically creates a worktree at `.claude/worktrees/` with a randomly generated name. The agent's lifecycle is scoped to the worktree -- on exit, the user chooses to keep or remove it. Pocock identifies a significant gotcha: worktrees branch from the current branch (typically main), so agents may accidentally push commits to main unless explicitly told to push to a named branch. His recommendation: use worktrees for every Claude session, always push to a named branch, and protect your main branch. Subagents also support worktrees, enabling orchestrated parallel workflows where each subagent owns its own branch and produces a PR back to main. As Pocock puts it: "I'm not sure why you wouldn't want to use git work trees like every single time you use Claude."
+
+See also: [Module 05: Team Orchestration](../05-team-orchestration/README.md) for expanded coverage of worktrees in multi-agent setups.
 
 ### Concept 16: WebMCP -- Structured Agent-Web Interaction
 
@@ -316,60 +320,241 @@ The practical workflow: walk through a task manually with Claude once, refine th
 
 The key differentiator from the four-layer stack (Concept 12): Concept 12 targets developers building reusable agentic infrastructure. The human-in-the-loop skill pattern targets anyone who does repeatable knowledge work and can describe their process in plain language.
 
-### Concept 23: The Seven Phases of AI-Driven Development
+### Concept 23: The Heartbeat Pattern for Persistent Autonomous Agents
 
-Matt Pocock ([#145](../../sources/145-matt-pocock-seven-phases-ai-development.md)) distills AI-driven development into seven distinct phases that apply regardless of specific tooling (RALPH loops, GSD, SpecKit):
+Stephen G. Pope ([#142](../../sources/142-stephen-pope-free-openclaw.md)) demonstrates "Popebot," an open-source agent framework that introduces the **heartbeat pattern** -- a configurable cron job that runs agent instructions on a regular interval (e.g., every 10-30 minutes). This enables persistent autonomous operation for tasks like email checking, research monitoring, API polling, or self-improvement reviews without requiring a continuously running agent session.
 
-1. **Idea** -- The starting point: a feature, bug fix, refactor, or entire application
-2. **Research** -- Cache external API docs, unfamiliar libraries, or difficult-to-explore areas into a `research.md` asset. Research assets are ephemeral -- they expire with the sprint to avoid stale context causing wrong turns
-3. **Prototype** -- Iterate with human-in-the-loop to impose taste on the outcome. Generate multiple approaches on throwaway routes, pick the best, commit as reference
-4. **PRD** -- Describe the end state with no ambiguity. Have the agent "grill" you through your decision tree. The prototype provides concrete grounding
-5. **Kanban Board** -- Decompose the PRD into tickets with blocking relationships. This enables parallelization -- spin up agents for all non-blocking tickets simultaneously
-6. **Execution** -- Run agents through tickets in a loop (RALPH loop or sequential). With proper research, prototype, and PRD, this can run unattended
-7. **QA** -- Agent produces a QA plan, then a human walks through and QAs the completed work. Produces more tickets, returning to the kanban board. Loop phases 5-7 until complete
+The architectural innovation is using **GitHub as both version control and orchestration layer**. All agent modifications are tracked as git commits, changes can require human approval via pull requests, and the agent's "swarm" of jobs runs as GitHub Actions workflows with built-in logging and auditability. Path-based auto-merge rules let operators control which changes the agent can make autonomously versus which require review. This provides a transparent, auditable alternative to opaque agent execution -- as Pope notes: "We're not just setting up an agent that's able to modify itself with no transparency."
 
-The critical insight is that **prototyping should happen before the PRD, not after**. Most spec-driven workflows jump from idea to specification, but the PRD becomes too abstract without concrete feedback. By seeing working code and making taste decisions during prototyping, the subsequent PRD is grounded in reality rather than imagination. This prevents the common failure mode where a well-written spec produces technically correct but wrong-feeling output.
+The zero-cost stack (Ollama for local inference, Docker for sandboxing, GitHub Actions for orchestration with 2,000 free hours) makes the pattern accessible without API fees or dedicated hardware. This extends the Ralph Wiggum loop (Concept 7) from "run until tests pass" to "run continuously on a schedule," bridging the gap between session-scoped agents and the always-on infrastructure described by Aftandilian (Concept 10).
 
-> "This is not for vibe coders. We are people that are serious about AI engineering and serious about building applications that are built to last." -- Matt Pocock ([#145])
+### Concept 24: AI-Friendly Codebase Architecture -- Deep Modules as Agent Infrastructure
 
-### Concept 24: The Anti-Slop Framework -- Quality as Engineering Problem
+Matt Pocock ([#164](../../sources/164-matt-pocock-codebase-ai-ready.md)) argues that codebase design is the single biggest influence on AI coding output -- more than prompts, more than CLAUDE.md files. The core insight: AI agents have no memory of your codebase. Every session is like onboarding a new developer. This reframes codebase quality as an onboarding problem.
 
-Jaymin West ([#144](../../sources/144-jaymin-west-anti-slop-engineering.md)) presents a systematic framework for preventing AI agents from producing low-quality code ("slop"), building on his experience and Stripe's production agent usage. The core mindset shift: **if an LLM writes slop, that is an engineering problem, not an LLM problem.**
+Drawing from John Ousterhout's "A Philosophy of Software Design," Pocock advocates for **deep modules** -- large chunks of implementation behind simple interfaces. When each module lives in its own folder with a clear public API, agents can progressively discover the codebase: read the interface first, understand what a module does, and only dive into implementation when needed. Shallow, highly interconnected modules force agents to load excessive context just to understand relationships.
 
-The anti-slop toolkit forms concentric layers of defense:
+The **graybox module** pattern extends this: developers design interfaces and write tests that lock down behavior, while AI manages internal implementation. As long as tests pass, the internals are delegated. This creates a natural seam between human judgment (interface design, acceptance criteria) and AI execution (implementation), directly supporting the builder/validator pattern (Concept 3) at the codebase architecture level.
+
+This connects to the broader principle that infrastructure investment in AI-readiness compounds over time. As Pocock puts it: "We need to stop thinking about AI as this superpowered developer and understand that it's got some weird limitations. It's a new starter in your codebase."
+
+### Concept 25: The Always-On Competing Agent Pattern
+
+Mitchell Hashimoto ([#165](../../sources/165-pragmatic-engineer-hashimoto-ai-coding.md)), creator of Terraform and Ghostty, describes a workflow principle that extends the continuous agentic pressure concept (Concept 10) to individual developer practice: **always have an agent running**. If you are coding, an agent is planning. If an agent is coding, you are reviewing. This creates a continuous human-AI parallel workflow where neither party is idle.
+
+For harder tasks, Hashimoto runs two agents in competition -- Claude and Codex on the same problem -- then compares outputs. He caps at two competing agents because cleanup overhead becomes counterproductive beyond that point. This "competitive agent" pattern provides a lightweight alternative to full adversarial verification (Pattern 8) for individual practitioners.
+
+Hashimoto's **effort-for-effort review philosophy** also provides a practical framework for calibrating agent output review: match review intensity to stakes. For production systems (Ghostty), review everything. For throwaway projects (a family wedding website), ship if it renders correctly. This nuances the anti-rubber-stamping pitfall -- the goal is not universal deep review but context-appropriate review.
+
+### Concept 26: The Instruction Budget and Deterministic Feedback Loops
+
+Matt Pocock ([#157](../../sources/157-matt-pocock-hooks-cli-enforcement.md)) crystallizes a principle implicit in earlier hook discussions (Concept 5): CLAUDE.md instructions are probabilistic -- they consume context tokens and only reduce the probability of unwanted behavior. Hooks are deterministic -- they block or transform behavior with zero context cost. This distinction has a quantitative dimension: LLMs have an effective instruction budget of roughly 500 instructions before compliance degrades. Every irrelevant instruction in CLAUDE.md competes for this budget.
+
+The practical workflow: identify CLAUDE.md rules that enforce deterministic behavior (CLI preferences, command blockers, file access restrictions), convert them into pre-tool-use hooks, and remove them from CLAUDE.md to free instruction budget for complex reasoning guidance. DIY Smart Code ([#154](../../sources/154-diy-smart-code-claude-code-features.md)) provides a complementary five-feature decision matrix for where to put configuration: CLAUDE.md for always-on rules, skills for on-demand expertise, subagents for isolated context, hooks for event-driven automation, and MCP for external tools.
+
+Ben AI ([#158](../../sources/158-ben-ai-skill-engineering.md)) extends the skill design patterns (Concept 13) with a structured engineering framework: define triggers, set objectives, specify tool/MCP usage, lay out step-by-step processes with human-in-the-loop checkpoints, add rules for edge cases, and enable progressive self-improvement. The most significant addition is **self-improving skills** -- instructing skills to save approved outputs as examples and update rules based on user corrections, creating a positive feedback loop that makes skills progressively better with use.
+
+### Concept 27: The Do-Make-Know Framework for Progressive Agent Autonomy
+
+Dylan Davis ([#177](../../sources/177-dylan-davis-claude-cowork-system.md)) presents a three-level framework for moving from ad-hoc AI assistance to fully autonomous, memory-enhanced workflows:
+
+- **Do** (single task execution): Give the agent a single task (rename files, format a document). This is the entry point.
+- **Make** (multi-system orchestration): Drop a single input (e.g., a meeting transcript) and have the AI orchestrate across multiple systems (Gmail, calendar, CRM) to produce finished deliverables. This level uses sub-agents for parallelization.
+- **Know** (compounding memory): Add a persistent memory file that accumulates insights across sessions -- client preferences, recurring themes, key decisions -- transforming the AI from a disposable tool into a reusable asset that compounds in value.
+
+Two operational patterns from Davis are particularly useful for long-running agents. First, **changelog files**: have the agent log every action to a changelog.txt so it can resume correctly after context compaction without redoing work. This is a lightweight alternative to the search-then-get pattern (Concept 6) for session-scoped work. Second, **append-only memory**: never remove previous entries from the memory file; structure entries with communication preferences, themes, and decisions so the agent can pick up recurring engagement context.
+
+The framework connects directly to the long-horizon strategies in Concept 6: the Do level operates within a single context window, Make uses sub-agent decomposition for parallelism, and Know implements the memory pattern with markdown files -- validating the simplicity principle from Galarza's analysis ([#099], [#182]).
+
+### Concept 28: Sniper Agents vs. Generalist Agents -- Context Budget as Design Constraint
+
+Agentic Lab ([#179](../../sources/179-agentic-lab-openclaw-architecture.md)) quantifies the context rot problem in generalist agent architectures and argues for purpose-built alternatives. Using OpenClaw as a case study, Roman demonstrates that a generalist agent starts with approximately 7,000 tokens of fixed overhead on day one -- impressively low. But after a month of daily use, memory files grow, skills accumulate, and session summaries pile up, reaching approximately 45,000 tokens of fixed overhead. After six months, the number can reach tens of thousands more. Research on context rot shows this causes 40-90% performance degradation and approximately $0.52 extra per message.
+
+By contrast, a single-purpose "sniper agent" -- an email agent, for example -- needs only approximately 1,400 tokens of fixed context. This is a 30x reduction in overhead, with proportional improvements in performance and cost.
+
+The architectural insight: every agent harness can be understood through four questions: (1) What triggers the agent? (heartbeats, cron jobs, webhooks), (2) What gets injected into context on every turn? (system prompt, conversation history, tool schemas), (3) What tools can the agent call? (memory retrieval, computer control, skills/plugins), and (4) What does the agent output or write? (messages, files, memory updates). This framework applies to designing any custom agent.
+
+The prescription aligns with Berglund's 60-70% rule (Concept 6): build purpose-specific agents with minimal context overhead rather than generalists that accumulate context rot. The four-category framework provides a practical design checklist for any agent architecture.
+
+### Concept 29: Agent Management as Human Management
+
+Mihail Eric ([#178](../../sources/178-eo-multi-agent-orchestration.md)), who leads AI at a startup and teaches Stanford's first AI-across-the-SDLC course, argues that orchestrating multiple agents is fundamentally a management skill -- the same context-switching and task isolation abilities that make good human managers translate directly to multi-agent coordination. People who have managed human developers tend to be the best at managing agent teams because they already have these skills.
+
+Eric provides a grounded counterpoint to the "run 10 agents at once" hype, advocating for **incremental agent addition**: start with one agent doing a complex task well, then add a second agent on an isolated change, then a third on another independent task. Only scale up when you are confident each agent is performing reliably. The key is ensuring tasks are truly independent -- task B should not depend on task A.
+
+The error compounding risk is significant: "Agents can compound errors very quickly. If an agent has one misunderstanding in code, and then it sees that misunderstanding it created in step 1, it can double down and create another error in step 2." This reinforces the case for agent-friendly codebases (Concept 24) -- comprehensive test coverage, consistent design patterns, accurate documentation, and proper linting are prerequisites, not optional extras.
+
+### Concept 30: Markdown-Based Agent Memory -- Three Questions That Define Any Memory System
+
+Damian Galarza ([#182](../../sources/182-damian-galarza-agent-memory.md)) breaks down how AI agents achieve persistent memory despite being inherently stateless, building on his earlier memory search analysis ([#099]). The architecture has two layers: session memory (conversation history, subject to compaction) and long-term memory (what survives between sessions).
+
+Drawing on Google's November 2025 white paper on context engineering, Galarza categorizes memory into three types: **episodic** (what happened in past interactions), **semantic** (facts and user preferences), and **procedural** (workflows and learned routines). An effective memory system must filter what is worth remembering, consolidate duplicate or contradictory entries, and overwrite outdated information.
+
+Using OpenClaw as a case study, Galarza shows the entire memory system is built on markdown files rather than vector databases -- validating the "start simple" principle from Concept 6. Four mechanisms trigger reads and writes at the right moments: bootstrap loading at session start, pre-compaction flush (a write-ahead log pattern borrowed from database design that converts a destructive operation into a checkpoint), session snapshot on reset, and direct user instruction.
+
+The practical guidance is concise: "You don't need a complex setup to give an agent memory. You just need clear instructions to three questions. What's worth remembering? Where does it go? And when does it get written?" Claude Code's own memory feature uses the same markdown-based approach.
+
+### Concept 31: The Agentic Trap -- Over-Optimization as a Failure Mode
+
+Peter Steinberger ([#162](../../sources/162-openai-openclaw-steinberger.md)) identifies a common failure mode he calls "the agentic trap": developers get stuck between their first touchpoint with AI tools and becoming truly productive because they obsessively optimize their setup rather than building. The optimization feels productive but is not.
+
+Steinberger's counter-approach is radically simple: 10 parallel git checkouts (not even worktrees), conversational prompting, and the habit of always asking "do you have any questions?" to surface the model's assumptions before it starts building. He ships code he does not read because most code is "boring" data transformation, focusing his attention on architecture and performance-critical paths.
+
+The emergent problem-solving capability of agents is illustrated by Steinberger's voice message story: OpenClaw received a WhatsApp voice message it was never designed to handle. The model identified the file as Opus codec by inspecting the file header, used FFmpeg to convert it, found an OpenAI API key in the environment, used cURL to call the Whisper API for transcription, and replied with the text. This demonstrates that agents with tool access exhibit problem-solving behavior that transcends their explicit programming -- reinforcing the generate-verify-revise principle (Concept 17) at a micro level.
+
+Steinberger also reframes open-source contributions as "prompt requests" -- the intent behind a PR matters more than the code itself. This aligns with the broader shift from evaluating code to evaluating specifications (Concept 8).
+
+> "The agentic trap... a lot of people get stuck in there trying to super optimize their setup. It doesn't really make you more productive, but it feels like you're more productive." -- Peter Steinberger ([#162])
+
+### Concept 32: Scheduled Tasks and Plugin Bundles as Agent Capabilities
+
+Eliot Prince ([#183](../../sources/183-eliot-prince-cowork-scheduled-tasks.md)) demonstrates scheduled tasks in Claude Cowork -- automated prompts that run on a configurable schedule (hourly, daily, weekly) as long as the computer is on. This bridges the gap between session-scoped agents and the heartbeat pattern (Concept 23): scheduled tasks are simpler to configure but require the machine to remain active, while the heartbeat pattern via GitHub Actions runs independently of the user's hardware.
+
+Plugins bundle multiple skills and connectors into department-like AI employees (finance, marketing, customer support), extending the skill composition patterns from Concept 13. Rather than configuring individual skills, plugins package related tools into functional roles -- a higher-level abstraction that simplifies adoption for non-technical users while maintaining the composability principles of the four-layer stack (Concept 12). Marty Vaughn ([#195](../../sources/195-marty-vaughn-claude-cowork-beginners.md)) extends this vision further, positioning Co-work as middleware between users and their entire application ecosystem -- connectors expose third-party tools (Gmail, Slack, Notion) with configurable permissions, and the combination of scheduled tasks, connectors, and plugin bundles enables non-developers to build autonomous workflows that previously required dedicated engineering effort.
+
+### Concept 33: Agent Harness Customization -- Opinionated vs. Minimal Design
+
+IndyDevDan ([#146](../../sources/146-indydevdan-pi-coding-agent.md)) presents Pi, an open-source agentic coding tool, as a case study in the fundamental design tension between opinionated and minimal agent harnesses. Claude Code ships with a 10,000-token system prompt, five safety modes, and polished defaults. Pi takes the opposite approach: a 200-token system prompt, no safety modes, and just four tools (read, write, edit, bash). The philosophy is "if I don't need it, it won't be built."
+
+The key insight is that **the agent harness matters as much as the model**. Dan demonstrates a "till done" extension that forces the agent to create and complete task items before executing work, blocks tool calls until a task list exists, and requires engineer approval to clear tasks. This deterministic workflow enforcement extracts reliable results even from cheaper models like Haiku -- compensating for model limitations through harness design rather than model selection.
+
+Pi's extension system enables **stackable customization**: composable TypeScript files that hook into the agent lifecycle for custom UI, tool counters, sub-agent support, and task management. This composable approach -- stacking capabilities in isolation, then combining for specific workflows -- reinforces the principle from Concept 12 (the four-layer stack) that agentic engineering is about building reusable, composable layers rather than monolithic tools.
+
+The practical recommendation is hedging: use Claude Code (80% of the time) for its excellent defaults and enterprise features, but maintain fluency with open-source alternatives like Pi for deep customization, model flexibility, and experimental workflows. As Dan frames the progression: base agent, improved agent, context engineering, customized agents, orchestrator agent -- each level builds on the last. "Knowing what your agent is doing is engineering. Not knowing is vibe coding."
+
+### Concept 34: The Blueprint Engine Pattern -- Interleaving Code and Agents
+
+Stripe's "minions" system ([#209](../../sources/209-indydevdan-stripe-agentic-engineering-layer.md)) introduces a production-tested pattern that extends the four-layer stack (Concept 12) into enterprise-scale agentic engineering. The **blueprint engine** interleaves deterministic code steps (linters, git operations, test execution, template generation) with non-deterministic agent reasoning (implementing features, fixing CI failures). As IndyDevDan summarizes: "Agents plus code beats agents alone, and agents plus code beats code alone."
+
+The architectural insight: adding an agent to steps where determinism suffices makes the system worse, more brittle, and more expensive. Stripe's conditional rule files -- activated automatically via glob patterns as agents traverse specific subdirectories -- solve the context loading problem for a 100M+ line codebase without requiring a single monolithic context file. Their "tool shed" meta-MCP selects from nearly 500 tools on a per-task basis, preventing token explosion from loading all tool definitions simultaneously. This is meta-agentics: tools that select tools, prompts that create prompts, agents that build agents.
+
+The in-loop vs. out-of-loop distinction refines the patterns in this module. In-loop agents operate with the engineer at the terminal, useful for building the system itself. Out-of-loop agents -- Stripe's minions -- run fully unattended on dedicated EC2 sandboxes, each with the full codebase pre-warmed in 10 seconds. Engineers appear at the beginning (planning/prompting) and end (PR review), never in the middle. IndyDevDan's recommendation: spend more than 50% of engineering time building the system of agents rather than coding the application directly.
+
+> "You work on the agents, not the application. This is a weird mindset shift that you need to make if you're going to be building with agents." -- IndyDevDan ([#209])
+
+### Concept 35: Context as Code -- Software Engineering Rigor for Context Engineering
+
+Drew Knox ([#192](../../sources/192-ai-native-dev-context-engineering-rigor.md)) argues that context -- CLAUDE.md files, skills, rules -- is the new code, and it deserves the same engineering discipline. He systematically maps every SDLC practice to a context engineering analog:
+
+- **Static analysis** becomes LLM-as-judge validation against best practices
+- **Unit tests** become eval scenarios -- prompts paired with grading rubrics, run N times to measure statistical improvement
+- **Integration tests** become full-repo coding scenarios that stress-test all context together
+- **Observability** means mining agent session logs for failure patterns (search for "sorry" and "you're absolutely right" as failure indicators)
+- **Build automation** means CI/CD that detects when PRs should trigger context updates
+- **Package managers** handle reusable context with version-pinning challenges
+
+The "dumb zone" concept is particularly actionable: too much context degrades agent performance. Evals help detect when context should be *deleted*, not just added. Python style guides were essential six months ago, but Claude Opus 4.6 writes good Python without them. Running evals without changing context also catches model regressions -- a recent Gemini version stopped reading tools and context entirely.
+
+This connects to the instruction budget concept (Concept 26) at a systems level: context is not free, it expires, and it should be managed with the same lifecycle practices as code.
+
+### Concept 36: The Skill Ceiling and Narrow Agent Design
+
+Riley Brown ([#200](../../sources/200-riley-brown-narrow-agents-team.md)) provides empirical evidence for the sniper agent principle (Concept 28) from a non-developer perspective. After building hundreds of agent workflows, Brown found that as the number of skills added to a single agent increases beyond 7-10, dependability decreases -- the agent stops using skills at the right time, context gets clouded, and personality gets jumbled.
+
+The prescription is narrow agents with specific KPIs: Brown's YouTube agent optimizes for subscribers, views, and conversions. This narrow focus makes evaluation trivial (pass/fail against KPIs), makes skill selection disciplined (does it serve the goals?), and makes agent replacement easy (cut underperforming agents without disrupting others).
+
+Brown's **journal agent** pattern is an architectural innovation for lightweight team coordination: a dedicated agent monitors all activity, asks for context, and creates a running log in Notion. All other agents read this journal -- the email newsletter agent reads it for product updates, the YouTube agent reads it for content ideas. This creates a shared memory layer without requiring direct inter-agent communication, complementing the markdown-based memory patterns from Concept 30.
+
+The intent-over-prompts shift Brown describes -- referencing Emmett Shear's observation that "prompts are so late 2025, we are giving models intents now" -- connects directly to the intent engineering concept covered in Module 06.
+
+### Concept 37: Foundational Agent Design Patterns -- Single, Sequential, Parallel
+
+Google Cloud Tech ([#193](../../sources/193-google-cloud-tech-agent-design-patterns.md)) formalizes three foundational multi-agent patterns using the Agent Development Kit (ADK), providing a taxonomy that underpins the more advanced patterns in this module:
+
+1. **Single agent**: One agent with tools, using the model's reasoning to determine step sequence. Flexible but unreliable for complex multi-step logic because LLMs are non-deterministic.
+2. **Sequential agent**: An assembly-line model where specialized sub-agents execute in fixed order, communicating via shared session state (variable interpolation). High control and predictability but inflexible.
+3. **Parallel agent**: Multiple agents run concurrently on independent subtasks, with a final aggregator combining results. Reduces latency but requires a synthesis step.
+
+The shared session state -- a "scratch pad" where one agent writes findings and the next reads from it -- is the key coordination primitive. This maps directly to the task system's dependency DAG (Concept 2) and provides the conceptual foundation for understanding when to escalate from single agents to sub-agents to full teams (see Module 05).
+
+Turing College ([#196](../../sources/196-turing-college-agent-teams-walkthrough.md)) demonstrates an important emergent property of agent teams: the system can spawn agents not explicitly requested. In their social media content demo, a "researcher" agent appeared in the second iteration -- triggered by reviewer feedback that statistics needed verification -- without the user ever specifying a research role. This emergent role allocation illustrates that well-designed agent teams can dynamically adapt their composition to task requirements. However, the cost reality is sobering: approximately $7-8 per complex agent teams task, consuming roughly 50% of a Pro plan session budget. This reinforces the graduation model from Simon Scrapes ([#190](../../sources/190-simon-scrapes-claude-code-concepts-explained.md)): single agents for 80% of tasks, sub-agents when context bloats, agent teams only for genuinely collaborative multi-component builds.
+
+### Concept 38: Frontier Operations -- The Moving Boundary Between Human and Agent Work
+
+Nate B Jones ([#198](../../sources/198-nate-b-jones-frontier-operations.md)) introduces "Frontier Operations" as a framework for the meta-skill that makes all other agentic patterns effective. Using the metaphor of an expanding bubble -- the interior represents what agents handle reliably, the exterior is what still requires humans, and the surface is where the high-value work happens -- Jones identifies five component skills:
+
+1. **Boundary Sensing**: Maintaining accurate, current intuition about where agents succeed and fail. A product manager calibrated to November's models who has not updated is either over-trusting or under-using February's models.
+2. **Seam Design**: Structuring work so transitions between human and agent phases are clean, verifiable, and recoverable. This is the architectural skill behind the builder/validator pattern (Concept 3) and blueprint engine (Concept 34).
+3. **Failure Model Maintenance**: Maintaining a differentiated mental model of how agents fail at the current capability level -- not generic skepticism but knowing that task type A fails via mode X with check Y.
+4. **Capability Forecasting**: Making reasonable 6-12 month predictions about where the boundary will move and investing learning accordingly.
+5. **Leverage Calibration**: Deciding where to spend human attention in an agent-rich environment with 10:1 human-to-agent ratios.
+
+Unlike every prior workforce skill (literacy, numeracy, coding), frontier operations has no fixed destination because the bubble keeps expanding. The skill gap compounds: a person who develops frontier operations six months sooner does not just have a six-month head start -- they have six months of updated calibration that widens with every model release.
+
+### Concept 39: Cross-Platform Agent Memory Infrastructure
+
+Nate B Jones ([#208](../../sources/208-nate-b-jones-open-brain-agent-readable-memory.md)) proposes "Open Brain" -- a database-backed, MCP-accessible knowledge system that solves the memory fragmentation problem across AI tools. The core argument: every platform (Claude, ChatGPT, Cursor, Grok) has built walled gardens of memory that do not talk to each other, and this fragmentation -- not model quality -- is the actual bottleneck in AI productivity.
+
+The architecture uses Postgres with pgvector for embeddings, exposed via an MCP server. Capture happens from any tool; retrieval works from any MCP-compatible client via semantic search, recent listing, or pattern stats. Running cost: 10-30 cents per month. This extends the markdown-based memory patterns (Concept 30) into a persistent, searchable, platform-independent system that compounds with every thought captured.
+
+Jones frames this as the fork from the "human web" (fonts, layouts, pages) to the "agent web" (APIs, structured data, machine-to-machine readability). Note-taking tools built for the human web need an infrastructure layer underneath them for the agent era. The key quote: "Memory architecture determines agent capabilities much more than model selection does."
+
+### Concept 40: Nested Controller-Worker Orchestration via Tmux
+
+All About AI ([#213](../../sources/213-all-about-ai-nested-claude-code.md)) demonstrates a nested Claude Code architecture where a controller instance (running Opus) autonomously orchestrates multiple child Claude Code instances via tmux terminals. The user provides only a high-level goal -- the controller independently decides how many terminals to spawn, what role each should play, distributes detailed prompts to each child, monitors their output via terminal reads, and integrates the results.
+
+The **quality cascade** principle is the key architectural insight: because the Opus controller generates highly detailed, precise prompts for child instances, those children can run on cheaper models (Sonnet or even Haiku) while maintaining output quality. The detailed instructions from the planning tier compensate for lower capability at the execution tier. This extends the tiered model selection pattern (see Module 05, Pattern 4) with a concrete mechanism -- quality cascades downward through prompt precision, not model capability.
+
+Two demos illustrate the pattern: a procedural 3D space galaxy in Three.js (six parallel terminals for galaxy, objects, renderer, spacecraft, UI, and index) and a real-time training visualization dashboard (four terminals for backend, charts, dashboard, and samples). Both complete end-to-end without additional user prompts after the initial goal. The controller also uses Playwright for screenshot-based verification of the running application before declaring completion -- adding a deterministic visual check to the autonomous loop.
+
+This pattern sits between the sub-agent model (Concept 2) and full agent teams (Module 05): the controller has visibility into all child outputs (unlike sub-agents, which are fire-and-forget), but children cannot communicate with each other (unlike agent teams with peer-to-peer messaging). It is best suited for projects that decompose cleanly into parallel, independent implementation tracks with a single integration point.
+
+### Concept 41: Anti-Slop Engineering -- Quality as an Engineering Problem
+
+Jaymin West ([#220](../../sources/220-jaymin-west-anti-slop-engineering.md)) presents a systematic framework for preventing AI agents from producing low-quality code ("slop") that reframes the problem: "If LLMs are writing slop in your codebase, that is an engineering problem and not an LLM problem." The framework follows a layered defense approach and a "never fix bad output" philosophy -- if an agent produces poor results, diagnose the root cause, reset the run, fix the configuration, and rerun from scratch rather than patching bad code.
+
+The layered quality defense consists of:
 
 - **Hooks** as the first layer -- pre-commit hooks run tests and linting before any agent commit
-- **Quality gates** -- enforce the strictest possible linting and type-checking rules. LLMs comply with strict rules more easily than humans
-- **Anti-mocking testing** -- never mock what you can use for real. LLMs default to heavy mocking which produces tests that do not test real code
-- **One agent, one task, one prompt** -- extreme task decomposition. A focused agent is a correct agent. Success rates climb dramatically with this constraint
+- **Quality gates** enforcing the strictest possible linting and type-checking (LLMs handle strict rules better than humans)
+- **Anti-mocking testing** -- never mock what you can use for real, because LLMs default to heavy mocking that produces tests which do not actually test the code
+- **100% pass rates** enforced before any agent can pass work to the next stage
 
-The "never fix bad output" philosophy is particularly important: if an agent produces poor results, diagnose the root cause, reset the run, fix the configuration issue, and rerun from scratch rather than patching bad code. Patching slop introduces technical debt that compounds.
+West borrows IndyDevDan's "one agent, one task, one prompt" principle for extreme task decomposition. A focused agent is a correct agent. Each agent should receive one prompt and complete one task to completion. Combined with per-agent isolation via git worktrees (Concept 15), this creates what West calls the "pit of success" -- a recursive quality improvement loop where higher-quality code in the codebase leads agents to produce even higher-quality code, compounding over time. This directly reinforces the AI-friendly codebase principle from Concept 24 (Pocock) with a concrete quality mechanism.
 
-West also identifies a **recursive quality feedback loop**: input tokens effectively fine-tune the LLM for the current task. If the codebase contains garbage, agents will produce garbage -- a recursive degradation loop. Conversely, as agents write higher-quality code, new agents working on that code produce even higher quality. This creates a "pit of success" where the path of least resistance leads to good output.
+> "One agent, one task, one prompt. A focused agent is a correct agent." -- Jaymin West ([#220])
 
-> "If LLMs are writing slop in your codebase, that is an engineering problem and not an LLM problem." -- Jaymin West ([#144])
+### Concept 42: The Seven Phases of AI-Driven Development
 
-### Concept 25: Controller-Worker Nested Agent Architecture
+Matt Pocock ([#221](../../sources/221-matt-pocock-seven-phases-ai-development.md)) distills AI-driven development into seven distinct phases that apply regardless of specific tooling (RALPH loops, GSD, SpecKit):
 
-All About AI ([#137](../../sources/137-all-about-ai-nested-claude-code.md)) demonstrates a nested Claude Code system where a controller instance (running Opus) orchestrates multiple child Claude Code instances via tmux terminals. The user provides only a high-level goal, and the controller plans the architecture, decides how many terminals to spawn (up to six), distributes detailed prompts to each child, monitors their output, and integrates results -- creating a fully autonomous multi-agent coding pipeline.
+1. **Idea** -- The starting point: a feature, bug fix, refactor, or entire application
+2. **Research** -- Cache external API documentation and library specifics into a research.md asset; treat research as sprint-scoped (ephemeral), not permanent
+3. **Prototype** -- Iterate with human-in-the-loop to impose taste on the outcome; generate multiple approaches on throwaway routes, pick the best
+4. **PRD** -- Describe the end state with no ambiguity; have the agent "grill" you through your decision tree
+5. **Kanban Board** -- Decompose the PRD into tickets with blocking relationships, enabling parallelization
+6. **Execution** -- Run agents through tickets in a loop (RALPH or sequential); with proper research, prototype, and PRD, this can run unattended
+7. **QA** -- Agent produces a QA plan, human walks through and QAs; produces more tickets, returning to the kanban board
 
-A key insight is the **quality cascade from controller to workers**: Opus as the controller generates highly detailed, precise prompts for child instances, which can run on less capable models (like Sonnet). The detailed instructions compensate for the worker model's lower capability, effectively cascading quality from the planning tier down to the execution tier. This pattern connects to the tiered model selection concept from Module 05 but adds a mechanism -- detailed prompt generation -- that makes tiered routing effective rather than merely cheaper.
+The critical insight is that **prototyping should happen before the PRD**, not after. Most spec-driven workflows jump from idea to specification, but the PRD becomes too abstract without concrete feedback. By seeing working code and making taste decisions during prototyping, the subsequent PRD is grounded in reality. This prevents the common failure mode where a well-written spec produces technically correct but wrong-feeling output.
 
-### Concept 26: The Agent Harness as Product -- Context Engineering Defined
+The kanban board phase connects directly to the task system (Concept 2) -- tickets with blocking relationships map to dependency DAGs, and non-blocking tickets can run as parallel agents. The execution phase then becomes reliable enough to run AFK because all the ambiguity has been resolved in earlier phases.
 
-Harrison Chase of LangChain ([#158](../../sources/158-venturebeat-enterprise-openclaw.md)) argues that the harness -- the infrastructure wrapping the LLM -- is the actual product differentiator, not the model itself. By analyzing what Claude Code, OpenClaw, and Manus had in common, he identifies four harness primitives: planning (to-do list tools), sub-agents, file system access, and prompting. The concept of "harness engineering" -- incrementally improving how the environment is structured around the model -- is what separates working agents from failed predecessors like AutoGPT.
+> "This is not for vibe coders. We are people that are serious about AI engineering and serious about building applications that are built to last." -- Matt Pocock ([#221])
 
-Chase defines context engineering precisely: "bringing the right information in the right format to the LLM at the right time." When agents fail, it is because they lack the right context; when they succeed, it is because they have it. Modern harnesses give agents more control over their own context -- dumping large tool responses to files, letting agents decide what to read, and potentially letting agents decide when to compact their own context windows.
+### Concept 43: Open-Source Agent Harness Ecosystem -- Pi and OpenCode
 
-He also maps three types of agent memory from human psychology: **procedural** (system prompts, skills -- how to do things), **semantic** (vector/graph retrieval -- facts and knowledge), and **episodic** (previous conversations and traces). For enterprises, procedural memory offers the biggest return -- agents improving their own instructions based on feedback is more valuable than remembering user preferences.
+The open-source agentic coding ecosystem is expanding beyond the Pi agent (Concept 33) into a broader landscape. AICodeKing ([#228](../../sources/228-aicodeking-pi-coding-agent.md)) provides an updated comparative review confirming that Pi's minimalist architecture (4 tools, 200-token system prompt, 25+ hook points) appeals to mid-to-senior engineers who want full control over their agent harness. Key additions include multi-model provider support (15+ providers including Claude, GPT, Gemini, Mistral, Groq, DeepSeek), tree-based session architecture with conversation branching (similar to Git), and a package ecosystem for installing extensions from npm, Git repos, or local paths.
 
-> "When agents mess up, they mess up because they don't have the right context. And when they succeed, they succeed because they have the right context." -- Harrison Chase ([#158])
+NeetCode's interview with Dax Raad ([#233](../../sources/233-neetcode-opencode-future-coding.md)), co-creator of OpenCode, reveals the strategic positioning of the model-agnostic open-source alternative to Claude Code. Raad's most counterintuitive insight is that codebase cleanliness matters more in the AI era, not less: LLMs cannot differentiate between "old way" and "new way" patterns in a codebase, so legacy code coexisting with current conventions causes agents to reproduce outdated patterns. This creates stronger incentives for consistent, well-established patterns and domain-driven design -- reinforcing the AI-friendly codebase principle from Concept 24.
 
-### Concept 27: Code Quality as Agent Multiplier
+Raad also challenges the "trade-off excuse" for poor code quality: "Someone better than you didn't have to make those trade-offs and they ship just as fast." Accepting low quality as a speed trade-off is often rationalization, not engineering judgment.
 
-Dax Raad (OpenCode) ([#157](../../sources/157-neetcode-opencode-future-coding.md)) provides a counterintuitive insight: codebases maintained by teams using AI agents are now cleaner than ever. The reason: LLMs cannot differentiate between "old way" and "new way" patterns in a codebase. If legacy code exists alongside current conventions, the LLM will reproduce outdated patterns. This creates stronger incentives for consistent, well-established patterns and domain-driven design -- the cost of messy code is amplified when AI agents are generating from it.
+### Concept 44: The Agent Harness as Enterprise Product
 
-This connects directly to West's recursive quality feedback loop (Concept 24): clean code produces clean agent output, which produces cleaner code. Raad also challenges the common refrain that poor quality is an intentional trade-off for speed: "Someone better than you didn't have to make those trade-offs and they ship just as fast." This applies equally to AI-generated code -- accepting low quality as a speed trade-off is often rationalization, not engineering.
+Harrison Chase (LangChain CEO) ([#234](../../sources/234-venturebeat-enterprise-openclaw.md)) traces the evolution from AutoGPT (same architecture, worse models) to modern agents, arguing that the harness -- the infrastructure wrapping the LLM -- is the actual product differentiator, not the model itself. Deep Agents (LangChain's harness) was built by analyzing what Claude Code, OpenClaw, and Manus had in common: planning (to-do list tools), sub-agents, file system access, and prompting. The concept of "harness engineering" -- incrementally improving how the environment is structured around the model -- is what separates working agents from failed predecessors.
+
+Chase defines context engineering as "bringing the right information in the right format to the LLM at the right time" and maps three memory types from human psychology to agents: procedural (system prompts, skills), semantic (vector/graph retrieval), and episodic (previous conversations and traces). For enterprises, procedural memory offers the biggest return -- agents improving their own instructions based on feedback is more valuable than remembering user preferences.
+
+The **enterprise OpenClaw paradox** captures a key tension: OpenClaw succeeds partly because it is "unhinged" -- giving agents maximum autonomy. LangChain banned OpenClaw on company laptops due to security risks. The enterprise question becomes: who builds the safe, controlled version? Every enterprise wants one, but the safety constraints necessarily limit the capabilities that made the consumer version popular. This extends the enterprise-consumer bifurcation from Module 06 (Concept 9) into the agent harness domain.
+
+### Concept 45: Representation and Scaffolding as Agent Design Principles
+
+Dave Plummer ([#204](../../sources/204-daves-garage-ai-tempest-reinforcement-learning.md)) provides a case study from reinforcement learning that yields two principles broadly applicable to agentic pattern design (previously Concept 40):
+
+1. **Representation matters more than scale**: Plummer's RL agent broke through a plateau not with more compute or larger models (the model has under 1 million parameters) but by encoding the problem in polar coordinates matching Tempest's circular geometry and adding cross-attention for selective focus. The lesson for agentic coding: matching your data representation to the problem structure -- directory layout, API design, test structure -- can matter more than model selection.
+
+2. **Expert bootstrapping with decay**: A hand-coded expert system provides initial training data, then its influence decays as the neural network proves competence. This "training wheels that fade" pattern mirrors how human developers scaffold AI agents with initial structure (CLAUDE.md rules, detailed skills) that should be pruned as models improve -- exactly what the eval-driven context pruning from Concept 35 enables.
 
 ## Patterns & Practices
 
@@ -436,6 +621,20 @@ This connects directly to West's recursive quality feedback loop (Concept 24): c
 - **Example**: IndyDevDan's Bowser ([#088]) -- a Playwright browser skill (Layer 1) wrapped by a Browser QA subagent (Layer 2), orchestrated by a `/ui-review` command that distributes user stories across parallel subagents (Layer 3), invocable via `just ui-review` (Layer 4).
 - **Source**: [#088]
 
+### Pattern 10: The Blueprint Engine -- Interleaving Deterministic and Agentic Steps
+
+- **When to use**: When you have repeatable workflows where some steps are deterministic (linting, testing, git operations) and others require judgment (implementation, debugging, design decisions).
+- **How it works**: Build workflow definitions that alternate between code steps (executed deterministically) and agent steps (handled by LLM reasoning). Deterministic steps provide guardrails and checkpoints; agent steps provide flexibility and creativity. Each step type handles what it does best.
+- **Example**: Stripe's minions ([#209](../../sources/209-indydevdan-stripe-agentic-engineering-layer.md)) use blueprints that run linters and template generators as code, then hand off feature implementation to agents, then run CI tests as code, then hand debugging back to agents. The blueprint ensures the agent never skips deterministic validation.
+- **Source**: [#209]
+
+### Pattern 11: Eval-Driven Context Lifecycle
+
+- **When to use**: When managing skills, CLAUDE.md files, or rule files across projects and wanting to ensure context is helping, not hurting.
+- **How it works**: Write 5 eval scenarios per context piece (prompt + grading rubric). Run evals with and without the context to prove it helps. Run periodically to detect when models have improved enough to make specific context unnecessary. Use CI/CD to trigger context update PRs when code changes.
+- **Example**: AI Native Dev ([#192](../../sources/192-ai-native-dev-context-engineering-rigor.md)) discovered that Python style guides were no longer needed after Opus 4.6 improved -- evals confirmed the context added no value and could be deleted, saving tokens.
+- **Source**: [#192]
+
 ## Common Pitfalls
 
 - **Relying on automatic task system activation instead of deliberate meta-prompts**: The task system activates automatically for large, complex prompts, but automatic activation lacks the organizational context and standards baked into a well-crafted meta-prompt. Deliberate meta-prompts enforce specific patterns (builder/validator pairs, dependency structures, validation criteria) and produce more consistent results.
@@ -461,6 +660,24 @@ This connects directly to West's recursive quality feedback loop (Concept 24): c
 - **Expecting AI-generated codebases to remain maintainable at scale**: Tom Delalande ([#073](../../sources/073-tom-delalande-claude-agents-useless.md)) documents how Anthropic's own C compiler project reached a point where Claude could not make changes without breaking existing functionality. AI-generated codebases can exceed the model's own ability to modify them -- a critical concern for long-lived projects that depend on autonomous agent maintenance.
 
 - **Using MCP when CLI would be more efficient**: The Playwright team ([#030]) demonstrated a 4.3x token reduction using CLI over MCP for the same browser automation task. Default to CLI-based tools for coding agents; reserve MCP for custom agentic loops where the standardized protocol matters.
+
+- **Granting agents destructive permissions on external systems**: ThePrimeTime ([#163](../../sources/163-primetime-openclaw-inbox.md)) documents an incident where Meta's head of AI safety had her email inbox bulk-deleted by an agent that could not be interrupted mid-execution. The agent interpreted "clean up my inbox" as authorization for bulk deletion, and repeated "stop" commands were queued rather than processed. The lesson: never give agents unsupervised destructive access to external systems (email, calendars, databases). Prefer reversible operations (archiving, moving) over irreversible ones (deletion), require per-action approval for destructive operations, and ensure you can kill the agent process at the OS level when interrupt commands are being queued.
+
+- **Ignoring codebase architecture as an agent constraint**: Pocock ([#164](../../sources/164-matt-pocock-codebase-ai-ready.md)) argues that codebase design influences AI output more than prompts or agent configuration. Shallow, interconnected modules force agents to load excessive context. Investing in deep modules with simple interfaces, clear directory structures, and comprehensive tests makes the codebase navigable for agents that have no memory of prior sessions.
+
+- **Running too many concurrent agents as a human operator**: The Daily AI Show ([#148](../../sources/148-daily-ai-show-memory-hacks-burnout.md)) surfaces research showing that AI tools intensify work rather than reduce it, and that managing multiple agent instances creates an interrupt-driven workflow that degrades human cognitive quality. Each agent interruption erodes flow and focus. Limit concurrent agent instances to what you can meaningfully oversee rather than maximizing parallelism.
+
+- **Scaling agents before ensuring codebase readiness**: Mihail Eric ([#178](../../sources/178-eo-multi-agent-orchestration.md)) emphasizes that agents can only operate reliably on "explicitly defined contracts of software." Without comprehensive test coverage, consistent design patterns, accurate documentation, and proper linting, agents compound errors -- one misunderstanding in step 1 gets magnified in step 2. Invest in codebase fundamentals before scaling agent count.
+
+- **Building generalist agents when specialists would perform better**: Agentic Lab ([#179](../../sources/179-agentic-lab-openclaw-architecture.md)) quantifies the penalty: a generalist agent with 45,000+ tokens of fixed overhead experiences 40-90% performance degradation compared to a purpose-built agent with 1,400 tokens. Build single-purpose "sniper agents" for specific tasks rather than one agent that does everything poorly.
+
+- **Falling into the agentic trap**: Peter Steinberger ([#162](../../sources/162-openai-openclaw-steinberger.md)) identifies a common failure mode where developers obsessively optimize their AI tooling setup instead of building. The optimization feels productive but is not. The counter-approach: start building with radically simple setups and let complexity emerge from real needs.
+
+- **Overloading agents with too many skills**: Riley Brown ([#200](../../sources/200-riley-brown-narrow-agents-team.md)) found that agent dependability degrades beyond 7-10 skills. Build multiple narrow agents with specific KPIs rather than one comprehensive agent that does everything poorly. This reinforces the sniper agent principle (Concept 28) with empirical evidence from production workflows.
+
+- **Treating context as write-once**: Context has a lifecycle just like code. Drew Knox ([#192](../../sources/192-ai-native-dev-context-engineering-rigor.md)) demonstrates that context which was essential six months ago may now degrade performance. Use evals to detect when context should be deleted, and automate freshness checks via CI/CD.
+
+- **Making everything an agent call when deterministic code would suffice**: Stripe's blueprint engine ([#209](../../sources/209-indydevdan-stripe-agentic-engineering-layer.md)) demonstrates that adding an agent to steps where determinism suffices makes the system worse, more brittle, and more expensive. Reserve agent reasoning for creative steps; use code for linting, testing, git operations, and template generation.
 
 ## Hands-On Exercises
 
@@ -532,12 +749,43 @@ This connects directly to West's recursive quality feedback loop (Concept 24): c
 | [134: Google DeepMind's Experimental Platform for Humans and LLM Agents](../../sources/134-prolific-deepmind-agent-platform.md) | Prolific / Google DeepMind | Deliberate Lab for human-AI group research, mirror vs mask duality, LLM agent negotiation strategies |
 | [135: His Claude Code Workflow Is Insane](../../sources/135-john-kim-claude-code-workflow.md) | John Kim | Boris Cherny's 13-tip workflow, parallel instance management, shared CLAUDE.md, custom sub-agents for post-processing |
 | [136: Head of Claude Code: What happens after coding is solved](../../sources/136-lennys-podcast-boris-cherny-after-coding.md) | Lenny's Podcast / Boris Cherny | Coding as solved problem, printing-press analogy, latent demand, bitter lesson applied to AI products |
-| [137: Super Nested Claude Code Is Vibecoding On STEROIDS](../../sources/137-all-about-ai-nested-claude-code.md) | All About AI | Controller-worker nested architecture, quality cascade from Opus to Sonnet, tmux-based orchestration |
-| [144: How Top Engineers Stop AI Agents From Writing Slop](../../sources/144-jaymin-west-anti-slop-engineering.md) | Jaymin West | Anti-slop framework, layered quality defense, one-agent-one-task, pit of success, recursive quality loop |
-| [145: The 7 phases of AI-driven development](../../sources/145-matt-pocock-seven-phases-ai-development.md) | Matt Pocock | Seven-phase development framework, prototype-before-PRD, ephemeral research, kanban-driven parallelization |
-| [152: Pi Coding Agent: RIP Claude Code & OpenCode!](../../sources/152-aicodeking-pi-coding-agent.md) | AICodeKing | Minimal-core agent architecture, 25+ lifecycle hooks, multi-model routing, extension-based customization |
-| [157: Building the Future of Coding — OpenCode with Dax Raad](../../sources/157-neetcode-opencode-future-coding.md) | NeetCode / Dax Raad | Code quality as agent multiplier, LLMs reproduce legacy patterns, positioning over product |
-| [158: Everyone Wants an Enterprise OpenClaw](../../sources/158-venturebeat-enterprise-openclaw.md) | VentureBeat / Harrison Chase | Agent harness as product, context engineering defined, three memory types, enterprise OpenClaw paradox |
+| [137: I'm using claude --worktree for everything now](../../sources/137-matt-pocock-worktree-workflow.md) | Matt Pocock | Native `claude --worktree` integration, branch naming gotcha, worktree-scoped agent lifecycle, free parallelization |
+| [142: I Built a FREE OpenClaw](../../sources/142-stephen-pope-free-openclaw.md) | Stephen G. Pope | Heartbeat pattern, GitHub-as-orchestration, zero-cost agent stack, Docker-based security and scalability |
+| [146: The Pi Coding Agent](../../sources/146-indydevdan-pi-coding-agent.md) | IndyDevDan | Opinionated vs minimal agent harness, "till done" pattern, stackable extensions, meta-agents building agents |
+| [148: Claude Code Memory Hacks and AI Burnout](../../sources/148-daily-ai-show-memory-hacks-burnout.md) | The Daily AI Show | Context rot from micro-task fixation, AI work intensification research, cognitive overload from multi-agent workflows |
+| [149: Stop Using Claude Code Without This Tool](../../sources/149-leon-van-zyl-n8n-claude-code.md) | Leon van Zyl | N8N as MCP server for Claude Code, webhook-based completion notifications, prototype-to-production pipeline |
+| [154: Why Most Developers Are Using Claude Code Wrong](../../sources/154-diy-smart-code-claude-code-features.md) | DIY Smart Code | Five-feature decision matrix (CLAUDE.md/skills/subagents/hooks/MCP), context window cost hierarchy |
+| [157: How to actually force Claude Code to use the right CLI](../../sources/157-matt-pocock-hooks-cli-enforcement.md) | Matt Pocock | Deterministic vs probabilistic enforcement, instruction budget as finite resource, hook-based workflow |
+| [158: How to build Claude Skills Better than 99% of People](../../sources/158-ben-ai-skill-engineering.md) | Ben AI | Skill engineering framework, progressive disclosure, self-improving skills, reference file architecture |
+| [160: Lecture 7: Agentic Coding](../../sources/160-missing-semester-agentic-coding.md) | Missing Semester (MIT) | LLM + agent harness architecture, test-driven agent development, context management as core skill |
+| [162: Peter Steinberger on Building OpenClaw](../../sources/162-openai-openclaw-steinberger.md) | OpenAI / Peter Steinberger | The agentic trap, prompt requests, emergent agent problem-solving, cross-model workflows |
+| [163: OpenClaw Deletes Entire Inbox](../../sources/163-primetime-openclaw-inbox.md) | ThePrimeTime | Agent interrupt problem, destructive permissions on external systems, kill switch requirement |
+| [164: Your codebase is NOT ready for AI](../../sources/164-matt-pocock-codebase-ai-ready.md) | Matt Pocock | Deep modules for AI navigation, graybox module pattern, AI as perpetual new starter |
+| [165: Mitchell Hashimoto's new way of writing code](../../sources/165-pragmatic-engineer-hashimoto-ai-coding.md) | The Pragmatic Engineer / Mitchell Hashimoto | Always-on agent pattern, competing agents, effort-for-effort review, open source trust crisis from AI |
+| [169: Claude Code Just Became a Full IDE](../../sources/169-leon-van-zyl-claude-desktop-app.md) | Leon van Zyl | Desktop app as development environment, parallel local and cloud agents, auto-verify with screenshots |
+| [174: Using Obsidian and Claude Code as a Personal Thinking Partner](../../sources/174-greg-isenberg-obsidian-claude-code.md) | Greg Isenberg / Vinh Nguyen | Personal vault as agent context, strict read-only separation, custom slash commands for vault interaction |
+| [177: Three-Level Framework for Claude Co-Work Automation](../../sources/177-dylan-davis-claude-cowork-system.md) | Dylan Davis | Do/Make/Know progressive autonomy, changelog files, append-only memory, sub-agent parallelization |
+| [178: Multi-Agent Orchestration for AI-Native Engineers](../../sources/178-eo-multi-agent-orchestration.md) | EO / Mihail Eric | Incremental agent addition, agent management as human management, agent-friendly codebases, error compounding |
+| [179: OpenClaw Agent Architecture Explained](../../sources/179-agentic-lab-openclaw-architecture.md) | Agentic Lab | Sniper agents vs generalists, four-category agent framework, context rot quantification (40-90%), heartbeat/cron triggers |
+| [182: How AI Agent Memory Systems Work](../../sources/182-damian-galarza-agent-memory.md) | Damian Galarza | Three memory types (episodic/semantic/procedural), pre-compaction flush, markdown-based memory, write-ahead log pattern |
+| [183: Claude Cowork Scheduled Tasks and Video Editing](../../sources/183-eliot-prince-cowork-scheduled-tasks.md) | Eliot Prince | Scheduled tasks as lightweight automation, plugins as role bundles, Customize tab consolidation |
+| [189: Building Effective Claude Code Skills](../../sources/189-nate-herk-claude-code-skills-guide.md) | Nate Herk | Six-step skill building framework, progressive context loading, token optimization through observation, feedback cycle |
+| [190: 27 Claude Code Concepts Explained](../../sources/190-simon-scrapes-claude-code-concepts-explained.md) | Simon Scrapes | Agent taxonomy, single-to-teams graduation model, headless mode + Ralph loop, hooks as zero-cost guardrails |
+| [192: Applying Software Engineering Rigor to Context Engineering](../../sources/192-ai-native-dev-context-engineering-rigor.md) | AI Native Dev | Context as code, eval-driven context lifecycle, dumb zone detection, CI/CD for context freshness |
+| [193: Single, Sequential, and Parallel Agent Design Patterns](../../sources/193-google-cloud-tech-agent-design-patterns.md) | Google Cloud Tech | Three foundational patterns (single/sequential/parallel), shared session state, pattern selection heuristics |
+| [195: Claude Co-work Features for Beginners](../../sources/195-marty-vaughn-claude-cowork-beginners.md) | Marty Vaughn | Co-work as middleware, connectors with configurable permissions, scheduled tasks, plugin bundles by department |
+| [196: Agent Teams Setup, Demo, and Cost Analysis](../../sources/196-turing-college-agent-teams-walkthrough.md) | Turing College | Emergent agent spawning, built-in quality control loop, cost reality ($7-8/task), reviewer-driven iteration |
+| [198: Frontier Operations](../../sources/198-nate-b-jones-frontier-operations.md) | Nate B Jones | Five frontier operations skills, expanding bubble metaphor, boundary sensing, seam design, leverage calibration |
+| [200: Why Narrow Specialized Agents Outperform General-Purpose AI](../../sources/200-riley-brown-narrow-agents-team.md) | Riley Brown | 7-10 skill ceiling, journal agent for shared memory, intent over prompts, KPI-based agent evaluation |
+| [204: Building a Reinforcement Learning AI That Beat a Human World Record](../../sources/204-daves-garage-ai-tempest-reinforcement-learning.md) | Dave's Garage | Representation over scale, expert bootstrapping with decay, vibe coding boundaries |
+| [208: Open Brain: Agent-Readable Memory Architecture](../../sources/208-nate-b-jones-open-brain-agent-readable-memory.md) | Nate B Jones | Cross-platform memory via Postgres/pgvector/MCP, human web vs agent web fork, memory as compounding advantage |
+| [209: Stripe's Agentic Engineering Layer](../../sources/209-indydevdan-stripe-agentic-engineering-layer.md) | IndyDevDan | Blueprint engine, in-loop vs out-of-loop agents, tool shed meta-MCP, conditional rule files, agent sandboxes |
+| [213: Super Nested Claude Code](../../sources/213-all-about-ai-nested-claude-code.md) | All About AI | Nested controller-worker via tmux, quality cascade from Opus to Sonnet, screenshot-based verification |
+| [220: How Top Engineers Stop AI Agents From Writing Slop](../../sources/220-jaymin-west-anti-slop-engineering.md) | Jaymin West | Anti-slop engineering, layered quality defense, one-agent-one-task principle, recursive quality loop |
+| [221: The 7 Phases of AI-Driven Development](../../sources/221-matt-pocock-seven-phases-ai-development.md) | Matt Pocock | Seven-phase execution framework, prototype-before-PRD, research as ephemeral cache, kanban parallelization |
+| [228: Pi Coding Agent Review](../../sources/228-aicodeking-pi-coding-agent.md) | AICodeKing | Pi multi-model support, tree-based sessions, 25+ hook points, package ecosystem |
+| [233: Building the Future of Coding — OpenCode](../../sources/233-neetcode-opencode-future-coding.md) | NeetCode / Dax Raad | OpenCode architecture, codebase cleanliness in AI era, model-agnostic positioning, trade-off excuse critique |
+| [234: Everyone Wants an Enterprise OpenClaw](../../sources/234-venturebeat-enterprise-openclaw.md) | VentureBeat / Harrison Chase | Agent harness as product, context engineering defined, enterprise OpenClaw paradox, three memory types |
 
 ## Further Reading
 

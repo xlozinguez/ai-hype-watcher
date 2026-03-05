@@ -1,5 +1,5 @@
 ---
-source_id: "158"
+source_id: "234"
 title: "Everyone Wants an Enterprise OpenClaw"
 creator: "VentureBeat"
 platform: "YouTube"
@@ -11,7 +11,7 @@ tags: ["enterprise-ai", "ai-landscape", "context-engineering", "multi-agent", "a
 curriculum_modules: ["01-foundations", "04-agentic-patterns", "06-strategy-and-economics"]
 ---
 
-# 158: Everyone Wants an Enterprise OpenClaw
+# 234: Everyone Wants an Enterprise OpenClaw
 
 > **Creator**: VentureBeat | **Platform**: YouTube | **Date**: 2026-03-04 | **Duration**: 56:22
 
