@@ -144,6 +144,34 @@ Each source is synthesized (not transcribed) into a structured note with frontma
 | [134](134-prolific-deepmind-agent-platform.md) | Google DeepMind's Experimental Platform for Humans and LLM Agents | Prolific | video | multi-agent, ai-landscape, enterprise-ai, ai-safety |
 | [135](135-john-kim-claude-code-workflow.md) | His Claude Code Workflow Is Insane | John Kim | video | claude-code, agentic-coding, context-engineering, skills-ecosystem, multi-agent |
 | [136](136-lennys-podcast-boris-cherny-after-coding.md) | Head of Claude Code: What happens after coding is solved | Lenny's Podcast (Boris Cherny) | video | claude-code, anthropic, agentic-coding, ai-landscape, context-engineering, ai-sdlc, capability-overhang, specification, multi-agent |
+| [137](137-all-about-ai-nested-claude-code.md) | Super Nested Claude Code Is Vibecoding On STEROIDS | All About AI | video | multi-agent, agentic-coding, claude-code, agent-teams, vibe-coding |
+| [138](138-ibm-technology-spec-driven-development.md) | Spec-Driven Development: AI Assisted Coding Explained | IBM Technology | video | specification, vibe-coding, ai-sdlc, prompt-engineering |
+| [139](139-harvard-ai-learning-education.md) | Harvard Thinking: Preserving learning in the age of AI shortcuts | Harvard University | video | ai-hype, ai-landscape, ai-safety |
+| [140](140-therapy-nutshell-internal-locus-control.md) | How to Build an Internal Locus of Control | Therapy in a Nutshell | video | ai-landscape, capability-overhang |
+| [141](141-primetime-bullshit-benchmark.md) | The Bullsh** Benchmark | The PrimeTime | video | ai-hype, ai-landscape, ai-safety |
+| [142](142-nate-b-jones-openai-anthropic-power-shift.md) | Dario Amodei Made One Mistake. Sam Altman Got $110 Billion. Here's the Full Story. | Nate B Jones | video | ai-economics, ai-landscape, enterprise-ai, infrastructure, ai-hype |
+| [143](143-zen-van-riel-local-ai-coding-workflow.md) | The Unbeatable Local AI Coding Workflow (Full 2026 Setup) | Zen van Riel | video | claude-code, agentic-coding, context-engineering |
+| [144](144-jaymin-west-anti-slop-engineering.md) | How Top Engineers Stop AI Agents From Writing Slop | Jaymin West | video | agentic-coding, validation, builder-validator, multi-agent, specification |
+| [145](145-matt-pocock-seven-phases-ai-development.md) | The 7 phases of AI-driven development | Matt Pocock | video | agentic-coding, specification, ai-sdlc, vibe-coding |
+| [146](146-ray-amjad-skills-creator-evals.md) | Anthropic Just Dropped Claude Code Skills 2.0 | Ray Amjad | video | skills, claude-code, validation |
+| [147](147-nate-b-jones-claude-vs-chatgpt.md) | Everyone You Know Is About to Try Claude | Nate B Jones | video | ai-landscape, prompt-engineering, context-engineering, ai-hype |
+| [148](148-noah-vincent-obsidian-second-brain.md) | Build Your AI Second Brain with Obsidian + Claude Code | Noah Vincent | video | claude-code, context-engineering, agentic-coding |
+| [149](149-simon-scrapes-skills-mastery.md) | How to Use Claude Code Skills Like the 1% | Simon Scrapes | video | skills, claude-code, skills-ecosystem, context-engineering |
+| [150](150-mlst-ai-coding-illusion.md) | The Dangerous Illusion of AI Coding? - Jeremy Howard | Machine Learning Street Talk (Jeremy Howard) | video | ai-hype, vibe-coding, ai-sdlc, capability-overhang, ai-landscape, context-engineering |
+| [151](151-chase-ai-skill-creator.md) | Claude Code Skills Just Got a MASSIVE Upgrade | Chase AI | video | claude-code, skills, validation, agentic-coding |
+| [152](152-aicodeking-pi-coding-agent.md) | Pi Coding Agent: RIP Claude Code & OpenCode! | AICodeKing | video | agentic-coding, multi-agent, context-engineering, skills |
+| [153](153-fireship-cloudflare-vnext.md) | Cloudflare just slop forked Next.js | Fireship | video | ai-sdlc, ai-landscape, vibe-coding |
+| [154](154-tech-with-tim-claude-code-tutorial.md) | Claude Code - Full Tutorial for Beginners | Tech With Tim | video | claude-code, vibe-coding |
+| [155](155-eo-mihail-eric-ai-native-engineer.md) | From Writing Code to Managing Agents — Most Engineers Aren't Ready | EO (Mihail Eric) | video | ai-sdlc, agentic-coding, multi-agent, ai-landscape, capability-overhang |
+| [156](156-cole-medin-excalidraw-diagrams.md) | Build BEAUTIFUL Diagrams with Claude Code | Cole Medin | video | claude-code, skills, validation |
+| [157](157-neetcode-opencode-future-coding.md) | Building the Future of coding, OpenCode with Dax Raad | NeetCode (Dax Raad) | video | agentic-coding, ai-landscape, ai-hype, vibe-coding, context-engineering |
+| [158](158-venturebeat-enterprise-openclaw.md) | Everyone Wants an Enterprise OpenClaw | VentureBeat | video | enterprise-ai, ai-landscape, context-engineering, multi-agent, agentic-coding |
+| [159](159-grace-leung-ai-marketing-skills.md) | Claude Skills: Build Your First AI Marketing Team | Grace Leung | video | skills, claude-code, multi-agent, agent-teams |
+| [160](160-nate-herk-nano-banana-websites.md) | The NEW Nano Banana 2 + Claude Code = $10k Websites | Nate Herk | video | claude-code, skills, vibe-coding |
+| [161](161-warp-design-engineering.md) | The Rise of Design Engineering | Warp (Raphael Salaja) | video | ai-sdlc, vibe-coding, ai-hype |
+| [162](162-artem-zhutov-claude-memory.md) | Making Claude Code Actually Remember Things | Artem Zhutov | video | claude-code, context-engineering, mcp, skills |
+| [163](163-j-gravelle-jcodemunch-tokens.md) | Claude MCP Tool That Cuts Token Costs by 99% | J. Gravelle | video | mcp, claude-code, ai-economics, context-engineering |
+| [164](164-bart-slodyczka-openclaw-token-reduction.md) | OpenClaw Too Expensive? Try This Instead (97% Reduction) | Bart Slodyczka | video | ai-economics, enterprise-ai, context-engineering |
 
 ## Adding Sources
 

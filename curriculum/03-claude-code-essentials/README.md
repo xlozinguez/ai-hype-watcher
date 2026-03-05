@@ -199,13 +199,63 @@ Bart Slodyczka ([#067](../../sources/067-bart-slodyczka-agent-teams-course.md)) 
 
 This creates a positive feedback loop: each team session improves the skill definition for future teams. The key principle: **do not write skills from scratch** -- run the process first, then have Claude generate the skill from the actual workflow. This ensures the skill captures the real process rather than an idealized version of it.
 
+### Concept 8d2: Eval-Driven Skill Development and the Skill Creator
+
+Anthropic's Skill Creator plugin ([#146](../../sources/146-ray-amjad-skills-creator-evals.md), [#151](../../sources/151-chase-ai-skill-creator.md)) introduces a systematic alternative to vibes-based skill development. The previous workflow -- do it once, turn it into a skill, ship it -- is replaced by a cycle: create the skill, generate test cases, run parallel agents with and without the skill, blind-grade the results, and iterate until the skill measurably improves output.
+
+The plugin reveals an important taxonomy: **capability uplift** skills fill gaps where the base model underperforms (handling PDFs, generating polished front-end output), while **workflow/preference** skills encode specific processes (release workflows, code review checklists, report generation from MCP servers). This distinction matters because capability uplift skills have a natural retirement date: when the base model improves enough to match the skill's performance, the skill becomes unnecessary or even counterproductive. Anthropic's testing showed their PDF skill achieving a 13.5% higher success rate with 22% faster task completion -- but that differential will likely shrink with each model upgrade.
+
+The trigger optimization loop is equally valuable. The Skill Creator generates realistic prompts (both should-trigger and should-not-trigger), splits them into training and testing sets (60/40), and iteratively refines the skill description to maximize reliable triggering. Testing showed activation rates as low as 20% with poor descriptions, even with optimized ones reaching only 84% -- underscoring why description quality is make-or-break.
+
+> "Most people are developing Claude skills based exclusively on vibes." -- Ray Amjad
+
+### Concept 8d3: The Fewer-but-Better Skills Principle
+
+Simon Scrapes ([#149](../../sources/149-simon-scrapes-skills-mastery.md)) argues that the emerging trend of installing hundreds of marketplace skills is counterproductive. Anthropic's documentation specifies a 15,000 character limit for the available skills list loaded into context. With hundreds of overlapping skills, Claude cannot reliably pick the right one. A curated set of 20-30 well-described, properly structured skills with specific trigger descriptions massively outperforms a library of thousands.
+
+> "The 1% don't use more skills, they use fewer, and they build them properly." -- Simon Scrapes
+
+The recommended architecture separates process instructions (skill.md) from domain knowledge (reference files). When a skill produces poor output, this separation enables diagnosing whether the issue is in the process (wrong steps, missing logic) or the knowledge (outdated reference data, missing context). Monolithic skills that pack everything into one file make this diagnosis impossible. This principle connects directly to the three-level loading model (Concept 4a): each level exists to prevent unnecessary context consumption, and well-structured skills exploit this architecture while poorly structured ones defeat it.
+
+Simon also positions skills as a new layer of software that threatens traditional SaaS, citing the $285 billion sell-off in software stocks when Anthropic launched Co-work and plugins. For agencies, skills become productizable: build once, customize per client. Marketplaces like Skills.mpp (280,000+ indexed from GitHub) and SkillHub (7,000+ AI-evaluated) are emerging alongside official platform skills from companies like Stripe and Cloudflare.
+
+### Concept 8d4: Skills for Creative and Visual Workflows
+
+Two sources demonstrate skills extending Claude Code's capabilities into creative domains. Cole Medin ([#156](../../sources/156-cole-medin-excalidraw-diagrams.md)) built a skill for generating Excalidraw diagrams that teaches Claude Code to "argue visually" -- creating diagrams that convey concepts through structure and layout, not just boxes and text. The skill includes a self-validation loop: the agent renders the diagram as a PNG, examines the screenshot, identifies imperfections, and iterates on the JSON. This compensates for the LLM's lack of visual reasoning by giving it explicit feedback on its own output. Expect 2-3 iterations -- too many micro-decisions (color, layout, positioning) for first-pass perfection.
+
+Nate Herk ([#160](../../sources/160-nate-herk-nano-banana-websites.md)) demonstrates a more complex creative pipeline: Nano Banana 2 generates start and end frame images, Cling 3.0 interpolates video, and a custom Claude Code skill converts the video into a scroll-driven animated website via frame extraction (ffmpeg). Each website built improves the skill itself -- a flywheel where accumulated best practices compound through iterative refinement.
+
+Both demonstrate a common pattern: skills compensate for LLM weaknesses in visual/creative domains by encoding design patterns, validation criteria, and self-review loops that the model would not discover on its own.
+
+### Concept 8d5: Beginner On-Ramp -- Plan-First Workflow and Git Safety
+
+Tech With Tim ([#154](../../sources/154-tech-with-tim-claude-code-tutorial.md)) provides the most comprehensive beginner-oriented walkthrough of Claude Code, emphasizing a plan-first workflow: stream thoughts into Claude (optionally via voice dictation), have Claude create a structured plan before executing, and use Git checkpoints as a safety net. The tutorial covers three modes (plan, ask, code), model selection (Opus for complex work, Sonnet for moderate tasks, Haiku for quick answers), and the `/init` command for auto-generating CLAUDE.md.
+
+Tim's core insight echoes the specification-first theme from Module 02: "The most important part about AI coding is actually knowing what you want. If you don't know what you want and you let the agent steer you, you're going to get horrible crazy results." Setting up Git and GitHub before serious work provides reversibility -- essential for beginners who may not catch errors immediately. This beginner perspective complements Boris Cherny's creator perspective (Concept 8a) by showing what the entry point looks like rather than the advanced ceiling.
+
+### Concept 8d6: Local Model Integration with Claude Code
+
+Zen van Riel ([#143](../../sources/143-zen-van-riel-local-ai-coding-workflow.md)) demonstrates connecting local models to Claude Code via LM Studio's Anthropic-compatible API endpoint. The honest assessment: large system prompts from Claude Code dramatically slow inference, context window misconfiguration causes silent failures, and local models produce more bugs than frontier cloud models. Claude Code injects thousands of tokens of system prompt directives, and with the default 4,000-token context window, the model hangs indefinitely with no error message -- the practical minimum is around 80,000 tokens.
+
+The key insight is that subagent decomposition benefits even more with local models: each subagent gets a fresh context window, effectively multiplying the usable context across a limited model. Local AI coding is viable for privacy-focused developers willing to accept slower iteration, but the tradeoff is significant. As van Riel notes: "Unless you have a very powerful machine, this is going to be extremely slow as your repository grows in size."
+
 ### Concept 8e: Context Rot Awareness and the 60% Rule
 
 Dylan Davis ([#084](../../sources/084-dylan-davis-context-rot-60-rule.md)) provides practical context rot countermeasures specifically relevant to Claude Code users. Context window performance follows a degradation curve: up to ~60% capacity, Claude maintains effective instruction-following; between 60-95%, performance degrades progressively; past 95%, Claude triggers automatic compaction that loses nuance. The practical rule: treat 60% of the context window as the effective working limit.
 
 For Claude Code specifically, this means monitoring session length and proactively using `/compact` (see Concept 8, Level 1) before degradation begins. Davis's handoff strategy -- creating a structured summary covering what has been covered, key decisions, current status, and next steps -- translates directly to starting fresh Claude Code sessions with a well-crafted initial prompt that carries forward context from the previous session. This connects to the GSD framework (Concept 8, Level 5) and Simon Scrapes' context rot mitigation patterns.
 
-### Concept 8e2: Agent Memory Architecture -- Hybrid Search and the Search-Then-Get Pattern
+### Concept 8e2: Claude Code as Personal Knowledge Agent
+
+Noah Vincent ([#148](../../sources/148-noah-vincent-obsidian-second-brain.md)) demonstrates connecting Obsidian with Claude Code to build a personal knowledge management system. The core argument: traditional second brain methodologies (PARA, Zettelkasten) require months of learning before they pay off, but pairing them with Claude Code eliminates the maintenance burden while preserving the organizational benefits. Obsidian's plain-text markdown files serve as a native interface for Claude Code -- no API overhead, no proprietary lock-in.
+
+The key configuration insight: the vault includes a pre-configured CLAUDE.md that encodes the vault structure, routing rules, note format, and tag taxonomy. The recommended setup process has Claude Code interview you to fill in personal context, creating a seed that compounds over time. Vincent draws a critical distinction: Claude should surface connections, suggest structures, and help process information -- but the user should be the one who synthesizes, decides, and creates. "If Claude creates all of your permanent notes, then your galaxy is Claude's thinking, not yours."
+
+Artem Zhutov ([#162](../../sources/162-artem-zhutov-claude-memory.md)) takes this further with a comprehensive memory system built on QMD (a semantic search engine) and Obsidian. His system addresses the "cold start problem" -- every new Claude Code session starts from zero, losing decisions and context from previous sessions. The solution combines three retrieval paths: temporal (reconstruct what you were doing at a specific time), topic-based (BM25/semantic search across all sessions and files), and graph visualization (visual knowledge graph of session history).
+
+The benchmark comparison is instructive: native grep is slow and noisy (200+ irrelevant files), BM25 keyword search via QMD is fast and relevant, and semantic vector search finds meaning beyond keywords. An automatic session indexing pipeline uses hooks that trigger on terminal close, exporting conversation history as clean markdown into Obsidian and embedding into QMD. This connects directly to the search-then-get pattern (below) and the context engineering principles from Module 02: the cold start problem is fundamentally a context engineering problem solved by persistent external memory.
+
+### Concept 8e3: Agent Memory Architecture -- Hybrid Search and the Search-Then-Get Pattern
 
 Damian Galarza ([#099](../../sources/099-damian-galarza-agent-memory-search.md)) provides a detailed technical breakdown of how AI agents search their memory, using OpenClaw's default memory system as a concrete implementation. The core architectural insight is that no single search approach is sufficient. Keyword search (grep, BM25) excels at exact matches -- error codes, function names, specific identifiers -- but misses semantic relationships. Semantic search (embeddings, vector databases) finds conceptually related content but fails on literal string matching. A counter-intuitive finding drives the analysis: the Claude Code team started with a vector database but found that grep-based agentic search actually performed better and was easier to maintain.
 
@@ -227,6 +277,12 @@ Dan explicitly recommends CLIs (like the Playwright CLI) over MCP servers for br
 ### Concept 8g: Claude Code vs. No-Code Platforms
 
 Simon Scrapes ([#078](../../sources/078-simon-scrapes-n8n-failing.md)) provides an honest comparison of n8n and Claude Code, arguing they are complementary rather than competitive. Claude Code with MCP connections now matches or exceeds n8n's drag-and-drop speed for building workflows. But n8n's execution history log provides visual debugging that Claude Code cannot match -- non-technical team members can click through workflow runs and inspect data at each node. The optimal architecture: Claude Code for infrastructure (backends, front-ends, databases, authentication) and n8n for core business automations that need visual transparency. The n8n MCP server and n8n skills let Claude Code build and edit n8n workflows, bridging both tools.
+
+### Concept 8f2: Token Cost Optimization via Symbol Indexing
+
+J. Gravelle ([#163](../../sources/163-j-gravelle-jcodemunch-tokens.md)) introduces jCodeMunch, an MCP server that reduces token consumption by indexing code by symbols (functions, classes, variables) and serving only relevant portions when Claude needs information. Instead of reading entire files (the "read every volume of the encyclopedia" approach), jCodeMunch goes directly to the indexed symbol. A benchmark showed 700 tokens consumed with jCodeMunch versus 3,850 without -- a 5.5x reduction on a single lookup. A larger project showed 141,000 tokens reduced to 480 -- a 99.7% reduction. Gravelle estimates annual savings of ~$15,000 for sustained development work on a single project.
+
+The tool automatically reindexes as code changes, requiring no manual maintenance. This addresses a concrete cost problem: a single Opus query can cost $6 without optimization. Combined with the context budget discipline principles (Concept 6), symbol-based indexing represents a practical engineering approach to making frontier model usage economically sustainable for extended development sessions.
 
 ### Concept 9: Advanced Claude Code Configuration -- Hooks, MCP CLI, and Insights
 
@@ -347,6 +403,16 @@ Beyond skills and CLAUDE.md, Claude Code supports several advanced configuration
 | [130: What is Prompt Caching? Optimize LLM Latency](../../sources/130-ibm-technology-prompt-caching.md) | IBM Technology | Prompt caching for context optimization, latency reduction, cost management for repeated context |
 | [135: His Claude Code Workflow Is Insane](../../sources/135-john-kim-claude-code-workflow.md) | John Kim | Claude Code workflow patterns, skills ecosystem usage, context management techniques |
 | [136: Head of Claude Code: What happens after coding is solved](../../sources/136-lennys-podcast-boris-cherny-after-coding.md) | Lenny's Podcast / Boris Cherny | Post-coding vision, Claude Code roadmap, context engineering philosophy, specification as bottleneck |
+| [143: The Unbeatable Local AI Coding Workflow](../../sources/143-zen-van-riel-local-ai-coding-workflow.md) | Zen van Riel | Local model integration via LM Studio, system prompt overhead, 80K minimum context, subagent strategy for limited context |
+| [146: Anthropic Just Dropped Claude Code Skills 2.0](../../sources/146-ray-amjad-skills-creator-evals.md) | Ray Amjad | Skill Creator plugin, eval-driven skill development, capability uplift vs workflow skills, trigger optimization |
+| [148: Build Your AI Second Brain with Obsidian + Claude Code](../../sources/148-noah-vincent-obsidian-second-brain.md) | Noah Vincent | Obsidian integration, CLAUDE.md as personal context, AI-augmented vs AI-generated knowledge, vault routing |
+| [149: How to Use Claude Code Skills Like the 1%](../../sources/149-simon-scrapes-skills-mastery.md) | Simon Scrapes | Fewer-but-better principle, 15K character limit, process/knowledge separation, skills as SaaS replacement |
+| [151: Claude Code Skills Just Got a MASSIVE Upgrade](../../sources/151-chase-ai-skill-creator.md) | Chase AI | Skill Creator walkthrough, capability uplift vs encoded preference, A/B testing, trigger description optimization |
+| [154: Claude Code — Full Tutorial for Beginners](../../sources/154-tech-with-tim-claude-code-tutorial.md) | Tech With Tim | Beginner tutorial, plan-first workflow, Git safety net, CLAUDE.md via /init, mode selection |
+| [156: Build BEAUTIFUL Diagrams with Claude Code](../../sources/156-cole-medin-excalidraw-diagrams.md) | Cole Medin | Excalidraw diagram skill, self-validation loop, visual argument design, creative workflow packaging |
+| [160: Nano Banana 2 + Claude Code = $10k Websites](../../sources/160-nate-herk-nano-banana-websites.md) | Nate Herk | Multi-tool creative pipeline, scroll-driven animation skill, plan mode for creative projects, iterative skill refinement |
+| [162: Making Claude Code Actually Remember Things](../../sources/162-artem-zhutov-claude-memory.md) | Artem Zhutov | Cold start problem, QMD semantic search, three recall paths, automatic session indexing via hooks |
+| [163: Claude MCP Tool That Cuts Token Costs by 99%](../../sources/163-j-gravelle-jcodemunch-tokens.md) | J. Gravelle | jCodeMunch symbol indexing, 99.7% token reduction, automatic reindexing, token economics at scale |
 
 ## Further Reading
 

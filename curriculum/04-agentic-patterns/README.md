@@ -316,6 +316,61 @@ The practical workflow: walk through a task manually with Claude once, refine th
 
 The key differentiator from the four-layer stack (Concept 12): Concept 12 targets developers building reusable agentic infrastructure. The human-in-the-loop skill pattern targets anyone who does repeatable knowledge work and can describe their process in plain language.
 
+### Concept 23: The Seven Phases of AI-Driven Development
+
+Matt Pocock ([#145](../../sources/145-matt-pocock-seven-phases-ai-development.md)) distills AI-driven development into seven distinct phases that apply regardless of specific tooling (RALPH loops, GSD, SpecKit):
+
+1. **Idea** -- The starting point: a feature, bug fix, refactor, or entire application
+2. **Research** -- Cache external API docs, unfamiliar libraries, or difficult-to-explore areas into a `research.md` asset. Research assets are ephemeral -- they expire with the sprint to avoid stale context causing wrong turns
+3. **Prototype** -- Iterate with human-in-the-loop to impose taste on the outcome. Generate multiple approaches on throwaway routes, pick the best, commit as reference
+4. **PRD** -- Describe the end state with no ambiguity. Have the agent "grill" you through your decision tree. The prototype provides concrete grounding
+5. **Kanban Board** -- Decompose the PRD into tickets with blocking relationships. This enables parallelization -- spin up agents for all non-blocking tickets simultaneously
+6. **Execution** -- Run agents through tickets in a loop (RALPH loop or sequential). With proper research, prototype, and PRD, this can run unattended
+7. **QA** -- Agent produces a QA plan, then a human walks through and QAs the completed work. Produces more tickets, returning to the kanban board. Loop phases 5-7 until complete
+
+The critical insight is that **prototyping should happen before the PRD, not after**. Most spec-driven workflows jump from idea to specification, but the PRD becomes too abstract without concrete feedback. By seeing working code and making taste decisions during prototyping, the subsequent PRD is grounded in reality rather than imagination. This prevents the common failure mode where a well-written spec produces technically correct but wrong-feeling output.
+
+> "This is not for vibe coders. We are people that are serious about AI engineering and serious about building applications that are built to last." -- Matt Pocock ([#145])
+
+### Concept 24: The Anti-Slop Framework -- Quality as Engineering Problem
+
+Jaymin West ([#144](../../sources/144-jaymin-west-anti-slop-engineering.md)) presents a systematic framework for preventing AI agents from producing low-quality code ("slop"), building on his experience and Stripe's production agent usage. The core mindset shift: **if an LLM writes slop, that is an engineering problem, not an LLM problem.**
+
+The anti-slop toolkit forms concentric layers of defense:
+
+- **Hooks** as the first layer -- pre-commit hooks run tests and linting before any agent commit
+- **Quality gates** -- enforce the strictest possible linting and type-checking rules. LLMs comply with strict rules more easily than humans
+- **Anti-mocking testing** -- never mock what you can use for real. LLMs default to heavy mocking which produces tests that do not test real code
+- **One agent, one task, one prompt** -- extreme task decomposition. A focused agent is a correct agent. Success rates climb dramatically with this constraint
+
+The "never fix bad output" philosophy is particularly important: if an agent produces poor results, diagnose the root cause, reset the run, fix the configuration issue, and rerun from scratch rather than patching bad code. Patching slop introduces technical debt that compounds.
+
+West also identifies a **recursive quality feedback loop**: input tokens effectively fine-tune the LLM for the current task. If the codebase contains garbage, agents will produce garbage -- a recursive degradation loop. Conversely, as agents write higher-quality code, new agents working on that code produce even higher quality. This creates a "pit of success" where the path of least resistance leads to good output.
+
+> "If LLMs are writing slop in your codebase, that is an engineering problem and not an LLM problem." -- Jaymin West ([#144])
+
+### Concept 25: Controller-Worker Nested Agent Architecture
+
+All About AI ([#137](../../sources/137-all-about-ai-nested-claude-code.md)) demonstrates a nested Claude Code system where a controller instance (running Opus) orchestrates multiple child Claude Code instances via tmux terminals. The user provides only a high-level goal, and the controller plans the architecture, decides how many terminals to spawn (up to six), distributes detailed prompts to each child, monitors their output, and integrates results -- creating a fully autonomous multi-agent coding pipeline.
+
+A key insight is the **quality cascade from controller to workers**: Opus as the controller generates highly detailed, precise prompts for child instances, which can run on less capable models (like Sonnet). The detailed instructions compensate for the worker model's lower capability, effectively cascading quality from the planning tier down to the execution tier. This pattern connects to the tiered model selection concept from Module 05 but adds a mechanism -- detailed prompt generation -- that makes tiered routing effective rather than merely cheaper.
+
+### Concept 26: The Agent Harness as Product -- Context Engineering Defined
+
+Harrison Chase of LangChain ([#158](../../sources/158-venturebeat-enterprise-openclaw.md)) argues that the harness -- the infrastructure wrapping the LLM -- is the actual product differentiator, not the model itself. By analyzing what Claude Code, OpenClaw, and Manus had in common, he identifies four harness primitives: planning (to-do list tools), sub-agents, file system access, and prompting. The concept of "harness engineering" -- incrementally improving how the environment is structured around the model -- is what separates working agents from failed predecessors like AutoGPT.
+
+Chase defines context engineering precisely: "bringing the right information in the right format to the LLM at the right time." When agents fail, it is because they lack the right context; when they succeed, it is because they have it. Modern harnesses give agents more control over their own context -- dumping large tool responses to files, letting agents decide what to read, and potentially letting agents decide when to compact their own context windows.
+
+He also maps three types of agent memory from human psychology: **procedural** (system prompts, skills -- how to do things), **semantic** (vector/graph retrieval -- facts and knowledge), and **episodic** (previous conversations and traces). For enterprises, procedural memory offers the biggest return -- agents improving their own instructions based on feedback is more valuable than remembering user preferences.
+
+> "When agents mess up, they mess up because they don't have the right context. And when they succeed, they succeed because they have the right context." -- Harrison Chase ([#158])
+
+### Concept 27: Code Quality as Agent Multiplier
+
+Dax Raad (OpenCode) ([#157](../../sources/157-neetcode-opencode-future-coding.md)) provides a counterintuitive insight: codebases maintained by teams using AI agents are now cleaner than ever. The reason: LLMs cannot differentiate between "old way" and "new way" patterns in a codebase. If legacy code exists alongside current conventions, the LLM will reproduce outdated patterns. This creates stronger incentives for consistent, well-established patterns and domain-driven design -- the cost of messy code is amplified when AI agents are generating from it.
+
+This connects directly to West's recursive quality feedback loop (Concept 24): clean code produces clean agent output, which produces cleaner code. Raad also challenges the common refrain that poor quality is an intentional trade-off for speed: "Someone better than you didn't have to make those trade-offs and they ship just as fast." This applies equally to AI-generated code -- accepting low quality as a speed trade-off is often rationalization, not engineering.
+
 ## Patterns & Practices
 
 ### Pattern 1: Builder/Validator Task Execution
@@ -477,6 +532,12 @@ The key differentiator from the four-layer stack (Concept 12): Concept 12 target
 | [134: Google DeepMind's Experimental Platform for Humans and LLM Agents](../../sources/134-prolific-deepmind-agent-platform.md) | Prolific / Google DeepMind | Deliberate Lab for human-AI group research, mirror vs mask duality, LLM agent negotiation strategies |
 | [135: His Claude Code Workflow Is Insane](../../sources/135-john-kim-claude-code-workflow.md) | John Kim | Boris Cherny's 13-tip workflow, parallel instance management, shared CLAUDE.md, custom sub-agents for post-processing |
 | [136: Head of Claude Code: What happens after coding is solved](../../sources/136-lennys-podcast-boris-cherny-after-coding.md) | Lenny's Podcast / Boris Cherny | Coding as solved problem, printing-press analogy, latent demand, bitter lesson applied to AI products |
+| [137: Super Nested Claude Code Is Vibecoding On STEROIDS](../../sources/137-all-about-ai-nested-claude-code.md) | All About AI | Controller-worker nested architecture, quality cascade from Opus to Sonnet, tmux-based orchestration |
+| [144: How Top Engineers Stop AI Agents From Writing Slop](../../sources/144-jaymin-west-anti-slop-engineering.md) | Jaymin West | Anti-slop framework, layered quality defense, one-agent-one-task, pit of success, recursive quality loop |
+| [145: The 7 phases of AI-driven development](../../sources/145-matt-pocock-seven-phases-ai-development.md) | Matt Pocock | Seven-phase development framework, prototype-before-PRD, ephemeral research, kanban-driven parallelization |
+| [152: Pi Coding Agent: RIP Claude Code & OpenCode!](../../sources/152-aicodeking-pi-coding-agent.md) | AICodeKing | Minimal-core agent architecture, 25+ lifecycle hooks, multi-model routing, extension-based customization |
+| [157: Building the Future of Coding — OpenCode with Dax Raad](../../sources/157-neetcode-opencode-future-coding.md) | NeetCode / Dax Raad | Code quality as agent multiplier, LLMs reproduce legacy patterns, positioning over product |
+| [158: Everyone Wants an Enterprise OpenClaw](../../sources/158-venturebeat-enterprise-openclaw.md) | VentureBeat / Harrison Chase | Agent harness as product, context engineering defined, three memory types, enterprise OpenClaw paradox |
 
 ## Further Reading
 

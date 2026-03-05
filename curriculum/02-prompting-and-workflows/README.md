@@ -175,7 +175,39 @@ Justin Sung ([#100](../../sources/100-justin-sung-top-1-percent-thinking.md)) pr
 
 These meta-cognitive principles apply at every level of AI interaction -- from crafting a single prompt to designing an entire agentic workflow. They explain why specification-first development works (it forces upfront cognitive investment) and why vibe coding often fails (it defers that investment to debugging time).
 
-### Concept 11: The AI Slop Problem and Feelings-First Design
+### Concept 11: Spec-Driven Development as a Formal Methodology
+
+IBM Technology ([#138](../../sources/138-ibm-technology-spec-driven-development.md)) formalizes the specification-first pattern into a named methodology: **spec-driven development**. While vibe coding starts with a prompt and iterates through edits until reaching the desired implementation, spec-driven development front-loads the planning phase by creating specifications, requirements, and design documents before any code is generated. The video traces a progression of paradigms: traditional development (code first, then documentation), test-driven development (tests first, then code), and now spec-driven development (specs first, then design, then code).
+
+The specification becomes the primary artifact that drives all downstream work -- implementation, testing, and documentation. The human reviews and approves at each gate (requirements, design, implementation) rather than iterating on generated code. This gate-review structure is particularly well-suited to AI agents because it minimizes the guesswork that leads to inconsistent outputs. As IBM puts it: "Having a spec like this is much better than having the LLM guess what solution is going to hopefully best fit the user's request."
+
+This connects directly to Jones's specification bottleneck thesis (Concept 1) and Fowler's spec-as-library experiment, but provides the enterprise-friendly vocabulary and process structure that organizations need to adopt spec-first workflows at scale. Spec-driven development is to vibe coding what test-driven development was to cowboy coding: not a replacement for all contexts, but a disciplined alternative for production-quality projects.
+
+### Concept 11a: The Seven Phases of AI-Driven Development
+
+Matt Pocock ([#145](../../sources/145-matt-pocock-seven-phases-ai-development.md)) distills AI-driven development into seven distinct phases that apply regardless of the specific tooling (RALPH loops, GSD, SpecKit):
+
+1. **Idea** -- The starting point: a feature, bug fix, refactor, or entire application.
+2. **Research** -- Cache external API documentation and unfamiliar libraries into a research.md asset accessible to agents. Research assets are ephemeral -- they expire with the sprint to avoid stale context causing wrong turns.
+3. **Prototype** -- Iterate with human-in-the-loop to impose taste on the outcome. Generate multiple approaches, pick the best, and commit it as a reference.
+4. **PRD** -- Describe the end state with no ambiguity. Have the agent "grill" you through your decision tree.
+5. **Kanban Board** -- Decompose the PRD into tickets with blocking relationships, enabling parallelization.
+6. **Execution** -- Run agents through tickets in a loop. With proper upfront work, this can run unattended.
+7. **QA** -- Agent produces a QA plan, human walks through and QAs, producing more tickets. Loop phases 5-7 until complete.
+
+The key insight that distinguishes this from standard spec-first workflows: **prototyping should happen before the PRD, not after**. A well-written spec produced without concrete feedback generates technically correct but wrong-feeling output. By seeing working code and making taste decisions during prototyping, the subsequent PRD is grounded in reality rather than imagination. This seven-phase framework operationalizes the specification-first philosophy into a repeatable process.
+
+> "This is not for vibe coders. We are people that are serious about AI engineering and serious about building applications that are built to last." -- Matt Pocock
+
+### Concept 11b: Constitutional AI vs. RLHF and Prompting Implications
+
+Nate B Jones ([#147](../../sources/147-nate-b-jones-claude-vs-chatgpt.md)) articulates how training methodology differences between Claude and ChatGPT create measurably different prompting requirements. Claude's constitutional AI training optimizes against explicit principles (honesty, helpfulness, harm avoidance), while ChatGPT's RLHF training optimizes for user satisfaction in the moment. This produces different postures: Claude is more likely to flag concerns and question framing, while ChatGPT tends toward agreement and expansiveness.
+
+The practical prompting implication: Claude responds better to rich situational context than bare commands. A model trained to evaluate framing does more with well-framed input. Jones frames it memorably: "Switching from ChatGPT to Claude with the exact same habits, it's like switching from Excel to Photoshop and wondering why the spreadsheet features are missing." Pixel Peak's 500-task comparison measured 94% exact instruction compliance for Claude versus 87% for ChatGPT, reinforcing that project-level instructions (specifying role, audience, constraints, and reference documents) are a particularly high-leverage prompting strategy for Claude.
+
+This connects to the context engineering principles (Concept 3): if your prompt consists of bare commands, you are not just missing context -- you are failing to leverage the constitutional AI architecture that makes Claude distinctive. The specification-first pattern is not just good practice; it is architecturally aligned with how Claude processes instructions.
+
+### Concept 11c: The AI Slop Problem and Feelings-First Design
 
 Greg Isenberg and designer Sariah ([#075](../../sources/075-greg-isenberg-ai-slop-design.md)) identify a new problem created by vibe coding's success: everything looks the same. Functional apps can now be scaffolded quickly, but the results are visually homogeneous -- the "what it does" is solved, but "how it makes you feel" is the differentiator. Nobody downloads yet another generic app.
 
@@ -277,6 +309,10 @@ Their solution is a design-first workflow that starts with emotional specificati
 | [109: 5 Hacks To Use ChatGPT So Well It's Almost Unfair](../../sources/109-themitmonk-chatgpt-hacks.md) | theMITmonk | ESP framework for persistent context, adversarial prompting, domain-separated projects, voice mode for unstructured thinking |
 | [113: I was an AI skeptic. Then I tried plan mode](../../sources/113-matt-pocock-plan-mode.md) | Matt Pocock | Plan mode as prompting discipline, think-before-act pattern, structured workflow for AI skeptics |
 | [130: What is Prompt Caching? Optimize LLM Latency](../../sources/130-ibm-technology-prompt-caching.md) | IBM Technology | Prompt caching mechanics, latency optimization, cost reduction for repeated context |
+| [138: Spec-Driven Development: AI Assisted Coding Explained](../../sources/138-ibm-technology-spec-driven-development.md) | IBM Technology | Spec-driven development methodology, gate reviews, specification as primary artifact |
+| [145: The 7 Phases of AI-Driven Development](../../sources/145-matt-pocock-seven-phases-ai-development.md) | Matt Pocock | Seven-phase framework, prototype before PRD, research as ephemeral cache, kanban-driven parallelization |
+| [147: Everyone You Know Is About to Try Claude](../../sources/147-nate-b-jones-claude-vs-chatgpt.md) | Nate B Jones | Constitutional AI vs RLHF prompting differences, context richness over commands, project instructions as operating rules |
+| [150: The Dangerous Illusion of AI Coding?](../../sources/150-mlst-ai-coding-illusion.md) | Machine Learning Street Talk / Jeremy Howard | Interactive exploratory programming, coding vs software engineering, REPL-driven development |
 
 ## Further Reading
 
