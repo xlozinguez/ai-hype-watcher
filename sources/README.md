@@ -220,6 +220,8 @@ Each source is synthesized (not transcribed) into a structured note with frontma
 | [210](210-matt-pocock-seven-phases-ai-development.md) | The 7 Phases of AI-Driven Development | Matt Pocock | video | agentic-coding, ai-sdlc, specification, context-engineering |
 | [211](211-stripe-minions-coding-agents.md) | Minions: Stripe's One-Shot, End-to-End Coding Agents | Stripe (Alistair Gray) | article | agentic-coding, enterprise-ai, multi-agent, agent-teams |
 | [212](212-stripe-minions-technical-deep-dive.md) | Minions Part 2 — Devboxes, Blueprints, and Context Management at Stripe | Stripe (Alistair Gray) | article | agentic-coding, enterprise-ai, context-engineering, infrastructure |
+| [213](213-nate-b-jones-openai-context-lock-in.md) | OpenAI Leaked GPT-5.4. It's a Distraction. (The AI Lock-In No One Is Talking About) | Nate B Jones | video | ai-economics, enterprise-ai, context-engineering, ai-landscape, openai, anthropic, infrastructure, ai-hype, capability-overhang |
+| [214](214-vasilije-markovic-cognee-agent-memory.md) | Why Your AI Agents Keep Forgetting (And How To Fix That) | Vasilije Markovic (Cognee) | video | context-engineering, agentic-coding, multi-agent, infrastructure, ai-landscape |
 
 ## Adding Sources
 
