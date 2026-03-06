@@ -248,6 +248,8 @@ Each source is synthesized (not transcribed) into a structured note with frontma
 | [238](238-artem-zhutov-claude-memory.md) | Making Claude Code Actually Remember Things | Artem Zhutov | video | claude-code, context-engineering, mcp, skills |
 | [239](239-j-gravelle-jcodemunch-tokens.md) | Claude MCP Tool That Cuts Token Costs by 99% | J. Gravelle | video | mcp, claude-code, ai-economics, context-engineering |
 | [240](240-bart-slodyczka-openclaw-token-reduction.md) | OpenClaw Too Expensive? Try This Instead (97% Reduction) | Bart Slodyczka | video | ai-economics, enterprise-ai, context-engineering |
+| [241](241-nate-b-jones-openai-context-lock-in.md) | OpenAI Leaked GPT-5.4. It's a Distraction. (The AI Lock-In No One Is Talking About) | Nate B Jones | video | ai-economics, enterprise-ai, context-engineering, ai-landscape, openai, anthropic, infrastructure |
+| [242](242-vasilije-markovic-cognee-agent-memory.md) | Why Your AI Agents Keep Forgetting (And How To Fix That) | Vasilije Markovic (Cognee) | video | context-engineering, agentic-coding, multi-agent, infrastructure, ai-landscape |
 
 ## Adding Sources
 
