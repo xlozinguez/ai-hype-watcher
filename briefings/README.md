@@ -20,6 +20,7 @@ Dated entries covering recent AI development findings, tool updates, and critica
 | [2026-02-27](2026-02-27.md) | 23-source batch — CLAUDE.md backlash, AI agents hit mainstream economics, builder-philosopher split, intent engineering named, security goes operational | patterns, economics, critical, security |
 | [2026-02-28](2026-02-28.md) | 15-source batch — OpenClaw cascading failures, Acemoglu productivity critique, Anthropic DoD ban, agent orchestration playbook, memory architecture | security, economics, critical, patterns, tools |
 | [2026-03-02](2026-03-02.md) | 23-source batch — Stripe's blueprint engine, LLM deanonymization kills obscurity, code generation not the bottleneck, frontier operations framework, SaaS defensibility collapses to data | patterns, security, critical, economics |
+| [2026-03-05](2026-03-05.md) | 28-video playlist batch — specification-first consensus, skills ecosystem matures, Jeremy Howard AI coding critique, agentic tool wars | patterns, tools, critical, economics |
 
 ## Adding Briefings
 

@@ -351,6 +351,42 @@ The progression from in-loop to out-of-loop is the natural evolution of team orc
 
 Stripe's **conditional rule files** (activated via glob patterns as agents traverse subdirectories) and **tool shed** (a meta-MCP that selects from 500 tools per task) solve the context and tool management problems that emerge when scaling from small teams (5 agents) to fleet-level orchestration (hundreds of concurrent agents). This extends the infrastructure discussion in Concept 6 beyond tmux and E2B into production-grade agent fleet management.
 
+### Concept 26: Nested Controller-Worker Teams via Tmux
+
+All About AI ([#213](../../sources/213-all-about-ai-nested-claude-code.md)) demonstrates a multi-agent orchestration approach that sits between sub-agents and full agent teams: a controller Claude Code instance (running Opus) spawns child Claude Code instances in tmux terminals. The controller reads outputs from all terminals, can stop/close them, and sends targeted prompts to each -- creating hierarchical orchestration with real-time visibility into all agents' work.
+
+The **quality cascade** is the key team orchestration insight: the Opus controller generates highly detailed, precise prompts that allow child instances to run on cheaper models (Sonnet or Haiku) while maintaining output quality. This extends Pattern 4 (Tiered Model Selection) with a concrete mechanism -- quality cascades downward through prompt precision, making intelligent planning at the controller level a force multiplier for the entire team.
+
+In practice, the controller decides independently how many terminals to spawn and what role each plays. In one demo, six parallel terminals handled galaxy, objects, renderer, spacecraft, UI, and index for a Three.js project. The controller also uses Playwright screenshots for visual verification of the running application. Unlike standard agent teams (Concept 1), children cannot communicate with each other -- all coordination flows through the controller. This makes the pattern best suited for projects that decompose into parallel, independent tracks with a single integration point.
+
+### Concept 27: Anti-Slop Multi-Agent Validation
+
+Jaymin West ([#220](../../sources/220-jaymin-west-anti-slop-engineering.md)) extends the builder/validator pattern into multi-agent contexts with a "never fix bad output" philosophy. When an agent produces poor results in a multi-agent chain, the engineering response is to diagnose the root cause, reset the run, fix the configuration, and rerun from scratch -- never patch bad code forward. This is critical for team workflows where quality compounds: higher-quality code from early agents leads later agents to produce even higher-quality output (the "pit of success"), while garbage from early agents cascades into worse garbage downstream.
+
+West's practical rules for multi-agent quality include: enforce 100% test pass rates before any agent can hand off work to the next stage, run agents in separate git worktrees for isolation, block git push for all agents (humans push only), and standardize the chain of command for when humans re-enter the loop. The "one agent, one task, one prompt" principle ensures extreme task decomposition -- a focused agent is a correct agent.
+
+> "If LLMs are writing slop in your codebase, that is an engineering problem and not an LLM problem." -- Jaymin West ([#220])
+
+### Concept 28: The AI-Native Engineer and Stanford's SDLC Course
+
+Mihail Eric ([#231](../../sources/231-eo-mihail-eric-ai-native-engineer.md)), who teaches Stanford's first AI-across-the-SDLC course, describes the emerging "AI-native engineer" -- a role that combines traditional CS fundamentals (system design, algorithmic thinking) with fluency in agentic workflows. The course filled instantly with over 100 students, reflecting intense demand. Eric identifies a counterintuitive advantage for junior developers: they are "sponges" without the ingrained habits that make senior developers resistant to AI tools, positioning them as potentially the most nimble AI-native engineers.
+
+Eric reinforces the incremental agent addition principle (Concept 18) with a key observation: the skill of managing multiple agents is fundamentally the same skill as being a good human engineering manager -- context switching, task isolation, knowing when to intervene. He notes that agents compound errors quickly ("one misunderstanding in step one doubles down in step two"), making agent-friendly codebases (comprehensive tests, consistent patterns, accurate documentation) a hard prerequisite for multi-agent work, not an optimization.
+
+### Concept 29: Enterprise Multi-Agent Governance and Harness Engineering
+
+Harrison Chase (LangChain CEO) ([#234](../../sources/234-venturebeat-enterprise-openclaw.md)) identifies the **enterprise OpenClaw paradox** that constrains multi-agent team design: consumer agents succeed partly by being "unhinged" (maximum autonomy, unrestricted connections), but enterprises need governance, audit trails, and permission boundaries. LangChain banned OpenClaw on company laptops due to security risks. The question for team orchestration becomes: how do you preserve the capability of multi-agent systems while adding the control that enterprises require?
+
+Chase's answer centers on observability -- agent traces are the foundation for debugging, evaluation, and reliability. For multi-agent teams specifically, traces across all agents in a fleet provide the data needed to diagnose coordination failures, identify bottleneck agents, and optimize team compositions. This extends the observability discussion in Concept 7 (IndyDevDan's hooks-based system) with an enterprise-grade framing: without traces across all agents, you cannot improve multi-agent systems at scale.
+
+### Concept 30: Skill-Based Marketing Agent Teams
+
+Grace Leung ([#235](../../sources/235-grace-leung-ai-marketing-skills.md)) demonstrates multi-agent orchestration applied beyond software development: five specialized marketing skills (research/strategy, content creation, creative design, data analysis, campaign presentation) work individually, in combination, and orchestrated through sub-agents. When given a complex task requiring multiple skills, Claude acts as a team lead -- reading context, selecting relevant skills, and orchestrating execution without the user specifying the workflow.
+
+The key contribution to team orchestration is **skill portability via plugins**: skills can be packaged into bundles that include all skill files and reference materials, enabling distribution of complete workflows to new projects or different tools. The same skill set produces on-brand outputs for different clients by reading each project's context files. This extends the plugin bundle concept from Concept 12a (Krakowski's non-technical patterns) and Concept 22 (Davis's Do-Make-Know) into professional service delivery -- a pattern where skills encode domain expertise (SOPs, frameworks, brand standards) and teams of specialized agents execute against it.
+
+> "Skills contain your best marketing knowledge, SOPs, your proven frameworks, your brand standards, and agents are now the team members who use that expertise." -- Grace Leung ([#235])
+
 ## Common Pitfalls
 
 - **Using teams for simple tasks**: Agent teams add coordination overhead (shared task lists, peer messaging, multiple context windows) that is only justified for complex, interdependent work. For isolated one-off tasks -- file exploration, targeted code changes, focused refactoring -- sub-agents are faster, cheaper, and simpler. As Van Zyl advises: "If you just want to do like a once-off task, you should definitely use sub agents instead" ([3:50](https://www.youtube.com/watch?v=KCJsdQpcfic&t=230)).
@@ -427,6 +463,11 @@ Stripe's **conditional rule files** (activated via glob patterns as agents trave
 | [196: Claude Opus 4.6 Agent Teams: Setup, Demo, and Cost Analysis](../../sources/196-turing-college-agent-teams-walkthrough.md) | Turing College | Emergent agent allocation, $7-8 per complex task cost reality, built-in reviewer quality loop |
 | [200: Why Narrow Specialized Agents Outperform General-Purpose AI](../../sources/200-riley-brown-narrow-agents-team.md) | Riley Brown | 7-10 skill ceiling per agent, KPI-driven team design, journal agent shared memory, persistent vs per-task agents |
 | [209: Stripe's Agentic Engineering Layer](../../sources/209-indydevdan-stripe-agentic-engineering-layer.md) | IndyDevDan | In-loop vs out-of-loop orchestration, 1,300+ PRs/week fleet, tool shed meta-MCP, conditional rule files, agent sandboxes |
+| [213: Super Nested Claude Code](../../sources/213-all-about-ai-nested-claude-code.md) | All About AI | Nested controller-worker via tmux, quality cascade Opus-to-Sonnet, screenshot verification, goal-only prompting |
+| [220: How Top Engineers Stop AI Agents From Writing Slop](../../sources/220-jaymin-west-anti-slop-engineering.md) | Jaymin West | Anti-slop multi-agent validation, never-fix-bad-output philosophy, pit of success, one-agent-one-task |
+| [231: From Writing Code to Managing Agents](../../sources/231-eo-mihail-eric-ai-native-engineer.md) | EO / Mihail Eric | AI-native engineer role, Stanford SDLC course, junior advantage, agent management as human management |
+| [234: Everyone Wants an Enterprise OpenClaw](../../sources/234-venturebeat-enterprise-openclaw.md) | VentureBeat / Harrison Chase | Enterprise OpenClaw paradox, observability as moat, harness engineering, agent traces for team debugging |
+| [235: Build Your First AI Marketing Team](../../sources/235-grace-leung-ai-marketing-skills.md) | Grace Leung | Skill-based marketing agent teams, skill portability via plugins, multi-skill orchestration, non-developer teams |
 
 ## Further Reading
 

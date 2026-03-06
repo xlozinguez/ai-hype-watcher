@@ -489,9 +489,68 @@ The architecture uses Postgres with pgvector for embeddings, exposed via an MCP 
 
 Jones frames this as the fork from the "human web" (fonts, layouts, pages) to the "agent web" (APIs, structured data, machine-to-machine readability). Note-taking tools built for the human web need an infrastructure layer underneath them for the agent era. The key quote: "Memory architecture determines agent capabilities much more than model selection does."
 
-### Concept 40: Representation and Scaffolding as Agent Design Principles
+### Concept 40: Nested Controller-Worker Orchestration via Tmux
 
-Dave Plummer ([#204](../../sources/204-daves-garage-ai-tempest-reinforcement-learning.md)) provides a case study from reinforcement learning that yields two principles broadly applicable to agentic pattern design:
+All About AI ([#213](../../sources/213-all-about-ai-nested-claude-code.md)) demonstrates a nested Claude Code architecture where a controller instance (running Opus) autonomously orchestrates multiple child Claude Code instances via tmux terminals. The user provides only a high-level goal -- the controller independently decides how many terminals to spawn, what role each should play, distributes detailed prompts to each child, monitors their output via terminal reads, and integrates the results.
+
+The **quality cascade** principle is the key architectural insight: because the Opus controller generates highly detailed, precise prompts for child instances, those children can run on cheaper models (Sonnet or even Haiku) while maintaining output quality. The detailed instructions from the planning tier compensate for lower capability at the execution tier. This extends the tiered model selection pattern (see Module 05, Pattern 4) with a concrete mechanism -- quality cascades downward through prompt precision, not model capability.
+
+Two demos illustrate the pattern: a procedural 3D space galaxy in Three.js (six parallel terminals for galaxy, objects, renderer, spacecraft, UI, and index) and a real-time training visualization dashboard (four terminals for backend, charts, dashboard, and samples). Both complete end-to-end without additional user prompts after the initial goal. The controller also uses Playwright for screenshot-based verification of the running application before declaring completion -- adding a deterministic visual check to the autonomous loop.
+
+This pattern sits between the sub-agent model (Concept 2) and full agent teams (Module 05): the controller has visibility into all child outputs (unlike sub-agents, which are fire-and-forget), but children cannot communicate with each other (unlike agent teams with peer-to-peer messaging). It is best suited for projects that decompose cleanly into parallel, independent implementation tracks with a single integration point.
+
+### Concept 41: Anti-Slop Engineering -- Quality as an Engineering Problem
+
+Jaymin West ([#220](../../sources/220-jaymin-west-anti-slop-engineering.md)) presents a systematic framework for preventing AI agents from producing low-quality code ("slop") that reframes the problem: "If LLMs are writing slop in your codebase, that is an engineering problem and not an LLM problem." The framework follows a layered defense approach and a "never fix bad output" philosophy -- if an agent produces poor results, diagnose the root cause, reset the run, fix the configuration, and rerun from scratch rather than patching bad code.
+
+The layered quality defense consists of:
+
+- **Hooks** as the first layer -- pre-commit hooks run tests and linting before any agent commit
+- **Quality gates** enforcing the strictest possible linting and type-checking (LLMs handle strict rules better than humans)
+- **Anti-mocking testing** -- never mock what you can use for real, because LLMs default to heavy mocking that produces tests which do not actually test the code
+- **100% pass rates** enforced before any agent can pass work to the next stage
+
+West borrows IndyDevDan's "one agent, one task, one prompt" principle for extreme task decomposition. A focused agent is a correct agent. Each agent should receive one prompt and complete one task to completion. Combined with per-agent isolation via git worktrees (Concept 15), this creates what West calls the "pit of success" -- a recursive quality improvement loop where higher-quality code in the codebase leads agents to produce even higher-quality code, compounding over time. This directly reinforces the AI-friendly codebase principle from Concept 24 (Pocock) with a concrete quality mechanism.
+
+> "One agent, one task, one prompt. A focused agent is a correct agent." -- Jaymin West ([#220])
+
+### Concept 42: The Seven Phases of AI-Driven Development
+
+Matt Pocock ([#221](../../sources/221-matt-pocock-seven-phases-ai-development.md)) distills AI-driven development into seven distinct phases that apply regardless of specific tooling (RALPH loops, GSD, SpecKit):
+
+1. **Idea** -- The starting point: a feature, bug fix, refactor, or entire application
+2. **Research** -- Cache external API documentation and library specifics into a research.md asset; treat research as sprint-scoped (ephemeral), not permanent
+3. **Prototype** -- Iterate with human-in-the-loop to impose taste on the outcome; generate multiple approaches on throwaway routes, pick the best
+4. **PRD** -- Describe the end state with no ambiguity; have the agent "grill" you through your decision tree
+5. **Kanban Board** -- Decompose the PRD into tickets with blocking relationships, enabling parallelization
+6. **Execution** -- Run agents through tickets in a loop (RALPH or sequential); with proper research, prototype, and PRD, this can run unattended
+7. **QA** -- Agent produces a QA plan, human walks through and QAs; produces more tickets, returning to the kanban board
+
+The critical insight is that **prototyping should happen before the PRD**, not after. Most spec-driven workflows jump from idea to specification, but the PRD becomes too abstract without concrete feedback. By seeing working code and making taste decisions during prototyping, the subsequent PRD is grounded in reality. This prevents the common failure mode where a well-written spec produces technically correct but wrong-feeling output.
+
+The kanban board phase connects directly to the task system (Concept 2) -- tickets with blocking relationships map to dependency DAGs, and non-blocking tickets can run as parallel agents. The execution phase then becomes reliable enough to run AFK because all the ambiguity has been resolved in earlier phases.
+
+> "This is not for vibe coders. We are people that are serious about AI engineering and serious about building applications that are built to last." -- Matt Pocock ([#221])
+
+### Concept 43: Open-Source Agent Harness Ecosystem -- Pi and OpenCode
+
+The open-source agentic coding ecosystem is expanding beyond the Pi agent (Concept 33) into a broader landscape. AICodeKing ([#228](../../sources/228-aicodeking-pi-coding-agent.md)) provides an updated comparative review confirming that Pi's minimalist architecture (4 tools, 200-token system prompt, 25+ hook points) appeals to mid-to-senior engineers who want full control over their agent harness. Key additions include multi-model provider support (15+ providers including Claude, GPT, Gemini, Mistral, Groq, DeepSeek), tree-based session architecture with conversation branching (similar to Git), and a package ecosystem for installing extensions from npm, Git repos, or local paths.
+
+NeetCode's interview with Dax Raad ([#233](../../sources/233-neetcode-opencode-future-coding.md)), co-creator of OpenCode, reveals the strategic positioning of the model-agnostic open-source alternative to Claude Code. Raad's most counterintuitive insight is that codebase cleanliness matters more in the AI era, not less: LLMs cannot differentiate between "old way" and "new way" patterns in a codebase, so legacy code coexisting with current conventions causes agents to reproduce outdated patterns. This creates stronger incentives for consistent, well-established patterns and domain-driven design -- reinforcing the AI-friendly codebase principle from Concept 24.
+
+Raad also challenges the "trade-off excuse" for poor code quality: "Someone better than you didn't have to make those trade-offs and they ship just as fast." Accepting low quality as a speed trade-off is often rationalization, not engineering judgment.
+
+### Concept 44: The Agent Harness as Enterprise Product
+
+Harrison Chase (LangChain CEO) ([#234](../../sources/234-venturebeat-enterprise-openclaw.md)) traces the evolution from AutoGPT (same architecture, worse models) to modern agents, arguing that the harness -- the infrastructure wrapping the LLM -- is the actual product differentiator, not the model itself. Deep Agents (LangChain's harness) was built by analyzing what Claude Code, OpenClaw, and Manus had in common: planning (to-do list tools), sub-agents, file system access, and prompting. The concept of "harness engineering" -- incrementally improving how the environment is structured around the model -- is what separates working agents from failed predecessors.
+
+Chase defines context engineering as "bringing the right information in the right format to the LLM at the right time" and maps three memory types from human psychology to agents: procedural (system prompts, skills), semantic (vector/graph retrieval), and episodic (previous conversations and traces). For enterprises, procedural memory offers the biggest return -- agents improving their own instructions based on feedback is more valuable than remembering user preferences.
+
+The **enterprise OpenClaw paradox** captures a key tension: OpenClaw succeeds partly because it is "unhinged" -- giving agents maximum autonomy. LangChain banned OpenClaw on company laptops due to security risks. The enterprise question becomes: who builds the safe, controlled version? Every enterprise wants one, but the safety constraints necessarily limit the capabilities that made the consumer version popular. This extends the enterprise-consumer bifurcation from Module 06 (Concept 9) into the agent harness domain.
+
+### Concept 45: Representation and Scaffolding as Agent Design Principles
+
+Dave Plummer ([#204](../../sources/204-daves-garage-ai-tempest-reinforcement-learning.md)) provides a case study from reinforcement learning that yields two principles broadly applicable to agentic pattern design (previously Concept 40):
 
 1. **Representation matters more than scale**: Plummer's RL agent broke through a plateau not with more compute or larger models (the model has under 1 million parameters) but by encoding the problem in polar coordinates matching Tempest's circular geometry and adding cross-attention for selective focus. The lesson for agentic coding: matching your data representation to the problem structure -- directory layout, API design, test structure -- can matter more than model selection.
 
@@ -721,6 +780,12 @@ Dave Plummer ([#204](../../sources/204-daves-garage-ai-tempest-reinforcement-lea
 | [204: Building a Reinforcement Learning AI That Beat a Human World Record](../../sources/204-daves-garage-ai-tempest-reinforcement-learning.md) | Dave's Garage | Representation over scale, expert bootstrapping with decay, vibe coding boundaries |
 | [208: Open Brain: Agent-Readable Memory Architecture](../../sources/208-nate-b-jones-open-brain-agent-readable-memory.md) | Nate B Jones | Cross-platform memory via Postgres/pgvector/MCP, human web vs agent web fork, memory as compounding advantage |
 | [209: Stripe's Agentic Engineering Layer](../../sources/209-indydevdan-stripe-agentic-engineering-layer.md) | IndyDevDan | Blueprint engine, in-loop vs out-of-loop agents, tool shed meta-MCP, conditional rule files, agent sandboxes |
+| [213: Super Nested Claude Code](../../sources/213-all-about-ai-nested-claude-code.md) | All About AI | Nested controller-worker via tmux, quality cascade from Opus to Sonnet, screenshot-based verification |
+| [220: How Top Engineers Stop AI Agents From Writing Slop](../../sources/220-jaymin-west-anti-slop-engineering.md) | Jaymin West | Anti-slop engineering, layered quality defense, one-agent-one-task principle, recursive quality loop |
+| [221: The 7 Phases of AI-Driven Development](../../sources/221-matt-pocock-seven-phases-ai-development.md) | Matt Pocock | Seven-phase execution framework, prototype-before-PRD, research as ephemeral cache, kanban parallelization |
+| [228: Pi Coding Agent Review](../../sources/228-aicodeking-pi-coding-agent.md) | AICodeKing | Pi multi-model support, tree-based sessions, 25+ hook points, package ecosystem |
+| [233: Building the Future of Coding — OpenCode](../../sources/233-neetcode-opencode-future-coding.md) | NeetCode / Dax Raad | OpenCode architecture, codebase cleanliness in AI era, model-agnostic positioning, trade-off excuse critique |
+| [234: Everyone Wants an Enterprise OpenClaw](../../sources/234-venturebeat-enterprise-openclaw.md) | VentureBeat / Harrison Chase | Agent harness as product, context engineering defined, enterprise OpenClaw paradox, three memory types |
 
 ## Further Reading
 
