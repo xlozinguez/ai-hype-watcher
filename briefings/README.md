@@ -22,6 +22,7 @@ Dated entries covering recent AI development findings, tool updates, and critica
 | [2026-03-02](2026-03-02.md) | 23-source batch — Stripe's blueprint engine, LLM deanonymization kills obscurity, code generation not the bottleneck, frontier operations framework, SaaS defensibility collapses to data | patterns, security, critical, economics |
 | [2026-03-05](2026-03-05.md) | 28-video playlist batch — specification-first consensus, skills ecosystem matures, Jeremy Howard AI coding critique, agentic tool wars | patterns, tools, critical, economics |
 | [2026-03-06](2026-03-06.md) | Filling the synthesis gap — Pocock's workflows + Stripe's minions infrastructure, specification-first and context engineering convergence | synthesis, patterns, cleanup |
+| [2026-03-08](2026-03-08.md) | 11-video playlist batch — scouting engineers framework, post-honeymoon maturity plateau, C++ as assembly fallacy, enterprise adoption lag | patterns, critical, economics, security |
 
 ## Adding Briefings
 
