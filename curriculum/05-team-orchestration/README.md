@@ -387,6 +387,26 @@ The key contribution to team orchestration is **skill portability via plugins**:
 
 > "Skills contain your best marketing knowledge, SOPs, your proven frameworks, your brand standards, and agents are now the team members who use that expertise." -- Grace Leung ([#235])
 
+### Concept 31: Scouts vs. Strike Teams -- The AI-Era Organizational Unit
+
+Nate B Jones ([#250](../../sources/250-nate-b-jones-team-size-ai.md)) presents the most consequential framework for team sizing in the AI era, grounded in Dunbar's research, Brooks' Law, Bezos's two-pizza teams, and military unit sizing. The core thesis: the human brain sustains deep coordination with approximately five people, and AI didn't change that cognitive limit -- it changed the consequences of violating it.
+
+**The Coordination Cost Amplifier**: When AI multiplies per-person output by 5-10x (evidenced by revenue-per-employee data -- Lovable, Midjourney at $200M with 11 people, Cursor at $16M/employee), the coordination cost of adding a sixth team member scales from manageable to catastrophic. At $250K/year per person, adding a sixth member had manageable overhead. At $2M-$4M/year per person, the sixth member's coordination cost is measured in millions of lost productivity. The mathematical relationship between team size and communication pathways (n*(n-1)/2) becomes brutal: 5 people = 10 pathways, 10 people = 45, 20 people = 190.
+
+Two organizational archetypes emerge:
+
+**Scouts** operate solo with full AI toolkits for exploration -- mapping territory, testing viability, prototyping. Peter Steinberger building OpenClaw in 60 days is the exemplar: one person, 20 years of judgment, a swarm of agents. The **scout test** provides a concrete evaluation: give someone a real problem, full AI tooling, one week, zero check-ins. What you're testing: can they define problems without a spec, hold the system in their head, and default to action over permission? Solo models break down when correctness requires multiple perspectives.
+
+**Strike Teams** are five-person units where every AI-generated output passes through at least one other brain with shared context. Five generalist architects using AI cover the surface area (product, engineering, design, data, domain) that previously required entire departments. The critical quality gate: in a strike team, "every AI-generated output is reviewed by at least one other brain that has enough shared context to catch meaningful errors."
+
+**The Ambition Expansion Thesis**: Jones argues that companies framing AI as a cost story ("same work, fewer people") are committing a "staggering failure of imagination." A 500-person company didn't get a cost reduction -- it got the productive capacity of 2,500-5,000 people. The right question: "What was previously impossible when each five-person team had the capacity of a 50-person department?" Jones cites Toby Lutke's Shopify mandate -- requiring AI prototyping before any build and AI fluency in performance reviews -- as systematically building the muscle for this expansion.
+
+**The AI Slop Tax**: A mediocre contributor on a strike team doesn't just underperform -- their weak judgment gets amplified by AI, generating verification burdens on everyone else. The hiring question shifts from "can this person do the current job" to "can this person be one of five whose taste and judgment will be amplified 10-100x by AI?"
+
+This framework directly informs the team composition concepts in this module (Concept 3): functional specialization maps to strike teams, while parallel replication maps to scout deployments. The scouts/strike teams model provides the strategic "why" behind the team sizing decisions the earlier concepts describe at the tactical level.
+
+> "You didn't get a cost reduction. You got an army. The question is whether you have the strategic vision to deploy it." -- Nate B Jones ([#250])
+
 ## Common Pitfalls
 
 - **Using teams for simple tasks**: Agent teams add coordination overhead (shared task lists, peer messaging, multiple context windows) that is only justified for complex, interdependent work. For isolated one-off tasks -- file exploration, targeted code changes, focused refactoring -- sub-agents are faster, cheaper, and simpler. As Van Zyl advises: "If you just want to do like a once-off task, you should definitely use sub agents instead" ([3:50](https://www.youtube.com/watch?v=KCJsdQpcfic&t=230)).
@@ -468,6 +488,7 @@ The key contribution to team orchestration is **skill portability via plugins**:
 | [231: From Writing Code to Managing Agents](../../sources/231-eo-mihail-eric-ai-native-engineer.md) | EO / Mihail Eric | AI-native engineer role, Stanford SDLC course, junior advantage, agent management as human management |
 | [234: Everyone Wants an Enterprise OpenClaw](../../sources/234-venturebeat-enterprise-openclaw.md) | VentureBeat / Harrison Chase | Enterprise OpenClaw paradox, observability as moat, harness engineering, agent traces for team debugging |
 | [235: Build Your First AI Marketing Team](../../sources/235-grace-leung-ai-marketing-skills.md) | Grace Leung | Skill-based marketing agent teams, skill portability via plugins, multi-skill orchestration, non-developer teams |
+| [250: Your Team is Probably Too Big](../../sources/250-nate-b-jones-team-size-ai.md) | Nate B Jones | Scouts vs strike teams, coordination cost amplifier, ambition expansion thesis, AI slop tax, five-person optimal unit |
 
 ## Further Reading
 

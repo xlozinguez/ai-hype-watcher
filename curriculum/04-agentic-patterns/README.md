@@ -556,6 +556,42 @@ Dave Plummer ([#204](../../sources/204-daves-garage-ai-tempest-reinforcement-lea
 
 2. **Expert bootstrapping with decay**: A hand-coded expert system provides initial training data, then its influence decays as the neural network proves competence. This "training wheels that fade" pattern mirrors how human developers scaffold AI agents with initial structure (CLAUDE.md rules, detailed skills) that should be pruned as models improve -- exactly what the eval-driven context pruning from Concept 35 enables.
 
+### Concept 46: Step-by-Step Decomposition -- Lessons from a Fields Medalist
+
+Terence Tao ([#248](../../sources/248-terence-tao-lean-proof-claude-code.md)) demonstrates that even world-class domain experts must adopt specific strategies to get productive results from AI agents. When formalizing a mathematical proof in the Lean theorem prover, Tao's first attempt -- delegating the entire proof at once -- failed completely after 45 minutes, crashed his computer, and consumed all tokens without producing useful output. The agent "overthought" the problem, backtracking endlessly.
+
+His second attempt succeeded in 25 minutes by applying step-by-step decomposition: define notation first, create a proof skeleton with placeholder `sorry` values, then fill in proofs incrementally. Each constrained subtask was well within the agent's capability; the full problem was not. This mirrors patterns seen across agentic coding -- breaking complex tasks into constrained subtasks consistently outperforms monolithic delegation.
+
+Tao also demonstrates a practical **human-agent co-editing workflow**: while Claude skeletonizes one lemma, he manually fills in proofs for another. When Claude struggled, Tao stepped in with a one-liner fix and let Claude continue. The agent handled concurrent edits to the same file without conflict. His explicit guidance: "I think the best use case is where you keep involved, you just pick and choose the tasks that you want to work on."
+
+The calibration insight is critical: Tao explicitly discusses choosing "the level of automation that you're comfortable with." Full delegation failed. Full manual work was unnecessary. The productive middle -- directing high-level structure while intervening on specific steps -- maps directly to the frontier operations framework (Concept 38).
+
+### Concept 47: Agent-First CLI Design -- Tools Built for Agents, Not Humans
+
+Better Stack ([#247](../../sources/247-better-stack-google-workspace-cli.md)) walks through Google's Workspace CLI (GWS), a Rust-based tool designed from the ground up for AI agents. Key design decisions deliberately invert traditional CLI philosophy:
+
+- **Nested JSON output** -- harder for humans to read, easier for agents to parse
+- **Runtime-queryable documentation** -- agents discover capabilities via `help` and `schema` subcommands rather than needing pre-loaded tool definitions
+- **Field-level filtering** -- return only the data the agent needs, reducing token usage
+
+When Claude was given a task requiring Gmail access, it ran `gws help` once, navigated the command hierarchy, and self-corrected via `gws schema` when it used wrong parameters -- all without pre-loaded instructions. The email listing task consumed only 9% of context; slides creation used 15%. This represents a new class of tools: **self-describing CLIs** that agents can explore autonomously, extending the CLI-over-MCP thesis (Concept 14) with a concrete design pattern for tool authors.
+
+The convergence finding is also notable: GWS supports both CLI and MCP modes, suggesting the industry is standardizing on offering both interfaces rather than choosing one.
+
+### Concept 48: The Agent-as-Software Paradigm and Agentic Fever
+
+Matteo Cassese ([#252](../../sources/252-matteo-cassese-agentic-fever.md)) maps a four-stage AI evolution that reframes what "agentic patterns" means: (1) **Chatbot** -- artifact is conversation; (2) **Coding Tool** -- artifact is code; (3) **Agent** -- artifact is autonomous workflow, the tool *is* the software; (4) **Agent Orchestrator** -- artifact is a team of agents with compounding improvement. The critical paradigm shift is stage 3: the agent is no longer creating software -- it *is* the software surface. Data connected to agents becomes training; markdown SOPs become the primary form of development.
+
+Cassese also describes **agentic fever** -- a burnout syndrome driven by FOMO that every moment not spent building or running agents is wasted time. The practical warning: "If you are feverishly burning out in front of the machine and trying to make it do more, you're going to create a frantic anxiety-driven agent that is going to fail." Good inputs produce good outputs -- systems thinking applied to human-agent interaction.
+
+The **tiered model architecture** pattern reinforces cost-effective agentic design: expensive models orchestrate, mid-tier models do substantive work, cheap models handle brute-force tasks like web research. This mirrors how organizations allocate human talent across strategic, operational, and tactical roles.
+
+### Concept 49: Agent-Auditing-Agent -- AI Security Infrastructure
+
+AgenticFlow AI ([#244](../../sources/244-agenticflow-openclaw-security.md)) demonstrates a pattern of using AI agents to audit and harden other AI agent infrastructure. Rather than manually auditing an OpenClaw installation, the presenter uses an agent coordinator (Ishi) to trigger an automated security scan that checks authentication, permissions, and configuration. The audit discovered that OpenClaw stores gateway tokens, operator tokens, and device credentials in plain text with zero encryption.
+
+This extends the builder/validator pattern (Concept 3) into the security domain: one agent builds or runs infrastructure, another agent audits it. The coordinator pattern -- where a desktop app relays commands to remote agent instances -- also demonstrates a practical approach to managing distributed agent deployments. The key recommendation: treat any agent installation as a sandboxed environment on a dedicated machine with minimal permissions, acknowledging that agent security is not yet mature enough for production trust.
+
 ## Patterns & Practices
 
 ### Pattern 1: Builder/Validator Task Execution
@@ -786,6 +822,10 @@ Dave Plummer ([#204](../../sources/204-daves-garage-ai-tempest-reinforcement-lea
 | [228: Pi Coding Agent Review](../../sources/228-aicodeking-pi-coding-agent.md) | AICodeKing | Pi multi-model support, tree-based sessions, 25+ hook points, package ecosystem |
 | [233: Building the Future of Coding — OpenCode](../../sources/233-neetcode-opencode-future-coding.md) | NeetCode / Dax Raad | OpenCode architecture, codebase cleanliness in AI era, model-agnostic positioning, trade-off excuse critique |
 | [234: Everyone Wants an Enterprise OpenClaw](../../sources/234-venturebeat-enterprise-openclaw.md) | VentureBeat / Harrison Chase | Agent harness as product, context engineering defined, enterprise OpenClaw paradox, three memory types |
+| [244: AI-Powered OpenClaw Security Audit & Hardening](../../sources/244-agenticflow-openclaw-security.md) | AgenticFlow AI | Agent-auditing-agent pattern, plain-text credential discovery, coordinator pattern for remote agents |
+| [247: Google's New CLI Is The Missing Piece for Claude Code](../../sources/247-better-stack-google-workspace-cli.md) | Better Stack | Agent-first CLI design, self-describing CLIs, runtime schema discovery, CLI vs MCP convergence |
+| [248: Formalizing a proof in Lean using Claude Code](../../sources/248-terence-tao-lean-proof-claude-code.md) | Terence Tao | Step-by-step decomposition, human-agent co-editing, automation level calibration, monolithic delegation failure |
+| [252: Agentic Fever: Master Yourself Before Your Agents](../../sources/252-matteo-cassese-agentic-fever.md) | Matteo Cassese | Agent-as-software paradigm, agentic fever burnout, tiered model architecture, four-stage AI evolution |
 
 ## Further Reading
 

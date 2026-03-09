@@ -250,6 +250,17 @@ Each source is synthesized (not transcribed) into a structured note with frontma
 | [240](240-bart-slodyczka-openclaw-token-reduction.md) | OpenClaw Too Expensive? Try This Instead (97% Reduction) | Bart Slodyczka | video | ai-economics, enterprise-ai, context-engineering |
 | [241](241-nate-b-jones-openai-context-lock-in.md) | OpenAI Leaked GPT-5.4. It's a Distraction. (The AI Lock-In No One Is Talking About) | Nate B Jones | video | ai-economics, enterprise-ai, context-engineering, ai-landscape, openai, anthropic, infrastructure |
 | [242](242-vasilije-markovic-cognee-agent-memory.md) | Why Your AI Agents Keep Forgetting (And How To Fix That) | Vasilije Markovic (Cognee) | video | context-engineering, agentic-coding, multi-agent, infrastructure, ai-landscape |
+| [243](243-skills-legal-ai-playbooks.md) | SKILLS Legal AI Use Case Demos: Playbook Generation | SKILLS | video | enterprise-ai, ai-landscape, ai-sdlc |
+| [244](244-agenticflow-openclaw-security.md) | AI-Powered OpenClaw Security Audit & Hardening | AgenticFlow AI | video | security, agentic-coding, multi-agent |
+| [245](245-innermost-loop-math-research-local-llms.md) | Is Math Research Dead? Cursor's AI and the Rise of Local LLMs | Innermost Loop Discussion | video | ai-landscape, ai-economics, ai-hype, infrastructure, capability-overhang |
+| [246](246-the-blur-ai-honeymoon-over.md) | The AI Honeymoon Is Over: Claude, OpenClaw & AI Fatigue | The Blur | video | ai-hype, claude-code, skills, context-engineering, vibe-coding |
+| [247](247-better-stack-google-workspace-cli.md) | Google's New CLI Is The Missing Piece for Claude Code | Better Stack | video | claude-code, skills, mcp, agentic-coding |
+| [248](248-terence-tao-lean-proof-claude-code.md) | Formalizing a proof in Lean using Claude Code | Terence Tao | video | claude-code, agentic-coding, context-engineering |
+| [249](249-ai-security-ops-claude-cowork.md) | Claude Cowork Discussion — AI Security Ops Episode 42 | AI Security Ops | video | security, claude-code, enterprise-ai, ai-landscape |
+| [250](250-nate-b-jones-team-size-ai.md) | Your Team is Probably Too Big: Why 5 People With AI Outperform 50 Without It | Nate B Jones | video | ai-economics, enterprise-ai, revenue-per-employee, ai-sdlc |
+| [251](251-less-assembly-required-ai-replace-programmers.md) | Can AI replace us? | Less Assembly Required | video | ai-hype, agentic-coding, capability-overhang, vibe-coding |
+| [252](252-matteo-cassese-agentic-fever.md) | Agentic Fever: Master Yourself Before Your Agents | Matteo Cassese | video | ai-hype, agentic-coding, multi-agent, ai-landscape |
+| [253](253-noah-vincent-second-brain-2026.md) | How To Build Your Entire Second Brain System In 2026 (With Templates) | Noah Vincent | video | context-engineering, prompt-engineering, ai-landscape |
 
 ## Adding Sources
 
