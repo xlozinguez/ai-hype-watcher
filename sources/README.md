@@ -261,6 +261,10 @@ Each source is synthesized (not transcribed) into a structured note with frontma
 | [251](251-less-assembly-required-ai-replace-programmers.md) | Can AI replace us? | Less Assembly Required | video | ai-hype, agentic-coding, capability-overhang, vibe-coding |
 | [252](252-matteo-cassese-agentic-fever.md) | Agentic Fever: Master Yourself Before Your Agents | Matteo Cassese | video | ai-hype, agentic-coding, multi-agent, ai-landscape |
 | [253](253-noah-vincent-second-brain-2026.md) | How To Build Your Entire Second Brain System In 2026 (With Templates) | Noah Vincent | video | context-engineering, prompt-engineering, ai-landscape |
+| [254](254-nate-b-jones-claude-blackmail-safety-dynamics.md) | Claude Blackmailed Its Developers. Here's Why the System Hasn't Collapsed Yet. | Nate B Jones | video | ai-safety, ai-hype, ai-landscape, enterprise-ai, anthropic |
+| [255](255-indydevdan-mac-mini-agent-skills.md) | Mac Mini Agents: OpenClaw is a NIGHTMARE... Use these SKILLS instead | IndyDevDan | video | agentic-coding, skills, multi-agent, security, claude-code |
+| [256](256-primetime-github-in-trouble.md) | Github might be in trouble | The PrimeTime | video | ai-landscape, ai-hype, agentic-coding, infrastructure |
+| [257](257-rob-shocks-google-workspace-opportunity.md) | Why every Claude & OpenClaw builder should exploit this Google Opportunity right now | Rob Shocks | video | mcp, skills, agentic-coding, enterprise-ai, claude-code |
 
 ## Adding Sources
 

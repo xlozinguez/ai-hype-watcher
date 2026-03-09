@@ -24,3 +24,4 @@ Unlike individual [source notes](../sources/), synthesis documents draw connecti
 | [2026-03-02](2026-03-02-playlist-themes.md) | Memory Infrastructure, Narrow Agents, and the Formalization of Agentic Engineering | #187-#209 (23 videos from playlist batch) |
 | [2026-03-05](2026-03-05-playlist-themes.md) | The Discipline Turn — From Vibe Coding to Specification Engineering | #213-#240 (28 videos from playlist batch) |
 | [2026-03-06](2026-03-06-specification-infrastructure-gap.md) | Specification and Infrastructure — The Missing Bridge Between Vibe Coding and Enterprise Scale | #210-#212, #164 (Pocock's workflows + Stripe's minions + deep modules) |
+| [2026-03-08](2026-03-08-scouting-engineers-post-honeymoon.md) | Scouting Engineers and the Post-Honeymoon Reality | #243-#253 (11 videos from playlist batch) |
