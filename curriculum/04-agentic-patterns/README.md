@@ -586,7 +586,25 @@ Cassese also describes **agentic fever** -- a burnout syndrome driven by FOMO th
 
 The **tiered model architecture** pattern reinforces cost-effective agentic design: expensive models orchestrate, mid-tier models do substantive work, cheap models handle brute-force tasks like web research. This mirrors how organizations allocate human talent across strategic, operational, and tactical roles.
 
-### Concept 49: Agent-Auditing-Agent -- AI Security Infrastructure
+### Concept 49: Device-Level Agent Autonomy -- The Steer and Drive Architecture
+
+IndyDevDan ([#255](../../sources/255-indydevdan-mac-mini-agent-skills.md)) argues that agents confined to the terminal are fundamentally limited -- they cannot replicate the full range of tasks engineers perform daily, which include GUI interactions, browser research, and cross-device communication. His architecture distills the OpenClaw paradigm down to essential components: "steer" gives agents GUI control via accessibility trees and OCR, while "drive" gives terminal control via tmux. Together, these two primitives let an agent operate an entire dedicated Mac Mini -- launching apps, interacting with UIs, running terminal commands, and pushing code to GitHub.
+
+The **trigger layer** pattern is architecturally significant: an HTTP listen server receives job requests from any source (laptop, another agent, cron job, webhook), jobs are described in YAML, and the server kicks off Claude Code instances in tmux sessions. This decouples trigger mechanisms from execution environments, enabling horizontal scaling across multiple devices. The `just` command runner provides a repeatable interface for firing off agent workflows, treating shell commands as composable functions.
+
+Dan's meta-engineering philosophy -- "build the system that builds the system" -- extends the scaffolding concept (Concept 20) with a specific directive: rather than manually fixing issues on the agent's device, teach the agent how to fix them itself. This creates a positive feedback loop where investment in agent capabilities compounds over time, mirroring the self-improving skill patterns from Concept 13. As Dan puts it: "I'm going to template my engineering and focus on building the system that builds the system."
+
+The OpenClaw critique embedded in this work reinforces the safety patterns from earlier concepts: OpenClaw's aggressive package installation, lack of security guardrails, and vulnerability to prompt injection make it dangerous despite its innovation. The alternative -- minimal, purpose-built skills rather than broad framework defaults -- aligns with the sniper agent principle (Concept 28) applied at the skill level.
+
+### Concept 50: Business Infrastructure as Agent Foundation -- Company as Code
+
+Rob Shocks ([#257](../../sources/257-rob-shocks-google-workspace-opportunity.md)) frames Google's Workspace CLI as enabling a "self-driving business" vision where agents manage workflows across the entire Google Workspace stack -- Gmail, Drive, Calendar, Docs, Sheets, Chat, Admin, and Google Keep through a single text-based interface. The core insight is that AI agent capabilities have been strong for some time; the bottleneck was not model intelligence but clean programmatic access to business infrastructure.
+
+This extends the agent-first CLI pattern (Concept 47) into business operations. Because CLIs are text-based, they are naturally suited for AI agent discovery and operation. The GWS CLI supports both CLI and MCP modes, reinforcing the convergence finding: the industry is standardizing on offering both interfaces. Shocks emphasizes careful permission scoping -- starting with restricted OAuth scopes and expanding incrementally -- which mirrors the minimal-permission principles from the security patterns in this module.
+
+The strategic dimension is equally important: Google released the Workspace CLI as open-source, positioning itself at the center of the agentic infrastructure wave without taking on the liability of officially sanctioning autonomous agent operations. OpenClaw's rapid growth (16,000 GitHub stars in three days) proved demand for unfettered agent access to business systems. The "company as code" concept has been discussed for about two years but only recently became practical as models improved, context engineering matured, and tooling arrived.
+
+### Concept 51: Agent-Auditing-Agent -- AI Security Infrastructure
 
 AgenticFlow AI ([#244](../../sources/244-agenticflow-openclaw-security.md)) demonstrates a pattern of using AI agents to audit and harden other AI agent infrastructure. Rather than manually auditing an OpenClaw installation, the presenter uses an agent coordinator (Ishi) to trigger an automated security scan that checks authentication, permissions, and configuration. The audit discovered that OpenClaw stores gateway tokens, operator tokens, and device credentials in plain text with zero encryption.
 
@@ -826,6 +844,8 @@ This extends the builder/validator pattern (Concept 3) into the security domain:
 | [247: Google's New CLI Is The Missing Piece for Claude Code](../../sources/247-better-stack-google-workspace-cli.md) | Better Stack | Agent-first CLI design, self-describing CLIs, runtime schema discovery, CLI vs MCP convergence |
 | [248: Formalizing a proof in Lean using Claude Code](../../sources/248-terence-tao-lean-proof-claude-code.md) | Terence Tao | Step-by-step decomposition, human-agent co-editing, automation level calibration, monolithic delegation failure |
 | [252: Agentic Fever: Master Yourself Before Your Agents](../../sources/252-matteo-cassese-agentic-fever.md) | Matteo Cassese | Agent-as-software paradigm, agentic fever burnout, tiered model architecture, four-stage AI evolution |
+| [255: Mac Mini Agents: Use these SKILLS instead](../../sources/255-indydevdan-mac-mini-agent-skills.md) | IndyDevDan | Steer/drive architecture for device-level autonomy, trigger layer and job server, `just` command runner, meta-engineering philosophy, OpenClaw critique |
+| [257: Why every Claude & OpenClaw builder should exploit this Google Opportunity](../../sources/257-rob-shocks-google-workspace-opportunity.md) | Rob Shocks | GWS CLI as business infrastructure for agents, company-as-code vision, permission scoping, Google's strategic positioning |
 
 ## Further Reading
 

@@ -387,7 +387,17 @@ The key contribution to team orchestration is **skill portability via plugins**:
 
 > "Skills contain your best marketing knowledge, SOPs, your proven frameworks, your brand standards, and agents are now the team members who use that expertise." -- Grace Leung ([#235])
 
-### Concept 31: Scouts vs. Strike Teams -- The AI-Era Organizational Unit
+### Concept 31: Dedicated Agent Devices and Multi-Device Orchestration
+
+IndyDevDan ([#255](../../sources/255-indydevdan-mac-mini-agent-skills.md)) presents a hardware-level extension of multi-agent orchestration: giving agents their own dedicated devices rather than sharing the developer's machine. The core thesis is that agents must have the same tools and capabilities as their human operators -- and that means their own device where context collisions cannot occur. "I'm never going to touch this device myself. This is my agent's device."
+
+The architecture uses an HTTP listen server as a **trigger layer** that receives job requests from any source -- a laptop, another agent, a scheduled cron job, or a webhook. Jobs are described in YAML, and the listen server kicks off Claude Code instances inside tmux sessions on a dedicated Mac Mini. This decouples trigger mechanisms from execution environments, enabling horizontal scaling: multiple Mac Minis can serve as an agent fleet, each independently processing jobs. The `just` command runner provides a clean abstraction for routing jobs to remote agent devices from the developer's primary machine.
+
+Two minimal skills -- "steer" (GUI control via accessibility trees and OCR) and "drive" (terminal control via tmux) -- give agents complete device-level autonomy without the security risks of the OpenClaw framework. The pattern of using AirDrop for agent-to-human result delivery creates a clean separation between agent execution and human review, extending the async communication model from Concept 16 (Casel's Slack-based agents) into a hardware-native workflow.
+
+This extends the infrastructure discussion in Concept 6 (tmux, E2B sandboxes) with a dedicated-hardware alternative that provides physical isolation rather than software sandboxing. For privacy-sensitive workflows or teams that want persistent agent state across sessions, dedicated devices offer advantages over ephemeral cloud sandboxes.
+
+### Concept 32: Scouts vs. Strike Teams -- The AI-Era Organizational Unit
 
 Nate B Jones ([#250](../../sources/250-nate-b-jones-team-size-ai.md)) presents the most consequential framework for team sizing in the AI era, grounded in Dunbar's research, Brooks' Law, Bezos's two-pizza teams, and military unit sizing. The core thesis: the human brain sustains deep coordination with approximately five people, and AI didn't change that cognitive limit -- it changed the consequences of violating it.
 
@@ -489,6 +499,7 @@ This framework directly informs the team composition concepts in this module (Co
 | [234: Everyone Wants an Enterprise OpenClaw](../../sources/234-venturebeat-enterprise-openclaw.md) | VentureBeat / Harrison Chase | Enterprise OpenClaw paradox, observability as moat, harness engineering, agent traces for team debugging |
 | [235: Build Your First AI Marketing Team](../../sources/235-grace-leung-ai-marketing-skills.md) | Grace Leung | Skill-based marketing agent teams, skill portability via plugins, multi-skill orchestration, non-developer teams |
 | [250: Your Team is Probably Too Big](../../sources/250-nate-b-jones-team-size-ai.md) | Nate B Jones | Scouts vs strike teams, coordination cost amplifier, ambition expansion thesis, AI slop tax, five-person optimal unit |
+| [255: Mac Mini Agents: Use these SKILLS instead](../../sources/255-indydevdan-mac-mini-agent-skills.md) | IndyDevDan | Dedicated agent devices, HTTP trigger layer for multi-device orchestration, steer/drive minimal skills, AirDrop agent-to-human delivery |
 
 ## Further Reading
 
