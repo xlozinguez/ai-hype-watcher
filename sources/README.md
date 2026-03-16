@@ -8,31 +8,31 @@ Each source is synthesized (not transcribed) into a structured note with frontma
 
 | ID | Title | Creator | Type | Tags |
 |----|-------|---------|------|------|
-| [001](001-indydevdan-claude-code-task-system.md) | Claude Code Task System: ANTI-HYPE Agentic Coding | IndyDevDan | video | agentic-coding, task-system, builder-validator, meta-prompts |
-| [002](002-nate-b-jones-anthropic-ceo-philosophy.md) | Anthropic's CEO Bet the Company on This Philosophy | Nate B Jones | video | anthropic, ai-safety, enterprise-ai |
-| [003](003-primetime-opus-46-chatgpt-53.md) | Opus 4.6 AND ChatGPT 5.3 SAME DAY??? | The PrimeTime | video | ai-landscape, claude-code, chatgpt |
-| [004](004-bart-slodyczka-agent-teams.md) | Claude Code's New Agent Teams Are Insane | Bart Slodyczka | video | agent-teams, multi-agent, claude-code |
-| [005](005-nate-b-jones-vibe-coding-readiness.md) | Most People Aren't Ready for Vibe Coding | Nate B Jones | video | vibe-coding, specification, prompt-engineering |
+| [001](001-indydevdan-claude-code-task-system.md) | Claude Code Task System: ANTI-HYPE Agentic Coding (Advanced) | IndyDevDan | video | agentic-coding, task-system, builder-validator, meta-prompts |
+| [002](002-nate-b-jones-anthropic-ceo-philosophy.md) | Anthropic's CEO Bet the Company on This Philosophy. The Data Says He Was Right. | Nate B Jones | video | anthropic, ai-safety, enterprise-ai |
+| [003](003-primetime-opus-46-chatgpt-53.md) | Opus 4.6 AND Chat GPT 5.3 SAME DAY??? | ThePrimeTime | video | ai-landscape, claude-code, chatgpt |
+| [004](004-bart-slodyczka-agent-teams.md) | Claude Code's New Agent Teams Are Insane (Opus 4.6) | Bart Slodyczka | video | agent-teams, multi-agent, claude-code |
+| [005](005-nate-b-jones-vibe-coding-readiness.md) | 90% of People Fail at Vibe Coding. Here's the Actual Reason: You're Skipping the Hard Part. | Nate B Jones | video | vibe-coding, specification, prompt-engineering |
 | [006](006-ali-salem-4-ai-skills.md) | 4 AI Skills That Set You Apart From 90% Of People | Ali H. Salem | video | prompt-engineering, validation, ai-landscape |
-| [007](007-internet-of-bugs-ai-bubble.md) | Super Bowl Commercial Bubble Curse: AIs imitate Dot-Coms | Internet of Bugs | video | ai-hype, ai-economics |
-| [008](008-nate-b-jones-phase-transition.md) | OpenAI Is Slowing Hiring / Capability Overhang | Nate B Jones | video | capability-overhang, ai-landscape, agentic-coding, task-system |
-| [009](009-nate-b-jones-infrastructure-crisis.md) | Why the Smartest AI Teams Are Panic-Buying Compute | Nate B Jones | video | infrastructure, ai-economics, enterprise-ai |
-| [010](010-indydevdan-multi-agent-orchestration.md) | Claude Code Multi-Agent Orchestration with Opus 4.6 | IndyDevDan | video | multi-agent, agent-teams, agentic-coding, claude-code |
+| [007](007-internet-of-bugs-ai-bubble.md) | Super Bowl Commercial Bubble Curse: AIs Imitate Dot-Coms | Carl Brown (Internet of Bugs) | video | ai-hype, ai-economics |
+| [008](008-nate-b-jones-phase-transition.md) | OpenAI Is Slowing Hiring / Anthropic Engineers Stopped Writing Code / The Capability Overhang | Nate B Jones | video | capability-overhang, ai-landscape, agentic-coding, task-system |
+| [009](009-nate-b-jones-infrastructure-crisis.md) | Why the Smartest AI Teams Are Panic-Buying Compute: The 36-Month AI Infrastructure Crisis | Nate B Jones | video | infrastructure, ai-economics, enterprise-ai |
+| [010](010-indydevdan-multi-agent-orchestration.md) | Claude Code Multi-Agent Orchestration with Opus 4.6, Tmux and Agent Sandboxes | IndyDevDan (Dan Disler) | video | multi-agent, agent-teams, agentic-coding, claude-code |
 | [011](011-confluent-developer-context-engineering.md) | Prompt Engineering is dead. | Confluent Developer (Tim Berglund) | video | context-engineering, prompt-engineering, agentic-coding, mcp |
-| [012](012-nate-b-jones-career-collapse.md) | Going Slower Feels Safer, But Your Domain Expertise Won't Save You | Nate B Jones | video | capability-overhang, ai-landscape, agentic-coding |
+| [012](012-nate-b-jones-career-collapse.md) | Going Slower Feels Safer, But Your Domain Expertise Won't Save You Anymore. Here's What Will. | Nate B Jones | video | capability-overhang, ai-landscape, agentic-coding |
 | [013](013-leon-van-zyl-claude-code-skills.md) | Stop Using Claude Code Without Skills | Leon van Zyl | video | skills, claude-code, skills-ecosystem |
-| [014](014-leon-van-zyl-agent-teams.md) | I Gave Opus 4.6 an Entire Dev Team | Leon van Zyl | video | agent-teams, multi-agent, claude-code |
-| [015](015-indydevdan-skills-engineering.md) | I finally CRACKED Claude Agent Skills | IndyDevDan | video | skills, claude-code, agentic-coding, skills-ecosystem |
-| [016](016-nate-b-jones-opus-46-jump.md) | Claude Opus 4.6: The Biggest AI Jump I've Covered | Nate B Jones | video | ai-landscape, claude-code, agentic-coding |
-| [017](017-primeagen-skills-security.md) | Be Careful w/ Skills | ThePrimeagen | video | security, skills-ecosystem, claude-code |
+| [014](014-leon-van-zyl-agent-teams.md) | I Gave Opus 4.6 an Entire Dev Team - Claude Code Agent Teams | Leon van Zyl | video | agent-teams, multi-agent, claude-code |
+| [015](015-indydevdan-skills-engineering.md) | I finally CRACKED Claude Agent Skills (Breakdown For Engineers) | IndyDevDan | video | skills, claude-code, agentic-coding, skills-ecosystem |
+| [016](016-nate-b-jones-opus-46-jump.md) | Claude Opus 4.6: The Biggest AI Jump I've Covered--It's Not Close. (Here's What You Need to Know) | Nate B Jones | video | ai-landscape, claude-code, agentic-coding |
+| [017](017-primeagen-skills-security.md) | Be Careful w/ Skills | ThePrimeagen | video | security, skills, skills-ecosystem |
 | [018](018-circleci-ai-sdlc.md) | The New AI-Driven SDLC | CircleCI (Jacob Schmitt) | article | ai-sdlc, agentic-coding, enterprise-ai |
 | [019](019-matt-shumer-something-big.md) | Something Big Is Happening | Matt Shumer | article | ai-landscape, capability-overhang, ai-economics |
-| [020](020-simon-scrapes-agent-teams.md) | How & When to Use Claude Code Agent Teams in 13 Mins (Opus 4.6) | Simon Scrapes | video | agent-teams, multi-agent, claude-code, agentic-coding, context-engineering, task-system |
+| [020](020-simon-scrapes-agent-teams.md) | How & When to Use Claude Code Agent Teams in 13 Mins (Opus 4.6) | Simon Scrapes | AI Automation | video | agent-teams, multi-agent, claude-code, agentic-coding, context-engineering, task-system |
 | [021](021-ai-labs-claude-code-tricks.md) | Claude's Best Release Yet + 10 Tricks That Gave Me An Unfair Advantage | AI LABS | video | claude-code, agentic-coding, context-engineering, mcp, skills, multi-agent, validation, agent-teams |
-| [022](022-traversy-media-forced-ai.md) | Developers are forced to use AI | Traversy Media | video | vibe-coding, ai-landscape |
-| [023](023-xcreate-glm5-review.md) | Let's Run GLM-5 - SUPER LARGE Local AI "Coding King" REVIEW | xCreate | video | ai-landscape, infrastructure |
+| [022](022-traversy-media-forced-ai.md) | Developers are forced to use AI | Traversy Media (Brad Traversy) | video | vibe-coding, ai-landscape, career-collapse |
+| [023](023-xcreate-glm5-review.md) | Let's Run GLM-5 - SUPER LARGE Local AI \"Coding King\" REVIEW | xCreate | video | ai-landscape, infrastructure |
 | [024](024-jo-van-eyck-agentic-coding-2026.md) | You are Not Ready: Agentic coding in 2026 | Jo Van Eyck | video | agentic-coding, claude-code, multi-agent, agent-teams, context-engineering, prompt-engineering, skills, capability-overhang |
-| [025](025-natasha-bernal-ai-productivity-bubble.md) | AI productivity bubble: 'There is a reckoning coming for employers' | The Tech Report (Natasha Bernal) | video | ai-hype, ai-economics, enterprise-ai, capability-overhang |
+| [025](025-natasha-bernal-ai-productivity-bubble.md) | AI productivity bubble: 'There is a reckoning coming for employers' | Natasha Bernal | The Tech Report | video | ai-hype, ai-economics, enterprise-ai, capability-overhang |
 | [026](026-no-code-mba-claude-code-tips.md) | 10 Claude Code tips I wish I knew from the start | No Code MBA | video | claude-code, skills, context-engineering, agentic-coding |
 | [027](027-joshua-morony-git-worktree.md) | Devs can no longer avoid learning Git worktree | Joshua Morony | video | agentic-coding, ai-sdlc |
 | [028](028-caleb-writes-code-ai-replacement.md) | Will AI REPLACE Software Developers..? | Caleb Writes Code | video | ai-landscape, ai-hype, capability-overhang, agentic-coding, ai-economics |
@@ -42,31 +42,31 @@ Each source is synthesized (not transcribed) into a structured note with frontma
 | [032](032-nate-b-jones-openclaw.md) | OpenClaw: 160,000 Developers Just Showed Us What People Actually Want From AI (It's NOT Chatbots) | Nate B Jones | video | ai-landscape, security, enterprise-ai, capability-overhang, skills-ecosystem, ai-hype |
 | [033](033-prof-g-ethan-mollick-ai-wrong.md) | Why CEOs Are Getting AI Wrong — with Ethan Mollick | Prof G Conversations (Scott Galloway / Ethan Mollick) | video | enterprise-ai, ai-landscape, ai-hype, ai-economics, capability-overhang |
 | [034](034-better-offline-cal-newport.md) | Hater Season: Cal Newport on AI Reporting | Better Offline (Ed Zitron / Cal Newport) | video | ai-hype, ai-economics, vibe-coding, ai-landscape |
-| [035](035-lennys-podcast-openai-sherwin-wu.md) | "Engineers are becoming sorcerers" — The future of software development with OpenAI's Sherwin Wu | Lenny's Podcast (Sherwin Wu) | video | openai, enterprise-ai, ai-landscape, agentic-coding, capability-overhang, ai-economics, ai-sdlc, vibe-coding |
+| [035](035-lennys-podcast-openai-sherwin-wu.md) | \"Engineers are becoming sorcerers\" | The future of software development with OpenAI's Sherwin Wu | Lenny's Podcast (Sherwin Wu) | video | openai, enterprise-ai, ai-landscape, agentic-coding, capability-overhang, ai-economics, ai-sdlc, vibe-coding |
 | [036](036-prof-g-ai-kill-software.md) | Did AI Just Kill Software? | Prof G Markets (Scott Galloway) | video | ai-hype, ai-economics, enterprise-ai, ai-landscape, anthropic, openai |
 | [037](037-prof-g-google-ai-arms-race.md) | Google Goes All-In on the AI Arms Race | Prof G Markets (Scott Galloway) | video | ai-economics, infrastructure, ai-hype, ai-landscape |
 | [038](038-interface-studies-prompt-interface.md) | When the Interface Flattens Into a Prompt | Interface Studies | video | ai-landscape, prompt-engineering, context-engineering, specification, vibe-coding, ai-hype |
-| [039](039-pivot-to-ai-saaspocalypse.md) | SaaSpocalypse: investors overspend badly and blame AI | Pivot to AI (David Gerard) | video | ai-hype, ai-economics, enterprise-ai, vibe-coding, anthropic |
+| [039](039-pivot-to-ai-saaspocalypse.md) | SaaSpocalypse: investors overspend badly and blame AI | Pivot to AI | video | ai-hype, ai-economics, enterprise-ai, vibe-coding, anthropic |
 | [040](040-charlie-automates-claudemd-context.md) | Stop Feeding Claude Your Entire CLAUDE.md | Charlie Automates | video | claude-code, context-engineering, skills-ecosystem |
 | [041](041-awesome-claude-compiler-critique.md) | The new Claude just generated the worst C compiler ever... | Awesome | video | ai-hype, agent-teams, anthropic, ai-economics, multi-agent |
 | [042](042-devforge-vibe-coding-trap.md) | Vibe Coding is a Trap (What Senior Devs See That You Don't) | DevForge | video | vibe-coding, ai-hype, ai-sdlc |
 | [043](043-agrici-daniel-claude-ad-agency.md) | Claude Code just replaced your ad agency - here's how | Agrici Daniel | video | claude-code, skills, skills-ecosystem, prompt-engineering, context-engineering, mcp |
-| [044](044-nate-b-jones-claude-excel-powerpoint.md) | I Just Did a Full Day of Analyst Work in 10 Minutes | Nate B Jones | video | enterprise-ai, ai-economics, capability-overhang, anthropic |
+| [044](044-nate-b-jones-claude-excel-powerpoint.md) | I Just Did a Full Day of Analyst Work in 10 Minutes. The $120K Job Description Just Changed Forever. | Nate B Jones | video | enterprise-ai, ai-economics, capability-overhang, anthropic |
 | [045](045-primetime-altman-townhall-biosecurity.md) | Sam Altman said what??? | ThePrimeTime | video | ai-safety, ai-economics, ai-hype, openai, ai-landscape |
 | [046](046-sam-witteveen-webmcp.md) | The Rise of WebMCP | Sam Witteveen | video | mcp, agentic-coding, ai-landscape, enterprise-ai |
 | [047](047-standuppod-ai-browser-security.md) | OpenAI's AI Browser Is a Security Nightmare | TheStandupPod | video | security, ai-hype, openai, chatgpt |
 | [048](048-brainqub3-recursive-language-models.md) | Before You Build Another Agent, Understand This MIT Paper | Brainqub3 | video | context-engineering, agentic-coding, ai-landscape |
-| [049](049-two-minute-papers-assistant-axis.md) | Anthropic Found Out Why AIs Go Insane | Two Minute Papers | video | ai-safety, anthropic, ai-landscape |
+| [049](049-two-minute-papers-assistant-axis.md) | Anthropic Found Out Why AIs Go Insane | Two Minute Papers (Dr. Karoly Zsolnai-Feher) | video | ai-safety, anthropic, ai-landscape |
 | [050](050-sam-harris-ai-economy-emergency.md) | We're Not Ready for What AI Is About to Do to the Economy | Sam Harris | video | ai-hype, ai-economics, ai-landscape, capability-overhang, revenue-per-employee |
-| [051](051-simon-scrapes-claude-code-tips.md) | You're using Claude Code Wrong - These 10 Tips Will Change Everything | Simon Scrapes | video | claude-code, agent-teams, skills, context-engineering, skills-ecosystem, validation |
+| [051](051-simon-scrapes-claude-code-tips.md) | You're using Claude Code Wrong - These 10 Tips Will Change Everything | Simon Scrapes | AI Automation | video | claude-code, agent-teams, skills, context-engineering, skills-ecosystem, validation |
 | [052](052-novara-media-anthropic-safety-crisis.md) | Claude Isn't Safe. This Anthropic Whistleblower Has the Proof. | Novara Media | video | ai-safety, ai-hype, ai-economics, anthropic, ai-landscape |
-| [053](053-hr-com-ai-operational-traction-wfm.md) | From AI Curiosity to Operational Traction | HR.com | video | enterprise-ai, ai-hype, capability-overhang |
+| [053](053-hr-com-ai-operational-traction-wfm.md) | Episode 61: From AI Curiosity to Operational Traction: Where Work Tech Gets Real | HR.com (Brent Skinner & Jim Jensen) | video | enterprise-ai, ai-hype, capability-overhang |
 | [054](054-java-brains-cursor-browser-hype.md) | The Cursor Situation | Java Brains | video | ai-hype, agentic-coding, cursor, multi-agent, ai-economics |
 | [055](055-brainqub3-multi-agent-measurement.md) | I Built an Open-Source Rig That Measures Multi-Agent Architectures | Brainqub3 | video | multi-agent, agent-teams, enterprise-ai, agentic-coding |
 | [056](056-dwarkesh-patel-dario-amodei-interview.md) | Dario Amodei — The highest-stakes financial model in history | Dwarkesh Patel | video | ai-economics, anthropic, ai-landscape, ai-safety, infrastructure, enterprise-ai, capability-overhang |
 | [057](057-ibm-zero-trust-ai-agents.md) | Securing AI Agents with Zero Trust | IBM Technology | video | security, agentic-coding, enterprise-ai, multi-agent |
 | [058](058-krakowski-openclaw-agents.md) | The TRUTH About OpenClaw AI Agents (And How I'm Using Them) | Jeremiah Krakowski | video | ai-hype, multi-agent, security, enterprise-ai, ai-economics |
-| [059](059-nate-b-jones-ai-spending-skills.md) | Why $650 Billion in AI Spending ISN'T Enough. The 4 Skills that Survive | Nate B Jones | video | ai-economics, infrastructure, enterprise-ai, ai-hype, capability-overhang, ai-landscape, agentic-coding |
+| [059](059-nate-b-jones-ai-spending-skills.md) | Why $650 Billion in AI Spending ISN'T Enough. The 4 Skills that Survive and What This Means for You. | Nate B Jones | video | ai-economics, infrastructure, enterprise-ai, ai-hype, capability-overhang, ai-landscape, agentic-coding |
 | [060](060-prompt-engineering-100x-breakthrough.md) | The 100x AI Breakthrough No One is Talking About | Prompt Engineering | video | ai-landscape, agentic-coding, ai-economics, infrastructure |
 | [061](061-fairley-ai-first-construction.md) | Become an AI-first construction company: Strategy, Systems and Use-Cases | Tim Fairley | video | enterprise-ai, ai-hype, capability-overhang |
 | [062](062-simon-scrapes-claude-code-levels.md) | Every Level of Claude Code Explained in 39 Minutes | Simon Scrapes | video | claude-code, skills, context-engineering, mcp, agentic-coding, multi-agent, agent-teams, skills-ecosystem |
@@ -102,9 +102,9 @@ Each source is synthesized (not transcribed) into a structured note with frontma
 | [092](092-java-brains-staff-engineer-architect.md) | Everyone is Staff Engineer / Architect Now! | Java Brains | video | ai-hype, ai-economics, capability-overhang, ai-sdlc |
 | [093](093-pivot-to-ai-openclaw-crypto.md) | The obnoxious GitHub OpenClaw AI bot is … a crypto bro | Pivot to AI | video | ai-hype, security, skills-ecosystem |
 | [094](094-y-combinator-openclaw-viral-agent.md) | OpenClaw Creator Explains How He Built The Viral Agent | Y Combinator | video | ai-landscape, agentic-coding, security, skills-ecosystem |
-| [095](095-nate-b-jones-openclaw-saga.md) | The OpenClaw Saga: Zuckerberg Begged This Developer to Join Meta | Nate B Jones | video | ai-landscape, security, enterprise-ai, ai-economics, agentic-coding |
+| [095](095-nate-b-jones-openclaw-saga.md) | The OpenClaw Saga: Zuckerberg Begged This Developer to Join Meta. He Said No. Here's Who Got Him. | Nate B Jones | video | ai-landscape, security, enterprise-ai, ai-economics, agentic-coding |
 | [096](096-gary-marcus-ai-problems.md) | Gary Marcus on the Massive Problems Facing AI & LLM Scaling | Crisis To Opportunity | video | ai-hype, ai-economics, ai-landscape, infrastructure |
-| [097](097-yongyea-openai-microsoft-split.md) | OpenAI Just Lost Its Biggest Partner, Microsoft Abandon Sinking Ship | YongYea | video | ai-economics, ai-hype, openai, infrastructure |
+| [097](097-yongyea-openai-microsoft-split.md) | OpenAI Just Lost Its Biggest Partner, Microsoft Abandon Sinking Ship To Pursue Self-Sufficiency... | YongYea | video | ai-economics, ai-hype, openai, infrastructure |
 | [098](098-eliot-prince-cowork-explained.md) | Claude COWORK Clearly Explained (& how to use it for beginners) | Eliot Prince | video | claude-code, skills-ecosystem, enterprise-ai |
 | [099](099-damian-galarza-agent-memory-search.md) | How AI Agents Search Their Memory | Damian Galarza | video | context-engineering, agentic-coding, multi-agent |
 | [100](100-justin-sung-top-1-percent-thinking.md) | How To Think Like The Top 1% | Justin Sung | video | context-engineering, ai-landscape |
@@ -143,7 +143,7 @@ Each source is synthesized (not transcribed) into a structured note with frontma
 | [133](133-infographics-show-openai-money.md) | What Happens When OpenAI Runs Out of Money | The Infographics Show | video | ai-economics, ai-hype, openai, infrastructure |
 | [134](134-prolific-deepmind-agent-platform.md) | Google DeepMind's Experimental Platform for Humans and LLM Agents | Prolific | video | multi-agent, ai-landscape, enterprise-ai, ai-safety |
 | [135](135-john-kim-claude-code-workflow.md) | His Claude Code Workflow Is Insane | John Kim | video | claude-code, agentic-coding, context-engineering, skills-ecosystem, multi-agent |
-| [136](136-lennys-podcast-boris-cherny-after-coding.md) | Head of Claude Code: What happens after coding is solved | Lenny's Podcast (Boris Cherny) | video | claude-code, anthropic, agentic-coding, ai-landscape, context-engineering, ai-sdlc, capability-overhang, specification, multi-agent |
+| [136](136-lennys-podcast-boris-cherny-after-coding.md) | Head of Claude Code: What happens after coding is solved | Boris Cherny | Lenny's Podcast | video | claude-code, anthropic, agentic-coding, ai-landscape, context-engineering, ai-sdlc, capability-overhang, specification, multi-agent |
 | [137](137-matt-pocock-worktree-workflow.md) | I'm using claude --worktree for everything now | Matt Pocock | video | claude-code, agentic-coding, multi-agent |
 | [138](138-neuralnine-coding-habit.md) | I Started A Coding Habit & You Should Too... | NeuralNine | video | vibe-coding, agentic-coding, ai-sdlc |
 | [139](139-nate-b-jones-model-security.md) | Anthropic Tested 16 Models. Instructions Didn't Stop Them (When Security is a Structural Failure) | Nate B Jones | video | ai-safety, security, ai-hype, enterprise-ai, agentic-coding |
@@ -169,7 +169,7 @@ Each source is synthesized (not transcribed) into a structured note with frontma
 | [159](159-mo-bitar-vibecoding-handwriting.md) | Two Years of Vibe Coding — Why AI-Generated Codebases Fall Apart | Mo Bitar | video | vibe-coding, ai-hype, agentic-coding |
 | [160](160-missing-semester-agentic-coding.md) | MIT Missing Semester — Agentic Coding Fundamentals and Context Management | Missing Semester | video | agentic-coding, claude-code, context-engineering, mcp |
 | [161](161-nate-b-jones-ai-napster-moment.md) | Model Distillation Theft — Chinese Labs Extract Claude's Training at Scale | Nate B Jones | video | ai-economics, ai-landscape, ai-hype, enterprise-ai, security |
-| [162](162-openai-openclaw-steinberger.md) | Peter Steinberger on Building OpenClaw — Unread Code and the Agentic Trap | OpenAI | video | ai-landscape, agentic-coding, security, openai |
+| [162](162-openai-openclaw-steinberger.md) | Peter Steinberger on Building OpenClaw — 90K Contributions, Unread Code, and the Agentic Trap | OpenAI (Builders Unscripted) | video | agentic-coding, ai-landscape, security, vibe-coding, openai, skills-ecosystem |
 | [163](163-primetime-openclaw-inbox.md) | OpenClaw Deletes Meta AI Safety Lead's Inbox — Agent Permissions Gone Wrong | The PrimeTime | video | agentic-coding, ai-hype, security |
 | [164](164-matt-pocock-codebase-ai-ready.md) | Deep Modules for AI — Designing Codebases Agents Can Navigate | Matt Pocock | video | agentic-coding, context-engineering, ai-sdlc |
 | [165](165-pragmatic-engineer-hashimoto-ai-coding.md) | Mitchell Hashimoto on AI Coding, Ghostty, and the Open Source Quality Crisis | The Pragmatic Engineer | video | agentic-coding, claude-code, vibe-coding, ai-landscape |
@@ -200,7 +200,7 @@ Each source is synthesized (not transcribed) into a structured note with frontma
 | [190](190-simon-scrapes-claude-code-concepts-explained.md) | 27 Claude Code Concepts Explained for Non-Technical Users | Simon Scrapes | video | claude-code, agentic-coding, context-engineering |
 | [191](191-ai-paper-slop-llm-deanonymization.md) | LLM-Powered Deanonymization at Scale: The Death of Practical Obscurity | AI Paper Slop | video | ai-safety, security, ai-landscape, capability-overhang |
 | [192](192-ai-native-dev-context-engineering-rigor.md) | Applying Software Engineering Rigor to Context Engineering | AI Native Dev | video | context-engineering, skills-ecosystem, agentic-coding |
-| [193](193-google-cloud-tech-agent-design-patterns.md) | Single, Sequential, and Parallel Agent Design Patterns with ADK | Google Cloud Tech | video | agentic-coding, multi-agent |
+| [193](193-google-cloud-tech-agent-design-patterns.md) | Single, Sequential, and Parallel Agent Design Patterns with ADK | Google Cloud Tech | video | agentic-patterns, multi-agent |
 | [194](194-claude-skills-explainer.md) | Claude Code Skills: Automatic Task-Specific Instructions | Claude | video | claude-code, skills |
 | [195](195-marty-vaughn-claude-cowork-beginners.md) | Claude Co-work: Scheduled Tasks, Connectors, Skills, and Plugins | Marty Vaughn | video | claude-code, skills-ecosystem, enterprise-ai |
 | [196](196-turing-college-agent-teams-walkthrough.md) | Claude Opus 4.6 Agent Teams: Setup, Demo, and Cost Analysis | Turing College | video | agent-teams, multi-agent, claude-code |
@@ -230,25 +230,25 @@ Each source is synthesized (not transcribed) into a structured note with frontma
 | [220](220-jaymin-west-anti-slop-engineering.md) | How Top Engineers Stop AI Agents From Writing Slop | Jaymin West | video | agentic-coding, validation, builder-validator, multi-agent, specification |
 | [221](221-matt-pocock-seven-phases-ai-development.md) | The 7 phases of AI-driven development | Matt Pocock | video | agentic-coding, specification, ai-sdlc, vibe-coding |
 | [222](222-ray-amjad-skills-creator-evals.md) | Anthropic Just Dropped Claude Code Skills 2.0 | Ray Amjad | video | skills, claude-code, validation |
-| [223](223-nate-b-jones-claude-vs-chatgpt.md) | Everyone You Know Is About to Try Claude | Nate B Jones | video | ai-landscape, prompt-engineering, context-engineering, ai-hype |
-| [224](224-noah-vincent-obsidian-second-brain.md) | Build Your AI Second Brain with Obsidian + Claude Code | Noah Vincent | video | claude-code, context-engineering, agentic-coding |
-| [225](225-simon-scrapes-skills-mastery.md) | How to Use Claude Code Skills Like the 1% | Simon Scrapes | video | skills, claude-code, skills-ecosystem, context-engineering |
+| [223](223-nate-b-jones-claude-vs-chatgpt.md) | Everyone You Know Is About to Try Claude (I Showed 3 People for 5 Minutes — All 3 Switched) | Nate B Jones | video | ai-landscape, prompt-engineering, context-engineering, ai-hype |
+| [224](224-noah-vincent-obsidian-second-brain.md) | Build Your AI Second Brain with Obsidian + Claude Code (Free Setup) | Noah Vincent | video | claude-code, context-engineering, agentic-coding |
+| [225](225-simon-scrapes-skills-mastery.md) | How to Use Claude Code Skills Like the 1% (it's easy actually) | Simon Scrapes | video | skills, claude-code, skills-ecosystem, context-engineering |
 | [226](226-mlst-ai-coding-illusion.md) | The Dangerous Illusion of AI Coding? - Jeremy Howard | Machine Learning Street Talk (Jeremy Howard) | video | ai-hype, vibe-coding, ai-sdlc, capability-overhang, ai-landscape, context-engineering |
 | [227](227-chase-ai-skill-creator.md) | Claude Code Skills Just Got a MASSIVE Upgrade | Chase AI | video | claude-code, skills, validation, agentic-coding |
-| [228](228-aicodeking-pi-coding-agent.md) | Pi Coding Agent: RIP Claude Code & OpenCode! | AICodeKing | video | agentic-coding, multi-agent, context-engineering, skills |
-| [229](229-fireship-cloudflare-vnext.md) | Cloudflare just slop forked Next.js | Fireship | video | ai-sdlc, ai-landscape, vibe-coding |
+| [228](228-aicodeking-pi-coding-agent.md) | Pi Coding Agent: RIP Claude Code & OpenCode! This Opensource Coding Agent is JUST WAY BETTER! | AICodeKing | video | agentic-coding, multi-agent, context-engineering, skills |
+| [229](229-fireship-cloudflare-vnext.md) | Cloudflare just slop forked Next.js... | Fireship | video | ai-sdlc, ai-landscape, vibe-coding |
 | [230](230-tech-with-tim-claude-code-tutorial.md) | Claude Code - Full Tutorial for Beginners | Tech With Tim | video | claude-code, vibe-coding |
 | [231](231-eo-mihail-eric-ai-native-engineer.md) | From Writing Code to Managing Agents — Most Engineers Aren't Ready | EO (Mihail Eric) | video | ai-sdlc, agentic-coding, multi-agent, ai-landscape, capability-overhang |
-| [232](232-cole-medin-excalidraw-diagrams.md) | Build BEAUTIFUL Diagrams with Claude Code | Cole Medin | video | claude-code, skills, validation |
+| [232](232-cole-medin-excalidraw-diagrams.md) | Build BEAUTIFUL Diagrams with Claude Code (Full Workflow) | Cole Medin | video | claude-code, skills, validation |
 | [233](233-neetcode-opencode-future-coding.md) | Building the Future of coding, OpenCode with Dax Raad | NeetCode (Dax Raad) | video | agentic-coding, ai-landscape, ai-hype, vibe-coding, context-engineering |
 | [234](234-venturebeat-enterprise-openclaw.md) | Everyone Wants an Enterprise OpenClaw | VentureBeat | video | enterprise-ai, ai-landscape, context-engineering, multi-agent, agentic-coding |
-| [235](235-grace-leung-ai-marketing-skills.md) | Claude Skills: Build Your First AI Marketing Team | Grace Leung | video | skills, claude-code, multi-agent, agent-teams |
+| [235](235-grace-leung-ai-marketing-skills.md) | Claude Skills: Build Your First AI Marketing Team in 16 Minutes (Claude Code) | Grace Leung | video | skills, claude-code, multi-agent, agent-teams |
 | [236](236-nate-herk-nano-banana-websites.md) | The NEW Nano Banana 2 + Claude Code = $10k Websites | Nate Herk | video | claude-code, skills, vibe-coding |
-| [237](237-warp-design-engineering.md) | The Rise of Design Engineering | Warp (Raphael Salaja) | video | ai-sdlc, vibe-coding, ai-hype |
+| [237](237-warp-design-engineering.md) | The Rise of Design Engineering | Raphael Salaja | MIT Startup Week | Warp (Raphael Salaja) | video | ai-sdlc, vibe-coding, ai-hype |
 | [238](238-artem-zhutov-claude-memory.md) | Making Claude Code Actually Remember Things | Artem Zhutov | video | claude-code, context-engineering, mcp, skills |
-| [239](239-j-gravelle-jcodemunch-tokens.md) | Claude MCP Tool That Cuts Token Costs by 99% | J. Gravelle | video | mcp, claude-code, ai-economics, context-engineering |
+| [239](239-j-gravelle-jcodemunch-tokens.md) | Claude MCP Tool That Cuts Token Costs by 99% — jCodeMunch | J. Gravelle | video | mcp, claude-code, ai-economics, context-engineering |
 | [240](240-bart-slodyczka-openclaw-token-reduction.md) | OpenClaw Too Expensive? Try This Instead (97% Reduction) | Bart Slodyczka | video | ai-economics, enterprise-ai, context-engineering |
-| [241](241-nate-b-jones-openai-context-lock-in.md) | OpenAI Leaked GPT-5.4. It's a Distraction. (The AI Lock-In No One Is Talking About) | Nate B Jones | video | ai-economics, enterprise-ai, context-engineering, ai-landscape, openai, anthropic, infrastructure |
+| [241](241-nate-b-jones-openai-context-lock-in.md) | OpenAI Leaked GPT-5.4. It's a Distraction. (The AI Lock-In No One Is Talking About) | Nate B Jones | video | ai-economics, enterprise-ai, context-engineering, ai-landscape, openai, anthropic, infrastructure, ai-hype, capability-overhang |
 | [242](242-vasilije-markovic-cognee-agent-memory.md) | Why Your AI Agents Keep Forgetting (And How To Fix That) | Vasilije Markovic (Cognee) | video | context-engineering, agentic-coding, multi-agent, infrastructure, ai-landscape |
 | [243](243-skills-legal-ai-playbooks.md) | SKILLS Legal AI Use Case Demos: Playbook Generation | SKILLS | video | enterprise-ai, ai-landscape, ai-sdlc |
 | [244](244-agenticflow-openclaw-security.md) | AI-Powered OpenClaw Security Audit & Hardening | AgenticFlow AI | video | security, agentic-coding, multi-agent |
@@ -265,13 +265,20 @@ Each source is synthesized (not transcribed) into a structured note with frontma
 | [255](255-indydevdan-mac-mini-agent-skills.md) | Mac Mini Agents: OpenClaw is a NIGHTMARE... Use these SKILLS instead | IndyDevDan | video | agentic-coding, skills, multi-agent, security, claude-code |
 | [256](256-primetime-github-in-trouble.md) | Github might be in trouble | The PrimeTime | video | ai-landscape, ai-hype, agentic-coding, infrastructure |
 | [257](257-rob-shocks-google-workspace-opportunity.md) | Why every Claude & OpenClaw builder should exploit this Google Opportunity right now | Rob Shocks | video | mcp, skills, agentic-coding, enterprise-ai, claude-code |
-
-## Adding Sources
-
-Use the `/synthesize-source` skill to create new source notes from URLs:
-
-```
-/synthesize-source https://youtube.com/watch?v=...
-```
-
-Or create manually using the [template](_template.md).
+| [258](258-the-primetime-agent-consumer-ad-targeting.md) | What is Zuckerberg doing? | The PrimeTime | video | ai-hype, multi-agent, security, ai-economics, ai-landscape |
+| [259](259-low-level-ai-exploit-development.md) | cybersecurity is about to get weird | Low Level | video | security, ai-landscape, vibe-coding, agentic-coding |
+| [260](260-simon-scrapes-claude-code-loops-evals.md) | Claude Code 2.0 Has Arrived (It’s Insane) | Simon Scrapes | video | claude-code, skills, task-system, agentic-coding, mcp |
+| [261](261-nick-saraev-autoresearch-autonomous-optimization.md) | Claude Code + Karpathy's Autoresearch = The New Meta | Nick Saraev | video | claude-code, agentic-coding, multi-agent, meta-prompts, prompt-engineering |
+| [262](262-ai-news-strategy-daily-nate-b-jones-persistent-memory-visual-layer.md) | One Simple System Gave All My AI Tools a Memory. Here's How. | AI News & Strategy Daily | Nate B Jones | video | mcp, context-engineering, multi-agent, agentic-coding |
+| [263](263-xplodivity-vibe-coding-last-mile.md) | The big problem with vibe coding tech companies Ignore | xplodivity | video | vibe-coding, ai-sdlc, security, ai-hype |
+| [264](264-gtm-ai-academy-cowork-gtm-workflows.md) | The Cowork GTM Playbook: 3 Claude Cowork Workflows to supercharge your revenue team | GTM AI Academy  | video | skills, multi-agent, prompt-engineering, agent-teams, enterprise-ai |
+| [265](265-fireship-open-source-agent-tools.md) | 7 new open source AI tools you need right now… | Fireship | video | agent-teams, prompt-engineering, context-engineering, vibe-coding, multi-agent, security, ai-landscape |
+| [266](266-jaymin-west-prompt-inheritance-patterns.md) | Inheritance in Prompting | Jaymin West | video | prompt-engineering, multi-agent, agent-teams, meta-prompts, context-engineering |
+| [267](267-noah-vincent-obsidian-claude-code-vault.md) | Stop Notion. Here's Why Obsidian is the BEST Note-Taking app in 2026 | Noah Vincent | video | claude-code, security, mcp, context-engineering |
+| [268](268-ai-plus-plus-enterprise-agent-security.md) | One Sentence Can Hijack Your AI. Here's How to Stop It. | AI-plus-plus | video | security, enterprise-ai, multi-agent, agent-teams, agentic-coding |
+| [269](269-ai-jason-harness-engineering-autonomous-agents.md) | wtf is Harness Engineer & why is it important | AI Jason | video | agentic-coding, multi-agent, context-engineering, validation, agent-teams, ai-landscape |
+| [270](270-simon-scrapes-self-improving-skills-loop.md) | Build Self-Improving Claude Code Skills. The Results Are Crazy. | Simon Scrapes | video | claude-code, skills, agentic-coding, validation, meta-prompts |
+| [271](271-mo-bitar-amazon-ai-production-failures.md) | Amazon is regretting AI | Mo Bitar | video | ai-hype, enterprise-ai, agentic-coding, security, ai-economics, validation |
+| [272](272-aleph-fpa-finance-ai-prompting.md) | The Art of AI Prompting in Finance | Aleph FP&A | video | prompt-engineering, meta-prompts, context-engineering, enterprise-ai, chatgpt |
+| [273](273-deep-business-moltbook-agent-playground.md) | Moltbook — AI Agent Playground — 72-2d | Deep Business | video | multi-agent, ai-safety, enterprise-ai, agentic-coding |
+| [274](274-ai-labs-mcp-context-bloat-cli.md) | I Didn't Know This Was Possible Until Now | AI LABS | video | mcp, context-engineering, claude-code, skills, agentic-coding |
