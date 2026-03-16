@@ -7,7 +7,7 @@ url: "https://www.youtube.com/watch?v=dj2nF5ToEyY"
 date: "2026-03-12"
 duration: "56:45"
 type: "video"
-tags: ["cursor", "claude-code", "agentic-coding", "multi-agent", "security", "ai-sdlc", "prompt-engineering"]
+tags: ["agentic-coding", "cursor", "multi-agent", "validation", "security", "ai-sdlc", "prompt-engineering"]
 curriculum_modules: ["04-agentic-patterns", "05-team-orchestration", "06-strategy-and-economics"]
 ---
 
@@ -19,46 +19,41 @@ curriculum_modules: ["04-agentic-patterns", "05-team-orchestration", "06-strateg
 
 ## Summary
 
-Eric Elliott demonstrates a live training session introducing new features in the AIDD (AI-Driven Development) framework, with particular focus on a new `aid churn` command that performs code hotspot analysis. The tool combines multiple deterministic metrics — commit frequency, cyclomatic complexity, line count, and information density — to surface files that are most likely to benefit from refactoring. This shifts code quality targeting from guesswork to data-driven prioritization.
+Eric Elliott demonstrates new features in the AIDD (AI-Driven Development) framework during a live team training session, with a focus on a new `aid churn` command that performs automated hotspot analysis on codebases. The tool combines multiple deterministic metrics—commit churn frequency, cyclomatic complexity, information density, and lines of code—to identify files that are most likely to harbor bugs or benefit from refactoring. The session shows this hotspot analysis being run as part of a broader automated code review workflow using parallel cursor web agents.
 
-A significant portion of the session covers the feedback loop problem in AI-assisted development: AI agents consistently repeat the same mistakes across PRs regardless of how much "thinking time" they're given, and expensive solutions like Anthropic's $25/run code review tool may not solve structural pattern-repetition issues. Elliott proposes a telemetry-driven system that logs recurring AI mistakes and automatically converts them into rules and task epics, creating a self-improving feedback cycle where the AI trains itself the more it's used.
+A significant portion of the session explores the challenge of AI agents repeating the same mistakes across PRs—particularly around security patterns like timing-safe token comparisons where AI models consistently regress toward incorrect conventional wisdom. Elliott outlines a planned solution: a telemetry service that tracks recurring AI mistakes and their mitigations, feeding back into rules and agent constraints in a self-improving loop. This "AI trains itself" feedback cycle is positioned as a key competitive moat.
 
-The session also touches on Cursor's parallel web agents (up to 4 simultaneous sub-agents), security pitfalls in token comparison (timing-safe compare is a false standard due to compiler optimizations), and practical architectural patterns like command dispatch tables to reduce cyclomatic complexity. The broader theme is moving AI-assisted development from reactive bug-fixing toward proactive, metrics-informed code health management.
+The session also touches on the economics of AI code review tools (Anthropic's new code review tool at ~$25/run vs. in-house approaches), the team's use of parallel sub-agents for dependency-wave workflows, and upcoming work on customizable scaffold manifests. The discussion reveals a mature, opinionated approach to AI-assisted development that prioritizes deterministic tooling alongside AI reasoning.
 
 ## Key Concepts
 
-### Code Hotspot Analysis via `aid churn`
+### Code Hotspot Analysis (`aid churn`)
+The `aid churn` command performs a 90-day lookback on git commit history to identify files with high churn rates (frequent commits as a proxy for bug-fix cycles). Combined with cyclomatic complexity scores and information density measurements, it produces a prioritized list of refactoring targets. High churn alone isn't always a bug signal (new feature work also drives churn), so the multi-metric approach reduces false positives. The goal is surfacing files where complexity and instability intersect.
 
-The `aid churn` command surfaces high-risk files by combining four signals: (1) **commit frequency** over a 90-day window as a churn indicator (frequent commits suggest active bug-fixing, not just feature work), (2) **cyclomatic complexity** — the number of independent code paths through a function, with a target of ~9 or below, (3) **information density** — measured by comparing gzip-compressed vs. uncompressed file size as a proxy for copy-paste repetition and abstraction opportunities, and (4) **raw line count** as a clutter/surface-area proxy. Files scoring poorly across these dimensions become prioritized refactoring targets.
+### Information Density as a Code Quality Metric
+Density is measured by running gzip compression on source files and comparing compressed-to-uncompressed size ratios. High compressibility signals repetition—likely copy-paste code or unabstracted boilerplate. Each duplicated instance of a bug multiplies the bug count (15 copies = 15 bugs), making density a practical proxy for abstraction opportunities. This is a deterministic, language-agnostic metric that complements AI-based code review.
 
-### Cyclomatic Complexity and the Command Dispatch Pattern
-
-High cyclomatic complexity (many nested if/else branches) creates combinatorial test explosions and hides bugs. Elliott advocates for **command dispatch tables** — a single keyed lookup that maps to individual single-path functions — as a structural solution. This reduces branching, makes each path independently testable, and limits how many ways a bug can enter the system.
+### Cyclomatic Complexity and Testability
+Cyclomatic complexity counts the number of independent code paths through a function. Elliott targets a maximum around 9, noting that values above that create a combinatorial explosion of test cases for full coverage. The recommended mitigation is replacing nested if/else branching with keyed command dispatch tables—one entry point, one path per key—which collapses complexity and makes unit testing straightforward.
 
 ### AI Mistake Telemetry and Self-Improving Feedback Loops
+A recurring AI failure mode is described: agents repeatedly regress to incorrect patterns (e.g., replacing cryptographically correct hash-based token comparison with "timing-safe" compares that compilers optimize away, reintroducing timing vulnerabilities). The proposed solution is a telemetry service logging recurring AI errors and their mitigations, which then feeds back into framework rules and agent skills automatically. More usage generates better constraints, creating a compounding improvement cycle.
 
-Because AI agents repeat the same coding mistakes across sessions and PRs regardless of prompt length or "thinking budget," Elliott proposes a **telemetry service** that logs recurring errors and their mitigations. Periodically (e.g., via Claude Code's built-in `insights` command), these logs are analyzed, converted into new rules and task epics, and fed back into the agent's instruction set. The result is a compounding improvement cycle: the more the system is used, the fewer mistakes it repeats.
-
-### Timing-Safe Token Comparison is a False Standard
-
-A persistent AI failure mode: agents replace correct constant-time hash comparison logic with `timingSafeCompare` functions that compilers optimize away — defeating the timing-safety guarantee. Modern compilers short-circuit comparisons when they can predict the result, leaking timing information that enables hangman-style brute-force attacks. The mitigation requires explicit code comments *and* framework-level security rules, but even then agents override them. This illustrates a class of security bugs where AI confident wrong answers are worse than no answer.
-
-### Parallel Sub-Agent Workflows with Cursor Web Agents
-
-Elliott uses Cursor's web agent mode to fork up to **4 parallel sub-agents**, organized around dependency chains: one wave resolves foundational dependencies, the next wave builds on them. This matches the natural DAG structure of most development tasks and provides meaningful throughput gains without requiring complex orchestration infrastructure.
+### Parallel Sub-Agent Workflows
+Elliott describes using Cursor web agents forked into up to four parallel sub-agents at a time. Work is structured in dependency waves: independent tasks run in parallel first, then subsequent waves build on their outputs. This pattern significantly accelerates throughput compared to sequential agentic coding while staying within manageable coordination overhead.
 
 ## Practical Takeaways
 
-- **Use commit frequency + complexity + density together** to prioritize refactoring targets rather than gut feel. A file touched 7 times in 90 days with cyclomatic complexity of 15 and low density is a high-priority target even if it has no obvious bugs today.
-- **Don't pay for "more thinking"** to solve AI pattern-repetition problems. Expensive multi-step review tools (e.g., $25/run) may not outperform targeted rules because the issue is model priors, not reasoning depth. Invest in better rules and telemetry instead.
-- **Log AI PR feedback repeatedly flagged by reviewers** and convert high-frequency items into CLAUDE.md rules or framework-level constraints. This is the highest-leverage improvement action available to teams using AI coding assistants.
-- **Add explicit `// DO NOT REPLACE` comments** around security-critical code patterns (especially token comparison logic) and back them up with framework security rules — but treat these as temporary mitigations while pursuing proper abstraction.
-- **Structure parallel agent work around dependency waves**: identify which tasks are truly independent, run those in parallel first, then trigger the next wave. Four parallel agents working in two waves outperforms eight agents with unmanaged dependencies.
+- **Use deterministic metrics alongside AI review**: Commit churn, cyclomatic complexity, and information density give you objective, reproducible signals that AI reasoning alone may miss or contradict—run them as part of every code review pipeline.
+- **Cap cyclomatic complexity around 9 and prefer dispatch tables over nested conditionals**: This single refactoring pattern dramatically reduces test surface area and the probability of AI agents introducing path-specific bugs.
+- **Leave explicit code comments on security-sensitive patterns AI consistently gets wrong**: Even with rules files, AI agents will regress on subtle security issues (e.g., timing-safe comparisons); inline comments saying "do not replace this" are a necessary guardrail.
+- **Log AI review feedback to build a mitigations corpus**: Tracking what the AI gets wrong repeatedly—per project and per team—creates the raw material for evolving rules files and agent skills that improve automatically over time.
+- **Evaluate third-party AI review tools against cost-per-run, not just quality**: At ~$25/run, high-cost review services need a clear quality delta over in-house prompt-based review to justify the spend; benchmark before committing.
 
 ## Notable Quotes
 
-> "No matter how much the AI agents think about that, they still mess it up and they still don't catch that security flaw... we literally have to leave code comments in there saying 'don't do that.'"
-
-> "The more that it talks to itself, the more it digs its heels in about making the same mistakes... what you're paying for with that $25 is just a lot of thinking, a lot of tokens — it's just talking to itself a lot."
+> "No matter how much what you're paying for with that $25 is just a lot of thinking, a lot of tokens, it's just talking to itself a lot for that $25. And what I found is that sometimes the more that it talks to itself the more it digs its heels in about making the same mistakes."
 
 > "The AI trains itself as you continue to use it. So the more you use it, the better it gets just automatically in this perpetual positive feedback cycle."
+
+> "More clutter equals more surface area for bugs equals more bugs. More places for bugs to hide."

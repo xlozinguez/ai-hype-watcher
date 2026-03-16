@@ -7,7 +7,7 @@ url: "https://www.youtube.com/watch?v=5AfSB0sWihw"
 date: "2026-03-15"
 duration: "13:24"
 type: "video"
-tags: ["claude-code", "skills", "context-engineering", "agentic-coding", "multi-agent", "skills-ecosystem"]
+tags: ["claude-code", "skills", "agentic-coding", "context-engineering", "multi-agent", "skills-ecosystem"]
 curriculum_modules: ["03-claude-code-essentials", "04-agentic-patterns"]
 ---
 
@@ -19,49 +19,55 @@ curriculum_modules: ["03-claude-code-essentials", "04-agentic-patterns"]
 
 ## Summary
 
-This video presents an architectural framework for building an "Agentic Operating System" (Agentic OS) using Claude Code skills — moving beyond isolated, single-purpose skills toward interconnected systems that share context, chain together into workflows, and improve through feedback loops. The core argument is that most practitioners use skills in isolation, which limits output quality and requires continued manual effort. The real leverage comes from connecting skills through shared brand context, enabling them to collaborate on multi-step business tasks.
+This video presents a framework for building an "agentic operating system" (Agentic OS) on top of Claude Code, arguing that the common mistake is treating skills as isolated tools rather than composable components of a unified system. The creator walks through the architecture layer by layer: shared brand context, a learning/memory system, self-maintenance via heartbeat and wrap-up routines, and finally skill chaining into full workflows. The core insight is that individual skills only become transformational when they share context, feed each other's outputs, and operate as one coherent system.
 
-The architecture has three distinct layers: (1) a shared brand context folder that gives every skill a consistent understanding of voice, positioning, and ICP; (2) a context/memory folder that tracks working preferences, session history, and accumulated learnings; and (3) a self-maintenance layer (heartbeat + wrap-up skills) that automatically syncs the system's registry when skills or MCP servers are added or removed. Together these layers create a system that is initialized once, learns continuously from feedback, and requires minimal manual upkeep.
+A foundational principle is the separation between two persistent knowledge stores: a **brand context folder** (a relatively static snapshot of who you are, who you serve, and what quality looks like) and a **context folder** (a dynamic, session-aware record of preferences, short-term memory, and accumulated feedback learnings). Together these give the system both a stable identity and an ongoing relationship with the user that improves over time without requiring manual updates.
 
-The video is practical and systems-oriented, drawing on OpenClaw community patterns and the creator's own 20+ production skills. While it walks through real folder structures and command patterns, its primary value is conceptual: it offers a replicable mental model for how skill-based AI systems should be architected to behave like an operating system rather than a toolbox.
+The video also covers operational mechanics like dependency-aware skill installation, automated registry sync via heartbeat routines, and end-of-session wrap-up skills that commit work and update learnings—all designed to eliminate the manual doc-maintenance overhead that typically plagues large skill collections. The result is a system that knows your brand, maintains itself, and improves from feedback without the user having to babysit static configuration files.
 
 ---
 
 ## Key Concepts
 
-### Skill Anatomy: skill.md + Deep Knowledge Files
-A skill is a folder containing two elements: `skill.md` (step-by-step process instructions) and reference files (brand voice, example outputs, ICP documents, scripts). Skills downloaded from a marketplace are intentionally generic — they require the practitioner to populate the reference files with real business knowledge before producing high-quality, non-generic outputs. The reference files are where the actual differentiation lives.
+### Skill Architecture: skill.md + Deep Knowledge Files
+Every skill is a folder containing two components: a `skill.md` with step-by-step process instructions, and reference files holding domain-specific knowledge (brand voice samples, ICP descriptions, example outputs). Skills downloaded from marketplaces are intentionally generic—the reference files are where business-specific context lives, and they must be populated to get quality outputs. This separation makes skills portable but requires customization to be useful.
 
-### Shared Brand Context as a System Foundation
-A central `brand_context/` folder holds voice profiles, positioning documents, ICP files, sample outputs, and asset references — all as editable markdown. Every skill in the system reads from this single source of truth. This is initialized via a `start here` command that runs three dedicated "foundation skills" (brand voice extraction, positioning, ICP) which interview the user and generate structured files. The result is a one-time setup that eliminates per-skill context duplication.
+### Two-Layer Persistent Context
+The Agentic OS maintains two distinct persistent stores that all skills read from:
+- **Brand Context Folder**: Static-ish documents capturing voice profile, positioning, ICP, gold-standard content samples, and asset links. Built once via three foundation skills (brand voice extraction, positioning, ICP interview) and updated manually as the brand evolves.
+- **Context Folder**: Dynamic memory including `soul.md` (agent identity/behavior), `user.md` (personal preferences), short-term daily memory logs, and crucially `learnings.md`—a feedback ledger organized by skill. After each session, feedback is processed and written back into the relevant `skill.md` files, so skills literally self-update from critique.
 
-### The Context/Memory Folder: Dynamic Learning Layer
-Alongside static brand context sits a `context/` folder inspired by OpenClaw's memory architecture. Key files include `soul.md` (agent identity and behavior), `user.md` (user preferences and working style), `memory/` (short-term daily logs enabling session continuity), and `learnings.md` (long-term feedback memory keyed by skill). After each session, a wrap-up skill collects feedback, updates `skill.md` files with what worked or failed, and commits changes — so each subsequent run incorporates prior learnings without repeating instructions.
+### Self-Maintaining Registry via Heartbeat + Wrap-Up
+Rather than manually updating registry docs when skills are added or removed, the system runs a **heartbeat** at session start that scans the skills folder, diffs against documented state, and auto-registers changes (including MCP servers). A **wrap-up skill** triggered at session end collects feedback, updates learnings, fixes skill files, and commits all work. This creates a self-maintaining loop—the system documents itself rather than relying on the user to keep manifests accurate.
 
-### Heartbeat and Wrap-Up: Self-Maintaining Architecture
-At the start of each session, a "heartbeat" routine scans the `skills/` folder, compares disk state against the documented registry (`CLAUDE.md`, README), and automatically registers new skills, updates the context matrix, and adds `learnings.md` sections for newly detected skills or MCP servers. A complementary "wrap-up" skill runs at session end to collect deliverables, log feedback, sync docs, and commit work. Together these eliminate manual registry maintenance — the system stays self-consistent as it grows.
+### Skill Chaining into Workflows
+The real leverage comes from chaining skills sequentially, where each skill's output becomes the next skill's input. Example chain: trending research skill → saves a research brief to a projects folder → content repurposing skill pulls the brief + latest YouTube transcript → humanizer skill post-processes the output. Foundation skills (brand/ICP/positioning) run first to populate shared context; execution skills (copywriting, UGC scripts) consume it; cron/ops skills orchestrate the whole pipeline on a schedule. Skills are also dependency-aware—installing one skill auto-installs its required sub-skills.
 
-### Skill Chaining: From Collection to Workflow
-The Agentic OS organizes skills into categories (foundation, execution, strategy, ops/cron jobs) that are designed to feed into each other. A trending research skill outputs a research brief to a `projects/` folder; a content repurposing skill picks up that brief, fetches a YouTube transcript, runs a humanizer, and produces a newsletter — all while each step reads from brand context and prior learnings. Dependency resolution is also automated: installing a skill triggers installation of any sub-skills it depends on, preventing overlap and duplication.
+### Feedback-Driven Skill Improvement Loop
+`learnings.md` functions as long-term feedback memory. After major deliverables, the system solicits structured feedback ("Was the research useful? Was the newsletter too long?") and logs responses under each skill's section. At session end, those learnings are applied to update the actual `skill.md` process files. Because every skill is built to read its own learnings first before executing, quality compounds over time without the user repeating instructions or re-explaining preferences.
 
 ---
 
 ## Practical Takeaways
 
-- **Populate reference files before using any skill.** Generic skills from marketplaces will produce generic output until the deep knowledge files (voice, ICP, samples) are filled in with real business data.
-- **Use the foundation skills pattern for onboarding.** A brand voice extraction skill, a positioning skill, and an ICP skill that interview the user and generate structured markdown files is a repeatable, scalable initialization pattern for any Agentic OS.
-- **Design skills to read `learnings.md` first.** Building the convention that every skill checks its own learnings section before executing means quality improves automatically over time without re-prompting.
-- **Implement a heartbeat + wrap-up pair for every system.** The start-of-session scan and end-of-session sync pattern prevents documentation drift as the skill library grows and removes the need for manual registry updates.
-- **Organize skills by category with explicit inter-skill dependencies.** Mapping which skills feed into which (foundation → execution → strategy) and automating dependency installation prevents skill overlap and makes workflows composable rather than redundant.
+- **Populate reference files before expecting quality output.** Generic marketplace skills are starting points, not finished tools. The brand voice, ICP, and example output files are what differentiate your results from anyone else using the same skill.
+
+- **Use the `start here` onboarding flow to build brand context in one pass.** Running the three foundation skills (brand voice, positioning, ICP) as an interview process is far more efficient than manually assembling context docs—and produces structured markdown files that every skill can reference.
+
+- **Design sessions with explicit open and close rituals.** A heartbeat at session start and a wrap-up skill at session end transforms ad-hoc skill use into a managed system that maintains its own state. These bookends are the mechanism that makes self-maintenance actually work.
+
+- **Audit for skill overlap before adding new skills.** The system should read all installed skills' front matter before creating a new one to detect dependencies and duplicates. Unmanaged skill sprawl creates conflicting instructions and degraded outputs.
+
+- **Treat `learnings.md` as the system's long-term investment.** Consistently providing post-session feedback is what makes the system compound in quality. Without it, the OS is static; with it, each run incrementally improves the skill instructions for the next run.
 
 ---
 
 ## Notable Quotes
 
-> "Most AI setups are frozen in time. You build them and they stay exactly as they are."
+> "Most people are using Claude Code skills completely wrong. They build one skill for copy, another for research, and maybe another for social media, and then wonder why they're still doing most of the work themselves."
 
 > "Think of brand context as the snapshot and the context folder as the ongoing relationship that you have as you work with this tool."
 
-> "We're starting to reach a point where we never have to update a registry file again. We never have to sync docs. The system actually starts to maintain itself."
+> "We're starting to reach a point actually where we never have to update a registry file again. We never have to sync docs. The system actually starts to maintain itself."
 
 ---
