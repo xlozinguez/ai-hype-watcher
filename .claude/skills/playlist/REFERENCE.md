@@ -95,24 +95,33 @@ batch_count = ceil(N / 5)  # minimum 2 agents, maximum 5
 yt-dlp --flat-playlist --print url --print title "PLAYLIST_URL"
 ```
 
-### Batch download subtitles
+### Build set of already-indexed URLs
 ```bash
-yt-dlp --write-auto-sub --sub-lang en --skip-download \
-  -o "sources/_drafts/playlist-%(playlist_index)03d" \
-  "PLAYLIST_URL"
+grep -rh '^url:' sources/*.md | sed 's/^url: *//' | tr -d '"' | sort -u
 ```
 
-### Get metadata for all videos
+### Download subtitles for individual new videos (NOT full playlist)
 ```bash
-yt-dlp --flat-playlist --print "%(url)s|%(title)s|%(duration)s|%(upload_date)s" "PLAYLIST_URL"
+# For each new video, download its VTT with the assigned source ID:
+yt-dlp --write-auto-sub --sub-lang en --skip-download \
+  -o "sources/_drafts/{SOURCE_ID}-vtt" \
+  "VIDEO_URL"
+```
+
+**IMPORTANT**: Do NOT download subtitles using the full playlist URL — this re-downloads VTTs for all videos including already-indexed ones. Always use individual video URLs.
+
+### Get metadata for new videos only
+```bash
+# For each new video URL:
+yt-dlp --print "%(url)s|%(title)s|%(duration)s|%(upload_date)s" "VIDEO_URL"
 ```
 
 ### With rate limiting protection
 ```bash
 yt-dlp --write-auto-sub --sub-lang en --skip-download \
   --sleep-interval 2 --max-sleep-interval 5 \
-  -o "sources/_drafts/playlist-%(playlist_index)03d" \
-  "PLAYLIST_URL"
+  -o "sources/_drafts/{SOURCE_ID}-vtt" \
+  "VIDEO_URL"
 ```
 
 ## Post-Ingest Checklist

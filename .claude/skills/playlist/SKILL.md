@@ -15,28 +15,32 @@ A YouTube playlist URL (any URL containing `list=PLAYLIST_ID`).
 
 ## Workflow
 
-### Phase 1: Extract Playlist Metadata (team-lead)
+### Phase 1: Extract Playlist Metadata & Deduplicate (team-lead)
 
 1. Use `yt-dlp --flat-playlist --print url --print title` to extract all video URLs and titles from the playlist
-2. Determine next available source ID from `sources/README.md`
-3. Deduplicate: check extracted URLs against existing entries in `sources/README.md`
-4. Assign sequential source IDs to new (non-duplicate) videos
-5. Report: N total videos, M new, K duplicates skipped
+2. Build the set of already-indexed URLs by grepping source file frontmatter:
+   ```bash
+   grep -rh '^url:' sources/*.md | sed 's/^url: *//' | tr -d '"' | sort -u
+   ```
+3. Compare each playlist video URL against the indexed URL set. Normalize URLs before comparing (strip query params except `v=`, handle `youtu.be` vs `youtube.com/watch` variants).
+4. **Filter out already-indexed videos** — only keep videos whose URLs are NOT in the indexed set
+5. Determine next available source ID from `sources/README.md`
+6. Assign sequential source IDs to new (non-duplicate) videos only
+7. Report: N total videos in playlist, M new to process, K already indexed (skipped)
+8. **If M = 0 (no new videos), stop here** and report that the playlist is fully indexed
 
-### Phase 2: Batch Download Subtitles (team-lead)
+### Phase 2: Download Subtitles for New Videos Only (team-lead)
 
-Download all VTT files in one `yt-dlp` command:
+Download VTT files **only for new videos** by passing individual video URLs (not the playlist URL):
 
 ```bash
+# For each new video URL, download its subtitles individually:
 yt-dlp --write-auto-sub --sub-lang en --skip-download \
-  -o "sources/_drafts/playlist-%(playlist_index)03d" \
-  "PLAYLIST_URL"
+  -o "sources/_drafts/{SOURCE_ID}-vtt" \
+  "VIDEO_URL"
 ```
 
-Then rename playlist-indexed files to source IDs:
-- `playlist-001.en.vtt` → `{first_source_id}-vtt.en.vtt`
-- `playlist-002.en.vtt` → `{first_source_id + 1}-vtt.en.vtt`
-- etc.
+Do NOT use the full playlist URL for downloading — this would re-download subtitles for already-indexed videos. Process each new video URL individually with its assigned source ID.
 
 ### Phase 3: Convert VTTs to Raw Transcripts (team-lead)
 
@@ -50,14 +54,14 @@ This can be parallelized — run multiple conversions via background bash comman
 
 ### Phase 4: Gather Video Metadata (team-lead)
 
-For each video, gather metadata:
+For each **new** video only, gather metadata:
 1. Use `curl -sL "https://noembed.com/embed?url=URL"` for title and creator
 2. Use `yt-dlp --print duration --print upload_date` for date and duration
 3. Build a metadata map: `{ source_id → { title, creator, url, date, duration } }`
 
 ### Phase 5: Parallel Synthesis (agent team)
 
-Spawn a team with synthesis agents. Divide videos into batches of 4-5:
+Spawn a team with synthesis agents. Divide **new** videos into batches of 4-5:
 
 | Agent | Source IDs | Count |
 |-------|-----------|-------|
