@@ -327,3 +327,4 @@ Each source is synthesized (not transcribed) into a structured note with frontma
 | [317](317-bycloud-rlm-vs-rag.md) | The Death of RAG? | bycloud | video | context-engineering, multi-agent, ai-landscape, ai-economics |
 | [318](318-no-boilerplate-plain-text-team-os.md) | The Unreasonable Effectiveness Of Plain Text | No Boilerplate | video | specification, ai-sdlc, context-engineering |
 | [319](319-ai-news-strategy-daily-nate-b-jones-claude-browser-extension.md) | Anthropic Didn't Build a New Browser. They Did Something Smarter. | AI News & Strategy Daily | Nate B Jones | video | claude-code, agentic-coding, enterprise-ai, ai-sdlc |
+| [320](320-nate-b-jones-chatgpt-health-agent-evals.md) | ChatGPT Health Identified Respiratory Failure. Then It Said Wait. | AI News & Strategy Daily | Nate B Jones | video | ai-safety, validation, agentic-coding, enterprise-ai, ai-hype |
