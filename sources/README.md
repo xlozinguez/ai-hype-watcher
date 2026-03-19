@@ -328,3 +328,7 @@ Each source is synthesized (not transcribed) into a structured note with frontma
 | [318](318-no-boilerplate-plain-text-team-os.md) | The Unreasonable Effectiveness Of Plain Text | No Boilerplate | video | specification, ai-sdlc, context-engineering |
 | [319](319-ai-news-strategy-daily-nate-b-jones-claude-browser-extension.md) | Anthropic Didn't Build a New Browser. They Did Something Smarter. | AI News & Strategy Daily | Nate B Jones | video | claude-code, agentic-coding, enterprise-ai, ai-sdlc |
 | [320](320-nate-b-jones-chatgpt-health-agent-evals.md) | ChatGPT Health Identified Respiratory Failure. Then It Said Wait. | AI News & Strategy Daily | Nate B Jones | video | ai-safety, validation, agentic-coding, enterprise-ai, ai-hype |
+| [321](321-matt-pocock-real-feature-grill-me.md) | Building a REAL feature with Claude Code: every step explained | Matt Pocock | video | claude-code, skills, context-engineering, specification, prompt-engineering, agentic-coding |
+| [322](322-kole-jain-ui-ux-design-concepts.md) | Every UI/UX Concept Explained in Under 10 Minutes | Kole Jain | video | prompt-engineering, vibe-coding, ai-sdlc |
+| [323](323-daniel-bourke-small-language-models-on-device.md) | Small Language Models (SLMs) Are the Future: Fine-Tuning AI That Runs on Your iPhone | Daniel Bourke | video | ai-economics, ai-landscape, infrastructure, enterprise-ai |
+| [324](324-theprimeagenhighlights-ai-license-laundering.md) | This can't be real | ThePrimeagenHighlights | video | ai-hype, security, ai-economics, ai-landscape |
