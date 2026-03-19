@@ -8,7 +8,7 @@ date: "2026-02-20"
 duration: "15:31"
 type: "video"
 tags: ["agentic-coding", "claude-code", "multi-agent", "vibe-coding"]
-curriculum_modules: ["04-agentic-patterns", "05-multi-agent"]
+curriculum_modules: ["04-agentic-patterns", "05-team-orchestration"]
 ---
 
 # 129: One Claude Code Agent? That's Your First Mistake
@@ -60,4 +60,4 @@ Because each worktree starts from the exact same codebase state, worktrees provi
 ## Related Curriculum
 
 - [Module 04: Agentic Patterns](../curriculum/04-agentic-patterns/README.md) — Git worktrees as parallel exploration infrastructure, skills-based design
-- [Module 05: Multi-Agent](../curriculum/05-multi-agent/README.md) — Running multiple independent agent instances on shared codebase
+- [Module 05: Multi-Agent](../curriculum/05-team-orchestration/README.md) — Running multiple independent agent instances on shared codebase

@@ -8,7 +8,7 @@ date: "2026-02-10"
 duration: "61:56"
 type: "video"
 tags: ["multi-agent", "ai-landscape", "enterprise-ai", "ai-safety"]
-curriculum_modules: ["04-agentic-patterns", "05-multi-agent"]
+curriculum_modules: ["04-agentic-patterns", "05-team-orchestration"]
 ---
 
 # 134: Google DeepMind's Experimental Platform for Humans and LLM Agents
@@ -63,4 +63,4 @@ Practical challenges in deploying AI agents alongside humans in real-time group 
 ## Related Curriculum
 
 - [Module 04: Agentic Patterns](../curriculum/04-agentic-patterns/README.md) — Agent behavior in multi-party settings, structured outputs for agent control
-- [Module 05: Multi-Agent](../curriculum/05-multi-agent/README.md) — Human-AI group dynamics, coordination challenges, the mirror vs. mask duality
+- [Module 05: Multi-Agent](../curriculum/05-team-orchestration/README.md) — Human-AI group dynamics, coordination challenges, the mirror vs. mask duality

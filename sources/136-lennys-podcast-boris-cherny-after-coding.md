@@ -8,7 +8,7 @@ date: "2026-02-19"
 duration: "87:45"
 type: "video"
 tags: ["claude-code", "anthropic", "agentic-coding", "ai-landscape", "context-engineering", "ai-sdlc", "capability-overhang", "specification", "multi-agent"]
-curriculum_modules: ["01-foundations", "03-context-engineering", "04-agentic-patterns", "06-strategy-and-economics"]
+curriculum_modules: ["01-foundations", "03-claude-code-essentials", "04-agentic-patterns", "06-strategy-and-economics"]
 ---
 
 # 136: Head of Claude Code: What happens after coding is solved | Boris Cherny
@@ -81,6 +81,6 @@ As AI collapses the implementation layer, Cherny argues the most valuable people
 ## Related Curriculum
 
 - [Module 01: Foundations](../curriculum/01-foundations/README.md) — Historical framing of coding as solved problem, printing press analogy, generalist imperative
-- [Module 03: Context Engineering](../curriculum/03-context-engineering/README.md) — Plan mode as context strategy, latent demand from model on-distribution behavior
+- [Module 03: Context Engineering](../curriculum/03-claude-code-essentials/README.md) — Plan mode as context strategy, latent demand from model on-distribution behavior
 - [Module 04: Agentic Patterns](../curriculum/04-agentic-patterns/README.md) — Multi-agent workflows, bitter lesson applied to agent scaffolding, tool-use over rigid orchestration
 - [Module 06: Strategy and Economics](../curriculum/06-strategy-and-economics/README.md) — 200% productivity gains, token economics, underfunding as strategy, role convergence toward "builder"

@@ -8,7 +8,7 @@ date: "2025-10-22"
 duration: "9:33"
 type: "video"
 tags: ["context-engineering", "agentic-coding", "claude-code"]
-curriculum_modules: ["01-foundations", "03-context-engineering"]
+curriculum_modules: ["01-foundations", "03-claude-code-essentials"]
 ---
 
 # 114: Most devs don't understand how context windows work
@@ -69,4 +69,4 @@ MCP servers are attractive for extending agent capabilities but can consume a la
 ## Related Curriculum
 
 - [Module 01: Foundations](../curriculum/01-foundations/README.md) — Core LLM architecture including context windows
-- [Module 03: Context Engineering](../curriculum/03-context-engineering/README.md) — Context window management and optimization strategies
+- [Module 03: Context Engineering](../curriculum/03-claude-code-essentials/README.md) — Context window management and optimization strategies

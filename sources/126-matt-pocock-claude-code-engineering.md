@@ -8,7 +8,7 @@ date: "2025-10-27"
 duration: "10:12"
 type: "video"
 tags: ["claude-code", "agentic-coding", "context-engineering", "prompt-engineering"]
-curriculum_modules: ["03-context-engineering", "04-agentic-patterns"]
+curriculum_modules: ["03-claude-code-essentials", "04-agentic-patterns"]
 ---
 
 # 126: How I use Claude Code for real engineering
@@ -65,5 +65,5 @@ Pocock's user memory file contains a directive: "In all interactions and commit 
 
 ## Related Curriculum
 
-- [Module 03: Context Engineering](../curriculum/03-context-engineering/README.md) — External memory patterns, context window management, memory file configuration
+- [Module 03: Context Engineering](../curriculum/03-claude-code-essentials/README.md) — External memory patterns, context window management, memory file configuration
 - [Module 04: Agentic Patterns](../curriculum/04-agentic-patterns/README.md) — Plan-then-execute workflows, multi-phase implementation, agent-human feedback loops

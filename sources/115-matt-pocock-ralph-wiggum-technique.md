@@ -8,7 +8,7 @@ date: "2026-01-05"
 duration: "16:24"
 type: "video"
 tags: ["agentic-coding", "claude-code", "context-engineering", "ai-sdlc"]
-curriculum_modules: ["03-context-engineering", "04-agentic-patterns"]
+curriculum_modules: ["03-claude-code-essentials", "04-agentic-patterns"]
 ---
 
 # 115: Ship working code while you sleep with the Ralph Wiggum technique
@@ -69,5 +69,5 @@ Without type checking, unit tests, and potentially browser automation (Playwrigh
 
 ## Related Curriculum
 
-- [Module 03: Context Engineering](../curriculum/03-context-engineering/README.md) — Context window management across loop iterations
+- [Module 03: Context Engineering](../curriculum/03-claude-code-essentials/README.md) — Context window management across loop iterations
 - [Module 04: Agentic Patterns](../curriculum/04-agentic-patterns/README.md) — Loop-based autonomous agent orchestration and PRD-driven workflows

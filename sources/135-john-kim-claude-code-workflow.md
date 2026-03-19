@@ -8,7 +8,7 @@ date: "2026-02-21"
 duration: "22:29"
 type: "video"
 tags: ["claude-code", "agentic-coding", "context-engineering", "skills-ecosystem", "multi-agent"]
-curriculum_modules: ["03-context-engineering", "04-agentic-patterns"]
+curriculum_modules: ["03-claude-code-essentials", "04-agentic-patterns"]
 ---
 
 # 135: His Claude Code Workflow Is Insane
@@ -65,5 +65,5 @@ Boris's "most important tip": give Claude a way to verify its work. With a feedb
 
 ## Related Curriculum
 
-- [Module 03: Context Engineering](../curriculum/03-context-engineering/README.md) — CLAUDE.md as compound engineering, plan mode as context orchestration
+- [Module 03: Context Engineering](../curriculum/03-claude-code-essentials/README.md) — CLAUDE.md as compound engineering, plan mode as context orchestration
 - [Module 04: Agentic Patterns](../curriculum/04-agentic-patterns/README.md) — Parallel instance management, verification loops, sub-agents

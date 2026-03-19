@@ -8,7 +8,7 @@ date: "2026-02-20"
 duration: "47:58"
 type: "video"
 tags: ["ai-landscape", "multi-agent", "security", "enterprise-ai", "ai-hype"]
-curriculum_modules: ["04-agentic-patterns", "05-multi-agent", "06-strategy-and-economics"]
+curriculum_modules: ["04-agentic-patterns", "05-team-orchestration", "06-strategy-and-economics"]
 ---
 
 # 127: 50 days with OpenClaw: The hype, the reality & what actually broke
@@ -75,5 +75,5 @@ Email is treated as potentially hostile content — the agent operates in draft-
 ## Related Curriculum
 
 - [Module 04: Agentic Patterns](../curriculum/04-agentic-patterns/README.md) — Multi-channel architecture, sub-agent delegation, context management
-- [Module 05: Multi-Agent](../curriculum/05-multi-agent/README.md) — Parallel sub-agent research, orchestrator patterns
+- [Module 05: Multi-Agent](../curriculum/05-team-orchestration/README.md) — Parallel sub-agent research, orchestrator patterns
 - [Module 06: Strategy and Economics](../curriculum/06-strategy-and-economics/README.md) — Multi-model cost routing, adoption maturity curve, markdown-first data ownership

@@ -8,7 +8,7 @@ date: "2026-01-15"
 duration: "12:21"
 type: "video"
 tags: ["agentic-coding", "claude-code", "context-engineering", "prompt-engineering"]
-curriculum_modules: ["02-prompt-engineering", "03-context-engineering", "04-agentic-patterns"]
+curriculum_modules: ["02-prompting-and-workflows", "03-claude-code-essentials", "04-agentic-patterns"]
 ---
 
 # 113: I was an AI skeptic. Then I tried plan mode
@@ -68,6 +68,6 @@ Pocock acknowledges that when you know the codebase deeply and the change is sim
 
 ## Related Curriculum
 
-- [Module 02: Prompt Engineering](../curriculum/02-prompt-engineering/README.md) — CLAUDE.md configuration and instruction design
-- [Module 03: Context Engineering](../curriculum/03-context-engineering/README.md) — Context loading strategies and sub-agent exploration
+- [Module 02: Prompt Engineering](../curriculum/02-prompting-and-workflows/README.md) — CLAUDE.md configuration and instruction design
+- [Module 03: Context Engineering](../curriculum/03-claude-code-essentials/README.md) — Context loading strategies and sub-agent exploration
 - [Module 04: Agentic Patterns](../curriculum/04-agentic-patterns/README.md) — Plan-execute loops and agent workflow design

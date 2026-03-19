@@ -8,7 +8,7 @@ date: "2026-02-07"
 duration: "09:06"
 type: "video"
 tags: ["prompt-engineering", "context-engineering", "infrastructure"]
-curriculum_modules: ["02-prompt-engineering", "03-context-engineering"]
+curriculum_modules: ["02-prompting-and-workflows", "03-claude-code-essentials"]
 ---
 
 # 130: What is Prompt Caching? Optimize LLM Latency
@@ -63,5 +63,5 @@ System prompts are the most common cached content — every chatbot has personal
 
 ## Related Curriculum
 
-- [Module 02: Prompt Engineering](../curriculum/02-prompt-engineering/README.md) — Prompt structure optimization, static-before-dynamic ordering
-- [Module 03: Context Engineering](../curriculum/03-context-engineering/README.md) — KV pair caching as context optimization, prefix matching, cache-aware prompt design
+- [Module 02: Prompt Engineering](../curriculum/02-prompting-and-workflows/README.md) — Prompt structure optimization, static-before-dynamic ordering
+- [Module 03: Context Engineering](../curriculum/03-claude-code-essentials/README.md) — KV pair caching as context optimization, prefix matching, cache-aware prompt design

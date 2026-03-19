@@ -8,7 +8,7 @@ date: "2026-01-17"
 duration: "46:21"
 type: "video"
 tags: ["agentic-coding", "context-engineering", "claude-code", "ai-sdlc", "enterprise-ai"]
-curriculum_modules: ["03-context-engineering", "04-agentic-patterns", "06-strategy-and-economics"]
+curriculum_modules: ["03-claude-code-essentials", "04-agentic-patterns", "06-strategy-and-economics"]
 ---
 
 # 116: LIVE: Chat with AI Coding Wizard Dex Horthy
@@ -76,6 +76,6 @@ Horthy's original three-step RPI workflow has grown to six steps based on real-w
 
 ## Related Curriculum
 
-- [Module 03: Context Engineering](../curriculum/03-context-engineering/README.md) — Smart zone / dumb zone, quadratic attention, context management strategies
+- [Module 03: Context Engineering](../curriculum/03-claude-code-essentials/README.md) — Smart zone / dumb zone, quadratic attention, context management strategies
 - [Module 04: Agentic Patterns](../curriculum/04-agentic-patterns/README.md) — Control loop architecture, task sizing, feedback loops for autonomous agents
 - [Module 06: Strategy and Economics](../curriculum/06-strategy-and-economics/README.md) — Realistic productivity expectations for enterprise AI coding adoption

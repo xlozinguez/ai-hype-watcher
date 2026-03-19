@@ -8,7 +8,7 @@ date: "2025-09-19"
 duration: "10:58"
 type: "video"
 tags: ["ai-landscape", "prompt-engineering", "context-engineering"]
-curriculum_modules: ["01-foundations", "03-context-engineering"]
+curriculum_modules: ["01-foundations", "03-claude-code-essentials"]
 ---
 
 # 112: Most devs don't understand how LLM tokens work
@@ -68,4 +68,4 @@ Unusual words like Lewis Carroll's "frabjous" get split into more tokens because
 ## Related Curriculum
 
 - [Module 01: Foundations](../curriculum/01-foundations/README.md) — Core LLM mechanics including tokenization
-- [Module 03: Context Engineering](../curriculum/03-context-engineering/README.md) — Token efficiency and context window optimization
+- [Module 03: Context Engineering](../curriculum/03-claude-code-essentials/README.md) — Token efficiency and context window optimization

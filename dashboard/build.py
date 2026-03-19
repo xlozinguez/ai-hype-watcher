@@ -189,17 +189,23 @@ def build():
         for tag, count in sorted(tag_counts.items())
     ]
 
-    # Build edges
+    nodes = source_nodes + tag_nodes + module_nodes
+    node_ids = {n["id"] for n in nodes}
+
+    # Build edges (skip any that reference non-existent nodes)
     edges = []
     for sid, data in source_data.items():
         for rid in data["related_ids"]:
-            edges.append({"source": sid, "target": rid, "type": "related"})
+            if rid in node_ids:
+                edges.append({"source": sid, "target": rid, "type": "related"})
         for tag in data["tags"]:
             edges.append({"source": sid, "target": f"tag:{tag}", "type": "tag"})
         for mod in data["modules"]:
-            edges.append({"source": sid, "target": f"mod:{mod}", "type": "curriculum"})
-
-    nodes = source_nodes + tag_nodes + module_nodes
+            target = f"mod:{mod}"
+            if target in node_ids:
+                edges.append({"source": sid, "target": target, "type": "curriculum"})
+            else:
+                print(f"  Warning: source {sid} references unknown module '{mod}'")
 
     result = {
         "nodes": nodes,

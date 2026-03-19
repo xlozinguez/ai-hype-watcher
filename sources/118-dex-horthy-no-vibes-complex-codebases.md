@@ -8,7 +8,7 @@ date: "2025-12-02"
 duration: "20:31"
 type: "video"
 tags: ["context-engineering", "agentic-coding", "ai-sdlc", "claude-code", "specification"]
-curriculum_modules: ["01-foundations", "03-context-engineering", "04-agentic-patterns"]
+curriculum_modules: ["01-foundations", "03-claude-code-essentials", "04-agentic-patterns"]
 ---
 
 # 118: No Vibes Allowed: Solving Hard Problems in Complex Codebases
@@ -72,5 +72,5 @@ Code review's most important function is not finding bugs — it is maintaining 
 ## Related Curriculum
 
 - [Module 01: Foundations](../curriculum/01-foundations/README.md) — Context window mechanics and the dumb zone concept
-- [Module 03: Context Engineering](../curriculum/03-context-engineering/README.md) — Intentional compaction, on-demand compressed context, progressive disclosure
+- [Module 03: Context Engineering](../curriculum/03-claude-code-essentials/README.md) — Intentional compaction, on-demand compressed context, progressive disclosure
 - [Module 04: Agentic Patterns](../curriculum/04-agentic-patterns/README.md) — Sub-agents for context control, RPI workflow
