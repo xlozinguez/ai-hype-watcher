@@ -328,3 +328,17 @@ Each source is synthesized (not transcribed) into a structured note with frontma
 | [318](318-no-boilerplate-plain-text-team-os.md) | The Unreasonable Effectiveness Of Plain Text | No Boilerplate | video | specification, ai-sdlc, context-engineering |
 | [319](319-ai-news-strategy-daily-nate-b-jones-claude-browser-extension.md) | Anthropic Didn't Build a New Browser. They Did Something Smarter. | AI News & Strategy Daily | Nate B Jones | video | claude-code, agentic-coding, enterprise-ai, ai-sdlc |
 | [320](320-nate-b-jones-chatgpt-health-agent-evals.md) | ChatGPT Health Identified Respiratory Failure. Then It Said Wait. | AI News & Strategy Daily | Nate B Jones | video | ai-safety, validation, agentic-coding, enterprise-ai, ai-hype |
+| [321](321-matt-pocock-real-feature-workflow.md) | Building a REAL feature with Claude Code: every step explained | Matt Pocock | video | claude-code, agentic-coding, specification, context-engineering, prompt-engineering, skills |
+| [322](322-kole-jain-ui-ux-design-concepts.md) | Every UI/UX Concept Explained in Under 10 Minutes | Kole Jain | video | vibe-coding, prompt-engineering |
+| [323](323-daniel-bourke-small-language-models-on-device.md) | Small Language Models (SLMs) Are the Future: Fine-Tuning AI That Runs on Your iPhone | Daniel Bourke | video | ai-economics, ai-landscape, infrastructure, enterprise-ai |
+| [324](324-theprimeagenhighlights-ai-license-circumvention.md) | This can't be real | ThePrimeagenHighlights | video | ai-hype, security, ai-economics, ai-landscape |
+| [325](325-mo-bitar-ai-productivity-lie.md) | They lied to us about AI | Mo Bitar | video | ai-hype, ai-landscape, enterprise-ai, claude-code, openai |
+| [326](326-ai-news-strategy-daily-nate-b-jones-orchestration-layer-moat.md) | Perplexity Computer Is Incredible. It Won't Matter. Here's Why. | AI News & Strategy Daily | Nate B Jones | video | ai-landscape, ai-economics, enterprise-ai, multi-agent, ai-hype |
+| [327](327-the-primetime-ai-forensic-debugging.md) | we're so back | The PrimeTime | video | agentic-coding, vibe-coding, ai-hype, prompt-engineering, validation |
+| [328](328-owain-lewis-polling-agent-teams.md) | My Multi-Agent Team (NOT OpenClaw) | Owain Lewis | video | agent-teams, multi-agent, agentic-coding, claude-code, security, ai-sdlc |
+| [329](329-fireship-stitch-vibe-design.md) | Google just changed the future of UI/UX design... | Fireship | video | vibe-coding, ai-sdlc, ai-landscape, prompt-engineering |
+| [330](330-julian-whatley-ai-bubble-collapse-triggers.md) | AI Crash Report: What Triggers the Collapse | Julian Whatley | video | ai-hype, ai-economics, infrastructure |
+| [331](331-modem-futura-ai-cognitive-integration.md) | The Invisible Upgrade: How AI Is Already Rewiring the Way We Think | Modem Futura | video | capability-overhang, ai-landscape, ai-hype, enterprise-ai |
+| [332](332-simon-scrapes-claude-code-skills-levels.md) | Every Level of Claude Code Skills in 27 mins | Simon Scrapes | video | skills, claude-code, context-engineering, skills-ecosystem, meta-prompts |
+| [333](333-pivot-to-ai-enterprise-ai-cost-shock.md) | Companies go full AI — then the bill comes due | Pivot to AI | video | ai-economics, ai-hype, enterprise-ai, claude-code |
+| [334](334-chris-messina-nemoclaw-enterprise-agents.md) | NVIDIA's Jenson Hwang launches NemoClaw to the OpenClaw community | Chris Messina | video | enterprise-ai, security, ai-landscape, ai-economics, infrastructure, multi-agent |
