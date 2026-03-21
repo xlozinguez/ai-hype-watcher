@@ -25,3 +25,4 @@ Unlike individual [source notes](../sources/), synthesis documents draw connecti
 | [2026-03-05](2026-03-05-playlist-themes.md) | The Discipline Turn — From Vibe Coding to Specification Engineering | #213-#240 (28 videos from playlist batch) |
 | [2026-03-06](2026-03-06-specification-infrastructure-gap.md) | Specification and Infrastructure — The Missing Bridge Between Vibe Coding and Enterprise Scale | #210-#212, #164 (Pocock's workflows + Stripe's minions + deep modules) |
 | [2026-03-08](2026-03-08-scouting-engineers-post-honeymoon.md) | Scouting Engineers and the Post-Honeymoon Reality | #243-#253 (11 videos from playlist batch) |
+| [2026-03-21](2026-03-21-playlist-themes.md) | The Squeeze, The Craft Crisis, and the Agent OS | #322-#348 (26 videos from playlist batch) |
