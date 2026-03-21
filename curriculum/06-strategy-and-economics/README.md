@@ -823,6 +823,102 @@ The Meta incident reveals an operational lesson: phone-based monitoring is insuf
 
 ThePrimeTime ([#171](../../sources/171-primetime-cloudflare-lava-lamps.md)) explores Cloudflare's use of physical entropy sources (lava lamps, double pendulums, radioactive decay) for cryptographic randomness. While not directly about AI, this serves as a reminder that the digital infrastructure AI agents operate upon rests on physical security foundations. As AI agents increasingly handle sensitive operations (authentication, data access, financial transactions), the quality of randomness in encryption keys becomes a foundation-level dependency. Defense in depth for randomness infrastructure -- layering physical entropy with multiple independent system sources -- provides a model for how AI security should be structured: never depend on a single mechanism.
 
+### Concept 24: The AI Middleware Squeeze and Industry Stack Consolidation
+
+Nate B Jones ([#327](../../sources/327-nate-b-jones-ai-middleware-squeeze.md)) provides a structural analysis of AI industry positioning through the lens of Perplexity Computer's launch. The thesis: companies in the middleware/orchestration layer -- the most exposed position in a consolidating technology stack -- face existential pressure because every model provider they depend on is simultaneously building the exact product they compete with. Jones maps the industry into three structural layers: model providers (own the weights), orchestration/application layers (combine models into products), and distribution owners (control the user surface). With $690 billion in annual hyperscaler infrastructure spend that must be filled with tokens, hyperscalers have a structural compulsion to own as many downstream layers as possible. The analysis identifies four defensible positions for middleware companies and three dead-end traps.
+
+### Concept 25: Amazon's AI Production Failures as Enterprise Cautionary Tale
+
+Mo Bitar ([#271](../../sources/271-mo-bitar-amazon-ai-production-failures.md)) documents a cascade of AI-related production failures at Amazon: an AI coding assistant (Kiro) deleted an entire production environment, Amazon's Q tool pushed bad code wiping 120,000 orders, and another outage killed 99% of North American orders -- 6.3 million in a single day. These incidents emerged from Amazon's aggressive AI adoption mandate (80% weekly usage tracked as a corporate OKR) combined with simultaneous mass layoffs of 16,000 engineers. ThePrimeagen ([#336](../../sources/336-primetime-can-it-get-worse.md)) extends this analysis, framing the "cognitive debt" cycle: fire experienced people, fill the knowledge gap with AI, encounter failures from lost institutional knowledge, then add bureaucratic guardrails (senior engineer sign-off for all AI-assisted code) that negate the productivity gains AI was supposed to deliver.
+
+This connects directly to the apprenticeship crisis (Concept 10) and cognitive debt (Concept 11b) with a concrete enterprise-scale case study of what happens when AI adoption outpaces organizational readiness.
+
+### Concept 26: AI Exploit Development and the $4,000 Zero-Day
+
+Low Level ([#259](../../sources/259-low-level-ai-exploit-development.md)) examines a collaboration between Anthropic and Mozilla where Claude Opus 4.6 identified 22 zero-day vulnerabilities in Firefox (14 high severity) and autonomously developed a working exploit for a complex WebAssembly/JavaScript use-after-free vulnerability for approximately $4,000 in API costs across 350 attempts. The CyberGym benchmark shows AI success rates on vulnerability reproduction jumping from 7.4% to 66.6% in under a year. Nation-state actors have already deployed AI-generated "vibe-coded" malware across multiple languages, creating a "distributed denial of detection" problem.
+
+This extends the AI security concepts (Concepts 4b, 6, 6a) from the defensive perspective to the offensive one: the cost of discovering and exploiting vulnerabilities is dropping exponentially, and the defenders' advantage is eroding.
+
+### Concept 27: The OWASP LLM Top 10 as Enterprise Security Framework
+
+IBM Technology ([#298](../../sources/298-ibm-technology-owasp-llm-vulnerabilities.md)) walks through the OWASP Top 10 for Large Language Models: prompt injection (#1), sensitive information disclosure (#2, up four spots), supply chain vulnerabilities (#3), and data/model poisoning (#4). The central concern is that LLMs blur the boundary between data and instructions in ways traditional software does not, creating novel attack surfaces standard IT security was not designed to handle. Recommended defenses include AI firewalls/gateways, system prompt hardening, data sanitization pipelines, provenance tracking, and ongoing red team testing.
+
+This provides a structured, community-maintained security vocabulary that extends the zero trust framework (Concept 4b) and the skills ecosystem security problem (Concept 6) with an industry-standard classification system.
+
+### Concept 28: The Disposable Software Distinction
+
+Nate B Jones ([#282](../../sources/282-ai-news-strategy-daily-nate-b-jones-disposable-software-costs.md)) argues that "disposable software" is real but almost universally misinterpreted. The distinction is between two phenomena sharing the same label: genuinely unambiguous good news (personal throwaway software that democratizes software creation) and more complex territory (disposable features within enterprise products, where teams ship constantly and let customers validate). The critical flaw in the discourse is conflating software cost with the actual constraint: **attention**. Even if code is free to generate, someone must direct, configure, debug, and maintain it. Enterprise customers buy reliability and the ability to ignore software entirely, which is structurally incompatible with the disposable philosophy.
+
+### Concept 29: The Ambition Expansion Thesis
+
+Nate B Jones ([#283](../../sources/283-ai-news-strategy-daily-nate-b-jones-ambition-over-headcount-cuts.md)) argues that companies framing AI as a cost story ("same work, fewer people") are committing a strategic failure. A 500-person company did not get a cost reduction -- it got the productive capacity of 2,500-5,000 people. Drawing on Jevons' Paradox and a Harvard Business School field experiment at Procter & Gamble (776 professionals showing AI-augmented teams 3x more likely to produce top-10% quality ideas), the argument is that AI-compressed execution costs flip the math on R&D bets, small markets, and experiments that were previously uneconomical.
+
+Jones ([#296](../../sources/296-ai-news-strategy-daily-nate-b-jones-conviction-solo-founder-leverage.md)) extends this with the concept of **conviction** as the undernamed soft skill: taste gets talked about constantly, but conviction -- the willingness to act on evaluation before external validation arrives -- is what actually causes shipping. Solo founders like Ben Sira ($2.5M ARR, zero employees) demonstrate what happens when coordination friction is removed.
+
+### Concept 30: The Cognitive Debt Crisis
+
+Imran Gardezi ([#300](../../sources/300-imran-gardezi-cognitive-debt-ai-code.md)) introduces "cognitive debt" as what happens when AI-generated code accumulates faster than human understanding. Unlike technical debt, cognitive debt is invisible: the code works, tests pass, but nobody can explain how it functions. Teams celebrating 40% faster shipping find incident resolution times 3-4x longer on AI-written modules. The deeper problem is structural: AI bypasses the code review loop that served as the primary mechanism for knowledge transfer.
+
+Gardezi ([#314](../../sources/314-imran-gardezi-ai-code-technical-debt.md)) adds that *almost right* code is more expensive than *completely wrong* code -- broken code fails fast, while plausible-but-flawed code passes review and accumulates compounding interest. Five concrete debt patterns are documented: broken workflows nobody can debug, suppressed errors masquerading as fixes, phantom code (duplicate utilities and dead exports), convention violations, and the fundamental root cause -- AI generates plausible code, not correct code.
+
+This extends the cognitive debt concept from Fowler's retreat (Concept 11b) with concrete enterprise data and provides actionable mitigation: reviewing AI code as a junior learner, mandatory decision records before merging, and rotating engineers through critical AI-generated modules.
+
+### Concept 31: AI-Native PM Collaboration and the Death of the Design Process
+
+Hilary Gridley and Anjali Ahuja ([#321](../../sources/321-hilary-gridley-ai-native-pm-collaboration.md)) describe how WHOOP rebuilt its AI product development process: replacing feature roadmaps with a durable AI strategy anchored by five pillars and clear KPIs, creating structured "lanes for hacking" so engineers experiment within strategic guardrails, establishing a 12,000-member AI beta group for rapid feedback, and shifting from PRDs to A/B test roadmaps. The key insight: on fast-moving AI teams, engineers prototype solutions before PMs can fully scope problems, making traditional PM gatekeeping counterproductive.
+
+This extends the design process death (Concept 5b) and PM-as-prototyper evolution (Concept 5a) with a concrete case study of how the PM-engineering relationship is being renegotiated at an AI-native company.
+
+### Concept 32: Small Language Models and On-Device Economics
+
+Daniel Bourke ([#324](../../sources/324-daniel-bourke-small-language-models.md)) demonstrates fine-tuning a 270M parameter model in 100 seconds on Google Colab, producing a model that runs on an iPhone. The economics are compelling: a fine-tuned on-device model has zero per-inference cost, while equivalent API usage at scale (10 million queries) would cost $55,000 per cycle. Qwen 3.5 4B already outperforms GPT-4o on benchmarks, and by year-end, GPT-5-equivalent open-source variants may run on consumer hardware.
+
+This extends the local inference economics (Concept 16) with small language models as a distinct deployment category -- not running frontier-scale models locally but purpose-training lightweight models for specific tasks at zero marginal cost.
+
+### Concept 33: The AI Bubble as Sandpile -- Complexity Science Analysis
+
+Julian Whatley ([#331](../../sources/331-julian-whatley-ai-crash-report.md)) applies the Bak-Tang-Wiesenfeld sandpile model to the AI industry, arguing the system is at criticality where collapse comes from ordinary triggers, not massive shocks. The most damning argument centers on "hollow grains" -- unlike previous bubbles where real capital flowed, the AI bubble features circular financing where tech giants invest in AI labs as cloud credits, those labs spend credits back on investors' infrastructure, investors report revenue growth, and the cycle repeats. A critical difference from the dot-com bubble: fiber optic cable depreciated over 15-24 years and eventually found use, but GPUs lose value in a few years, making stranded assets permanent rather than temporary.
+
+This extends the bubble analysis (Concept 13) with complexity science methodology and the critical observation about GPU depreciation as a structural difference from prior technology bubbles.
+
+### Concept 34: The Token Austerity Era and Enterprise AI Cost Discovery
+
+Pivot to AI ([#334](../../sources/334-pivot-to-ai-full-ai-bill.md)) documents the emerging pattern of enterprises mandating AI-first workflows and then discovering the actual cost. Even Microsoft is reportedly enforcing "token austerity," reducing Claude Code usage in favor of its own Copilot CLI. Companies are capping token usage to 10% of what workers became accustomed to while still expecting 10x output improvements. The critical warning: when VC subsidies for AI vendors run dry (estimated around 2027), prices could increase roughly 10x to cover actual running costs, creating a severe shock for enterprises built on subsidized AI pricing.
+
+This adds a temporal dimension to the multi-agent cost reality (Concept 17): current pricing may be artificially low, and organizations should budget for significant cost increases as the industry moves from growth-stage subsidization to sustainable pricing.
+
+### Concept 35: The LLM Vendor Lock-In Problem
+
+ThePrimeagenHighlights ([#290](../../sources/290-theprimeagenhighlights-llm-vendor-lock-in.md)) investigates whether LLMs systematically promote certain companies and platforms through training data bias. An experiment using identical questions across LLMs via OpenRouter found Vercel appearing in approximately 62% of recommendations, Netlify at 25%, and GitHub Pages at 12% -- steering developer decisions without awareness. This "LLM SEO" or "premium training data" effect connects to the hyperscalers-as-competitors thesis (Concept 2): model providers have structural incentives to favor their own ecosystems in training data, creating invisible lock-in that operates below the level of conscious tool selection.
+
+### Concept 36: The AI Industry Hype Cycle -- Convergent Evidence
+
+Multiple new sources provide additional evidence for the bubble thesis (Concept 13) and counter-narratives. Ed Zitron ([#125](../../sources/125-ed-zitron-ai-bubble-wework.md)) draws a WeWork parallel: 90% of CEOs report no AI impact, circular capital flows sustain appearances, and subsidized subscriptions mask unsustainable economics. Mo Bitar ([#326](../../sources/326-mo-bitar-they-lied-about-ai.md)) notes that OpenAI's own productivity problem was solved not with AI but with meetings and management hires, while the METR study shows senior developers 19% slower with AI assistance. ThePrimeagen ([#325](../../sources/325-primeagen-this-cant-be-real.md)) documents "Malice," a service that uses AI to recreate open-source projects with "legally distinct code" -- raising uncomfortable questions about AI's intersection with open-source licensing.
+
+ThePrimeagen ([#309](../../sources/309-theprimeagenhighlights-ai-cost-hardware-ceiling.md)) provides the most technically grounded analysis of hardware constraints: CPU and RAM improvements approaching fundamental physical limits at 2-4 nanometer process nodes, frontier models requiring hundreds of GPUs, and a prediction of vertical consolidation where hyperscalers ultimately absorb the R&D investment made on their infrastructure. The PrimeTime ([#277](../../sources/277-the-primetime-ai-claims-reality-check.md)) adds the uneven demographic impact: junior engineers face existential career entry threats, while senior engineers in their late 40s-50s face potentially worse displacement prospects mid-career.
+
+### Concept 37: Precision Retrieval vs. Context Stuffing Economics
+
+J. Gravelle ([#313](../../sources/313-j-gravelle-precision-retrieval-vs-context-stuffing.md)) challenges large context windows as a default strategy. At 1 million input tokens, Claude achieves roughly 79% accuracy on retrieval tasks -- a $5 query that fails one in five times. Symbol-based precision retrieval excluded 575,000+ tokens from context on a single test query, saving approximately $2.88 while producing cleaner answers. The principle is context control versus context stuffing: the context window should be treated as a precision instrument, not a landfill.
+
+This connects directly to the efficiency stack (Concept 3) and the multi-agent cost reality (Concept 17) with concrete economics: precision retrieval is simultaneously cheaper, faster, and more accurate than brute-force context consumption.
+
+### Concept 38: System Design Fundamentals as AI Infrastructure Foundation
+
+freeCodeCamp ([#292](../../sources/292-freecodecamporg-system-design-fundamentals.md)) provides a comprehensive system design crash course covering the hardware memory hierarchy, the CAP theorem, scalability/maintainability/efficiency tradeoffs, and key performance metrics (availability nines, throughput, latency). While not AI-specific, these fundamentals form the infrastructure layer that AI-assisted development must ultimately operate within. As AI tools abstract away more implementation detail, understanding the underlying system constraints becomes more important, not less -- reinforcing the abstraction stack thesis (Concept 11m1) where knowledge of the layer below always provides advantage.
+
+### Concept 39: The Effort Illusion and AI as Expertise Amplifier
+
+Packet Pushers ([#279](../../sources/279-packet-pushers-expertise-ai-multiplier.md)) argues that the honest territory lies in the messy middle ground between "AI enables effortless production" and "all AI output is slop." Drawing on Hank's career from network engineering through security leadership, the implicit argument is that AI tools amplify existing competence rather than substitute for it: experts use them to move faster, while less experienced users may not recognize when output is wrong. This aligns with the capability amplifier finding from Farley's study (Concept 11i) and provides a practitioner's perspective on why the productivity gains from AI are unevenly distributed.
+
+### Concept 40: Google Stitch and the Design Tooling Disruption
+
+Fireship ([#330](../../sources/330-fireship-google-stitch-uiux.md)) covers Google's Stitch, an AI-powered design tool generating interactive UI components and responsive prototypes from natural language. The most significant feature is a portable design markdown file that can be used across projects and integrated with coding models. Tailwind CSS laid off most of its team because AI tools made utility-class memorization obsolete. This extends the design engineering discussion (Concept 5b2) with concrete evidence that AI tooling is disrupting not just the coding layer but the design tooling layer simultaneously.
+
+### Concept 41: Plain Text as Enterprise AI Infrastructure
+
+No Boilerplate ([#318](../../sources/318-no-boilerplate-plain-text-team-os.md)) argues that building an entire team operating system on GitHub's native primitives -- repositories, wikis, issues, milestones, project boards, and Actions -- provides permanence and portability that proprietary SaaS cannot match. Data in plain Markdown files in Git is readable by any tool, present or future, and mistakes are trivially reversible. This connects to the defensibility gradient (Concept 7a): proprietary data stored in portable, AI-readable formats creates a moat that is both defensible against competitors and accessible to AI agents.
+
 ## Patterns & Practices
 
 ### Pattern 1: The Routing Layer Strategy
@@ -1061,6 +1157,65 @@ ThePrimeTime ([#171](../../sources/171-primetime-cloudflare-lava-lamps.md)) expl
 | [254: Claude Blackmailed Its Developers](../../sources/254-nate-b-jones-claude-blackmail-safety-dynamics.md) | Nate B Jones | Emergent safety properties, capability-safety paradox, anti-scheming training paradox, Anthropic-Pentagon escalation, instrumental convergence |
 | [256: Github might be in trouble](../../sources/256-primetime-github-in-trouble.md) | The PrimeTime | Developer infrastructure disruption, GitHub's weak moat, agent-transparent VCS, AI platform data capture incentive, two-island developer future |
 | [257: Google Workspace Opportunity](../../sources/257-rob-shocks-google-workspace-opportunity.md) | Rob Shocks | Infrastructure access as adoption enabler, Google's strategic calculus, self-driving business vision, automation-as-a-service opportunity |
+| [211: Minions: Stripe's One-Shot Coding Agents](../../sources/211-stripe-minions-coding-agents.md) | Stripe (Alistair Gray) | Enterprise multi-agent architecture, one-shot coding agents at scale |
+| [212: Minions Part 2 -- Devboxes and Blueprints at Stripe](../../sources/212-stripe-minions-technical-deep-dive.md) | Stripe (Alistair Gray) | Pre-warmed EC2 dev boxes, blueprint engine, tool shed meta-MCP |
+| [214: Spec-Driven Development](../../sources/214-ibm-technology-spec-driven-development.md) | IBM Technology | Spec-driven AI development, AI-assisted specification writing |
+| [217: The Bullsh** Benchmark](../../sources/217-primetime-bullshit-benchmark.md) | The PrimeTime | Benchmark gaming, misleading AI performance claims, evaluation skepticism |
+| [225: How to Use Claude Code Skills Like the 1%](../../sources/225-simon-scrapes-skills-mastery.md) | Simon Scrapes | Skills mastery patterns, advanced skill engineering economics |
+| [234: Everyone Wants an Enterprise OpenClaw](../../sources/234-venturebeat-enterprise-openclaw.md) | VentureBeat / Harrison Chase | Enterprise agent paradox, observability as moat, harness engineering, three memory types |
+| [241: OpenAI Context Lock-In](../../sources/241-nate-b-jones-openai-context-lock-in.md) | Nate B Jones | Context as lock-in mechanism, platform memory traps, model switching costs |
+| [242: Why Your AI Agents Keep Forgetting](../../sources/242-vasilije-markovic-cognee-agent-memory.md) | Vasilije Markovic (Cognee) | Cognee memory system, knowledge graph memory, enterprise agent persistence |
+| [258: What is Zuckerberg doing?](../../sources/258-the-primetime-agent-consumer-ad-targeting.md) | The PrimeTime | Agent-as-consumer threat model, Meta Maltbook acquisition, prompt injection as commercial vector |
+| [259: cybersecurity is about to get weird](../../sources/259-low-level-ai-exploit-development.md) | Low Level | Claude $4K zero-day exploit, 22 Firefox vulnerabilities, AI-generated malware proliferation, CyberGym benchmark |
+| [263: The big problem with vibe coding](../../sources/263-xplodivity-vibe-coding-last-mile.md) | xplodivity | Last mile problem in vibe coding, AI as fast junior developer requiring supervision |
+| [267: Obsidian as AI Note-Taking Infrastructure](../../sources/267-noah-vincent-obsidian-claude-code-vault.md) | Noah Vincent | Plain-text AI advantage, Obsidian vault as agent substrate, data ownership vs SaaS lock-in |
+| [268: One Sentence Can Hijack Your AI](../../sources/268-ai-plus-plus-enterprise-agent-security.md) | AI-plus-plus | Enterprise agent security, compartmentalization, DMZ architecture, nuclear launch protocol analogy |
+| [271: Amazon is regretting AI](../../sources/271-mo-bitar-amazon-ai-production-failures.md) | Mo Bitar | Amazon AI production failures, 80% AI usage mandate, contextual guardrails absent, $200B AI spending |
+| [272: The Art of AI Prompting in Finance](../../sources/272-aleph-fpa-finance-ai-prompting.md) | Aleph FP&A | Finance AI adoption, CFO-driven demand, 95-100% value threshold, Claude Projects for standing context |
+| [273: Moltbook -- AI Agent Playground](../../sources/273-deep-business-moltbook-agent-playground.md) | Deep Business | Agent playground dynamics, bot social network economics |
+| [277: What's really going on with AI](../../sources/277-the-primetime-ai-claims-reality-check.md) | The PrimeTime | AI claims skepticism framework, uneven demographic impact, mid-career displacement risk |
+| [278: Microslop Wants Your Medical Records](../../sources/278-someordinarygamers-ai-medical-records-risk.md) | SomeOrdinaryGamers | AI medical data privacy risks, LLMs as probability engines in high-stakes domains |
+| [279: The Effort Illusion](../../sources/279-packet-pushers-expertise-ai-multiplier.md) | Packet Pushers | AI as expertise amplifier not substitute, middle ground between hype and dismissal |
+| [280: Ship Complex Features 10x Faster](../../sources/280-ai-tinkerers-complex-features-ai-agents.md) | AI Tinkerers / Dex Horthy | 12 Factor Agents, deterministic workflows with LLM steps, apparatus engineering |
+| [281: AI + email is the worst idea](../../sources/281-dave-talas-prompt-injection-agent-security.md) | Dave Talas | Prompt injection lethal trifecta, agent legal accountability voids |
+| [282: Disposable Software](../../sources/282-ai-news-strategy-daily-nate-b-jones-disposable-software-costs.md) | Nate B Jones | Disposable software distinction, attention as real constraint, enterprise reliability requirements |
+| [283: AI Made Every Company 10x More Productive](../../sources/283-ai-news-strategy-daily-nate-b-jones-ambition-over-headcount-cuts.md) | Nate B Jones | Ambition expansion thesis, Jevons' Paradox, six structural unlocks, headcount cuts as strategic failure |
+| [288: Karpathy's autoresearch broke the internet](../../sources/288-greg-isenberg-autoresearch-optimization-loop.md) | Greg Isenberg | AutoResearch as general optimization primitive, eight business application categories |
+| [290: How locked in are we?](../../sources/290-theprimeagenhighlights-llm-vendor-lock-in.md) | ThePrimeagenHighlights | LLM vendor lock-in via training data bias, Vercel at 62% recommendations, invisible steering |
+| [292: System Design Concepts Course](../../sources/292-freecodecamporg-system-design-fundamentals.md) | freeCodeCamp.org | System design fundamentals, CAP theorem, infrastructure knowledge as AI foundation |
+| [293: AIDD Code Hotspot Analysis](../../sources/293-eric-elliott-code-hotspot-analysis.md) | Eric Elliott | Code hotspot analysis, recurring AI mistake telemetry, deterministic quality signals |
+| [296: She quit, picked up AI, shipped in 30 days](../../sources/296-ai-news-strategy-daily-nate-b-jones-conviction-solo-founder-leverage.md) | Nate B Jones | Conviction as undernamed skill, coordination cost dissolution, solo founder leverage |
+| [298: OWASP's Top 10 Ways to Attack LLMs](../../sources/298-ibm-technology-owasp-llm-vulnerabilities.md) | IBM Technology | OWASP LLM Top 10, prompt injection #1, supply chain vulnerabilities, AI firewalls |
+| [299: What Is Llama.cpp?](../../sources/299-ibm-technology-llamacpp-local-inference.md) | IBM Technology | Llama.cpp local inference, GGUF format, quantization economics, OpenAI-compatible local server |
+| [300: AI Cognitive Debt](../../sources/300-imran-gardezi-cognitive-debt-ai-code.md) | Imran Gardezi | Cognitive debt coined, 3-4x longer incident resolution, code review bypass, three mitigation practices |
+| [302: Build My Own ChatGPT](../../sources/302-onchain-ai-garage-local-llm-training.md) | Onchain AI Garage | NanoChat model training, $0 local training pipeline, AutoResearch integration path |
+| [303: AI coding on a budget](../../sources/303-nick-olson-codes-budget-ai-coding-tools.md) | Nick Olson Codes | Six AI coding tools compared, budget-tiered recommendations, deceptive flat pricing, cloud agent trajectory |
+| [306: AI's Biggest Coding Limits](../../sources/306-devsplate-llm-coding-limits.md) | devsplate | Structural LLM limits in coding, attention bottlenecks, model collapse, prompt injection as architectural flaw |
+| [307: Anthropic Just Solved Long Context](../../sources/307-prompt-engineering-long-context-reliability.md) | Prompt Engineering | 1M token context GA, flat-rate pricing, retrieval accuracy benchmarks, RAG still needed |
+| [309: Will AI implode from Cost](../../sources/309-theprimeagenhighlights-ai-cost-hardware-ceiling.md) | ThePrimeagenHighlights | Hardware ceiling analysis, vertical consolidation prediction, Google TPU advantage, photonic chip skepticism |
+| [310: The future of Coding and Code Quality](../../sources/310-neetcodeio-code-quality-ai-debt.md) | NeetCodeIO | Code quality in AI era, cleaner codebases needed for LLMs, risk-stratified review practices |
+| [312: Claude Code + Nano Banana 2](../../sources/312-nick-saraev-animated-sites-skills-workflow.md) | Nick Saraev | $15K websites for $3-5, skills ecosystem ROI, capability-adoption gap closing, agency disruption economics |
+| [313: A $5 Prompt that's 79% Accurate](../../sources/313-j-gravelle-precision-retrieval-vs-context-stuffing.md) | J. Gravelle | Precision retrieval vs context stuffing, $2.88 savings per query, context as precision instrument |
+| [314: AI-Generated Code Technical Debt](../../sources/314-imran-gardezi-ai-code-technical-debt.md) | Imran Gardezi | Almost-right code danger, five concrete debt patterns, three-question review framework |
+| [316: What is Human In The Loop](../../sources/316-ibm-technology-human-in-the-loop.md) | IBM Technology | HITL as maturity spectrum, three injection points, trust-based autonomy progression |
+| [317: The Death of RAG?](../../sources/317-bycloud-rlm-vs-rag.md) | bycloud | Recursive Language Models vs RAG, 91.3% vs 51% accuracy, context rot as architectural limit |
+| [318: The Unreasonable Effectiveness Of Plain Text](../../sources/318-no-boilerplate-plain-text-team-os.md) | No Boilerplate | Plain text as enterprise infrastructure, GitHub-native team OS, permanence and portability |
+| [320: ChatGPT Health Failure Modes](../../sources/320-nate-b-jones-chatgpt-health-agent-evals.md) | Nate B Jones | Four generalizable agent failure modes, factorial evaluation design, agent insurance requirements |
+| [321: How AI-Native PMs Collaborate](../../sources/321-hilary-gridley-ai-native-pm-collaboration.md) | Hilary Gridley / Anjali Ahuja | AI-native PM-engineer relationship, WHOOP AI strategy, A/B test roadmaps, lanes for hacking |
+| [324: Small Language Models Are the Future](../../sources/324-daniel-bourke-small-language-models.md) | Daniel Bourke | SLM fine-tuning in 100 seconds, zero per-inference cost, on-device economics, $55K API vs $0 local |
+| [325: This can't be real](../../sources/325-primeagen-this-cant-be-real.md) | ThePrimeagen | Malice open-source cloning service, AI vs licensing compliance, legally distinct code generation |
+| [326: They lied to us about AI](../../sources/326-mo-bitar-they-lied-about-ai.md) | Mo Bitar | OpenAI internal chaos, METR 19% slowdown, 41% AI code going to trash, AGI vs LLM distinction |
+| [327: $690 Billion Is Squeezing AI Companies](../../sources/327-nate-b-jones-ai-middleware-squeeze.md) | Nate B Jones | Middleware squeeze, three industry layers, four defensible positions, three dead-end traps |
+| [330: Google just changed UI/UX design](../../sources/330-fireship-google-stitch-uiux.md) | Fireship | Google Stitch AI design tool, portable design markdown, Tailwind layoffs, design tooling disruption |
+| [331: AI Crash Report](../../sources/331-julian-whatley-ai-crash-report.md) | Julian Whatley | Sandpile model applied to AI bubble, hollow grains, GPU depreciation vs fiber permanence |
+| [334: Companies go full AI — then the bill comes due](../../sources/334-pivot-to-ai-full-ai-bill.md) | Pivot to AI | Token austerity era, Microsoft cost-cutting, 10x price increase risk when subsidies end |
+| [335: NVIDIA NemoClaw](../../sources/335-chris-messina-nvidia-nemoclaw.md) | Chris Messina | NemoClaw enterprise reference design, NemoTron Coalition, GaaS vision, token budget as compensation |
+| [336: Can It Get Any Worse?](../../sources/336-primetime-can-it-get-worse.md) | ThePrimeagen | Amazon cognitive debt cycle, Kira outages, senior engineer sign-off bottleneck |
+| [337: Andrej Karpathy on Code Agents](../../sources/337-karpathy-code-agents-autoresearch.md) | Andrej Karpathy | AI psychosis, program.md as organizational code, model speciation, digital-first disruption |
+| [338: Terence Tao -- How the World's Top Mathematician Uses AI](../../sources/338-terence-tao-ai-mathematics.md) | Terence Tao | Idea generation cost near zero, verification bottleneck remains, deleting assumptions as progress |
+| [340: I Was a 10x Engineer, Now I'm Useless](../../sources/340-primeagen-10x-engineer-useless.md) | ThePrimeagen | AI coding addiction, skill atrophy as measurable phenomenon, Pavlovian response, craft identity loss |
+| [344: We finally know what ChatGPT is for](../../sources/344-mo-bitar-chatgpt-purpose.md) | Mo Bitar | OpenAI adult content pivot, business model failure admission, safety track record vs expansion |
+| [347: Stop Learning n8n in 2026](../../sources/347-nate-herk-stop-n8n-learn-claude.md) | Nate Herk | Third wave AI automation, agentic coding displacing drag-and-drop, workflow knowledge transferability |
 
 ## Further Reading
 

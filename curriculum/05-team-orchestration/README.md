@@ -417,6 +417,36 @@ This framework directly informs the team composition concepts in this module (Co
 
 > "You didn't get a cost reduction. You got an army. The question is whether you have the strategic vision to deploy it." -- Nate B Jones ([#250])
 
+### Concept 33: Foundation Agents -- The Brain-Inspired Multi-Agent Architecture
+
+The Cloud Girl ([#286](../../sources/286-the-cloud-girl-foundation-agents-architecture.md)) summarizes a landmark 264-page survey paper co-authored by researchers from Stanford, Yale, Microsoft, Meta, and DeepMind introducing the concept of **foundation agents** -- a brain-inspired modular AI architecture. Unlike monolithic LLMs, foundation agents compose five specialized cognitive modules (memory, world modeling, reward processing, emotion-like systems, and perception) that work in concert. The transition from MOP (Model Offline Pre-training) to MACE (Multi-Agent Self-Evolving systems) formalizes agents that accumulate experience, improve autonomously, and compound capabilities over time without human-initiated retraining.
+
+This provides a theoretical framework that maps to the practical multi-agent patterns in this module: specialized team members (Concept 3) correspond to specialized cognitive modules, the shared task list (Concept 2) corresponds to the coordination layer, and the self-improving swarm (Concept 15) corresponds to the MACE self-evolving paradigm. The paper also frames alignment as a foundational architectural requirement rather than an afterthought -- reinforcing the enterprise governance discussion in Concept 29.
+
+### Concept 34: Enterprise Agent Security Architecture for Teams
+
+AI-plus-plus ([#268](../../sources/268-ai-plus-plus-enterprise-agent-security.md)) presents a zero-trust architecture specifically designed for multi-agent enterprise deployments. Three core defenses address both deliberate attacks and the "constraint gap" (agents following instructions to unintended extremes): compartmentalization (small, narrowly-scoped agents with minimal permissions), multi-agent source verification (independent models cross-checking the same input), and DMZ architecture for customer-facing deployments. Human-in-the-loop approval gates for irreversible actions are framed as a nuclear launch protocol analogy.
+
+This extends the security discussion from individual agents (Module 04) to team-level concerns, where the blast radius of a compromised or misbehaving agent scales with the number of interconnected teammates and shared resources.
+
+### Concept 35: Channels and Remote Multi-Agent Control
+
+Artem Zhutov ([#341](../../sources/341-artem-zhutov-claude-channels-obsidian.md)) demonstrates how Anthropic's Channels feature enables remote multi-agent orchestration through messaging platforms. Using tmux-based patterns, users can spawn and manage multiple Claude Code workspaces from a single Discord or Telegram channel, with each workspace having access to 100+ skills and shared vault context. This decouples agent team management from physical terminal access and enables use cases like managing coding agent fleets from a phone.
+
+This extends the infrastructure discussion in Concept 6 (tmux, E2B sandboxes, dedicated devices) with a messaging-platform-based coordination layer that provides a lighter-weight alternative to terminal split-pane setups for monitoring and directing multiple agents.
+
+### Concept 36: Context Engineering as Team Discipline
+
+LangChain ([#285](../../sources/285-langchain-context-engineering-agents.md)) organizes context engineering strategies into four categories directly relevant to team orchestration: **writing** context (saving information outside the context window), **selecting** context (pulling the right information at the right time), **compressing** context (trimming to reduce bloat), and **isolating** context (splitting across agents or sandboxes). The isolation strategy maps directly to the team architecture in this module -- each team member's fresh context window is a form of context isolation, and the shared task list is a form of context selection.
+
+This provides a formal vocabulary for the context management patterns that underpin effective team orchestration, connecting the practical team concepts in this module to the broader discipline of context engineering.
+
+### Concept 37: NemoClaw and Enterprise-Ready Agent Teams
+
+Chris Messina ([#335](../../sources/335-chris-messina-nvidia-nemoclaw.md)) presents NVIDIA's NemoClaw -- an enterprise-grade reference design built on OpenClaw -- which adds security layers (OpenShell), policy engines, privacy routers, and guardrails. Jensen Huang positions this as making OpenClaw enterprise-ready, paralleling how Red Hat made Linux enterprise-ready. The NemoTron Coalition (Cursor, LangChain, Mistral, Perplexity) builds the ecosystem for enterprise agent team deployment.
+
+This directly addresses the enterprise OpenClaw paradox from Concept 29 (Chase/LangChain): NemoClaw represents one answer to "who builds the safe, controlled version?" of consumer agent tools for enterprise use. The policy engine and privacy router components are the team-level equivalents of the individual agent hooks and guardrails from Module 04.
+
 ## Common Pitfalls
 
 - **Using teams for simple tasks**: Agent teams add coordination overhead (shared task lists, peer messaging, multiple context windows) that is only justified for complex, interdependent work. For isolated one-off tasks -- file exploration, targeted code changes, focused refactoring -- sub-agents are faster, cheaper, and simpler. As Van Zyl advises: "If you just want to do like a once-off task, you should definitely use sub agents instead" ([3:50](https://www.youtube.com/watch?v=KCJsdQpcfic&t=230)).
@@ -500,6 +530,27 @@ This framework directly informs the team composition concepts in this module (Co
 | [235: Build Your First AI Marketing Team](../../sources/235-grace-leung-ai-marketing-skills.md) | Grace Leung | Skill-based marketing agent teams, skill portability via plugins, multi-skill orchestration, non-developer teams |
 | [250: Your Team is Probably Too Big](../../sources/250-nate-b-jones-team-size-ai.md) | Nate B Jones | Scouts vs strike teams, coordination cost amplifier, ambition expansion thesis, AI slop tax, five-person optimal unit |
 | [255: Mac Mini Agents: Use these SKILLS instead](../../sources/255-indydevdan-mac-mini-agent-skills.md) | IndyDevDan | Dedicated agent devices, HTTP trigger layer for multi-device orchestration, steer/drive minimal skills, AirDrop agent-to-human delivery |
+| [190: 27 Claude Code Concepts Explained](../../sources/190-simon-scrapes-claude-code-concepts-explained.md) | Simon Scrapes | Agent taxonomy, single-to-teams graduation model, headless mode + Ralph loop |
+| [211: Minions: Stripe's One-Shot Coding Agents](../../sources/211-stripe-minions-coding-agents.md) | Stripe (Alistair Gray) | Stripe minions multi-agent architecture, one-shot coding agents |
+| [212: Minions Part 2 -- Devboxes and Blueprints at Stripe](../../sources/212-stripe-minions-technical-deep-dive.md) | Stripe (Alistair Gray) | Devbox architecture, 100M+ line codebase coordination |
+| [242: Why Your AI Agents Keep Forgetting](../../sources/242-vasilije-markovic-cognee-agent-memory.md) | Vasilije Markovic (Cognee) | Cognee agent memory, knowledge graph for team coordination |
+| [258: What is Zuckerberg doing?](../../sources/258-the-primetime-agent-consumer-ad-targeting.md) | The PrimeTime | Agent-as-consumer model, Maltbook acquisition, multi-agent social network |
+| [261: Claude Code + Karpathy's Autoresearch](../../sources/261-nick-saraev-autoresearch-autonomous-optimization.md) | Nick Saraev | AutoResearch loop for multi-agent optimization, autonomous experiment orchestration |
+| [264: The Cowork GTM Playbook](../../sources/264-gtm-ai-academy-cowork-gtm-workflows.md) | GTM AI Academy | Non-developer multi-agent GTM workflows, Cowork as team coordination layer |
+| [265: 7 new open source AI tools](../../sources/265-fireship-open-source-agent-tools.md) | Fireship | Open-source agent ecosystem, multi-agent tool landscape survey |
+| [266: Inheritance in Prompting](../../sources/266-jaymin-west-prompt-inheritance-patterns.md) | Jaymin West | Prompt inheritance for multi-agent consistency, base-to-child prompt propagation |
+| [268: One Sentence Can Hijack Your AI](../../sources/268-ai-plus-plus-enterprise-agent-security.md) | AI-plus-plus | Enterprise agent security architecture, compartmentalization, multi-agent source verification, DMZ patterns |
+| [269: wtf is Harness Engineer](../../sources/269-ai-jason-harness-engineering-autonomous-agents.md) | AI Jason | Harness engineering for autonomous agent teams, legible environments, verification loops |
+| [273: Moltbook -- AI Agent Playground](../../sources/273-deep-business-moltbook-agent-playground.md) | Deep Business | Agent playground economics, bot social network dynamics |
+| [284: Claude Code Second Brain in Obsidian](../../sources/284-brad-ai-automation-obsidian-second-brain.md) | Brad / AI & Automation | Obsidian vault as shared team memory, multi-agent vault access |
+| [285: Context Engineering for Agents](../../sources/285-langchain-context-engineering-agents.md) | LangChain | Four context strategies (write/select/compress/isolate), context isolation as team architecture |
+| [286: Foundation Agents Architecture](../../sources/286-the-cloud-girl-foundation-agents-architecture.md) | The Cloud Girl | Brain-inspired modular AI, MOP to MACE transition, foundation agents framework |
+| [293: AIDD Code Hotspot Analysis](../../sources/293-eric-elliott-code-hotspot-analysis.md) | Eric Elliott | Multi-agent parallelism for PRs, semantic indexing of mistake logs, recurring error mitigation |
+| [304: Claude Code + Obsidian = UNLIMITED Memory](../../sources/304-worldofai-obsidian-persistent-memory.md) | WorldofAI | Multi-agent shared vault context, persistent memory for parallel agents |
+| [317: The Death of RAG?](../../sources/317-bycloud-rlm-vs-rag.md) | bycloud | Recursive Language Models, multi-model delegation architecture |
+| [329: My Multi-Agent Team (NOT OpenClaw)](../../sources/329-owain-lewis-multi-agent-team.md) | Owain Lewis | Polling-based multi-agent worker, pull vs push architectures, Linear as task coordination |
+| [335: NVIDIA NemoClaw](../../sources/335-chris-messina-nvidia-nemoclaw.md) | Chris Messina | Enterprise-ready agent teams, NemoClaw security layers, NemoTron Coalition, policy engines |
+| [341: Claude Code + Obsidian Channels](../../sources/341-artem-zhutov-claude-channels-obsidian.md) | Artem Zhutov | Remote multi-agent control via Telegram/Discord, tmux workspace orchestration from phone |
 
 ## Further Reading
 

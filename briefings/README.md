@@ -23,6 +23,7 @@ Dated entries covering recent AI development findings, tool updates, and critica
 | [2026-03-05](2026-03-05.md) | 28-video playlist batch — specification-first consensus, skills ecosystem matures, Jeremy Howard AI coding critique, agentic tool wars | patterns, tools, critical, economics |
 | [2026-03-06](2026-03-06.md) | Filling the synthesis gap — Pocock's workflows + Stripe's minions infrastructure, specification-first and context engineering convergence | synthesis, patterns, cleanup |
 | [2026-03-08](2026-03-08.md) | 11-video playlist batch — scouting engineers framework, post-honeymoon maturity plateau, C++ as assembly fallacy, enterprise adoption lag | patterns, critical, economics, security |
+| [2026-03-21](2026-03-21.md) | 26-video playlist batch — economic squeeze crystallizes, craft identity crisis gets addiction framework, agent OS converges, Karpathy names inflection | economics, critical, patterns, tools, research |
 
 ## Adding Briefings
 
