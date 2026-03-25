@@ -362,3 +362,20 @@ Each source is synthesized (not transcribed) into a structured note with frontma
 | [353](353-ai-news-strategy-daily-nate-b-jones-agent-readable-commerce.md) | McKinsey Says $1 Trillion In Sales Will Go Through AI Agents. Most Businesses Are Invisible. | AI News & Strategy Daily | Nate B Jones | video | mcp, enterprise-ai, ai-economics, ai-landscape, capability-overhang, context-engineering |
 | [354](354-the-primetime-ai-replaces-engineers-hype.md) | Thanks for all your hard work you are no longer needed | TheStandup | The PrimeTime | video | ai-hype, vibe-coding, ai-landscape |
 | [355](355-anthony-sistilli-ai-startup-slop.md) | why everyone hates YC companies | Anthony Sistilli | video | ai-hype, vibe-coding, ai-landscape, ai-economics |
+| [356](356-ai-news-strategy-daily-nate-b-jones-agent-platform-strategy.md) | I Mapped Where Every AI Agent Actually Sits. Most People Pick Wrong. | AI News & Strategy Daily | Nate B Jones | video | ai-landscape, multi-agent, security, enterprise-ai, skills-ecosystem |
+| [357](357-matt-pocock-claudemd-init-improvements.md) | Claude Code tried to improve /init... Is it any better? | Matt Pocock | video | claude-code, skills, context-engineering, prompt-engineering |
+| [358](358-indydevdan-ceo-board-multi-agent.md) | Pi CEO Agents. Claude 1M Context. Multi-Agent Teams. | IndyDevDan | video | agent-teams, multi-agent, context-engineering, claude-code, skills, ai-economics, prompt-engineering |
+| [359](359-indydevdan-library-skill-distribution.md) | The Library Meta-Skill: How I Distribute PRIVATE Skills, Agents and Prompts | IndyDevDan | video | skills, claude-code, multi-agent, agent-teams, agentic-coding, security, meta-prompts |
+| [360](360-coding-jesus-getcrackedio-ai-sycophancy-delusion.md) | AI is making EVERYONE delusional | Coding Jesus (getcracked.io) | video | ai-hype, vibe-coding, prompt-engineering, ai-sdlc |
+| [361](361-work-unusual-enterprise-ai-gap.md) | AI Isn’t Delivering (And CEOs Know It) | Work. Unusual | video | ai-hype, enterprise-ai, capability-overhang, ai-economics |
+| [362](362-ray-amjad-autodream-memory-consolidation.md) | Anthropic Just Dropped the Feature Nobody Knew They Needed | Ray Amjad | video | claude-code, context-engineering, agentic-coding, task-system |
+| [363](363-nate-herk-ai-automation-computer-use-desktop.md) | Claude Code Just Got Another Huge Upgrade | Nate Herk | AI Automation | video | claude-code, agentic-coding, task-system, security |
+| [364](364-the-primetime-ai-clean-room-licensing.md) | This Is Crazy | The PrimeTime | video | ai-hype, security, ai-sdlc, ai-economics |
+| [365](365-mo-bitar-ai-spam-trust-collapse.md) | AI broke the one thing we can't fix | Mo Bitar | video | ai-landscape, ai-hype, security, ai-economics |
+| [366](366-nate-herk-ai-automation-autodream-memory-consolidation.md) | Claude Code Just Dropped Memory 2.0 | Nate Herk | AI Automation | video | claude-code, context-engineering, agentic-coding, task-system |
+| [367](367-interface-studies-design-roles-generation.md) | Who’s a Designer? On Roles, Processes, Tools, and of Course AI! | Interface Studies | video | specification, ai-sdlc, vibe-coding, ai-landscape |
+| [368](368-ai-native-dev-phoenix-architecture-disposable-code.md) | Stop Maintaining Your Code. Start Replacing It | AI Native Dev | video | ai-sdlc, specification, validation, agentic-coding, ai-economics |
+| [369](369-neo4j-context-graph-agent-governance.md) | ​Context graphs as the control plane for the agentic enterprise, Dave Bennett, Indykite | Neo4j | video | multi-agent, enterprise-ai, security, mcp, agent-teams |
+| [370](370-thestanduppod-ai-writes-all-code.md) | AI Writing Essentially All The Code | TheStandupPod | video | ai-hype, ai-landscape, ai-sdlc, enterprise-ai, vibe-coding |
+| [371](371-bycloud-deepseek-engram-architecture.md) | DeepSeek's Insane Architecture Breakthrough [Engram Explained] | bycloud | video | ai-landscape, infrastructure |
+| [372](372-interface-studies-responsive-surface-interface.md) | The Responsive Surface: Math Notes and the Page That Thinks Back | Interface Studies | video | ai-landscape, capability-overhang, enterprise-ai |
