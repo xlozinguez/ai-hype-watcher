@@ -370,3 +370,12 @@ Each source is synthesized (not transcribed) into a structured note with frontma
 | [361](361-work-unusual-enterprise-ai-adoption-gap.md) | AI Isn’t Delivering (And CEOs Know It) | Work. Unusual | video | ai-hype, enterprise-ai, capability-overhang, ai-economics, ai-landscape |
 | [362](362-ray-amjad-autodream-memory-consolidation.md) | Anthropic Just Dropped the Feature Nobody Knew They Needed | Ray Amjad | video | claude-code, context-engineering, agentic-coding, task-system |
 | [363](363-nate-herk-ai-automation-computer-use-desktop.md) | Claude Code Just Got Another Huge Upgrade | Nate Herk | AI Automation | video | claude-code, agentic-coding, task-system, ai-landscape |
+| [364](364-the-primetime-ai-clean-room-licensing.md) | This Is Crazy | The PrimeTime | video | ai-hype, security, ai-sdlc, ai-economics |
+| [365](365-mo-bitar-ai-spam-trust-collapse.md) | AI broke the one thing we can’t fix | Mo Bitar | video | ai-landscape, ai-hype, security, ai-economics |
+| [366](366-nate-herk-ai-automation-autodream-memory-consolidation.md) | Claude Code Just Dropped Memory 2.0 | Nate Herk | AI Automation | video | claude-code, context-engineering, agentic-coding, task-system |
+| [367](367-interface-studies-design-roles-generation.md) | Who’s a Designer? On Roles, Processes, Tools, and of Course AI! | Interface Studies | video | specification, ai-sdlc, vibe-coding, ai-landscape |
+| [368](368-ai-native-dev-phoenix-architecture-disposable-code.md) | Stop Maintaining Your Code. Start Replacing It | AI Native Dev | video | ai-sdlc, specification, validation, agentic-coding, ai-economics |
+| [369](369-neo4j-context-graph-agent-governance.md) | ​Context graphs as the control plane for the agentic enterprise, Dave Bennett, Indykite | Neo4j | video | multi-agent, enterprise-ai, security, mcp, agent-teams |
+| [370](370-thestanduppod-ai-writes-all-code.md) | AI Writing Essentially All The Code | TheStandupPod | video | ai-hype, ai-landscape, ai-sdlc, enterprise-ai, vibe-coding |
+| [371](371-bycloud-deepseek-engram-architecture.md) | DeepSeek’s Insane Architecture Breakthrough [Engram Explained] | bycloud | video | ai-landscape, infrastructure |
+| [372](372-interface-studies-responsive-surface-interface.md) | The Responsive Surface: Math Notes and the Page That Thinks Back | Interface Studies | video | ai-landscape, capability-overhang, enterprise-ai |
