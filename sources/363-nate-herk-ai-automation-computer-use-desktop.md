@@ -7,7 +7,7 @@ url: "https://www.youtube.com/watch?v=X6EGzi9qm3E"
 date: "2026-03-24"
 duration: "8:10"
 type: "video"
-tags: ["claude-code", "agentic-coding", "task-system", "security"]
+tags: ["claude-code", "agentic-coding", "task-system", "ai-landscape"]
 curriculum_modules: ["03-claude-code-essentials", "04-agentic-patterns"]
 ---
 
@@ -15,45 +15,53 @@ curriculum_modules: ["03-claude-code-essentials", "04-agentic-patterns"]
 
 > **Creator**: Nate Herk | AI Automation | **Platform**: YouTube | **Date**: 2026-03-24 | **Duration**: 8:10
 
-# Claude Code Computer Use — Desktop Automation Feature
+# Claude Code Computer Use Feature — Demo & Limitations
 
 ## Summary
 
-Anthropic released a new "computer use" feature for Claude Code (currently in research preview on macOS only) that allows the AI to natively control your mouse, keyboard, and take screenshots to operate desktop applications. The feature is accessible through the Claude Code desktop app settings and requires granting accessibility permissions to specific apps. The demo showcases Claude autonomously navigating ClickUp to send a file attachment, opening calculator apps, and even starting an OBS recording session — all with minimal user intervention.
+Anthropic has released a research preview of computer use functionality for Claude Code (and Claude.ai), enabling the AI to natively control a Mac's mouse, keyboard, and screenshots to operate desktop applications autonomously. The feature is demonstrated performing tasks like finding a PDF and sending it as a ClickUp DM, opening apps, and performing calculations — all triggered by the user without being physically present at the machine. Nate pairs this with Claude's "Dispatch" feature, which allows tasks to be sent from a phone, effectively making the local computer remotely operable from anywhere.
 
-The feature becomes significantly more powerful when paired with Claude's "Dispatch" capability, which allows users to trigger computer use sessions remotely from a phone. This combination effectively enables asynchronous desktop automation: you can fire off a task from anywhere, and Claude will execute it on your local machine while you're away, as long as the computer is awake (which Dispatch can also handle natively).
+The video walks through the setup process (enabling computer use in Claude desktop app settings, granting accessibility permissions) and demonstrates the permission model, where Claude requests access to specific apps within a session but retains those permissions for the remainder of that session. The demos show Claude navigating unfamiliar UI by taking iterative screenshots, zooming in on interface elements, and inferring correct clicks — a slow but functional visual reasoning loop.
 
-Key limitations at launch include: macOS-only support (Windows coming in weeks), browser interactions are restricted to read-only access for security reasons (requiring Chrome extension or Playwright for web automation), and the feature is only available on Pro plans, not Teams or Enterprise. The creator frames this as a rapidly iterating foundation — particularly exciting for legacy app automation, scheduled task pairing, and local app testing workflows.
+Key limitations are addressed directly: the feature is Mac-only in this research preview (Windows coming soon), restricted to Pro plan users, unavailable on Teams/Enterprise, and — most importantly — browsers are restricted to read-only access for security reasons. Web automation still requires a Chrome extension or Playwright. Nate frames the bigger picture as Anthropic shipping toward a fully integrated Claude Code that handles browser and desktop contexts natively, with scheduled tasks and Dispatch as force multipliers for async autonomous workflows.
+
+---
 
 ## Key Concepts
 
-### Computer Use in Claude Code
-Claude can take screenshots of your desktop at intervals, analyze the visual state of applications, and issue mouse clicks and keyboard inputs to interact with any native app. It operates iteratively: screenshot → analyze → act → screenshot again. This loop allows it to navigate unfamiliar interfaces by "seeing" them rather than relying on APIs or structured integrations.
+### Computer Use via Visual Reasoning Loop
+Claude Code controls the desktop by taking iterative screenshots, analyzing UI state, inferring where to click or type, and acting — then repeating. It zooms into interface elements to confirm button locations before acting. This is not API-level integration; it's pixel-level visual reasoning, which makes it app-agnostic but also slower and occasionally imprecise.
 
-### Permission Model and App Allowlisting
-On first use per session, Claude requests explicit permission to access each application it needs to interact with (e.g., Finder, ClickUp). Once granted within a session, it doesn't re-prompt for the same app. This opt-in model is a deliberate safety guardrail — users control which apps Claude can touch.
+### Permission Model and Session Access
+On first use within a session, Claude requests explicit user permission to access each application (e.g., Finder, ClickUp). Once granted for that session, subsequent uses of the same app don't require re-authorization. This is distinct from the OS-level permissions (screen recording, accessibility) that must be configured once at setup.
 
 ### Dispatch Integration for Remote Triggering
-The Dispatch feature allows users to send instructions to their local Claude Code instance from a mobile device. Combined with computer use, this creates a remote-control-style workflow: message from phone → Claude wakes machine and executes desktop tasks locally. The creator positions this as a core unlock for asynchronous, human-out-of-the-loop automation.
+The Dispatch feature allows users to send Claude Code tasks from a phone (via text/message interface), which then execute locally on the user's desktop machine — as long as the machine is awake. Claude can also natively wake the computer. This combination effectively turns Claude Code into a remote desktop automation agent operable from anywhere.
 
-### Browser Restriction and the Workaround
-Native browser automation (Safari, Chrome via computer use) is intentionally restricted to read-only screenshot access for security reasons. For web automation, users must instead use a Chrome extension connector or a Playwright CLI. This is a meaningful gap for users expecting full web agent behavior, but local-app automation works well.
+### Browser Restriction as Security Boundary
+Browsers (Safari, Chrome) are restricted to read-only access within computer use. Claude can open a browser but cannot type into or click within it. This is an intentional security decision. Web automation requires routing through a Chrome extension or Playwright CLI instead, which represents a meaningful workflow gap for web-heavy tasks.
 
-### Scheduled Tasks + Computer Use Pairing
-Computer use can be triggered by Claude Code's scheduled tasks feature, enabling recurring automations (e.g., pull a report every Friday, scan email every morning) without any manual trigger. The creator describes this as approximating "a real human working on your laptop" for repetitive workflows.
+### Scheduled Tasks as Autonomous Workflow Trigger
+Computer use can be combined with Claude Code's scheduled task system to create fully autonomous, recurring desktop workflows — e.g., scanning email every morning or pulling a report every Friday — without any human trigger. This positions computer use as a component in longer-running agentic pipelines, not just ad-hoc commands.
+
+---
 
 ## Practical Takeaways
 
-- **Enable it explicitly in settings**: Go to Claude Code desktop app → Settings → General → Desktop App → Computer Use. Quit and relaunch after enabling. If Claude tries to use browser-based tools instead, be more explicit in your prompt: "use computer use to…"
-- **Use native apps, not browsers**: For reliable automation, route tasks through desktop apps (Slack app, ClickUp app, Gmail app) rather than browser tabs. Browser use is currently read-only via computer use.
-- **Pair with Dispatch for async workflows**: The highest-leverage use case is triggering desktop tasks remotely — useful for accessing locally stored files, running reports, or checking builds while away from your machine.
-- **Strong fit for legacy/no-API tools**: Apps without public APIs (internal dashboards, legacy enterprise software) are prime targets, since computer use doesn't require any integration — just a visible UI.
-- **Use for local app testing**: Having Claude click through your own app builds in a sandbox environment to find bugs or validate features reduces manual QA time significantly.
+- **Be explicit in prompts**: If Claude tries to use a browser extension or Playwright instead of native computer use, explicitly say "use computer use" in the prompt. Ensure the Claude desktop app is fully updated and restarted after enabling the setting.
+- **Best for apps without APIs**: Computer use is most valuable for legacy desktop software, proprietary internal tools, or any app that lacks an accessible API — Claude can click through the UI just as a human would.
+- **Browser automation still needs Playwright or Chrome extension**: Don't expect computer use to handle web tasks end-to-end. Plan your stack accordingly — use computer use for local/desktop apps and route browser tasks to Playwright or a browser extension.
+- **Pair with Dispatch for async delegation**: The real productivity unlock is combining computer use with Dispatch to fire off desktop tasks remotely and return to find them completed — useful for checking builds, sending files, or running reports while away from the machine.
+- **Use for QA and sandbox testing**: Having Claude Code click through a locally running app to find bugs or test features is a low-friction alternative to writing test scripts, especially during early development.
+
+---
 
 ## Notable Quotes
 
 > "It's pretty much going to be as if you have a real human working on your laptop."
 
-> "At some point, Claude Code will be able to do this in the web and all this kind of other stuff. It's just going to take a little bit more time, but they're still shipping at an insane pace."
+> "I actually had Claude Code start up this recording for me... the recording was started by Claude Code."
 
-> "Even if you have different connectors like your Gmail app or your Slack app or ClickUp app — as you guys saw — it can use all of those perfectly fine."
+> "Anthropic is shipping a new feature like every day. What this shows us is that they're moving towards having all of these features natively within Claude Code."
+
+---
