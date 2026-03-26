@@ -371,17 +371,12 @@ Each source is synthesized (not transcribed) into a structured note with frontma
 | [362](362-ray-amjad-autodream-memory-consolidation.md) | Anthropic Just Dropped the Feature Nobody Knew They Needed | Ray Amjad | video | claude-code, context-engineering, agentic-coding, task-system |
 | [363](363-nate-herk-ai-automation-computer-use-desktop.md) | Claude Code Just Got Another Huge Upgrade | Nate Herk | AI Automation | video | claude-code, agentic-coding, task-system, ai-landscape |
 | [364](364-the-primetime-ai-clean-room-licensing.md) | This Is Crazy | The PrimeTime | video | ai-hype, security, ai-sdlc, ai-economics |
-| [365](365-mo-bitar-ai-spam-trust-collapse.md) | AI broke the one thing we can't fix | Mo Bitar | video | ai-landscape, ai-hype, security, ai-economics |
+| [365](365-mo-bitar-ai-spam-trust-collapse.md) | AI broke the one thing we can’t fix | Mo Bitar | video | ai-landscape, ai-hype, security, ai-economics |
 | [366](366-nate-herk-ai-automation-autodream-memory-consolidation.md) | Claude Code Just Dropped Memory 2.0 | Nate Herk | AI Automation | video | claude-code, context-engineering, agentic-coding, task-system |
 | [367](367-interface-studies-design-roles-generation.md) | Who’s a Designer? On Roles, Processes, Tools, and of Course AI! | Interface Studies | video | specification, ai-sdlc, vibe-coding, ai-landscape |
 | [368](368-ai-native-dev-phoenix-architecture-disposable-code.md) | Stop Maintaining Your Code. Start Replacing It | AI Native Dev | video | ai-sdlc, specification, validation, agentic-coding, ai-economics |
 | [369](369-neo4j-context-graph-agent-governance.md) | ​Context graphs as the control plane for the agentic enterprise, Dave Bennett, Indykite | Neo4j | video | multi-agent, enterprise-ai, security, mcp, agent-teams |
 | [370](370-thestanduppod-ai-writes-all-code.md) | AI Writing Essentially All The Code | TheStandupPod | video | ai-hype, ai-landscape, ai-sdlc, enterprise-ai, vibe-coding |
-| [371](371-bycloud-deepseek-engram-architecture.md) | DeepSeek's Insane Architecture Breakthrough [Engram Explained] | bycloud | video | ai-landscape, infrastructure |
+| [371](371-bycloud-deepseek-engram-architecture.md) | DeepSeek’s Insane Architecture Breakthrough [Engram Explained] | bycloud | video | ai-landscape, infrastructure |
 | [372](372-interface-studies-responsive-surface-interface.md) | The Responsive Surface: Math Notes and the Page That Thinks Back | Interface Studies | video | ai-landscape, capability-overhang, enterprise-ai |
-| [373](373-ai-news-strategy-daily-nate-b-jones-agent-species-architecture.md) | Tobi Lütke Made a 20-Year-Old Codebase 53% Faster Overnight. Here's How. | AI News & Strategy Daily | Nate B Jones | video | agentic-coding, multi-agent, agent-teams, ai-sdlc, cursor |
-| [374](374-the-primetime-tdd-critique-testing.md) | How BAD Is Test Driven Development? - The Standup #6 | The PrimeTime | video | ai-sdlc, vibe-coding |
-| [375](375-the-ai-automators-long-running-agent-harness.md) | Anthropic Just Dropped the New Blueprint for Long-Running AI Agents. | The AI Automators | video | multi-agent, builder-validator, context-engineering, agentic-coding, agent-teams, validation, specification, anthropic |
-| [376](376-leon-van-zyl-skills-advanced-features.md) | Claude Code Skills Changed Everything (And Nobody Noticed) | Leon van Zyl | video | skills, claude-code, context-engineering, agentic-coding, multi-agent, skills-ecosystem |
-| [377](377-samtime-copilot-overextension-rollback.md) | Copilot is Turning Into a Disaster for Microsoft | SAMTIME | video | ai-hype, enterprise-ai, ai-landscape |
-| [378](378-the-primetime-litellm-supply-chain-attack.md) | I did not expect this ending | The PrimeTime | video | security, mcp, vibe-coding, cursor, ai-hype |
+| [373](373-cloudflare-dynamic-workers-sandboxing.md) | Sandboxing AI agents, 100x faster | Cloudflare (Kenton Varda, Sunil Pai, Ketan Gupta) | article | infrastructure, security, enterprise-ai, agentic-coding, ai-economics |
