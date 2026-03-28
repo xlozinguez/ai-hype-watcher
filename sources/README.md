@@ -408,3 +408,8 @@ Each source is synthesized (not transcribed) into a structured note with frontma
 | [398](398-sam-witteveen-document-parsing-framework-era.md) | LiteParse - The Local Document Parser | Sam Witteveen | video | agentic-coding, mcp, ai-landscape, enterprise-ai, context-engineering, claude-code |
 | [399](399-maximilian-schwarzmller-developer-joy-ai-tradeoffs.md) | It was more fun before AI | Maximilian Schwarzmüller | video | vibe-coding, ai-hype, ai-sdlc, claude-code, specification |
 | [400](400-icor-with-tom-ai-productivity-pkm-folder-agent-system.md) | Claude just killed ALL Note-Taking Apps. Here is proof. | ICOR with Tom | AI Productivity | video | claude-code, agent-teams, multi-agent, prompt-engineering |
+| [401](401-theprimeagenhighlights-yc26-batch-analysis.md) | This is the future | ThePrimeagenHighlights | video | ai-hype, ai-landscape, ai-economics, enterprise-ai, agentic-coding |
+| [402](402-ai-news-strategy-daily-nate-b-jones-vibe-design-command-line.md) | A Markdown File Just Replaced Your Most Expensive Design Meeting. (Google Stitch) | AI News & Strategy Daily | Nate B Jones | video | mcp, skills, vibe-coding, ai-sdlc, claude-code, specification |
+| [403](403-blc-bitcoin-liberated-chain-web3-ai-agent-security.md) | Why 95% of Web3 Startups Fail (And How to Evade the Predatory VC Trap) | BLC (Bitcoin Liberated Chain) | video | security, ai-safety, enterprise-ai, ai-economics |
+| [404](404-matt-pocock-llm-hallucination-trust.md) | Never Trust An LLM | Matt Pocock | video | prompt-engineering, validation, context-engineering, security, ai-hype |
+| [405](405-mo-bitar-ai-validation-psychosis.md) | Healthy people are starting to go crazy | Mo Bitar | video | ai-hype, ai-safety, ai-landscape |
