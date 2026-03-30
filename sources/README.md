@@ -408,3 +408,27 @@ Each source is synthesized (not transcribed) into a structured note with frontma
 | [398](398-sam-witteveen-document-parsing-framework-era.md) | LiteParse - The Local Document Parser | Sam Witteveen | video | agentic-coding, mcp, ai-landscape, enterprise-ai, context-engineering, claude-code |
 | [399](399-maximilian-schwarzmller-developer-joy-ai-tradeoffs.md) | It was more fun before AI | Maximilian Schwarzmüller | video | vibe-coding, ai-hype, ai-sdlc, claude-code, specification |
 | [400](400-icor-with-tom-ai-productivity-pkm-folder-agent-system.md) | Claude just killed ALL Note-Taking Apps. Here is proof. | ICOR with Tom | AI Productivity | video | claude-code, agent-teams, multi-agent, prompt-engineering |
+| [401](401-theprimeagenhighlights-yc-batch-agent-hype.md) | This is the future | ThePrimeagenHighlights | video | ai-hype, ai-landscape, agentic-coding, enterprise-ai, claude-code |
+| [402](402-ai-news-strategy-daily-nate-b-jones-vibe-design-command-line.md) | A Markdown File Just Replaced Your Most Expensive Design Meeting. (Google Stitch) | AI News & Strategy Daily | Nate B Jones | video | mcp, vibe-coding, ai-sdlc, claude-code, skills, ai-landscape |
+| [403](403-blc-bitcoin-liberated-chain-web3-agentic-security.md) | Why 95% of Web3 Startups Fail (And How to Evade the Predatory VC Trap) | BLC (Bitcoin Liberated Chain) | video | security, ai-economics, enterprise-ai |
+| [404](404-matt-pocock-llm-hallucination-trust.md) | Never Trust An LLM | Matt Pocock | video | prompt-engineering, validation, security, context-engineering, ai-hype |
+| [405](405-mo-bitar-ai-psychosis-risk.md) | Normal people are starting to go crazy | Mo Bitar | video | ai-hype, ai-safety, ai-landscape |
+| [406](406-ai-news-strategy-daily-nate-b-jones-dispatch-scheduled-tasks-agents.md) | Anthropic Just Gave You 3 Tools That Work While You're Gone. | AI News & Strategy Daily | Nate B Jones | video | multi-agent, agentic-coding, mcp, ai-landscape |
+| [407](407-recce-skills-iterative-practice.md) | A Practical Guide to AI Skills — Dori Wilson | Data Debug SF | Recce | video | skills, claude-code, mcp, context-engineering, meta-prompts, prompt-engineering, agentic-coding |
+| [408](408-mo-bitar-ai-erdos-math-hype.md) | The truth behind AI “solving” the Erdos problems | Mo Bitar | video | ai-hype, ai-landscape, capability-overhang |
+| [409](409-unprompted-personal-ai-infrastructure.md) | Daniel Miessler - Anatomy of an Agentic Personal AI Infrastructure | [un]prompted 2026 | unprompted | video | agent-teams, multi-agent, agentic-coding, task-system, validation, skills, claude-code, ai-sdlc, enterprise-ai |
+| [410](410-nate-herk-ai-automation-paperclip-agent-orchestration.md) | Claude Code + Paperclip Just Destroyed OpenClaw | Nate Herk | AI Automation | video | claude-code, multi-agent, agent-teams, task-system, agentic-coding |
+| [411](411-chase-ai-open-source-repos-roundup.md) | 5 Open Source Repos That Make Claude Code UNSTOPPABLE (March 2026) | Chase AI | video | claude-code, skills, agentic-coding, multi-agent, builder-validator, mcp, agent-teams |
+| [412](412-gmi-cloud-minimax-inference-cost.md) | MiniMax M2.7 in GMI | GLM-5 Intelligence at 1/3 the Cost | GMI Cloud | video | ai-economics, ai-landscape, infrastructure |
+| [413](413-theprimeagenhighlights-llm-code-comprehension-limits.md) | AI isn't reading the code | ThePrimeagenHighlights | video | ai-hype, context-engineering, security, vibe-coding |
+| [414](414-zack-korman-compliance-audit-fraud.md) | Delve faked SOC2. That's worse than SOC2 itself. | Zack Korman | video | ai-hype, security, enterprise-ai |
+| [415](415-coding-jesus-getcrackedio-cs-grads-job-market.md) | CS grads are giving up. | Coding Jesus (getcracked.io) | video | vibe-coding, ai-landscape, ai-economics |
+| [416](416-mo-bitar-ai-hype-criticism.md) | AI psychosis is spreading | Mo Bitar | video | ai-hype, ai-landscape, vibe-coding |
+| [417](417-dave-linthicum-is-not-ai-consulting-ai-oversell.md) | Big Consulting Keeps Selling You AI You Don’t Need | Dave Linthicum Is Not AI | video | ai-hype, enterprise-ai, ai-economics |
+| [418](418-two-minute-papers-ai-frontier-research.md) | DeepMind’s New AI Just Changed Science Forever | Two Minute Papers | video | ai-landscape, builder-validator, validation, ai-hype |
+| [419](419-worldofai-model-releases-tooling-updates.md) | Claude Mythos 5: Most Powerful Model Ever! AGI, GLM 5.1, Claude Code Update & Codex Plugins! AI NEWS | WorldofAI | video | ai-landscape, claude-code, agentic-coding, ai-safety, cursor, capability-overhang |
+| [420](420-trustgraph-context-graphs-explainability.md) | Context Graphs in Action | TrustGraph | TrustGraph | video | enterprise-ai, context-engineering, ai-sdlc, prompt-engineering |
+| [421](421-ai-news-strategy-daily-nate-b-jones-helium-chip-supply-chain.md) | 48 Days. That's How Long Before the Helium Runs Out for AI Chips. | AI News & Strategy Daily | Nate B Jones | video | ai-economics, infrastructure, ai-landscape |
+| [422](422-hassan-habib-software-engineering-2-agents.md) | Software Engineering 2.0 - The End of APIs and Static Systems | Hassan Habib | video | multi-agent, ai-sdlc, agentic-coding, ai-landscape, skills |
+| [423](423-the-primetime-open-source-slop-prs.md) | Worst Advice Ever | The PrimeTime | video | agentic-coding, vibe-coding, security, ai-sdlc |
+| [424](424-philip-bohun-ai-cost-sustainability.md) | AI Software Engineers are Too Expensive | Philip Bohun | video | ai-economics, ai-hype, infrastructure, ai-landscape |
