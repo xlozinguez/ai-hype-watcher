@@ -259,7 +259,9 @@ footer {
     `${data.meta.source_count} sources · ${data.meta.tag_count} tags · ${data.nodes.filter(n=>n.type==='module').length} modules · ${data.synthesis.length} synthesis docs`;
 
   // ── STATE ──
-  let currentView = 'graph';
+  const validViews = ['graph', 'timeline', 'curriculum', 'tags'];
+  const initialHash = location.hash.slice(1);
+  let currentView = validViews.includes(initialHash) ? initialHash : 'graph';
   let activeFilters = { tags: new Set(), modules: new Set(), creators: new Set() };
   let edgeVisibility = { related: true, curriculum: true, tag: false };
   let searchQuery = '';
@@ -329,20 +331,30 @@ footer {
   }
 
   // ── VIEW SWITCHING ──
-  document.querySelectorAll('.view-tab').forEach(btn => {
-    btn.addEventListener('click', () => {
-      document.querySelectorAll('.view-tab').forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-      currentView = btn.dataset.view;
-      document.getElementById('graph-svg').classList.toggle('hidden', currentView !== 'graph');
-      document.querySelectorAll('.view-container').forEach(v => v.classList.remove('active'));
-      if (currentView !== 'graph') {
-        document.getElementById(currentView + '-view').classList.add('active');
-      }
-      if (currentView === 'timeline') renderTimeline();
-      if (currentView === 'curriculum') renderCurriculum();
-      if (currentView === 'tags') renderTags();
+  function switchView(view) {
+    if (!validViews.includes(view)) view = 'graph';
+    currentView = view;
+    document.querySelectorAll('.view-tab').forEach(b => {
+      b.classList.toggle('active', b.dataset.view === currentView);
     });
+    document.getElementById('graph-svg').classList.toggle('hidden', currentView !== 'graph');
+    document.querySelectorAll('.view-container').forEach(v => v.classList.remove('active'));
+    if (currentView !== 'graph') {
+      document.getElementById(currentView + '-view').classList.add('active');
+    }
+    if (currentView === 'timeline') renderTimeline();
+    if (currentView === 'curriculum') renderCurriculum();
+    if (currentView === 'tags') renderTags();
+    history.replaceState(null, '', '#' + currentView);
+  }
+
+  document.querySelectorAll('.view-tab').forEach(btn => {
+    btn.addEventListener('click', () => switchView(btn.dataset.view));
+  });
+
+  window.addEventListener('hashchange', () => {
+    const view = location.hash.slice(1);
+    if (validViews.includes(view) && view !== currentView) switchView(view);
   });
 
   // ── TOOLTIP ──
@@ -787,6 +799,9 @@ footer {
     simulation.force('center', d3.forceCenter(width / 2, height / 2));
     simulation.alpha(0.1).restart();
   });
+
+  // ── INITIAL VIEW ──
+  if (currentView !== 'graph') switchView(currentView);
 
 })();
 </script>
