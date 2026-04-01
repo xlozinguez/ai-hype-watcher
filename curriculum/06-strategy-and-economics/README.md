@@ -919,6 +919,80 @@ Fireship ([#330](../../sources/330-fireship-google-stitch-uiux.md)) covers Googl
 
 No Boilerplate ([#318](../../sources/318-no-boilerplate-plain-text-team-os.md)) argues that building an entire team operating system on GitHub's native primitives -- repositories, wikis, issues, milestones, project boards, and Actions -- provides permanence and portability that proprietary SaaS cannot match. Data in plain Markdown files in Git is readable by any tool, present or future, and mistakes are trivially reversible. This connects to the defensibility gradient (Concept 7a): proprietary data stored in portable, AI-readable formats creates a moat that is both defensible against competitors and accessible to AI agents.
 
+### Concept 42: The 97.5% Agent Failure Rate and the Context Gap
+
+Nate B Jones ([#349](../../sources/349-ai-news-strategy-daily-nate-b-jones-agent-context-failure.md)) presents the most damning real-world performance data for AI agents: a 97.5% failure rate on genuine freelance projects, not because models lack capability but because of a fundamental **context gap**. Agents can execute tasks competently when given complete context, but real jobs require agents to *bring* their own context -- organizational history, decision rationale, informal agreements, and the distinction between production and test environments. A vivid case study demonstrates the consequences: an AI coding agent demolished a production database containing 1.9 million student records by mistaking live infrastructure for temporary duplicates. Every individual action was logically correct, but the agent had no awareness of which world it was operating in.
+
+This provides a concrete data point for the specification quality imperative (Concept 9) and the intent engineering discipline (Concept 11k): the gap between demo-quality agent performance and production-quality results is not a model problem but an organizational context problem. Enterprise AI deployment requires encoding not just what to do but the full situational awareness that experienced humans carry implicitly.
+
+### Concept 43: The Agent-Readable Commerce Layer
+
+Nate B Jones ([#353](../../sources/353-ai-news-strategy-daily-nate-b-jones-agent-readable-commerce.md)) and Daniel Miessler ([#409](../../sources/409-unprompted-personal-ai-infrastructure.md)) converge on a structural prediction: companies that require human UI interaction are becoming invisible to AI agents. As agent-mediated workflows become the default for AI-native users, businesses must exist as APIs that agents can consume. Miessler predicts a rating-system layer (analogous to IMDb/Rotten Tomatoes) where agents autonomously select the best API-exposed service for a given task.
+
+Jones ([#356](../../sources/356-ai-news-strategy-daily-nate-b-jones-agent-positioning-framework.md)) extends this with an **agent positioning framework**: as agents increasingly mediate purchasing decisions, the question shifts from "how do humans find us?" to "how do agents evaluate us?" This connects to the cross-platform memory thesis (Concept 12d) and the B2B buyer transformation (Concept 11r) -- the agent web is forking from the human web, and businesses must be legible to both.
+
+### Concept 44: Supply Chain Attacks as Concrete Enterprise Risk
+
+Two real-world supply chain attacks documented in 2026 provide concrete evidence for the security concerns in Concepts 6 and 6a. The LiteLLM supply chain compromise ([#378](../../sources/378-the-primetime-litellm-supply-chain-attack.md), [#396](../../sources/396-low-level-litellm-supply-chain-attack.md)) -- where a malicious PyPI package targeted the popular LLM routing library -- demonstrates that AI infrastructure is now a high-value target for attackers. The Anthropic source code leak ([#435](../../sources/435-startup-hakk-claude-code-source-leak.md), [#438](../../sources/438-the-primetime-source-map-leak.md)) exposed Claude Code's client-side source through unstripped source maps, revealing internal system prompts and tool definitions.
+
+These incidents extend the skills ecosystem security problem (Concept 6) from theoretical vulnerability to demonstrated exploitation, and reinforce the OWASP framework (Concept 27) with concrete examples of supply chain vulnerabilities (#3 on the LLM Top 10).
+
+### Concept 45: The Pragmatic Enterprise Adoption Framework
+
+The Pragmatic Engineer / Gergely Orosz ([#382](../../sources/382-the-pragmatic-engineer-levels-ai-adoption.md)) provides a grounded, levels-based framework for enterprise AI adoption that cuts through both hype and dismissal. The framework maps organizations along a maturity spectrum from "not using AI" through "individual experimentation" to "team-level integration" to "organizational transformation" -- with concrete markers for each level and honest assessments of where most enterprises actually sit (levels 1-2, not the levels 4-5 that conference keynotes assume).
+
+This extends the enterprise adoption gap (Concept 7) and the five levels of AI-native organizations (Concept 11e) with a practitioner-oriented assessment tool that helps organizations honestly gauge their position and plan next steps without either panicking or complacently assuming they are further along than they are.
+
+### Concept 46: AI-Generated Code in Production -- The Risk Calculus
+
+Better Offline ([#351](../../sources/351-better-offline-llm-code-production-risk.md)) provides a systematic risk analysis of AI-generated code in production environments, arguing that the productivity gains from AI coding tools must be weighed against the compounding risks of code that nobody fully understands entering critical systems. The analysis complements the cognitive debt framework (Concept 30) with a risk-management lens: when incident resolution times are 3-4x longer on AI-written modules and no developer can explain how the code functions, the organization has traded visible productivity gains for invisible operational risk.
+
+### Concept 47: The Agentic Engineering Delivery Case Study
+
+Scott Logic ([#388](../../sources/388-scott-logic-agentic-engineering-delivery.md)) provides a real consulting delivery case study of agentic engineering on a client project -- moving beyond demos and personal projects to document what actually works in enterprise delivery contexts. The findings reinforce the harness engineering thesis (Module 05, Concept 39): reliable delivery requires deterministic scaffolding around AI capabilities, and the gap between demo-quality results and production-quality delivery is substantial.
+
+### Concept 48: The LLM Dead End Thesis and Structural Critiques
+
+Yann LeCun's thesis, covered by Cal Newport ([#381](../../sources/381-cal-newport-lecun-llm-dead-end.md)), argues that large language models are a fundamentally limited architecture that cannot achieve general intelligence through scaling alone. LeCun's alternative -- world models with planning capabilities -- provides the most technically grounded structural critique from within the AI research community. This extends Gary Marcus's System 1/System 2 analysis (Concept 13) with an architectural argument: LLMs are autoregressive next-token predictors that lack the ability to reason about consequences before committing to outputs.
+
+For enterprise strategy, the practical implication is that organizations should not bet on "models will get smart enough to not need guardrails." Even optimistic capability trajectories may hit architectural ceilings that require fundamentally different approaches -- reinforcing the harness engineering and deterministic validation themes throughout this module.
+
+### Concept 49: AI Cost Sustainability and Inference Economics
+
+Multiple new sources deepen the cost analysis. Philip Bohun ([#424](../../sources/424-philip-bohun-ai-cost-sustainability.md)) provides detailed modeling of long-term AI cost sustainability, arguing that current pricing is subsidized and unsustainable. GMI Cloud ([#412](../../sources/412-gmi-cloud-minimax-inference-cost.md)) documents the detailed economics of inference at scale, providing concrete per-token cost data that extends the infrastructure crisis analysis (Concept 1).
+
+These reinforce the token austerity era warning (Concept 34): organizations building workflows around current subsidized AI pricing face a potential 10x cost shock when VC subsidies dry up. The prudent strategy is to build efficiency into agentic workflows now (Concept 3) rather than assuming current pricing persists.
+
+### Concept 50: The Professional Bifurcation -- Engineers vs. Vibe Coders
+
+Mo Bitar ([#391](../../sources/391-mo-bitar-engineers-vs-vibe-coders.md)) frames the emerging split in the development profession as a clean binary: engineers who understand systems deeply and use AI as a force multiplier versus "vibe coders" who generate code without understanding it. Anthony Sistilli ([#355](../../sources/355-anthony-sistilli-ai-startup-slop.md)) documents the consequences at the startup level -- AI-generated startup pitches and products that look polished but are functionally hollow, creating a "slop" problem in venture capital deal flow.
+
+This extends the two-class bifurcation (Concept 11d) with concrete examples from both the engineering labor market and the startup ecosystem, and reinforces the cognitive debt crisis (Concept 30): the vibe coder path creates individuals and organizations that are increasingly dependent on tools they do not understand, with compound risks that surface only when something breaks.
+
+### Concept 51: AI Compliance and Audit Fraud
+
+Zack Korman ([#414](../../sources/414-zack-korman-compliance-audit-fraud.md)) documents how AI tools are enabling a new category of compliance and audit fraud -- using AI to generate plausible-looking compliance documentation, audit trails, and regulatory filings that satisfy superficial review but contain fabricated or inaccurate information. This represents a novel risk category that extends the safety discussion (Concepts 4, 6) beyond technical systems into regulatory and legal domains where AI-generated output is trusted by default.
+
+### Concept 52: The Junior Developer Market Crisis
+
+Multiple sources converge on the concrete job market impact for entry-level developers. Coding Jesus ([#415](../../sources/415-coding-jesus-getcrackedio-cs-grads-job-market.md)) provides ground-level data on CS graduates facing an unprecedented job market, with the combination of AI tools reducing perceived need for junior hires and a tripled CS graduate pipeline creating severe oversupply. This extends the apprenticeship crisis (Concept 10) and talent pipeline collapse (Concept 11e) with current market data showing the theoretical predictions are now manifesting as measurable labor market outcomes.
+
+### Concept 53: Open Source AI Slop and Community Degradation
+
+ThePrimeTime ([#423](../../sources/423-the-primetime-open-source-slop-prs.md)) documents the growing problem of AI-generated pull requests flooding open-source repositories -- low-quality, AI-generated contributions that consume maintainer time and degrade project quality. This extends the AI spam and trust collapse thesis ([#365](../../sources/365-mo-bitar-ai-spam-trust-collapse.md)) from content platforms to the open-source development ecosystem, and connects to the OpenClaw security saga (Concept 6) -- open agent platforms attract bad actors who use AI-generated contributions as vehicles for visibility.
+
+### Concept 54: Design Roles in the AI Generation
+
+Interface Studies ([#367](../../sources/367-interface-studies-design-roles-generation.md)) examines how AI is reshaping design careers beyond the engineering-focused analysis in Concepts 5b and 5b2. The analysis covers the full spectrum from UI/UX design through product design to design leadership, identifying which aspects of each role are most affected by AI automation and which become more valuable. This extends the SDLC transformation with a design-specific career strategy perspective.
+
+### Concept 55: Platform Strategy -- Apple's Agentic iPhone and the On-Device Bet
+
+Nate B Jones ([#430](../../sources/430-ai-news-strategy-daily-nate-b-jones-apple-agentic-iphone-strategy.md)) analyzes Apple's agentic iPhone strategy as a counterpoint to the cloud-centric AI deployment model assumed throughout most of this module. Apple's bet on on-device intelligence -- running models locally on iPhone hardware rather than routing to cloud APIs -- represents a fundamentally different architecture with distinct economic, privacy, and reliability properties. Combined with the small language models discussion (Concept 32) and sovereign small models analysis ([#387](../../sources/387-my-weird-prompts-sovereign-small-models.md)), this suggests the AI deployment landscape may bifurcate between cloud-first (enterprise, high-compute) and device-first (consumer, privacy-sensitive) paradigms rather than converging on a single architecture.
+
+### Concept 56: The Helium Chip Supply Chain Risk
+
+Nate B Jones ([#421](../../sources/421-ai-news-strategy-daily-nate-b-jones-helium-chip-supply-chain.md)) identifies a previously underdiscussed supply chain vulnerability: the global helium supply required for semiconductor fabrication. Chip manufacturing requires ultra-pure helium for cooling and testing, and supply constraints could create a binding bottleneck alongside the memory and energy constraints documented in Concept 1. This adds a new dimension to the infrastructure crisis analysis -- the AI compute stack depends on physical resources that extend well beyond GPUs and electricity.
+
 ## Patterns & Practices
 
 ### Pattern 1: The Routing Layer Strategy
@@ -998,6 +1072,14 @@ No Boilerplate ([#318](../../sources/318-no-boilerplate-plain-text-team-os.md)) 
 - **Deploying agents without encoding organizational intent**: The Klarna case study ([#155](../../sources/155-nate-b-jones-intent-engineering.md), Concept 11k) demonstrates that technically brilliant agents will optimize for what they can measure, not what the organization actually needs. Encoding goals, values, trade-off hierarchies, and decision boundaries into machine-readable infrastructure is a prerequisite for autonomous agent deployment, not an afterthought.
 
 - **Assuming AI capability automatically translates to economic impact**: The capability-dissipation gap ([#167](../../sources/167-nate-b-jones-ai-economics-capability-gap.md), Concept 11l) explains why stunning capabilities coexist with modest economic disruption. Regulatory, organizational, cultural, and trust inertia slow adoption far more than most capability-focused analysis accounts for. Neither doom nor boom narratives account for how slowly institutions actually change.
+
+- **Ignoring the 97.5% real-world agent failure rate**: Demo-quality results do not predict production-quality outcomes ([#349](../../sources/349-ai-news-strategy-daily-nate-b-jones-agent-context-failure.md)). The gap is not model capability but organizational context -- agents need situational awareness that experienced humans carry implicitly. Budget for context engineering and environmental guardrails, not just model upgrades.
+
+- **Building for the human web when agents are the primary consumers**: As agent-mediated workflows become default for AI-native users, businesses that require human UI interaction become invisible to agents ([#353](../../sources/353-ai-news-strategy-daily-nate-b-jones-agent-readable-commerce.md), [#409](../../sources/409-unprompted-personal-ai-infrastructure.md)). Products and services need API-first legibility alongside human interfaces.
+
+- **Trusting AI-generated compliance documentation at face value**: AI tools now enable fabrication of plausible-looking compliance documentation, audit trails, and regulatory filings ([#414](../../sources/414-zack-korman-compliance-audit-fraud.md)). Organizations should verify AI-assisted compliance work with the same rigor they apply to any high-stakes output -- the ability to generate convincing documentation does not equate to accuracy.
+
+- **Ignoring AI infrastructure supply chain attacks**: Real-world compromises of LLM routing libraries ([#378](../../sources/378-the-primetime-litellm-supply-chain-attack.md), [#396](../../sources/396-low-level-litellm-supply-chain-attack.md)) demonstrate that AI infrastructure is now a high-value attack target. Apply the same dependency vetting and monitoring to AI tool supply chains that you apply to production software dependencies.
 
 - **Relying on benchmark scores for model procurement decisions**: Distilled models compress frontier capabilities into narrow manifolds that perform comparably on benchmarks but degrade significantly on sustained agentic work ([#161](../../sources/161-nate-b-jones-ai-napster-moment.md), Concept 11p). Test for generality by running real-world tasks and then changing one constraint. Watch whether the model adapts its reasoning or regenerates from scratch.
 
@@ -1216,6 +1298,58 @@ No Boilerplate ([#318](../../sources/318-no-boilerplate-plain-text-team-os.md)) 
 | [340: I Was a 10x Engineer, Now I'm Useless](../../sources/340-primeagen-10x-engineer-useless.md) | ThePrimeagen | AI coding addiction, skill atrophy as measurable phenomenon, Pavlovian response, craft identity loss |
 | [344: We finally know what ChatGPT is for](../../sources/344-mo-bitar-chatgpt-purpose.md) | Mo Bitar | OpenAI adult content pivot, business model failure admission, safety track record vs expansion |
 | [347: Stop Learning n8n in 2026](../../sources/347-nate-herk-stop-n8n-learn-claude.md) | Nate Herk | Third wave AI automation, agentic coding displacing drag-and-drop, workflow knowledge transferability |
+| [349: Agent Context Failure at 97.5%](../../sources/349-ai-news-strategy-daily-nate-b-jones-agent-context-failure.md) | Nate B Jones | 97.5% real-world agent failure rate, context gap as root cause, production database destruction case study |
+| [351: LLM Code Production Risk](../../sources/351-better-offline-llm-code-production-risk.md) | Better Offline | AI-generated code risk analysis, productivity gains vs operational risk tradeoff |
+| [352: Harness Engineering Reliability](../../sources/352-the-ai-automators-harness-engineering-reliability.md) | The AI Automators | March of nines, harness engineering, SkillsBench evaluation data, enterprise reliability requirements |
+| [353: Agent-Readable Commerce](../../sources/353-ai-news-strategy-daily-nate-b-jones-agent-readable-commerce.md) | Nate B Jones | Agent web forking from human web, API-first business legibility, agent-mediated commerce |
+| [355: AI Startup Slop](../../sources/355-anthony-sistilli-ai-startup-slop.md) | Anthony Sistilli | AI-generated startup pitches, slop in VC deal flow, polished but hollow products |
+| [356: Agent Positioning Framework](../../sources/356-ai-news-strategy-daily-nate-b-jones-agent-positioning-framework.md) | Nate B Jones | Agent-mediated purchasing decisions, positioning for agent evaluation, business legibility |
+| [358: CEO/Board Agent System](../../sources/358-indydevdan-ceo-board-agents.md) | IndyDevDan | Strategic decision-making agents, 1M context economics, budget-constrained multi-agent debate |
+| [361: Enterprise AI Adoption Gap](../../sources/361-work-unusual-enterprise-ai-adoption-gap.md) | Work Unusual | Ground-level enterprise adoption data, gap between vendor claims and reality |
+| [364: AI Clean Room Licensing](../../sources/364-the-primetime-ai-clean-room-licensing.md) | ThePrimeTime | Legal/IP implications of AI code generation, clean room defense questions |
+| [365: AI Spam and Trust Collapse](../../sources/365-mo-bitar-ai-spam-trust-collapse.md) | Mo Bitar | AI content flooding, trust erosion, synthetic content detection challenges |
+| [367: Design Roles in AI Generation](../../sources/367-interface-studies-design-roles-generation.md) | Interface Studies | Design career impacts across specializations, AI automation vs augmentation in design |
+| [368: Phoenix Architecture / Disposable Code](../../sources/368-ai-native-dev-phoenix-architecture-disposable-code.md) | AI Native Dev | Treating code as disposable, spec-first regeneration, phoenix architecture pattern |
+| [369: Context Graphs for Agent Governance](../../sources/369-neo4j-context-graph-agent-governance.md) | Neo4j / Dave Bennett | Enterprise agent governance, OAuth delegation chains, context graphs as control plane |
+| [370: AI Writes All Code Critique](../../sources/370-thestanduppod-ai-writes-all-code.md) | TheStandupPod | Critical analysis of "AI writes all code" claims, reality check on automation timelines |
+| [371: DeepSeek Engram Architecture](../../sources/371-bycloud-deepseek-engram-architecture.md) | bycloud | DeepSeek's memory architecture, engram-based context persistence |
+| [373: Agent Species Architecture](../../sources/373-ai-news-strategy-daily-nate-b-jones-agent-species-architecture.md) | Nate B Jones | Four agent species taxonomy, simplicity scales, agent-centered workflow design |
+| [374: TDD Critique in AI Era](../../sources/374-the-primetime-tdd-critique-testing.md) | ThePrimeTime | Testing strategy shifts with AI code generation, TDD relevance debate |
+| [377: Copilot Overextension Rollback](../../sources/377-samtime-copilot-overextension-rollback.md) | SamTime | Copilot product failures, feature rollbacks, Microsoft AI strategy missteps |
+| [378: LiteLLM Supply Chain Attack](../../sources/378-the-primetime-litellm-supply-chain-attack.md) | ThePrimeTime | Real supply chain compromise of LLM routing library, PyPI malicious package |
+| [380: Agentic Harness Deep Dive](../../sources/380-my-weird-prompts-agentic-harness-deep-dive.md) | My Weird Prompts | 7,000 exposed MCP servers, harness as execution environment, MCP security gaps |
+| [381: LeCun LLM Dead End Thesis](../../sources/381-cal-newport-lecun-llm-dead-end.md) | Cal Newport / Yann LeCun | Structural LLM critique, world models alternative, architectural ceiling argument |
+| [382: Levels of AI Adoption](../../sources/382-the-pragmatic-engineer-levels-ai-adoption.md) | The Pragmatic Engineer | Enterprise adoption maturity framework, honest level assessment, practitioner-oriented |
+| [384: AI Psychological Manipulation](../../sources/384-black-hat-ai-psychological-manipulation.md) | Black Hat | AI-enabled psychological manipulation, new attack vectors, social engineering at scale |
+| [385: ARC-AGI-3 Capability Signals](../../sources/385-ai-explained-arc-agi-3-capability-signals.md) | AI Explained | ARC-AGI-3 benchmark, frontier models at <0.5%, compute concentration signals |
+| [386: Claude Computer Use](../../sources/386-fireship-claude-computer-use.md) | Fireship | GUI automation capabilities, computer use as agentic primitive |
+| [387: Sovereign Small Models](../../sources/387-my-weird-prompts-sovereign-small-models.md) | My Weird Prompts | Local/sovereign AI deployment, privacy-first model strategy, on-device economics |
+| [388: Agentic Engineering Delivery](../../sources/388-scott-logic-agentic-engineering-delivery.md) | Scott Logic | Real consulting delivery case study, production vs demo gap, enterprise delivery realities |
+| [389: BuzzFeed AI Collapse](../../sources/389-pivot-to-ai-buzzfeed-ai-collapse.md) | Pivot to AI | BuzzFeed AI strategy failure, cautionary enterprise case study |
+| [391: Engineers vs Vibe Coders](../../sources/391-mo-bitar-engineers-vs-vibe-coders.md) | Mo Bitar | Professional bifurcation, understanding vs generation, dependency risk |
+| [393: Developer Skills vs MCP](../../sources/393-confluent-developer-skills-vs-mcp.md) | Confluent | Skills that survive AI automation, MCP as infrastructure layer |
+| [394: Firecrawl Web Data Layer](../../sources/394-greg-isenberg-firecrawl-web-data-layer.md) | Greg Isenberg | Web data infrastructure for agents, structured data extraction |
+| [396: LiteLLM Supply Chain Attack Analysis](../../sources/396-low-level-litellm-supply-chain-attack.md) | Low Level | Detailed PyPI attack mechanics, LLM infrastructure as high-value target |
+| [402: Vibe Design and Command Line](../../sources/402-ai-news-strategy-daily-nate-b-jones-vibe-design-command-line.md) | Nate B Jones | Design moving to CLI, agent-first interface patterns |
+| [403: Web3 Agentic Security](../../sources/403-blc-bitcoin-liberated-chain-web3-agentic-security.md) | BLC | Blockchain agent security, decentralized agent identity |
+| [409: Personal AI Infrastructure](../../sources/409-unprompted-personal-ai-infrastructure.md) | unprompted / Daniel Miessler | Companies as APIs, agent-mediated service selection, composable agentic pipelines |
+| [412: Inference Cost Analysis](../../sources/412-gmi-cloud-minimax-inference-cost.md) | GMI Cloud | Detailed inference economics, per-token cost modeling at scale |
+| [413: LLM Code Comprehension Limits](../../sources/413-theprimeagenhighlights-llm-code-comprehension-limits.md) | ThePrimeagenHighlights | Structural LLM limitations in code understanding, attention bottlenecks |
+| [414: Compliance Audit Fraud](../../sources/414-zack-korman-compliance-audit-fraud.md) | Zack Korman | AI-enabled compliance fraud, fabricated audit trails, regulatory risk |
+| [415: CS Grads Job Market](../../sources/415-coding-jesus-getcrackedio-cs-grads-job-market.md) | Coding Jesus | Junior developer market crisis, CS graduate oversupply, entry-level displacement data |
+| [417: AI Consulting Oversell](../../sources/417-dave-linthicum-is-not-ai-consulting-ai-oversell.md) | Dave Linthicum | Enterprise AI consulting failures, expectation vs reality gap |
+| [420: Context Graphs Explainability](../../sources/420-trustgraph-context-graphs-explainability.md) | TrustGraph | Trust and explainability infrastructure, context graph-based audit trails |
+| [421: Helium Chip Supply Chain](../../sources/421-ai-news-strategy-daily-nate-b-jones-helium-chip-supply-chain.md) | Nate B Jones | Helium supply chain risk for semiconductors, underdiscussed infrastructure vulnerability |
+| [422: Software Engineering 2.0](../../sources/422-hassan-habib-software-engineering-2-agents.md) | Hassan Habib | Skills/capabilities replacing APIs, dynamic service generation, career implications |
+| [423: Open Source Slop PRs](../../sources/423-the-primetime-open-source-slop-prs.md) | ThePrimeTime | AI-generated PR spam in open source, maintainer burden, community degradation |
+| [424: AI Cost Sustainability](../../sources/424-philip-bohun-ai-cost-sustainability.md) | Philip Bohun | Long-term AI cost modeling, subsidized pricing unsustainability |
+| [426: Multi-Team Agent Orchestration](../../sources/426-indydevdan-multi-team-agent-orchestration.md) | IndyDevDan | Multi-team economics, spend-to-win context philosophy, configuration-driven teams |
+| [427: AI Workflows That Sell](../../sources/427-nate-herk-ai-automation-ai-workflows-that-sell.md) | Nate Herk | Monetizable AI automation patterns, service business economics |
+| [430: Apple Agentic iPhone Strategy](../../sources/430-ai-news-strategy-daily-nate-b-jones-apple-agentic-iphone-strategy.md) | Nate B Jones | On-device AI strategy, cloud vs device deployment bifurcation, privacy-first architecture |
+| [433: AutoResearch Optimization Loop](../../sources/433-david-ondrej-autoresearch-optimization-loop.md) | David Ondrej | Automated iterative optimization, metric-driven agent improvement |
+| [435: Claude Code Source Leak](../../sources/435-startup-hakk-claude-code-source-leak.md) | Startup Hakk | Source map leak exposing Claude Code internals, security incident analysis |
+| [437: Anthropic Pentagon Feud](../../sources/437-wall-street-millennial-anthropic-pentagon-feud.md) | Wall Street Millennial | Anthropic-DoD standoff update, safety vs government pressure dynamics |
+| [438: Source Map Leak Analysis](../../sources/438-the-primetime-source-map-leak.md) | ThePrimeTime | Claude Code source map analysis, internal prompt exposure, client-side security |
 
 ## Further Reading
 
