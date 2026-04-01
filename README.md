@@ -1,6 +1,6 @@
 # AI Hype Watcher
 
-Curated AI-assisted development learning resource — from fundamentals to agentic orchestration. Includes critical perspective on AI industry economics and hype cycles.
+Curated AI-assisted development learning resource — from fundamentals to agentic orchestration. Includes critical perspective on AI industry economics, career impact, and hype cycles.
 
 ## What This Is
 
@@ -8,18 +8,18 @@ A structured collection of notes, analyses, and learning materials synthesized f
 
 This repository is maintained with the help of Claude Code skills that automate content workflows — from scanning YouTube channels via RSS feeds, to extracting transcripts with Playwright, synthesizing source notes, compiling curriculum sections, and generating daily briefings.
 
-> **136 sources** from **90 creators** · **11 synthesis docs** · **10 briefings** · **6 curriculum modules**
+> **438 sources** from **239 creators** · **21 synthesis docs** · **18 briefings** · **8 curriculum modules**
 
 ## Browse
 
 ```mermaid
 graph LR
-    S["📚 Sources<br/><i>136 notes</i>"]
-    C["🎓 Curriculum<br/><i>6 modules</i>"]
-    Y["🔬 Synthesis<br/><i>11 analyses</i>"]
-    B["📋 Briefings<br/><i>10 entries</i>"]
-    R["🔗 Resources"]
-    W["📡 Watchlist"]
+    S["Sources<br/><i>438 notes</i>"]
+    C["Curriculum<br/><i>8 modules</i>"]
+    Y["Synthesis<br/><i>21 analyses</i>"]
+    B["Briefings<br/><i>18 entries</i>"]
+    R["Resources"]
+    W["Watchlist"]
 
     S --> C
     S --> Y
@@ -37,7 +37,7 @@ graph LR
 | Section | Description |
 |---------|-------------|
 | [**Sources**](sources/) | Individual video/article notes with structured metadata and key takeaways |
-| [**Curriculum**](curriculum/) | Progressive 6-module learning path from foundations to team orchestration |
+| [**Curriculum**](curriculum/) | Progressive 8-module learning path from foundations to team orchestration |
 | [**Synthesis**](synthesis/) | Cross-source analyses that identify patterns across multiple sources |
 | [**Briefings**](briefings/) | Dated entries covering recent AI development findings |
 | [**Resources**](resources/) | Curated external links organized by skill level |
@@ -47,14 +47,20 @@ graph LR
 
 ```mermaid
 graph TB
-    M1["<b>01 · Foundations</b><br/>AI landscape, capability overhang,<br/>separating progress from hype"]
-    M2["<b>02 · Prompting & Workflows</b><br/>Prompt engineering, sticky workflows,<br/>specification-first development"]
-    M3["<b>03 · Claude Code Essentials</b><br/>Setup, CLAUDE.md, skills system,<br/>context management"]
-    M4["<b>04 · Agentic Patterns</b><br/>Builder/validator, task systems,<br/>meta-prompts, lifecycle hooks"]
-    M5["<b>05 · Team Orchestration</b><br/>Agent teams, multi-agent coordination,<br/>observability"]
-    M6["<b>06 · Strategy & Economics</b><br/>Infrastructure economics, AI-driven SDLC,<br/>security, adoption strategy"]
+    M1["<b>01 Foundations</b><br/>AI landscape, capability overhang,<br/>separating progress from hype"]
+    M2["<b>02 Prompting & Workflows</b><br/>Prompt engineering, sticky workflows,<br/>specification-first development"]
+    M3["<b>03 Claude Code Essentials</b><br/>Setup, CLAUDE.md, skills system,<br/>context management"]
+    M4["<b>04 Agentic Patterns</b><br/>Agent species, builder/validator,<br/>phoenix architecture, evals"]
+    M5["<b>05 Team Orchestration</b><br/>Multi-tier hierarchies, persistent expertise,<br/>dispatch, fleet management"]
+    M6["<b>06 Strategy & Economics</b><br/>Infrastructure economics, security,<br/>adoption frameworks"]
+    M9["<b>09 Career & Transformation</b><br/>Workforce bifurcation, apprenticeship crisis,<br/>cognitive debt, career strategy"]
+    M10["<b>10 Quality & Evals</b><br/>Builder/validator, anti-slop engineering,<br/>harness reliability, evals"]
 
-    M1 --> M2 --> M3 --> M4 --> M5 --> M6
+    M1 --> M2 --> M3 --> M4 --> M5
+    M1 --> M6
+    M1 --> M9
+    M2 --> M10
+    M4 -.->|cross-ref| M10
 
     click M1 "curriculum/01-foundations/" "Module 01"
     click M2 "curriculum/02-prompting-and-workflows/" "Module 02"
@@ -62,6 +68,8 @@ graph TB
     click M4 "curriculum/04-agentic-patterns/" "Module 04"
     click M5 "curriculum/05-team-orchestration/" "Module 05"
     click M6 "curriculum/06-strategy-and-economics/" "Module 06"
+    click M9 "curriculum/09-career-and-transformation/" "Module 09"
+    click M10 "curriculum/10-quality-and-validation/" "Module 10"
 ```
 
 ## Key Themes
@@ -72,24 +80,32 @@ graph TB
 
 **Infrastructure economics are physical** — DRAM, HBM, TSMC nodes, and GPUs are all supply-constrained. Efficiency isn't optional — it's competitive advantage.
 
+**Quality is the new bottleneck** — 97.5% of agents fail in real-world deployment. The shift from writing code to evaluating code demands new patterns: evals, builder/validator loops, and harness engineering.
+
 **Security matters** — 36% of public agent skills contain security flaws. "Hallucination squatting" is a new class of supply chain attack. Build your own skills; vet everything.
+
+**Career bifurcation is real** — The gap between engineers who specify and validate vs. those who "vibe code" is widening. Apprenticeship pipelines are breaking down as junior roles compress.
 
 ## Top Contributors
 
-Creators with 3+ sources in the collection:
+Creators with 5+ sources in the collection:
 
 | Creator | Sources | Focus |
 |---------|:-------:|-------|
-| [Nate B Jones](https://www.youtube.com/@NateBJones) | 16 | Claude Code workflows, agent patterns, skills ecosystem |
-| [Matt Pocock](https://www.youtube.com/@maaborern) | 6 | TypeScript + AI tooling, context engineering |
-| [IndyDevDan](https://www.youtube.com/@indydevdan) | 4 | Agentic coding patterns, multi-agent orchestration |
-| [The PrimeTime](https://www.youtube.com/@ThePrimeTimeagen) | 5 | Industry commentary, engineering culture |
-| [Prof G Markets](https://www.youtube.com/@TheProfGPod) | 3 | AI economics, bubble analysis, market dynamics |
-| [Leon van Zyl](https://www.youtube.com/@leonvanzyl) | 3 | AI coding tutorials, practical workflows |
-| [Pivot to AI](https://www.youtube.com/@PivotToAI) | 3 | AI hype critique, industry skepticism |
-| [Simon Scrapes](https://www.youtube.com/@simonscrapes) | 3 | AI automation, practical tooling |
+| [Nate B Jones](https://www.youtube.com/@NateBJones) | 48 | Infrastructure economics, agent patterns, skills ecosystem |
+| [The PrimeTime](https://www.youtube.com/@ThePrimeTimeagen) | 25 | Industry commentary, engineering culture, security |
+| [Matt Pocock](https://www.youtube.com/@maaborern) | 16 | TypeScript + AI tooling, context engineering |
+| [IndyDevDan](https://www.youtube.com/@indydevdan) | 10 | Agentic coding patterns, multi-agent orchestration |
+| [Mo Bitar](https://www.youtube.com/@mobitar) | 10 | AI skepticism, developer workflow critique |
+| [Simon Scrapes](https://www.youtube.com/@simonscrapes) | 8 | AI automation, practical tooling |
+| [Leon van Zyl](https://www.youtube.com/@leonvanzyl) | 6 | AI coding tutorials, practical workflows |
+| [IBM Technology](https://www.youtube.com/@IBMTechnology) | 6 | Enterprise AI, zero trust, agent governance |
+| [Noah Vincent](https://www.youtube.com/@noahvincent) | 5 | Claude Code workflows, context engineering |
+| [Pivot to AI](https://www.youtube.com/@PivotToAI) | 5 | AI hype critique, industry skepticism |
+| [Greg Isenberg](https://www.youtube.com/@GregIsenberg) | 5 | AI business models, startup strategy |
+| [Nate Herk](https://www.youtube.com/@nateherk) | 5 | AI automation workflows, enterprise sales |
 
-Plus **82 more creators** across the full [source index](sources/).
+Plus **227 more creators** across the full [source index](sources/).
 
 ## Content Pipeline
 
