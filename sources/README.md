@@ -432,3 +432,8 @@ Each source is synthesized (not transcribed) into a structured note with frontma
 | [422](422-hassan-habib-software-engineering-2-agents.md) | Software Engineering 2.0 - The End of APIs and Static Systems | Hassan Habib | video | multi-agent, ai-sdlc, agentic-coding, ai-landscape, skills |
 | [423](423-the-primetime-open-source-slop-prs.md) | Worst Advice Ever | The PrimeTime | video | agentic-coding, vibe-coding, security, ai-sdlc |
 | [424](424-philip-bohun-ai-cost-sustainability.md) | AI Software Engineers are Too Expensive | Philip Bohun | video | ai-economics, ai-hype, infrastructure, ai-landscape |
+| [425](425-ai-news-strategy-daily-nate-b-jones-skills-agent-standard.md) | Anthropic, OpenAI, and Microsoft Just Agreed on One File Format. It Changes Everything. | AI News & Strategy Daily | Nate B Jones | video | skills, agent-teams, multi-agent, enterprise-ai, context-engineering, prompt-engineering, skills-ecosystem |
+| [426](426-indydevdan-multi-team-agent-orchestration.md) | One Agent Is NOT ENOUGH: Agentic Coding BEYOND Claude Code | IndyDevDan | video | agent-teams, multi-agent, agentic-coding, context-engineering, ai-economics |
+| [427](427-nate-herk-ai-automation-ai-workflows-that-sell.md) | I Built 500 AI Workflows, These 5 Actually Sell in 2026 | Nate Herk | AI Automation | video | ai-economics, enterprise-ai, capability-overhang |
+| [428](428-theprimeagenhighlights-delve-founder-vibe-coding.md) | A Second Delve Founder Interview hit the timeline | ThePrimeagenHighlights | video | vibe-coding, ai-hype, ai-landscape |
+| [429](429-the-primetime-javascript-wasm-prediction.md) | The Birth & Death of JavaScript | Prime Reacts | The PrimeTime | video | ai-landscape, ai-hype, infrastructure |
