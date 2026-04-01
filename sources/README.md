@@ -437,3 +437,12 @@ Each source is synthesized (not transcribed) into a structured note with frontma
 | [427](427-nate-herk-ai-automation-ai-workflows-that-sell.md) | I Built 500 AI Workflows, These 5 Actually Sell in 2026 | Nate Herk | AI Automation | video | ai-economics, enterprise-ai, capability-overhang |
 | [428](428-theprimeagenhighlights-delve-founder-vibe-coding.md) | A Second Delve Founder Interview hit the timeline | ThePrimeagenHighlights | video | vibe-coding, ai-hype, ai-landscape |
 | [429](429-the-primetime-javascript-wasm-prediction.md) | The Birth & Death of JavaScript | Prime Reacts | The PrimeTime | video | ai-landscape, ai-hype, infrastructure |
+| [430](430-ai-news-strategy-daily-nate-b-jones-apple-agentic-iphone-strategy.md) | Your iPhone Is About to Control Every AI App You Use. Here’s What This Means For You. | AI News & Strategy Daily | Nate B Jones | video | ai-landscape, mcp, vibe-coding, enterprise-ai, agentic-coding |
+| [431](431-brock-mesarich-ai-for-non-techies-claude-code-new-features.md) | All 4 NEW Claude Cowork Features Explained (and how to master them) | Brock Mesarich | AI for Non Techies | video | claude-code, skills, context-engineering, task-system, meta-prompts |
+| [432](432-dylan-davis-honest-extraction-prompts.md) | One Prompt Change That Forces Claude to Be Honest | Dylan Davis | video | prompt-engineering, validation, meta-prompts |
+| [433](433-david-ondrej-autoresearch-optimization-loop.md) | The only AutoResearch tutorial you’ll ever need | David Ondrej | video | agentic-coding, prompt-engineering, multi-agent, ai-landscape, ai-sdlc |
+| [434](434-coding-with-adhd-obsidian-plan-capture.md) | Auto-Save Claude Code Plans to Obsidian | Coding With ADHD | video | claude-code, agentic-coding, task-system, context-engineering |
+| [435](435-startup-hakk-claude-code-source-leak.md) | Claude Code Source Code LEAKED: The Death of "Vibe Coding"? | STARTUP HAKK | video | security, vibe-coding, claude-code, ai-sdlc, anthropic |
+| [436](436-mlopscommunity-evals-coding-agents.md) | Stop Shipping on Vibes — How to Build Real Evals for Coding Agents | MLOps.community | video | validation, agentic-coding, claude-code, prompt-engineering, multi-agent |
+| [437](437-wall-street-millennial-anthropic-pentagon-feud.md) | Anthropic’s Feud With Pentagon Is NOT What You Think | Wall Street Millennial | video | ai-hype, ai-safety, ai-landscape, enterprise-ai, anthropic |
+| [438](438-the-primetime-source-map-leak.md) | Claude Code got leaked | The PrimeTime | video | claude-code, security, mcp, vibe-coding, anthropic |
