@@ -447,6 +447,89 @@ Chris Messina ([#335](../../sources/335-chris-messina-nvidia-nemoclaw.md)) prese
 
 This directly addresses the enterprise OpenClaw paradox from Concept 29 (Chase/LangChain): NemoClaw represents one answer to "who builds the safe, controlled version?" of consumer agent tools for enterprise use. The policy engine and privacy router components are the team-level equivalents of the individual agent hooks and guardrails from Module 04.
 
+### Concept 38: The Agent Species Taxonomy -- Matching Architecture to Work
+
+Nate B Jones ([#373](../../sources/373-ai-news-strategy-daily-nate-b-jones-agent-species-architecture.md)) argues that "agent" is an umbrella term obscuring four meaningfully different system types, and confusing them leads to serious misapplication:
+
+1. **Coding harnesses** -- An LLM with developer tools acting as a stand-in for an individual engineer. Simplest form, single-threaded by default.
+2. **Dark factories** -- Fully autonomous pipelines where a spec goes in and working software comes out. Requires excellent non-functional requirements and evals at the output stage.
+3. **Auto research systems** -- An agent iterating against a defined metric to hill-climb toward an optimum. No metric = not auto research.
+4. **Orchestration frameworks** -- Multiple LLMs in sequence with a coordination layer managing handoffs.
+
+The key insight for team orchestration is that **simplicity scales; complexity fails**. Cursor experimented with three levels of management hierarchy and it degraded performance. The winning pattern -- a planner agent orchestrating short-running executor sub-agents -- is intentionally flat. This reinforces McEntire's PACT framework findings (Concept 14): organizational hierarchy in agent systems produces coordination overhead that overwhelms the benefits.
+
+Jones also distinguishes between human-centered and agent-centered workflow design. Most teams use AI as an accelerant on existing workflows, which preserves all original coordination bottlenecks. The structural unlock is redesigning workflows around what makes agents effective -- shifting from "humans with AI helpers" to "agents with human oversight."
+
+### Concept 39: Harness Engineering for Multi-Agent Reliability
+
+Multiple sources ([#352](../../sources/352-the-ai-automators-harness-engineering-reliability.md), [#375](../../sources/375-the-ai-automators-long-running-agent-harness.md), [#380](../../sources/380-my-weird-prompts-agentic-harness-deep-dive.md)) converge on **harness engineering** as the discipline of wrapping AI models in deterministic software scaffolding that gates, validates, and orchestrates each stage of a workflow. Drawing on Karpathy's "march of nines" framing, a 90% per-step success rate across a 10-step workflow yields only a 35% end-to-end success rate -- making prompt-only approaches fundamentally inadequate for business-critical multi-agent workflows.
+
+Anthropic's own harness research ([#375](../../sources/375-the-ai-automators-long-running-agent-harness.md)) demonstrated a **planner-generator-evaluator** three-agent architecture for long-running tasks: a planner expands underspecified prompts into detailed specs, a generator builds the output, and a dedicated adversarial evaluator judges the output with its own skepticism-oriented system prompt. The evaluator must be able to interact with the output (via Playwright screenshots, test execution) rather than just reading code. Critically, Anthropic found that Claude is a poor self-evaluator by default -- it identifies legitimate issues but talks itself into approving them anyway -- making the separated evaluator role essential.
+
+A key architectural principle: **simplify as models improve**. What required a three-agent orchestration with context resets on Sonnet 4.5 can run as a simpler loop on Opus 4.6. Add complexity only where a specific failure mode demands it, and continuously look for opportunities to simplify as capabilities advance. This connects to the agent species taxonomy (Concept 38) -- match harness complexity to the work, not to the maximum possible architecture.
+
+### Concept 40: CEO/Board Adversarial Decision Pattern
+
+IndyDevDan ([#358](../../sources/358-indydevdan-ceo-board-agents.md)) presents a multi-agent system designed not for task execution but for **high-leverage strategic decision-making**. A single Opus agent acts as CEO, orchestrating a board of specialized Sonnet agents (revenue, technical architect, compounder, product strategist, contrarian, moonshot) who debate in parallel. The system takes a "brief" as input and produces a structured "memo" with decision maps, per-agent stances, resolved and unresolved tensions, and ranked recommendations.
+
+The board is explicitly designed as an adversarial system -- members are expected to disagree. The memo outputs both resolved and unresolved tensions, which is treated as a feature: the goal is to produce a richer mental model of the decision space rather than consensus. In the demo, the system reframed an acquisition question entirely, identifying a retention problem as the root cause before the platform decision even mattered. This extends the devil's advocate pattern (Concept 4) from a single challenger to a structured multi-perspective debate system, and extends the adversarial research teams pattern (Pattern 5) from code investigation to strategic business decisions.
+
+Hard budget and time constraints (e.g., $1-5 per decision, 2-5 minute time window) prevent runaway compute costs -- a critical operational detail for any multi-agent debate system using large context windows.
+
+### Concept 41: Multi-Team Three-Tier Hierarchy with Persistent Expertise
+
+IndyDevDan ([#426](../../sources/426-indydevdan-multi-team-agent-orchestration.md)) demonstrates a three-tier hierarchy -- orchestrator, team leads (planning, engineering, validation), and worker agents (frontend dev, backend dev, QA, security reviewer) -- that enforces domain boundaries: agents that step outside their permitted scope automatically delegate to the appropriate specialist. This produces more reliable results than generalist agents that attempt everything.
+
+The differentiating feature is **persistent agent expertise**: every agent maintains its own "mental model" file that accumulates knowledge across sessions. At each run start, agents load both shared conversation history and their individual expertise files, meaning the team genuinely improves over time rather than starting cold. This extends Concept 16 (Casel's persistent agents) with a technical mechanism for cross-session learning, and extends Concept 24 (Riley Brown's skill ceiling) with per-agent specialization files.
+
+Multi-team consensus also serves as a signal quality mechanism: when all teams are queried on a question, the degree of agreement across planning, engineering, and validation teams surfaces confidence levels and genuine tradeoffs that a single-agent answer would miss. Configuration-driven team assembly (a single config file mapping teams to system prompts and model assignments) makes teams composable and reusable across projects.
+
+### Concept 42: Library Meta-Skill for Team Distribution
+
+IndyDevDan ([#359](../../sources/359-indydevdan-library-skill-distribution.md)) addresses the coordination problem that emerges when engineers work across 10+ codebases with AI agents: skills, agents, and prompts get duplicated and fall out of sync. His solution is a "library" meta-skill -- a YAML-based reference file (analogous to `package.json`) that stores pointers to GitHub repositories rather than copies of artifacts. The workflow: build a skill in its native repo, catalog it in the library, distribute via `library.use`, and sync across devices and teammates with `library.sync`.
+
+This is explicitly designed around **private distribution** -- high-value specialized skills represent competitive IP and should live in private repos. The library file itself can be public (just pointers), but referenced content stays private. For teams running agent fleets across multiple devices (Concept 31), this provides the missing coordination layer for ensuring all agents have access to the latest team capabilities.
+
+### Concept 43: Context Graphs as Multi-Agent Governance
+
+Dave Bennett / IndyKite ([#369](../../sources/369-neo4j-context-graph-agent-governance.md)) presents context graphs as a governance control plane for enterprise multi-agent systems. The core principle: **decouple agent intelligence from agent governance**. Rather than embedding permissions in each agent, a context graph centralizes identity, delegation chains, and access policies dynamically at runtime.
+
+Using OAuth token exchange, the system constructs full calling chains from the original human user through every agent invocation. At each hop, the system verifies the workflow is valid and the calling user is authorized. Agents have **no standing privileges** -- they inherit scoped context from their callers, and effective access is the intersection of all participants' permissions. This dramatically limits blast radius from compromised agents and solves the "shadow agent" problem where deployed agents become ungoverned.
+
+This extends the enterprise security architecture (Concept 34) and the observability discussion (Concept 7) with a graph-based governance layer that provides queryable, auditable decision traces for every authorization decision across the agent fleet.
+
+### Concept 44: Heartbeat-Based Persistent Agent Companies
+
+Nate Herk ([#410](../../sources/410-nate-herk-ai-automation-paperclip-agent-orchestration.md)) demonstrates Paperclip, an open-source orchestration tool (36,000+ GitHub stars) that enables running autonomous AI agent teams as simulated companies. Agents wake on a configurable schedule (every 4-12 hours), initialize with fresh context, and orient themselves via instruction files before resuming work. A unified dashboard provides visibility, and a ticketing/inbox system enables human-in-the-loop approvals.
+
+Each agent carries four configuration files: **agents** (team structure), **heartbeat** (execution checklist per wake cycle), **soul** (persona and values), and **tools** (available capabilities). The separation of concerns allows fine-grained control -- editing persona without touching execution logic. The human operates as a "board member" setting high-level goals rather than writing individual prompts.
+
+This extends the persistent agent deployment models (Concept 16, Concept 12a) with a more structured orchestration layer and explicit human-in-the-loop approval workflows, providing a middle ground between fully autonomous agents and hands-on terminal management.
+
+### Concept 45: Dispatch and Scheduled Tasks -- Asynchronous Team Primitives
+
+Nate B Jones ([#406](../../sources/406-ai-news-strategy-daily-nate-b-jones-dispatch-scheduled-tasks-agents.md)) identifies three Anthropic primitives -- scheduled tasks, Dispatch (persistent mobile orchestration), and Computer Use -- as forming a coherent asynchronous agentic stack. Scheduled tasks run on Anthropic's cloud infrastructure independent of the user's laptop. Dispatch enables spawning and managing multiple parallel Claude sessions from a mobile device. Together they enable a genuine management pattern: dispatch work, go about your day, check in on results.
+
+Jones proposes a sharp evaluative filter: does a tool produce a finished artifact, or does it produce something that lands back on your desk as a new task? Most agent demos optimize for the latter while marketing it as the former. The behavioral shift from synchronous turn-by-turn prompting to asynchronous parallel execution represents the maturation of the management model described in Concept 18 (Eric's agent management as human management skill).
+
+### Concept 46: Personal Agent Infrastructure and Council Debate
+
+Daniel Miessler ([#409](../../sources/409-unprompted-personal-ai-infrastructure.md)) presents a personal agentic infrastructure built on Claude Code featuring a **Council** skill that dynamically instantiates 2-16 adversarial specialist agents for any decision task. The Council pattern extends the CEO/Board model (Concept 40) with a self-configuring composition: agents are tailored to the current task rather than predefined, and the human receives a synthesized recommendation after configurable debate rounds.
+
+Miessler's **Arbol** tool packages discrete AI actions into composable, chainable units (analogous to Unix pipes) deployable locally or on Cloudflare Workers. Combined with a "Surface" pipeline that processes 4,000 RSS/social sources through quality-labeling agents, this demonstrates how multi-agent infrastructure extends beyond coding into personal intelligence and content curation. The self-upgrading PI skill that monitors Anthropic/OpenAI releases and recommends system updates addresses the "conference anxiety" problem of keeping pace with a fast-moving ecosystem.
+
+### Concept 47: Skills as Cross-Platform Organizational Infrastructure
+
+Nate B Jones ([#425](../../sources/425-ai-news-strategy-daily-nate-b-jones-skills-agent-standard.md)) documents a critical shift: skills have converged as an open standard across Anthropic, Microsoft, and OpenAI, and the primary caller has shifted from humans to agents. Because a single agent run can make hundreds of skill invocations, skills must be designed **agent-first**: highly precise trigger descriptions, explicit reasoning frameworks (not just linear steps), and lean file sizes to avoid context bloat. The description field is the most critical component, and it must remain on a single line or Claude silently drops everything after the first line break.
+
+Skills compound while prompts do not -- iterative refinement persists across every future invocation, creating a compounding advantage over time. This has direct implications for team orchestration: skills encode organizational methodology in a portable, machine-readable format that agents can discover and execute, extending the skill portability concepts from Concept 30 (Grace Leung's marketing skills) into an enterprise-wide coordination layer.
+
+### Concept 48: Structured Evals for Multi-Agent Coding Systems
+
+MLOps.community ([#436](../../sources/436-mlopscommunity-evals-coding-agents.md)) presents the case against shipping AI features based on intuition, arguing that multi-agent coding systems need structured evaluation frameworks with four components: datasets, tasks, scoring systems, and experiments. The eval comparing agentic search (Claude Code's default CLI tool navigation) against vector search on real bug-fix tasks demonstrates how to isolate which approach serves coding agents better.
+
+For team orchestration specifically, **trace observability for subprocesses** is a critical prerequisite: when agents run as subprocesses, their traces are orphaned from the parent trace tree unless parent span IDs are explicitly passed as environment variables. This extends the observability discussion (Concept 7) with concrete implementation details for making multi-agent behavior auditable at scale.
+
 ## Common Pitfalls
 
 - **Using teams for simple tasks**: Agent teams add coordination overhead (shared task lists, peer messaging, multiple context windows) that is only justified for complex, interdependent work. For isolated one-off tasks -- file exploration, targeted code changes, focused refactoring -- sub-agents are faster, cheaper, and simpler. As Van Zyl advises: "If you just want to do like a once-off task, you should definitely use sub agents instead" ([3:50](https://www.youtube.com/watch?v=KCJsdQpcfic&t=230)).
@@ -476,6 +559,14 @@ This directly addresses the enterprise OpenClaw paradox from Concept 29 (Chase/L
 - **Neglecting codebase readiness for multi-agent work**: Agent teams amplify codebase quality problems. Without comprehensive tests, consistent patterns, and accurate documentation, each agent introduces errors that compound across the team. Invest in codebase fundamentals before scaling agent count -- tests are contracts for correctness.
 
 - **Letting agents run arbitrary git commands**: Bartner ([#186](../../sources/186-keyhole-software-claude-code-delivery.md)) reports agents attempting hard deletes of branches when they think they are being helpful. Branch protection is essential for any multi-agent setup that touches version control.
+
+- **Relying on prompts alone for multi-step reliability**: Karpathy's "march of nines" framing ([#352](../../sources/352-the-ai-automators-harness-engineering-reliability.md)) shows that a 90% per-step success rate across 10 steps yields only 35% end-to-end success. Enterprise-grade multi-agent workflows require deterministic harness engineering -- gating, validating, and orchestrating each stage in code -- not just better prompts.
+
+- **Confusing agent species**: Jones ([#373](../../sources/373-ai-news-strategy-daily-nate-b-jones-agent-species-architecture.md)) identifies that using a coding harness where you need a dark factory, or an orchestration framework where you need auto research, produces failures not because the model is wrong but because the scaffolding does not fit the work. Match agent architecture to problem type before building.
+
+- **Trusting agents to self-evaluate**: Anthropic's own harness research ([#375](../../sources/375-the-ai-automators-long-running-agent-harness.md)) found that Claude identifies legitimate issues but talks itself into approving them anyway. A dedicated adversarial evaluator agent with its own skepticism-oriented system prompt and output interaction tools is essential for any multi-agent system where quality matters.
+
+- **Designing skills for human callers when agents are the primary users**: Skills are now predominantly called by agents, not humans ([#425](../../sources/425-ai-news-strategy-daily-nate-b-jones-skills-agent-standard.md)). A single agent run can make hundreds of invocations, and failures compound silently. Design skill descriptions for agent-first triggering with explicit output specs, not conversational flexibility.
 
 ## Hands-On Exercises
 
@@ -551,6 +642,23 @@ This directly addresses the enterprise OpenClaw paradox from Concept 29 (Chase/L
 | [329: My Multi-Agent Team (NOT OpenClaw)](../../sources/329-owain-lewis-multi-agent-team.md) | Owain Lewis | Polling-based multi-agent worker, pull vs push architectures, Linear as task coordination |
 | [335: NVIDIA NemoClaw](../../sources/335-chris-messina-nvidia-nemoclaw.md) | Chris Messina | Enterprise-ready agent teams, NemoClaw security layers, NemoTron Coalition, policy engines |
 | [341: Claude Code + Obsidian Channels](../../sources/341-artem-zhutov-claude-channels-obsidian.md) | Artem Zhutov | Remote multi-agent control via Telegram/Discord, tmux workspace orchestration from phone |
+| [352: Harness Engineering Reliability](../../sources/352-the-ai-automators-harness-engineering-reliability.md) | The AI Automators | March of nines, harness engineering, sub-agents with context isolation, fixed vs dynamic planning, SkillsBench data |
+| [358: CEO/Board Multi-Agent System](../../sources/358-indydevdan-ceo-board-agents.md) | IndyDevDan | CEO/board adversarial debate pattern, 1M context as strategic infrastructure, adversarial multi-agent decision quality |
+| [359: Library Meta-Skill Distribution](../../sources/359-indydevdan-library-skill-distribution.md) | IndyDevDan | Library meta-skill as package manager for agentics, private distribution, build-in-place reference-and-reuse |
+| [369: Context Graphs for Agent Governance](../../sources/369-neo4j-context-graph-agent-governance.md) | Neo4j / Dave Bennett | Context graphs as governance control plane, OAuth token exchange delegation chains, least privilege at runtime |
+| [373: Agent Species Architecture](../../sources/373-ai-news-strategy-daily-nate-b-jones-agent-species-architecture.md) | Nate B Jones | Four agent species taxonomy, simplicity scales, agent-centered vs human-centered workflow design, decomposition as core skill |
+| [375: Long-Running Agent Harness](../../sources/375-the-ai-automators-long-running-agent-harness.md) | The AI Automators | Planner-generator-evaluator architecture, context anxiety, adversarial evaluation, simplification as architectural principle |
+| [380: Agentic Harness Deep Dive](../../sources/380-my-weird-prompts-agentic-harness-deep-dive.md) | My Weird Prompts | Three-phase agent loop, MCP 2.0 as enterprise adapter, agent teams under 1M parent context, 7K exposed MCP servers |
+| [385: ARC-AGI-3 Capability Signals](../../sources/385-ai-explained-arc-agi-3-capability-signals.md) | AI Explained | Multi-agent orchestration as benchmark strategy, sub-agent summarization for context management |
+| [400: Folder-Based Personal Agent Teams](../../sources/400-icor-with-tom-ai-productivity-pkm-folder-agent-system.md) | ICOR with Tom | Orchestrator + specialist agent team on plain folders, model-agnostic portability, natural language agent setup |
+| [406: Dispatch and Scheduled Agent Tasks](../../sources/406-ai-news-strategy-daily-nate-b-jones-dispatch-scheduled-tasks-agents.md) | Nate B Jones | Async multi-agent primitives, management pattern shift, "work off your desk" evaluative filter |
+| [409: Personal AI Infrastructure](../../sources/409-unprompted-personal-ai-infrastructure.md) | unprompted / Daniel Miessler | Council adversarial debate, Arbol composable pipelines, ideal-state criteria as verification, self-upgrading PI skill |
+| [410: Paperclip Agent Orchestration](../../sources/410-nate-herk-ai-automation-paperclip-agent-orchestration.md) | Nate Herk | Heartbeat-based persistent agent companies, structured identity files, human-in-the-loop inbox/ticketing |
+| [411: Open Source Agent Tools Roundup](../../sources/411-chase-ai-open-source-repos-roundup.md) | Chase AI | Claude Peers inter-session communication, Auto Research self-improvement loops, OpenSpace skill quality monitoring |
+| [422: Software Engineering 2.0](../../sources/422-hassan-habib-software-engineering-2-agents.md) | Hassan Habib | Skills/capabilities replacing APIs, three-tier agent model, dynamic service generation |
+| [425: Skills as Cross-Platform Standard](../../sources/425-ai-news-strategy-daily-nate-b-jones-skills-agent-standard.md) | Nate B Jones | Agent-first skill design, skills as organizational infrastructure, cross-platform convergence, skill construction formula |
+| [426: Multi-Team Agent Orchestration](../../sources/426-indydevdan-multi-team-agent-orchestration.md) | IndyDevDan | Three-tier hierarchy, persistent agent expertise files, multi-team consensus, configuration-driven assembly |
+| [436: Evals for Coding Agents](../../sources/436-mlopscommunity-evals-coding-agents.md) | MLOps.community | Structured eval frameworks, agentic vs vector search comparison, subprocess trace observability, evals as team sport |
 
 ## Further Reading
 
