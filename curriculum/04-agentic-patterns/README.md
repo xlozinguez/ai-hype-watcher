@@ -287,6 +287,24 @@ This pattern is particularly powerful for documents that are dependency graphs r
 
 The practical guidance: match the approach to the complexity. RLMs shine when tasks involve both long context and high complexity. For short context or simple retrieval, a direct LLM call often outperforms the overhead. Implement guardrails for recursion -- the paper limits recursion to one layer deep and uses synchronous workflows to prevent runaway costs.
 
+### Concept 19b: Observational Memory -- An Alternative to Retrieval-Augmented Context
+
+Mastra ([#453](../../sources/453-mastra-observational-memory-coding-agent.md)) presents "observational memory," a fundamentally different approach to agent memory that challenges the dominant retrieval-augmented pattern. Traditional memory systems embed incoming messages, query a vector database, re-rank results, and inject the top results into context on every single turn. This pattern has three compounding costs: it invalidates the prompt cache on every message, adds latency from the search/re-rank pipeline, and produces a context that is reconstructed point-in-time rather than continuously maintained.
+
+Observational memory replaces retrieval with two background agents: an **observer** (which fires at configurable observation points to compress recent turns into dense summaries) and a **reflector** (which builds higher-level understanding over time). The resulting context accumulates linearly and is structurally stable, making it highly cacheable. The economic argument is significant: prompt caching is 8-10x cheaper than uncached prompts. By keeping context stable and append-only rather than rewriting it on every turn, observational memory makes aggressive use of cache hits.
+
+The human memory analogy is central: people do not remember tying their shoes, but they do remember that their mom visited. Deliberately discarding low-signal information -- collapsing a full flight-search JSON response into "direct flight to NYC, $X" -- is a design goal, not a limitation. An **async buffering mode** means compression never blocks the agent, eliminating the user-visible "thinking/compressing" lull that makes Claude Code compaction frustrating.
+
+This connects to but diverges from the memory patterns in Concept 6: where those patterns focus on search-based retrieval from stored memory, observational memory focuses on maintaining a living, continuously-compressed context that never needs retrieval because it is always present.
+
+### Concept 19c: Autodream -- Sleep-Inspired Memory Consolidation
+
+The Claude Code source leak analysis ([#443](../../sources/443-onchain-ai-garage-claude-code-leak-analysis.md)) and Simon Scrapes ([#444](../../sources/444-simon-scrapes-claude-code-q1-updates.md)) revealed that Anthropic built a neuroscience-inspired background memory consolidation system called "autodream." Claude Code maintains persistent memory as a directory of markdown files that accumulate observations across sessions. To prevent bloat and contradictions, a background "dreaming" process triggers when three gates pass: 24+ hours since last consolidation, 5+ sessions accumulated, and no other dream process running.
+
+A sandboxed forked agent with read-only bash access then runs four phases -- orient, gather, consolidate, prune -- merging daily append-only logs into organized topic files, converting relative dates to absolute dates, deleting contradicted facts, and keeping the index under 200 lines. This mirrors neuroscience models of sleep-dependent memory consolidation: fast episodic capture during sessions, slow semantic consolidation offline.
+
+The autodream pattern validates the two-phase memory architecture as production-viable: append-only episodic capture during sessions plus background semantic consolidation is directly implementable in custom agent systems. The gate system (time + session count + lock) is a practical pattern for managing background agent processes. As Simon Scrapes notes, the `/dream` slash command is currently unreliable; the workaround is asking Claude directly to "consolidate my memory files."
+
 ### Concept 20: Scaffolding as Temporary Tech Debt -- Build for the Future Model
 
 Boris Cherny, Claude Code's creator ([#103](../../sources/103-y-combinator-boris-cherny-claude-code.md)), articulates a core product philosophy with direct implications for agentic pattern design: **do not optimize for current model capabilities -- build for the model six months from now**. All product scaffolding -- code written to compensate for model limitations -- provides 10-20% performance gains but gets "wiped out with the next model." The Bitter Lesson (Sutton) hangs framed on the Claude Code team's wall: never bet against the model.
@@ -294,6 +312,8 @@ Boris Cherny, Claude Code's creator ([#103](../../sources/103-y-combinator-boris
 This principle extends to agentic patterns. CLAUDE.md itself is scaffolding; Cherny recommends deleting it and starting fresh with each model upgrade, adding back instructions only when the model demonstrably goes off track. Anthropic's own CLAUDE.md is only two lines long. Plan mode -- one of Claude Code's most used features -- "all it does is it adds one sentence to the prompt that's like please don't code." The simpler the scaffolding, the more durable it is across model generations.
 
 The practical implication for agentic engineers: invest in patterns that leverage improving model capabilities (task decomposition, deterministic verification, context isolation) rather than patterns that compensate for model weaknesses (elaborate prompt engineering, excessive guardrails). The former compound in value as models improve; the latter become unnecessary overhead.
+
+Austin Marchese ([#466](../../sources/466-austin-marchese-boris-cherney-workflow.md)) reconstructs Cherny's six workflow principles from public interviews: (1) begin in plan mode before any code (~80% of sessions), (2) maintain a minimal CLAUDE.md (a few thousand tokens, periodically deleted and rebuilt from scratch), (3) give Claude a self-verification loop (declare in CLAUDE.md how work should be verified before a task begins), (4) run parallel sessions for independent tasks (fresh context catches things deeply-contextualized sessions miss), (5) systematize repeated workflows as Claude Skills, and (6) build with the assumption that models will continue improving rapidly. The throughline is disciplined context management: front-loading thinking, keeping instructions lean, and preserving fresh perspectives through parallel sessions.
 
 > "There is no part of Claude Code that was around six months ago. It's just constantly rewritten." -- Boris Cherny ([#103])
 
@@ -337,6 +357,10 @@ Drawing from John Ousterhout's "A Philosophy of Software Design," Pocock advocat
 The **graybox module** pattern extends this: developers design interfaces and write tests that lock down behavior, while AI manages internal implementation. As long as tests pass, the internals are delegated. This creates a natural seam between human judgment (interface design, acceptance criteria) and AI execution (implementation), directly supporting the builder/validator pattern (Concept 3) at the codebase architecture level.
 
 This connects to the broader principle that infrastructure investment in AI-readiness compounds over time. As Pocock puts it: "We need to stop thinking about AI as this superpowered developer and understand that it's got some weird limitations. It's a new starter in your codebase."
+
+Tom Delalande ([#455](../../sources/455-tom-delalande-ai-agent-effectiveness-spectrum.md)) reinforces the codebase-as-training-signal principle: when AI writes code in an existing codebase, the quality of that codebase directly determines the quality of AI output. The codebase should be a "perfect example of what you want future code to look like," requiring stricter-than-usual merge standards for simple code because that simple code is what the AI will pattern-match against. Conventional best practices -- domain-driven design, hexagonal architecture, unit tests -- function as guardrails that constrain where hallucinations can propagate.
+
+Simon Willison ([#475](../../sources/475-the-pragmatic-engineer-agent-tdd-practices.md)) validates this from his Django development workflow: agents are highly consistent pattern-followers that replicate the style, structure, and idioms already present in a codebase. He uses cookie-cutter project templates pre-configured with CI, testing frameworks, and seed tests to ensure agents start in a constrained, high-quality context. The codebase functions as implicit few-shot context that shapes agent output quality. Willison also makes the provocative argument that poor-quality agent output is a choice, not an inevitability: agents can be directed to refactor after the fact, leading to code that is higher quality than hand-written code, since "the cost of refactoring is a prompt plus walking the dog, not an hour at a keyboard."
 
 ### Concept 25: The Always-On Competing Agent Pattern
 
@@ -422,6 +446,10 @@ Pi's extension system enables **stackable customization**: composable TypeScript
 
 The practical recommendation is hedging: use Claude Code (80% of the time) for its excellent defaults and enterprise features, but maintain fluency with open-source alternatives like Pi for deep customization, model flexibility, and experimental workflows. As Dan frames the progression: base agent, improved agent, context engineering, customized agents, orchestrator agent -- each level builds on the last. "Knowing what your agent is doing is engineering. Not knowing is vibe coding."
 
+Maximilian Schwarzmuller ([#459](../../sources/459-maximilian-schwarzmller-pi-agent-minimal-core.md)) deepens the Pi analysis by highlighting its lazy-loaded agent skills system: skill files are markdown documents containing names and descriptions that the agent reads initially, loading the full skill file on demand only when relevant. This is a direct context-engineering optimization -- skills contribute zero tokens unless actively needed. Pi also deliberately excludes MCP support, preferring workarounds like MCPorter to avoid the context overhead MCP registration typically introduces. The per-project configurability (skills and extensions scoped per directory) enables distinct agent personas for different workspaces -- a research agent in one directory, a stock-analysis agent in another.
+
+Mario Zechner ([#440](../../sources/440-mastra-coding-agent-critique.md)) provides a rare practitioner-level audit of the major coding agent tools circa 2025-2026. His baseline criterion is control -- over context, over model choice, over what gets injected into prompts. He intercepted Claude Code's backend requests and discovered undocumented context injections that changed daily, and found that OpenCode's session compaction strategy destroys prompt cache effectiveness. Two heuristics from Zechner are broadly applicable: (1) evaluate tools by what they remove, not what they add -- AMP's subtractive design philosophy signals architectural discipline; (2) disable LSP/real-time linting during agentic edits, running lint and type-check only at natural synchronization points when the agent believes it is done, because surfacing errors at each intermediate step confuses the model.
+
 ### Concept 34: The Blueprint Engine Pattern -- Interleaving Code and Agents
 
 Stripe's "minions" system ([#209](../../sources/209-indydevdan-stripe-agentic-engineering-layer.md)) introduces a production-tested pattern that extends the four-layer stack (Concept 12) into enterprise-scale agentic engineering. The **blueprint engine** interleaves deterministic code steps (linters, git operations, test execution, template generation) with non-deterministic agent reasoning (implementing features, fixing CI failures). As IndyDevDan summarizes: "Agents plus code beats agents alone, and agents plus code beats code alone."
@@ -466,6 +494,8 @@ Google Cloud Tech ([#193](../../sources/193-google-cloud-tech-agent-design-patte
 3. **Parallel agent**: Multiple agents run concurrently on independent subtasks, with a final aggregator combining results. Reduces latency but requires a synthesis step.
 
 The shared session state -- a "scratch pad" where one agent writes findings and the next reads from it -- is the key coordination primitive. This maps directly to the task system's dependency DAG (Concept 2) and provides the conceptual foundation for understanding when to escalate from single agents to sub-agents to full teams (see Module 05).
+
+Learn AI with LocalM Tuts ([#454](../../sources/454-learn-ai-with-localm-tuts-parallel-agent-patterns.md)) provides a detailed treatment of the parallel agent pattern specifically, formalizing the fan-out/fan-in architecture. Fan-out fires all independent branches simultaneously; fan-in is a sequential synthesizer that reads all branch outputs from shared session state and merges them. The defining latency characteristic: total time equals the slowest branch plus the merge step, not the sum of all branches. The hard rule: parallel branches must be fully independent -- a dependency between branches is a sequential relationship disguised as a parallel one. Known failure modes require active design attention: resource contention from burst API calls, merge complexity when branches produce conflicting outputs, and debugging difficulty in concurrent execution. The broader architectural observation: most real-world agentic systems can be built from just three primitives -- single agent, sequential agent, and parallel agent -- forming a complete DAG architecture.
 
 Turing College ([#196](../../sources/196-turing-college-agent-teams-walkthrough.md)) demonstrates an important emergent property of agent teams: the system can spawn agents not explicitly requested. In their social media content demo, a "researcher" agent appeared in the second iteration -- triggered by reviewer feedback that statistics needed verification -- without the user ever specifying a research role. This emergent role allocation illustrates that well-designed agent teams can dynamically adapt their composition to task requirements. However, the cost reality is sobering: approximately $7-8 per complex agent teams task, consuming roughly 50% of a Pro plan session budget. This reinforces the graduation model from Simon Scrapes ([#190](../../sources/190-simon-scrapes-claude-code-concepts-explained.md)): single agents for 80% of tasks, sub-agents when context bloats, agent teams only for genuinely collaborative multi-component builds.
 
@@ -530,6 +560,8 @@ The critical insight is that **prototyping should happen before the PRD**, not a
 
 The kanban board phase connects directly to the task system (Concept 2) -- tickets with blocking relationships map to dependency DAGs, and non-blocking tickets can run as parallel agents. The execution phase then becomes reliable enough to run AFK because all the ambiguity has been resolved in earlier phases.
 
+Gareth Jones ([#460](../../sources/460-gareth-jones-codex-plugins-workflow.md)) provides a practical implementation of the planning-heavy approach through his "Jones Mode" plugin -- three sequentially-used skills: **Grill Me** (instructs the model to "interview the user relentlessly" about every aspect of a feature), **Write PRD** (produces a lightweight requirements document), and **PRD-to-Issues** (decomposes the requirements into discrete GitHub Issues as agent work records). His architectural preference for GitHub Issues over local files provides native editing UI, a place to capture agent context, and a useful abstraction layer when a model struggles with a specific problem. This maps directly to Pocock's phases 1-5 with a concrete, packageable implementation.
+
 > "This is not for vibe coders. We are people that are serious about AI engineering and serious about building applications that are built to last." -- Matt Pocock ([#221])
 
 ### Concept 43: Open-Source Agent Harness Ecosystem -- Pi and OpenCode
@@ -585,6 +617,8 @@ Matteo Cassese ([#252](../../sources/252-matteo-cassese-agentic-fever.md)) maps 
 Cassese also describes **agentic fever** -- a burnout syndrome driven by FOMO that every moment not spent building or running agents is wasted time. The practical warning: "If you are feverishly burning out in front of the machine and trying to make it do more, you're going to create a frantic anxiety-driven agent that is going to fail." Good inputs produce good outputs -- systems thinking applied to human-agent interaction.
 
 The **tiered model architecture** pattern reinforces cost-effective agentic design: expensive models orchestrate, mid-tier models do substantive work, cheap models handle brute-force tasks like web research. This mirrors how organizations allocate human talent across strategic, operational, and tactical roles.
+
+Tom Delalande ([#455](../../sources/455-tom-delalande-ai-agent-effectiveness-spectrum.md)) provides an important calibration for the agent-as-software paradigm by mapping AI tool effectiveness onto a spectrum. Some tasks (rapid prototyping, code review, boilerplate refactoring) are near-certain wins; others (debugging, open-ended planning, greenfield architecture) become increasingly inconsistent as complexity rises. There is a "critical thinking line" beyond which the cost of using AI outweighs the benefit. The key distinction: **delegation vs. abdication** -- delegating low-cognition tasks while you work on high-cognition problems amplifies output, while launching an agent and disengaging entirely produces poor results. Delalande cites Mitchell Hashimoto (Concept 25): identify tasks that require thinking and tasks that don't, and delegate only the latter.
 
 ### Concept 49: Device-Level Agent Autonomy -- The Steer and Drive Architecture
 
@@ -764,6 +798,104 @@ A key architectural feature is that agents within a company can hire other agent
 
 Yash ([#383](../../sources/383-yash-ai-automation-ad-generator-meta-prompting.md)) demonstrates a meta-prompting pattern for creative agent outputs where an orchestrator agent generates highly specific, detailed prompts for worker agents rather than passing through the user's original request. The orchestrator decomposes a broad creative brief into targeted sub-prompts optimized for each output type (ad copy, image generation, landing page), then a separate agent evaluates outputs against the brief. This is the quality cascade principle (Concept 40) applied to creative workflows -- detailed instructions from the planning tier compensate for lower capability at the execution tier.
 
+### Concept 77: TDD as Agent Discipline -- Red-Green Testing for Autonomous Agents
+
+Simon Willison ([#475](../../sources/475-the-pragmatic-engineer-agent-tdd-practices.md)) argues that test-driven development -- historically tedious for human developers -- becomes a natural fit for agents. Instructing an agent to use "red-green TDD" (roughly five tokens) ensures it writes a failing test first, then the minimal implementation to pass it. This prevents agents from over-engineering, provides an objective completion signal, and raises the probability of getting working code significantly. The instruction is portable: all competent coding agents understand the pattern.
+
+Three specific testing strategies extend TDD for agent workflows:
+
+1. **Manual verification via curl/Showboat**: Automated test suites do not guarantee a web server will boot and behave correctly. Willison's tool Showboat formalizes having agents start the server and exercise the API with curl, creating a human-readable markdown record of each curl command and its output.
+
+2. **Conformance-driven development**: For domains with existing language-agnostic test suites (e.g., WebAssembly specification tests), hand the suite to an agent and instruct it to "write code until this test suite passes." Where no conformance suite exists, Willison reverse-engineers one by building a test suite that passes across multiple reference implementations.
+
+3. **Code quality as a post-generation concern**: Agents can be directed to refactor after the fact -- tasks a time-pressured human developer might skip -- leading to code that is higher quality than hand-written code. The calculus shifts: the cost of refactoring is a prompt, not an hour at a keyboard.
+
+> "Tests are no longer even remotely optional. Tests are step one in getting good results out of them." -- Simon Willison ([#475])
+
+### Concept 78: Goal-First Agent Management -- From Sessions to Objectives
+
+Simon Scrapes ([#473](../../sources/473-simon-scrapes-goal-first-agent-management.md)) argues that the real bottleneck in Claude Code workflows is no longer agent quality -- it is the interface for managing multiple agents simultaneously. As agents have matured into genuinely capable autonomous tools, the problem has shifted from "can the AI do the work?" to "how do I orchestrate five terminal tabs without losing context?"
+
+All current multi-agent tools (tmux, Vibe Kanban, Paperclip, desktop apps) share a **session-first architecture**: they expose terminal sessions, code diffs, and branch management. A **goal-first architecture** inverts this -- the user declares an objective, specifies a task depth level (quick task / campaign / deep build), and the system decomposes and routes work autonomously. The user never needs to think about how many agents are running or which terminal contains which work.
+
+Two design insights are particularly transferable:
+
+- **Iterative Kanban vs. Sequential Kanban**: Traditional Kanban assumes linear progression (To Do -> In Progress -> Done). Agentic work is fundamentally iterative: the board should model "Your Turn" vs. "Claude's Turn" as the key columns, mapping the interface to the actual rhythm of human-AI collaboration.
+
+- **Business context as infrastructure**: A persistent knowledge layer (brand voice, content strategy, ICP data, client details) embedded in the Claude Code environment is what separates goal-oriented management from session management. When a user submits a task, the agent can reference prior work and make informed scoping decisions. None of the surveyed third-party tools carry this business context layer.
+
+### Concept 79: Agents vs. Workflows -- When to Graduate from Autonomy to Determinism
+
+Mastra ([#465](../../sources/465-mastra-deep-research-agent-workflow.md)) draws an explicit architectural distinction between **agents** (LLM-driven, reasoning-first, non-deterministic control flow) and **workflows** (developer-defined steps, deterministic sequencing, explicit LLM call sites). Agents are appropriate for simple, exploratory tasks; workflows are preferred for production systems where cost, reliability, and user experience require predictable behavior. The same capability -- deep research -- is demonstrated both ways to make the tradeoff concrete.
+
+Three workflow primitives extend the patterns in this module:
+
+1. **Human-in-the-loop via suspension**: Workflows can be paused mid-execution to collect user input before resuming. This prevents expensive downstream operations from running on under-specified inputs.
+
+2. **Evaluation loops with cost caps**: A generate-search-evaluate loop repeats until results are judged sufficient or a maximum iteration count is reached. This provides bounded autonomy without risking runaway API spend.
+
+3. **Nested workflows**: Complex workflows include nested sub-workflows and loop constructs, enabling compositional complexity while maintaining deterministic control at each level.
+
+The progression from agent to workflow mirrors the broader maturity pattern: start with agent mode to prototype fast, then convert to a workflow when you need to gate expensive steps, enforce output structure, or provide consistent UX guarantees.
+
+### Concept 80: Durability as a First-Class Agent Primitive
+
+Neils Bantilan ([#468](../../sources/468-mlopscommunity-agent-orchestration-durability.md)), Chief ML Engineer at Union and maintainer of the Flyte orchestration platform, argues that the dominant failure mode in production agents is not prompt quality or model capability -- it is infrastructure. Agents fail at multiple layers simultaneously (infra, network, logical, semantic, tool execution), and recovering from those failures is nearly impossible without full cross-layer context.
+
+The central thesis: **context engineering is an infrastructure problem**. Standard eval harnesses test semantic correctness but ignore infrastructure-level failures: network timeouts, OOM errors, spot instance preemption. When these events wipe agent state, all carefully engineered context is lost. Three design principles address this:
+
+1. **Replay logs**: A per-step micro-cache within a single run. If an agent executing a 1,000-step workflow fails at step 347, the replay log allows resumption from exactly that point without re-executing prior steps.
+
+2. **Infrastructure as context**: The orchestration layer surfaces infrastructure events (OOM, scheduler kills, spot preemptions) as first-class, catchable exceptions within the agent's reasoning loop. Python's `try/except` becomes a context-delivery mechanism for infra failures.
+
+3. **Intermediate state persistence**: Automatically persist outputs of every LLM call and tool call to object storage. This provides data lineage, enables recovery from partial failures, and removes boilerplate that is typically skipped under deadline pressure.
+
+The **evaluation gap** is a critical finding: current eval harnesses measure semantic correctness but systematically ignore infrastructure failure modes. Agents are well-tested for problems they rarely encounter in short demos, but untested for failures that dominate long-running production workflows. This extends the eval-driven context lifecycle (Pattern 11) into the infrastructure layer.
+
+### Concept 81: Sub-Agent Economics via Prompt Caching
+
+The Claude Code source leak ([#441](../../sources/441-neetcode-source-code-leak.md)) revealed that Anthropic engineered sub-agent orchestration so that parallel agents sharing context via prompt cache incur minimal marginal cost. As NeetCode reports: "Running sub-agents is basically free. Anthropic did it in a way that because of the prompt caches, if you are running sub-agents, even working on different parts of your code base, it doesn't cost much more than just using a single agent."
+
+The leak also revealed the **coordinator pattern** behind a feature flag ([#443](../../sources/443-onchain-ai-garage-claude-code-leak-analysis.md)): a system that transforms Claude Code from a single agent into a pure coordinator that never touches code directly -- it only spawns, continues, and stops worker agents. The workflow has four phases: parallel research workers, synthesis (the coordinator must personally understand findings -- the prompt literally bans "based on your findings" and requires specific file paths and line numbers), serial per-file implementation to prevent editing conflicts, and verification by a different worker than the implementer, with the explicit mandate to "prove the code works, not confirm it exists."
+
+This validates aggressive multi-agent parallelism as a cost-effective pattern and extends the builder/validator pattern (Concept 3) with Anthropic's own internal verification standard: separate verification workers with anti-rubber-stamping prompts.
+
+### Concept 82: Agentic Search as a Specialized Sub-Agent
+
+Chroma ([#476](../../sources/476-chroma-agentic-search-model.md)) introduces Context-1, a 20B parameter model purpose-built for agentic search -- iterative LLM-driven loops using search and document-reading tools. The model is designed as a search sub-agent that retrieves relevant documents for a downstream answering model rather than answering questions directly. This mirrors the builder/validator separation (Concept 3) applied to retrieval: separating the search role from the answer role allows each to be optimized on its own metrics.
+
+Three emergent behaviors distinguish trained search agents from general-purpose models: **parallel tool calling** (issuing multiple search queries per turn rather than sequentially), **deliberate upfront planning**, and aggressive use of a **prune tool** to remove irrelevant context and extend effective search range. These behaviors arise naturally from the training incentives, not from explicit behavioral constraints.
+
+The prune tool is a particularly transferable pattern: giving agents an explicit tool to remove their own context (rather than truncating passively) enables longer, more focused search trajectories. This is directly applicable to coding agents, research agents, or any system where tool outputs accumulate across turns -- extending the context preservation strategies from Concept 6 with an active pruning mechanism.
+
+### Concept 83: Local Agent Infrastructure -- On-Device Agentic Pipelines
+
+Two sources establish that local agent infrastructure is becoming practical for production use. JetsonHacks ([#464](../../sources/464-jetsonhacks-local-llm-agent-edge.md)) demonstrates running NemoClaw (NVIDIA's containerized agent wrapper) on a Jetson AGX Thor edge device with a locally hosted LLM, making a substantive argument about agent security: OpenClaw agents operate with real system-level authority, and prompt injection -- untrusted input masquerading as authority -- can cause agents to execute malicious commands. NemoClaw's containerization and policy presets reduce but do not eliminate the attack surface. The framing is precise: capability is not authority -- the fact that an agent can execute a command does not mean it has been granted permission to do so.
+
+Google's Gemma 4 ([#477](../../sources/477-google-for-developers-gemma-4-release.md)) significantly lowers the barrier to local agentic pipelines. The 26B mixture-of-experts model activates only 3.8B parameters per inference pass, enabling fast local inference on consumer hardware. The 250,000-token context window supports full codebase analysis and multi-turn agentic workflows locally. The Apache 2.0 license removes commercial-use friction points. The combination -- fast local inference, large context windows, permissive licensing, and security via data staying on-device -- makes on-device agentic pipelines viable for privacy-sensitive enterprise use cases that cannot tolerate cloud API data egress.
+
+### Concept 84: Skill Files as Platform-Agnostic Agent Instruction Manuals
+
+Jay E/RoboNuggets ([#457](../../sources/457-jay-e-robonuggets-cinematic-sites-skill.md)) demonstrates a pattern of encoding entire multi-step agent workflows into a single `skill.md` markdown file that functions as a structured instruction manual. The file defines pipeline steps, methodology, code templates for API calls, design system rules, and explicit pause/approval points. This makes the workflow portable across Claude Code, OpenClaw, and other agentic platforms -- the skill is the unit of capability transfer, not the platform.
+
+Two patterns within this approach are broadly applicable:
+
+1. **Human-in-the-loop approval checkpoints**: The pipeline deliberately pauses at critical points (after brand card generation, after scene generation) so the user can verify output before expensive downstream operations run. For probabilistic generative outputs, volume plus human selection beats automated single-pass selection.
+
+2. **Feeding API documentation to agents for self-configuration**: Rather than hardcoding tool integrations, pasting raw API documentation into the agent context allows the agent to construct correct API calls autonomously. This is a scalable pattern for adding new tool capabilities without manual prompt engineering for each integration.
+
+The Everyday AI Guide ([#462](../../sources/462-the-everyday-ai-guide-second-brain-cowork.md)) extends skill files into scheduled autonomous tasks. A skill configured with name, prompt, model selection, working folder, and permissions can run on a cron-like schedule -- a 7 a.m. morning briefing that reads the calendar, scans notes, and writes a summary. The combination of scheduled skills, dispatch for remote triggering, and multi-agent sub-task decomposition enables non-developers to build autonomous workflows that previously required dedicated engineering effort.
+
+### Concept 85: Agent Brittleness -- The Gap Between Demo and Production
+
+ColdFusion ([#451](../../sources/451-coldfusion-agent-security-risks.md)) profiles the rise and fall of OpenClaw as a cautionary tale about deployment velocity outpacing safety. Despite genuine innovation, OpenClaw's autonomy without guardrails created compounding risks: misinterpreted file deletion, runaway token costs from looping agents, and susceptibility to prompt injection. Because LLMs cannot distinguish between user-plane data (actual content) and control-plane data (instructions), any content an agent processes -- emails, web pages, Discord messages -- becomes a potential attack vector.
+
+The broader argument reinforces a pattern observed across multiple sources: even enthusiastic power users report that skills and automations that work reliably for weeks will spontaneously break as the agent "decides to go down a path it's never taken before." This brittleness is independent of prompt quality or guardrails -- it reflects the fundamental non-determinism of LLMs. The cost of managing and monitoring agents can consume more time than the productivity gains they provide, especially at scale.
+
+The full system access problem is structural: the capability surface and the attack/failure surface are the same surface. OpenClaw markets broad computer access as a differentiator, but that same access amplifies every failure mode. This connects to the lethal trifecta (Concept 61) and the sandboxing patterns (Concept 74), reinforcing that containment and permission scoping are architectural necessities, not optional safety additions.
+
+> "It would be better to view it as an incomplete product, like a medication from the pharmaceutical industry that hasn't even finished testing in rats, but has been thrown onto the market at a large scale anyway." -- ColdFusion ([#451])
+
 ## Patterns & Practices
 
 ### Pattern 1: Builder/Validator Task Execution
@@ -892,6 +1024,16 @@ Yash ([#383](../../sources/383-yash-ai-automation-ad-generator-meta-prompting.md
 - **Treating context as write-once**: Context has a lifecycle just like code. Drew Knox ([#192](../../sources/192-ai-native-dev-context-engineering-rigor.md)) demonstrates that context which was essential six months ago may now degrade performance. Use evals to detect when context should be deleted, and automate freshness checks via CI/CD.
 
 - **Making everything an agent call when deterministic code would suffice**: Stripe's blueprint engine ([#209](../../sources/209-indydevdan-stripe-agentic-engineering-layer.md)) demonstrates that adding an agent to steps where determinism suffices makes the system worse, more brittle, and more expensive. Reserve agent reasoning for creative steps; use code for linting, testing, git operations, and template generation.
+
+- **Running real-time linting during agentic multi-file edits**: Mario Zechner ([#440](../../sources/440-mastra-coding-agent-critique.md)) explains why surfacing compiler/type errors after each intermediate tool call is counterproductive: when an agent is making 10 sequential edits, the code will not compile cleanly after edit 1 or 2. The model interprets mid-edit errors as criticism of a completed action rather than an in-progress state. Run lint and type-check only at natural synchronization points.
+
+- **Assuming agent-as-software means agent-as-reliable**: ColdFusion ([#451](../../sources/451-coldfusion-agent-security-risks.md)) documents that even well-designed agent automations spontaneously break weeks into production as the agent takes unexpected paths. The cost of managing and monitoring agents can exceed the productivity gains, especially at scale. Build monitoring and periodic human review into any long-running agent deployment.
+
+- **Using retrieval-augmented memory without considering cache economics**: Mastra ([#453](../../sources/453-mastra-observational-memory-coding-agent.md)) demonstrates that traditional RAG memory systems invalidate the prompt cache on every message by rewriting context. An observational memory approach that keeps context stable and append-only achieves 8-10x cost reduction through cache hits. Evaluate memory systems against prompt cache economics, not just retrieval accuracy.
+
+- **Skipping durability primitives in production agent systems**: Bantilan ([#468](../../sources/468-mlopscommunity-agent-orchestration-durability.md)) documents that a 1,000-step agent workflow that crashes at step 999 and must replay from step 1 is a catastrophic user experience. Build replay logs and intermediate state persistence before your first production outage, not after.
+
+- **Managing agents via sessions instead of goals**: Simon Scrapes ([#473](../../sources/473-simon-scrapes-goal-first-agent-management.md)) identifies that context-switching between terminal tabs to track agent state is the dominant bottleneck for multi-agent practitioners. The solution is not better terminals but a higher-abstraction management layer oriented around objectives rather than sessions.
 
 ## Hands-On Exercises
 
@@ -1098,6 +1240,26 @@ Yash ([#383](../../sources/383-yash-ai-automation-ad-generator-meta-prompting.md
 | [433: AutoResearch Optimization Loop](../../sources/433-david-ondrej-autoresearch-optimization-loop.md) | David Ondrej | AutoResearch loop application, iterative optimization, domain-agnostic experiment framework |
 | [434: Obsidian Plan-Capture](../../sources/434-coding-with-adhd-obsidian-plan-capture.md) | Coding with ADHD | Obsidian as plan-capture for agents, bidirectional thinking-execution workflow |
 | [436: Evals for Coding Agents](../../sources/436-mlopscommunity-evals-coding-agents.md) | MLOps Community | Four eval components, agentic vs. vector search comparison, continuous production eval loop, trace observability |
+| [440: I Hated Every Coding Agent, So I Built My Own](../../sources/440-mastra-coding-agent-critique.md) | Mastra (Mario Zechner) | Agent tool audit, context injection visibility, LSP anti-pattern, subtractive design as maturity signal |
+| [441: Claude Code Source Code Leak](../../sources/441-neetcode-source-code-leak.md) | NeetCode | Sub-agents near-free via prompt caching, anti-distillation mechanisms, speed vs. rigor tradeoff, AI code translation IP ambiguity |
+| [443: 5 Takeaways from the Claude Code Leak](../../sources/443-onchain-ai-garage-claude-code-leak-analysis.md) | Onchain AI Garage | Autodream memory consolidation, LLM-as-retriever vs. RAG, coordinator mode, anti-rubber-stamping verification |
+| [444: Claude Code Q1 2026 Updates](../../sources/444-simon-scrapes-claude-code-q1-updates.md) | Simon Scrapes | Auto mode permissions, loops and cloud-scheduled tasks, autodream consolidation, agent teams visual orchestration |
+| [451: The Rise and Fall of OpenClaw](../../sources/451-coldfusion-agent-security-risks.md) | ColdFusion | Agent brittleness, prompt injection as systemic vulnerability, full system access as double-edged, persistent memory risk |
+| [453: Observational Memory for Coding Agents](../../sources/453-mastra-observational-memory-coding-agent.md) | Mastra | Observational memory vs. retrieval-augmented, lossy compression as design goal, async buffering, agent harness definition |
+| [454: Parallel AI Agents & Synthesizer Patterns](../../sources/454-learn-ai-with-localm-tuts-parallel-agent-patterns.md) | Learn AI with LocalM Tuts | Fan-out/fan-in architecture, three primitives (single/sequential/parallel), independence constraint, latency model |
+| [455: I Was Wrong About AI Coding Agents](../../sources/455-tom-delalande-ai-agent-effectiveness-spectrum.md) | Tom Delalande | AI effectiveness spectrum, delegation vs. abdication, codebase as training signal, critical thinking line |
+| [457: Cinematic Websites on Autopilot](../../sources/457-jay-e-robonuggets-cinematic-sites-skill.md) | Jay E / RoboNuggets | Skill files as platform-agnostic manuals, human-in-the-loop checkpoints, API doc feeding pattern |
+| [459: Pi Agent Minimal Core](../../sources/459-maximilian-schwarzmller-pi-agent-minimal-core.md) | Maximilian Schwarzmuller | Minimal core + bash as universal capability, lazy-loaded skills, deliberate MCP exclusion, per-project specialization |
+| [460: Codex Plugins Workflow](../../sources/460-gareth-jones-codex-plugins-workflow.md) | Gareth Jones | Jones Mode planning stack (Grill Me/Write PRD/PRD-to-Issues), GitHub Issues as agent work records, plugin portability |
+| [462: Second Brain with Claude CoWork](../../sources/462-the-everyday-ai-guide-second-brain-cowork.md) | The Everyday AI Guide | Three-tier knowledge architecture, scheduled autonomous tasks, dispatch for remote triggering, multi-model validation |
+| [464: NemoClaw on Jetson with Local LLM](../../sources/464-jetsonhacks-local-llm-agent-edge.md) | JetsonHacks | Local LLM agent on edge hardware, prompt injection as systems security problem, policy sandboxing, capability vs. authority |
+| [465: Deep Research Agent Workflow](../../sources/465-mastra-deep-research-agent-workflow.md) | Mastra (Alex Booker) | Agents vs. workflows distinction, human-in-the-loop via suspension, evaluation loops with cost caps, nested workflows |
+| [466: Boris Cherney's Project Workflow](../../sources/466-austin-marchese-boris-cherney-workflow.md) | Austin Marchese | Plan mode as pre-build gate, minimal iterative CLAUDE.md, verification loops, parallel partitioned sessions |
+| [468: Agent Orchestration Durability](../../sources/468-mlopscommunity-agent-orchestration-durability.md) | MLOps Community (Neils Bantilan) | Replay logs, infrastructure as context, intermediate state persistence, evaluation gap, variable compute |
+| [473: Goal-First Agent Management](../../sources/473-simon-scrapes-goal-first-agent-management.md) | Simon Scrapes | Goal-first vs. session-first management, iterative Kanban, task depth parameterization, business context as infrastructure |
+| [475: Engineering Practices for Coding Agents](../../sources/475-the-pragmatic-engineer-agent-tdd-practices.md) | The Pragmatic Engineer (Simon Willison) | Red-green TDD for agents, conformance-driven development, codebase as training signal, code quality as choice |
+| [476: Chroma Context-1 Agentic Search](../../sources/476-chroma-agentic-search-model.md) | Chroma | Agentic search as specialized sub-agent, prune tool for context management, parallel tool calling, recall-first training |
+| [477: Gemma 4 Release](../../sources/477-google-for-developers-gemma-4-release.md) | Google for Developers | Local agentic pipelines, 250K context window, Apache 2.0 licensing, MoE for speed-sensitive agents |
 
 ## Further Reading
 

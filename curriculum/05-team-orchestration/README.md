@@ -91,6 +91,8 @@ Running multiple agents simultaneously requires infrastructure choices that dire
 
 **E2B agent sandboxes** provide cloud-based isolated environments for each agent. IndyDevDan had 24 sandboxes running simultaneously during his demonstration, each running for up to 12 hours. Sandboxes are critical for safety at scale -- agents operating in isolated environments cannot accidentally modify your local machine, corrupt shared state, or interfere with each other's file systems. For privacy-sensitive workflows, a dedicated local device (such as a Mac Mini) serves as an alternative to cloud sandboxes.
 
+**Remote access and autonomous execution**: Anthropic's Q1 2026 updates ([#444](../../sources/444-simon-scrapes-claude-code-q1-updates.md)) extended multi-agent infrastructure beyond the terminal. Remote Control shares live sessions via URL from any browser or phone. Dispatch routes tasks from mobile to appropriate agents with push notifications on completion. Channels integrate Claude Code with Telegram, Discord, or iMessage for event-driven triggers. Combined with Auto Mode (a classifier-based permissions layer that autonomously approves or blocks actions based on risk assessment rather than blanket rules) and cloud-scheduled tasks (daily/weekly/monthly cadence, executing even when your machine is asleep), these form a fully autonomous workflow loop: tasks trigger on schedule, execute without permission interruptions, and report back via messaging channels. This shifts team orchestration from requiring active terminal supervision to genuine asynchronous management.
+
 **Configuration** is lightweight. Agent teams are enabled by adding `CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS=1` to your Claude Code settings.json or exporting it as an environment variable. No Docker containers, no external frameworks -- just configuration and a well-structured prompt.
 
 ### Concept 7: Multi-Agent Observability
@@ -222,7 +224,8 @@ This directly parallels the antipattern in human teams where managers optimize f
 - **When to use**: Before committing to any multi-agent architecture for a new task or domain.
 - **How it works**: Always establish a single-agent baseline first using the same model, tools, and task configuration you plan for the multi-agent system. Measure performance. Only invest in multi-agent when the single agent genuinely struggles. Use empirical coordination metrics (efficiency, overhead, error amplification, redundancy, message density) to predict scaling behavior before deploying at production scale. Run elasticity calibration batches varying agent count and tool count to model where your architecture will plateau or collapse.
 - **Example**: Brainqub3 ([#055](../../sources/055-brainqub3-multi-agent-measurement.md)) demonstrates this with FinanceBench tasks: when single-agent performance was already high, adding agents yielded diminishing returns and coordination collapse beyond 5-7 agents. When single-agent performance was low, multi-agent genuinely helped -- even under tool complexity pressure.
-- **Source**: [#055: Multi-Agent Measurement Rig](../../sources/055-brainqub3-multi-agent-measurement.md)
+- **Scaling sequence**: Dex Horthy ([#280](../../sources/280-ai-tinkerers-complex-features-ai-agents.md)) formalizes the progression from baseline to fleet: (1) single-agent reliability -- one agent must reliably complete spec-to-merged-PR without intervention; (2) apparatus tuning -- MCP setup, slash commands, CLAUDE.md, and test infrastructure must be calibrated; (3) parallel dispatch -- N tasks simultaneously, monitor for resource contention; (4) async overnight execution -- dispatch at end of day, review branches next morning. The principle: "Scaling broken configurations produces N broken PRs, not leverage."
+- **Source**: [#055: Multi-Agent Measurement Rig](../../sources/055-brainqub3-multi-agent-measurement.md), [#280: AI Tinkerers](../../sources/280-ai-tinkerers-complex-features-ai-agents.md)
 
 ### Concept 14: Swarm Anti-Patterns — Empirical Evidence Against "Agent Teams Are Magic"
 
@@ -279,6 +282,8 @@ Mihail Eric ([#178](../../sources/178-eo-multi-agent-orchestration.md)), who tea
 
 Eric provides a grounded counterpoint to the "run 10 agents at once" hype with an **incremental addition** approach: start with one agent doing a complex task well, then add a second agent on an isolated change (e.g., fixing a logo), then a third on another independent task. Only scale up when you are confident each agent is performing reliably. The key is ensuring tasks are truly independent -- task B should not depend on task A.
 
+The job market validates this framing. Nate B Jones ([#379](../../sources/379-ai-news-strategy-daily-nate-b-jones-ai-job-market-split.md)) identifies multi-agent task decomposition as one of the seven most demanded skills in AI job postings, with a 3.2:1 job-to-qualified-candidate ratio and roles reaching $400K+. The skill is explicitly described as managerial: "breaking work into well-defined segments with clear logical relationships and handoff points." Unlike human teams, agents cannot fill in ambiguous gaps and require explicit guard rails. A critical sub-skill is **failure pattern recognition** -- diagnosing agent failures at root cause rather than symptom level -- which Jones identifies as an asymmetric skill acquisition opportunity precisely because it is poorly understood.
+
 The **agent-friendly codebase** prerequisite is critical for team effectiveness: comprehensive test coverage (tests are contracts for correctness), consistent README documentation that matches the code, consistent design patterns (not two different APIs for the same operation), and proper linting/style checking. Without these, agents compound errors -- one misunderstanding in step 1 gets magnified in step 2. This reinforces Pocock's deep modules thesis (Module 04, Concept 24) with a team-specific dimension: codebases that are hard for individual agents become impossible for agent teams.
 
 > "Really knowing how to properly handle multiple agents is like the last boss in a game. If you can do that really well, then you are literally the top 0.1% of users." -- Mihail Eric ([#178])
@@ -292,6 +297,8 @@ Google Cloud Tech ([#193](../../sources/193-google-cloud-tech-agent-design-patte
 3. **Parallel agent**: Multiple agents run concurrently on independent subtasks, with a final aggregator agent combining results. Reduces latency but requires budgeting for the synthesis step.
 
 The **shared session state** -- a "scratch pad" where one agent writes and the next reads via variable interpolation -- maps directly to the shared task list (Concept 2) at a lower level of abstraction. The sequential pattern corresponds to the dependency DAG with linear dependencies; the parallel pattern corresponds to independent tasks in the DAG that can run concurrently. Understanding these foundational patterns helps practitioners choose the right orchestration level: single agent for simple tasks, sequential for ordered workflows, parallel for independent subtasks, and full agent teams (Concept 1) for complex interdependent work.
+
+Learn AI with LocalM Tuts ([#454](../../sources/454-learn-ai-with-localm-tuts-parallel-agent-patterns.md)) reinforces this taxonomy with a sharper architectural claim: most real-world agentic systems can be built from just these three primitives -- single, sequential, and parallel -- forming a complete DAG architecture. Coordinators and loops are reserved for specialized edge cases, and simpler architectures are consistently preferable for maintainability. The **fan-out/fan-in** model makes the parallel pattern concrete: fan-out fires all independent branches simultaneously, fan-in uses a synthesizer agent to merge branch outputs into a single response. Total latency equals the slowest branch plus the merge step, not the sum of all branches. The hard constraint: parallel branches must be fully independent -- a dependency between branches is "a sequential dependency wearing a parallel costume."
 
 ### Concept 20: Emergent Agents and Cost Reality in Team Orchestration
 
@@ -468,6 +475,8 @@ Anthropic's own harness research ([#375](../../sources/375-the-ai-automators-lon
 
 A key architectural principle: **simplify as models improve**. What required a three-agent orchestration with context resets on Sonnet 4.5 can run as a simpler loop on Opus 4.6. Add complexity only where a specific failure mode demands it, and continuously look for opportunities to simplify as capabilities advance. This connects to the agent species taxonomy (Concept 38) -- match harness complexity to the work, not to the maximum possible architecture.
 
+Mastra ([#453](../../sources/453-mastra-observational-memory-coding-agent.md)) provides a comprehensive definition of an agent harness that goes beyond "model + tools": a harness is a stateful orchestrator composed of dynamic system prompts assembled at runtime, slash commands for active steering, workspaces (file system + sandbox + tools + skills), cost analysis, and event/streaming infrastructure. Their **observational memory** pattern -- using background "observer" and "reflector" sub-agents to progressively compress conversation history in place rather than rebuilding context via retrieval each turn -- addresses a key team orchestration challenge: maintaining stable, cacheable context across long-running multi-agent sessions. The async buffering mode means compression never blocks the primary agent, unlike Claude Code's compaction step. The economic argument is concrete: prompt caching is 8-10x cheaper than uncached prompts, so stable append-only context structures compound savings across every agent in a team.
+
 ### Concept 40: CEO/Board Adversarial Decision Pattern
 
 IndyDevDan ([#358](../../sources/358-indydevdan-ceo-board-agents.md)) presents a multi-agent system designed not for task execution but for **high-leverage strategic decision-making**. A single Opus agent acts as CEO, orchestrating a board of specialized Sonnet agents (revenue, technical architect, compounder, product strategist, contrarian, moonshot) who debate in parallel. The system takes a "brief" as input and produces a structured "memo" with decision maps, per-agent stances, resolved and unresolved tensions, and ranked recommendations.
@@ -530,6 +539,53 @@ MLOps.community ([#436](../../sources/436-mlopscommunity-evals-coding-agents.md)
 
 For team orchestration specifically, **trace observability for subprocesses** is a critical prerequisite: when agents run as subprocesses, their traces are orphaned from the parent trace tree unless parent span IDs are explicitly passed as environment variables. This extends the observability discussion (Concept 7) with concrete implementation details for making multi-agent behavior auditable at scale.
 
+### Concept 49: The Research-Plan-Implement Loop and Autonomy Scaling
+
+Dex Horthy ([#280](../../sources/280-ai-tinkerers-complex-features-ai-agents.md)), founder of HumanLayer and author of the "12 Factor Agents" paper, presents a phased agent workflow that prevents the common failure mode of agents digging themselves into a hole. Rather than handing an agent a task and letting it run freely, the **research-plan-implement** loop enforces fresh context boundaries between three phases: research (explore codebase, map relevant files, output a structured context document -- not a solution), plan (produce an implementation plan from research output, with human review before proceeding), and implement (execute against the approved plan in bounded steps with tests after each change).
+
+The critical design choice is the **context boundary between phases**. Each phase starts with a fresh context window loaded only with the previous phase's output, not the accumulated state of the entire session. This prevents context degradation over long tasks and directly applies to multi-agent teams: each phase can be handled by a different agent or sub-agent, with the file-system checkpoint serving as the handoff mechanism.
+
+Horthy also presents a per-task **autonomy calibration** framework based on three dimensions: risk (blast radius of wrong implementation), verifiability (whether objective pass/fail signals exist), and specification clarity. Low-risk changes with clear tests and precise specs can run at high autonomy; high-risk changes to shared infrastructure with ambiguous requirements need tight human involvement at every phase. This maps to a practical progression for team orchestration: first prove single-agent reliability at gated autonomy, then raise autonomy for well-specified tasks, then scale to parallel dispatch, then reach overnight batch execution for task categories where sufficient trust has been built.
+
+### Concept 50: Coordinator Mode -- Anthropic's Internal Multi-Agent Pattern
+
+The Claude Code source code leak ([#443](../../sources/443-onchain-ai-garage-claude-code-leak-analysis.md)) revealed a feature-flagged **coordinator mode** that transforms Claude Code from a single agent into a pure coordinator that never touches code directly -- it only spawns, continues, and stops worker agents. The workflow has four phases:
+
+1. **Parallel research**: Multiple workers investigate the codebase from different angles simultaneously
+2. **Synthesis**: The coordinator must personally understand findings -- the prompt literally bans vague language like "based on your findings" and requires specific file paths and line numbers in implementation specs
+3. **Serial implementation**: Per-file implementation to prevent editing conflicts between workers
+4. **Verification by a different worker**: Explicitly mandated to "prove the code works, not confirm it exists" -- the implementing agent cannot verify its own work
+
+Workers share state through a **scratchpad directory** with read/write access and no permission prompts. The anti-rubber-stamping prompt engineering is a non-obvious but critical decision: standard verification workers tend to confirm rather than challenge, so the system prompt must explicitly orient them toward skeptical evaluation.
+
+This pattern extends the devil's advocate concept (Concept 4) with a structural separation: verification is not just adversarial but architecturally guaranteed by assigning it to a different worker. It also reinforces the planner-generator-evaluator architecture (Concept 39) with Anthropic's own internal implementation of the same principle.
+
+### Concept 51: Goal-First Management vs. Session-First Management
+
+Simon Scrapes ([#473](../../sources/473-simon-scrapes-goal-first-agent-management.md)) identifies a fundamental design flaw shared by all existing multi-agent management tools (tmux, desktop apps, Vibe Kanban, Paperclip): they are built bottom-up from terminal sessions rather than top-down from business goals. As agents become more capable and run autonomously for extended periods, the cognitive overhead of switching between terminal windows becomes the dominant bottleneck -- each context switch requires re-reading conversation history to reconstruct state.
+
+The proposed inversion: a **goal-first architecture** where the user declares an objective and specifies a task depth level (quick task, campaign, or deep build), and the system decomposes and routes work autonomously. The user never needs to think about how many agents are running or which terminal contains which work. An **iterative Kanban** structure models the actual rhythm of human-AI collaboration, with columns for "Your Turn" and "Claude's Turn" rather than traditional sequential development stages (To Do, In Progress, Done).
+
+This reframes the management discussion in Concept 18 (orchestration as management skill): the management skill is not session supervision but goal definition and review cadence. The infrastructure discussed in Concept 6 (tmux, E2B, dedicated devices) addresses execution concerns; the abstraction layer above it addresses the cognitive management problem.
+
+### Concept 52: Durability as Infrastructure for Production Agent Teams
+
+Neils Bantilan ([#468](../../sources/468-mlopscommunity-agent-orchestration-durability.md)), Chief ML Engineer at Union (Flyte), argues that the dominant failure mode in production multi-agent systems is not prompt quality or model capability -- it is infrastructure. Agents fail at multiple layers simultaneously (infrastructure, network, logical, semantic, tool execution), and recovering from those failures is nearly impossible without full cross-layer context. The central thesis: **context engineering is an infrastructure problem** -- if a failure wipes agent state, all carefully engineered context is lost.
+
+Three design principles directly address team orchestration at scale:
+
+1. **Replay logs**: Record agent state and subtask outputs at a granular per-step level within each run. If an agent executing a 1,000-step workflow fails at step 347, the replay log enables resumption from that point without re-executing prior steps. This prevents both compute waste and context loss.
+2. **Infrastructure as context**: Surface infrastructure events (OOM errors, scheduler kills, spot preemptions, network timeouts) as first-class exceptions within the agent's reasoning loop. Agents can then reason about and potentially recover from failures that would otherwise be silent or unrecoverable.
+3. **Intermediate state persistence**: Automatically persist outputs of every LLM call and tool call to object storage, providing data lineage and recovery from partial failures without custom serialization code.
+
+Bantilan also identifies the **evaluation gap**: current eval harnesses measure semantic correctness but ignore infrastructure failure modes, creating a gap where agents are well-tested for problems they rarely encounter in short demos but completely untested for failures that dominate long-running production workflows. This extends the observability discussion (Concept 7) and the evals discussion (Concept 48) with the infrastructure dimension that production teams must address.
+
+### Concept 53: Agents vs. Workflows -- When to Stop Using Autonomous Agents
+
+Mastra ([#465](../../sources/465-mastra-deep-research-agent-workflow.md)) draws an explicit architectural distinction between agents (LLM-driven, reasoning-first, non-deterministic control flow) and workflows (developer-defined steps, deterministic sequencing, explicit LLM call sites). The same capability -- deep research -- is demonstrated both ways to make the tradeoff concrete: agents are appropriate for simple, exploratory tasks; workflows are preferred for production systems where cost, reliability, and user experience require predictable behavior.
+
+This maps directly to the deterministic-vs-autonomous debate in harness engineering (Concept 39) and Dex Horthy's "12 Factor Agents" thesis ([#280](../../sources/280-ai-tinkerers-complex-features-ai-agents.md)): if you know the workflow, make deterministic parts deterministic and use LLM calls only where genuine language understanding is needed. For team orchestration, this means that not every coordination problem requires a multi-agent architecture -- sometimes a workflow with explicit handoff points and human-in-the-loop suspension achieves better reliability at lower cost than a fully autonomous team.
+
 ## Common Pitfalls
 
 - **Using teams for simple tasks**: Agent teams add coordination overhead (shared task lists, peer messaging, multiple context windows) that is only justified for complex, interdependent work. For isolated one-off tasks -- file exploration, targeted code changes, focused refactoring -- sub-agents are faster, cheaper, and simpler. As Van Zyl advises: "If you just want to do like a once-off task, you should definitely use sub agents instead" ([3:50](https://www.youtube.com/watch?v=KCJsdQpcfic&t=230)).
@@ -567,6 +623,14 @@ For team orchestration specifically, **trace observability for subprocesses** is
 - **Trusting agents to self-evaluate**: Anthropic's own harness research ([#375](../../sources/375-the-ai-automators-long-running-agent-harness.md)) found that Claude identifies legitimate issues but talks itself into approving them anyway. A dedicated adversarial evaluator agent with its own skepticism-oriented system prompt and output interaction tools is essential for any multi-agent system where quality matters.
 
 - **Designing skills for human callers when agents are the primary users**: Skills are now predominantly called by agents, not humans ([#425](../../sources/425-ai-news-strategy-daily-nate-b-jones-skills-agent-standard.md)). A single agent run can make hundreds of invocations, and failures compound silently. Design skill descriptions for agent-first triggering with explicit output specs, not conversational flexibility.
+
+- **Scaling agents without durability infrastructure**: Bantilan ([#468](../../sources/468-mlopscommunity-agent-orchestration-durability.md)) shows that production multi-agent systems fail at infrastructure layers (OOM errors, spot preemptions, network timeouts) that wipe all carefully engineered context. Without replay logs and intermediate state persistence, a 1,000-step agent that crashes at step 999 restarts from step 1. Build durability before you need it -- it should be an infrastructure default, not a feature added after the first production outage.
+
+- **Managing terminals instead of managing goals**: As agent count grows, the cognitive overhead of context-switching between terminal windows becomes the dominant bottleneck ([#473](../../sources/473-simon-scrapes-goal-first-agent-management.md)). If you find yourself clicking between five tabs to track agent state, invest in a higher-abstraction management layer -- even a simple document tracking goal, status, and last output beats raw terminal switching.
+
+- **Letting agents verify their own work**: Anthropic's internal coordinator mode ([#443](../../sources/443-onchain-ai-garage-claude-code-leak-analysis.md)) explicitly mandates that verification must be performed by a different worker than the implementer. Standard verification workers tend to confirm rather than challenge -- the prompt must explicitly orient toward skeptical evaluation. "Prove the code works, not confirm it exists."
+
+- **Skipping single-agent reliability before scaling to parallel dispatch**: Horthy ([#280](../../sources/280-ai-tinkerers-complex-features-ai-agents.md)) identifies a concrete scaling sequence: single-agent reliability, apparatus tuning, parallel dispatch, then async overnight execution. Each level depends on the previous. Scaling broken configurations produces N broken PRs, not leverage.
 
 ## Hands-On Exercises
 
@@ -633,6 +697,7 @@ For team orchestration specifically, **trace observability for subprocesses** is
 | [268: One Sentence Can Hijack Your AI](../../sources/268-ai-plus-plus-enterprise-agent-security.md) | AI-plus-plus | Enterprise agent security architecture, compartmentalization, multi-agent source verification, DMZ patterns |
 | [269: wtf is Harness Engineer](../../sources/269-ai-jason-harness-engineering-autonomous-agents.md) | AI Jason | Harness engineering for autonomous agent teams, legible environments, verification loops |
 | [273: Moltbook -- AI Agent Playground](../../sources/273-deep-business-moltbook-agent-playground.md) | Deep Business | Agent playground economics, bot social network dynamics |
+| [280: How to Ship Complex Features 10x Faster with AI Agents](../../sources/280-ai-tinkerers-complex-features-ai-agents.md) | AI Tinkerers / Dex Horthy | Research-plan-implement loop, autonomy levels per task, apparatus engineering, single-to-fleet scaling sequence |
 | [284: Claude Code Second Brain in Obsidian](../../sources/284-brad-ai-automation-obsidian-second-brain.md) | Brad / AI & Automation | Obsidian vault as shared team memory, multi-agent vault access |
 | [285: Context Engineering for Agents](../../sources/285-langchain-context-engineering-agents.md) | LangChain | Four context strategies (write/select/compress/isolate), context isolation as team architecture |
 | [286: Foundation Agents Architecture](../../sources/286-the-cloud-girl-foundation-agents-architecture.md) | The Cloud Girl | Brain-inspired modular AI, MOP to MACE transition, foundation agents framework |
@@ -647,6 +712,7 @@ For team orchestration specifically, **trace observability for subprocesses** is
 | [359: Library Meta-Skill Distribution](../../sources/359-indydevdan-library-skill-distribution.md) | IndyDevDan | Library meta-skill as package manager for agentics, private distribution, build-in-place reference-and-reuse |
 | [369: Context Graphs for Agent Governance](../../sources/369-neo4j-context-graph-agent-governance.md) | Neo4j / Dave Bennett | Context graphs as governance control plane, OAuth token exchange delegation chains, least privilege at runtime |
 | [373: Agent Species Architecture](../../sources/373-ai-news-strategy-daily-nate-b-jones-agent-species-architecture.md) | Nate B Jones | Four agent species taxonomy, simplicity scales, agent-centered vs human-centered workflow design, decomposition as core skill |
+| [379: The AI Job Market Split in Two](../../sources/379-ai-news-strategy-daily-nate-b-jones-ai-job-market-split.md) | Nate B Jones | Multi-agent task decomposition as job skill, failure pattern recognition, specification precision, K-shaped labor market |
 | [375: Long-Running Agent Harness](../../sources/375-the-ai-automators-long-running-agent-harness.md) | The AI Automators | Planner-generator-evaluator architecture, context anxiety, adversarial evaluation, simplification as architectural principle |
 | [380: Agentic Harness Deep Dive](../../sources/380-my-weird-prompts-agentic-harness-deep-dive.md) | My Weird Prompts | Three-phase agent loop, MCP 2.0 as enterprise adapter, agent teams under 1M parent context, 7K exposed MCP servers |
 | [385: ARC-AGI-3 Capability Signals](../../sources/385-ai-explained-arc-agi-3-capability-signals.md) | AI Explained | Multi-agent orchestration as benchmark strategy, sub-agent summarization for context management |
@@ -659,6 +725,15 @@ For team orchestration specifically, **trace observability for subprocesses** is
 | [425: Skills as Cross-Platform Standard](../../sources/425-ai-news-strategy-daily-nate-b-jones-skills-agent-standard.md) | Nate B Jones | Agent-first skill design, skills as organizational infrastructure, cross-platform convergence, skill construction formula |
 | [426: Multi-Team Agent Orchestration](../../sources/426-indydevdan-multi-team-agent-orchestration.md) | IndyDevDan | Three-tier hierarchy, persistent agent expertise files, multi-team consensus, configuration-driven assembly |
 | [436: Evals for Coding Agents](../../sources/436-mlopscommunity-evals-coding-agents.md) | MLOps.community | Structured eval frameworks, agentic vs vector search comparison, subprocess trace observability, evals as team sport |
+| [443: 5 Takeaways from the Claude Code Leak](../../sources/443-onchain-ai-garage-claude-code-leak-analysis.md) | Onchain AI Garage | Coordinator mode (research/synthesize/implement/verify), anti-rubber-stamping verification, scratchpad state sharing, autodream memory |
+| [444: The Only Claude Code Updates You Need to Know (Apr 2026)](../../sources/444-simon-scrapes-claude-code-q1-updates.md) | Simon Scrapes | Q1 remote access suite, auto mode permissions, scheduled tasks, agent teams with mailbox coordination, autodream memory |
+| [449: Anthropic Leaks Mythos](../../sources/449-jordan-hardison-mythos-leak-multi-agent.md) | Jordan Hardison | Multi-agent via threaded contexts, orchestrator vs assistant distinction, multi-core CPU analogy |
+| [453: How We Used Observational Memory To Build A Coding Agent](../../sources/453-mastra-observational-memory-coding-agent.md) | Mastra | Observational memory vs retrieval, async background compression, agent harness definition, lossy memory as feature |
+| [454: Parallel AI Agents & Synthesizer Patterns](../../sources/454-learn-ai-with-localm-tuts-parallel-agent-patterns.md) | Learn AI with LocalM Tuts | Fan-out/fan-in architecture, three primitives (single/sequential/parallel), independence constraint, latency model |
+| [465: From Zero to Deep Research Agent in 20 Minutes](../../sources/465-mastra-deep-research-agent-workflow.md) | Mastra | Agents vs workflows distinction, human-in-the-loop suspension, nested workflows with evaluation loops |
+| [468: Decomposing the Agent Orchestration System: Lessons Learned](../../sources/468-mlopscommunity-agent-orchestration-durability.md) | MLOps.community / Neils Bantilan | Replay logs, infrastructure-as-context, evaluation gap, durability as first-class primitive, intermediate state persistence |
+| [473: Stop Using Claude Code in Terminal](../../sources/473-simon-scrapes-goal-first-agent-management.md) | Simon Scrapes | Goal-first vs session-first management, abstraction layer problem, iterative Kanban, task depth parameterization |
+| [476: Chroma Context-1 Agentic Search Model](../../sources/476-chroma-agentic-search-model.md) | Chroma | Sub-agent specialization for search, parallel tool calling, prune tool for context management, recall-first training |
 
 ## Further Reading
 
