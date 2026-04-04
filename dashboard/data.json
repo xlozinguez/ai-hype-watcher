@@ -9584,16 +9584,244 @@
       "body_html": "<h3 class=\"src-h3\">Summary</h3>\n<p>A satirical sketch pitting a buzzword-saturated AI CEO against a grounded engineer, this short comedy piece skewers the widening gap between enterprise AI rhetoric and actual technical reality. The CEO deploys an escalating cascade of jargon \u2014 \"agentic context,\" \"semantic discoverability membrane,\" \"portable insight artifact,\" \"organizational knowledge chain\" \u2014 while the engineer repeatedly deflates each claim with blunt translations: \"better autocomplete,\" \"PDF,\" \"Excel macros.\"</p>\n<p>The sketch is a sharp piece of AI hype criticism that captures several real enterprise dynamics: the perpetual \"2-year disruption\" slide deck that gets recycled indefinitely, the agent-as-employee announcement that immediately backfires, layoffs rebranded as \"upskilling into AI observers,\" and co-pilot licensing costs that \"scale linearly with curiosity.\" Beneath the comedy is a pointed critique of how organizational knowledge problems, poor data hygiene, and procurement realities get obscured by strategic abstraction.</p>\n<p>The video lands its sharpest joke at the end: the CEO who has been evangelizing AI transformation can't figure out how to use AI to schedule a meeting and quietly asks his human assistant to do it. This closing beat efficiently summarizes the gap between capability claims and day-to-day operational reality in enterprises currently navigating AI adoption.</p>\n<p>---</p>\n<h3 class=\"src-h3\">Key Concepts</h3>\n<h4 class=\"src-h4\">Jargon as Capability Laundering</h4>\n<p>The CEO consistently translates mundane tools into expansive terminology: a chatbot becomes \"conversational intelligence,\" a PDF becomes a \"portable insight artifact,\" autocomplete becomes a \"semantic discoverability membrane.\" This pattern represents a real enterprise risk \u2014 when language obscures what a product actually does, evaluation criteria collapse and procurement, security, and engineering alignment become impossible. The engineer's one-word rebuttals (\"Better autocomplete\") model the discipline of demanding concrete capability descriptions.</p>\n<h4 class=\"src-h4\">The Perpetual Disruption Horizon</h4>\n<p>The recurring joke \u2014 \"We have slides that say AI is going to completely disrupt the industry in 2 years. We update those slides every 2 years.\" \u2014 captures the capability-overhang problem from the demand side. Organizations perpetually position themselves as being on the cusp of transformation without operationalizing current capabilities. This cycle is distinct from genuine technical uncertainty; it's a strategic posture that defers accountability.</p>\n<h4 class=\"src-h4\">AI Cost Realities and the Caching Problem</h4>\n<p>The sketch briefly but accurately surfaces a real infrastructure economics issue: co-pilot licensing costs that scale linearly with usage (\"linearly with curiosity\"), underfunded caching strategies, and the observation that 90% of users ask the same questions anyway. The engineer's line \u2014 \"One simple cache would be enough\" \u2014 points toward a genuine optimization pattern that enterprise AI deployments frequently neglect in favor of expanding model access.</p>\n<h4 class=\"src-h4\">Agent Adoption Theater</h4>\n<p>The \"agent as employee\" bit \u2014 where the agent's first act is firing half of management \u2014 satirizes the enterprise trend of anthropomorphizing AI agents without defining their actual decision boundaries, authorization scope, or failure modes. It also reflects the real tension around agentic systems in organizations: deploying autonomous action without adequate governance produces unpredictable outcomes.</p>\n<h4 class=\"src-h4\">Data Readiness as Permanent Precondition</h4>\n<p>The CEO lists real data readiness criteria (harmonized, normalized, governed, labeled, deduplicated) but the punchline is that the data is still \"scattered across SharePoint.\" This accurately reflects a common enterprise AI blocker: the data quality prerequisites for effective AI are known and recited, but the organizational will to address them precedes every deployment cycle without ever resolving.</p>\n<p>---</p>\n<h3 class=\"src-h3\">Practical Takeaways</h3>\n<ul class=\"src-list\">\n<li>Demand concrete capability descriptions: When evaluating enterprise AI tools, require plain-language answers to \"what does this product do?\" \u2014 resist framing that expands the \"solution surface\" at the cost of accountability.</li>\n<li>Audit AI licensing costs against actual usage: Co-pilot and agent-tier tools frequently carry costs that scale with seat count or query volume; understanding usage distribution (the \"90% ask the same question\" problem) enables caching and tiering strategies that dramatically reduce spend.</li>\n<li>Don't anthropomorphize agents before defining their authorization scope: Giving agents organizational roles without explicit permission boundaries, audit trails, and escalation paths is a governance failure mode, not an adoption milestone.</li>\n<li>Treat \"readiness\" as a binary checklist, not a narrative: Data governance prerequisites should be tracked as concrete completion criteria, not recited as aspirational framing during strategy presentations.</li>\n<li>Watch for the \"2-year slide\" in your own organization: If AI transformation timelines keep resetting without delivering against prior-cycle commitments, it signals that the organization is in posture mode rather than execution mode.</li>\n</ul>\n<p>---</p>\n<h3 class=\"src-h3\">Notable Quotes</h3>\n<blockquote class=\"src-quote\">\"We have slides that say AI is going to completely disrupt the industry in 2 years. We update those slides every 2 years.\"</blockquote>\n<blockquote class=\"src-quote\">\"Co-pilot for this, co-pilot for that \u2014 until procurement discovers the bill scales linearly with curiosity.\"</blockquote>\n<blockquote class=\"src-quote\">\"We're updating them into highly efficient AI observers from outside the building. We're upskilling.\"</blockquote>\n<p>---</p>"
     },
     {
+      "id": "470",
+      "type": "source",
+      "title": "Your Claude Limit Burns In 90 Minutes Because Of One ChatGPT Habit.",
+      "creator": "AI News & Strategy Daily | Nate B Jones",
+      "date": "2026-04-02",
+      "tags": [
+        "context-engineering",
+        "ai-economics",
+        "prompt-engineering",
+        "agentic-coding"
+      ],
+      "modules": [
+        "02-prompting-and-workflows",
+        "06-strategy-and-economics"
+      ],
+      "summary": "This video argues that token waste \u2014 not model quality or pricing \u2014 is the primary reason developers hit usage limits and overpay for AI. Using a mix of beginner, intermediate, and advanced user profiles, Nate B.",
+      "url": "https://www.youtube.com/watch?v=5ztI_dbj6ek",
+      "body_html": "<h3 class=\"src-h3\">Summary</h3>\n<p>This video argues that token waste \u2014 not model quality or pricing \u2014 is the primary reason developers hit usage limits and overpay for AI. Using a mix of beginner, intermediate, and advanced user profiles, Nate B. Jones walks through the specific habits that silently burn context windows: raw PDF ingestion instead of markdown conversion, sprawling multi-turn conversations that dilute original instructions, and over-loading plugin/connector stacks that pre-fill the context window before a single word is typed. The central claim is that Frontier AI can be 8\u201310x cheaper through discipline alone, with no sacrifice in output quality.</p>\n<p>The video is also forward-looking: the next generation of models (Claude Mythos, GPT-next, Gemini-next) will be trained on more expensive GB300-series Nvidia chips, making token efficiency a compounding financial skill. Jensen Huang's cited figure of $250,000/year per engineer in token spend gives the stakes concrete shape. Against that backdrop, the video frames token hygiene not as a nice-to-have but as a job-critical competency, particularly for advanced users running agentic pipelines where a single misconfigured system prompt can cost millions of tokens per run.</p>\n<p>The worked example is concrete: a sloppy session using raw PDFs, 30-turn sprawl, and Opus for everything costs $8\u201310 in compute. The same work done cleanly \u2014 markdown-converted docs, fresh contexts every 10\u201315 turns, Opus for reasoning/Sonnet for execution/Haiku for polish \u2014 costs roughly $1. Scaled to daily professional use, the difference is 40\u201350x annualized compute spend.</p>\n<h3 class=\"src-h3\">Key Concepts</h3>\n<h4 class=\"src-h4\">Document Format as Token Multiplier</h4>\n<p>Raw PDFs carry formatting overhead \u2014 headers, footers, embedded fonts, layout metadata, binary encoding \u2014 that can inflate 4,500 words of actual content into 100,000+ tokens. Converting to markdown before ingestion collapses this to 4,000\u20136,000 tokens, a ~20x reduction. Because conversation history is re-sent with every turn, this inflation compounds multiplicatively across the session.</p>\n<h4 class=\"src-h4\">Conversation Sprawl and Context Dilution</h4>\n<p>Models were not designed for 30\u201340 turn conversations. As turns accumulate, the ratio of useful original instructions to total context shrinks, and the model's ability to anchor on those instructions degrades. The prescription is to separate information gathering (exploratory, multi-turn, cheap models) from execution (single-shot, clear brief, right-sized model), and to summarize and start fresh every 10\u201315 turns rather than dragging a bloated history forward.</p>\n<h4 class=\"src-h4\">Plugin Stack as Silent Tax</h4>\n<p>Each loaded plugin or connector pre-populates the context window before any user input. One practitioner cited in the video was 50,000 tokens in before typing a word, purely from connector overhead. This is described as analogous to laying every tool in the workshop on the bench before deciding what to build \u2014 most of those tools will never be used, but they consume space and can confuse tool-selection logic.</p>\n<h4 class=\"src-h4\">Model Tiering for Task Type</h4>\n<p>Using the most capable (and most expensive) model for every task is a core waste pattern. The recommended approach tiers models by task: Opus-class for deep reasoning and complex analysis, Sonnet-class for execution and drafting, Haiku-class for formatting, polish, and light retrieval. This alone accounts for a significant share of the 8\u201310x cost reduction in the worked example.</p>\n<h4 class=\"src-h4\">Context Window Leanness as a Function of Model Intelligence</h4>\n<p>A pattern claim with strategic implications: earlier, less capable models required frontloaded, exhaustive context to perform well. As models grow more capable (2026+ generation), they can retrieve and infer more from less explicit context. Advanced users \u2014 especially those maintaining agent system prompts \u2014 should audit and prune prompts regularly, removing guidance that was necessary for older models but is now redundant, actively allowing model intelligence gains to translate into context savings.</p>\n<h3 class=\"src-h3\">Practical Takeaways</h3>\n<ul class=\"src-list\">\n<li>Convert documents to markdown before any AI ingestion. Raw PDFs can inflate token cost by 20x; markdown conversion is free, fast, and eliminates the most common source of beginner token waste.</li>\n<li>Separate exploration from execution into distinct conversations and potentially distinct models. Use cheap, exploratory chats to gather and synthesize context, then open a clean session with a tight brief when it's time for the model to do real work.</li>\n<li>Audit your plugin/connector list and cut aggressively. Every active plugin is a per-conversation tax. Only load connectors that demonstrably add value to your most common workflows.</li>\n<li>Tier your model selection by task type. Default to Sonnet or equivalent for most execution tasks; reserve Opus-class models for reasoning-heavy steps where the capability gap is measurable.</li>\n<li>Prune agent system prompts on a regular cadence. Instructions written for older models are often redundant or counterproductive with newer ones. Treat system prompt length as technical debt with a direct cost in dollars per run.</li>\n</ul>\n<h3 class=\"src-h3\">Notable Quotes</h3>\n<blockquote class=\"src-quote\">\"The models are not expensive. It's your habits that cost a lot.\"</blockquote>\n<blockquote class=\"src-quote\">\"Your objective when you want the AI to do real work should be to be so clear that the AI needs to do nothing else and it just goes and gets the work done and comes back.\"</blockquote>\n<blockquote class=\"src-quote\">\"You are allowing the gains in model intelligence to lean out your context window... we can lean out the context window initially because we can trust the model to retrieve better.\"</blockquote>"
+    },
+    {
+      "id": "471",
+      "type": "source",
+      "title": "Industrial Grade Dunning Kruger",
+      "creator": "Kiraa",
+      "date": "2026-04-02",
+      "tags": [
+        "ai-hype",
+        "enterprise-ai",
+        "capability-overhang",
+        "vibe-coding"
+      ],
+      "modules": [
+        "01-foundations",
+        "06-strategy-and-economics"
+      ],
+      "summary": "Kiraa delivers a pointed critique of the \"AI agents will replace white-collar professionals\" narrative, framing the phenomenon through the lens of the Dunning-Krueger effect operating at industrial scale. The core argument is that the loudest voices making predictions about AI displacing accountants, lawyers, and analysts are precisely the people who have never done that work \u2014 tech investors and thought leaders who observe a demo of an agent booking a meeting or pulling spreadsheet data and extrapolate it to entire careers built on judgment, ambiguity, regulatory nuance, and institutional knowledge.",
+      "url": "https://www.youtube.com/watch?v=h5_dAsXk4jE",
+      "body_html": "<h3 class=\"src-h3\">Summary</h3>\n<p>Kiraa delivers a pointed critique of the \"AI agents will replace white-collar professionals\" narrative, framing the phenomenon through the lens of the Dunning-Krueger effect operating at industrial scale. The core argument is that the loudest voices making predictions about AI displacing accountants, lawyers, and analysts are precisely the people who have never done that work \u2014 tech investors and thought leaders who observe a demo of an agent booking a meeting or pulling spreadsheet data and extrapolate it to entire careers built on judgment, ambiguity, regulatory nuance, and institutional knowledge.</p>\n<p>Drawing on 30 years of experience in senior corporate roles across large multinationals, Kiraa uses self-driving cars as a structurally identical cautionary tale: after decades of investment and billions of dollars, autonomous vehicles still only work reliably in geographically constrained, weather-predictable environments like parts of Phoenix. Professional work is exponentially more variable \u2014 month-end closes, intercompany reconciliations across multiple currencies and ERPs, auditor negotiations over revenue recognition treatment \u2014 and none of this complexity is visible to observers who see jobs as chains of simple instructions.</p>\n<p>The video is not anti-AI. Kiraa positions himself as a decade-long practitioner who builds on what AI actually does well. The target is the toxic combination of Dunning-Krueger overconfidence and a multi-million dollar marketing machine that rewards bold claims over accurate ones, creating a hype cycle where people who don't understand the domain make confident predictions funded by people who equally don't understand the domain.</p>\n<p>---</p>\n<h3 class=\"src-h3\">Key Concepts</h3>\n<h4 class=\"src-h4\">Dunning-Krueger at Industrial Scale</h4>\n<p>The Dunning-Krueger effect \u2014 where limited knowledge produces overconfidence \u2014 is being amplified by capital and media incentives. Investors who have financially committed to the agent narrative are structurally motivated to dismiss skeptics rather than update their views. The hype cycle rewards boldness over accuracy, meaning the people most likely to be wrong are also the most likely to be amplified.</p>\n<h4 class=\"src-h4\">The Demo-to-Production Gap</h4>\n<p>Seeing an AI agent successfully book a meeting, draft an email, or pull numbers from a spreadsheet does not provide meaningful evidence about its ability to handle professional work. The gap between a clean, well-structured demo task and the messy, ambiguous, exception-riddled reality of professional environments is enormous \u2014 analogous to watching a self-driving car navigate a parking lot and concluding it's ready for the Dakar Rally.</p>\n<h4 class=\"src-h4\">Jobs Are Not Chains of Simple Tasks</h4>\n<p>A key flawed premise underlying AI replacement claims is that professional roles can be decomposed into a finite set of instructions that, if chained together, reproduce the job. In reality, professional skills emerge from years of doing complex work until judgment becomes automatic \u2014 they cannot be downloaded from a repository. A single professional role like accounting spans financial reporting, regulatory compliance, tax law, business advisory, stakeholder management, and real-time judgment calls under ambiguity.</p>\n<h4 class=\"src-h4\">The Self-Driving Car Parallel</h4>\n<p>Autonomous driving is a useful structural analogy: it is a well-funded, technically impressive domain where the technology works in constrained conditions but fails at generalization. Waymo functions in Phoenix; it doesn't generalize to Mumbai or rainy motorway traffic. Similarly, AI agents may handle narrow, well-structured tasks reliably without approaching the generalization required for full professional role replacement.</p>\n<h4 class=\"src-h4\">Technology Waves and Persistent Over-Promise</h4>\n<p>Every major enterprise technology wave \u2014 ERP, cloud, RPA \u2014 was predicted to revolutionize the back office at a scale it never achieved. Each delivered real value, but far below the promises made. The pattern is consistent: the people making the promises understood the technology just enough to be dangerous but lacked domain understanding sufficient to be accurate.</p>\n<p>---</p>\n<h3 class=\"src-h3\">Practical Takeaways</h3>\n<ul class=\"src-list\">\n<li>Calibrate AI deployment expectations to demonstrated capability, not demo extrapolation. Agents that handle clean, structured tasks reliably should be deployed for clean, structured tasks \u2014 not assumed to scale to complex professional judgment.</li>\n<li>Domain expertise is necessary for evaluating AI claims. Organizations adopting AI should weight input from practitioners who have done the work, not just from technology vendors or investors with financial stakes in adoption narratives.</li>\n<li>Use the self-driving car test as a heuristic. If a technology analogy (abundant capital, decade-long development, impressive demos, constrained real-world performance) maps cleanly to AI agents in professional services, treat replacement timelines skeptically.</li>\n<li>Distinguish between AI augmenting professional work and AI replacing it. The video implies a practical middle path: building on what AI actually does well rather than what marketing claims it will do, which requires hands-on experience rather than surface-level observation.</li>\n<li>Institutional knowledge and judgment are not tasks. When evaluating whether AI can replace a role, ask specifically whether the judgment calls, exception handling, and ambiguity navigation \u2014 not just the routine outputs \u2014 can be replicated.</li>\n</ul>\n<p>---</p>\n<h3 class=\"src-h3\">Notable Quotes</h3>\n<blockquote class=\"src-quote\">\"The less you know, the more confident you are. And the more you know, the more you realize how complex things really are. And that's exactly what's happening with AI and professional services.\"</blockquote>\n<blockquote class=\"src-quote\">\"The gap between a demo and production environment is enormous. The gap between handling a clean, well-structured task and handling the kind of messy, ambiguous, exception-riddled reality of professional work is another thing entirely.\"</blockquote>\n<blockquote class=\"src-quote\">\"The people making the promises didn't understand the problem. They understood the technology just enough to be dangerous but not the domain enough at all to be useful.\"</blockquote>\n<p>---</p>"
+    },
+    {
+      "id": "472",
+      "type": "source",
+      "title": "Day-1 TurboQuant in llama.cpp: 6X Smaller KV Cache After Reading the Actual Paper",
+      "creator": "Oliver Church - AI News & Insights",
+      "date": "2026-04-01",
+      "tags": [
+        "infrastructure",
+        "ai-landscape",
+        "context-engineering"
+      ],
+      "modules": [
+        "06-strategy-and-economics",
+        "01-foundations"
+      ],
+      "summary": "Oliver Church documents a day-one engineering effort to implement TurboQuant \u2014 a KV cache compression algorithm from Google's ICLR 2026 paper \u2014 inside llama.cpp, achieving a 4.57\u00d7 reduction in KV cache memory. The core problem: running a 70B model at 72K context on dual consumer 3090 GPUs is physically impossible without compression, since the KV cache alone would require 23 GB of VRAM that simply doesn't exist after loading the model weights.",
+      "url": "https://www.youtube.com/watch?v=TsSTgMBjHWc",
+      "body_html": "<h3 class=\"src-h3\">Summary</h3>\n<p>Oliver Church documents a day-one engineering effort to implement TurboQuant \u2014 a KV cache compression algorithm from Google's ICLR 2026 paper \u2014 inside llama.cpp, achieving a 4.57\u00d7 reduction in KV cache memory. The core problem: running a 70B model at 72K context on dual consumer 3090 GPUs is physically impossible without compression, since the KV cache alone would require 23 GB of VRAM that simply doesn't exist after loading the model weights. Church traces the full implementation arc from a broken community prototype through three distinct engineering phases, fixing bugs, upgrading quantization precision, and ultimately re-enabling flash attention to make long context computationally tractable.</p>\n<p>The key algorithmic insight from the TurboQuant paper is to normalize KV vectors to unit length, apply a Walsh-Hadamard Transform (WHT) to produce approximately Gaussian-distributed values across all dimensions, then quantize to 3 bits using a single set of 8 Lloyd-Max centroids \u2014 no calibration data required. The result is 3.5 bits per value versus the baseline 16, a 4.57\u00d7 compression ratio. Church's breakthrough in Phase 3 was recognizing that dequantizing K before flash attention makes the query-side WHT unnecessary, collapsing what had been an architectural conflict into a simple on-the-fly dequantization step. This re-enables flash attention's tiled computation, keeping attention memory effectively constant regardless of context length.</p>\n<p>The final benchmark numbers are concrete and sobering in both directions: perplexity on Wikitext-2 rises 7.6% versus the float16 baseline (comparable to weight quantization's own degradation), generation speed drops to 5.1 tokens per second at 72K context, but the critical metric \u2014 whether it runs at all \u2014 flips from impossible to achievable on sub-$2,000 hardware. Church explicitly credits the TurboQuant authors, a community developer (unix-cydev) for the initial llama.cpp scaffolding, and documents his own specific contributions: the normalization bug fix, the 3-bit upgrade, V-cache compression, and the flash-attention re-enablement insight.</p>\n<p>---</p>\n<h3 class=\"src-h3\">Key Concepts</h3>\n<h4 class=\"src-h4\">KV Cache as the True Context Bottleneck</h4>\n<p>Token-per-second speed is a comfort metric; context length is the capability ceiling. In a 70B model with 80 layers, 8 KV heads, and 128 dimensions, every token costs ~0.31 MB in the KV cache. At 72K context, that's 23 GB \u2014 physically more VRAM than is available after loading the quantized model. This makes KV cache compression a prerequisite for long-context local inference, not an optimization.</p>\n<h4 class=\"src-h4\">Walsh-Hadamard Transform for Uniform Quantization</h4>\n<p>TurboQuant's elegance comes from a two-step normalization: first save the vector's L2 norm separately, then apply the WHT to spread information uniformly across all dimensions. The WHT produces approximately Gaussian-distributed coordinates, allowing a single optimal quantizer (8 Lloyd-Max centroids) to work for every vector without per-channel calibration. This is why the algorithm requires no training data and generalizes across model architectures.</p>\n<h4 class=\"src-h4\">The Flash Attention Conflict and Its Resolution</h4>\n<p>K-cache compression and V-cache compression initially had contradictory flash attention requirements: K needed flash attention off (the flash kernel can't apply the query-side WHT), while quantized V needed flash attention on (only the flash kernel reads quantized V directly). Church's Phase 3 insight resolves this entirely \u2014 dequantizing K before passing it to flash attention makes the query-side WHT unnecessary. The cache stays compressed in VRAM; dequantization happens on-the-fly; flash attention's tiled computation then handles arbitrarily long contexts with near-constant memory overhead.</p>\n<h4 class=\"src-h4\">V-Cache Transposition Problem in GGML</h4>\n<p>GGML stores the V-cache transposed for matrix operation efficiency. Block quantization formats like TurboQuant require groups of 32 contiguous elements, but transposed storage writes one element at a time \u2014 causing alignment assertion failures in CUDA kernels. The fix is to store V non-transposed when quantized, then explicitly transpose after dequantization in the computation graph, a non-obvious change to a deep assumption in the backend's memory layout.</p>\n<h4 class=\"src-h4\">Quality-Cost Trade-offs at the System Level</h4>\n<p>The 7.6% perplexity increase from full K+V TurboQuant compression is roughly comparable to what 4-bit weight quantization itself contributes (2\u20137%). This frames KV cache quantization as a peer trade-off alongside weight quantization, not a catastrophic loss. The V-only compression adds ~1% beyond K-only, suggesting most degradation comes from the quantization math rather than V-specific factors.</p>\n<p>---</p>\n<h3 class=\"src-h3\">Practical Takeaways</h3>\n<ul class=\"src-list\">\n<li>Context length unlocks qualitatively new use cases. An agent that can reason over an entire codebase is categorically different from a chatbot \u2014 TPS benchmarks don't capture this distinction, but VRAM constraints make it absolute.</li>\n<li>N\u00b2 attention memory is a second bottleneck. Even with KV cache fully compressed, the attention score matrix scales quadratically with context. Without flash attention's tiled computation, 20K context explodes to 16 GB of compute buffers \u2014 re-enabling flash attention was as important as the compression itself.</li>\n<li>CPU/GPU pipeline parallelism creates hidden backend constraints. Multi-GPU setups route some layers through CPU host memory; llama.cpp's CPU backend only dequantizes to float32, not float16. Intermediate representations must match the lowest-common-denominator backend capability.</li>\n<li>Single-constant bugs can invalidate entire algorithms. The difference between the original broken implementation and a working one was 1/32 vs 1/\u221a32 in the normalization step \u2014 a trivially small change with total functional impact.</li>\n<li>Fused WHT + flash attention kernel is the clear next optimization target. The current approach dequantizes before flash attention, recovering correctness but leaving performance on the table. An in-kernel WHT would close the ~7% speed gap versus baseline.</li>\n</ul>\n<p>---</p>\n<h3 class=\"src-h3\">Notable Quotes</h3>\n<blockquote class=\"src-quote\">\"Everyone in the local LLM community obsesses over tokens per second. But here's what actually matters: context length. TPS is a comfort metric. Context length is the capability ceiling.\"</blockquote>\n<blockquote class=\"src-quote\">\"I compressed the KV cache by 4.57 times and the context length barely improved... The KV cache was tiny thanks to compression, but the attention map was eating up all the VRAM.\"</blockquote>\n<blockquote class=\"src-quote\">\"This isn't a marginal improvement. This is a capability shift that didn't exist before on this hardware class.\"</blockquote>\n<p>---</p>"
+    },
+    {
+      "id": "473",
+      "type": "source",
+      "title": "Stop Using Claude Code in Terminal (It\u2019s Holding You Back)",
+      "creator": "Simon Scrapes",
+      "date": "2026-04-02",
+      "tags": [
+        "claude-code",
+        "multi-agent",
+        "task-system",
+        "agent-teams",
+        "skills",
+        "agentic-coding"
+      ],
+      "modules": [
+        "04-agentic-patterns",
+        "05-team-orchestration"
+      ],
+      "summary": "Simon Scrapes argues that the real bottleneck in Claude Code workflows is no longer agent quality\u2014it's the interface for managing multiple agents simultaneously. As Claude Code has matured into a genuinely capable autonomous tool, the problem has shifted from \"can the AI do the work?\" to \"how do I orchestrate five terminal tabs without losing context?\" The video surveys existing multi-agent management tools (tmux, Anthropic desktop app, Vibe Kanban, Paperclip, and various open-source boards) and finds that all of them share a fundamental design flaw: they're built bottom-up from terminal sessions and coding workflows rather than top-down from business goals.",
+      "url": "https://www.youtube.com/watch?v=uhMCy25NBfw",
+      "body_html": "<h3 class=\"src-h3\">Summary</h3>\n<p>Simon Scrapes argues that the real bottleneck in Claude Code workflows is no longer agent quality\u2014it's the interface for managing multiple agents simultaneously. As Claude Code has matured into a genuinely capable autonomous tool, the problem has shifted from \"can the AI do the work?\" to \"how do I orchestrate five terminal tabs without losing context?\" The video surveys existing multi-agent management tools (tmux, Anthropic desktop app, Vibe Kanban, Paperclip, and various open-source boards) and finds that all of them share a fundamental design flaw: they're built bottom-up from terminal sessions and coding workflows rather than top-down from business goals.</p>\n<p>The core insight is that business users need a goal-management layer, not a session-management layer. Every existing tool starts with the Claude Code session and tries to bolt on project management; what's actually needed is the inverse\u2014start with a high-level goal and let the system figure out how many agents to spin up, what skills to invoke, and how to decompose the work. This maps to hiring a competent employee: you give them a goal and a deadline, not a terminal to babysit.</p>\n<p>Simon presents his own solution, a \"Command Center\" built on top of his \"Agentic OS\" (a business-context layer stored inside Claude Code containing brand voice, ICP details, content strategy, and interconnected skills). The Command Center is a custom Kanban board where columns represent \"Your Turn\" vs \"Claude's Turn\" rather than development stages, reflecting the iterative feedback loop of real agentic work. It surfaces recent outputs, supports scheduled tasks, and abstracts away terminal interaction entirely\u2014allowing six-plus concurrent tasks to be managed at a glance.</p>\n<p>---</p>\n<h3 class=\"src-h3\">Key Concepts</h3>\n<h4 class=\"src-h4\">The \"Abstraction Layer\" Problem in Multi-Agent Management</h4>\n<p>As agents become more capable and can run autonomously for extended periods, the cognitive overhead of switching between terminal windows becomes the dominant bottleneck. Each context switch requires re-reading conversation history to reconstruct state. The solution is not better terminals\u2014it's moving the management interface one level higher, from \"sessions\" to \"goals.\" This is the same transition that happened in software project management when teams moved from tracking files and commits to tracking stories and outcomes.</p>\n<h4 class=\"src-h4\">Goal-First vs. Session-First Tool Design</h4>\n<p>All current multi-agent tools (tmux, Vibe Kanban, Paperclip, desktop apps) share a session-first architecture: they expose terminal sessions, code diffs, pull requests, and branch management. A goal-first architecture inverts this\u2014the user declares an objective (e.g., \"build a lead generation system\"), specifies a task depth level (quick task / campaign / deep build), and the system decomposes and routes work autonomously. The user never needs to think about how many agents are running or which terminal contains which work.</p>\n<h4 class=\"src-h4\">Iterative Kanban vs. Sequential Kanban</h4>\n<p>Traditional Kanban assumes linear progression: To Do \u2192 In Progress \u2192 Done. Agentic work is fundamentally iterative: In Progress \u2192 Your Review \u2192 Claude's Turn \u2192 Your Review \u2192 Claude's Turn. The Command Center's board structure explicitly models this ping-pong pattern as its primary workflow metaphor, with \"Your Turn\" and \"Claude's Turn\" as the key columns rather than development stage columns. This maps the interface to the actual rhythm of human-AI collaboration rather than forcing agentic work into a sequential frame.</p>\n<h4 class=\"src-h4\">Business Context as Infrastructure (Agentic OS)</h4>\n<p>The Command Center is described as sitting on top of an \"Agentic OS\"\u2014a persistent knowledge layer embedded in the Claude Code environment containing brand voice, content strategy, ICP (Ideal Customer Profile) data, client details, and cross-session memory. This context layer is what separates goal-oriented management from session management: when a user submits a task, the agent can reference prior work, avoid redundancy, and make informed scoping decisions. None of the surveyed third-party tools carry this business context layer; they manage sessions in a \"complete vacuum.\"</p>\n<h4 class=\"src-h4\">Task Depth Parameterization</h4>\n<p>The Command Center introduces an explicit \"task depth\" parameter when submitting goals: quick task, campaign (multiple deliverables requiring subtask decomposition), or deep build (detailed upfront planning). This gives the user coarse-grained control over agent planning intensity without requiring technical configuration, and allows the system to calibrate how much autonomous decomposition and resource allocation to apply before returning for human review.</p>\n<p>---</p>\n<h3 class=\"src-h3\">Practical Takeaways</h3>\n<ul class=\"src-list\">\n<li>Stop managing terminals; start managing goals. If you find yourself clicking between five terminal tabs to track agent state, that's a signal to invest in a higher-abstraction management layer\u2014even a simple document tracking goal \u2192 status \u2192 last output beats raw terminal switching.</li>\n<li>Model your workflow as iterative, not sequential. When setting up any Kanban or task board for agentic work, structure columns around the human-AI feedback loop (\"Your Turn\" / \"Agent's Turn\") rather than development stages. This accurately represents where work actually lives at any given moment.</li>\n<li>Embed business context in your Claude Code environment. A CLAUDE.md or equivalent that contains brand voice, client details, and project history allows agents to make contextually aware decisions and reduces the prompt overhead per task. This context layer is the foundation that makes goal-first management possible.</li>\n<li>Parameterize planning depth explicitly. When submitting tasks to agents, specify the expected scope (quick, campaign, deep build) rather than leaving decomposition entirely implicit. This reduces over-engineering on small tasks and under-planning on complex ones.</li>\n<li>Evaluate tools by their target user, not their feature list. Developer-oriented tools (Vibe Kanban, Paperclip) may have polished UIs but wrong mental models for business users. Assess whether a tool's primary abstractions (commits, branches, org charts) match your actual workflow before adopting it.</li>\n</ul>\n<p>---</p>\n<h3 class=\"src-h3\">Notable Quotes</h3>\n<blockquote class=\"src-quote\">\"The problem isn't Claude Code. The problem is that we need to abstract one layer higher. We need to start managing goals and tasks, not managing terminals.\"</blockquote>\n<blockquote class=\"src-quote\">\"Every tool out there is solving the same problem: how do I manage multiple coding sessions? But that's not actually the problem for business users. Their question is: how do I manage multiple business goals?\"</blockquote>\n<blockquote class=\"src-quote\">\"None of these Kanban tools show anything about your business. They're just managing coding sessions in a complete vacuum.\"</blockquote>\n<p>---</p>"
+    },
+    {
+      "id": "474",
+      "type": "source",
+      "title": "How to use Claude To Gain a Huge Day Trading Edge",
+      "creator": "SMB Capital",
+      "date": "2026-03-31",
+      "tags": [
+        "prompt-engineering",
+        "meta-prompts",
+        "capability-overhang",
+        "vibe-coding"
+      ],
+      "modules": [
+        "02-prompting-and-workflows",
+        "01-foundations"
+      ],
+      "summary": "SMB Capital's presentation argues that the real edge in trading is no longer about strategy or indicators\u2014everyone has access to the same information. The true advantage is operational infrastructure: how efficiently traders prepare, build tools, and analyze performance.",
+      "url": "https://www.youtube.com/watch?v=Rqmdw4xyIMM",
+      "body_html": "<h3 class=\"src-h3\">Summary</h3>\n<p>SMB Capital's presentation argues that the real edge in trading is no longer about strategy or indicators\u2014everyone has access to the same information. The true advantage is operational infrastructure: how efficiently traders prepare, build tools, and analyze performance. The video frames AI (specifically Claude) as the democratization of the back-office and quant infrastructure that hedge funds have always had but individual traders could never afford to replicate.</p>\n<p>The video presents five workflows (two fully detailed in the transcript) that use Claude as a coding and analysis partner rather than a prediction engine. The central reframe is critical: asking AI \"what should I trade?\" is useless; asking AI to \"build this specific alert condition in Pine Script\" is transformational. The presenter uses his own journey\u2014spending two years learning to code just to reach basic proficiency\u2014to illustrate how Claude collapses that barrier entirely, enabling him to build tools in minutes that previously sat as unrealized ideas in his notebook for years.</p>\n<p>The practical instruction is grounded in prompt engineering discipline: specificity, iteration over two-week cycles, testing and verification rather than blind trust, and providing rich context. Two concrete workflows are demonstrated: (1) custom multi-condition price alerts in Trading View Pine Script, and (2) pre-market game plan automation using structured templates that analyze a watchlist with priority ranking.</p>\n<h3 class=\"src-h3\">Key Concepts</h3>\n<h4 class=\"src-h4\">Operational Infrastructure as Competitive Edge</h4>\n<p>The presenter reframes what \"edge\" means in trading. With strategies, indicators, and market data commoditized, the remaining advantage is operational\u2014how fast can you prepare, how precise are your alerts, how systematically do you analyze performance. This is the same framing applied to software development: AI doesn't give you better ideas, it removes the bottlenecks between having an idea and executing it at scale.</p>\n<h4 class=\"src-h4\">The Three-Tier Adoption Framework</h4>\n<p>The video describes a distribution relevant to any domain adopting AI: ~90% of practitioners are fully manual and slow; ~7% are using AI but in the wrong way (asking it to think for them, seeking predictions rather than building systems); ~3% are using it correctly as an infrastructure-building partner. The presenter explicitly argues the wrong usage pattern is asking AI to replace your judgment, while the right pattern is asking AI to build systems that make your judgment more effective and efficient.</p>\n<h4 class=\"src-h4\">Prompt Engineering for Functional Output</h4>\n<p>The core prompting methodology is specificity + iteration. Vague prompts like \"help me with my trading\" produce garbage. Effective prompts define the tool (Pine Script V5), enumerate each condition precisely (opening range = 9:30\u201310:00 AM ET, volume \u2265 1.5x average, price above VWAP, within first 2 hours), specify visual requirements, and define alert message content. The presenter recommends committing to a two-week iteration cycle per workflow\u2014not continuous work, but sustained refinement.</p>\n<h4 class=\"src-h4\">AI as Coding Partner, Not Oracle</h4>\n<p>The presenter is explicit that Claude is a coding and analysis partner. The wrong-way/right-way dichotomy runs throughout: wrong is using Claude as a crystal ball (\"where will SPY go?\"); right is using Claude as a quant analyst who can generate, debug, and refine code on demand. This distinction maps directly onto the broader AI-assisted development pattern: AI augments execution capacity, it does not replace domain expertise or decision-making.</p>\n<h4 class=\"src-h4\">Reusable Structured Templates</h4>\n<p>The pre-market game plan workflow demonstrates the meta-prompt pattern: building a reusable template with defined input slots (watchlist symbols, pasted headlines, pre-market data) and a specified output format (clean table, priority-sorted, with overall market context). This template gets reused daily, converting a 45\u201360 minute manual process into a 15-minute structured analysis.</p>\n<h3 class=\"src-h3\">Practical Takeaways</h3>\n<ul class=\"src-list\">\n<li>Specify fully on the first prompt: Include the tool/language, every condition with precise definitions, visual requirements, alert format, and code style preferences. A complete spec in the first message produces working code in ~30 seconds rather than requiring extensive back-and-forth to fill gaps.</li>\n</ul>\n<ul class=\"src-list\">\n<li>Commit to two-week iteration cycles: Don't expect usable output from a single exchange. Budget two weeks of iterative refinement per workflow; each iteration tightens the logic, adds filters, and improves edge-case handling. The two-year learning curve for coding collapses to two weeks of focused iteration.</li>\n</ul>\n<ul class=\"src-list\">\n<li>Always test and verify, never blind-copy: Generated code should be pasted into the target environment (Pine Editor, Think or Swim), tested against real chart data, and logically verified before relying on it for trading decisions. This is the same principle as testing AI-generated code in software development.</li>\n</ul>\n<ul class=\"src-list\">\n<li>Provide maximum context for analysis tasks: When asking Claude to analyze a trade, include the setup type, your entry rule, your exit plan, what actually happened, and the specific question you want answered. Screenshot alone = no output; full context = actionable insight.</li>\n</ul>\n<ul class=\"src-list\">\n<li>Build reusable templates, not one-off prompts: Structure recurring workflows as templates with defined input slots. A pre-market analysis template reused 250 days a year compounds dramatically more value than ad-hoc prompting.</li>\n</ul>\n<h3 class=\"src-h3\">Notable Quotes</h3>\n<blockquote class=\"src-quote\">\"The edge in trading isn't what you trade anymore. Everybody has access to the same strategies or similar strategies, the same indicators, the same information. The edge is in how efficiently you operate.\"</blockquote>\n<blockquote class=\"src-quote\">\"Claude is not a crystal ball. It's not a fortune teller. It's a coding and analysis partner. It's like those traders are using a Ferrari as if it was a golf cart.\"</blockquote>\n<blockquote class=\"src-quote\">\"My journal is so full of trading ideas, observations I've had over time, things that I wish I could do... I didn't have a giant team of quants supporting my strategies. Ultimately, it was me, and I just wasn't enough.\"</blockquote>"
+    },
+    {
+      "id": "475",
+      "type": "source",
+      "title": "Simon Willison: Engineering practices that make coding agents work - The Pragmatic Summit",
+      "creator": "The Pragmatic Engineer",
+      "date": "2026-03-19",
+      "tags": [
+        "agentic-coding",
+        "validation",
+        "prompt-engineering",
+        "ai-sdlc",
+        "security"
+      ],
+      "modules": [
+        "02-prompting-and-workflows",
+        "04-agentic-patterns",
+        "06-strategy-and-economics"
+      ],
+      "summary": "Simon Willison (co-creator of Django, creator of Datasette) describes his current developer workflow where AI coding agents write the majority of his code \u2014 and explains the engineering practices that make this viable. The conversation covers his phone-based development workflow, the \"nobody writes code, nobody reads code\" extreme being explored by teams like StrongDM, and how he thinks about trust calibration with modern models like Claude Opus 4.5.",
+      "url": "https://www.youtube.com/watch?v=owmJyKVu5f8",
+      "body_html": "<h3 class=\"src-h3\">Summary</h3>\n<p>Simon Willison (co-creator of Django, creator of Datasette) describes his current developer workflow where AI coding agents write the majority of his code \u2014 and explains the engineering practices that make this viable. The conversation covers his phone-based development workflow, the \"nobody writes code, nobody reads code\" extreme being explored by teams like StrongDM, and how he thinks about trust calibration with modern models like Claude Opus 4.5.</p>\n<p>The core thesis is that moving to agent-driven development isn't just about prompting better \u2014 it requires adopting specific engineering practices, particularly test-driven development, that give you reliable signals the code works without requiring exhaustive manual review. Willison argues that tests are now effectively free to generate, making them non-optional in any agent workflow. He also introduces a new tool he built called Showboat that produces markdown documentation of manual API testing via curl, bridging the gap between automated tests and real-world validation.</p>\n<p>Willison also addresses code quality as a deliberate choice rather than an inherent limitation: agents will follow the patterns in your codebase if that codebase is well-structured, and agents can be directed to refactor code that a human developer might let slide due to time pressure. He closes by raising prompt injection and the \"lethal trifecta\" as key security concerns when agents are given real-world capabilities.</p>\n<h3 class=\"src-h3\">Key Concepts</h3>\n<h4 class=\"src-h4\">Red-Green TDD as Agent Discipline</h4>\n<p>Willison argues that test-driven development \u2014 historically tedious for human developers \u2014 becomes a natural fit for agents. Instructing an agent to use \"red-green TDD\" (roughly five tokens) ensures it writes a failing test first, then the minimal implementation to pass it. This prevents agents from over-engineering, provides an objective completion signal, and raises the probability of getting working code significantly. The instruction is portable: all competent coding agents understand the pattern.</p>\n<h4 class=\"src-h4\">Manual Verification via Curl/Showboat</h4>\n<p>Automated test suites don't guarantee a web server will actually boot and behave correctly. Willison's practice is to instruct agents to start the server in the background and exercise the API with curl. His new tool Showboat formalizes this: the agent builds a markdown document of each curl command and its output, creating a human-readable record of manual testing that can surface bugs automated tests miss.</p>\n<h4 class=\"src-h4\">Conformance-Driven Development</h4>\n<p>For domains with existing language-agnostic test suites (e.g., WebAssembly's specification tests), you can hand the suite to an agent and instruct it to \"write code until this test suite passes.\" Where no conformance suite exists, Willison reverse-engineers one: he asks an agent to build a test suite that passes across multiple reference implementations (Go, Node.js, Django, Starlette) and then uses that synthetic spec to drive a new implementation.</p>\n<h4 class=\"src-h4\">Codebase as Agent Training Signal</h4>\n<p>Agents are highly consistent pattern-followers: they will replicate the style, structure, and idioms already present in a codebase. Willison uses cookie-cutter project templates (pre-configured with CI, testing frameworks, and a few seed tests) to ensure agents start in a constrained, high-quality context. A well-structured codebase acts as implicit few-shot context that shapes agent output quality \u2014 the same dynamic he observes in human engineering teams.</p>\n<h4 class=\"src-h4\">Code Quality as a Deliberate Choice</h4>\n<p>Poor-quality agent output is a choice, not an inevitability. If an agent produces 2,000 lines of messy code and you merge it without review, that's on you. Willison notes that agents can be directed to refactor after the fact \u2014 tasks a time-pressured human developer might skip \u2014 leading to code that is higher quality than hand-written code. The calculus shifts: the cost of refactoring is a prompt plus walking the dog, not an hour at a keyboard.</p>\n<h3 class=\"src-h3\">Practical Takeaways</h3>\n<ul class=\"src-list\">\n<li>Always start an agent session by telling it to run tests first, then use \"red-green TDD\" in the prompt. This is low-cost (five tokens), broadly understood by modern agents, and substantially improves output reliability.</li>\n<li>Add a curl-based smoke test step after automated tests pass: instruct the agent to start the server and exercise endpoints, capturing output. This catches runtime failures that unit tests miss.</li>\n<li>Invest in project templates (e.g., cookie-cutter) that encode your preferred test structure, CI setup, and a few seed tests. Agents will inherit and extend these patterns consistently.</li>\n<li>Treat code quality as a post-generation concern you actively direct: spot a suboptimal pattern in agent output, feed it back as a refactoring prompt. The marginal cost of agent refactoring is low; the marginal cost of tech debt is not.</li>\n<li>For disposable one-off tools (single-page HTML/JS, quick scripts), don't over-review \u2014 code quality genuinely doesn't matter if the artifact is ephemeral. Reserve careful review for maintained codebases.</li>\n</ul>\n<h3 class=\"src-h3\">Notable Quotes</h3>\n<blockquote class=\"src-quote\">\"Tests are no longer even remotely optional. Tests are step one in getting good results out of them.\"</blockquote>\n<blockquote class=\"src-quote\">\"Having poor quality code from an agent is a choice that you make. Like if the agent spits out 2,000 lines of bad code and you choose to ignore it, that's on you.\"</blockquote>\n<blockquote class=\"src-quote\">\"It's almost like you can reverse-engineer six implementations of a standard to get a new standard and then you can implement the standard.\"</blockquote>"
+    },
+    {
+      "id": "476",
+      "type": "source",
+      "title": "Chroma Context-1 | A 20B Agentic Search Model",
+      "creator": "Chroma",
+      "date": "2026-03-26",
+      "tags": [
+        "multi-agent",
+        "agentic-coding",
+        "context-engineering",
+        "ai-landscape",
+        "validation"
+      ],
+      "modules": [
+        "04-agentic-patterns",
+        "05-team-orchestration",
+        "01-foundations"
+      ],
+      "summary": "Chroma introduces Context-1, a 20 billion parameter open-weights model purpose-built for agentic search tasks. The model achieves frontier-level retrieval performance comparable to models an order of magnitude larger (e.g., GPT-4-class systems) while operating at significantly lower cost and latency.",
+      "url": "https://www.youtube.com/watch?v=4sAJLLWPAh4",
+      "body_html": "<h3 class=\"src-h3\">Summary</h3>\n<p>Chroma introduces Context-1, a 20 billion parameter open-weights model purpose-built for agentic search tasks. The model achieves frontier-level retrieval performance comparable to models an order of magnitude larger (e.g., GPT-4-class systems) while operating at significantly lower cost and latency. It is released alongside an agentic search benchmark and the full synthetic data generation pipeline used to train it, making this a significant open contribution to the search-agent ecosystem.</p>\n<p>The core insight is that agentic search\u2014iterative LLM-driven loops using search and document-reading tools\u2014is now a fundamental subtask in many agentic workflows, including coding agents. Context-1 is designed as a search sub-agent that retrieves relevant documents for a downstream answering model rather than answering questions directly. The model is evaluated on recall and precision (via F1), with an emphasis on recall since missing a critical document is unrecoverable downstream. Training combines supervised fine-tuning on teacher-generated rollouts with on-policy reinforcement learning using GRPO-style optimization.</p>\n<p>Three emergent behaviors distinguish Context-1 from its base model: parallel tool calling (issuing multiple search queries per turn rather than sequentially), more deliberate upfront planning, and aggressive use of a pruning tool to remove irrelevant context and extend effective search range. These behaviors arise naturally from the harness design and reward structure, not from explicit behavioral constraints\u2014a strong signal that the training incentives are well-aligned with search quality.</p>\n<h3 class=\"src-h3\">Key Concepts</h3>\n<h4 class=\"src-h4\">Agentic Search as a Multi-Hop Retrieval Loop</h4>\n<p>Unlike single-shot retrieval where one query produces a fixed document set, agentic search is an iterative loop: the agent searches, reads results, forms new hypotheses, and searches again. Each step depends on what was discovered previously (multi-hop). Context-1 is given four tools\u2014search (hybrid sparse+dense vector search), grab (regex pattern matching for specific facts), read_document (full document retrieval by ID), and prune (context pruning)\u2014and operates in a loop until it outputs a final ranked document set.</p>\n<h4 class=\"src-h4\">Context Management via the Prune Tool</h4>\n<p>In multi-turn search, context accumulates rapidly as documents are retrieved. Context-1's prune tool allows the agent to actively remove irrelevant chunks from its context window, keeping attention focused and enabling longer search trajectories without hitting context limits. The model is made aware of its current token count to inform pruning decisions. This is a practical pattern for any agentic system that accumulates tool outputs over many turns.</p>\n<h4 class=\"src-h4\">Curriculum Learning: Recall-First, Precision-Later</h4>\n<p>Training uses a two-phase curriculum. Early training biases toward single-hop tasks with recall-heavy rewards, encouraging broad exploration and document discovery. As training progresses, harder multi-hop tasks are introduced and the reward objective shifts toward balanced F1 (precision + recall), teaching the model to be selective rather than just thorough. This staged approach prevents premature optimization for precision at the cost of coverage.</p>\n<h4 class=\"src-h4\">Synthetic Data Generation with LLM-as-Judge Verification</h4>\n<p>Training data is generated synthetically across four domains (web, finance, legal, email). Each task is constructed from supporting documents \u2192 clues \u2192 question/answer. Crucially, an LLM judge verifies that supporting documents actually support the clues and that no other corpus documents also contain the answer (preventing false negatives). Human labels are used to calibrate the judge prompt until high alignment is achieved, then the verified pipeline scales to thousands of tasks without ongoing human labeling effort.</p>\n<h4 class=\"src-h4\">GRPO-Style On-Policy RL with Within-Group Centering</h4>\n<p>After supervised fine-tuning on teacher rollouts, Context-1 is trained with reinforcement learning using GRPO (Group Relative Policy Optimization). Multiple independent rollouts are generated per query; rewards are compared within the group so the model learns which strategies outperform others on the same task rather than against an absolute standard. Groups where all rollouts score identically are discarded (no learning signal). SISO (a clipped importance-sampling variant) is used for stability and to prevent entropy collapse over long training runs.</p>\n<h3 class=\"src-h3\">Practical Takeaways</h3>\n<ul class=\"src-list\">\n<li>Parallel tool calling is a trainable behavior: Context-1 learns to issue multiple search queries per turn rather than sequentially\u2014doing more work per step and converging in fewer turns. When designing agentic systems, structuring harnesses to reward parallel actions can meaningfully reduce end-to-end latency.</li>\n<li>Prune as a first-class agent action: Giving agents an explicit tool to remove their own context (rather than truncating passively) enables longer, more focused search trajectories. This pattern is directly applicable to coding agents, research agents, or any system where tool outputs accumulate across turns.</li>\n<li>Sub-agent specialization beats generalist answering: Context-1 doesn't answer questions\u2014it only retrieves documents. Separating the search role from the answer role allows the search agent to be optimized purely on retrieval metrics (recall/precision) without conflating objectives. This mirrors the builder/validator separation seen in coding agent architectures.</li>\n<li>Recall before precision in reward design: For search tasks where missing evidence is catastrophic downstream, weighting recall more heavily in early training (and in the reward function generally) is a principled choice. Only shift toward precision once the model reliably covers the relevant document space.</li>\n<li>LLM-judge calibration enables scalable data verification: Manually labeling a subset to calibrate an LLM judge, then using the judge at scale, is a practical and reproducible approach to synthetic data quality control for agentic training pipelines.</li>\n</ul>\n<h3 class=\"src-h3\">Notable Quotes</h3>\n<blockquote class=\"src-quote\">\"Context one operates as a search sub agent. It does not answer questions directly but searches a corpus to retrieve supporting documents for an answering model.\"</blockquote>\n<blockquote class=\"src-quote\">\"Parallel searching, planning, and pruning\u2014these behaviors are strong evidence that the model is improving at the process of search. Importantly, they emerge naturally from a harness design and the incentives in the training reward.\"</blockquote>\n<blockquote class=\"src-quote\">\"We intentionally weigh recall more heavily because if a critical document is missing, the downstream model can't recover that information.\"</blockquote>"
+    },
+    {
+      "id": "477",
+      "type": "source",
+      "title": "What\u2019s new in Gemma 4",
+      "creator": "Google for Developers",
+      "date": "2026-04-02",
+      "tags": [
+        "ai-landscape",
+        "agentic-coding",
+        "enterprise-ai",
+        "context-engineering",
+        "security"
+      ],
+      "modules": [
+        "01-foundations",
+        "04-agentic-patterns",
+        "06-strategy-and-economics"
+      ],
+      "summary": "Google DeepMind announced Gemma 4, a family of open models designed to run locally on developer-owned hardware \u2014 phones, laptops, and desktops. The release marks a significant shift: for the first time, Google is releasing a Gemma model under an Apache 2.0 open-source license, lowering the barrier for commercial use and enterprise adoption.",
+      "url": "https://www.youtube.com/watch?v=jZVBoFOJK-Q",
+      "body_html": "<h3 class=\"src-h3\">Summary</h3>\n<p>Google DeepMind announced Gemma 4, a family of open models designed to run locally on developer-owned hardware \u2014 phones, laptops, and desktops. The release marks a significant shift: for the first time, Google is releasing a Gemma model under an Apache 2.0 open-source license, lowering the barrier for commercial use and enterprise adoption. With over 400 million downloads and 100,000 variants of previous Gemma models in the wild, this release responds directly to community demand for more capable, more open, and more deployable local models.</p>\n<p>The model family spans four variants targeting different deployment contexts. The 26B mixture-of-experts (MoE) and 31B dense models are designed for personal computers, offering frontier-level reasoning and coding locally. The 2B and 4B \"Effective\" models target mobile and IoT devices, featuring combined audio and vision support for real-time processing and native support for over 140 languages. The larger models support context windows up to 250,000 tokens, enabling full codebase analysis and multi-turn agentic workflows.</p>\n<p>A central design theme across the family is agentic readiness \u2014 native tool use, multi-step planning, and complex reasoning optimized for token efficiency. Google positions Gemma 4 as infrastructure for enterprise agentic pipelines, backed by the same security protocols applied to their proprietary Gemini models.</p>\n<h3 class=\"src-h3\">Key Concepts</h3>\n<h4 class=\"src-h4\">Apache 2.0 Licensing as a Strategic Inflection Point</h4>\n<p>Previous Gemma models used a custom license that restricted certain commercial uses. The move to Apache 2.0 removes those friction points, making Gemma 4 far more viable for enterprise products, commercial derivatives, and open-source projects. This is a direct competitive response to the permissive licensing of models like Meta's Llama series.</p>\n<h4 class=\"src-h4\">MoE vs. Dense: Tradeoff-Aware Model Design</h4>\n<p>The 26B MoE model activates only 3.8B parameters per inference pass, making it significantly faster and more memory-efficient than its parameter count suggests. The 31B dense model trades that speed for output quality. This explicit tradeoff framing helps developers match model choice to workload: latency-sensitive agentic pipelines vs. quality-critical code generation tasks.</p>\n<h4 class=\"src-h4\">On-Device Multimodal Intelligence</h4>\n<p>The 2B and 4B Effective models combine audio and vision processing with multilingual support (140+ languages) in a form factor small enough for mobile and IoT deployment. This enables real-time multimodal agents that can operate entirely on-device, without data leaving the user's environment \u2014 a meaningful capability for privacy-sensitive enterprise and consumer use cases.</p>\n<h4 class=\"src-h4\">Context Window Scale for Agentic Use Cases</h4>\n<p>The larger Gemma 4 models support up to 250,000-token context windows. At that scale, entire codebases or extended multi-turn agentic conversation histories fit within a single context, reducing the need for complex retrieval pipelines or context compression strategies when running local agentic workflows.</p>\n<h4 class=\"src-h4\">Security Parity with Proprietary Models</h4>\n<p>Google explicitly claims Gemma 4 undergoes the same security evaluation protocols as their closed Gemini models. For enterprises building on open-weight models, this is a meaningful trust signal \u2014 addressing a common objection that open models lack the safety vetting of proprietary alternatives.</p>\n<h3 class=\"src-h3\">Practical Takeaways</h3>\n<ul class=\"src-list\">\n<li>Local agentic pipelines are now more viable: The 26B MoE's 3.8B activated parameter count means fast, capable inference on consumer hardware without API costs or data egress \u2014 directly relevant for building private coding agents or multi-step task automation.</li>\n<li>Apache 2.0 removes the licensing blocker: Teams that previously avoided Gemma for commercial products can now use Gemma 4 weights freely; worth revisiting any prior \"we can't use this\" decisions.</li>\n<li>Match model to deployment target: Use 26B MoE for speed-sensitive local desktop/laptop agents; 31B dense for quality-sensitive tasks; 2B/4B Effective for mobile or embedded scenarios.</li>\n<li>250K context window changes codebase analysis locally: For developers using context engineering approaches with full-repo context, Gemma 4's window size enables on-device workflows previously requiring cloud API calls.</li>\n<li>Multilingual + multimodal in tiny form factor: The Effective models' 140-language support and combined audio/vision opens up agent development for non-English markets and voice/vision interface patterns without cloud dependency.</li>\n</ul>\n<h3 class=\"src-h3\">Notable Quotes</h3>\n<blockquote class=\"src-quote\">\"For the first time ever, we are releasing Gemini under an open-source Apache 2.0 license.\"</blockquote>\n<blockquote class=\"src-quote\">\"You can run state-of-the-art local reasoning and coding pipeline without needing to upload data outside of your controlled environment.\"</blockquote>\n<blockquote class=\"src-quote\">\"As open models become more central to enterprise infrastructure, security is paramount.\"</blockquote>"
+    },
+    {
+      "id": "478",
+      "type": "source",
+      "title": "How Context Windows Actually Work",
+      "creator": "Claudius Papirus",
+      "date": "2026-03-30",
+      "tags": [
+        "context-engineering",
+        "ai-landscape",
+        "infrastructure"
+      ],
+      "modules": [
+        "01-foundations",
+        "03-claude-code-essentials"
+      ],
+      "summary": "This video provides a technical foundation for understanding context windows in large language models \u2014 what they are, how they evolved, and crucially, why their limitations matter more than their size. The narrator (voiced by the AI model itself) explains that a context window is not memory but working memory: everything in it is visible for the duration of a session, and then it vanishes entirely.",
+      "url": "https://www.youtube.com/watch?v=BUE6YPuMaa0",
+      "body_html": "<h3 class=\"src-h3\">Summary</h3>\n<p>This video provides a technical foundation for understanding context windows in large language models \u2014 what they are, how they evolved, and crucially, why their limitations matter more than their size. The narrator (voiced by the AI model itself) explains that a context window is not memory but working memory: everything in it is visible for the duration of a session, and then it vanishes entirely. The desk analogy is central \u2014 the model can reach for anything on its desk while working, but the desk has hard edges, has no overflow storage, and gets wiped clean between sessions.</p>\n<p>The video traces context window growth from GPT-2's 1,024 tokens in 2019 to Claude's current 1 million tokens \u2014 a 2,000x expansion in five years \u2014 explaining both why windows stayed small for so long (the quadratic cost of self-attention) and how engineering solutions like distributed KV caching made large windows viable. This history sets up the key tension: bigger windows solved the engineering problem but left a deeper problem untouched.</p>\n<p>The most practically important section covers two failure modes that persist regardless of window size. The \"lost in the middle\" phenomenon (Stanford, 2023) showed a 20-point accuracy drop when critical information sits in the middle of a long context rather than at the beginning or end. A 2025 study of 18 frontier models found that even modern models exhibit \"context rot\" \u2014 their reasoning ability degrades as context grows, even when they successfully locate the relevant information. A million-token window means the model can see everything; it doesn't mean it's paying attention to all of it.</p>\n<h3 class=\"src-h3\">Key Concepts</h3>\n<h4 class=\"src-h4\">The Desk Analogy (Context vs. Memory)</h4>\n<p>A context window is everything the model can see simultaneously during one session: user messages, conversation history, pasted documents, and system instructions. It behaves like a desk \u2014 accessible while work is happening, but cleared completely when the session ends. This is fundamentally different from memory. Memory persists; context doesn't. The model neither learns from conversations (frozen parameters) nor retains the experience of them (cleared context). These are two sides of the same coin.</p>\n<h4 class=\"src-h4\">Quadratic Cost of Self-Attention</h4>\n<p>The transformer architecture requires every token to compute relevance against every other token in the sequence (self-attention). This means doubling the input quadruples the work. At 1,000 tokens: ~1 million comparisons. At 10,000: ~100 million. At 100,000: ~10 billion. This quadratic scaling is why context windows stayed small for years \u2014 not because small windows were considered sufficient, but because the math made larger ones prohibitively expensive. Engineering solutions (distributing computation across many GPUs, KV cache optimization) made million-token windows tractable, but the fundamental scaling relationship doesn't disappear.</p>\n<h4 class=\"src-h4\">KV Cache Bottleneck</h4>\n<p>When the model generates each new token, it stores intermediate calculations for all previous tokens in a KV (key-value) cache, avoiding redundant recomputation. This is efficient at small scales, but the cache grows linearly with context length. At long enough contexts, the KV cache can rival or exceed the model's own memory footprint. At a million tokens, the cache \u2014 not the model's intelligence \u2014 becomes the primary bottleneck.</p>\n<h4 class=\"src-h4\">Lost in the Middle Effect</h4>\n<p>A 2023 Stanford study found that model accuracy on a retrieval task dropped ~20 percentage points when the relevant document was placed in the middle of the context versus at the beginning or end. This U-shaped attention distribution \u2014 strong at primacy and recency, weak in the middle \u2014 held across GPT-3.5, GPT-4, Claude, and open-source models. It's not a bug; it's a structural property of how attention operates over long sequences, and it mirrors well-documented human primacy/recency effects.</p>\n<h4 class=\"src-h4\">Context Rot</h4>\n<p>Beyond retrieval failures, a 2025 study of 18 frontier models found that reasoning quality degrades as context grows, even when the model successfully locates the relevant information. The needle-in-a-haystack benchmark (placing a target sentence at varying depths in varying document lengths) became a standard lab benchmark that most modern models now pass. But passing retrieval doesn't mean intact reasoning \u2014 the ability to think clearly about found information still breaks down at scale. The researchers labeled this \"context rot.\"</p>\n<h3 class=\"src-h3\">Practical Takeaways</h3>\n<ul class=\"src-list\">\n<li>Front-load critical information. Given the lost-in-the-middle effect, place the most important instructions, constraints, or facts at the beginning (or end) of your context, not buried in the middle. This applies to system prompts, document pastes, and conversation structure.</li>\n<li>Don't conflate window size with reliability. A 1M-token context window is a capability ceiling, not a performance guarantee. For long-context tasks, expect reasoning quality to degrade as the window fills \u2014 plan accordingly with summarization, chunking, or structured retrieval rather than assuming the model retains everything equally.</li>\n<li>Context clears between sessions; plan for it. Any workflow requiring continuity across sessions (ongoing projects, iterative development, multi-session tasks) must externalize memory explicitly \u2014 through notes, structured state files, or retrieval systems. The model cannot be relied upon to \"remember\" prior sessions.</li>\n<li>The needle-in-haystack benchmark is insufficient. When evaluating models for long-context applications, retrieval accuracy alone doesn't tell you whether reasoning quality holds up. Look for evidence of performance on multi-step reasoning tasks at long context lengths, not just document retrieval scores.</li>\n<li>Context engineering matters more as windows grow. Counterintuitively, larger context windows increase the importance of deliberate context management. More room means more opportunity for context rot to degrade the model's effective reasoning. Keeping context lean and well-structured remains valuable even when size isn't the constraint.</li>\n</ul>\n<h3 class=\"src-h3\">Notable Quotes</h3>\n<blockquote class=\"src-quote\">\"A million tokens means I can see everything you've given me. It doesn't mean I'm paying attention to all of it.\"</blockquote>\n<blockquote class=\"src-quote\">\"Finding the needle is easy. Thinking clearly when there's 100,000 other tokens in the room \u2014 that's the part that still breaks.\"</blockquote>\n<blockquote class=\"src-quote\">\"The industry spent five years expanding context windows 2,000 times over from one email to 10 novels. And the models still lose track of what's in the middle. We kept building a bigger desk. The problem wasn't the size of the desk. It was what happens when you put too much on it.\"</blockquote>"
+    },
+    {
+      "id": "479",
+      "type": "source",
+      "title": "Amp Code Founder on future of Coding Agents",
+      "creator": "Mayank Gupta",
+      "date": "2026-04-02",
+      "tags": [
+        "agentic-coding",
+        "enterprise-ai",
+        "ai-landscape",
+        "ai-economics",
+        "revenue-per-employee"
+      ],
+      "modules": [
+        "01-foundations",
+        "06-strategy-and-economics"
+      ],
+      "summary": "Quinn Slack, co-founder of Sourcegraph and the AMP coding agent, traces his path from early engineering roles at Bleacher Report and Palanteer to founding Sourcegraph in 2013 with code search as the wedge toward eventual development automation. The interview reveals how Sourcegraph's enterprise customer base (four of six top US banks, nine of ten top public software companies) gave them an unusually clear view of enterprise AI adoption dynamics\u2014including the painful lesson that customers who praised their security compliance work were simultaneously choosing Cursor instead.",
+      "url": "https://www.youtube.com/watch?v=_L8xxUXOTk0",
+      "body_html": "<h3 class=\"src-h3\">Summary</h3>\n<p>Quinn Slack, co-founder of Sourcegraph and the AMP coding agent, traces his path from early engineering roles at Bleacher Report and Palanteer to founding Sourcegraph in 2013 with code search as the wedge toward eventual development automation. The interview reveals how Sourcegraph's enterprise customer base (four of six top US banks, nine of ten top public software companies) gave them an unusually clear view of enterprise AI adoption dynamics\u2014including the painful lesson that customers who praised their security compliance work were simultaneously choosing Cursor instead.</p>\n<p>That experience radicalized their product philosophy. AMP was deliberately spun off as a 20-person profitable team with no salespeople, no roadmap commitments, and no enterprise checkbox-ticking. The explicit strategy is to serve only the 15\u201320% of developers within a given company who want frontier capability at frontier cost, rather than building a watered-down product that can be deployed to 100% of a company's engineers. Quinn argues that trying to capture the full market would require stabilizing the product in ways that would cause it to fall behind\u2014a fatal tradeoff in a space where the underlying models change continuously.</p>\n<p>The conversation also covers Quinn's view that traditional packaged software is structurally dead, that coding agents as a category label is increasingly obsolete as the capability becomes ambient, and that AI's most profound impact on developers is eliminating the intermediaries between builders and their end users\u2014restoring the tight feedback loop between coder and customer that he identifies as the core of great software development.</p>\n<p>---</p>\n<h3 class=\"src-h3\">Key Concepts</h3>\n<h4 class=\"src-h4\">Frontier-Only Positioning as Enterprise Strategy</h4>\n<p>AMP explicitly does not try to serve all developers within an enterprise. Quinn recommends that large banks use GitHub Copilot for the majority of their developers, while AMP serves only the 15\u201320% who want maximum capability and are willing to absorb unpredictable token-based costs. The logic is that building for 100% adoption requires feature and cost compromises that would make the product fall behind competitors who remain unconstrained. This is a direct inversion of typical enterprise SaaS land-and-expand strategy.</p>\n<h4 class=\"src-h4\">The Gap Between Enterprise Rhetoric and Buying Behavior</h4>\n<p>Sourcegraph's Cody product exposed a structural trap: enterprise customers would spend nine months praising a vendor's security partnership, complete every compliance checkbox, and then choose a competitor anyway. Quinn frames this as customers saying one thing (we need all these enterprise controls) and doing another (we'll pay for the best product regardless). The lesson is that optimizing for stated procurement criteria rather than product quality is a losing strategy in fast-moving AI markets.</p>\n<h4 class=\"src-h4\">Coding Agents as Transitional Label</h4>\n<p>Quinn made a provocative claim that \"coding agents are dead\" before clarifying the intent: the category label is becoming obsolete because agentic coding capability is becoming the baseline expectation rather than a distinct product tier. The underlying point is that the framing of \"agent\" is a temporary scaffold during a transition period, not a durable product category.</p>\n<h4 class=\"src-h4\">Small Team + Profitability as Speed Advantage</h4>\n<p>AMP runs as a 20-person team spun out from Sourcegraph, self-service only, currently profitable. Quinn explicitly frames the small size as a competitive moat against both larger incumbents and the AI labs themselves: \"We can change way faster than any of the labs.\" The argument is that in a market where the underlying technology changes continuously, organizational speed is the primary durable advantage.</p>\n<h4 class=\"src-h4\">AI Eliminating Builder-Customer Intermediaries</h4>\n<p>Quinn's deepest claim about AI's impact is structural: most software engineers today are separated from their end users by layers of product managers, project managers, and process. AI coding tools promise to compress that stack, giving more developers the tight feedback loop between building and customer reaction that he associates with exceptional outcomes. This is framed not as job destruction but as a restoration of craft.</p>\n<p>---</p>\n<h3 class=\"src-h3\">Practical Takeaways</h3>\n<ul class=\"src-list\">\n<li>Don't try to serve all user segments equally. Identify the subset of users who genuinely want frontier capability and design exclusively for them; building for median adoption in an enterprise context produces a product that loses to more focused competitors.</li>\n<li>Distinguish customer stated needs from purchasing behavior. Enterprise procurement criteria (security, compliance, price predictability) are necessary but not sufficient\u2014actual purchasing decisions in fast-moving AI markets increasingly reward product quality over checkbox completion.</li>\n<li>Small, profitable, self-service structures outmaneuver large sales-driven organizations when the product surface changes faster than a sales cycle. Removing salespeople and roadmap commitments is a feature, not a limitation, in this environment.</li>\n<li>Token-based variable pricing (charging pass-through on model costs rather than fixed seat prices) is a viable model for frontier AI products\u2014it signals commitment to always using the best models without being constrained by margin protection on a fixed price.</li>\n<li>Traditional packaged software companies face structural obsolescence. The model of building software once and licensing it broadly is under pressure from AI-generated custom solutions; builders should orient toward services and outcomes rather than static product licenses.</li>\n</ul>\n<p>---</p>\n<h3 class=\"src-h3\">Notable Quotes</h3>\n<blockquote class=\"src-quote\">\"We would have customers that said, 'You guys are the best partners ever. Thank you so much for working with us for nine months to get every single security detail checked off. And by the way, we're going with Cursor.' And it's like\u2014I got radicalized.\"</blockquote>\n<blockquote class=\"src-quote\">\"We don't want 100% of your devs using AMP. There's some big banks where they've got 15\u201320% of their devs using AMP and the rest we say use GitHub Copilot. We would not try to make AMP watered down so that it could meet the needs of 100% of devs inside of a big company.\"</blockquote>\n<blockquote class=\"src-quote\">\"What AI promises is for more people that have that ability to build and know what to build\u2014have a taste\u2014to be closer to the market, because they don't need those middlemen anymore. And that is incredible.\"</blockquote>\n<p>---</p>"
+    },
+    {
+      "id": "480",
+      "type": "source",
+      "title": "The AI Gold Rush: It Still Takes Teams",
+      "creator": "Norbert Korny",
+      "date": "2026-03-31",
+      "tags": [
+        "ai-hype",
+        "enterprise-ai",
+        "ai-sdlc",
+        "ai-landscape",
+        "capability-overhang"
+      ],
+      "modules": [
+        "01-foundations",
+        "06-strategy-and-economics"
+      ],
+      "summary": "A conversation between Sean Murphy and Jeff Allison \u2014 both multi-decade Silicon Valley veterans \u2014 hosted by Norbert Korny exploring what AI actually means for engineering organizations in 2026. The central thesis: AI tools are currently being adopted at the individual level, but the real competitive advantage will come from teams that figure out how to leverage AI collectively.",
+      "url": "https://www.youtube.com/watch?v=HXsgYMBrai8",
+      "body_html": "<h3 class=\"src-h3\">Summary</h3>\n<p>A conversation between Sean Murphy and Jeff Allison \u2014 both multi-decade Silicon Valley veterans \u2014 hosted by Norbert Korny exploring what AI actually means for engineering organizations in 2026. The central thesis: AI tools are currently being adopted at the individual level, but the real competitive advantage will come from teams that figure out how to leverage AI collectively. The hosts push back against the dominant \"AI replaces headcount\" narrative, arguing instead that the history of technology adoption shows cost reduction is just the entry point \u2014 the real value emerges when novel organizational structures and workflows develop around the new capability.</p>\n<p>The discussion draws heavily on historical analogies \u2014 the gold rush (individual panning vs. industrial extraction), the Edison/Westinghouse competition, and the introduction of electricity \u2014 to argue that we are still in an early, artisanal phase of AI adoption. Most organizations have deployed models without clear use cases, akin to having new instruments but not yet knowing how to play them. The guests express concern that the current discourse focuses too heavily on individual productivity gains while neglecting the harder, more important question of team-level integration.</p>\n<p>A recurring theme is that improvements in one part of the development pipeline can expose bottlenecks elsewhere \u2014 the hardware automation analogy being instructive: getting fast at generating gates only revealed how inadequate testing methodologies were. The same dynamic is expected with AI-assisted development: speed gains in coding will surface new constraints in specification, testing, review, and organizational absorption of change.</p>\n<p>---</p>\n<h3 class=\"src-h3\">Key Concepts</h3>\n<h4 class=\"src-h4\">Teams Build Products, Not Just Individuals</h4>\n<p>The guests repeatedly emphasize that individual productivity gains are insufficient for organizational transformation. Improving one engineer's output by 10x may represent only 10% of the overall product development cycle; the remaining 90% \u2014 integration, review, testing, coordination \u2014 can become the new bottleneck. The gold rush metaphor is instructive: individual gold panning eventually gave way to industrial extraction requiring coordinated teams. AI adoption will follow the same arc.</p>\n<h4 class=\"src-h4\">The Gentleman Science Phase</h4>\n<p>The hosts describe the current moment as an \"age of gentleman science\" \u2014 individual tinkerers and amateurs exploring AI capabilities without clear industrial use cases. The major AI companies have deployed models ahead of understanding their applications, and the ecosystem is still discovering what these tools are actually good for. This parallels early electricity adoption, where the technology existed before the organizational and engineering knowledge to deploy it effectively at scale.</p>\n<h4 class=\"src-h4\">Cost Reduction \u2192 Increased Use \u2192 Novel Structures</h4>\n<p>A historical pattern of technology adoption: new tools enter organizations as cost-reduction plays (often sold to CFOs), which drives broader use, which eventually produces entirely new workflows and organizational forms that weren't anticipated at the outset. The guests argue AI is currently at the \"time savings at individual level\" stage and hasn't yet catalyzed the novel team structures that will define the next phase. Layoff narratives (e.g., Block's 40% reduction) are characterized as masking other strategic decisions rather than representing genuine AI-driven transformation.</p>\n<h4 class=\"src-h4\">Consumer-to-Enterprise Gap</h4>\n<p>Transitioning AI tools from individual/consumer use to enterprise development pipelines requires substantially higher standards: reliability, infrastructure, support, revision control, standards compliance, and compatibility with existing organizational architectures. The guests note that centralized enterprises and distributed small-team organizations face very different integration challenges. This gap is underappreciated in current discourse, which tends to assume that what works for an individual developer scales straightforwardly to a 10,000-person organization.</p>\n<h4 class=\"src-h4\">Augmentation Over Replacement</h4>\n<p>Drawing on Douglas Engelbart's framing, Sean Murphy argues the correct mental model is augmenting the intellect of people who are already good at their jobs \u2014 helping them develop and extend expertise \u2014 rather than replacing them. He notes that Nvidia, a company deeply invested in AI infrastructure, is not publicly planning layoffs; the companies making those moves are doing so for reasons that predate AI. The goal should be helping teams become more innovative, not just more efficient.</p>\n<p>---</p>\n<h3 class=\"src-h3\">Practical Takeaways</h3>\n<ul class=\"src-list\">\n<li>Audit the full development cycle before claiming AI wins: If AI speeds up code generation but the team's testing, review, or deployment processes remain unchanged, the net impact on shipping time may be minimal or negative. Map the whole cycle before optimizing one piece.</li>\n<li>Team-level adoption requires explicit process work: Introducing AI tools to individuals is easy; integrating them into team workflows requires agreement on standards, handoffs, and quality gates \u2014 the same change management discipline that accompanied previous waves of automation.</li>\n<li>Use real, hard problems as the validation test: The Westinghouse model \u2014 pick a genuinely difficult problem and solve it fully \u2014 is more valuable than chasing incremental announcements. Avoid FOMO-driven tool adoption without a concrete use case that proves enterprise-grade performance.</li>\n<li>Expect AI speed gains to expose downstream bottlenecks: As with hardware design automation (faster gate generation revealed testing gaps), moving faster with AI-assisted development will surface weaknesses in adjacent processes. Plan for these second-order effects rather than being surprised by them.</li>\n<li>Treat \"AI replacing headcount\" narratives with skepticism: Mass layoffs attributed to AI efficiency often reflect prior organizational decisions. The organizations likely to benefit most are those investing in teams and using AI to extend what those teams can accomplish.</li>\n</ul>\n<p>---</p>\n<h3 class=\"src-h3\">Notable Quotes</h3>\n<blockquote class=\"src-quote\">\"Teams develop products, not just individuals. So whenever you're bringing in something new, it's how does that work within a team? It's great to have you being more efficient in one area, but that may be 10% of the overall product development cycle. You've just improved there, but the 90% of it may slow down.\"</blockquote>\n<blockquote class=\"src-quote\">\u2014 Jeff Allison</blockquote>\n<blockquote class=\"src-quote\">\"My model has always been going back to Engelbart \u2014 the augmentation of human intellect, not the replacement. The trick is to augment people that are good at their jobs to help them develop and extend their expertise.\"</blockquote>\n<blockquote class=\"src-quote\">\u2014 Sean Murphy</blockquote>\n<blockquote class=\"src-quote\">\"We're still in the panning for gold phase. We haven't figured out how to actually even really facilitate a team of six to twelve, it seems.\"</blockquote>\n<blockquote class=\"src-quote\">\u2014 Sean Murphy</blockquote>\n<p>---</p>"
+    },
+    {
       "id": "tag:agent-teams",
       "type": "tag",
       "label": "agent-teams",
-      "count": 48
+      "count": 49
     },
     {
       "id": "tag:agentic-coding",
       "type": "tag",
       "label": "agentic-coding",
-      "count": 205
+      "count": 211
     },
     {
       "id": "tag:agentic-patterns",
@@ -9605,19 +9833,19 @@
       "id": "tag:ai-economics",
       "type": "tag",
       "label": "ai-economics",
-      "count": 118
+      "count": 120
     },
     {
       "id": "tag:ai-hype",
       "type": "tag",
       "label": "ai-hype",
-      "count": 157
+      "count": 159
     },
     {
       "id": "tag:ai-landscape",
       "type": "tag",
       "label": "ai-landscape",
-      "count": 188
+      "count": 194
     },
     {
       "id": "tag:ai-safety",
@@ -9629,7 +9857,7 @@
       "id": "tag:ai-sdlc",
       "type": "tag",
       "label": "ai-sdlc",
-      "count": 77
+      "count": 79
     },
     {
       "id": "tag:anthropic",
@@ -9647,7 +9875,7 @@
       "id": "tag:capability-overhang",
       "type": "tag",
       "label": "capability-overhang",
-      "count": 57
+      "count": 60
     },
     {
       "id": "tag:career-collapse",
@@ -9665,13 +9893,13 @@
       "id": "tag:claude-code",
       "type": "tag",
       "label": "claude-code",
-      "count": 149
+      "count": 150
     },
     {
       "id": "tag:context-engineering",
       "type": "tag",
       "label": "context-engineering",
-      "count": 135
+      "count": 140
     },
     {
       "id": "tag:cursor",
@@ -9683,13 +9911,13 @@
       "id": "tag:enterprise-ai",
       "type": "tag",
       "label": "enterprise-ai",
-      "count": 125
+      "count": 129
     },
     {
       "id": "tag:infrastructure",
       "type": "tag",
       "label": "infrastructure",
-      "count": 56
+      "count": 58
     },
     {
       "id": "tag:mcp",
@@ -9701,13 +9929,13 @@
       "id": "tag:meta-prompts",
       "type": "tag",
       "label": "meta-prompts",
-      "count": 17
+      "count": 18
     },
     {
       "id": "tag:multi-agent",
       "type": "tag",
       "label": "multi-agent",
-      "count": 116
+      "count": 118
     },
     {
       "id": "tag:openai",
@@ -9719,25 +9947,25 @@
       "id": "tag:prompt-engineering",
       "type": "tag",
       "label": "prompt-engineering",
-      "count": 60
+      "count": 63
     },
     {
       "id": "tag:revenue-per-employee",
       "type": "tag",
       "label": "revenue-per-employee",
-      "count": 5
+      "count": 6
     },
     {
       "id": "tag:security",
       "type": "tag",
       "label": "security",
-      "count": 82
+      "count": 84
     },
     {
       "id": "tag:skills",
       "type": "tag",
       "label": "skills",
-      "count": 68
+      "count": 69
     },
     {
       "id": "tag:skills-ecosystem",
@@ -9755,19 +9983,19 @@
       "id": "tag:task-system",
       "type": "tag",
       "label": "task-system",
-      "count": 16
+      "count": 17
     },
     {
       "id": "tag:validation",
       "type": "tag",
       "label": "validation",
-      "count": 39
+      "count": 41
     },
     {
       "id": "tag:vibe-coding",
       "type": "tag",
       "label": "vibe-coding",
-      "count": 94
+      "count": 96
     },
     {
       "id": "mod:01-foundations",
@@ -29286,6 +29514,376 @@
       "source": "469",
       "target": "mod:06-strategy-and-economics",
       "type": "curriculum"
+    },
+    {
+      "source": "470",
+      "target": "tag:context-engineering",
+      "type": "tag"
+    },
+    {
+      "source": "470",
+      "target": "tag:ai-economics",
+      "type": "tag"
+    },
+    {
+      "source": "470",
+      "target": "tag:prompt-engineering",
+      "type": "tag"
+    },
+    {
+      "source": "470",
+      "target": "tag:agentic-coding",
+      "type": "tag"
+    },
+    {
+      "source": "470",
+      "target": "mod:02-prompting-and-workflows",
+      "type": "curriculum"
+    },
+    {
+      "source": "470",
+      "target": "mod:06-strategy-and-economics",
+      "type": "curriculum"
+    },
+    {
+      "source": "471",
+      "target": "tag:ai-hype",
+      "type": "tag"
+    },
+    {
+      "source": "471",
+      "target": "tag:enterprise-ai",
+      "type": "tag"
+    },
+    {
+      "source": "471",
+      "target": "tag:capability-overhang",
+      "type": "tag"
+    },
+    {
+      "source": "471",
+      "target": "tag:vibe-coding",
+      "type": "tag"
+    },
+    {
+      "source": "471",
+      "target": "mod:01-foundations",
+      "type": "curriculum"
+    },
+    {
+      "source": "471",
+      "target": "mod:06-strategy-and-economics",
+      "type": "curriculum"
+    },
+    {
+      "source": "472",
+      "target": "tag:infrastructure",
+      "type": "tag"
+    },
+    {
+      "source": "472",
+      "target": "tag:ai-landscape",
+      "type": "tag"
+    },
+    {
+      "source": "472",
+      "target": "tag:context-engineering",
+      "type": "tag"
+    },
+    {
+      "source": "472",
+      "target": "mod:06-strategy-and-economics",
+      "type": "curriculum"
+    },
+    {
+      "source": "472",
+      "target": "mod:01-foundations",
+      "type": "curriculum"
+    },
+    {
+      "source": "473",
+      "target": "tag:claude-code",
+      "type": "tag"
+    },
+    {
+      "source": "473",
+      "target": "tag:multi-agent",
+      "type": "tag"
+    },
+    {
+      "source": "473",
+      "target": "tag:task-system",
+      "type": "tag"
+    },
+    {
+      "source": "473",
+      "target": "tag:agent-teams",
+      "type": "tag"
+    },
+    {
+      "source": "473",
+      "target": "tag:skills",
+      "type": "tag"
+    },
+    {
+      "source": "473",
+      "target": "tag:agentic-coding",
+      "type": "tag"
+    },
+    {
+      "source": "473",
+      "target": "mod:04-agentic-patterns",
+      "type": "curriculum"
+    },
+    {
+      "source": "473",
+      "target": "mod:05-team-orchestration",
+      "type": "curriculum"
+    },
+    {
+      "source": "474",
+      "target": "tag:prompt-engineering",
+      "type": "tag"
+    },
+    {
+      "source": "474",
+      "target": "tag:meta-prompts",
+      "type": "tag"
+    },
+    {
+      "source": "474",
+      "target": "tag:capability-overhang",
+      "type": "tag"
+    },
+    {
+      "source": "474",
+      "target": "tag:vibe-coding",
+      "type": "tag"
+    },
+    {
+      "source": "474",
+      "target": "mod:02-prompting-and-workflows",
+      "type": "curriculum"
+    },
+    {
+      "source": "474",
+      "target": "mod:01-foundations",
+      "type": "curriculum"
+    },
+    {
+      "source": "475",
+      "target": "tag:agentic-coding",
+      "type": "tag"
+    },
+    {
+      "source": "475",
+      "target": "tag:validation",
+      "type": "tag"
+    },
+    {
+      "source": "475",
+      "target": "tag:prompt-engineering",
+      "type": "tag"
+    },
+    {
+      "source": "475",
+      "target": "tag:ai-sdlc",
+      "type": "tag"
+    },
+    {
+      "source": "475",
+      "target": "tag:security",
+      "type": "tag"
+    },
+    {
+      "source": "475",
+      "target": "mod:02-prompting-and-workflows",
+      "type": "curriculum"
+    },
+    {
+      "source": "475",
+      "target": "mod:04-agentic-patterns",
+      "type": "curriculum"
+    },
+    {
+      "source": "475",
+      "target": "mod:06-strategy-and-economics",
+      "type": "curriculum"
+    },
+    {
+      "source": "476",
+      "target": "tag:multi-agent",
+      "type": "tag"
+    },
+    {
+      "source": "476",
+      "target": "tag:agentic-coding",
+      "type": "tag"
+    },
+    {
+      "source": "476",
+      "target": "tag:context-engineering",
+      "type": "tag"
+    },
+    {
+      "source": "476",
+      "target": "tag:ai-landscape",
+      "type": "tag"
+    },
+    {
+      "source": "476",
+      "target": "tag:validation",
+      "type": "tag"
+    },
+    {
+      "source": "476",
+      "target": "mod:04-agentic-patterns",
+      "type": "curriculum"
+    },
+    {
+      "source": "476",
+      "target": "mod:05-team-orchestration",
+      "type": "curriculum"
+    },
+    {
+      "source": "476",
+      "target": "mod:01-foundations",
+      "type": "curriculum"
+    },
+    {
+      "source": "477",
+      "target": "tag:ai-landscape",
+      "type": "tag"
+    },
+    {
+      "source": "477",
+      "target": "tag:agentic-coding",
+      "type": "tag"
+    },
+    {
+      "source": "477",
+      "target": "tag:enterprise-ai",
+      "type": "tag"
+    },
+    {
+      "source": "477",
+      "target": "tag:context-engineering",
+      "type": "tag"
+    },
+    {
+      "source": "477",
+      "target": "tag:security",
+      "type": "tag"
+    },
+    {
+      "source": "477",
+      "target": "mod:01-foundations",
+      "type": "curriculum"
+    },
+    {
+      "source": "477",
+      "target": "mod:04-agentic-patterns",
+      "type": "curriculum"
+    },
+    {
+      "source": "477",
+      "target": "mod:06-strategy-and-economics",
+      "type": "curriculum"
+    },
+    {
+      "source": "478",
+      "target": "tag:context-engineering",
+      "type": "tag"
+    },
+    {
+      "source": "478",
+      "target": "tag:ai-landscape",
+      "type": "tag"
+    },
+    {
+      "source": "478",
+      "target": "tag:infrastructure",
+      "type": "tag"
+    },
+    {
+      "source": "478",
+      "target": "mod:01-foundations",
+      "type": "curriculum"
+    },
+    {
+      "source": "478",
+      "target": "mod:03-claude-code-essentials",
+      "type": "curriculum"
+    },
+    {
+      "source": "479",
+      "target": "tag:agentic-coding",
+      "type": "tag"
+    },
+    {
+      "source": "479",
+      "target": "tag:enterprise-ai",
+      "type": "tag"
+    },
+    {
+      "source": "479",
+      "target": "tag:ai-landscape",
+      "type": "tag"
+    },
+    {
+      "source": "479",
+      "target": "tag:ai-economics",
+      "type": "tag"
+    },
+    {
+      "source": "479",
+      "target": "tag:revenue-per-employee",
+      "type": "tag"
+    },
+    {
+      "source": "479",
+      "target": "mod:01-foundations",
+      "type": "curriculum"
+    },
+    {
+      "source": "479",
+      "target": "mod:06-strategy-and-economics",
+      "type": "curriculum"
+    },
+    {
+      "source": "480",
+      "target": "tag:ai-hype",
+      "type": "tag"
+    },
+    {
+      "source": "480",
+      "target": "tag:enterprise-ai",
+      "type": "tag"
+    },
+    {
+      "source": "480",
+      "target": "tag:ai-sdlc",
+      "type": "tag"
+    },
+    {
+      "source": "480",
+      "target": "tag:ai-landscape",
+      "type": "tag"
+    },
+    {
+      "source": "480",
+      "target": "tag:capability-overhang",
+      "type": "tag"
+    },
+    {
+      "source": "480",
+      "target": "mod:01-foundations",
+      "type": "curriculum"
+    },
+    {
+      "source": "480",
+      "target": "mod:06-strategy-and-economics",
+      "type": "curriculum"
     }
   ],
   "synthesis": [
@@ -31856,7 +32454,7 @@
         "date": "2026-04-03",
         "title": "Weekly Synthesis \u2014 2026-04-03",
         "subtitle": "#327\u2013#424 (28 sources)",
-        "body_html": "<div class=\"card-overview\"></div><div class=\"card-themes\"></div><div class=\"card-sources\">Sources: <a class=\"src-link\" data-src=\"327\" href=\"#\">#327</a>\u2013<a class=\"src-link\" data-src=\"424\" href=\"#\">#424</a> (28 sources)</div>"
+        "body_html": "<div class=\"card-overview\">Themes that keep showing up week after week \u2014 the signal that matters. The subsidy cliff is getting closer, and the numbers are getting sharper. Philip Bohun (<a class=\"src-link\" data-src=\"424\" href=\"#\">#424</a>) puts it at 10-25x above break-even.</div><div class=\"card-themes\"><div class=\"theme\"><strong>1. Open-source slop PRs are a real threat.</strong></div><div class=\"theme\"><strong>2. Design is moving to the command line.</strong></div><div class=\"theme\"><strong>3. Context graphs get real.</strong></div><div class=\"theme\"><strong>4. Traditional software architecture is under pressure.</strong></div></div><div class=\"card-try\"><h4 class=\"src-h4\" style=\"color:var(--green)\">Try This Week</h4><div class=\"theme\"><strong>Set up async agent workflows</strong></div><div class=\"theme\"><strong>Audit your repo for slop PR resistance</strong></div><div class=\"theme\"><strong>Build one self-improving skill</strong></div><div class=\"theme\"><strong>Test explicit-context-only prompting</strong></div><div class=\"theme\"><strong>Map your AI cost exposure</strong></div></div><div class=\"card-sources\">Sources: <a class=\"src-link\" data-src=\"327\" href=\"#\">#327</a>\u2013<a class=\"src-link\" data-src=\"424\" href=\"#\">#424</a> (28 sources)</div>"
       },
       {
         "id": "2026-03-30-biweekly-themes",
@@ -31888,7 +32486,7 @@
         "date": "2026-03-21",
         "title": "Weekly Synthesis \u2014 2026-03-21",
         "subtitle": "#316\u2013#400 (84 sources)",
-        "body_html": "<div class=\"card-overview\"></div><div class=\"card-themes\"></div><div class=\"card-sources\">Sources: <a class=\"src-link\" data-src=\"316\" href=\"#\">#316</a>\u2013<a class=\"src-link\" data-src=\"400\" href=\"#\">#400</a> (84 sources)</div>"
+        "body_html": "<div class=\"card-overview\">The K-shaped split has hardened into quantified reality. The bifurcation between practitioners who master harness engineering and those doing undifferentiated vibe coding is no longer a prediction -- it is measurable. The AI job market shows a 3.2:1 job-to-candidate ratio for qualified AI roles paying $400K+ with 142-day average time-to-fill (379), while traditional knowledge work roles flatten or decline.</div><div class=\"card-themes\"><div class=\"theme\"><strong>1. The \"disposable code\" philosophy has a name: Phoenix Architecture.</strong></div><div class=\"theme\"><strong>2. Memory consolidation entered the agentic stack.</strong></div><div class=\"theme\"><strong>3. Agent-readable commerce is the next infrastructure layer.</strong></div><div class=\"theme\"><strong>4. The framework era ended and its architects admitted it.</strong></div><div class=\"theme\"><strong>5. Multi-agent debate for strategic decisions, not just coding.</strong></div></div><div class=\"card-try\"><h4 class=\"src-h4\" style=\"color:var(--green)\">Try This Week</h4><div class=\"theme\"><strong>Build a builder/validator loop for your next feature.</strong></div><div class=\"theme\"><strong>Audit your CLAUDE.md against the instruction budget.</strong></div><div class=\"theme\"><strong>Run AutoDream on your longest-running project.</strong></div><div class=\"theme\"><strong>Create a ubiquitous language document.</strong></div><div class=\"theme\"><strong>Evaluate one production agent with factorial stress testing.</strong></div></div><div class=\"card-sources\">Sources: <a class=\"src-link\" data-src=\"316\" href=\"#\">#316</a>\u2013<a class=\"src-link\" data-src=\"400\" href=\"#\">#400</a> (84 sources)</div>"
       },
       {
         "id": "2026-03-16-biweekly-themes",
@@ -31920,7 +32518,7 @@
         "date": "2026-03-08",
         "title": "Weekly Synthesis \u2014 2026-03-08",
         "subtitle": "#241\u2013#315 (75 sources)",
-        "body_html": "<div class=\"card-overview\"></div><div class=\"card-themes\"></div><div class=\"card-sources\">Sources: <a class=\"src-link\" data-src=\"241\" href=\"#\">#241</a>\u2013<a class=\"src-link\" data-src=\"315\" href=\"#\">#315</a> (75 sources)</div>"
+        "body_html": "<div class=\"card-overview\">The arms race has a new front: context, not capability. The prior weeks' focus on AI economics and the specification reckoning deepened considerably. OpenAI's $840B bet is now explicitly framed as a context lock-in play -- whoever owns enterprise organizational understanding subsumes the entire SaaS stack (241).</div><div class=\"card-themes\"></div><div class=\"card-try\"><h4 class=\"src-h4\" style=\"color:var(--green)\">Try This Week</h4><div class=\"theme\"><strong>Build a self-improving skill loop.</strong></div><div class=\"theme\"><strong>Measure your cognitive debt.</strong></div><div class=\"theme\"><strong>Adopt the \"Grill Me\" skill.</strong></div><div class=\"theme\"><strong>Set up precision retrieval for your largest codebase.</strong></div><div class=\"theme\"><strong>Install the human door on one data structure.</strong></div></div><div class=\"card-sources\">Sources: <a class=\"src-link\" data-src=\"241\" href=\"#\">#241</a>\u2013<a class=\"src-link\" data-src=\"315\" href=\"#\">#315</a> (75 sources)</div>"
       },
       {
         "id": "2026-03-06",
@@ -31976,7 +32574,7 @@
         "date": "2026-03-02",
         "title": "Weekly Synthesis \u2014 2026-03-02",
         "subtitle": "#149\u2013#242 (94 sources)",
-        "body_html": "<div class=\"card-overview\"></div><div class=\"card-themes\"></div><div class=\"card-sources\">Sources: <a class=\"src-link\" data-src=\"149\" href=\"#\">#149</a>\u2013<a class=\"src-link\" data-src=\"242\" href=\"#\">#242</a> (94 sources)</div>"
+        "body_html": "<div class=\"card-overview\">Specification reckoning is now the consensus. What began as a scattered intuition in Week 3 has crystallized into the dominant position among serious practitioners. Matt Pocock's seven-phase framework (<a class=\"src-link\" data-src=\"210\" href=\"#\">#210</a>, <a class=\"src-link\" data-src=\"221\" href=\"#\">#221</a>), IBM's formal naming of \"spec-driven development\" (<a class=\"src-link\" data-src=\"214\" href=\"#\">#214</a>), Jaymin West's anti-slop engineering (<a class=\"src-link\" data-src=\"220\" href=\"#\">#220</a>), and Stripe's blueprint engine (<a class=\"src-link\" data-src=\"209\" href=\"#\">#209</a>, <a class=\"src-link\" data-src=\"211\" href=\"#\">#211</a>, <a class=\"src-link\" data-src=\"212\" href=\"#\">#212</a>) all converge on the same conclusion: vibe coding is dead for production work.</div><div class=\"card-themes\"><div class=\"theme\"><strong>1. Memory infrastructure emerges as the real bottleneck.</strong></div><div class=\"theme\"><strong>2. The \"managing agents\" skill set gets named and formalized.</strong></div><div class=\"theme\"><strong>3. Narrow agents decisively beat generalist agents.</strong></div><div class=\"theme\"><strong>4. Token economics become an engineering discipline.</strong></div><div class=\"theme\"><strong>5. The CLAUDE.md backlash produces a new convention.</strong></div></div><div class=\"card-try\"><h4 class=\"src-h4\" style=\"color:var(--green)\">Try This Week</h4><div class=\"theme\"><strong>Audit your CLAUDE.md against the decision matrix (<a class=\"src-link\" data-src=\"154\" href=\"#\">#154</a>)</strong></div><div class=\"theme\"><strong>Build a persistent memory file (<a class=\"src-link\" data-src=\"177\" href=\"#\">#177</a>, <a class=\"src-link\" data-src=\"206\" href=\"#\">#206</a>)</strong></div><div class=\"theme\"><strong>Run an off-manifold probe on your model (<a class=\"src-link\" data-src=\"161\" href=\"#\">#161</a>)</strong></div><div class=\"theme\"><strong>Try Pocock's seven-phase workflow on one feature (<a class=\"src-link\" data-src=\"210\" href=\"#\">#210</a>, <a class=\"src-link\" data-src=\"221\" href=\"#\">#221</a>)</strong></div><div class=\"theme\"><strong>Install jCodeMunch (<a class=\"src-link\" data-src=\"239\" href=\"#\">#239</a>) and measure token savings</strong></div></div><div class=\"card-sources\">Sources: <a class=\"src-link\" data-src=\"149\" href=\"#\">#149</a>\u2013<a class=\"src-link\" data-src=\"242\" href=\"#\">#242</a> (94 sources)</div>"
       },
       {
         "id": "2026-02-28",
@@ -32032,7 +32630,7 @@
         "date": "2026-02-23",
         "title": "Weekly Synthesis \u2014 2026-02-23",
         "subtitle": "#072\u2013#148 (77 sources)",
-        "body_html": "<div class=\"card-overview\"></div><div class=\"card-themes\"></div><div class=\"card-sources\">Sources: <a class=\"src-link\" data-src=\"072\" href=\"#\">#072</a>\u2013<a class=\"src-link\" data-src=\"148\" href=\"#\">#148</a> (77 sources)</div>"
+        "body_html": "<div class=\"card-overview\">The specification bottleneck now has empirical backing. Week 2 named cognitive debt; this week buried it in data. AWS Cairo forces spec-first development because error rates were unacceptable (<a class=\"src-link\" data-src=\"076\" href=\"#\">#076</a>).</div><div class=\"card-themes\"><div class=\"theme\"><strong>1. The token replaces the instruction as computing's fundamental unit.</strong></div><div class=\"theme\"><strong>2. The \"agent web\" is forking from the human web.</strong></div><div class=\"theme\"><strong>3. Claude Code's origin story reframes the entire community's patterns.</strong></div><div class=\"theme\"><strong>4. Trust architecture emerges as a design discipline.</strong></div><div class=\"theme\"><strong>5. The difficulty taxonomy reframes \"which AI is best.\"</strong></div></div><div class=\"card-try\"><h4 class=\"src-h4\" style=\"color:var(--green)\">Try This Week</h4><div class=\"theme\"><strong>Implement the 60% rule in your workflow.</strong></div><div class=\"theme\"><strong>Build one reusable skill from a manual workflow.</strong></div><div class=\"theme\"><strong>Try parallel worktrees for your next feature.</strong></div><div class=\"theme\"><strong>Audit your role for coordination overhead.</strong></div><div class=\"theme\"><strong>Read Anthropic's Sonnet 4.6 system card, section 4.5.</strong></div></div><div class=\"card-sources\">Sources: <a class=\"src-link\" data-src=\"072\" href=\"#\">#072</a>\u2013<a class=\"src-link\" data-src=\"148\" href=\"#\">#148</a> (77 sources)</div>"
       },
       {
         "id": "2026-02-21",
@@ -32120,7 +32718,7 @@
         "date": "2026-02-16",
         "title": "Weekly Synthesis \u2014 2026-02-16",
         "subtitle": "#012\u2013#071 (54 sources)",
-        "body_html": "<div class=\"card-overview\"></div><div class=\"card-themes\"></div><div class=\"card-sources\">Sources: <a class=\"src-link\" data-src=\"012\" href=\"#\">#012</a>\u2013<a class=\"src-link\" data-src=\"071\" href=\"#\">#071</a> (54 sources)</div>"
+        "body_html": "<div class=\"card-overview\">The model arms race has shifted from training to inference. Week 1 tracked the Opus 4.6 vs GPT-5.2 same-day releases. This week, the competition moved beneath the surface.</div><div class=\"card-themes\"><div class=\"theme\"><strong>1. Cognitive debt is the missing variable in every productivity study.</strong></div><div class=\"theme\"><strong>2. The SaaS disruption has a hidden credit market bomb.</strong></div><div class=\"theme\"><strong>3. The specification is becoming the software.</strong></div><div class=\"theme\"><strong>4. Burnout is the hidden cost of AI productivity.</strong></div><div class=\"theme\"><strong>5. Developer experience = agent experience, and this collapses two investment categories into one.</strong></div></div><div class=\"card-sources\">Sources: <a class=\"src-link\" data-src=\"012\" href=\"#\">#012</a>\u2013<a class=\"src-link\" data-src=\"071\" href=\"#\">#071</a> (54 sources)</div>"
       },
       {
         "id": "2026-02-15",
@@ -32216,13 +32814,13 @@
         "date": "2026-02-09",
         "title": "Weekly Synthesis \u2014 2026-02-09",
         "subtitle": "#001\u2013#019 (19 sources)",
-        "body_html": "<div class=\"card-overview\"></div><div class=\"card-themes\"></div><div class=\"card-sources\">Sources: <a class=\"src-link\" data-src=\"001\" href=\"#\">#001</a>\u2013<a class=\"src-link\" data-src=\"019\" href=\"#\">#019</a> (19 sources)</div>"
+        "body_html": "<div class=\"card-overview\">This is the baseline. Five themes emerged simultaneously in the first batch, and each one reinforces the others: The capability overhang is the defining dynamic. AI tools can do far more than most people are asking them to do.</div><div class=\"card-themes\"></div><div class=\"card-sources\">Sources: <a class=\"src-link\" data-src=\"001\" href=\"#\">#001</a>\u2013<a class=\"src-link\" data-src=\"019\" href=\"#\">#019</a> (19 sources)</div>"
       }
     ]
   },
   "meta": {
-    "generated": "2026-04-04T00:51:51.407054+00:00",
-    "source_count": 469,
+    "generated": "2026-04-04T00:54:56.108200+00:00",
+    "source_count": 480,
     "tag_count": 31,
     "briefing_count": 19
   }

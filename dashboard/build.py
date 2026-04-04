@@ -371,79 +371,137 @@ def build_reader_content(briefings, synthesis_entries):
         text = path.read_text()
         lines = text.split("\n")
 
-        # Extract overview/executive summary
-        overview = ""
-        in_overview = False
-        overview_lines = []
-        for line in lines:
-            if re.match(r"^##\s+(Executive Summary|Overview)", line):
-                in_overview = True
-                continue
-            if in_overview:
-                if line.strip().startswith("## ") or line.strip().startswith("# ") or line.strip() == "---":
-                    if overview_lines:
-                        break
+        # Detect weekly synthesis format
+        post = frontmatter.loads(text)
+        is_weekly = post.metadata.get("type", "") in ("weekly-synthesis",)
+
+        if is_weekly:
+            # Weekly format: extract sections as rendered HTML
+            sections = {}  # section_name -> [lines]
+            current_section = None
+            for line in lines:
+                section_match = re.match(r"^## (.+)", line)
+                if section_match:
+                    current_section = section_match.group(1).strip()
+                    sections[current_section] = []
                     continue
-                if line.strip():
-                    overview_lines.append(line.strip())
-        overview = " ".join(overview_lines).strip()
-        overview_short = strip_markdown(first_n_sentences(overview, 2))
+                if current_section and line.strip() and line.strip() != "---":
+                    sections[current_section].append(line)
 
-        # Extract theme insights
-        theme_insights = []
-        for theme_title in s.get("themes", []):
-            theme_insights.append({"title": theme_title, "insight": ""})
+            # Build overview from "What's Persisting"
+            persisting = sections.get("What's Persisting", [])
+            overview_short = strip_markdown(first_n_sentences(
+                " ".join(l.strip() for l in persisting if l.strip()), 2
+            ))
 
-        # Try to find **Key Insight:** or **Core Insight:** for each theme section
-        current_theme_idx = -1
-        for line in lines:
-            # Check if this line starts a new theme section
-            theme_match = re.match(r"^##\s+(?:Theme\s+\w+:\s*)?(.+)", line)
-            if not theme_match:
-                theme_match = re.match(r"^###\s+(?:Theme\s+\d+:\s*)?(?:\d+\.\s+)?(.+)", line)
-            if theme_match:
-                title = theme_match.group(1).strip()
-                # Find matching theme
-                for i, t in enumerate(theme_insights):
-                    if t["title"] in title or title in t["title"]:
-                        current_theme_idx = i
-                        break
+            # Build "What's New" section
+            new_lines = sections.get("What's New", sections.get("What's New This Week", []))
+            new_items = []
+            for line in new_lines:
+                bold = re.match(r"\*\*(.+?)\*\*", line.strip())
+                if bold:
+                    new_items.append(strip_markdown(bold.group(1)))
+            themes_html = ""
+            for i, item in enumerate(new_items[:5], 1):
+                themes_html += (
+                    f'<div class="theme">'
+                    f'<strong>{i}. {item}</strong>'
+                    f'</div>'
+                )
 
-            # Look for insight markers
-            insight_match = re.match(
-                r"\*\*(?:Key Insight|Core Insight)\*?\*?:\*?\*?\s*(.+)", line.strip()
+            # Build "Try This Week" as a list
+            try_lines = sections.get("Try This Week", [])
+            try_items = []
+            for line in try_lines:
+                li = re.match(r"^\d+\.\s+\*\*(.+?)\*\*", line.strip())
+                if li:
+                    try_items.append(strip_markdown(li.group(1)))
+            try_html = ""
+            if try_items:
+                try_html = '<div class="card-try"><h4 class="src-h4" style="color:var(--green)">Try This Week</h4>'
+                for item in try_items:
+                    try_html += f'<div class="theme"><strong>{item}</strong></div>'
+                try_html += '</div>'
+
+            source_range = ""
+            if s["source_ids"]:
+                source_range = f'#{s["source_ids"][0]}–#{s["source_ids"][-1]} ({len(s["source_ids"])} sources)'
+
+            body_html = linkify_sources(
+                f'<div class="card-overview">{overview_short}</div>'
+                f'<div class="card-themes">{themes_html}</div>'
+                f'{try_html}'
+                f'<div class="card-sources">Sources: {source_range}</div>'
             )
-            if insight_match and 0 <= current_theme_idx < len(theme_insights):
-                if not theme_insights[current_theme_idx]["insight"]:
-                    raw = insight_match.group(1).strip()
-                    insight = strip_markdown(first_n_sentences(raw, 1))
-                    if len(insight) > 160:
-                        insight = insight[:157] + "..."
-                    theme_insights[current_theme_idx]["insight"] = insight
+        else:
+            # Standard synthesis format
+            overview = ""
+            in_overview = False
+            overview_lines = []
+            for line in lines:
+                if re.match(r"^##\s+(Executive Summary|Overview)", line):
+                    in_overview = True
+                    continue
+                if in_overview:
+                    if line.strip().startswith("## ") or line.strip().startswith("# ") or line.strip() == "---":
+                        if overview_lines:
+                            break
+                        continue
+                    if line.strip():
+                        overview_lines.append(line.strip())
+            overview = " ".join(overview_lines).strip()
+            overview_short = strip_markdown(first_n_sentences(overview, 2))
 
-        # Build HTML
-        themes_html = ""
-        for i, t in enumerate(theme_insights[:5], 1):
-            insight = t.get("insight", "")
-            insight_html = f'<p class="theme-insight">{insight}</p>' if insight else ""
-            # Strip redundant "Theme N:" prefix since we add our own numbering
-            title = re.sub(r'^Theme\s+\w+:\s*', '', strip_markdown(t["title"]))
-            themes_html += (
-                f'<div class="theme">'
-                f'<strong>{i}. {title}</strong>'
-                f'{insight_html}'
-                f'</div>'
+            # Extract theme insights
+            theme_insights = []
+            for theme_title in s.get("themes", []):
+                theme_insights.append({"title": theme_title, "insight": ""})
+
+            # Try to find **Key Insight:** or **Core Insight:** for each theme section
+            current_theme_idx = -1
+            for line in lines:
+                theme_match = re.match(r"^##\s+(?:Theme\s+\w+:\s*)?(.+)", line)
+                if not theme_match:
+                    theme_match = re.match(r"^###\s+(?:Theme\s+\d+:\s*)?(?:\d+\.\s+)?(.+)", line)
+                if theme_match:
+                    title = theme_match.group(1).strip()
+                    for i, t in enumerate(theme_insights):
+                        if t["title"] in title or title in t["title"]:
+                            current_theme_idx = i
+                            break
+
+                insight_match = re.match(
+                    r"\*\*(?:Key Insight|Core Insight)\*?\*?:\*?\*?\s*(.+)", line.strip()
+                )
+                if insight_match and 0 <= current_theme_idx < len(theme_insights):
+                    if not theme_insights[current_theme_idx]["insight"]:
+                        raw = insight_match.group(1).strip()
+                        insight = strip_markdown(first_n_sentences(raw, 1))
+                        if len(insight) > 160:
+                            insight = insight[:157] + "..."
+                        theme_insights[current_theme_idx]["insight"] = insight
+
+            themes_html = ""
+            for i, t in enumerate(theme_insights[:5], 1):
+                insight = t.get("insight", "")
+                insight_html = f'<p class="theme-insight">{insight}</p>' if insight else ""
+                title = re.sub(r'^Theme\s+\w+:\s*', '', strip_markdown(t["title"]))
+                themes_html += (
+                    f'<div class="theme">'
+                    f'<strong>{i}. {title}</strong>'
+                    f'{insight_html}'
+                    f'</div>'
+                )
+
+            source_range = ""
+            if s["source_ids"]:
+                source_range = f'#{s["source_ids"][0]}–#{s["source_ids"][-1]} ({len(s["source_ids"])} sources)'
+
+            body_html = linkify_sources(
+                f'<div class="card-overview">{overview_short}</div>'
+                f'<div class="card-themes">{themes_html}</div>'
+                f'<div class="card-sources">Sources: {source_range}</div>'
             )
-
-        source_range = ""
-        if s["source_ids"]:
-            source_range = f'#{s["source_ids"][0]}–#{s["source_ids"][-1]} ({len(s["source_ids"])} sources)'
-
-        body_html = linkify_sources(
-            f'<div class="card-overview">{overview_short}</div>'
-            f'<div class="card-themes">{themes_html}</div>'
-            f'<div class="card-sources">Sources: {source_range}</div>'
-        )
 
         # Subtitle from source range or date
         subtitle = source_range if source_range else s["date"]
