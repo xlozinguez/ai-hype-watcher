@@ -44,13 +44,13 @@ Not all tasks deserve the same agent autonomy. Dex Horthy ([#280](../sources/280
 
 ```mermaid
 quadrantChart
-    title Autonomy Calibration — Risk vs. Verifiability
+    title Autonomy Calibration - Risk vs Verifiability
     x-axis Low Verifiability --> High Verifiability
     y-axis Low Risk --> High Risk
-    quadrant-1 L2 Gated — human at every gate
-    quadrant-2 L3 Autonomous — tests are the gate
-    quadrant-3 L1 Draft — human reviews all output
-    quadrant-4 L4+ Delegated — agent reviews agent
+    quadrant-1 L2 Gated
+    quadrant-2 L3 Autonomous
+    quadrant-3 L1 Draft
+    quadrant-4 L4+ Delegated
     Auth middleware refactor: [0.25, 0.8]
     Data migration: [0.3, 0.9]
     New API endpoint: [0.8, 0.3]
