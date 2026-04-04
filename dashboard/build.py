@@ -282,16 +282,36 @@ def parse_briefings():
             }
 
         # Attach summaries and source IDs to headlines by matching title substring
+        detail_keys = list(detail_data.keys())
+        used_headings = set()
         for h in headlines:
             h["summary"] = ""
             h["detail_source_ids"] = []
+            best_match = None
+            best_overlap = 0
             for heading, data in detail_data.items():
+                if heading in used_headings:
+                    continue
                 title_words = set(re.findall(r'\w+', h["title"].lower()))
                 heading_words = set(re.findall(r'\w+', heading.lower()))
-                if len(title_words & heading_words) >= min(3, len(title_words)):
-                    h["summary"] = data["summary"]
-                    h["detail_source_ids"] = data["source_ids"]
-                    break
+                overlap = len(title_words & heading_words)
+                if overlap > best_overlap:
+                    best_overlap = overlap
+                    best_match = heading
+            # Accept match with 2+ word overlap, or fallback to positional
+            if best_match and best_overlap >= 2:
+                h["summary"] = detail_data[best_match]["summary"]
+                h["detail_source_ids"] = detail_data[best_match]["source_ids"]
+                used_headings.add(best_match)
+            elif detail_keys:
+                # Positional fallback: match by order
+                idx = headlines.index(h)
+                if idx < len(detail_keys):
+                    key = detail_keys[idx]
+                    if key not in used_headings:
+                        h["summary"] = detail_data[key]["summary"]
+                        h["detail_source_ids"] = detail_data[key]["source_ids"]
+                        used_headings.add(key)
 
         # Source IDs
         source_ids = sorted(set(
@@ -392,61 +412,29 @@ def build_reader_content(briefings, synthesis_entries):
         is_weekly = post.metadata.get("type", "") in ("weekly-synthesis",)
 
         if is_weekly:
-            # Weekly format: extract sections as rendered HTML
-            sections = {}  # section_name -> [lines]
-            current_section = None
+            # Weekly format: render full body as HTML (skip frontmatter and title)
+            body_lines = []
+            started = False
             for line in lines:
-                section_match = re.match(r"^## (.+)", line)
-                if section_match:
-                    current_section = section_match.group(1).strip()
-                    sections[current_section] = []
-                    continue
-                if current_section and line.strip() and line.strip() != "---":
-                    sections[current_section].append(line)
+                # Skip until first ## section
+                if re.match(r"^## ", line):
+                    started = True
+                if started:
+                    body_lines.append(line)
 
-            # Build overview from "What's Persisting"
-            persisting = sections.get("What's Persisting", [])
-            overview_short = strip_markdown(first_n_sentences(
-                " ".join(l.strip() for l in persisting if l.strip()), 2
-            ))
-
-            # Build "What's New" section
-            new_lines = sections.get("What's New", sections.get("What's New This Week", []))
-            new_items = []
-            for line in new_lines:
-                bold = re.match(r"\*\*(.+?)\*\*", line.strip())
-                if bold:
-                    new_items.append(strip_markdown(bold.group(1)))
-            themes_html = ""
-            for i, item in enumerate(new_items[:5], 1):
-                themes_html += (
-                    f'<div class="theme">'
-                    f'<strong>{i}. {item}</strong>'
-                    f'</div>'
-                )
-
-            # Build "Try This Week" as a list
-            try_lines = sections.get("Try This Week", [])
-            try_items = []
-            for line in try_lines:
-                li = re.match(r"^\d+\.\s+\*\*(.+?)\*\*", line.strip())
-                if li:
-                    try_items.append(strip_markdown(li.group(1)))
-            try_html = ""
-            if try_items:
-                try_html = '<div class="card-try"><h4 class="src-h4" style="color:var(--green)">Try This Week</h4>'
-                for item in try_items:
-                    try_html += f'<div class="theme"><strong>{item}</strong></div>'
-                try_html += '</div>'
+            body_md = "\n".join(body_lines)
+            # Remove the Source Takeaways table (too long for card — available via source taps)
+            body_md = re.sub(
+                r"## Source Takeaways.*?(?=## |\Z)", "", body_md, flags=re.DOTALL
+            )
+            rendered = md_to_html(body_md)
 
             source_range = ""
             if s["source_ids"]:
                 source_range = f'#{s["source_ids"][0]}–#{s["source_ids"][-1]} ({len(s["source_ids"])} sources)'
 
             body_html = linkify_sources(
-                f'<div class="card-overview">{overview_short}</div>'
-                f'<div class="card-themes">{themes_html}</div>'
-                f'{try_html}'
+                f'{rendered}'
                 f'<div class="card-sources">Sources: {source_range}</div>'
             )
         else:
