@@ -11,6 +11,7 @@ briefings/        → Dated findings entries
 synthesis/        → Cross-source analyses
 resources/        → Curated external links
 watchlist/        → YouTube channel watchlist and scanning config
+podcast/          → Two-host podcast scripts, config, audio pipeline
 ```
 
 ## Conventions
@@ -51,6 +52,7 @@ watchlist/        → YouTube channel watchlist and scanning config
 | `/ask` | Answer a natural language question using curriculum modules and source notes with citations |
 | `/find-sources` | Search and filter sources by tag, creator, module, date range, keyword, or recency |
 | `/digest` | Thematic digest of a source range — new territory vs. reinforced coverage, with theme clusters |
+| `/podcast` | Generate a two-host podcast episode from briefings, synthesis docs, or source notes |
 
 ## Common Workflows
 

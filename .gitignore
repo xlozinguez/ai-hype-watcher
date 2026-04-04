@@ -19,5 +19,8 @@ sources/_drafts/
 # Playwright MCP logs
 .playwright-mcp/
 
+# Podcast audio output (large, regeneratable from scripts)
+podcast/audio/
+
 # Node (if any tooling is added later)
 node_modules/

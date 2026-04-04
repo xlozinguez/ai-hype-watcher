@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='utf-8'?>
+<rss xmlns:ns0="http://www.itunes.com/dtds/podcast-1.0.dtd" version="2.0" xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Hype Watch</title>
+    <link>https://github.com/xlozinguez/ai-hype-watcher</link>
+    <language>en-us</language>
+    <description>Two hosts break down what's actually happening in AI-assisted development — the real patterns, the genuine economics, and the hype that needs checking. Built from 480+ curated source notes.
+</description>
+    <ns0:subtitle>Critical AI development analysis from the source notes</ns0:subtitle>
+    <ns0:author>Xavier Lozinguez</ns0:author>
+    <ns0:explicit>no</ns0:explicit>
+    <ns0:owner>
+      <ns0:name>Xavier Lozinguez</ns0:name>
+      <ns0:email />
+    </ns0:owner>
+    <ns0:category text="Technology">
+      <ns0:category text="Tech News" />
+    </ns0:category>
+  </channel>
+</rss>

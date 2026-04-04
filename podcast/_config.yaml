@@ -1,0 +1,40 @@
+# AI Hype Watcher Podcast — Show Configuration
+
+show:
+  title: "Hype Watch"
+  subtitle: "Critical AI development analysis from the source notes"
+  description: >
+    Two hosts break down what's actually happening in AI-assisted development —
+    the real patterns, the genuine economics, and the hype that needs checking.
+    Built from 480+ curated source notes.
+  language: "en-us"
+  author: "Xavier Lozinguez"
+  website: "https://github.com/xlozinguez/ai-hype-watcher"
+  category: "Technology"
+  subcategory: "Tech News"
+  explicit: false
+
+hosts:
+  a:
+    name: "The Builder"
+    voice_id: "S9UjcNYIwfBOtZiDnIQT"  # Alex — smooth, balanced, clear
+    voice_name: "Alex"
+  b:
+    name: "The Skeptic"
+    voice_id: "zGjIP4SZlMnY9m93k97r"  # Hope — clear, relatable, charismatic
+    voice_name: "Hope"
+
+tts:
+  provider: "elevenlabs"
+  model: "eleven_multilingual_v2"
+  output_format: "mp3_44100_128"
+
+audio:
+  silence_between_turns_ms: 400
+  silence_at_segment_ms: 800
+  target_lufs: -16
+  intro_file: "podcast/assets/intro.mp3"
+  outro_file: "podcast/assets/outro.mp3"
+
+episodes:
+  next_episode: 2
