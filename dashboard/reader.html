@@ -130,6 +130,38 @@ header h1 span { color: var(--cyan); }
   font-size: 13px; color: var(--text-dim); line-height: 1.4; margin-top: 4px;
 }
 
+/* WEEKLY SYNTHESIS SECTIONS */
+.weekly-section { margin-bottom: 16px; }
+.weekly-label {
+  display: inline-block; font-size: 10px; font-weight: 600; text-transform: uppercase;
+  letter-spacing: 0.5px; padding: 2px 8px; border-radius: 4px; margin-bottom: 8px;
+}
+.weekly-label-cyan { color: var(--cyan); background: rgba(6,182,212,0.1); }
+.weekly-label-purple { color: var(--purple); background: rgba(139,92,246,0.1); }
+.weekly-label-amber { color: var(--amber); background: rgba(245,158,11,0.1); }
+.weekly-label-green { color: var(--green); background: rgba(16,185,129,0.1); }
+.weekly-section p {
+  font-size: 14px; line-height: 1.5; color: var(--text-dim); margin-bottom: 8px;
+}
+.weekly-section strong { color: var(--text); }
+.weekly-section .src-list { padding-left: 16px; margin-bottom: 10px; list-style: none; }
+.weekly-section .src-list li {
+  font-size: 13px; line-height: 1.5; color: var(--text-dim); margin-bottom: 6px;
+  position: relative; padding-left: 12px;
+}
+.weekly-section .src-list li::before {
+  content: ''; position: absolute; left: 0; top: 8px;
+  width: 4px; height: 4px; border-radius: 50%;
+}
+.weekly-persisting .src-list li::before { background: var(--cyan); }
+.weekly-new .src-list li::before { background: var(--purple); }
+.weekly-watch .src-list li::before { background: var(--amber); }
+.weekly-try .src-list li::before { background: var(--green); }
+.weekly-section .src-h3 { display: none; } /* hide redundant ## heading since we have the label */
+.weekly-section .src-h4 {
+  font-size: 14px; font-weight: 600; color: var(--text); margin: 10px 0 4px;
+}
+
 /* SHARED */
 .card-sources {
   font-size: 12px; color: var(--text-dim); margin-top: 12px;

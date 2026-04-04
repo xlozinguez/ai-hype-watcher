@@ -412,22 +412,48 @@ def build_reader_content(briefings, synthesis_entries):
         is_weekly = post.metadata.get("type", "") in ("weekly-synthesis",)
 
         if is_weekly:
-            # Weekly format: render full body as HTML (skip frontmatter and title)
-            body_lines = []
-            started = False
+            # Weekly format: parse sections and render with briefing-style markup
+            sections = {}  # section_name -> [lines]
+            current_section = None
             for line in lines:
-                # Skip until first ## section
-                if re.match(r"^## ", line):
-                    started = True
-                if started:
-                    body_lines.append(line)
+                section_match = re.match(r"^## (.+)", line)
+                if section_match:
+                    current_section = section_match.group(1).strip()
+                    sections[current_section] = []
+                    continue
+                if current_section and line.strip() != "---":
+                    sections[current_section].append(line)
 
-            body_md = "\n".join(body_lines)
-            # Remove the Source Takeaways table (too long for card — available via source taps)
-            body_md = re.sub(
-                r"## Source Takeaways.*?(?=## |\Z)", "", body_md, flags=re.DOTALL
-            )
-            rendered = md_to_html(body_md)
+            rendered = ""
+
+            # Section config: name -> (css_class, accent_color)
+            section_styles = {
+                "What's Persisting": ("persisting", "cyan"),
+                "What's New": ("new", "purple"),
+                "What's New This Week": ("new", "purple"),
+                "What to Watch": ("watch", "amber"),
+                "Try This Week": ("try", "green"),
+            }
+
+            for section_name, section_lines in sections.items():
+                if section_name == "Source Takeaways":
+                    continue  # skip table — available via source taps
+
+                style = section_styles.get(section_name)
+                if not style:
+                    continue
+                css_class, accent = style
+
+                # Render section content
+                content_md = "\n".join(section_lines)
+                content_html = md_to_html(content_md)
+
+                rendered += (
+                    f'<div class="weekly-section weekly-{css_class}">'
+                    f'<div class="weekly-label weekly-label-{accent}">{section_name}</div>'
+                    f'{content_html}'
+                    f'</div>'
+                )
 
             source_range = ""
             if s["source_ids"]:
