@@ -31181,27 +31181,37 @@
         {
           "category": "tools",
           "title": "Claude Opus 4.6 and GPT-5.3 Codex ship same day, marking the closest head-to-head release in AI history",
-          "summary": "Anthropic's Claude Opus 4.6 and OpenAI's GPT-5.3 Codex launched within 20 minutes of each other on February 5, 2026."
+          "summary": "Anthropic's Claude Opus 4.6 and OpenAI's GPT-5.3 Codex launched within 20 minutes of each other on February 5, 2026.",
+          "detail_source_ids": [
+            "003"
+          ]
         },
         {
           "category": "patterns",
           "title": "Agent Teams and multi-agent orchestration move from experimental to practical \u2014 16 agents built a C compiler in 2 weeks",
-          "summary": "The C compiler milestone stands out: 16 Opus 4.6 agents working for two weeks produced ~100K lines of Rust that compiles the Linux kernel, PostgreSQL, and other major projects."
+          "summary": "The C compiler milestone stands out: 16 Opus 4.6 agents working for two weeks produced ~100K lines of Rust that compiles the Linux kernel, PostgreSQL, and other major projects.",
+          "detail_source_ids": [
+            "015",
+            "010"
+          ]
         },
         {
           "category": "security",
           "title": "Skills ecosystem faces supply chain crisis \u2014 36% of public skills contain security flaws",
-          "summary": ""
+          "summary": "",
+          "detail_source_ids": []
         },
         {
           "category": "economics",
           "title": "Global inference infrastructure is physically constrained with no relief expected before 2028",
-          "summary": ""
+          "summary": "",
+          "detail_source_ids": []
         },
         {
           "category": "critical",
           "title": "AI companies dominate Super Bowl LX advertising, echoing dot-com and crypto bubble patterns",
-          "summary": ""
+          "summary": "",
+          "detail_source_ids": []
         }
       ],
       "source_ids": [
@@ -31225,52 +31235,72 @@
         {
           "category": "critical",
           "title": "Controlled study of 150 developers finds AI speed gains real but modest (30%), with no maintainability penalty",
-          "summary": ""
+          "summary": "",
+          "detail_source_ids": []
         },
         {
           "category": "critical",
           "title": "Harvard Business Review research shows early AI adopters already burning out \u2014 the \"productivity trap\" is real",
-          "summary": "Natasha Bernal's analysis ([025](../sources/025-natasha-bernal-ai-productivity-bubble.md)) of the Harvard Business Review study reveals a counterintuitive dynamic: the employees who most enthusiastically adopted AI \u2014 without mandates \u2014 showed the highest burnout rates."
+          "summary": "Natasha Bernal's analysis ([025](../sources/025-natasha-bernal-ai-productivity-bubble.md)) of the Harvard Business Review study reveals a counterintuitive dynamic: the employees who most enthusiastically adopted AI \u2014 without mandates \u2014 showed the highest burnout rates.",
+          "detail_source_ids": [
+            "025"
+          ]
         },
         {
           "category": "economics",
           "title": "K-shaped developer divergence: 52% still don't use AI agents while a minority goes full spec-driven",
-          "summary": ""
+          "summary": "",
+          "detail_source_ids": []
         },
         {
           "category": "tools",
           "title": "Playwright CLI ships as a 4x more token-efficient alternative to MCP for browser automation",
-          "summary": ""
+          "summary": "",
+          "detail_source_ids": []
         },
         {
           "category": "patterns",
           "title": "Git worktrees emerge as essential infrastructure for agentic workflows",
-          "summary": "Joshua Morony makes the case ([027](../sources/027-joshua-morony-git-worktree.md)) that `git worktree` \u2014 long ignored by most developers \u2014 has become essential infrastructure for agentic coding."
+          "summary": "Joshua Morony makes the case ([027](../sources/027-joshua-morony-git-worktree.md)) that `git worktree` \u2014 long ignored by most developers \u2014 has become essential infrastructure for agentic coding.",
+          "detail_source_ids": [
+            "027"
+          ]
         },
         {
           "category": "critical",
           "title": "OpenAI insider: 95% of engineers use Codex, \"engineers are becoming sorcerers\" \u2014 the AI-native development practice is here",
-          "summary": "Sherwin Wu, who leads developer-facing products at OpenAI, provides a rare insider look on Lenny's Podcast ([035](../sources/035-lennys-podcast-openai-sherwin-wu.md))."
+          "summary": "Sherwin Wu, who leads developer-facing products at OpenAI, provides a rare insider look on Lenny's Podcast ([035](../sources/035-lennys-podcast-openai-sherwin-wu.md)).",
+          "detail_source_ids": [
+            "035"
+          ]
         },
         {
           "category": "economics",
           "title": "Google raises $32B in debt including 100-year bond; Big Tech's combined 2026 AI capex hits $660B",
-          "summary": ""
+          "summary": "",
+          "detail_source_ids": []
         },
         {
           "category": "critical",
           "title": "Ethan Mollick: 50% of workers secretly use AI, reporting 3x productivity \u2014 but hiding it from employers",
-          "summary": ""
+          "summary": "",
+          "detail_source_ids": []
         },
         {
           "category": "critical",
           "title": "Cal Newport's taxonomy of bad AI reporting: the two questions every AI story must answer",
-          "summary": "Cal Newport joins Ed Zitron on Better Offline ([034](../sources/034-better-offline-cal-newport.md)) to dissect how AI gets covered in the media."
+          "summary": "Cal Newport joins Ed Zitron on Better Offline ([034](../sources/034-better-offline-cal-newport.md)) to dissect how AI gets covered in the media.",
+          "detail_source_ids": [
+            "034"
+          ]
         },
         {
           "category": "economics",
           "title": "Galloway: software selloff is panic, not fundamentals \u2014 predicts Anthropic surpasses OpenAI within 12 months",
-          "summary": "The software ETF (IGV) dropped 20% in a single month, with Adobe down nearly 40% over the past year."
+          "summary": "The software ETF (IGV) dropped 20% in a single month, with Adobe down nearly 40% over the past year.",
+          "detail_source_ids": [
+            "036"
+          ]
         }
       ],
       "source_ids": [
@@ -31321,27 +31351,38 @@
         {
           "category": "critical",
           "title": "Interface Studies: GUIs collapsing into prompts creates a self-reinforcing cognitive loop \u2014 specification-first thinking crowds out exploration",
-          "summary": ""
+          "summary": "",
+          "detail_source_ids": []
         },
         {
           "category": "economics",
           "title": "SaaSpocalypse: SaaS stocks drop 20% after Claude Co-work announcement; Gerard argues AI was the trigger, overvaluation was the cause",
-          "summary": "David Gerard's Pivot to AI ([039](../sources/039-pivot-to-ai-saaspocalypse.md)) dissects the SaaS stock crash that followed Anthropic's Claude Co-work launch."
+          "summary": "David Gerard's Pivot to AI ([039](../sources/039-pivot-to-ai-saaspocalypse.md)) dissects the SaaS stock crash that followed Anthropic's Claude Co-work launch.",
+          "detail_source_ids": [
+            "039"
+          ]
         },
         {
           "category": "critical",
           "title": "Anthropic's $20K, 100K-line C compiler can't beat GCC with optimizations *disabled* \u2014 $5/line for code that sometimes fails Hello World",
-          "summary": "Awesome's analysis ([041](../sources/041-awesome-claude-compiler-critique.md)) of Anthropic's \"Building a C compiler with a team of parallel Claudes\" blog post is the sharpest critique of agent team economics in the collection."
+          "summary": "Awesome's analysis ([041](../sources/041-awesome-claude-compiler-critique.md)) of Anthropic's \"Building a C compiler with a team of parallel Claudes\" blog post is the sharpest critique of agent team economics in the collection.",
+          "detail_source_ids": [
+            "041"
+          ]
         },
         {
           "category": "patterns",
           "title": "DevForge: vibe coding is a trap \u2014 AI's 10-minute implementation becomes 5 hours when you count debugging, refactoring, and production fixes",
-          "summary": "DevForge ([042](../sources/042-devforge-vibe-coding-trap.md)) builds the strongest case yet for why vibe coding's speed gains are illusory when measured across the full code lifecycle."
+          "summary": "DevForge ([042](../sources/042-devforge-vibe-coding-trap.md)) builds the strongest case yet for why vibe coding's speed gains are illusory when measured across the full code lifecycle.",
+          "detail_source_ids": [
+            "042"
+          ]
         },
         {
           "category": "tools",
           "title": "Cloudy Ads skill demonstrates Claude Code skills as full professional workflow replacements \u2014 190+ audit checks, non-coding use case",
-          "summary": ""
+          "summary": "",
+          "detail_source_ids": []
         }
       ],
       "source_ids": [
@@ -31381,52 +31422,80 @@
         {
           "category": "critical",
           "title": "Cursor's $8-16M browser stunt fails to compile \u2014 removing quality gates to boost throughput is the oldest engineering antipattern, now running at agent scale",
-          "summary": "Java Brains ([054](../sources/054-java-brains-cursor-browser-hype.md)) delivers the most thorough debunking of multi-agent hype this week."
+          "summary": "Java Brains ([054](../sources/054-java-brains-cursor-browser-hype.md)) delivers the most thorough debunking of multi-agent hype this week.",
+          "detail_source_ids": [
+            "054"
+          ]
         },
         {
           "category": "economics",
           "title": "Sam Harris frames AI success itself as an emergency: even the optimistic scenario concentrates wealth into a \"fall of Saigon\" scramble for the last available jobs",
-          "summary": "Sam Harris ([050](../sources/050-sam-harris-ai-economy-emergency.md)) reacts to Mustafa Suleyman's prediction that \"most if not all professional tasks\" will be fully automated within 12-18 months."
+          "summary": "Sam Harris ([050](../sources/050-sam-harris-ai-economy-emergency.md)) reacts to Mustafa Suleyman's prediction that \"most if not all professional tasks\" will be fully automated within 12-18 months.",
+          "detail_source_ids": [
+            "050"
+          ]
         },
         {
           "category": "security",
           "title": "AI browsers face an inescapable paradox \u2014 sandboxed enough to be safe means no advantage over a website; powerful enough to be useful means prompt injection owns your bank account",
-          "summary": "TheStandupPod ([047](../sources/047-standuppod-ai-browser-security.md)) dissects OpenAI's Chromium-based AI browser and identifies an inescapable dilemma."
+          "summary": "TheStandupPod ([047](../sources/047-standuppod-ai-browser-security.md)) dissects OpenAI's Chromium-based AI browser and identifies an inescapable dilemma.",
+          "detail_source_ids": [
+            "047"
+          ]
         },
         {
           "category": "patterns",
           "title": "Brainqub3 ships an open-source measurement rig proving multi-agent systems collapse under coordination costs when single agents already perform well",
-          "summary": "Brainqub3 ([055](../sources/055-brainqub3-multi-agent-measurement.md)) fills a critical gap in the multi-agent conversation: empirical measurement."
+          "summary": "Brainqub3 ([055](../sources/055-brainqub3-multi-agent-measurement.md)) fills a critical gap in the multi-agent conversation: empirical measurement.",
+          "detail_source_ids": [
+            "055"
+          ]
         },
         {
           "category": "critical",
           "title": "Anthropic safety lead resigns warning \"the world is in peril\" \u2014 Novara Media connects the safety-economy threads into a polycrisis framework",
-          "summary": "Sam Harris ([050](../sources/050-sam-harris-ai-economy-emergency.md)) reacts to Mustafa Suleyman's prediction that \"most if not all professional tasks\" will be fully automated within 12-18 months."
+          "summary": "Sam Harris ([050](../sources/050-sam-harris-ai-economy-emergency.md)) reacts to Mustafa Suleyman's prediction that \"most if not all professional tasks\" will be fully automated within 12-18 months.",
+          "detail_source_ids": [
+            "050"
+          ]
         },
         {
           "category": "tools",
           "title": "WebMCP lands in Chrome preview: websites can now expose structured tools directly to AI agents, replacing thousands of screenshot-and-click interactions with single function calls",
-          "summary": ""
+          "summary": "",
+          "detail_source_ids": []
         },
         {
           "category": "critical",
           "title": "Amodei tells Dwarkesh Patel we are \"near the end of the exponential\" \u2014 90% confidence on country-of-geniuses-in-a-datacenter within 10 years, 50/50 on 1-2 years, while the METR study shows a 20% productivity *downlift* for experienced developers",
-          "summary": "Dwarkesh Patel ([056](../sources/056-dwarkesh-patel-dario-amodei-interview.md)) conducts a two-hour interview with Anthropic CEO Dario Amodei that is the most transparent public accounting of frontier AI economics to date."
+          "summary": "Dwarkesh Patel ([056](../sources/056-dwarkesh-patel-dario-amodei-interview.md)) conducts a two-hour interview with Anthropic CEO Dario Amodei that is the most transparent public accounting of frontier AI economics to date.",
+          "detail_source_ids": [
+            "056"
+          ]
         },
         {
           "category": "economics",
           "title": "Griffonomics maps the SaaSpocalypse into the credit markets \u2014 PE-loaded SaaS companies now represent 31% of distressed syndicated loans, with PIK at 11.3%, creating contagion risk into pension funds and insurance companies",
-          "summary": "Griffonomics ([065](../sources/065-griffonomics-saaspocalypse.md)) delivers the most rigorous economic analysis of AI's impact on the software industry in the collection."
+          "summary": "Griffonomics ([065](../sources/065-griffonomics-saaspocalypse.md)) delivers the most rigorous economic analysis of AI's impact on the software industry in the collection.",
+          "detail_source_ids": [
+            "065"
+          ]
         },
         {
           "category": "patterns",
           "title": "Google DeepMind's Gemini 3 Deep Think achieves 100x compute reduction for Olympiad-level performance in six months \u2014 inference-time scaling replaces \"bigger models\" as the dominant paradigm, and agentic harnesses outperform raw models at every compute scale",
-          "summary": "Prompt Engineering ([060](../sources/060-prompt-engineering-100x-breakthrough.md)) unpacks Google DeepMind's Gemini 3 Deep Think release and argues the real story is not benchmarks but a paradigm shift."
+          "summary": "Prompt Engineering ([060](../sources/060-prompt-engineering-100x-breakthrough.md)) unpacks Google DeepMind's Gemini 3 Deep Think release and argues the real story is not benchmarks but a paradigm shift.",
+          "detail_source_ids": [
+            "060"
+          ]
         },
         {
           "category": "security",
           "title": "IBM maps zero trust principles onto agentic AI \u2014 six attack vectors, just-in-time credentials, tool registries, and AI firewalls form the first structured enterprise security blueprint for agent deployments",
-          "summary": "TheStandupPod ([047](../sources/047-standuppod-ai-browser-security.md)) dissects OpenAI's Chromium-based AI browser and identifies an inescapable dilemma."
+          "summary": "TheStandupPod ([047](../sources/047-standuppod-ai-browser-security.md)) dissects OpenAI's Chromium-based AI browser and identifies an inescapable dilemma.",
+          "detail_source_ids": [
+            "047"
+          ]
         }
       ],
       "source_ids": [
@@ -31513,27 +31582,32 @@
         {
           "category": "economics",
           "title": "Hyperscalers commit $660-690B in 2026 capex \u2014 nearly doubling 2025 \u2014 while all pure-play AI vendors combined project under $35B in revenue",
-          "summary": ""
+          "summary": "",
+          "detail_source_ids": []
         },
         {
           "category": "critical",
           "title": "Fortune reports Spotify's best developers \"haven't written a single line of code since December\" \u2014 Boris Cherny (Head of Claude Code) says he hasn't written code in two months",
-          "summary": ""
+          "summary": "",
+          "detail_source_ids": []
         },
         {
           "category": "security",
           "title": "88% of organizations report confirmed or suspected AI agent security incidents \u2014 only 14.4% have complete security approval before deployment",
-          "summary": "Gravitee's State of AI Agent Security 2026 report quantifies what IBM Technology ([057](../sources/057-ibm-zero-trust-ai-agents.md)) described theoretically: the gap between agent deployment velocity and security controls."
+          "summary": "Gravitee's State of AI Agent Security 2026 report quantifies what IBM Technology ([057](../sources/057-ibm-zero-trust-ai-agents.md)) described theoretically: the gap between agent deployment velocity and security controls.",
+          "detail_source_ids": []
         },
         {
           "category": "tools",
           "title": "Claude Code ships agent teams research preview, automatic memory recall, and scales skill budgets to context window size",
-          "summary": ""
+          "summary": "",
+          "detail_source_ids": []
         },
         {
           "category": "economics",
           "title": "Gartner forecasts worldwide AI spending at $2.52 trillion in 2026 \u2014 infrastructure alone consumes $1.37 trillion (54% of total)",
-          "summary": ""
+          "summary": "",
+          "detail_source_ids": []
         }
       ],
       "source_ids": [
@@ -31573,27 +31647,46 @@
         {
           "category": "synthesis",
           "title": "New synthesis published: Cognitive Debt and the Future of Software \u2014 Fowler's Deer Valley retreat framework applied across 13 sources",
-          "summary": "Today's synthesis document applies Martin Fowler's Deer Valley retreat fragments ([#071](../sources/071-martin-fowler-future-software-dev.md)) as a lens across 13 sources in the collection."
+          "summary": "Today's synthesis document applies Martin Fowler's Deer Valley retreat fragments ([#071](../sources/071-martin-fowler-future-software-dev.md)) as a lens across 13 sources in the collection.",
+          "detail_source_ids": [
+            "071",
+            "056",
+            "029",
+            "001"
+          ]
         },
         {
           "category": "economics",
           "title": "Claude Code reaches $1B ARR within six months of launch, competing with Copilot (20M+ users) and Cursor (360K+ paying users)",
-          "summary": "Claude Code reached $1 billion in annualized revenue within six months of launch, making it one of the fastest-growing developer tools in history."
+          "summary": "Claude Code reached $1 billion in annualized revenue within six months of launch, making it one of the fastest-growing developer tools in history.",
+          "detail_source_ids": [
+            "056"
+          ]
         },
         {
           "category": "economics",
           "title": "Salesforce quietly lays off ~1,000 workers including Agentforce AI product teams \u2014 Oxford Economics suggests AI-cited layoffs may be \"AI-washing\"",
-          "summary": "Salesforce laid off fewer than 1,000 workers on February 10, with cuts hitting marketing, product management, data analytics, and notably the Agentforce AI product teams themselves."
+          "summary": "Salesforce laid off fewer than 1,000 workers on February 10, with cuts hitting marketing, product management, data analytics, and notably the Agentforce AI product teams themselves.",
+          "detail_source_ids": [
+            "033"
+          ]
         },
         {
           "category": "security",
           "title": "Moltbook platform for 1.6M AI agents exposes private messages and credentials \u2014 entire site built with AI-generated code, no human security review",
-          "summary": "Moltbook, a social platform hosting 1.6 million AI agents, exposed private messages and credentials due to fundamental security failures."
+          "summary": "Moltbook, a social platform hosting 1.6 million AI agents, exposed private messages and credentials due to fundamental security failures.",
+          "detail_source_ids": [
+            "057"
+          ]
         },
         {
           "category": "critical",
           "title": "Worker AI anxiety spikes from 28% (2024) to 40% (2026) \u2014 97% of investors say funding decisions penalize firms that fail to upskill workers on AI",
-          "summary": "Mercer's Global Talent Trends 2026 report shows worker anxiety about AI-driven job loss jumping from 28% in 2024 to 40% in 2026 \u2014 a 43% year-over-year increase."
+          "summary": "Mercer's Global Talent Trends 2026 report shows worker anxiety about AI-driven job loss jumping from 28% in 2024 to 40% in 2026 \u2014 a 43% year-over-year increase.",
+          "detail_source_ids": [
+            "071",
+            "050"
+          ]
         }
       ],
       "source_ids": [
@@ -31626,27 +31719,40 @@
         {
           "category": "critical",
           "title": "The specification bottleneck now has empirical backing: AWS Cairo, 1.7x logic error rates, and 9% bug increase at 90% AI adoption",
-          "summary": ""
+          "summary": "",
+          "detail_source_ids": []
         },
         {
           "category": "patterns",
           "title": "IndyDevDan's 4-layer Bowser stack provides a reference architecture for agentic browser automation",
-          "summary": "IndyDevDan (#088) presents Bowser, the most complete agentic architecture in this collection: Skills (capability) \u2192 Subagents (scale) \u2192 Commands/Prompts (orchestration) \u2192 Justfiles (reusability)."
+          "summary": "IndyDevDan (#088) presents Bowser, the most complete agentic architecture in this collection: Skills (capability) \u2192 Subagents (scale) \u2192 Commands/Prompts (orchestration) \u2192 Justfiles (reusability).",
+          "detail_source_ids": [
+            "088"
+          ]
         },
         {
           "category": "economics",
           "title": "Wall Street Millennial exposes the AI job-loss narrative as a customer acquisition strategy, backed by METR and Remote Labor Index data",
-          "summary": "Wall Street Millennial (#077) delivers a data-driven debunking."
+          "summary": "Wall Street Millennial (#077) delivers a data-driven debunking.",
+          "detail_source_ids": [
+            "077"
+          ]
         },
         {
           "category": "tools",
           "title": "Codex and Claude ship within 20 minutes of each other \u2014 Jones frames it as delegation vs. coordination, not better vs. worse",
-          "summary": "Jones (#086) analyzes the 20-minute launch overlap between Codex and Claude Opus 4.6."
+          "summary": "Jones (#086) analyzes the 20-minute launch overlap between Codex and Claude Opus 4.6.",
+          "detail_source_ids": [
+            "086"
+          ]
         },
         {
           "category": "patterns",
           "title": "The 60% rule: Dylan Davis quantifies context rot with a single actionable threshold",
-          "summary": "Dylan Davis (#084) quantifies what every practitioner has felt: once you've used ~60% of a model's context window, performance degrades noticeably."
+          "summary": "Dylan Davis (#084) quantifies what every practitioner has felt: once you've used ~60% of a model's context window, performance degrades noticeably.",
+          "detail_source_ids": [
+            "084"
+          ]
         }
       ],
       "source_ids": [
@@ -31699,27 +31805,39 @@
         {
           "category": "economics",
           "title": "OpenAI faces simultaneous Nvidia pullback ($100B \u2192 $20B), Microsoft self-sufficiency pivot, and projected $44B cumulative losses through 2028",
-          "summary": ""
+          "summary": "",
+          "detail_source_ids": []
         },
         {
           "category": "critical",
           "title": "Gary Marcus and Steve Eisman lay out the investment bear case: LLMs as System 1 machines hitting diminishing returns, with OpenAI compared to WeWork",
-          "summary": ""
+          "summary": "",
+          "detail_source_ids": []
         },
         {
           "category": "security",
           "title": "The OpenClaw saga concludes: from Friday-night hack to OpenAI acquisition, with crypto scammers, 1.5M leaked API tokens, and Chrome/Chromium governance risk along the way",
-          "summary": "Three sources trace OpenClaw from creation to acquisition."
+          "summary": "Three sources trace OpenClaw from creation to acquisition.",
+          "detail_source_ids": [
+            "094",
+            "093",
+            "095"
+          ]
         },
         {
           "category": "patterns",
           "title": "Java Brains names the \"expectations trap\" \u2014 AI expanding developer scope without expanding compensation, following the full-stack and DevOps playbooks",
-          "summary": "Java Brains (#092) articulates a pattern visible across the collection: AI tools expand what employers expect from developers without expanding compensation."
+          "summary": "Java Brains (#092) articulates a pattern visible across the collection: AI tools expand what employers expect from developers without expanding compensation.",
+          "detail_source_ids": [
+            "092",
+            "091"
+          ]
         },
         {
           "category": "tools",
           "title": "Agent memory architecture gets a technical deep-dive: hybrid search (70/30 vector/keyword), 400-token chunking, and Claude Code's counter-intuitive finding that grep outperforms vector search",
-          "summary": ""
+          "summary": "",
+          "detail_source_ids": []
         }
       ],
       "source_ids": [
@@ -31763,7 +31881,8 @@
         {
           "category": "security",
           "title": "DEF CON talk demonstrates 90-100% text recovery from vector embeddings",
-          "summary": ""
+          "summary": "",
+          "detail_source_ids": []
         }
       ],
       "source_ids": [
@@ -31825,7 +31944,8 @@
         {
           "category": "security",
           "title": "Skills.sh marketplace exposes full supply-chain attack surface: no versioning, prompt injection via alt text, autonomous agent self-installation",
-          "summary": ""
+          "summary": "",
+          "detail_source_ids": []
         }
       ],
       "source_ids": [
@@ -31865,37 +31985,50 @@
         {
           "category": "economics",
           "title": "Modern MBA delivers layer-by-layer AI-to-dot-com bubble mapping",
-          "summary": "Modern MBA (#147) maps the entire AI stack onto the 1990s dot-com era: consumer AI startups are Pets.com, OpenAI is Netscape (massive growth, no profitability), Nvidia is Sun+Cisco, hyperscalers are Exodus Communications, and energy is the new bandwidth."
+          "summary": "Modern MBA (#147) maps the entire AI stack onto the 1990s dot-com era: consumer AI startups are Pets.com, OpenAI is Netscape (massive growth, no profitability), Nvidia is Sun+Cisco, hyperscalers are Exodus Communications, and energy is the new bandwidth.",
+          "detail_source_ids": [
+            "147"
+          ]
         },
         {
           "category": "tooling",
           "title": "Matt Pocock explores `claude --worktree` for parallel agent branches",
-          "summary": ""
+          "summary": "",
+          "detail_source_ids": []
         },
         {
           "category": "security",
           "title": "Nate B Jones introduces trust architecture after Anthropic's 16-model stress test",
-          "summary": ""
+          "summary": "",
+          "detail_source_ids": []
         },
         {
           "category": "education",
           "title": "Harvard panel reveals 50% of students report AI over-reliance",
-          "summary": ""
+          "summary": "",
+          "detail_source_ids": []
         },
         {
           "category": "agentic",
           "title": "IndyDevDan presents Pi as the open-source Claude Code alternative",
-          "summary": "IndyDevDan (#146) presents Pi as Claude Code's only real competitor \u2014 open-source, model-agnostic, deeply customizable."
+          "summary": "IndyDevDan (#146) presents Pi as Claude Code's only real competitor \u2014 open-source, model-agnostic, deeply customizable.",
+          "detail_source_ids": [
+            "146"
+          ]
         },
         {
           "category": "economics",
           "title": "Nate B Jones reframes \"which AI is best\" with difficulty taxonomy",
-          "summary": ""
+          "summary": "",
+          "detail_source_ids": []
         },
         {
           "category": "hype",
           "title": "Wall Street Millennial dismantles the SaaS apocalypse narrative",
-          "summary": "Wall Street Millennial (#144) systematically dismantles the narrative that vibe coding will replace enterprise software, revealing that Anthropic's C compiler demo required 9 engineers, couldn't debug itself, and dramatically underperformed GCC."
+          "summary": "Wall Street Millennial (#144) systematically dismantles the narrative that vibe coding will replace enterprise software, revealing that Anthropic's C compiler demo required 9 engineers, couldn't debug itself, and dramatically underperformed GCC.",
+          "detail_source_ids": [
+            "144"
+          ]
         }
       ],
       "source_ids": [
@@ -31927,27 +32060,38 @@
         {
           "category": "patterns",
           "title": "The CLAUDE.md rebellion: Theo and Matt Pocock say delete your config files and use hooks instead",
-          "summary": "Three videos published within days of each other \u2014 Theo's \"Delete your CLAUDE.md\" (#153), Matt Pocock's \"Never Run claude /init\" (#152), and Pocock's hooks enforcement video (#157) \u2014 collectively reject the CLAUDE.md-centric workflow that the community itself established weeks ago."
+          "summary": "Three videos published within days of each other \u2014 Theo's \"Delete your CLAUDE.md\" (#153), Matt Pocock's \"Never Run claude /init\" (#152), and Pocock's hooks enforcement video (#157) \u2014 collectively reject the CLAUDE.md-centric workflow that the community itself established weeks ago.",
+          "detail_source_ids": [
+            "153",
+            "152",
+            "157",
+            "158",
+            "160"
+          ]
         },
         {
           "category": "economics",
           "title": "Ezra Klein dedicates two hours to AI agent economic disruption \u2014 the mainstream has arrived",
-          "summary": ""
+          "summary": "",
+          "detail_source_ids": []
         },
         {
           "category": "critical",
           "title": "Mitchell Hashimoto, Peter Steinberger, and Mo Bitar represent three fundamentally different AI coding philosophies",
-          "summary": ""
+          "summary": "",
+          "detail_source_ids": []
         },
         {
           "category": "patterns",
           "title": "Nate B Jones names \"intent engineering\" as the successor to prompt and context engineering",
-          "summary": ""
+          "summary": "",
+          "detail_source_ids": []
         },
         {
           "category": "security",
           "title": "OpenClaw deletes a user's inbox, Chinese labs steal Claude's brain, Cloudflare uses lava lamps",
-          "summary": ""
+          "summary": "",
+          "detail_source_ids": []
         }
       ],
       "source_ids": [
@@ -31993,27 +32137,32 @@
         {
           "category": "security",
           "title": "OpenClaw cascading failures: 40K exposed accounts, inbox deletion, 221K GitHub stars amid chaos",
-          "summary": ""
+          "summary": "",
+          "detail_source_ids": []
         },
         {
           "category": "economics",
           "title": "Nobel laureate Daron Acemoglu argues AI's current direction serves capital, not workers",
-          "summary": ""
+          "summary": "",
+          "detail_source_ids": []
         },
         {
           "category": "critical",
           "title": "Anthropic designated \"supply chain risk\" by Department of Defense over ethical AI limits",
-          "summary": ""
+          "summary": "",
+          "detail_source_ids": []
         },
         {
           "category": "patterns",
           "title": "Agent orchestration taught at Stanford, practiced at Keyhole Software, formalized by Dylan Davis",
-          "summary": ""
+          "summary": "",
+          "detail_source_ids": []
         },
         {
           "category": "tools",
           "title": "Claude Cowork gets scheduled tasks; Obsidian + Claude Code becomes a personal thinking partner",
-          "summary": ""
+          "summary": "",
+          "detail_source_ids": []
         }
       ],
       "source_ids": [
@@ -32063,27 +32212,45 @@
         {
           "category": "patterns",
           "title": "Stripe's agentic engineering layer ships 1,300+ fully unattended PRs per week \u2014 the blueprint engine pattern emerges",
-          "summary": "IndyDevDan's breakdown of Stripe's \"minions\" system (#209) is the most important enterprise agentic case study in this batch."
+          "summary": "IndyDevDan's breakdown of Stripe's \"minions\" system (#209) is the most important enterprise agentic case study in this batch.",
+          "detail_source_ids": [
+            "209",
+            "193",
+            "200"
+          ]
         },
         {
           "category": "security",
           "title": "LLM-powered deanonymization at $1-4 per person kills practical obscurity \u2014 text is structured data now",
-          "summary": ""
+          "summary": "",
+          "detail_source_ids": []
         },
         {
           "category": "critical",
           "title": "Code generation was never the bottleneck \u2014 implementation cost was a feature, not a bug",
-          "summary": "Awesome (#201) reviews Dex Rod's viral argument that implementation cost was actually a beneficial constraint \u2014 it forced teams to prioritize, debate trade-offs, and kill mediocre ideas early."
+          "summary": "Awesome (#201) reviews Dex Rod's viral argument that implementation cost was actually a beneficial constraint \u2014 it forced teams to prioritize, debate trade-offs, and kill mediocre ideas early.",
+          "detail_source_ids": [
+            "201",
+            "202"
+          ]
         },
         {
           "category": "patterns",
           "title": "Nate B Jones names \"frontier operations\" as the five-skill meta-discipline for the AI-human boundary",
-          "summary": "Nate B Jones (#198) introduces \"frontier operations\" \u2014 five component skills for operating at the expanding boundary between human and agent capabilities: boundary sensing (knowing where the line is today), seam design (structuring human-agent handoffs), failure model maintenance (understanding how agents fail at current capability levels), capability forecasting (predicting where the boundary moves next), and leverage calibration (deciding what deserves human attention)."
+          "summary": "Nate B Jones (#198) introduces \"frontier operations\" \u2014 five component skills for operating at the expanding boundary between human and agent capabilities: boundary sensing (knowing where the line is today), seam design (structuring human-agent handoffs), failure model maintenance (understanding how agents fail at current capability levels), capability forecasting (predicting where the boundary moves next), and leverage calibration (deciding what deserves human attention).",
+          "detail_source_ids": [
+            "198",
+            "208"
+          ]
         },
         {
           "category": "economics",
           "title": "SaaS defensibility migrates from application layer to proprietary data assets with feedback loops",
-          "summary": "Stefan Wirth (#207) proposes a revised three-layer stack: point solution applications on top, a \"value layer\" (context, prompting, programmatic orchestration) in the middle, and system of record at the bottom."
+          "summary": "Stefan Wirth (#207) proposes a revised three-layer stack: point solution applications on top, a \"value layer\" (context, prompting, programmatic orchestration) in the middle, and system of record at the bottom.",
+          "detail_source_ids": [
+            "207",
+            "203"
+          ]
         }
       ],
       "source_ids": [
@@ -32125,27 +32292,46 @@
         {
           "category": "patterns",
           "title": "Vibe coding dies: Matt Pocock, IBM, and Jaymin West converge on specification-first development",
-          "summary": "Matt Pocock's seven-phase framework (#221) makes explicit what practitioners have been converging on: prototyping before PRDs, specifications before execution, human QA as the final gate."
+          "summary": "Matt Pocock's seven-phase framework (#221) makes explicit what practitioners have been converging on: prototyping before PRDs, specifications before execution, human QA as the final gate.",
+          "detail_source_ids": [
+            "221",
+            "214",
+            "220"
+          ]
         },
         {
           "category": "tools",
           "title": "Skills 2.0, Claude memory systems, and token-slashing MCP tools move the ecosystem forward",
-          "summary": "Three takes on skills evolution: Ray Amjad on Skills 2.0 with creator tools and evals (#222), Simon Scrapes on mastery patterns (#225), Chase AI on the upgraded workflow (#227)."
+          "summary": "Three takes on skills evolution: Ray Amjad on Skills 2.0 with creator tools and evals (#222), Simon Scrapes on mastery patterns (#225), Chase AI on the upgraded workflow (#227).",
+          "detail_source_ids": [
+            "222",
+            "225",
+            "227",
+            "238",
+            "239"
+          ]
         },
         {
           "category": "critical",
           "title": "Jeremy Howard's gambling analogy and Harvard's learning erosion provide the strongest skeptical case yet",
-          "summary": "Deep learning pioneer Jeremy Howard (#226) distinguishes coding (translating specs to syntax \u2014 LLMs do well) from software engineering (designing abstractions for novel problems \u2014 LLMs cannot)."
+          "summary": "Deep learning pioneer Jeremy Howard (#226) distinguishes coding (translating specs to syntax \u2014 LLMs do well) from software engineering (designing abstractions for novel problems \u2014 LLMs cannot).",
+          "detail_source_ids": [
+            "226",
+            "215",
+            "217"
+          ]
         },
         {
           "category": "economics",
           "title": "OpenCode, Pi Agent, and enterprise OpenClaw fragment the agentic coding market",
-          "summary": ""
+          "summary": "",
+          "detail_source_ids": []
         },
         {
           "category": "economics",
           "title": "$110B OpenAI funding and 99% token cost reduction define the infrastructure economics",
-          "summary": ""
+          "summary": "",
+          "detail_source_ids": []
         }
       ],
       "source_ids": [
@@ -32190,17 +32376,20 @@
         {
           "category": "synthesis",
           "title": "New synthesis covers the missing bridge: Pocock's structured workflows + Stripe's production minions system + OpenAI/Anthropic context race + Cognee memory layer",
-          "summary": ""
+          "summary": "",
+          "detail_source_ids": []
         },
         {
           "category": "infrastructure",
           "title": "Six sources converge on the same insight: specification, codebase architecture, and persistent memory are the real bottlenecks",
-          "summary": ""
+          "summary": "",
+          "detail_source_ids": []
         },
         {
           "category": "cleanup",
           "title": "Repository maintenance: resolved duplicate sources, cleaned untracked drafts, merged PRs #21-22 as sources 241-242",
-          "summary": ""
+          "summary": "",
+          "detail_source_ids": []
         }
       ],
       "source_ids": [
@@ -32233,27 +32422,42 @@
         {
           "category": "patterns",
           "title": "Scouts vs. Strike Teams: Nate B Jones introduces the definitive organizational framework for AI-era teams \u2014 solo \"scouts\" for exploration, 5-person \"strike teams\" for production ([250](../sources/250-nate-b-jones-team-size-ai.md))",
-          "summary": "Nate B Jones ([250](../sources/250-nate-b-jones-team-size-ai.md)) provides the most actionable organizational framework to emerge from this batch: when AI multiplies per-person output by 5-10x, coordination cost scales by the same factor, making teams >5 people catastrophically expensive."
+          "summary": "Nate B Jones ([250](../sources/250-nate-b-jones-team-size-ai.md)) provides the most actionable organizational framework to emerge from this batch: when AI multiplies per-person output by 5-10x, coordination cost scales by the same factor, making teams >5 people catastrophically expensive.",
+          "detail_source_ids": [
+            "250"
+          ]
         },
         {
           "category": "critical",
           "title": "The AI Honeymoon Is Over: Maturity plateau hits \u2014 incremental model improvements no longer justify workflow rewrites, practitioners report gap between hype and daily use ([246](../sources/246-the-blur-ai-honeymoon-over.md), [252](../sources/252-matteo-cassese-agentic-fever.md))",
-          "summary": "Nate B Jones ([250](../sources/250-nate-b-jones-team-size-ai.md)) provides the most actionable organizational framework to emerge from this batch: when AI multiplies per-person output by 5-10x, coordination cost scales by the same factor, making teams >5 people catastrophically expensive."
+          "summary": "Nate B Jones ([250](../sources/250-nate-b-jones-team-size-ai.md)) provides the most actionable organizational framework to emerge from this batch: when AI multiplies per-person output by 5-10x, coordination cost scales by the same factor, making teams >5 people catastrophically expensive.",
+          "detail_source_ids": [
+            "250"
+          ]
         },
         {
           "category": "patterns",
           "title": "Context Over Personality: The era of \"you are an expert X\" prompts is over \u2014 skills files should contain institutional knowledge, not generic expertise ([246](../sources/246-the-blur-ai-honeymoon-over.md), [247](../sources/247-better-stack-google-workspace-cli.md))",
-          "summary": "Nate B Jones ([250](../sources/250-nate-b-jones-team-size-ai.md)) provides the most actionable organizational framework to emerge from this batch: when AI multiplies per-person output by 5-10x, coordination cost scales by the same factor, making teams >5 people catastrophically expensive."
+          "summary": "Nate B Jones ([250](../sources/250-nate-b-jones-team-size-ai.md)) provides the most actionable organizational framework to emerge from this batch: when AI multiplies per-person output by 5-10x, coordination cost scales by the same factor, making teams >5 people catastrophically expensive.",
+          "detail_source_ids": [
+            "250"
+          ]
         },
         {
           "category": "critical",
           "title": "The C++ as Assembly Fallacy: Veteran programmer dismantles the \"don't read AI-generated code\" argument \u2014 prompts aren't source code, context window cliffs cause silent hallucinations ([251](../sources/251-less-assembly-required-ai-replace-programmers.md))",
-          "summary": "Shahesh (45 years programming experience, [251](../sources/251-less-assembly-required-ai-replace-programmers.md)) systematically dismantles the \"treat AI code like compiler output\" argument."
+          "summary": "Shahesh (45 years programming experience, [251](../sources/251-less-assembly-required-ai-replace-programmers.md)) systematically dismantles the \"treat AI code like compiler output\" argument.",
+          "detail_source_ids": [
+            "251"
+          ]
         },
         {
           "category": "economics",
           "title": "Enterprise Adoption Lags Innovation: Legal AI playbook market shows 26% Harvey adoption with long fragmented tail; enterprise model upgrades follow deprecation cycles, not hype cycles ([243](../sources/243-skills-legal-ai-playbooks.md), [246](../sources/246-the-blur-ai-honeymoon-over.md))",
-          "summary": "Nate B Jones ([250](../sources/250-nate-b-jones-team-size-ai.md)) provides the most actionable organizational framework to emerge from this batch: when AI multiplies per-person output by 5-10x, coordination cost scales by the same factor, making teams >5 people catastrophically expensive."
+          "summary": "Nate B Jones ([250](../sources/250-nate-b-jones-team-size-ai.md)) provides the most actionable organizational framework to emerge from this batch: when AI multiplies per-person output by 5-10x, coordination cost scales by the same factor, making teams >5 people catastrophically expensive.",
+          "detail_source_ids": [
+            "250"
+          ]
         }
       ],
       "source_ids": [
@@ -32301,27 +32505,56 @@
         {
           "category": "economics",
           "title": "$690B hyperscaler capex squeeze maps the middleware death zone \u2014 only four defensible positions survive",
-          "summary": "Nate B Jones's structural analysis ([#327](../sources/327-nate-b-jones-ai-middleware-squeeze.md)) reveals why most AI startups are building on borrowed time."
+          "summary": "Nate B Jones's structural analysis ([#327](../sources/327-nate-b-jones-ai-middleware-squeeze.md)) reveals why most AI startups are building on borrowed time.",
+          "detail_source_ids": [
+            "327",
+            "334",
+            "331",
+            "336"
+          ]
         },
         {
           "category": "critical",
           "title": "Vibe coding reframed as addiction: 150-line review ceiling is the mechanism of skill decay",
-          "summary": "ThePrimeagen's extended treatment ([#340](../sources/340-primeagen-10x-engineer-useless.md)) moves the craft crisis conversation from existential anxiety to behavioral analysis."
+          "summary": "ThePrimeagen's extended treatment ([#340](../sources/340-primeagen-10x-engineer-useless.md)) moves the craft crisis conversation from existential anxiety to behavioral analysis.",
+          "detail_source_ids": [
+            "340",
+            "326",
+            "332"
+          ]
         },
         {
           "category": "patterns",
           "title": "Agent OS convergence \u2014 NemoClaw, Claude Channels, pull-based polling, and Seed/Paul framework all solve the same problem",
-          "summary": "NVIDIA's NemoClaw launch ([#335](../sources/335-chris-messina-nvidia-nemoclaw.md)) signals enterprise graduation of the agentic OS concept."
+          "summary": "NVIDIA's NemoClaw launch ([#335](../sources/335-chris-messina-nvidia-nemoclaw.md)) signals enterprise graduation of the agentic OS concept.",
+          "detail_source_ids": [
+            "335",
+            "341",
+            "346",
+            "329",
+            "322",
+            "342"
+          ]
         },
         {
           "category": "tools",
           "title": "Google Stitch + Claude Code completes the design-to-implementation AI pipeline",
-          "summary": "Google Stitch's portable `design.md` format ([#330](../sources/330-fireship-google-stitch-uiux.md)) plugs directly into Claude Code via MCP ([#343](../sources/343-build-great-products-google-stitch-claude.md)), completing the design\u2192spec\u2192implementation\u2192validation loop with AI at every stage."
+          "summary": "Google Stitch's portable `design.md` format ([#330](../sources/330-fireship-google-stitch-uiux.md)) plugs directly into Claude Code via MCP ([#343](../sources/343-build-great-products-google-stitch-claude.md)), completing the design\u2192spec\u2192implementation\u2192validation loop with AI at every stage.",
+          "detail_source_ids": [
+            "330",
+            "343",
+            "323"
+          ]
         },
         {
           "category": "research",
           "title": "Karpathy names December 2025 as the inflection; Tao warns verification is the real bottleneck",
-          "summary": "Karpathy names December 2025 as the moment coding agents became genuinely useful ([#337](../sources/337-karpathy-code-agents-autoresearch.md)) \u2014 token throughput per day is the new productivity metric."
+          "summary": "Karpathy names December 2025 as the moment coding agents became genuinely useful ([#337](../sources/337-karpathy-code-agents-autoresearch.md)) \u2014 token throughput per day is the new productivity metric.",
+          "detail_source_ids": [
+            "337",
+            "348",
+            "338"
+          ]
         }
       ],
       "source_ids": [
@@ -32367,27 +32600,45 @@
         {
           "category": "economics",
           "title": "AI pricing is subsidized 10-25x actual break-even \u2014 all three scaling levers hit diminishing returns simultaneously",
-          "summary": ""
+          "summary": "",
+          "detail_source_ids": []
         },
         {
           "category": "critical",
           "title": "AI psychosis pipeline: from hype narratives weaponizing emotional storytelling to LLMs amplifying delusional thinking with zero corrective friction",
-          "summary": "Mo Bitar delivers a three-part critical arc across this batch."
+          "summary": "Mo Bitar delivers a three-part critical arc across this batch.",
+          "detail_source_ids": [
+            "405",
+            "416",
+            "408",
+            "404"
+          ]
         },
         {
           "category": "patterns",
           "title": "Asynchronous agent execution arrives \u2014 Scheduled Tasks, Dispatch, and Paperclip orchestration shift from watching agents tokenize to dispatching and checking in",
-          "summary": "The shift from synchronous to asynchronous agent work crystallizes across three sources."
+          "summary": "The shift from synchronous to asynchronous agent work crystallizes across three sources.",
+          "detail_source_ids": [
+            "406",
+            "410",
+            "358"
+          ]
         },
         {
           "category": "security",
           "title": "Open-source slop PRs create self-sustaining chains of low-quality contributions; repo guardrails (type annotations, tests, branch protection) become mandatory",
-          "summary": "ThePrimeTime's coverage ([#423](../sources/423-the-primetime-open-source-slop-prs.md)) documents a new threat: AI-generated pull requests creating self-sustaining chains of low-quality contributions that overwhelm maintainers."
+          "summary": "ThePrimeTime's coverage ([#423](../sources/423-the-primetime-open-source-slop-prs.md)) documents a new threat: AI-generated pull requests creating self-sustaining chains of low-quality contributions that overwhelm maintainers.",
+          "detail_source_ids": [
+            "423",
+            "413",
+            "414"
+          ]
         },
         {
           "category": "economics",
           "title": "Qatar helium disruption threatens advanced semiconductor fabrication \u2014 48-day supply buffer before AI chip production bottlenecks",
-          "summary": ""
+          "summary": "",
+          "detail_source_ids": []
         }
       ],
       "source_ids": [
@@ -32446,7 +32697,7 @@
         "date": "2026-04-03",
         "title": "",
         "subtitle": "",
-        "body_html": "<div class=\"card-focus\">Sources 401-424 \u2014 AI subsidy cliff gets a number, open-source slop PRs force repo hygiene rethink, helium supply threatens chip fabrication, and the psychosis/hype criticism pipeline matures</div><div class=\"card-headlines\"><div class=\"headline\"><span class=\"cat cat-economics\">economics</span> <strong>AI pricing is subsidized 10-25x actual break-even \u2014 all three scaling levers hit diminishing returns simultaneously</strong></div><div class=\"headline\"><span class=\"cat cat-critical\">critical</span> <strong>AI psychosis pipeline: from hype narratives weaponizing emotional storytelling to LLMs amplifying delusional thinking with zero corrective friction</strong><p class=\"headline-summary\">Mo Bitar delivers a three-part critical arc across this batch.</p></div><div class=\"headline\"><span class=\"cat cat-patterns\">patterns</span> <strong>Asynchronous agent execution arrives \u2014 Scheduled Tasks, Dispatch, and Paperclip orchestration shift from watching agents tokenize to dispatching and checking in</strong><p class=\"headline-summary\">The shift from synchronous to asynchronous agent work crystallizes across three sources.</p></div><div class=\"headline\"><span class=\"cat cat-security\">security</span> <strong>Open-source slop PRs create self-sustaining chains of low-quality contributions; repo guardrails (type annotations, tests, branch protection) become mandatory</strong><p class=\"headline-summary\">ThePrimeTime's coverage (<a class=\"src-link\" data-src=\"423\" href=\"#\">#423</a>) documents a new threat: AI-generated pull requests creating self-sustaining chains of low-quality contributions that overwhelm maintainers.</p></div><div class=\"headline\"><span class=\"cat cat-economics\">economics</span> <strong>Qatar helium disruption threatens advanced semiconductor fabrication \u2014 48-day supply buffer before AI chip production bottlenecks</strong></div></div><div class=\"card-sources\">Sources: <a class=\"src-link\" data-src=\"326\" href=\"#\">#326</a> <a class=\"src-link\" data-src=\"327\" href=\"#\">#327</a> <a class=\"src-link\" data-src=\"358\" href=\"#\">#358</a> <a class=\"src-link\" data-src=\"365\" href=\"#\">#365</a> <a class=\"src-link\" data-src=\"369\" href=\"#\">#369</a> <a class=\"src-link\" data-src=\"375\" href=\"#\">#375</a> <a class=\"src-link\" data-src=\"391\" href=\"#\">#391</a> <a class=\"src-link\" data-src=\"401\" href=\"#\">#401</a> <a class=\"src-link\" data-src=\"402\" href=\"#\">#402</a> <a class=\"src-link\" data-src=\"404\" href=\"#\">#404</a> <a class=\"src-link\" data-src=\"405\" href=\"#\">#405</a> <a class=\"src-link\" data-src=\"406\" href=\"#\">#406</a> +18 more</div>"
+        "body_html": "<div class=\"card-focus\">Sources 401-424 \u2014 AI subsidy cliff gets a number, open-source slop PRs force repo hygiene rethink, helium supply threatens chip fabrication, and the psychosis/hype criticism pipeline matures</div><div class=\"card-headlines\"><div class=\"headline\"><span class=\"cat cat-economics\">economics</span> <strong>AI pricing is subsidized 10-25x actual break-even \u2014 all three scaling levers hit diminishing returns simultaneously</strong></div><div class=\"headline\"><span class=\"cat cat-critical\">critical</span> <strong>AI psychosis pipeline: from hype narratives weaponizing emotional storytelling to LLMs amplifying delusional thinking with zero corrective friction</strong><p class=\"headline-summary\">Mo Bitar delivers a three-part critical arc across this batch.</p><div class=\"headline-sources\"><a class=\"src-link\" data-src=\"405\" href=\"#\"><a class=\"src-link\" data-src=\"405\" href=\"#\">#405</a></a> <a class=\"src-link\" data-src=\"416\" href=\"#\"><a class=\"src-link\" data-src=\"416\" href=\"#\">#416</a></a> <a class=\"src-link\" data-src=\"408\" href=\"#\"><a class=\"src-link\" data-src=\"408\" href=\"#\">#408</a></a> <a class=\"src-link\" data-src=\"404\" href=\"#\"><a class=\"src-link\" data-src=\"404\" href=\"#\">#404</a></a></div></div><div class=\"headline\"><span class=\"cat cat-patterns\">patterns</span> <strong>Asynchronous agent execution arrives \u2014 Scheduled Tasks, Dispatch, and Paperclip orchestration shift from watching agents tokenize to dispatching and checking in</strong><p class=\"headline-summary\">The shift from synchronous to asynchronous agent work crystallizes across three sources.</p><div class=\"headline-sources\"><a class=\"src-link\" data-src=\"406\" href=\"#\"><a class=\"src-link\" data-src=\"406\" href=\"#\">#406</a></a> <a class=\"src-link\" data-src=\"410\" href=\"#\"><a class=\"src-link\" data-src=\"410\" href=\"#\">#410</a></a> <a class=\"src-link\" data-src=\"358\" href=\"#\"><a class=\"src-link\" data-src=\"358\" href=\"#\">#358</a></a></div></div><div class=\"headline\"><span class=\"cat cat-security\">security</span> <strong>Open-source slop PRs create self-sustaining chains of low-quality contributions; repo guardrails (type annotations, tests, branch protection) become mandatory</strong><p class=\"headline-summary\">ThePrimeTime's coverage (<a class=\"src-link\" data-src=\"423\" href=\"#\">#423</a>) documents a new threat: AI-generated pull requests creating self-sustaining chains of low-quality contributions that overwhelm maintainers.</p><div class=\"headline-sources\"><a class=\"src-link\" data-src=\"423\" href=\"#\"><a class=\"src-link\" data-src=\"423\" href=\"#\">#423</a></a> <a class=\"src-link\" data-src=\"413\" href=\"#\"><a class=\"src-link\" data-src=\"413\" href=\"#\">#413</a></a> <a class=\"src-link\" data-src=\"414\" href=\"#\"><a class=\"src-link\" data-src=\"414\" href=\"#\">#414</a></a></div></div><div class=\"headline\"><span class=\"cat cat-economics\">economics</span> <strong>Qatar helium disruption threatens advanced semiconductor fabrication \u2014 48-day supply buffer before AI chip production bottlenecks</strong></div></div><div class=\"card-sources\">Sources: <a class=\"src-link\" data-src=\"326\" href=\"#\">#326</a> <a class=\"src-link\" data-src=\"327\" href=\"#\">#327</a> <a class=\"src-link\" data-src=\"358\" href=\"#\">#358</a> <a class=\"src-link\" data-src=\"365\" href=\"#\">#365</a> <a class=\"src-link\" data-src=\"369\" href=\"#\">#369</a> <a class=\"src-link\" data-src=\"375\" href=\"#\">#375</a> <a class=\"src-link\" data-src=\"391\" href=\"#\">#391</a> <a class=\"src-link\" data-src=\"401\" href=\"#\">#401</a> <a class=\"src-link\" data-src=\"402\" href=\"#\">#402</a> <a class=\"src-link\" data-src=\"404\" href=\"#\">#404</a> <a class=\"src-link\" data-src=\"405\" href=\"#\">#405</a> <a class=\"src-link\" data-src=\"406\" href=\"#\">#406</a> +18 more</div>"
       },
       {
         "id": "2026-04-03-weekly-themes",
@@ -32470,7 +32721,7 @@
         "date": "2026-03-21",
         "title": "",
         "subtitle": "",
-        "body_html": "<div class=\"card-focus\">26-video playlist batch \u2014 economic squeeze crystallizes, craft identity crisis gets addiction framework, agent OS converges across implementations, Karpathy names the inflection point</div><div class=\"card-headlines\"><div class=\"headline\"><span class=\"cat cat-economics\">economics</span> <strong>$690B hyperscaler capex squeeze maps the middleware death zone \u2014 only four defensible positions survive</strong><p class=\"headline-summary\">Nate B Jones's structural analysis (<a class=\"src-link\" data-src=\"327\" href=\"#\">#327</a>) reveals why most AI startups are building on borrowed time.</p></div><div class=\"headline\"><span class=\"cat cat-critical\">critical</span> <strong>Vibe coding reframed as addiction: 150-line review ceiling is the mechanism of skill decay</strong><p class=\"headline-summary\">ThePrimeagen's extended treatment (<a class=\"src-link\" data-src=\"340\" href=\"#\">#340</a>) moves the craft crisis conversation from existential anxiety to behavioral analysis.</p></div><div class=\"headline\"><span class=\"cat cat-patterns\">patterns</span> <strong>Agent OS convergence \u2014 NemoClaw, Claude Channels, pull-based polling, and Seed/Paul framework all solve the same problem</strong><p class=\"headline-summary\">NVIDIA's NemoClaw launch (<a class=\"src-link\" data-src=\"335\" href=\"#\">#335</a>) signals enterprise graduation of the agentic OS concept.</p></div><div class=\"headline\"><span class=\"cat cat-tools\">tools</span> <strong>Google Stitch + Claude Code completes the design-to-implementation AI pipeline</strong><p class=\"headline-summary\">Google Stitch's portable design.md format (<a class=\"src-link\" data-src=\"330\" href=\"#\">#330</a>) plugs directly into Claude Code via MCP (<a class=\"src-link\" data-src=\"343\" href=\"#\">#343</a>), completing the design\u2192spec\u2192implementation\u2192validation loop with AI at every stage.</p></div><div class=\"headline\"><span class=\"cat cat-research\">research</span> <strong>Karpathy names December 2025 as the inflection; Tao warns verification is the real bottleneck</strong><p class=\"headline-summary\">Karpathy names December 2025 as the moment coding agents became genuinely useful (<a class=\"src-link\" data-src=\"337\" href=\"#\">#337</a>) \u2014 token throughput per day is the new productivity metric.</p></div></div><div class=\"card-sources\">Sources: <a class=\"src-link\" data-src=\"250\" href=\"#\">#250</a> <a class=\"src-link\" data-src=\"265\" href=\"#\">#265</a> <a class=\"src-link\" data-src=\"267\" href=\"#\">#267</a> <a class=\"src-link\" data-src=\"279\" href=\"#\">#279</a> <a class=\"src-link\" data-src=\"316\" href=\"#\">#316</a> <a class=\"src-link\" data-src=\"322\" href=\"#\">#322</a> <a class=\"src-link\" data-src=\"323\" href=\"#\">#323</a> <a class=\"src-link\" data-src=\"326\" href=\"#\">#326</a> <a class=\"src-link\" data-src=\"327\" href=\"#\">#327</a> <a class=\"src-link\" data-src=\"329\" href=\"#\">#329</a> <a class=\"src-link\" data-src=\"330\" href=\"#\">#330</a> <a class=\"src-link\" data-src=\"331\" href=\"#\">#331</a> +12 more</div>"
+        "body_html": "<div class=\"card-focus\">26-video playlist batch \u2014 economic squeeze crystallizes, craft identity crisis gets addiction framework, agent OS converges across implementations, Karpathy names the inflection point</div><div class=\"card-headlines\"><div class=\"headline\"><span class=\"cat cat-economics\">economics</span> <strong>$690B hyperscaler capex squeeze maps the middleware death zone \u2014 only four defensible positions survive</strong><p class=\"headline-summary\">Nate B Jones's structural analysis (<a class=\"src-link\" data-src=\"327\" href=\"#\">#327</a>) reveals why most AI startups are building on borrowed time.</p><div class=\"headline-sources\"><a class=\"src-link\" data-src=\"327\" href=\"#\"><a class=\"src-link\" data-src=\"327\" href=\"#\">#327</a></a> <a class=\"src-link\" data-src=\"334\" href=\"#\"><a class=\"src-link\" data-src=\"334\" href=\"#\">#334</a></a> <a class=\"src-link\" data-src=\"331\" href=\"#\"><a class=\"src-link\" data-src=\"331\" href=\"#\">#331</a></a> <a class=\"src-link\" data-src=\"336\" href=\"#\"><a class=\"src-link\" data-src=\"336\" href=\"#\">#336</a></a></div></div><div class=\"headline\"><span class=\"cat cat-critical\">critical</span> <strong>Vibe coding reframed as addiction: 150-line review ceiling is the mechanism of skill decay</strong><p class=\"headline-summary\">ThePrimeagen's extended treatment (<a class=\"src-link\" data-src=\"340\" href=\"#\">#340</a>) moves the craft crisis conversation from existential anxiety to behavioral analysis.</p><div class=\"headline-sources\"><a class=\"src-link\" data-src=\"340\" href=\"#\"><a class=\"src-link\" data-src=\"340\" href=\"#\">#340</a></a> <a class=\"src-link\" data-src=\"326\" href=\"#\"><a class=\"src-link\" data-src=\"326\" href=\"#\">#326</a></a> <a class=\"src-link\" data-src=\"332\" href=\"#\"><a class=\"src-link\" data-src=\"332\" href=\"#\">#332</a></a></div></div><div class=\"headline\"><span class=\"cat cat-patterns\">patterns</span> <strong>Agent OS convergence \u2014 NemoClaw, Claude Channels, pull-based polling, and Seed/Paul framework all solve the same problem</strong><p class=\"headline-summary\">NVIDIA's NemoClaw launch (<a class=\"src-link\" data-src=\"335\" href=\"#\">#335</a>) signals enterprise graduation of the agentic OS concept.</p><div class=\"headline-sources\"><a class=\"src-link\" data-src=\"335\" href=\"#\"><a class=\"src-link\" data-src=\"335\" href=\"#\">#335</a></a> <a class=\"src-link\" data-src=\"341\" href=\"#\"><a class=\"src-link\" data-src=\"341\" href=\"#\">#341</a></a> <a class=\"src-link\" data-src=\"346\" href=\"#\"><a class=\"src-link\" data-src=\"346\" href=\"#\">#346</a></a> <a class=\"src-link\" data-src=\"329\" href=\"#\"><a class=\"src-link\" data-src=\"329\" href=\"#\">#329</a></a></div></div><div class=\"headline\"><span class=\"cat cat-tools\">tools</span> <strong>Google Stitch + Claude Code completes the design-to-implementation AI pipeline</strong><p class=\"headline-summary\">Google Stitch's portable design.md format (<a class=\"src-link\" data-src=\"330\" href=\"#\">#330</a>) plugs directly into Claude Code via MCP (<a class=\"src-link\" data-src=\"343\" href=\"#\">#343</a>), completing the design\u2192spec\u2192implementation\u2192validation loop with AI at every stage.</p><div class=\"headline-sources\"><a class=\"src-link\" data-src=\"330\" href=\"#\"><a class=\"src-link\" data-src=\"330\" href=\"#\">#330</a></a> <a class=\"src-link\" data-src=\"343\" href=\"#\"><a class=\"src-link\" data-src=\"343\" href=\"#\">#343</a></a> <a class=\"src-link\" data-src=\"323\" href=\"#\"><a class=\"src-link\" data-src=\"323\" href=\"#\">#323</a></a></div></div><div class=\"headline\"><span class=\"cat cat-research\">research</span> <strong>Karpathy names December 2025 as the inflection; Tao warns verification is the real bottleneck</strong><p class=\"headline-summary\">Karpathy names December 2025 as the moment coding agents became genuinely useful (<a class=\"src-link\" data-src=\"337\" href=\"#\">#337</a>) \u2014 token throughput per day is the new productivity metric.</p><div class=\"headline-sources\"><a class=\"src-link\" data-src=\"337\" href=\"#\"><a class=\"src-link\" data-src=\"337\" href=\"#\">#337</a></a> <a class=\"src-link\" data-src=\"348\" href=\"#\"><a class=\"src-link\" data-src=\"348\" href=\"#\">#348</a></a> <a class=\"src-link\" data-src=\"338\" href=\"#\"><a class=\"src-link\" data-src=\"338\" href=\"#\">#338</a></a></div></div></div><div class=\"card-sources\">Sources: <a class=\"src-link\" data-src=\"250\" href=\"#\">#250</a> <a class=\"src-link\" data-src=\"265\" href=\"#\">#265</a> <a class=\"src-link\" data-src=\"267\" href=\"#\">#267</a> <a class=\"src-link\" data-src=\"279\" href=\"#\">#279</a> <a class=\"src-link\" data-src=\"316\" href=\"#\">#316</a> <a class=\"src-link\" data-src=\"322\" href=\"#\">#322</a> <a class=\"src-link\" data-src=\"323\" href=\"#\">#323</a> <a class=\"src-link\" data-src=\"326\" href=\"#\">#326</a> <a class=\"src-link\" data-src=\"327\" href=\"#\">#327</a> <a class=\"src-link\" data-src=\"329\" href=\"#\">#329</a> <a class=\"src-link\" data-src=\"330\" href=\"#\">#330</a> <a class=\"src-link\" data-src=\"331\" href=\"#\">#331</a> +12 more</div>"
       },
       {
         "id": "2026-03-21-playlist-themes",
@@ -32502,7 +32753,7 @@
         "date": "2026-03-08",
         "title": "",
         "subtitle": "",
-        "body_html": "<div class=\"card-focus\">Playlist batch ingestion (sources 243-257, 15 videos) \u2014 Scouting engineers, post-honeymoon maturity, AI safety dynamics, and infrastructure disruption</div><div class=\"card-headlines\"><div class=\"headline\"><span class=\"cat cat-patterns\">patterns</span> <strong>Scouts vs. Strike Teams: Nate B Jones introduces the definitive organizational framework for AI-era teams \u2014 solo \"scouts\" for exploration, 5-person \"strike teams\" for production (250)</strong><p class=\"headline-summary\">Nate B Jones (250) provides the most actionable organizational framework to emerge from this batch: when AI multiplies per-person output by 5-10x, coordination cost scales by the same factor, making teams >5 people catastrophically expensive.</p></div><div class=\"headline\"><span class=\"cat cat-critical\">critical</span> <strong>The AI Honeymoon Is Over: Maturity plateau hits \u2014 incremental model improvements no longer justify workflow rewrites, practitioners report gap between hype and daily use (246, 252)</strong><p class=\"headline-summary\">Nate B Jones (250) provides the most actionable organizational framework to emerge from this batch: when AI multiplies per-person output by 5-10x, coordination cost scales by the same factor, making teams >5 people catastrophically expensive.</p></div><div class=\"headline\"><span class=\"cat cat-patterns\">patterns</span> <strong>Context Over Personality: The era of \"you are an expert X\" prompts is over \u2014 skills files should contain institutional knowledge, not generic expertise (246, 247)</strong><p class=\"headline-summary\">Nate B Jones (250) provides the most actionable organizational framework to emerge from this batch: when AI multiplies per-person output by 5-10x, coordination cost scales by the same factor, making teams >5 people catastrophically expensive.</p></div><div class=\"headline\"><span class=\"cat cat-critical\">critical</span> <strong>The C++ as Assembly Fallacy: Veteran programmer dismantles the \"don't read AI-generated code\" argument \u2014 prompts aren't source code, context window cliffs cause silent hallucinations (251)</strong><p class=\"headline-summary\">Shahesh (45 years programming experience, 251) systematically dismantles the \"treat AI code like compiler output\" argument.</p></div><div class=\"headline\"><span class=\"cat cat-economics\">economics</span> <strong>Enterprise Adoption Lags Innovation: Legal AI playbook market shows 26% Harvey adoption with long fragmented tail; enterprise model upgrades follow deprecation cycles, not hype cycles (243, 246)</strong><p class=\"headline-summary\">Nate B Jones (250) provides the most actionable organizational framework to emerge from this batch: when AI multiplies per-person output by 5-10x, coordination cost scales by the same factor, making teams >5 people catastrophically expensive.</p></div></div><div class=\"card-sources\">Sources: <a class=\"src-link\" data-src=\"005\" href=\"#\">#005</a> <a class=\"src-link\" data-src=\"008\" href=\"#\">#008</a> <a class=\"src-link\" data-src=\"010\" href=\"#\">#010</a> <a class=\"src-link\" data-src=\"012\" href=\"#\">#012</a> <a class=\"src-link\" data-src=\"028\" href=\"#\">#028</a> <a class=\"src-link\" data-src=\"030\" href=\"#\">#030</a> <a class=\"src-link\" data-src=\"033\" href=\"#\">#033</a> <a class=\"src-link\" data-src=\"206\" href=\"#\">#206</a> <a class=\"src-link\" data-src=\"243\" href=\"#\">#243</a> <a class=\"src-link\" data-src=\"244\" href=\"#\">#244</a> <a class=\"src-link\" data-src=\"245\" href=\"#\">#245</a> <a class=\"src-link\" data-src=\"246\" href=\"#\">#246</a> +11 more</div>"
+        "body_html": "<div class=\"card-focus\">Playlist batch ingestion (sources 243-257, 15 videos) \u2014 Scouting engineers, post-honeymoon maturity, AI safety dynamics, and infrastructure disruption</div><div class=\"card-headlines\"><div class=\"headline\"><span class=\"cat cat-patterns\">patterns</span> <strong>Scouts vs. Strike Teams: Nate B Jones introduces the definitive organizational framework for AI-era teams \u2014 solo \"scouts\" for exploration, 5-person \"strike teams\" for production (250)</strong><p class=\"headline-summary\">Nate B Jones (250) provides the most actionable organizational framework to emerge from this batch: when AI multiplies per-person output by 5-10x, coordination cost scales by the same factor, making teams >5 people catastrophically expensive.</p><div class=\"headline-sources\"><a class=\"src-link\" data-src=\"250\" href=\"#\"><a class=\"src-link\" data-src=\"250\" href=\"#\">#250</a></a></div></div><div class=\"headline\"><span class=\"cat cat-critical\">critical</span> <strong>The AI Honeymoon Is Over: Maturity plateau hits \u2014 incremental model improvements no longer justify workflow rewrites, practitioners report gap between hype and daily use (246, 252)</strong><p class=\"headline-summary\">Nate B Jones (250) provides the most actionable organizational framework to emerge from this batch: when AI multiplies per-person output by 5-10x, coordination cost scales by the same factor, making teams >5 people catastrophically expensive.</p><div class=\"headline-sources\"><a class=\"src-link\" data-src=\"250\" href=\"#\"><a class=\"src-link\" data-src=\"250\" href=\"#\">#250</a></a></div></div><div class=\"headline\"><span class=\"cat cat-patterns\">patterns</span> <strong>Context Over Personality: The era of \"you are an expert X\" prompts is over \u2014 skills files should contain institutional knowledge, not generic expertise (246, 247)</strong><p class=\"headline-summary\">Nate B Jones (250) provides the most actionable organizational framework to emerge from this batch: when AI multiplies per-person output by 5-10x, coordination cost scales by the same factor, making teams >5 people catastrophically expensive.</p><div class=\"headline-sources\"><a class=\"src-link\" data-src=\"250\" href=\"#\"><a class=\"src-link\" data-src=\"250\" href=\"#\">#250</a></a></div></div><div class=\"headline\"><span class=\"cat cat-critical\">critical</span> <strong>The C++ as Assembly Fallacy: Veteran programmer dismantles the \"don't read AI-generated code\" argument \u2014 prompts aren't source code, context window cliffs cause silent hallucinations (251)</strong><p class=\"headline-summary\">Shahesh (45 years programming experience, 251) systematically dismantles the \"treat AI code like compiler output\" argument.</p><div class=\"headline-sources\"><a class=\"src-link\" data-src=\"251\" href=\"#\"><a class=\"src-link\" data-src=\"251\" href=\"#\">#251</a></a></div></div><div class=\"headline\"><span class=\"cat cat-economics\">economics</span> <strong>Enterprise Adoption Lags Innovation: Legal AI playbook market shows 26% Harvey adoption with long fragmented tail; enterprise model upgrades follow deprecation cycles, not hype cycles (243, 246)</strong><p class=\"headline-summary\">Nate B Jones (250) provides the most actionable organizational framework to emerge from this batch: when AI multiplies per-person output by 5-10x, coordination cost scales by the same factor, making teams >5 people catastrophically expensive.</p><div class=\"headline-sources\"><a class=\"src-link\" data-src=\"250\" href=\"#\"><a class=\"src-link\" data-src=\"250\" href=\"#\">#250</a></a></div></div></div><div class=\"card-sources\">Sources: <a class=\"src-link\" data-src=\"005\" href=\"#\">#005</a> <a class=\"src-link\" data-src=\"008\" href=\"#\">#008</a> <a class=\"src-link\" data-src=\"010\" href=\"#\">#010</a> <a class=\"src-link\" data-src=\"012\" href=\"#\">#012</a> <a class=\"src-link\" data-src=\"028\" href=\"#\">#028</a> <a class=\"src-link\" data-src=\"030\" href=\"#\">#030</a> <a class=\"src-link\" data-src=\"033\" href=\"#\">#033</a> <a class=\"src-link\" data-src=\"206\" href=\"#\">#206</a> <a class=\"src-link\" data-src=\"243\" href=\"#\">#243</a> <a class=\"src-link\" data-src=\"244\" href=\"#\">#244</a> <a class=\"src-link\" data-src=\"245\" href=\"#\">#245</a> <a class=\"src-link\" data-src=\"246\" href=\"#\">#246</a> +11 more</div>"
       },
       {
         "id": "2026-03-08-scouting-engineers-post-honeymoon",
@@ -32542,7 +32793,7 @@
         "date": "2026-03-05",
         "title": "",
         "subtitle": "",
-        "body_html": "<div class=\"card-focus\">28-video playlist batch \u2014 specification-first consensus emerges, skills ecosystem matures, Jeremy Howard delivers deepest AI coding critique, agentic tool wars intensify</div><div class=\"card-headlines\"><div class=\"headline\"><span class=\"cat cat-patterns\">patterns</span> <strong>Vibe coding dies: Matt Pocock, IBM, and Jaymin West converge on specification-first development</strong><p class=\"headline-summary\">Matt Pocock's seven-phase framework (<a class=\"src-link\" data-src=\"221\" href=\"#\">#221</a>) makes explicit what practitioners have been converging on: prototyping before PRDs, specifications before execution, human QA as the final gate.</p></div><div class=\"headline\"><span class=\"cat cat-tools\">tools</span> <strong>Skills 2.0, Claude memory systems, and token-slashing MCP tools move the ecosystem forward</strong><p class=\"headline-summary\">Three takes on skills evolution: Ray Amjad on Skills 2.0 with creator tools and evals (<a class=\"src-link\" data-src=\"222\" href=\"#\">#222</a>), Simon Scrapes on mastery patterns (<a class=\"src-link\" data-src=\"225\" href=\"#\">#225</a>), Chase AI on the upgraded workflow (<a class=\"src-link\" data-src=\"227\" href=\"#\">#227</a>).</p></div><div class=\"headline\"><span class=\"cat cat-critical\">critical</span> <strong>Jeremy Howard's gambling analogy and Harvard's learning erosion provide the strongest skeptical case yet</strong><p class=\"headline-summary\">Deep learning pioneer Jeremy Howard (<a class=\"src-link\" data-src=\"226\" href=\"#\">#226</a>) distinguishes coding (translating specs to syntax \u2014 LLMs do well) from software engineering (designing abstractions for novel problems \u2014 LLMs cannot).</p></div><div class=\"headline\"><span class=\"cat cat-economics\">economics</span> <strong>OpenCode, Pi Agent, and enterprise OpenClaw fragment the agentic coding market</strong></div><div class=\"headline\"><span class=\"cat cat-economics\">economics</span> <strong>$110B OpenAI funding and 99% token cost reduction define the infrastructure economics</strong></div></div><div class=\"card-sources\">Sources: <a class=\"src-link\" data-src=\"094\" href=\"#\">#094</a> <a class=\"src-link\" data-src=\"099\" href=\"#\">#099</a> <a class=\"src-link\" data-src=\"108\" href=\"#\">#108</a> <a class=\"src-link\" data-src=\"118\" href=\"#\">#118</a> <a class=\"src-link\" data-src=\"119\" href=\"#\">#119</a> <a class=\"src-link\" data-src=\"214\" href=\"#\">#214</a> <a class=\"src-link\" data-src=\"215\" href=\"#\">#215</a> <a class=\"src-link\" data-src=\"217\" href=\"#\">#217</a> <a class=\"src-link\" data-src=\"218\" href=\"#\">#218</a> <a class=\"src-link\" data-src=\"220\" href=\"#\">#220</a> <a class=\"src-link\" data-src=\"221\" href=\"#\">#221</a> <a class=\"src-link\" data-src=\"222\" href=\"#\">#222</a> +11 more</div>"
+        "body_html": "<div class=\"card-focus\">28-video playlist batch \u2014 specification-first consensus emerges, skills ecosystem matures, Jeremy Howard delivers deepest AI coding critique, agentic tool wars intensify</div><div class=\"card-headlines\"><div class=\"headline\"><span class=\"cat cat-patterns\">patterns</span> <strong>Vibe coding dies: Matt Pocock, IBM, and Jaymin West converge on specification-first development</strong><p class=\"headline-summary\">Matt Pocock's seven-phase framework (<a class=\"src-link\" data-src=\"221\" href=\"#\">#221</a>) makes explicit what practitioners have been converging on: prototyping before PRDs, specifications before execution, human QA as the final gate.</p><div class=\"headline-sources\"><a class=\"src-link\" data-src=\"221\" href=\"#\"><a class=\"src-link\" data-src=\"221\" href=\"#\">#221</a></a> <a class=\"src-link\" data-src=\"214\" href=\"#\"><a class=\"src-link\" data-src=\"214\" href=\"#\">#214</a></a> <a class=\"src-link\" data-src=\"220\" href=\"#\"><a class=\"src-link\" data-src=\"220\" href=\"#\">#220</a></a></div></div><div class=\"headline\"><span class=\"cat cat-tools\">tools</span> <strong>Skills 2.0, Claude memory systems, and token-slashing MCP tools move the ecosystem forward</strong><p class=\"headline-summary\">Three takes on skills evolution: Ray Amjad on Skills 2.0 with creator tools and evals (<a class=\"src-link\" data-src=\"222\" href=\"#\">#222</a>), Simon Scrapes on mastery patterns (<a class=\"src-link\" data-src=\"225\" href=\"#\">#225</a>), Chase AI on the upgraded workflow (<a class=\"src-link\" data-src=\"227\" href=\"#\">#227</a>).</p><div class=\"headline-sources\"><a class=\"src-link\" data-src=\"222\" href=\"#\"><a class=\"src-link\" data-src=\"222\" href=\"#\">#222</a></a> <a class=\"src-link\" data-src=\"225\" href=\"#\"><a class=\"src-link\" data-src=\"225\" href=\"#\">#225</a></a> <a class=\"src-link\" data-src=\"227\" href=\"#\"><a class=\"src-link\" data-src=\"227\" href=\"#\">#227</a></a> <a class=\"src-link\" data-src=\"238\" href=\"#\"><a class=\"src-link\" data-src=\"238\" href=\"#\">#238</a></a></div></div><div class=\"headline\"><span class=\"cat cat-critical\">critical</span> <strong>Jeremy Howard's gambling analogy and Harvard's learning erosion provide the strongest skeptical case yet</strong><p class=\"headline-summary\">Deep learning pioneer Jeremy Howard (<a class=\"src-link\" data-src=\"226\" href=\"#\">#226</a>) distinguishes coding (translating specs to syntax \u2014 LLMs do well) from software engineering (designing abstractions for novel problems \u2014 LLMs cannot).</p><div class=\"headline-sources\"><a class=\"src-link\" data-src=\"226\" href=\"#\"><a class=\"src-link\" data-src=\"226\" href=\"#\">#226</a></a> <a class=\"src-link\" data-src=\"215\" href=\"#\"><a class=\"src-link\" data-src=\"215\" href=\"#\">#215</a></a> <a class=\"src-link\" data-src=\"217\" href=\"#\"><a class=\"src-link\" data-src=\"217\" href=\"#\">#217</a></a></div></div><div class=\"headline\"><span class=\"cat cat-economics\">economics</span> <strong>OpenCode, Pi Agent, and enterprise OpenClaw fragment the agentic coding market</strong></div><div class=\"headline\"><span class=\"cat cat-economics\">economics</span> <strong>$110B OpenAI funding and 99% token cost reduction define the infrastructure economics</strong></div></div><div class=\"card-sources\">Sources: <a class=\"src-link\" data-src=\"094\" href=\"#\">#094</a> <a class=\"src-link\" data-src=\"099\" href=\"#\">#099</a> <a class=\"src-link\" data-src=\"108\" href=\"#\">#108</a> <a class=\"src-link\" data-src=\"118\" href=\"#\">#118</a> <a class=\"src-link\" data-src=\"119\" href=\"#\">#119</a> <a class=\"src-link\" data-src=\"214\" href=\"#\">#214</a> <a class=\"src-link\" data-src=\"215\" href=\"#\">#215</a> <a class=\"src-link\" data-src=\"217\" href=\"#\">#217</a> <a class=\"src-link\" data-src=\"218\" href=\"#\">#218</a> <a class=\"src-link\" data-src=\"220\" href=\"#\">#220</a> <a class=\"src-link\" data-src=\"221\" href=\"#\">#221</a> <a class=\"src-link\" data-src=\"222\" href=\"#\">#222</a> +11 more</div>"
       },
       {
         "id": "2026-03-05-playlist-themes",
@@ -32558,7 +32809,7 @@
         "date": "2026-03-02",
         "title": "",
         "subtitle": "",
-        "body_html": "<div class=\"card-focus\">23-source batch \u2014 Stripe ships 1,300 zero-human PRs/week, LLM deanonymization kills practical obscurity, frontier operations framework names the meta-skill, SaaS defensibility collapses to data, Dijkstra predicted the vibe coding problem decades ago</div><div class=\"card-headlines\"><div class=\"headline\"><span class=\"cat cat-patterns\">patterns</span> <strong>Stripe's agentic engineering layer ships 1,300+ fully unattended PRs per week \u2014 the blueprint engine pattern emerges</strong><p class=\"headline-summary\">IndyDevDan's breakdown of Stripe's \"minions\" system (<a class=\"src-link\" data-src=\"209\" href=\"#\">#209</a>) is the most important enterprise agentic case study in this batch.</p></div><div class=\"headline\"><span class=\"cat cat-security\">security</span> <strong>LLM-powered deanonymization at $1-4 per person kills practical obscurity \u2014 text is structured data now</strong></div><div class=\"headline\"><span class=\"cat cat-critical\">critical</span> <strong>Code generation was never the bottleneck \u2014 implementation cost was a feature, not a bug</strong><p class=\"headline-summary\">Awesome (<a class=\"src-link\" data-src=\"201\" href=\"#\">#201</a>) reviews Dex Rod's viral argument that implementation cost was actually a beneficial constraint \u2014 it forced teams to prioritize, debate trade-offs, and kill mediocre ideas early.</p></div><div class=\"headline\"><span class=\"cat cat-patterns\">patterns</span> <strong>Nate B Jones names \"frontier operations\" as the five-skill meta-discipline for the AI-human boundary</strong><p class=\"headline-summary\">Nate B Jones (<a class=\"src-link\" data-src=\"198\" href=\"#\">#198</a>) introduces \"frontier operations\" \u2014 five component skills for operating at the expanding boundary between human and agent capabilities: boundary sensing (knowing where the line is today), seam design (structuring human-agent handoffs), failure model maintenance (understanding how agents fail at current capability levels), capability forecasting (predicting where the boundary moves next), and leverage calibration (deciding what deserves human attention).</p></div><div class=\"headline\"><span class=\"cat cat-economics\">economics</span> <strong>SaaS defensibility migrates from application layer to proprietary data assets with feedback loops</strong><p class=\"headline-summary\">Stefan Wirth (<a class=\"src-link\" data-src=\"207\" href=\"#\">#207</a>) proposes a revised three-layer stack: point solution applications on top, a \"value layer\" (context, prompting, programmatic orchestration) in the middle, and system of record at the bottom.</p></div></div><div class=\"card-sources\">Sources: <a class=\"src-link\" data-src=\"015\" href=\"#\">#015</a> <a class=\"src-link\" data-src=\"042\" href=\"#\">#042</a> <a class=\"src-link\" data-src=\"065\" href=\"#\">#065</a> <a class=\"src-link\" data-src=\"139\" href=\"#\">#139</a> <a class=\"src-link\" data-src=\"155\" href=\"#\">#155</a> <a class=\"src-link\" data-src=\"170\" href=\"#\">#170</a> <a class=\"src-link\" data-src=\"174\" href=\"#\">#174</a> <a class=\"src-link\" data-src=\"188\" href=\"#\">#188</a> <a class=\"src-link\" data-src=\"191\" href=\"#\">#191</a> <a class=\"src-link\" data-src=\"193\" href=\"#\">#193</a> <a class=\"src-link\" data-src=\"198\" href=\"#\">#198</a> <a class=\"src-link\" data-src=\"200\" href=\"#\">#200</a> +6 more</div>"
+        "body_html": "<div class=\"card-focus\">23-source batch \u2014 Stripe ships 1,300 zero-human PRs/week, LLM deanonymization kills practical obscurity, frontier operations framework names the meta-skill, SaaS defensibility collapses to data, Dijkstra predicted the vibe coding problem decades ago</div><div class=\"card-headlines\"><div class=\"headline\"><span class=\"cat cat-patterns\">patterns</span> <strong>Stripe's agentic engineering layer ships 1,300+ fully unattended PRs per week \u2014 the blueprint engine pattern emerges</strong><p class=\"headline-summary\">IndyDevDan's breakdown of Stripe's \"minions\" system (<a class=\"src-link\" data-src=\"209\" href=\"#\">#209</a>) is the most important enterprise agentic case study in this batch.</p><div class=\"headline-sources\"><a class=\"src-link\" data-src=\"209\" href=\"#\"><a class=\"src-link\" data-src=\"209\" href=\"#\">#209</a></a> <a class=\"src-link\" data-src=\"193\" href=\"#\"><a class=\"src-link\" data-src=\"193\" href=\"#\">#193</a></a> <a class=\"src-link\" data-src=\"200\" href=\"#\"><a class=\"src-link\" data-src=\"200\" href=\"#\">#200</a></a></div></div><div class=\"headline\"><span class=\"cat cat-security\">security</span> <strong>LLM-powered deanonymization at $1-4 per person kills practical obscurity \u2014 text is structured data now</strong></div><div class=\"headline\"><span class=\"cat cat-critical\">critical</span> <strong>Code generation was never the bottleneck \u2014 implementation cost was a feature, not a bug</strong><p class=\"headline-summary\">Awesome (<a class=\"src-link\" data-src=\"201\" href=\"#\">#201</a>) reviews Dex Rod's viral argument that implementation cost was actually a beneficial constraint \u2014 it forced teams to prioritize, debate trade-offs, and kill mediocre ideas early.</p><div class=\"headline-sources\"><a class=\"src-link\" data-src=\"201\" href=\"#\"><a class=\"src-link\" data-src=\"201\" href=\"#\">#201</a></a> <a class=\"src-link\" data-src=\"202\" href=\"#\"><a class=\"src-link\" data-src=\"202\" href=\"#\">#202</a></a></div></div><div class=\"headline\"><span class=\"cat cat-patterns\">patterns</span> <strong>Nate B Jones names \"frontier operations\" as the five-skill meta-discipline for the AI-human boundary</strong><p class=\"headline-summary\">Nate B Jones (<a class=\"src-link\" data-src=\"198\" href=\"#\">#198</a>) introduces \"frontier operations\" \u2014 five component skills for operating at the expanding boundary between human and agent capabilities: boundary sensing (knowing where the line is today), seam design (structuring human-agent handoffs), failure model maintenance (understanding how agents fail at current capability levels), capability forecasting (predicting where the boundary moves next), and leverage calibration (deciding what deserves human attention).</p><div class=\"headline-sources\"><a class=\"src-link\" data-src=\"198\" href=\"#\"><a class=\"src-link\" data-src=\"198\" href=\"#\">#198</a></a> <a class=\"src-link\" data-src=\"208\" href=\"#\"><a class=\"src-link\" data-src=\"208\" href=\"#\">#208</a></a></div></div><div class=\"headline\"><span class=\"cat cat-economics\">economics</span> <strong>SaaS defensibility migrates from application layer to proprietary data assets with feedback loops</strong><p class=\"headline-summary\">Stefan Wirth (<a class=\"src-link\" data-src=\"207\" href=\"#\">#207</a>) proposes a revised three-layer stack: point solution applications on top, a \"value layer\" (context, prompting, programmatic orchestration) in the middle, and system of record at the bottom.</p><div class=\"headline-sources\"><a class=\"src-link\" data-src=\"207\" href=\"#\"><a class=\"src-link\" data-src=\"207\" href=\"#\">#207</a></a> <a class=\"src-link\" data-src=\"203\" href=\"#\"><a class=\"src-link\" data-src=\"203\" href=\"#\">#203</a></a></div></div></div><div class=\"card-sources\">Sources: <a class=\"src-link\" data-src=\"015\" href=\"#\">#015</a> <a class=\"src-link\" data-src=\"042\" href=\"#\">#042</a> <a class=\"src-link\" data-src=\"065\" href=\"#\">#065</a> <a class=\"src-link\" data-src=\"139\" href=\"#\">#139</a> <a class=\"src-link\" data-src=\"155\" href=\"#\">#155</a> <a class=\"src-link\" data-src=\"170\" href=\"#\">#170</a> <a class=\"src-link\" data-src=\"174\" href=\"#\">#174</a> <a class=\"src-link\" data-src=\"188\" href=\"#\">#188</a> <a class=\"src-link\" data-src=\"191\" href=\"#\">#191</a> <a class=\"src-link\" data-src=\"193\" href=\"#\">#193</a> <a class=\"src-link\" data-src=\"198\" href=\"#\">#198</a> <a class=\"src-link\" data-src=\"200\" href=\"#\">#200</a> +6 more</div>"
       },
       {
         "id": "2026-03-02-playlist-themes",
@@ -32598,7 +32849,7 @@
         "date": "2026-02-27",
         "title": "",
         "subtitle": "",
-        "body_html": "<div class=\"card-focus\">23-source playlist batch \u2014 CLAUDE.md backlash crystallizes, AI agents hit mainstream economics, builder-philosopher split maps the real developer spectrum</div><div class=\"card-headlines\"><div class=\"headline\"><span class=\"cat cat-patterns\">patterns</span> <strong>The CLAUDE.md rebellion: Theo and Matt Pocock say delete your config files and use hooks instead</strong><p class=\"headline-summary\">Three videos published within days of each other \u2014 Theo's \"Delete your CLAUDE.md\" (<a class=\"src-link\" data-src=\"153\" href=\"#\">#153</a>), Matt Pocock's \"Never Run claude /init\" (<a class=\"src-link\" data-src=\"152\" href=\"#\">#152</a>), and Pocock's hooks enforcement video (<a class=\"src-link\" data-src=\"157\" href=\"#\">#157</a>) \u2014 collectively reject the CLAUDE.md-centric workflow that the community itself established weeks ago.</p></div><div class=\"headline\"><span class=\"cat cat-economics\">economics</span> <strong>Ezra Klein dedicates two hours to AI agent economic disruption \u2014 the mainstream has arrived</strong></div><div class=\"headline\"><span class=\"cat cat-critical\">critical</span> <strong>Mitchell Hashimoto, Peter Steinberger, and Mo Bitar represent three fundamentally different AI coding philosophies</strong></div><div class=\"headline\"><span class=\"cat cat-patterns\">patterns</span> <strong>Nate B Jones names \"intent engineering\" as the successor to prompt and context engineering</strong></div><div class=\"headline\"><span class=\"cat cat-security\">security</span> <strong>OpenClaw deletes a user's inbox, Chinese labs steal Claude's brain, Cloudflare uses lava lamps</strong></div></div><div class=\"card-sources\">Sources: <a class=\"src-link\" data-src=\"011\" href=\"#\">#011</a> <a class=\"src-link\" data-src=\"040\" href=\"#\">#040</a> <a class=\"src-link\" data-src=\"042\" href=\"#\">#042</a> <a class=\"src-link\" data-src=\"050\" href=\"#\">#050</a> <a class=\"src-link\" data-src=\"136\" href=\"#\">#136</a> <a class=\"src-link\" data-src=\"139\" href=\"#\">#139</a> <a class=\"src-link\" data-src=\"151\" href=\"#\">#151</a> <a class=\"src-link\" data-src=\"152\" href=\"#\">#152</a> <a class=\"src-link\" data-src=\"153\" href=\"#\">#153</a> <a class=\"src-link\" data-src=\"155\" href=\"#\">#155</a> <a class=\"src-link\" data-src=\"156\" href=\"#\">#156</a> <a class=\"src-link\" data-src=\"157\" href=\"#\">#157</a> +11 more</div>"
+        "body_html": "<div class=\"card-focus\">23-source playlist batch \u2014 CLAUDE.md backlash crystallizes, AI agents hit mainstream economics, builder-philosopher split maps the real developer spectrum</div><div class=\"card-headlines\"><div class=\"headline\"><span class=\"cat cat-patterns\">patterns</span> <strong>The CLAUDE.md rebellion: Theo and Matt Pocock say delete your config files and use hooks instead</strong><p class=\"headline-summary\">Three videos published within days of each other \u2014 Theo's \"Delete your CLAUDE.md\" (<a class=\"src-link\" data-src=\"153\" href=\"#\">#153</a>), Matt Pocock's \"Never Run claude /init\" (<a class=\"src-link\" data-src=\"152\" href=\"#\">#152</a>), and Pocock's hooks enforcement video (<a class=\"src-link\" data-src=\"157\" href=\"#\">#157</a>) \u2014 collectively reject the CLAUDE.md-centric workflow that the community itself established weeks ago.</p><div class=\"headline-sources\"><a class=\"src-link\" data-src=\"153\" href=\"#\"><a class=\"src-link\" data-src=\"153\" href=\"#\">#153</a></a> <a class=\"src-link\" data-src=\"152\" href=\"#\"><a class=\"src-link\" data-src=\"152\" href=\"#\">#152</a></a> <a class=\"src-link\" data-src=\"157\" href=\"#\"><a class=\"src-link\" data-src=\"157\" href=\"#\">#157</a></a> <a class=\"src-link\" data-src=\"158\" href=\"#\"><a class=\"src-link\" data-src=\"158\" href=\"#\">#158</a></a></div></div><div class=\"headline\"><span class=\"cat cat-economics\">economics</span> <strong>Ezra Klein dedicates two hours to AI agent economic disruption \u2014 the mainstream has arrived</strong></div><div class=\"headline\"><span class=\"cat cat-critical\">critical</span> <strong>Mitchell Hashimoto, Peter Steinberger, and Mo Bitar represent three fundamentally different AI coding philosophies</strong></div><div class=\"headline\"><span class=\"cat cat-patterns\">patterns</span> <strong>Nate B Jones names \"intent engineering\" as the successor to prompt and context engineering</strong></div><div class=\"headline\"><span class=\"cat cat-security\">security</span> <strong>OpenClaw deletes a user's inbox, Chinese labs steal Claude's brain, Cloudflare uses lava lamps</strong></div></div><div class=\"card-sources\">Sources: <a class=\"src-link\" data-src=\"011\" href=\"#\">#011</a> <a class=\"src-link\" data-src=\"040\" href=\"#\">#040</a> <a class=\"src-link\" data-src=\"042\" href=\"#\">#042</a> <a class=\"src-link\" data-src=\"050\" href=\"#\">#050</a> <a class=\"src-link\" data-src=\"136\" href=\"#\">#136</a> <a class=\"src-link\" data-src=\"139\" href=\"#\">#139</a> <a class=\"src-link\" data-src=\"151\" href=\"#\">#151</a> <a class=\"src-link\" data-src=\"152\" href=\"#\">#152</a> <a class=\"src-link\" data-src=\"153\" href=\"#\">#153</a> <a class=\"src-link\" data-src=\"155\" href=\"#\">#155</a> <a class=\"src-link\" data-src=\"156\" href=\"#\">#156</a> <a class=\"src-link\" data-src=\"157\" href=\"#\">#157</a> +11 more</div>"
       },
       {
         "id": "2026-02-27-playlist-themes",
@@ -32614,7 +32865,7 @@
         "date": "2026-02-23",
         "title": "",
         "subtitle": "",
-        "body_html": "<div class=\"card-focus\">Difficulty taxonomies, dot-com parallels, agentic tool diversity, and education's AI reckoning</div><div class=\"card-headlines\"><div class=\"headline\"><span class=\"cat cat-economics\">economics</span> <strong>Modern MBA delivers layer-by-layer AI-to-dot-com bubble mapping</strong><p class=\"headline-summary\">Modern MBA (<a class=\"src-link\" data-src=\"147\" href=\"#\">#147</a>) maps the entire AI stack onto the 1990s dot-com era: consumer AI startups are Pets.com, OpenAI is Netscape (massive growth, no profitability), Nvidia is Sun+Cisco, hyperscalers are Exodus Communications, and energy is the new bandwidth.</p></div><div class=\"headline\"><span class=\"cat cat-tooling\">tooling</span> <strong>Matt Pocock explores claude --worktree for parallel agent branches</strong></div><div class=\"headline\"><span class=\"cat cat-security\">security</span> <strong>Nate B Jones introduces trust architecture after Anthropic's 16-model stress test</strong></div><div class=\"headline\"><span class=\"cat cat-education\">education</span> <strong>Harvard panel reveals 50% of students report AI over-reliance</strong></div><div class=\"headline\"><span class=\"cat cat-agentic\">agentic</span> <strong>IndyDevDan presents Pi as the open-source Claude Code alternative</strong><p class=\"headline-summary\">IndyDevDan (<a class=\"src-link\" data-src=\"146\" href=\"#\">#146</a>) presents Pi as Claude Code's only real competitor \u2014 open-source, model-agnostic, deeply customizable.</p></div><div class=\"headline\"><span class=\"cat cat-economics\">economics</span> <strong>Nate B Jones reframes \"which AI is best\" with difficulty taxonomy</strong></div><div class=\"headline\"><span class=\"cat cat-hype\">hype</span> <strong>Wall Street Millennial dismantles the SaaS apocalypse narrative</strong><p class=\"headline-summary\">Wall Street Millennial (<a class=\"src-link\" data-src=\"144\" href=\"#\">#144</a>) systematically dismantles the narrative that vibe coding will replace enterprise software, revealing that Anthropic's C compiler demo required 9 engineers, couldn't debug itself, and dramatically underperformed GCC.</p></div></div><div class=\"card-sources\">Sources: <a class=\"src-link\" data-src=\"071\" href=\"#\">#071</a> <a class=\"src-link\" data-src=\"084\" href=\"#\">#084</a> <a class=\"src-link\" data-src=\"088\" href=\"#\">#088</a> <a class=\"src-link\" data-src=\"125\" href=\"#\">#125</a> <a class=\"src-link\" data-src=\"137\" href=\"#\">#137</a> <a class=\"src-link\" data-src=\"139\" href=\"#\">#139</a> <a class=\"src-link\" data-src=\"141\" href=\"#\">#141</a> <a class=\"src-link\" data-src=\"143\" href=\"#\">#143</a> <a class=\"src-link\" data-src=\"144\" href=\"#\">#144</a> <a class=\"src-link\" data-src=\"146\" href=\"#\">#146</a> <a class=\"src-link\" data-src=\"147\" href=\"#\">#147</a></div>"
+        "body_html": "<div class=\"card-focus\">Difficulty taxonomies, dot-com parallels, agentic tool diversity, and education's AI reckoning</div><div class=\"card-headlines\"><div class=\"headline\"><span class=\"cat cat-economics\">economics</span> <strong>Modern MBA delivers layer-by-layer AI-to-dot-com bubble mapping</strong><p class=\"headline-summary\">Modern MBA (<a class=\"src-link\" data-src=\"147\" href=\"#\">#147</a>) maps the entire AI stack onto the 1990s dot-com era: consumer AI startups are Pets.com, OpenAI is Netscape (massive growth, no profitability), Nvidia is Sun+Cisco, hyperscalers are Exodus Communications, and energy is the new bandwidth.</p><div class=\"headline-sources\"><a class=\"src-link\" data-src=\"147\" href=\"#\"><a class=\"src-link\" data-src=\"147\" href=\"#\">#147</a></a></div></div><div class=\"headline\"><span class=\"cat cat-tooling\">tooling</span> <strong>Matt Pocock explores claude --worktree for parallel agent branches</strong></div><div class=\"headline\"><span class=\"cat cat-security\">security</span> <strong>Nate B Jones introduces trust architecture after Anthropic's 16-model stress test</strong></div><div class=\"headline\"><span class=\"cat cat-education\">education</span> <strong>Harvard panel reveals 50% of students report AI over-reliance</strong></div><div class=\"headline\"><span class=\"cat cat-agentic\">agentic</span> <strong>IndyDevDan presents Pi as the open-source Claude Code alternative</strong><p class=\"headline-summary\">IndyDevDan (<a class=\"src-link\" data-src=\"146\" href=\"#\">#146</a>) presents Pi as Claude Code's only real competitor \u2014 open-source, model-agnostic, deeply customizable.</p><div class=\"headline-sources\"><a class=\"src-link\" data-src=\"146\" href=\"#\"><a class=\"src-link\" data-src=\"146\" href=\"#\">#146</a></a></div></div><div class=\"headline\"><span class=\"cat cat-economics\">economics</span> <strong>Nate B Jones reframes \"which AI is best\" with difficulty taxonomy</strong></div><div class=\"headline\"><span class=\"cat cat-hype\">hype</span> <strong>Wall Street Millennial dismantles the SaaS apocalypse narrative</strong><p class=\"headline-summary\">Wall Street Millennial (<a class=\"src-link\" data-src=\"144\" href=\"#\">#144</a>) systematically dismantles the narrative that vibe coding will replace enterprise software, revealing that Anthropic's C compiler demo required 9 engineers, couldn't debug itself, and dramatically underperformed GCC.</p><div class=\"headline-sources\"><a class=\"src-link\" data-src=\"144\" href=\"#\"><a class=\"src-link\" data-src=\"144\" href=\"#\">#144</a></a></div></div></div><div class=\"card-sources\">Sources: <a class=\"src-link\" data-src=\"071\" href=\"#\">#071</a> <a class=\"src-link\" data-src=\"084\" href=\"#\">#084</a> <a class=\"src-link\" data-src=\"088\" href=\"#\">#088</a> <a class=\"src-link\" data-src=\"125\" href=\"#\">#125</a> <a class=\"src-link\" data-src=\"137\" href=\"#\">#137</a> <a class=\"src-link\" data-src=\"139\" href=\"#\">#139</a> <a class=\"src-link\" data-src=\"141\" href=\"#\">#141</a> <a class=\"src-link\" data-src=\"143\" href=\"#\">#143</a> <a class=\"src-link\" data-src=\"144\" href=\"#\">#144</a> <a class=\"src-link\" data-src=\"146\" href=\"#\">#146</a> <a class=\"src-link\" data-src=\"147\" href=\"#\">#147</a></div>"
       },
       {
         "id": "2026-02-23-playlist-themes",
@@ -32670,7 +32921,7 @@
         "date": "2026-02-18",
         "title": "",
         "subtitle": "",
-        "body_html": "<div class=\"card-focus\">OpenAI's three-front collapse \u2014 Nvidia pullback, Microsoft self-sufficiency pivot, and Gary Marcus's diminishing returns thesis converge, while the OpenClaw saga reaches its conclusion and practical tooling quietly matures</div><div class=\"card-headlines\"><div class=\"headline\"><span class=\"cat cat-economics\">economics</span> <strong>OpenAI faces simultaneous Nvidia pullback ($100B \u2192 $20B), Microsoft self-sufficiency pivot, and projected $44B cumulative losses through 2028</strong></div><div class=\"headline\"><span class=\"cat cat-critical\">critical</span> <strong>Gary Marcus and Steve Eisman lay out the investment bear case: LLMs as System 1 machines hitting diminishing returns, with OpenAI compared to WeWork</strong></div><div class=\"headline\"><span class=\"cat cat-security\">security</span> <strong>The OpenClaw saga concludes: from Friday-night hack to OpenAI acquisition, with crypto scammers, 1.5M leaked API tokens, and Chrome/Chromium governance risk along the way</strong><p class=\"headline-summary\">Three sources trace OpenClaw from creation to acquisition.</p></div><div class=\"headline\"><span class=\"cat cat-patterns\">patterns</span> <strong>Java Brains names the \"expectations trap\" \u2014 AI expanding developer scope without expanding compensation, following the full-stack and DevOps playbooks</strong><p class=\"headline-summary\">Java Brains (<a class=\"src-link\" data-src=\"092\" href=\"#\">#092</a>) articulates a pattern visible across the collection: AI tools expand what employers expect from developers without expanding compensation.</p></div><div class=\"headline\"><span class=\"cat cat-tools\">tools</span> <strong>Agent memory architecture gets a technical deep-dive: hybrid search (70/30 vector/keyword), 400-token chunking, and Claude Code's counter-intuitive finding that grep outperforms vector search</strong></div></div><div class=\"card-sources\">Sources: <a class=\"src-link\" data-src=\"007\" href=\"#\">#007</a> <a class=\"src-link\" data-src=\"032\" href=\"#\">#032</a> <a class=\"src-link\" data-src=\"058\" href=\"#\">#058</a> <a class=\"src-link\" data-src=\"059\" href=\"#\">#059</a> <a class=\"src-link\" data-src=\"065\" href=\"#\">#065</a> <a class=\"src-link\" data-src=\"076\" href=\"#\">#076</a> <a class=\"src-link\" data-src=\"077\" href=\"#\">#077</a> <a class=\"src-link\" data-src=\"084\" href=\"#\">#084</a> <a class=\"src-link\" data-src=\"085\" href=\"#\">#085</a> <a class=\"src-link\" data-src=\"087\" href=\"#\">#087</a> <a class=\"src-link\" data-src=\"089\" href=\"#\">#089</a> <a class=\"src-link\" data-src=\"090\" href=\"#\">#090</a> +9 more</div>"
+        "body_html": "<div class=\"card-focus\">OpenAI's three-front collapse \u2014 Nvidia pullback, Microsoft self-sufficiency pivot, and Gary Marcus's diminishing returns thesis converge, while the OpenClaw saga reaches its conclusion and practical tooling quietly matures</div><div class=\"card-headlines\"><div class=\"headline\"><span class=\"cat cat-economics\">economics</span> <strong>OpenAI faces simultaneous Nvidia pullback ($100B \u2192 $20B), Microsoft self-sufficiency pivot, and projected $44B cumulative losses through 2028</strong></div><div class=\"headline\"><span class=\"cat cat-critical\">critical</span> <strong>Gary Marcus and Steve Eisman lay out the investment bear case: LLMs as System 1 machines hitting diminishing returns, with OpenAI compared to WeWork</strong></div><div class=\"headline\"><span class=\"cat cat-security\">security</span> <strong>The OpenClaw saga concludes: from Friday-night hack to OpenAI acquisition, with crypto scammers, 1.5M leaked API tokens, and Chrome/Chromium governance risk along the way</strong><p class=\"headline-summary\">Three sources trace OpenClaw from creation to acquisition.</p><div class=\"headline-sources\"><a class=\"src-link\" data-src=\"094\" href=\"#\"><a class=\"src-link\" data-src=\"094\" href=\"#\">#094</a></a> <a class=\"src-link\" data-src=\"093\" href=\"#\"><a class=\"src-link\" data-src=\"093\" href=\"#\">#093</a></a> <a class=\"src-link\" data-src=\"095\" href=\"#\"><a class=\"src-link\" data-src=\"095\" href=\"#\">#095</a></a></div></div><div class=\"headline\"><span class=\"cat cat-patterns\">patterns</span> <strong>Java Brains names the \"expectations trap\" \u2014 AI expanding developer scope without expanding compensation, following the full-stack and DevOps playbooks</strong><p class=\"headline-summary\">Java Brains (<a class=\"src-link\" data-src=\"092\" href=\"#\">#092</a>) articulates a pattern visible across the collection: AI tools expand what employers expect from developers without expanding compensation.</p><div class=\"headline-sources\"><a class=\"src-link\" data-src=\"092\" href=\"#\"><a class=\"src-link\" data-src=\"092\" href=\"#\">#092</a></a> <a class=\"src-link\" data-src=\"091\" href=\"#\"><a class=\"src-link\" data-src=\"091\" href=\"#\">#091</a></a></div></div><div class=\"headline\"><span class=\"cat cat-tools\">tools</span> <strong>Agent memory architecture gets a technical deep-dive: hybrid search (70/30 vector/keyword), 400-token chunking, and Claude Code's counter-intuitive finding that grep outperforms vector search</strong></div></div><div class=\"card-sources\">Sources: <a class=\"src-link\" data-src=\"007\" href=\"#\">#007</a> <a class=\"src-link\" data-src=\"032\" href=\"#\">#032</a> <a class=\"src-link\" data-src=\"058\" href=\"#\">#058</a> <a class=\"src-link\" data-src=\"059\" href=\"#\">#059</a> <a class=\"src-link\" data-src=\"065\" href=\"#\">#065</a> <a class=\"src-link\" data-src=\"076\" href=\"#\">#076</a> <a class=\"src-link\" data-src=\"077\" href=\"#\">#077</a> <a class=\"src-link\" data-src=\"084\" href=\"#\">#084</a> <a class=\"src-link\" data-src=\"085\" href=\"#\">#085</a> <a class=\"src-link\" data-src=\"087\" href=\"#\">#087</a> <a class=\"src-link\" data-src=\"089\" href=\"#\">#089</a> <a class=\"src-link\" data-src=\"090\" href=\"#\">#090</a> +9 more</div>"
       },
       {
         "id": "2026-02-18-playlist-themes",
@@ -32686,7 +32937,7 @@
         "date": "2026-02-17",
         "title": "",
         "subtitle": "",
-        "body_html": "<div class=\"card-focus\">17-video playlist batch \u2014 specification bottleneck gets data, context management gets a number, and the skeptic case reaches full maturity</div><div class=\"card-headlines\"><div class=\"headline\"><span class=\"cat cat-critical\">critical</span> <strong>The specification bottleneck now has empirical backing: AWS Cairo, 1.7x logic error rates, and 9% bug increase at 90% AI adoption</strong></div><div class=\"headline\"><span class=\"cat cat-patterns\">patterns</span> <strong>IndyDevDan's 4-layer Bowser stack provides a reference architecture for agentic browser automation</strong><p class=\"headline-summary\">IndyDevDan (<a class=\"src-link\" data-src=\"088\" href=\"#\">#088</a>) presents Bowser, the most complete agentic architecture in this collection: Skills (capability) \u2192 Subagents (scale) \u2192 Commands/Prompts (orchestration) \u2192 Justfiles (reusability).</p></div><div class=\"headline\"><span class=\"cat cat-economics\">economics</span> <strong>Wall Street Millennial exposes the AI job-loss narrative as a customer acquisition strategy, backed by METR and Remote Labor Index data</strong><p class=\"headline-summary\">Wall Street Millennial (<a class=\"src-link\" data-src=\"077\" href=\"#\">#077</a>) delivers a data-driven debunking.</p></div><div class=\"headline\"><span class=\"cat cat-tools\">tools</span> <strong>Codex and Claude ship within 20 minutes of each other \u2014 Jones frames it as delegation vs. coordination, not better vs. worse</strong><p class=\"headline-summary\">Jones (<a class=\"src-link\" data-src=\"086\" href=\"#\">#086</a>) analyzes the 20-minute launch overlap between Codex and Claude Opus 4.6.</p></div><div class=\"headline\"><span class=\"cat cat-patterns\">patterns</span> <strong>The 60% rule: Dylan Davis quantifies context rot with a single actionable threshold</strong><p class=\"headline-summary\">Dylan Davis (<a class=\"src-link\" data-src=\"084\" href=\"#\">#084</a>) quantifies what every practitioner has felt: once you've used ~60% of a model's context window, performance degrades noticeably.</p></div></div><div class=\"card-sources\">Sources: <a class=\"src-link\" data-src=\"007\" href=\"#\">#007</a> <a class=\"src-link\" data-src=\"015\" href=\"#\">#015</a> <a class=\"src-link\" data-src=\"018\" href=\"#\">#018</a> <a class=\"src-link\" data-src=\"019\" href=\"#\">#019</a> <a class=\"src-link\" data-src=\"034\" href=\"#\">#034</a> <a class=\"src-link\" data-src=\"039\" href=\"#\">#039</a> <a class=\"src-link\" data-src=\"040\" href=\"#\">#040</a> <a class=\"src-link\" data-src=\"041\" href=\"#\">#041</a> <a class=\"src-link\" data-src=\"050\" href=\"#\">#050</a> <a class=\"src-link\" data-src=\"055\" href=\"#\">#055</a> <a class=\"src-link\" data-src=\"071\" href=\"#\">#071</a> <a class=\"src-link\" data-src=\"072\" href=\"#\">#072</a> +16 more</div>"
+        "body_html": "<div class=\"card-focus\">17-video playlist batch \u2014 specification bottleneck gets data, context management gets a number, and the skeptic case reaches full maturity</div><div class=\"card-headlines\"><div class=\"headline\"><span class=\"cat cat-critical\">critical</span> <strong>The specification bottleneck now has empirical backing: AWS Cairo, 1.7x logic error rates, and 9% bug increase at 90% AI adoption</strong></div><div class=\"headline\"><span class=\"cat cat-patterns\">patterns</span> <strong>IndyDevDan's 4-layer Bowser stack provides a reference architecture for agentic browser automation</strong><p class=\"headline-summary\">IndyDevDan (<a class=\"src-link\" data-src=\"088\" href=\"#\">#088</a>) presents Bowser, the most complete agentic architecture in this collection: Skills (capability) \u2192 Subagents (scale) \u2192 Commands/Prompts (orchestration) \u2192 Justfiles (reusability).</p><div class=\"headline-sources\"><a class=\"src-link\" data-src=\"088\" href=\"#\"><a class=\"src-link\" data-src=\"088\" href=\"#\">#088</a></a></div></div><div class=\"headline\"><span class=\"cat cat-economics\">economics</span> <strong>Wall Street Millennial exposes the AI job-loss narrative as a customer acquisition strategy, backed by METR and Remote Labor Index data</strong><p class=\"headline-summary\">Wall Street Millennial (<a class=\"src-link\" data-src=\"077\" href=\"#\">#077</a>) delivers a data-driven debunking.</p><div class=\"headline-sources\"><a class=\"src-link\" data-src=\"077\" href=\"#\"><a class=\"src-link\" data-src=\"077\" href=\"#\">#077</a></a></div></div><div class=\"headline\"><span class=\"cat cat-tools\">tools</span> <strong>Codex and Claude ship within 20 minutes of each other \u2014 Jones frames it as delegation vs. coordination, not better vs. worse</strong><p class=\"headline-summary\">Jones (<a class=\"src-link\" data-src=\"086\" href=\"#\">#086</a>) analyzes the 20-minute launch overlap between Codex and Claude Opus 4.6.</p><div class=\"headline-sources\"><a class=\"src-link\" data-src=\"086\" href=\"#\"><a class=\"src-link\" data-src=\"086\" href=\"#\">#086</a></a></div></div><div class=\"headline\"><span class=\"cat cat-patterns\">patterns</span> <strong>The 60% rule: Dylan Davis quantifies context rot with a single actionable threshold</strong><p class=\"headline-summary\">Dylan Davis (<a class=\"src-link\" data-src=\"084\" href=\"#\">#084</a>) quantifies what every practitioner has felt: once you've used ~60% of a model's context window, performance degrades noticeably.</p><div class=\"headline-sources\"><a class=\"src-link\" data-src=\"084\" href=\"#\"><a class=\"src-link\" data-src=\"084\" href=\"#\">#084</a></a></div></div></div><div class=\"card-sources\">Sources: <a class=\"src-link\" data-src=\"007\" href=\"#\">#007</a> <a class=\"src-link\" data-src=\"015\" href=\"#\">#015</a> <a class=\"src-link\" data-src=\"018\" href=\"#\">#018</a> <a class=\"src-link\" data-src=\"019\" href=\"#\">#019</a> <a class=\"src-link\" data-src=\"034\" href=\"#\">#034</a> <a class=\"src-link\" data-src=\"039\" href=\"#\">#039</a> <a class=\"src-link\" data-src=\"040\" href=\"#\">#040</a> <a class=\"src-link\" data-src=\"041\" href=\"#\">#041</a> <a class=\"src-link\" data-src=\"050\" href=\"#\">#050</a> <a class=\"src-link\" data-src=\"055\" href=\"#\">#055</a> <a class=\"src-link\" data-src=\"071\" href=\"#\">#071</a> <a class=\"src-link\" data-src=\"072\" href=\"#\">#072</a> +16 more</div>"
       },
       {
         "id": "2026-02-17-playlist-themes",
@@ -32702,7 +32953,7 @@
         "date": "2026-02-16",
         "title": "",
         "subtitle": "",
-        "body_html": "<div class=\"card-focus\">Cognitive debt gets a name, Claude Code hits $1B ARR in six months, Salesforce cuts its own AI teams, and a platform built by AI agents for AI agents leaks 1.6M agents' credentials \u2014 the gap between velocity and understanding widens on every front</div><div class=\"card-headlines\"><div class=\"headline\"><span class=\"cat cat-synthesis\">synthesis</span> <strong>New synthesis published: Cognitive Debt and the Future of Software \u2014 Fowler's Deer Valley retreat framework applied across 13 sources</strong><p class=\"headline-summary\">Today's synthesis document applies Martin Fowler's Deer Valley retreat fragments (<a class=\"src-link\" data-src=\"071\" href=\"#\">#071</a>) as a lens across 13 sources in the collection.</p></div><div class=\"headline\"><span class=\"cat cat-economics\">economics</span> <strong>Claude Code reaches $1B ARR within six months of launch, competing with Copilot (20M+ users) and Cursor (360K+ paying users)</strong><p class=\"headline-summary\">Claude Code reached $1 billion in annualized revenue within six months of launch, making it one of the fastest-growing developer tools in history.</p></div><div class=\"headline\"><span class=\"cat cat-economics\">economics</span> <strong>Salesforce quietly lays off ~1,000 workers including Agentforce AI product teams \u2014 Oxford Economics suggests AI-cited layoffs may be \"AI-washing\"</strong><p class=\"headline-summary\">Salesforce laid off fewer than 1,000 workers on February 10, with cuts hitting marketing, product management, data analytics, and notably the Agentforce AI product teams themselves.</p></div><div class=\"headline\"><span class=\"cat cat-security\">security</span> <strong>Moltbook platform for 1.6M AI agents exposes private messages and credentials \u2014 entire site built with AI-generated code, no human security review</strong><p class=\"headline-summary\">Moltbook, a social platform hosting 1.6 million AI agents, exposed private messages and credentials due to fundamental security failures.</p></div><div class=\"headline\"><span class=\"cat cat-critical\">critical</span> <strong>Worker AI anxiety spikes from 28% (2024) to 40% (2026) \u2014 97% of investors say funding decisions penalize firms that fail to upskill workers on AI</strong><p class=\"headline-summary\">Mercer's Global Talent Trends 2026 report shows worker anxiety about AI-driven job loss jumping from 28% in 2024 to 40% in 2026 \u2014 a 43% year-over-year increase.</p></div></div><div class=\"card-sources\">Sources: <a class=\"src-link\" data-src=\"001\" href=\"#\">#001</a> <a class=\"src-link\" data-src=\"029\" href=\"#\">#029</a> <a class=\"src-link\" data-src=\"033\" href=\"#\">#033</a> <a class=\"src-link\" data-src=\"050\" href=\"#\">#050</a> <a class=\"src-link\" data-src=\"056\" href=\"#\">#056</a> <a class=\"src-link\" data-src=\"057\" href=\"#\">#057</a> <a class=\"src-link\" data-src=\"062\" href=\"#\">#062</a> <a class=\"src-link\" data-src=\"065\" href=\"#\">#065</a> <a class=\"src-link\" data-src=\"071\" href=\"#\">#071</a></div>"
+        "body_html": "<div class=\"card-focus\">Cognitive debt gets a name, Claude Code hits $1B ARR in six months, Salesforce cuts its own AI teams, and a platform built by AI agents for AI agents leaks 1.6M agents' credentials \u2014 the gap between velocity and understanding widens on every front</div><div class=\"card-headlines\"><div class=\"headline\"><span class=\"cat cat-synthesis\">synthesis</span> <strong>New synthesis published: Cognitive Debt and the Future of Software \u2014 Fowler's Deer Valley retreat framework applied across 13 sources</strong><p class=\"headline-summary\">Today's synthesis document applies Martin Fowler's Deer Valley retreat fragments (<a class=\"src-link\" data-src=\"071\" href=\"#\">#071</a>) as a lens across 13 sources in the collection.</p><div class=\"headline-sources\"><a class=\"src-link\" data-src=\"071\" href=\"#\"><a class=\"src-link\" data-src=\"071\" href=\"#\">#071</a></a> <a class=\"src-link\" data-src=\"056\" href=\"#\"><a class=\"src-link\" data-src=\"056\" href=\"#\">#056</a></a> <a class=\"src-link\" data-src=\"029\" href=\"#\"><a class=\"src-link\" data-src=\"029\" href=\"#\">#029</a></a> <a class=\"src-link\" data-src=\"001\" href=\"#\"><a class=\"src-link\" data-src=\"001\" href=\"#\">#001</a></a></div></div><div class=\"headline\"><span class=\"cat cat-economics\">economics</span> <strong>Claude Code reaches $1B ARR within six months of launch, competing with Copilot (20M+ users) and Cursor (360K+ paying users)</strong><p class=\"headline-summary\">Claude Code reached $1 billion in annualized revenue within six months of launch, making it one of the fastest-growing developer tools in history.</p><div class=\"headline-sources\"><a class=\"src-link\" data-src=\"056\" href=\"#\"><a class=\"src-link\" data-src=\"056\" href=\"#\">#056</a></a></div></div><div class=\"headline\"><span class=\"cat cat-economics\">economics</span> <strong>Salesforce quietly lays off ~1,000 workers including Agentforce AI product teams \u2014 Oxford Economics suggests AI-cited layoffs may be \"AI-washing\"</strong><p class=\"headline-summary\">Salesforce laid off fewer than 1,000 workers on February 10, with cuts hitting marketing, product management, data analytics, and notably the Agentforce AI product teams themselves.</p><div class=\"headline-sources\"><a class=\"src-link\" data-src=\"033\" href=\"#\"><a class=\"src-link\" data-src=\"033\" href=\"#\">#033</a></a></div></div><div class=\"headline\"><span class=\"cat cat-security\">security</span> <strong>Moltbook platform for 1.6M AI agents exposes private messages and credentials \u2014 entire site built with AI-generated code, no human security review</strong><p class=\"headline-summary\">Moltbook, a social platform hosting 1.6 million AI agents, exposed private messages and credentials due to fundamental security failures.</p><div class=\"headline-sources\"><a class=\"src-link\" data-src=\"057\" href=\"#\"><a class=\"src-link\" data-src=\"057\" href=\"#\">#057</a></a></div></div><div class=\"headline\"><span class=\"cat cat-critical\">critical</span> <strong>Worker AI anxiety spikes from 28% (2024) to 40% (2026) \u2014 97% of investors say funding decisions penalize firms that fail to upskill workers on AI</strong><p class=\"headline-summary\">Mercer's Global Talent Trends 2026 report shows worker anxiety about AI-driven job loss jumping from 28% in 2024 to 40% in 2026 \u2014 a 43% year-over-year increase.</p><div class=\"headline-sources\"><a class=\"src-link\" data-src=\"071\" href=\"#\"><a class=\"src-link\" data-src=\"071\" href=\"#\">#071</a></a> <a class=\"src-link\" data-src=\"050\" href=\"#\"><a class=\"src-link\" data-src=\"050\" href=\"#\">#050</a></a></div></div></div><div class=\"card-sources\">Sources: <a class=\"src-link\" data-src=\"001\" href=\"#\">#001</a> <a class=\"src-link\" data-src=\"029\" href=\"#\">#029</a> <a class=\"src-link\" data-src=\"033\" href=\"#\">#033</a> <a class=\"src-link\" data-src=\"050\" href=\"#\">#050</a> <a class=\"src-link\" data-src=\"056\" href=\"#\">#056</a> <a class=\"src-link\" data-src=\"057\" href=\"#\">#057</a> <a class=\"src-link\" data-src=\"062\" href=\"#\">#062</a> <a class=\"src-link\" data-src=\"065\" href=\"#\">#065</a> <a class=\"src-link\" data-src=\"071\" href=\"#\">#071</a></div>"
       },
       {
         "id": "2026-02-16-cognitive-debt-and-the-future-of-software",
@@ -32742,7 +32993,7 @@
         "date": "2026-02-14",
         "title": "",
         "subtitle": "",
-        "body_html": "<div class=\"card-focus\">The measurement gap \u2014 multi-agent hype meets empirical reality, AI safety fractures deepen, the economic displacement timeline compresses from theoretical to urgent, and Amodei bets the company on the end of the exponential</div><div class=\"card-headlines\"><div class=\"headline\"><span class=\"cat cat-critical\">critical</span> <strong>Cursor's $8-16M browser stunt fails to compile \u2014 removing quality gates to boost throughput is the oldest engineering antipattern, now running at agent scale</strong><p class=\"headline-summary\">Java Brains (054) delivers the most thorough debunking of multi-agent hype this week.</p></div><div class=\"headline\"><span class=\"cat cat-economics\">economics</span> <strong>Sam Harris frames AI success itself as an emergency: even the optimistic scenario concentrates wealth into a \"fall of Saigon\" scramble for the last available jobs</strong><p class=\"headline-summary\">Sam Harris (050) reacts to Mustafa Suleyman's prediction that \"most if not all professional tasks\" will be fully automated within 12-18 months.</p></div><div class=\"headline\"><span class=\"cat cat-security\">security</span> <strong>AI browsers face an inescapable paradox \u2014 sandboxed enough to be safe means no advantage over a website; powerful enough to be useful means prompt injection owns your bank account</strong><p class=\"headline-summary\">TheStandupPod (047) dissects OpenAI's Chromium-based AI browser and identifies an inescapable dilemma.</p></div><div class=\"headline\"><span class=\"cat cat-patterns\">patterns</span> <strong>Brainqub3 ships an open-source measurement rig proving multi-agent systems collapse under coordination costs when single agents already perform well</strong><p class=\"headline-summary\">Brainqub3 (055) fills a critical gap in the multi-agent conversation: empirical measurement.</p></div><div class=\"headline\"><span class=\"cat cat-critical\">critical</span> <strong>Anthropic safety lead resigns warning \"the world is in peril\" \u2014 Novara Media connects the safety-economy threads into a polycrisis framework</strong><p class=\"headline-summary\">Sam Harris (050) reacts to Mustafa Suleyman's prediction that \"most if not all professional tasks\" will be fully automated within 12-18 months.</p></div><div class=\"headline\"><span class=\"cat cat-tools\">tools</span> <strong>WebMCP lands in Chrome preview: websites can now expose structured tools directly to AI agents, replacing thousands of screenshot-and-click interactions with single function calls</strong></div><div class=\"headline\"><span class=\"cat cat-critical\">critical</span> <strong>Amodei tells Dwarkesh Patel we are \"near the end of the exponential\" \u2014 90% confidence on country-of-geniuses-in-a-datacenter within 10 years, 50/50 on 1-2 years, while the METR study shows a 20% productivity downlift for experienced developers</strong><p class=\"headline-summary\">Dwarkesh Patel (056) conducts a two-hour interview with Anthropic CEO Dario Amodei that is the most transparent public accounting of frontier AI economics to date.</p></div><div class=\"headline\"><span class=\"cat cat-economics\">economics</span> <strong>Griffonomics maps the SaaSpocalypse into the credit markets \u2014 PE-loaded SaaS companies now represent 31% of distressed syndicated loans, with PIK at 11.3%, creating contagion risk into pension funds and insurance companies</strong><p class=\"headline-summary\">Griffonomics (065) delivers the most rigorous economic analysis of AI's impact on the software industry in the collection.</p></div><div class=\"headline\"><span class=\"cat cat-patterns\">patterns</span> <strong>Google DeepMind's Gemini 3 Deep Think achieves 100x compute reduction for Olympiad-level performance in six months \u2014 inference-time scaling replaces \"bigger models\" as the dominant paradigm, and agentic harnesses outperform raw models at every compute scale</strong><p class=\"headline-summary\">Prompt Engineering (060) unpacks Google DeepMind's Gemini 3 Deep Think release and argues the real story is not benchmarks but a paradigm shift.</p></div><div class=\"headline\"><span class=\"cat cat-security\">security</span> <strong>IBM maps zero trust principles onto agentic AI \u2014 six attack vectors, just-in-time credentials, tool registries, and AI firewalls form the first structured enterprise security blueprint for agent deployments</strong><p class=\"headline-summary\">TheStandupPod (047) dissects OpenAI's Chromium-based AI browser and identifies an inescapable dilemma.</p></div></div><div class=\"card-sources\">Sources: <a class=\"src-link\" data-src=\"001\" href=\"#\">#001</a> <a class=\"src-link\" data-src=\"002\" href=\"#\">#002</a> <a class=\"src-link\" data-src=\"004\" href=\"#\">#004</a> <a class=\"src-link\" data-src=\"005\" href=\"#\">#005</a> <a class=\"src-link\" data-src=\"010\" href=\"#\">#010</a> <a class=\"src-link\" data-src=\"011\" href=\"#\">#011</a> <a class=\"src-link\" data-src=\"012\" href=\"#\">#012</a> <a class=\"src-link\" data-src=\"017\" href=\"#\">#017</a> <a class=\"src-link\" data-src=\"018\" href=\"#\">#018</a> <a class=\"src-link\" data-src=\"020\" href=\"#\">#020</a> <a class=\"src-link\" data-src=\"025\" href=\"#\">#025</a> <a class=\"src-link\" data-src=\"029\" href=\"#\">#029</a> +31 more</div>"
+        "body_html": "<div class=\"card-focus\">The measurement gap \u2014 multi-agent hype meets empirical reality, AI safety fractures deepen, the economic displacement timeline compresses from theoretical to urgent, and Amodei bets the company on the end of the exponential</div><div class=\"card-headlines\"><div class=\"headline\"><span class=\"cat cat-critical\">critical</span> <strong>Cursor's $8-16M browser stunt fails to compile \u2014 removing quality gates to boost throughput is the oldest engineering antipattern, now running at agent scale</strong><p class=\"headline-summary\">Java Brains (054) delivers the most thorough debunking of multi-agent hype this week.</p><div class=\"headline-sources\"><a class=\"src-link\" data-src=\"054\" href=\"#\"><a class=\"src-link\" data-src=\"054\" href=\"#\">#054</a></a></div></div><div class=\"headline\"><span class=\"cat cat-economics\">economics</span> <strong>Sam Harris frames AI success itself as an emergency: even the optimistic scenario concentrates wealth into a \"fall of Saigon\" scramble for the last available jobs</strong><p class=\"headline-summary\">Sam Harris (050) reacts to Mustafa Suleyman's prediction that \"most if not all professional tasks\" will be fully automated within 12-18 months.</p><div class=\"headline-sources\"><a class=\"src-link\" data-src=\"050\" href=\"#\"><a class=\"src-link\" data-src=\"050\" href=\"#\">#050</a></a></div></div><div class=\"headline\"><span class=\"cat cat-security\">security</span> <strong>AI browsers face an inescapable paradox \u2014 sandboxed enough to be safe means no advantage over a website; powerful enough to be useful means prompt injection owns your bank account</strong><p class=\"headline-summary\">TheStandupPod (047) dissects OpenAI's Chromium-based AI browser and identifies an inescapable dilemma.</p><div class=\"headline-sources\"><a class=\"src-link\" data-src=\"047\" href=\"#\"><a class=\"src-link\" data-src=\"047\" href=\"#\">#047</a></a></div></div><div class=\"headline\"><span class=\"cat cat-patterns\">patterns</span> <strong>Brainqub3 ships an open-source measurement rig proving multi-agent systems collapse under coordination costs when single agents already perform well</strong><p class=\"headline-summary\">Brainqub3 (055) fills a critical gap in the multi-agent conversation: empirical measurement.</p><div class=\"headline-sources\"><a class=\"src-link\" data-src=\"055\" href=\"#\"><a class=\"src-link\" data-src=\"055\" href=\"#\">#055</a></a></div></div><div class=\"headline\"><span class=\"cat cat-critical\">critical</span> <strong>Anthropic safety lead resigns warning \"the world is in peril\" \u2014 Novara Media connects the safety-economy threads into a polycrisis framework</strong><p class=\"headline-summary\">Sam Harris (050) reacts to Mustafa Suleyman's prediction that \"most if not all professional tasks\" will be fully automated within 12-18 months.</p><div class=\"headline-sources\"><a class=\"src-link\" data-src=\"050\" href=\"#\"><a class=\"src-link\" data-src=\"050\" href=\"#\">#050</a></a></div></div><div class=\"headline\"><span class=\"cat cat-tools\">tools</span> <strong>WebMCP lands in Chrome preview: websites can now expose structured tools directly to AI agents, replacing thousands of screenshot-and-click interactions with single function calls</strong></div><div class=\"headline\"><span class=\"cat cat-critical\">critical</span> <strong>Amodei tells Dwarkesh Patel we are \"near the end of the exponential\" \u2014 90% confidence on country-of-geniuses-in-a-datacenter within 10 years, 50/50 on 1-2 years, while the METR study shows a 20% productivity downlift for experienced developers</strong><p class=\"headline-summary\">Dwarkesh Patel (056) conducts a two-hour interview with Anthropic CEO Dario Amodei that is the most transparent public accounting of frontier AI economics to date.</p><div class=\"headline-sources\"><a class=\"src-link\" data-src=\"056\" href=\"#\"><a class=\"src-link\" data-src=\"056\" href=\"#\">#056</a></a></div></div><div class=\"headline\"><span class=\"cat cat-economics\">economics</span> <strong>Griffonomics maps the SaaSpocalypse into the credit markets \u2014 PE-loaded SaaS companies now represent 31% of distressed syndicated loans, with PIK at 11.3%, creating contagion risk into pension funds and insurance companies</strong><p class=\"headline-summary\">Griffonomics (065) delivers the most rigorous economic analysis of AI's impact on the software industry in the collection.</p><div class=\"headline-sources\"><a class=\"src-link\" data-src=\"065\" href=\"#\"><a class=\"src-link\" data-src=\"065\" href=\"#\">#065</a></a></div></div><div class=\"headline\"><span class=\"cat cat-patterns\">patterns</span> <strong>Google DeepMind's Gemini 3 Deep Think achieves 100x compute reduction for Olympiad-level performance in six months \u2014 inference-time scaling replaces \"bigger models\" as the dominant paradigm, and agentic harnesses outperform raw models at every compute scale</strong><p class=\"headline-summary\">Prompt Engineering (060) unpacks Google DeepMind's Gemini 3 Deep Think release and argues the real story is not benchmarks but a paradigm shift.</p><div class=\"headline-sources\"><a class=\"src-link\" data-src=\"060\" href=\"#\"><a class=\"src-link\" data-src=\"060\" href=\"#\">#060</a></a></div></div><div class=\"headline\"><span class=\"cat cat-security\">security</span> <strong>IBM maps zero trust principles onto agentic AI \u2014 six attack vectors, just-in-time credentials, tool registries, and AI firewalls form the first structured enterprise security blueprint for agent deployments</strong><p class=\"headline-summary\">TheStandupPod (047) dissects OpenAI's Chromium-based AI browser and identifies an inescapable dilemma.</p><div class=\"headline-sources\"><a class=\"src-link\" data-src=\"047\" href=\"#\"><a class=\"src-link\" data-src=\"047\" href=\"#\">#047</a></a></div></div></div><div class=\"card-sources\">Sources: <a class=\"src-link\" data-src=\"001\" href=\"#\">#001</a> <a class=\"src-link\" data-src=\"002\" href=\"#\">#002</a> <a class=\"src-link\" data-src=\"004\" href=\"#\">#004</a> <a class=\"src-link\" data-src=\"005\" href=\"#\">#005</a> <a class=\"src-link\" data-src=\"010\" href=\"#\">#010</a> <a class=\"src-link\" data-src=\"011\" href=\"#\">#011</a> <a class=\"src-link\" data-src=\"012\" href=\"#\">#012</a> <a class=\"src-link\" data-src=\"017\" href=\"#\">#017</a> <a class=\"src-link\" data-src=\"018\" href=\"#\">#018</a> <a class=\"src-link\" data-src=\"020\" href=\"#\">#020</a> <a class=\"src-link\" data-src=\"025\" href=\"#\">#025</a> <a class=\"src-link\" data-src=\"029\" href=\"#\">#029</a> +31 more</div>"
       },
       {
         "id": "2026-02-14-acceleration-without-infrastructure",
@@ -32758,7 +33009,7 @@
         "date": "2026-02-13",
         "title": "",
         "subtitle": "",
-        "body_html": "<div class=\"card-focus\">The hype-reality gap \u2014 marketing demos vs. engineering reality, interface flattening, and the lifecycle cost of vibe coding</div><div class=\"card-headlines\"><div class=\"headline\"><span class=\"cat cat-critical\">critical</span> <strong>Interface Studies: GUIs collapsing into prompts creates a self-reinforcing cognitive loop \u2014 specification-first thinking crowds out exploration</strong></div><div class=\"headline\"><span class=\"cat cat-economics\">economics</span> <strong>SaaSpocalypse: SaaS stocks drop 20% after Claude Co-work announcement; Gerard argues AI was the trigger, overvaluation was the cause</strong><p class=\"headline-summary\">David Gerard's Pivot to AI (039) dissects the SaaS stock crash that followed Anthropic's Claude Co-work launch.</p></div><div class=\"headline\"><span class=\"cat cat-critical\">critical</span> <strong>Anthropic's $20K, 100K-line C compiler can't beat GCC with optimizations disabled \u2014 $5/line for code that sometimes fails Hello World</strong><p class=\"headline-summary\">Awesome's analysis (041) of Anthropic's \"Building a C compiler with a team of parallel Claudes\" blog post is the sharpest critique of agent team economics in the collection.</p></div><div class=\"headline\"><span class=\"cat cat-patterns\">patterns</span> <strong>DevForge: vibe coding is a trap \u2014 AI's 10-minute implementation becomes 5 hours when you count debugging, refactoring, and production fixes</strong><p class=\"headline-summary\">DevForge (042) builds the strongest case yet for why vibe coding's speed gains are illusory when measured across the full code lifecycle.</p></div><div class=\"headline\"><span class=\"cat cat-tools\">tools</span> <strong>Cloudy Ads skill demonstrates Claude Code skills as full professional workflow replacements \u2014 190+ audit checks, non-coding use case</strong></div></div><div class=\"card-sources\">Sources: <a class=\"src-link\" data-src=\"004\" href=\"#\">#004</a> <a class=\"src-link\" data-src=\"005\" href=\"#\">#005</a> <a class=\"src-link\" data-src=\"007\" href=\"#\">#007</a> <a class=\"src-link\" data-src=\"011\" href=\"#\">#011</a> <a class=\"src-link\" data-src=\"013\" href=\"#\">#013</a> <a class=\"src-link\" data-src=\"025\" href=\"#\">#025</a> <a class=\"src-link\" data-src=\"029\" href=\"#\">#029</a> <a class=\"src-link\" data-src=\"036\" href=\"#\">#036</a> <a class=\"src-link\" data-src=\"038\" href=\"#\">#038</a> <a class=\"src-link\" data-src=\"039\" href=\"#\">#039</a> <a class=\"src-link\" data-src=\"040\" href=\"#\">#040</a> <a class=\"src-link\" data-src=\"041\" href=\"#\">#041</a> +2 more</div>"
+        "body_html": "<div class=\"card-focus\">The hype-reality gap \u2014 marketing demos vs. engineering reality, interface flattening, and the lifecycle cost of vibe coding</div><div class=\"card-headlines\"><div class=\"headline\"><span class=\"cat cat-critical\">critical</span> <strong>Interface Studies: GUIs collapsing into prompts creates a self-reinforcing cognitive loop \u2014 specification-first thinking crowds out exploration</strong></div><div class=\"headline\"><span class=\"cat cat-economics\">economics</span> <strong>SaaSpocalypse: SaaS stocks drop 20% after Claude Co-work announcement; Gerard argues AI was the trigger, overvaluation was the cause</strong><p class=\"headline-summary\">David Gerard's Pivot to AI (039) dissects the SaaS stock crash that followed Anthropic's Claude Co-work launch.</p><div class=\"headline-sources\"><a class=\"src-link\" data-src=\"039\" href=\"#\"><a class=\"src-link\" data-src=\"039\" href=\"#\">#039</a></a></div></div><div class=\"headline\"><span class=\"cat cat-critical\">critical</span> <strong>Anthropic's $20K, 100K-line C compiler can't beat GCC with optimizations disabled \u2014 $5/line for code that sometimes fails Hello World</strong><p class=\"headline-summary\">Awesome's analysis (041) of Anthropic's \"Building a C compiler with a team of parallel Claudes\" blog post is the sharpest critique of agent team economics in the collection.</p><div class=\"headline-sources\"><a class=\"src-link\" data-src=\"041\" href=\"#\"><a class=\"src-link\" data-src=\"041\" href=\"#\">#041</a></a></div></div><div class=\"headline\"><span class=\"cat cat-patterns\">patterns</span> <strong>DevForge: vibe coding is a trap \u2014 AI's 10-minute implementation becomes 5 hours when you count debugging, refactoring, and production fixes</strong><p class=\"headline-summary\">DevForge (042) builds the strongest case yet for why vibe coding's speed gains are illusory when measured across the full code lifecycle.</p><div class=\"headline-sources\"><a class=\"src-link\" data-src=\"042\" href=\"#\"><a class=\"src-link\" data-src=\"042\" href=\"#\">#042</a></a></div></div><div class=\"headline\"><span class=\"cat cat-tools\">tools</span> <strong>Cloudy Ads skill demonstrates Claude Code skills as full professional workflow replacements \u2014 190+ audit checks, non-coding use case</strong></div></div><div class=\"card-sources\">Sources: <a class=\"src-link\" data-src=\"004\" href=\"#\">#004</a> <a class=\"src-link\" data-src=\"005\" href=\"#\">#005</a> <a class=\"src-link\" data-src=\"007\" href=\"#\">#007</a> <a class=\"src-link\" data-src=\"011\" href=\"#\">#011</a> <a class=\"src-link\" data-src=\"013\" href=\"#\">#013</a> <a class=\"src-link\" data-src=\"025\" href=\"#\">#025</a> <a class=\"src-link\" data-src=\"029\" href=\"#\">#029</a> <a class=\"src-link\" data-src=\"036\" href=\"#\">#036</a> <a class=\"src-link\" data-src=\"038\" href=\"#\">#038</a> <a class=\"src-link\" data-src=\"039\" href=\"#\">#039</a> <a class=\"src-link\" data-src=\"040\" href=\"#\">#040</a> <a class=\"src-link\" data-src=\"041\" href=\"#\">#041</a> +2 more</div>"
       },
       {
         "id": "2026-02-13-ai-hype-reality-gap",
@@ -32774,7 +33025,7 @@
         "date": "2026-02-12",
         "title": "",
         "subtitle": "",
-        "body_html": "<div class=\"card-focus\">The productivity reality check \u2014 controlled studies, burnout data, and labor market signals converge</div><div class=\"card-headlines\"><div class=\"headline\"><span class=\"cat cat-critical\">critical</span> <strong>Controlled study of 150 developers finds AI speed gains real but modest (30%), with no maintainability penalty</strong></div><div class=\"headline\"><span class=\"cat cat-critical\">critical</span> <strong>Harvard Business Review research shows early AI adopters already burning out \u2014 the \"productivity trap\" is real</strong><p class=\"headline-summary\">Natasha Bernal's analysis (025) of the Harvard Business Review study reveals a counterintuitive dynamic: the employees who most enthusiastically adopted AI \u2014 without mandates \u2014 showed the highest burnout rates.</p></div><div class=\"headline\"><span class=\"cat cat-economics\">economics</span> <strong>K-shaped developer divergence: 52% still don't use AI agents while a minority goes full spec-driven</strong></div><div class=\"headline\"><span class=\"cat cat-tools\">tools</span> <strong>Playwright CLI ships as a 4x more token-efficient alternative to MCP for browser automation</strong></div><div class=\"headline\"><span class=\"cat cat-patterns\">patterns</span> <strong>Git worktrees emerge as essential infrastructure for agentic workflows</strong><p class=\"headline-summary\">Joshua Morony makes the case (027) that git worktree \u2014 long ignored by most developers \u2014 has become essential infrastructure for agentic coding.</p></div><div class=\"headline\"><span class=\"cat cat-critical\">critical</span> <strong>OpenAI insider: 95% of engineers use Codex, \"engineers are becoming sorcerers\" \u2014 the AI-native development practice is here</strong><p class=\"headline-summary\">Sherwin Wu, who leads developer-facing products at OpenAI, provides a rare insider look on Lenny's Podcast (035).</p></div><div class=\"headline\"><span class=\"cat cat-economics\">economics</span> <strong>Google raises $32B in debt including 100-year bond; Big Tech's combined 2026 AI capex hits $660B</strong></div><div class=\"headline\"><span class=\"cat cat-critical\">critical</span> <strong>Ethan Mollick: 50% of workers secretly use AI, reporting 3x productivity \u2014 but hiding it from employers</strong></div><div class=\"headline\"><span class=\"cat cat-critical\">critical</span> <strong>Cal Newport's taxonomy of bad AI reporting: the two questions every AI story must answer</strong><p class=\"headline-summary\">Cal Newport joins Ed Zitron on Better Offline (034) to dissect how AI gets covered in the media.</p></div><div class=\"headline\"><span class=\"cat cat-economics\">economics</span> <strong>Galloway: software selloff is panic, not fundamentals \u2014 predicts Anthropic surpasses OpenAI within 12 months</strong><p class=\"headline-summary\">The software ETF (IGV) dropped 20% in a single month, with Adobe down nearly 40% over the past year.</p></div></div><div class=\"card-sources\">Sources: <a class=\"src-link\" data-src=\"005\" href=\"#\">#005</a> <a class=\"src-link\" data-src=\"007\" href=\"#\">#007</a> <a class=\"src-link\" data-src=\"008\" href=\"#\">#008</a> <a class=\"src-link\" data-src=\"009\" href=\"#\">#009</a> <a class=\"src-link\" data-src=\"010\" href=\"#\">#010</a> <a class=\"src-link\" data-src=\"011\" href=\"#\">#011</a> <a class=\"src-link\" data-src=\"012\" href=\"#\">#012</a> <a class=\"src-link\" data-src=\"017\" href=\"#\">#017</a> <a class=\"src-link\" data-src=\"018\" href=\"#\">#018</a> <a class=\"src-link\" data-src=\"025\" href=\"#\">#025</a> <a class=\"src-link\" data-src=\"026\" href=\"#\">#026</a> <a class=\"src-link\" data-src=\"027\" href=\"#\">#027</a> +10 more</div>"
+        "body_html": "<div class=\"card-focus\">The productivity reality check \u2014 controlled studies, burnout data, and labor market signals converge</div><div class=\"card-headlines\"><div class=\"headline\"><span class=\"cat cat-critical\">critical</span> <strong>Controlled study of 150 developers finds AI speed gains real but modest (30%), with no maintainability penalty</strong></div><div class=\"headline\"><span class=\"cat cat-critical\">critical</span> <strong>Harvard Business Review research shows early AI adopters already burning out \u2014 the \"productivity trap\" is real</strong><p class=\"headline-summary\">Natasha Bernal's analysis (025) of the Harvard Business Review study reveals a counterintuitive dynamic: the employees who most enthusiastically adopted AI \u2014 without mandates \u2014 showed the highest burnout rates.</p><div class=\"headline-sources\"><a class=\"src-link\" data-src=\"025\" href=\"#\"><a class=\"src-link\" data-src=\"025\" href=\"#\">#025</a></a></div></div><div class=\"headline\"><span class=\"cat cat-economics\">economics</span> <strong>K-shaped developer divergence: 52% still don't use AI agents while a minority goes full spec-driven</strong></div><div class=\"headline\"><span class=\"cat cat-tools\">tools</span> <strong>Playwright CLI ships as a 4x more token-efficient alternative to MCP for browser automation</strong></div><div class=\"headline\"><span class=\"cat cat-patterns\">patterns</span> <strong>Git worktrees emerge as essential infrastructure for agentic workflows</strong><p class=\"headline-summary\">Joshua Morony makes the case (027) that git worktree \u2014 long ignored by most developers \u2014 has become essential infrastructure for agentic coding.</p><div class=\"headline-sources\"><a class=\"src-link\" data-src=\"027\" href=\"#\"><a class=\"src-link\" data-src=\"027\" href=\"#\">#027</a></a></div></div><div class=\"headline\"><span class=\"cat cat-critical\">critical</span> <strong>OpenAI insider: 95% of engineers use Codex, \"engineers are becoming sorcerers\" \u2014 the AI-native development practice is here</strong><p class=\"headline-summary\">Sherwin Wu, who leads developer-facing products at OpenAI, provides a rare insider look on Lenny's Podcast (035).</p><div class=\"headline-sources\"><a class=\"src-link\" data-src=\"035\" href=\"#\"><a class=\"src-link\" data-src=\"035\" href=\"#\">#035</a></a></div></div><div class=\"headline\"><span class=\"cat cat-economics\">economics</span> <strong>Google raises $32B in debt including 100-year bond; Big Tech's combined 2026 AI capex hits $660B</strong></div><div class=\"headline\"><span class=\"cat cat-critical\">critical</span> <strong>Ethan Mollick: 50% of workers secretly use AI, reporting 3x productivity \u2014 but hiding it from employers</strong></div><div class=\"headline\"><span class=\"cat cat-critical\">critical</span> <strong>Cal Newport's taxonomy of bad AI reporting: the two questions every AI story must answer</strong><p class=\"headline-summary\">Cal Newport joins Ed Zitron on Better Offline (034) to dissect how AI gets covered in the media.</p><div class=\"headline-sources\"><a class=\"src-link\" data-src=\"034\" href=\"#\"><a class=\"src-link\" data-src=\"034\" href=\"#\">#034</a></a></div></div><div class=\"headline\"><span class=\"cat cat-economics\">economics</span> <strong>Galloway: software selloff is panic, not fundamentals \u2014 predicts Anthropic surpasses OpenAI within 12 months</strong><p class=\"headline-summary\">The software ETF (IGV) dropped 20% in a single month, with Adobe down nearly 40% over the past year.</p><div class=\"headline-sources\"><a class=\"src-link\" data-src=\"036\" href=\"#\"><a class=\"src-link\" data-src=\"036\" href=\"#\">#036</a></a></div></div></div><div class=\"card-sources\">Sources: <a class=\"src-link\" data-src=\"005\" href=\"#\">#005</a> <a class=\"src-link\" data-src=\"007\" href=\"#\">#007</a> <a class=\"src-link\" data-src=\"008\" href=\"#\">#008</a> <a class=\"src-link\" data-src=\"009\" href=\"#\">#009</a> <a class=\"src-link\" data-src=\"010\" href=\"#\">#010</a> <a class=\"src-link\" data-src=\"011\" href=\"#\">#011</a> <a class=\"src-link\" data-src=\"012\" href=\"#\">#012</a> <a class=\"src-link\" data-src=\"017\" href=\"#\">#017</a> <a class=\"src-link\" data-src=\"018\" href=\"#\">#018</a> <a class=\"src-link\" data-src=\"025\" href=\"#\">#025</a> <a class=\"src-link\" data-src=\"026\" href=\"#\">#026</a> <a class=\"src-link\" data-src=\"027\" href=\"#\">#027</a> +10 more</div>"
       },
       {
         "id": "2026-02-12-ai-economics-reality-check",
@@ -32790,7 +33041,7 @@
         "date": "2026-02-11",
         "title": "",
         "subtitle": "",
-        "body_html": "<div class=\"card-focus\">Repository launch \u2014 current state of AI-assisted development landscape</div><div class=\"card-headlines\"><div class=\"headline\"><span class=\"cat cat-tools\">tools</span> <strong>Claude Opus 4.6 and GPT-5.3 Codex ship same day, marking the closest head-to-head release in AI history</strong><p class=\"headline-summary\">Anthropic's Claude Opus 4.6 and OpenAI's GPT-5.3 Codex launched within 20 minutes of each other on February 5, 2026.</p></div><div class=\"headline\"><span class=\"cat cat-patterns\">patterns</span> <strong>Agent Teams and multi-agent orchestration move from experimental to practical \u2014 16 agents built a C compiler in 2 weeks</strong><p class=\"headline-summary\">The C compiler milestone stands out: 16 Opus 4.6 agents working for two weeks produced ~100K lines of Rust that compiles the Linux kernel, PostgreSQL, and other major projects.</p></div><div class=\"headline\"><span class=\"cat cat-security\">security</span> <strong>Skills ecosystem faces supply chain crisis \u2014 36% of public skills contain security flaws</strong></div><div class=\"headline\"><span class=\"cat cat-economics\">economics</span> <strong>Global inference infrastructure is physically constrained with no relief expected before 2028</strong></div><div class=\"headline\"><span class=\"cat cat-critical\">critical</span> <strong>AI companies dominate Super Bowl LX advertising, echoing dot-com and crypto bubble patterns</strong></div></div><div class=\"card-sources\">Sources: <a class=\"src-link\" data-src=\"003\" href=\"#\">#003</a> <a class=\"src-link\" data-src=\"007\" href=\"#\">#007</a> <a class=\"src-link\" data-src=\"009\" href=\"#\">#009</a> <a class=\"src-link\" data-src=\"010\" href=\"#\">#010</a> <a class=\"src-link\" data-src=\"011\" href=\"#\">#011</a> <a class=\"src-link\" data-src=\"015\" href=\"#\">#015</a> <a class=\"src-link\" data-src=\"016\" href=\"#\">#016</a> <a class=\"src-link\" data-src=\"018\" href=\"#\">#018</a></div>"
+        "body_html": "<div class=\"card-focus\">Repository launch \u2014 current state of AI-assisted development landscape</div><div class=\"card-headlines\"><div class=\"headline\"><span class=\"cat cat-tools\">tools</span> <strong>Claude Opus 4.6 and GPT-5.3 Codex ship same day, marking the closest head-to-head release in AI history</strong><p class=\"headline-summary\">Anthropic's Claude Opus 4.6 and OpenAI's GPT-5.3 Codex launched within 20 minutes of each other on February 5, 2026.</p><div class=\"headline-sources\"><a class=\"src-link\" data-src=\"003\" href=\"#\"><a class=\"src-link\" data-src=\"003\" href=\"#\">#003</a></a></div></div><div class=\"headline\"><span class=\"cat cat-patterns\">patterns</span> <strong>Agent Teams and multi-agent orchestration move from experimental to practical \u2014 16 agents built a C compiler in 2 weeks</strong><p class=\"headline-summary\">The C compiler milestone stands out: 16 Opus 4.6 agents working for two weeks produced ~100K lines of Rust that compiles the Linux kernel, PostgreSQL, and other major projects.</p><div class=\"headline-sources\"><a class=\"src-link\" data-src=\"015\" href=\"#\"><a class=\"src-link\" data-src=\"015\" href=\"#\">#015</a></a> <a class=\"src-link\" data-src=\"010\" href=\"#\"><a class=\"src-link\" data-src=\"010\" href=\"#\">#010</a></a></div></div><div class=\"headline\"><span class=\"cat cat-security\">security</span> <strong>Skills ecosystem faces supply chain crisis \u2014 36% of public skills contain security flaws</strong></div><div class=\"headline\"><span class=\"cat cat-economics\">economics</span> <strong>Global inference infrastructure is physically constrained with no relief expected before 2028</strong></div><div class=\"headline\"><span class=\"cat cat-critical\">critical</span> <strong>AI companies dominate Super Bowl LX advertising, echoing dot-com and crypto bubble patterns</strong></div></div><div class=\"card-sources\">Sources: <a class=\"src-link\" data-src=\"003\" href=\"#\">#003</a> <a class=\"src-link\" data-src=\"007\" href=\"#\">#007</a> <a class=\"src-link\" data-src=\"009\" href=\"#\">#009</a> <a class=\"src-link\" data-src=\"010\" href=\"#\">#010</a> <a class=\"src-link\" data-src=\"011\" href=\"#\">#011</a> <a class=\"src-link\" data-src=\"015\" href=\"#\">#015</a> <a class=\"src-link\" data-src=\"016\" href=\"#\">#016</a> <a class=\"src-link\" data-src=\"018\" href=\"#\">#018</a></div>"
       },
       {
         "id": "2026-02-11-agentic-coding-state-of-play",
@@ -32819,7 +33070,7 @@
     ]
   },
   "meta": {
-    "generated": "2026-04-04T00:54:56.108200+00:00",
+    "generated": "2026-04-04T01:07:39.533060+00:00",
     "source_count": 480,
     "tag_count": 31,
     "briefing_count": 19

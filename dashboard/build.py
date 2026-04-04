@@ -245,8 +245,8 @@ def parse_briefings():
                         "title": re.sub(r"\*\*", "", hm.group(2)).strip().rstrip("*"),
                     })
 
-        # Detail summaries: first sentence of each ### section under ## Details
-        detail_summaries = {}
+        # Detail summaries + source IDs per ### section under ## Details
+        detail_data = {}  # heading -> {"summary": str, "source_ids": []}
         in_details = False
         current_heading = None
         detail_lines = []
@@ -262,26 +262,35 @@ def parse_briefings():
                     if current_heading and detail_lines:
                         para = " ".join(detail_lines).strip()
                         sentences = re.split(r'(?<=[.!?])\s+', para)
-                        detail_summaries[current_heading] = sentences[0] if sentences else ""
+                        src_ids = re.findall(r'#(\d{3})\b', para) + re.findall(r'\[(\d{3}):', para)
+                        detail_data[current_heading] = {
+                            "summary": sentences[0] if sentences else "",
+                            "source_ids": list(dict.fromkeys(src_ids)),  # dedupe, preserve order
+                        }
                     current_heading = heading_match.group(1).strip()
                     detail_lines = []
-                elif current_heading and line.strip() and not current_heading in detail_summaries:
+                elif current_heading and line.strip() and current_heading not in detail_data:
                     detail_lines.append(line.strip())
         # Last heading
-        if current_heading and detail_lines and current_heading not in detail_summaries:
+        if current_heading and detail_lines and current_heading not in detail_data:
             para = " ".join(detail_lines).strip()
             sentences = re.split(r'(?<=[.!?])\s+', para)
-            detail_summaries[current_heading] = sentences[0] if sentences else ""
+            src_ids = re.findall(r'#(\d{3})\b', para) + re.findall(r'\[(\d{3}):', para)
+            detail_data[current_heading] = {
+                "summary": sentences[0] if sentences else "",
+                "source_ids": list(dict.fromkeys(src_ids)),
+            }
 
-        # Attach summaries to headlines by matching title substring
+        # Attach summaries and source IDs to headlines by matching title substring
         for h in headlines:
             h["summary"] = ""
-            for heading, summary in detail_summaries.items():
-                # Match if headline title words appear in the detail heading
+            h["detail_source_ids"] = []
+            for heading, data in detail_data.items():
                 title_words = set(re.findall(r'\w+', h["title"].lower()))
                 heading_words = set(re.findall(r'\w+', heading.lower()))
                 if len(title_words & heading_words) >= min(3, len(title_words)):
-                    h["summary"] = summary
+                    h["summary"] = data["summary"]
+                    h["detail_source_ids"] = data["source_ids"]
                     break
 
         # Source IDs
@@ -336,11 +345,18 @@ def build_reader_content(briefings, synthesis_entries):
         for h in b["headlines"]:
             summary = strip_markdown(first_n_sentences(h.get("summary", ""), 1))
             summary_html = f'<p class="headline-summary">{summary}</p>' if summary else ""
+            # Source links for this headline
+            src_links = " ".join(
+                f'<a class="src-link" data-src="{sid}" href="#">#{sid}</a>'
+                for sid in h.get("detail_source_ids", [])[:4]
+            )
+            src_html = f'<div class="headline-sources">{src_links}</div>' if src_links else ""
             headlines_html += (
                 f'<div class="headline">'
                 f'<span class="cat cat-{h["category"]}">{h["category"]}</span> '
                 f'<strong>{strip_markdown(h["title"])}</strong>'
                 f'{summary_html}'
+                f'{src_html}'
                 f'</div>'
             )
 
