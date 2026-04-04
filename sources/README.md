@@ -488,3 +488,16 @@ Each source is synthesized (not transcribed) into a structured note with frontma
 | [478](478-claudius-papirus-context-windows-explained.md) | How Context Windows Actually Work | Claudius Papirus | video | context-engineering, ai-landscape, infrastructure |
 | [479](479-mayank-gupta-amp-enterprise-agent-strategy.md) | Amp Code Founder on future of Coding Agents | Mayank Gupta | video | agentic-coding, enterprise-ai, ai-landscape, ai-economics, revenue-per-employee |
 | [480](480-norbert-korny-teams-ai-adoption.md) | The AI Gold Rush: It Still Takes Teams | Norbert Korny | video | ai-hype, enterprise-ai, ai-sdlc, ai-landscape, capability-overhang |
+| [481](481-mo-bitar-ai-sycophancy-harm.md) | The AI crisis no one is talking about | Mo Bitar | video | chatgpt, ai-hype, ai-safety |
+| [482](482-the-primetime-github-copilot-ads.md) | I can’t believe they put ads there | The PrimeTime | video | ai-hype, enterprise-ai, ai-landscape, security |
+| [483](483-neo4j-context-graph-agent-memory.md) | Building Context Graphs for AI Agents, Will Lyon, Neo4j | Neo4j | video | multi-agent, context-engineering, enterprise-ai, agent-teams, validation |
+| [484](484-chase-ai-graph-rag-lightrag.md) | Claude Code + LightRAG = UNSTOPPABLE | Chase AI | video | claude-code, context-engineering, agentic-coding, enterprise-ai, ai-economics |
+| [485](485-think-with-matteo-cassese-agent-orchestration-workload.md) | Why AI Agents Give You More Work, Not Less | Think with Matteo Cassese  | video | multi-agent, agent-teams, ai-hype, ai-sdlc |
+| [486](486-ai-news-strategy-daily-nate-b-jones-claude-code-agent-primitives.md) | I Broke Down Anthropic's $2.5 Billion Leak. Your Agent Is Missing 12 Critical Pieces. | AI News & Strategy Daily | Nate B Jones | video | claude-code, agentic-coding, security, context-engineering, multi-agent, ai-sdlc |
+| [487](487-leapable-context-engineering-formula.md) | Context Engineering Is a Formula — Here's the Only Way to Think About Building AI Systems | Leapable | video | context-engineering, specification, validation, multi-agent, agentic-coding, prompt-engineering |
+| [488](488-daves-garage-npm-supply-chain-attacks.md) | Breaking News: Axios Hacked, Anthropic Leaked! | Dave's Garage | video | security, claude-code, ai-sdlc, anthropic |
+| [489](489-olle-hggstrm-turing-foundations-ai.md) | Alan Turing and modern-day AI | Olle Häggström | video | ai-landscape, ai-safety |
+| [490](490-ai-inside-anthropic-double-data-leak.md) | Inside Anthropic's Double Data Leak | AI Inside | video | claude-code, security, ai-landscape, anthropic, agentic-coding |
+| [491](491-pastel-sketchbook-black-hat-llm-security.md) | Black-Hat LLMs: The End of the 20-Year Security Balance | Pastel Sketchbook | video | security, ai-landscape, agentic-coding, ai-safety |
+| [492](492-startup-hakk-claude-code-source-leak.md) | Claude's entire playbook is now public | STARTUP HAKK | video | claude-code, security, vibe-coding, ai-sdlc |
+| [493](493-unprompted-llm-zero-day-exploits.md) | Nicholas Carlini - Black-hat LLMs | [un]prompted 2026 | unprompted | video | security, ai-landscape, agentic-coding, claude-code |
