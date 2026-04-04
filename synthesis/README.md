@@ -26,3 +26,19 @@ Unlike individual [source notes](../sources/), synthesis documents draw connecti
 | [2026-03-06](2026-03-06-specification-infrastructure-gap.md) | Specification and Infrastructure — The Missing Bridge Between Vibe Coding and Enterprise Scale | #210-#212, #164 (Pocock's workflows + Stripe's minions + deep modules) |
 | [2026-03-08](2026-03-08-scouting-engineers-post-honeymoon.md) | Scouting Engineers and the Post-Honeymoon Reality | #243-#253 (11 videos from playlist batch) |
 | [2026-03-21](2026-03-21-playlist-themes.md) | The Squeeze, The Craft Crisis, and the Agent OS | #322-#348 (26 videos from playlist batch) |
+| [2026-03-16](2026-03-16-biweekly-themes.md) | Bi-weekly Theme Synthesis | #210-#274 (46 sources) |
+| [2026-03-30](2026-03-30-biweekly-themes.md) | Bi-weekly Theme Synthesis | #316-#400 (73 sources) |
+
+### Weekly Syntheses
+
+Actionable weekly format: What's Persisting, What's New, What to Watch, Source Takeaways, Try This Week.
+
+| Date | Title | Sources Covered |
+|------|-------|----------------|
+| [2026-02-09](2026-02-09-weekly-themes.md) | Week 1 — Launch: arms race, agent teams, skills security, infra constraints | #001-#019 (19 sources) |
+| [2026-02-16](2026-02-16-weekly-themes.md) | Week 2 — Cognitive debt named, economics reality, acceleration vs infrastructure | #020-#071 (52 sources) |
+| [2026-02-23](2026-02-23-weekly-themes.md) | Week 3 — Specification reckoning, builder's dilemma, difficulty taxonomy | #072-#148 (77 sources) |
+| [2026-03-02](2026-03-02-weekly-themes.md) | Week 4 — CLAUDE.md backlash, discipline turn, memory infrastructure | #149-#240 (92 sources) |
+| [2026-03-08](2026-03-08-weekly-themes.md) | Week 5 — Scouting engineers, harness engineering, security quantified | #241-#315 (75 sources) |
+| [2026-03-21](2026-03-21-weekly-themes.md) | Week 6 — Economic squeeze, craft crisis, agent OS, Phoenix Architecture | #316-#400 (85 sources) |
+| [2026-04-03](2026-04-03-weekly-themes.md) | Week 7 — Subsidy cliff, slop PRs, helium supply, async agents | #401-#424 (24 sources) |

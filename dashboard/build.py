@@ -12,7 +12,9 @@ ROOT = Path(__file__).resolve().parent.parent
 SOURCES_DIR = ROOT / "sources"
 CURRICULUM_DIR = ROOT / "curriculum"
 SYNTHESIS_DIR = ROOT / "synthesis"
+BRIEFINGS_DIR = ROOT / "briefings"
 OUTPUT = Path(__file__).resolve().parent / "data.json"
+SRC_DIR = Path(__file__).resolve().parent / "src"
 
 SKIP_FILES = {"_template.md", "README.md"}
 
@@ -66,6 +68,18 @@ def parse_sources():
         tags = meta.get("tags", []) or []
         modules = meta.get("curriculum_modules", []) or []
 
+        # Build HTML body from source sections
+        body_lines = []
+        include = False
+        for line in post.content.split("\n"):
+            if re.match(r"^## (Summary|Key Concepts|Practical Takeaways|Notable Quotes)", line):
+                include = True
+            elif re.match(r"^## (Related|Curriculum)", line):
+                include = False
+            if include:
+                body_lines.append(line)
+        body_html = md_to_html("\n".join(body_lines))
+
         nodes.append({
             "id": sid,
             "type": "source",
@@ -76,6 +90,7 @@ def parse_sources():
             "modules": modules,
             "summary": summary,
             "url": meta.get("url", ""),
+            "body_html": body_html,
         })
 
         source_data[sid] = {
@@ -155,8 +170,10 @@ def parse_synthesis():
                 if theme_match2:
                     themes.append(theme_match2.group(1).strip())
 
-        # Extract source IDs: #NNN patterns and [NNN: patterns
+        # Extract source IDs: frontmatter list, #NNN patterns, [NNN: patterns
+        fm_source_ids = post.metadata.get("source_ids", []) or []
         source_ids = sorted(set(
+            [str(s) for s in fm_source_ids] +
             re.findall(r'#(\d{3})\b', text) +
             re.findall(r'\[(\d{3}):', text) +
             re.findall(r'\[(\d{3})\]', text)
@@ -173,10 +190,347 @@ def parse_synthesis():
     return entries
 
 
+def strip_markdown(text):
+    """Strip markdown formatting for clean HTML display."""
+    text = re.sub(r'\*\*(.+?)\*\*', r'\1', text)  # bold
+    text = re.sub(r'\*(.+?)\*', r'\1', text)        # italic
+    text = re.sub(r'\[([^\]]+)\]\([^)]+\)', r'\1', text)  # links
+    text = re.sub(r'[`]', '', text)                  # inline code
+    return text.strip()
+
+
+def first_n_sentences(text, n=2):
+    """Extract first n sentences from text."""
+    sentences = re.split(r'(?<=[.!?])\s+', text.strip())
+    return " ".join(sentences[:n]).strip()
+
+
+def parse_briefings():
+    """Parse briefing markdown files for the reader."""
+    entries = []
+    for path in sorted(BRIEFINGS_DIR.glob("*.md")):
+        if path.name in SKIP_FILES or path.name.startswith("_"):
+            continue
+        text = path.read_text()
+        lines = text.split("\n")
+
+        # Date from filename
+        date_match = re.match(r"(\d{4}-\d{2}-\d{2})", path.stem)
+        date = date_match.group(1) if date_match else ""
+
+        # Focus line: > **Focus**: ...
+        focus = ""
+        for line in lines:
+            fm = re.match(r">\s*\*\*Focus\*\*:\s*(.+)", line)
+            if fm:
+                focus = fm.group(1).strip()
+                break
+
+        # Headlines: - **[category]** Title (possibly with **Title**)
+        headlines = []
+        in_headlines = False
+        for line in lines:
+            if line.strip().startswith("## Headlines"):
+                in_headlines = True
+                continue
+            if in_headlines:
+                if line.strip().startswith("## "):
+                    break
+                hm = re.match(
+                    r"-\s*\*\*\[(\w+)\]\*\*\s*\*?\*?(.+?)(?:\*\*)?$", line.strip()
+                )
+                if hm:
+                    headlines.append({
+                        "category": hm.group(1),
+                        "title": re.sub(r"\*\*", "", hm.group(2)).strip().rstrip("*"),
+                    })
+
+        # Detail summaries: first sentence of each ### section under ## Details
+        detail_summaries = {}
+        in_details = False
+        current_heading = None
+        detail_lines = []
+        for line in lines:
+            if line.strip().startswith("## Details"):
+                in_details = True
+                continue
+            if in_details:
+                if re.match(r"^## [^#]", line.strip()):
+                    break
+                heading_match = re.match(r"^###\s+(.+)", line)
+                if heading_match:
+                    if current_heading and detail_lines:
+                        para = " ".join(detail_lines).strip()
+                        sentences = re.split(r'(?<=[.!?])\s+', para)
+                        detail_summaries[current_heading] = sentences[0] if sentences else ""
+                    current_heading = heading_match.group(1).strip()
+                    detail_lines = []
+                elif current_heading and line.strip() and not current_heading in detail_summaries:
+                    detail_lines.append(line.strip())
+        # Last heading
+        if current_heading and detail_lines and current_heading not in detail_summaries:
+            para = " ".join(detail_lines).strip()
+            sentences = re.split(r'(?<=[.!?])\s+', para)
+            detail_summaries[current_heading] = sentences[0] if sentences else ""
+
+        # Attach summaries to headlines by matching title substring
+        for h in headlines:
+            h["summary"] = ""
+            for heading, summary in detail_summaries.items():
+                # Match if headline title words appear in the detail heading
+                title_words = set(re.findall(r'\w+', h["title"].lower()))
+                heading_words = set(re.findall(r'\w+', heading.lower()))
+                if len(title_words & heading_words) >= min(3, len(title_words)):
+                    h["summary"] = summary
+                    break
+
+        # Source IDs
+        source_ids = sorted(set(
+            re.findall(r'#(\d{3})\b', text) +
+            re.findall(r'\[(\d{3}):', text) +
+            re.findall(r'\[#(\d{3})\]', text)
+        ))
+
+        # Related source IDs from Connections section
+        related_source_ids = []
+        in_connections = False
+        for line in lines:
+            if line.strip().startswith("## Connections"):
+                in_connections = True
+                continue
+            if in_connections:
+                if line.strip().startswith("## "):
+                    break
+                related_source_ids.extend(re.findall(r'#(\d{3})\b', line))
+                related_source_ids.extend(re.findall(r'\[(\d{3}):', line))
+
+        entries.append({
+            "id": date,
+            "type": "briefing",
+            "date": date,
+            "focus": focus,
+            "headlines": headlines,
+            "source_ids": source_ids,
+            "related_source_ids": sorted(set(related_source_ids)),
+        })
+
+    return entries
+
+
+def linkify_sources(html):
+    """Convert #NNN references into tappable source links."""
+    return re.sub(
+        r'#(\d{3})\b',
+        r'<a class="src-link" data-src="\1" href="#">#\1</a>',
+        html,
+    )
+
+
+def build_reader_content(briefings, synthesis_entries):
+    """Build condensed reader documents with pre-rendered HTML."""
+    documents = []
+
+    # Briefings — already structured, just add body_html
+    for b in briefings:
+        headlines_html = ""
+        for h in b["headlines"]:
+            summary = strip_markdown(first_n_sentences(h.get("summary", ""), 1))
+            summary_html = f'<p class="headline-summary">{summary}</p>' if summary else ""
+            headlines_html += (
+                f'<div class="headline">'
+                f'<span class="cat cat-{h["category"]}">{h["category"]}</span> '
+                f'<strong>{strip_markdown(h["title"])}</strong>'
+                f'{summary_html}'
+                f'</div>'
+            )
+
+        sources_html = " ".join(f'#{s}' for s in b["source_ids"][:12])
+        if len(b["source_ids"]) > 12:
+            sources_html += f' +{len(b["source_ids"]) - 12} more'
+
+        body_html = linkify_sources(
+            f'<div class="card-focus">{b["focus"]}</div>'
+            f'<div class="card-headlines">{headlines_html}</div>'
+            f'<div class="card-sources">Sources: {sources_html}</div>'
+        )
+
+        documents.append({
+            "id": b["id"],
+            "type": "briefing",
+            "date": b["date"],
+            "title": "",
+            "subtitle": "",
+            "body_html": body_html,
+        })
+
+    # Synthesis — extract overview + theme insights
+    for s in synthesis_entries:
+        path = SYNTHESIS_DIR / f'{s["id"]}.md'
+        if not path.exists():
+            continue
+        text = path.read_text()
+        lines = text.split("\n")
+
+        # Extract overview/executive summary
+        overview = ""
+        in_overview = False
+        overview_lines = []
+        for line in lines:
+            if re.match(r"^##\s+(Executive Summary|Overview)", line):
+                in_overview = True
+                continue
+            if in_overview:
+                if line.strip().startswith("## ") or line.strip().startswith("# ") or line.strip() == "---":
+                    if overview_lines:
+                        break
+                    continue
+                if line.strip():
+                    overview_lines.append(line.strip())
+        overview = " ".join(overview_lines).strip()
+        overview_short = strip_markdown(first_n_sentences(overview, 2))
+
+        # Extract theme insights
+        theme_insights = []
+        for theme_title in s.get("themes", []):
+            theme_insights.append({"title": theme_title, "insight": ""})
+
+        # Try to find **Key Insight:** or **Core Insight:** for each theme section
+        current_theme_idx = -1
+        for line in lines:
+            # Check if this line starts a new theme section
+            theme_match = re.match(r"^##\s+(?:Theme\s+\w+:\s*)?(.+)", line)
+            if not theme_match:
+                theme_match = re.match(r"^###\s+(?:Theme\s+\d+:\s*)?(?:\d+\.\s+)?(.+)", line)
+            if theme_match:
+                title = theme_match.group(1).strip()
+                # Find matching theme
+                for i, t in enumerate(theme_insights):
+                    if t["title"] in title or title in t["title"]:
+                        current_theme_idx = i
+                        break
+
+            # Look for insight markers
+            insight_match = re.match(
+                r"\*\*(?:Key Insight|Core Insight)\*?\*?:\*?\*?\s*(.+)", line.strip()
+            )
+            if insight_match and 0 <= current_theme_idx < len(theme_insights):
+                if not theme_insights[current_theme_idx]["insight"]:
+                    raw = insight_match.group(1).strip()
+                    insight = strip_markdown(first_n_sentences(raw, 1))
+                    if len(insight) > 160:
+                        insight = insight[:157] + "..."
+                    theme_insights[current_theme_idx]["insight"] = insight
+
+        # Build HTML
+        themes_html = ""
+        for i, t in enumerate(theme_insights[:5], 1):
+            insight = t.get("insight", "")
+            insight_html = f'<p class="theme-insight">{insight}</p>' if insight else ""
+            # Strip redundant "Theme N:" prefix since we add our own numbering
+            title = re.sub(r'^Theme\s+\w+:\s*', '', strip_markdown(t["title"]))
+            themes_html += (
+                f'<div class="theme">'
+                f'<strong>{i}. {title}</strong>'
+                f'{insight_html}'
+                f'</div>'
+            )
+
+        source_range = ""
+        if s["source_ids"]:
+            source_range = f'#{s["source_ids"][0]}–#{s["source_ids"][-1]} ({len(s["source_ids"])} sources)'
+
+        body_html = linkify_sources(
+            f'<div class="card-overview">{overview_short}</div>'
+            f'<div class="card-themes">{themes_html}</div>'
+            f'<div class="card-sources">Sources: {source_range}</div>'
+        )
+
+        # Subtitle from source range or date
+        subtitle = source_range if source_range else s["date"]
+
+        documents.append({
+            "id": s["id"],
+            "type": "synthesis",
+            "date": s["date"],
+            "title": s["title"],
+            "subtitle": subtitle,
+            "body_html": body_html,
+        })
+
+    # Sort newest first
+    documents.sort(key=lambda d: d["date"], reverse=True)
+    return {"documents": documents}
+
+
+def md_to_html(text):
+    """Simple markdown-to-HTML for source note sections."""
+    html_lines = []
+    in_list = False
+    for line in text.split("\n"):
+        stripped = line.strip()
+        if not stripped:
+            if in_list:
+                html_lines.append("</ul>")
+                in_list = False
+            continue
+
+        # Headings
+        h3 = re.match(r"^###\s+(.+)", stripped)
+        if h3:
+            if in_list:
+                html_lines.append("</ul>")
+                in_list = False
+            html_lines.append(f'<h4 class="src-h4">{strip_markdown(h3.group(1))}</h4>')
+            continue
+        h2 = re.match(r"^##\s+(.+)", stripped)
+        if h2:
+            if in_list:
+                html_lines.append("</ul>")
+                in_list = False
+            html_lines.append(f'<h3 class="src-h3">{strip_markdown(h2.group(1))}</h3>')
+            continue
+
+        # Blockquotes
+        bq = re.match(r"^>\s*(.*)", stripped)
+        if bq:
+            html_lines.append(f'<blockquote class="src-quote">{strip_markdown(bq.group(1))}</blockquote>')
+            continue
+
+        # List items
+        li = re.match(r"^[-*]\s+(.+)", stripped)
+        if li:
+            if not in_list:
+                html_lines.append('<ul class="src-list">')
+                in_list = True
+            html_lines.append(f"<li>{strip_markdown(li.group(1))}</li>")
+            continue
+
+        # Numbered list items
+        nli = re.match(r"^\d+\.\s+(.+)", stripped)
+        if nli:
+            if not in_list:
+                html_lines.append('<ul class="src-list">')
+                in_list = True
+            html_lines.append(f"<li>{strip_markdown(nli.group(1))}</li>")
+            continue
+
+        # Paragraph
+        if in_list:
+            html_lines.append("</ul>")
+            in_list = False
+        html_lines.append(f"<p>{strip_markdown(stripped)}</p>")
+
+    if in_list:
+        html_lines.append("</ul>")
+    return "\n".join(html_lines)
+
+
 def build():
     source_nodes, source_data = parse_sources()
     module_nodes = parse_curriculum()
     synthesis = parse_synthesis()
+    briefings = parse_briefings()
+    reader = build_reader_content(briefings, synthesis)
 
     # Build tag nodes with counts
     tag_counts = {}
@@ -211,10 +565,13 @@ def build():
         "nodes": nodes,
         "edges": edges,
         "synthesis": synthesis,
+        "briefings": briefings,
+        "reader": reader,
         "meta": {
             "generated": datetime.now(timezone.utc).isoformat(),
             "source_count": len(source_nodes),
             "tag_count": len(tag_nodes),
+            "briefing_count": len(briefings),
         },
     }
 
@@ -225,6 +582,8 @@ def build():
     print(f"  Modules: {len(module_nodes)}")
     print(f"  Edges: {len(edges)}")
     print(f"  Synthesis: {len(synthesis)}")
+    print(f"  Briefings: {len(briefings)}")
+    print(f"  Reader docs: {len(reader['documents'])}")
 
 
 if __name__ == "__main__":
