@@ -1,21 +1,28 @@
 ---
 name: synthesize-source
 description: Convert a YouTube video or article URL into a structured source note. Gathers metadata, synthesizes key concepts, assigns tags, maps to curriculum modules, and updates the sources index.
-allowed-tools: Bash, Read, Write, Edit, Glob, Grep, WebFetch, WebSearch
-argument-hint: "<url>"
+allowed-tools: Bash, Read, Write, Edit, Glob, Grep, WebFetch, WebSearch, mcp__second-brain__synthesize_transcript, mcp__second-brain__store_transcript
+argument-hint: "<url> [--claude]"
 ---
 
 # Synthesize Source
 
 Convert a YouTube video or article URL into a structured source note following the repository's template format.
 
+## Synthesis Mode
+
+By default, YouTube video synthesis is handled by the **local LLM** (qwen2.5:14b) via the `synthesize_transcript` MCP tool running on the second-brain server. This uses a 3-pass pipeline (extract → structure → classify) and costs zero API tokens.
+
+Use `--claude` flag to force Claude-in-conversation synthesis (the legacy behavior) — useful for articles or when the local model produces poor results.
+
+**Articles always use Claude** since they don't have stored transcripts.
+
 ## Input
 
-A URL to a YouTube video or article/blog post. The user will typically also provide:
+A URL to a YouTube video or article/blog post. The user may also provide:
 - **Transcript text** (pasted from the Claude Chrome extension or other transcript tool)
 - Additional context or notes
-
-For YouTube videos, the primary workflow is: user plays the video with the Claude Chrome extension, copies the transcript, and provides it alongside the URL. The skill then synthesizes the transcript into structured source notes — it does NOT simply reformat the transcript.
+- `--claude` flag to force Claude synthesis
 
 ## Workflow
 
@@ -56,9 +63,55 @@ Before asking the user for a transcript, check these sources in order:
 3. **WebFetch**: For article URLs, use WebFetch to retrieve the content directly.
 4. **Prompt user**: If none of the above produced content, suggest running `/youtube-transcriber <url>` first for YouTube videos, or ask the user to paste the transcript.
 
+### Step 5b: Store transcript in second-brain
+
+If a YouTube transcript was gathered (from draft or user-pasted), persist it via the `store_transcript` MCP tool:
+
+```
+store_transcript({
+  source_id: "NNN",
+  youtube_url: "<url>",
+  video_title: "<title>",
+  creator: "<creator>",
+  raw_transcript: "<transcript text>"
+})
+```
+
+This ensures the transcript is available for future re-synthesis and eval comparisons.
+
 ### Step 6: Synthesize content
 
-Based on the transcript/content gathered in Step 5 (and any additional fetched content), write a synthesis (NOT a reformatted transcript) covering:
+**For YouTube videos (default — local LLM):**
+
+Call the `synthesize_transcript` MCP tool:
+
+```
+synthesize_transcript({
+  source_id: "NNN",
+  title: "<title>",
+  creator: "<creator>",
+  url: "<youtube-url>",
+  date: "<YYYY-MM-DD>",
+  duration: "<MM:SS>",
+  transcript: "<transcript text if not already stored>",
+  model: "qwen2.5:14b-instruct-q4_K_M",
+  passes: 3
+})
+```
+
+The tool returns a `synthesis` field with structured markdown including frontmatter, summary, key concepts, takeaways, and quotes. Use this as the base for the source note.
+
+**Review the local model output** before writing:
+- Verify the frontmatter fields are correct (title, creator, date, URL should match metadata from Step 2)
+- Check that tags use the established taxonomy from REFERENCE.md — fix any invented tags
+- Ensure curriculum module mappings are reasonable
+- Verify Notable Quotes appear in the transcript (no fabricated quotes)
+- Add YouTube timestamp links if missing (see Step 6b)
+- Add Related Sources cross-references (the local model leaves these empty)
+
+**For articles, or when `--claude` flag is set:**
+
+Synthesize inline (legacy behavior) — write a synthesis (NOT a reformatted transcript) covering:
 - **Summary**: 2-3 paragraph overview of the source's main argument
 - **Key Concepts**: 3-7 subsections covering the most important ideas
 - **Practical Takeaways**: Actionable insights for engineering teams
@@ -96,6 +149,8 @@ Creator discusses the architectural breakdown ([MM:SS](https://www.youtube.com/w
 Using the reference material:
 - Assign 2-5 tags from the established taxonomy (or create new ones if needed)
 - Map to 1-3 curriculum modules based on content alignment
+
+**Note:** If the local model already assigned tags/modules in Step 6, verify and adjust them here rather than starting from scratch.
 
 ### Step 8: Write the source file
 

@@ -1,8 +1,8 @@
 ---
 name: ingest
 description: "Full pipeline orchestrator — transcribe, synthesize, and index a source in one step. Accepts YouTube URLs, article URLs, or 'scan' to discover new content."
-allowed-tools: Bash, Read, Write, Edit, Glob, Grep, WebFetch, WebSearch, mcp__playwright__browser_navigate, mcp__playwright__browser_snapshot, mcp__playwright__browser_click, mcp__playwright__browser_evaluate, mcp__playwright__browser_wait_for, mcp__playwright__browser_close, mcp__playwright__browser_take_screenshot, mcp__playwright__browser_press_key
-argument-hint: "<youtube-url | article-url | scan | url1 url2 ...>"
+allowed-tools: Bash, Read, Write, Edit, Glob, Grep, WebFetch, WebSearch, mcp__playwright__browser_navigate, mcp__playwright__browser_snapshot, mcp__playwright__browser_click, mcp__playwright__browser_evaluate, mcp__playwright__browser_wait_for, mcp__playwright__browser_close, mcp__playwright__browser_take_screenshot, mcp__playwright__browser_press_key, mcp__second-brain__synthesize_transcript, mcp__second-brain__store_transcript
+argument-hint: "<youtube-url | article-url | scan | url1 url2 ...> [--claude]"
 ---
 
 # Ingest
@@ -33,9 +33,39 @@ Run the `/youtube-transcriber` workflow:
    - Close browser
 5. Save raw transcript to `sources/_drafts/NNN-raw-transcript.md`
 
+### Step 1b: Store transcript
+
+Persist the raw transcript to the second-brain database via the `store_transcript` MCP tool:
+
+```
+store_transcript({
+  source_id: "NNN",
+  youtube_url: "<url>",
+  video_title: "<title>",
+  creator: "<creator>",
+  raw_transcript: "<transcript text>"
+})
+```
+
 ### Step 2: Synthesize
 
-Run the `/synthesize-source` workflow using the draft transcript:
+**Default: local LLM synthesis** via the `synthesize_transcript` MCP tool (qwen2.5:14b, 3-pass pipeline). Use `--claude` flag to force Claude-in-conversation synthesis.
+
+**Local synthesis (default):**
+1. Call `synthesize_transcript` MCP tool with source_id, title, creator, url, date, duration
+2. The tool returns structured markdown — use it as the base for the source note
+3. Read reference material from `.claude/skills/synthesize-source/REFERENCE.md`
+4. Review and fix the local model output:
+   - Correct any metadata mismatches (title, creator, URL, date)
+   - Replace invented tags with established taxonomy tags
+   - Verify curriculum module mappings
+   - Check that Notable Quotes actually appear in the transcript
+   - Add YouTube timestamp links to quotes (see `/synthesize-source` Step 6b)
+   - Add Related Sources cross-references
+5. Write the source file to `sources/NNN-creator-topic.md`
+6. Update `sources/README.md` index
+
+**Claude synthesis (with `--claude` flag or for articles):**
 1. Read the template from `sources/_template.md`
 2. Read reference material from `.claude/skills/synthesize-source/REFERENCE.md`
 3. Read the raw transcript from `sources/_drafts/NNN-raw-transcript.md`
