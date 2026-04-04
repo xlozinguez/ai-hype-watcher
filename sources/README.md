@@ -477,3 +477,14 @@ Each source is synthesized (not transcribed) into a structured note with frontma
 | [467](467-mo-bitar-anthropic-trust-critique.md) | I don’t trust Anthropic | Mo Bitar | video | ai-landscape, ai-hype, ai-safety, anthropic, openai |
 | [468](468-mlopscommunity-agent-orchestration-durability.md) | Decomposing the Agent Orchestration System: Lessons Learned | MLOps.community | video | multi-agent, infrastructure, context-engineering, agentic-coding, enterprise-ai, ai-sdlc |
 | [469](469-kai-lentit-enterprise-ai-hype-satire.md) | AI CEO vs Engineer (2026). | Kai Lentit | video | ai-hype, enterprise-ai, ai-economics, capability-overhang, vibe-coding |
+| [470](470-ai-news-strategy-daily-nate-b-jones-token-efficiency-habits.md) | Your Claude Limit Burns In 90 Minutes Because Of One ChatGPT Habit. | AI News & Strategy Daily | Nate B Jones | video | context-engineering, ai-economics, prompt-engineering, agentic-coding |
+| [471](471-kiraa-dunning-kruger-agent-hype.md) | Industrial Grade Dunning Kruger | Kiraa | video | ai-hype, enterprise-ai, capability-overhang, vibe-coding |
+| [472](472-oliver-church-ai-news-insights-kv-cache-compression.md) | Day-1 TurboQuant in llama.cpp: 6X Smaller KV Cache After Reading the Actual Paper | Oliver Church - AI News & Insights | video | infrastructure, ai-landscape, context-engineering |
+| [473](473-simon-scrapes-goal-first-agent-management.md) | Stop Using Claude Code in Terminal (It’s Holding You Back) | Simon Scrapes | video | claude-code, multi-agent, task-system, agent-teams, skills, agentic-coding |
+| [474](474-smb-capital-trading-workflow-automation.md) | How to use Claude To Gain a Huge Day Trading Edge | SMB Capital | video | prompt-engineering, meta-prompts, capability-overhang, vibe-coding |
+| [475](475-the-pragmatic-engineer-agent-tdd-practices.md) | Simon Willison: Engineering practices that make coding agents work - The Pragmatic Summit | The Pragmatic Engineer | video | agentic-coding, validation, prompt-engineering, ai-sdlc, security |
+| [476](476-chroma-agentic-search-model.md) | Chroma Context-1 | A 20B Agentic Search Model | Chroma | video | multi-agent, agentic-coding, context-engineering, ai-landscape, validation |
+| [477](477-google-for-developers-gemma-4-release.md) | What’s new in Gemma 4 | Google for Developers | video | ai-landscape, agentic-coding, enterprise-ai, context-engineering, security |
+| [478](478-claudius-papirus-context-windows-explained.md) | How Context Windows Actually Work | Claudius Papirus | video | context-engineering, ai-landscape, infrastructure |
+| [479](479-mayank-gupta-amp-enterprise-agent-strategy.md) | Amp Code Founder on future of Coding Agents | Mayank Gupta | video | agentic-coding, enterprise-ai, ai-landscape, ai-economics, revenue-per-employee |
+| [480](480-norbert-korny-teams-ai-adoption.md) | The AI Gold Rush: It Still Takes Teams | Norbert Korny | video | ai-hype, enterprise-ai, ai-sdlc, ai-landscape, capability-overhang |
