@@ -11,21 +11,24 @@
 The current conversation about AI-assisted development treats agent involvement as binary: either the engineer writes the code or the agent does. This framing misses the structural insight that emerged across 14 sources in this collection: **every SDLC phase already runs a slow human collaboration loop, and AI agents are most effective when they add a fast feedback loop inside that existing rhythm—not when they try to replace it.**
 
 ```mermaid
-graph LR
-    subgraph SLOW["🐢 Slow Loop — Human Collaboration (days–weeks)"]
-        direction LR
-        S1[Product\nReview] --> S2[Design\nCritique] --> S3[Sprint\nPlanning] --> S4[Code\nReview] --> S5[QA\nSignoff] --> S6[Retro]
+block-beta
+    columns 2
+    block:FAST["⚡ Fast Loop (seconds)"]
+        columns 1
+        F1["Agent researches"]
+        F2["Agent validates"]
+        F3["Catches issues early"]
     end
-
-    subgraph FAST["⚡ Fast Loop — LLM Quality Ratchet (seconds–minutes)"]
-        direction LR
-        F1[Agent\nResearches] --> F2[Agent\nValidates] --> F3[Agent\nCatches Issues] --> F4[Higher-Quality\nInput to Slow Loop]
+    block:SLOW["🐢 Slow Loop (weeks)"]
+        columns 1
+        S1["Product review"]
+        S2["Sprint planning"]
+        S3["Code review / QA"]
     end
+    FAST -- "front-loads quality" --> SLOW
 
-    FAST -.->|"front-loads quality into\neach human checkpoint"| SLOW
-
-    style SLOW fill:#1a1a2e,stroke:#e94560,color:#fff
     style FAST fill:#0f3460,stroke:#16c79a,color:#fff
+    style SLOW fill:#1a1a2e,stroke:#e94560,color:#fff
 ```
 
 The slow loop is product/design/eng alignment. It runs at days-to-weeks cadence — meetings, async Slack threads, PRD reviews, design critiques, sprint planning. This is where judgment, taste, and strategic alignment happen. It cannot be meaningfully compressed below a minimum human-trust-building threshold.
@@ -69,15 +72,14 @@ quadrantChart
 These three dimensions combine into six practical autonomy levels:
 
 ```mermaid
-graph LR
-    L0["<b>L0 Assist</b>\nAutocomplete\nHuman authors"] --> L1["<b>L1 Draft</b>\nLLM drafts\nHuman reviews all"] --> L2["<b>L2 Gated</b>\nR→P→I loop\nHuman gates"] --> L3["<b>L3 Autonomous</b>\nEnd-to-end\nHuman reviews outcome"] --> L4["<b>L4 Delegated</b>\nLLM + LLM review\nHuman spot-checks"] --> L5["<b>L5 Overnight</b>\nBatch dispatch\nReview next morning"]
-
-    style L0 fill:#2d3436,stroke:#636e72,color:#dfe6e9
-    style L1 fill:#2d3436,stroke:#0984e3,color:#74b9ff
-    style L2 fill:#2d3436,stroke:#6c5ce7,color:#a29bfe
-    style L3 fill:#2d3436,stroke:#00b894,color:#55efc4
-    style L4 fill:#2d3436,stroke:#fdcb6e,color:#ffeaa7
-    style L5 fill:#2d3436,stroke:#e17055,color:#fab1a0
+timeline
+    title Autonomy Levels
+    L0 Assist : Autocomplete, human authors
+    L1 Draft : LLM drafts, human reviews all
+    L2 Gated : R-P-I loop, human gates
+    L3 Autonomous : End-to-end, human reviews outcome
+    L4 Delegated : LLM + LLM review, human spot-checks
+    L5 Overnight : Batch dispatch, review next morning
 ```
 
 **L0 — Assist**: Autocomplete, inline suggestions. The human is still the primary author. Copilot-tier.
@@ -99,35 +101,16 @@ graph LR
 ## Phase-by-Phase Breakdown
 
 ```mermaid
-graph TB
-    subgraph SDLC["SDLC — Fast Loops Inside Slow Loops"]
-        direction TB
-
-        D["1. Discovery\n🔍 Research synthesis\n<i>L1 Draft</i>"]
-        SP["2. Specification\n📋 Three-Agent Ticket Capture\n<i>L2 Gated</i>"]
-        PL["3. Planning\n🏗️ Agent-proposed plan\n<i>L2 Gated</i>"]
-        IM["4. Implementation\n⚙️ R→P→I per ticket\n<i>L2–L4 by risk</i>"]
-        TE["5. Testing\n🧪 Tester Agent\n<i>L3 Autonomous</i>"]
-        CR["6. Code Review\n👁️ Agent pre-review\n<i>L1–L3</i>"]
-        DE["7. Deployment\n🚀 Checklist validation\n<i>L2 Gated</i>"]
-        MO["8. Monitoring\n📊 Anomaly correlation\n<i>L3 Autonomous</i>"]
-
-        D --> SP --> PL --> IM --> TE --> CR --> DE --> MO
-    end
-
-    META["🔄 Episodic Meta-Loop\nExecution summaries → Encode as skills/rules → Next run improves"]
-    MO -.-> META -.-> D
-
-    style SDLC fill:#0d1117,stroke:#30363d,color:#c9d1d9
-    style META fill:#161b22,stroke:#f0883e,color:#f0883e
-    style D fill:#1a1a2e,stroke:#74b9ff,color:#74b9ff
-    style SP fill:#1a1a2e,stroke:#a29bfe,color:#a29bfe
-    style PL fill:#1a1a2e,stroke:#a29bfe,color:#a29bfe
-    style IM fill:#1a1a2e,stroke:#55efc4,color:#55efc4
-    style TE fill:#1a1a2e,stroke:#55efc4,color:#55efc4
-    style CR fill:#1a1a2e,stroke:#74b9ff,color:#74b9ff
-    style DE fill:#1a1a2e,stroke:#a29bfe,color:#a29bfe
-    style MO fill:#1a1a2e,stroke:#55efc4,color:#55efc4
+timeline
+    title SDLC Phases — Fast Loop + Default Autonomy
+    1. Discovery : Research synthesis (L1)
+    2. Specification : Three-Agent Ticket Capture (L2)
+    3. Planning : Agent-proposed plan (L2)
+    4. Implementation : R-P-I per ticket (L2-L4)
+    5. Testing : Tester Agent (L3)
+    6. Code Review : Agent pre-review (L1-L3)
+    7. Deployment : Checklist validation (L2)
+    8. Monitoring : Anomaly correlation (L3)
 ```
 
 ### Phase 1: Discovery
@@ -268,32 +251,17 @@ All three would otherwise surface 1-2 sprints later as rework.
 This is the fast loop for the Specification phase — a multi-agent pattern that stress-tests a rough problem outline through three distinct lenses before it enters the slow human review cycle.
 
 ```mermaid
-graph LR
-    INPUT["📝 Rough\nProblem Outline"] --> A1
+graph TD
+    IN["📝 Problem Outline"] --> A1["🔍 Agent 1: Codebase\nMaps terrain, no solutions"]
+    A1 -->|context| A2["❓ Agent 2: Questions\nFresh eyes, no code access"]
+    A2 -->|questions| A3["✅ Agent 3: Validate\nVision alignment + score"]
+    A3 --> OUT["👤 Human Review"]
 
-    subgraph A1_BOX["Agent 1 — Codebase Agent"]
-        A1["🔍 Read-only researcher\n\nReads: codebase, schema,\nrecent PRs, test patterns\n\nRule: NO solutions —\nonly maps terrain"]
-    end
-
-    A1 -->|"markdown:\naugmented outline +\ncodebase context"| A2
-
-    subgraph A2_BOX["Agent 2 — Problem Definition Agent"]
-        A2["❓ Fresh perspective\n\nReads: Agent 1 output + PRDs\nNO codebase access\n\nGenerates 10-20\nvalidation questions"]
-    end
-
-    A2 -->|"markdown:\nranked questions\nby ambiguity"| A3
-
-    subgraph A3_BOX["Agent 3 — Validation Agent"]
-        A3["✅ Vision alignment\n\nReads: questions + vision docs,\nADRs, Jira epics\n\nAnswers questions,\nflags unknowns"]
-    end
-
-    A3 -->|"Specification\nReadiness Report\n+ readiness score"| HUMAN["👤 Human Review\nMeeting"]
-
-    style INPUT fill:#2d3436,stroke:#dfe6e9,color:#dfe6e9
-    style A1_BOX fill:#0d1117,stroke:#74b9ff,color:#74b9ff
-    style A2_BOX fill:#0d1117,stroke:#a29bfe,color:#a29bfe
-    style A3_BOX fill:#0d1117,stroke:#55efc4,color:#55efc4
-    style HUMAN fill:#2d3436,stroke:#f0883e,color:#f0883e
+    style IN fill:#2d3436,stroke:#dfe6e9,color:#dfe6e9
+    style A1 fill:#1a1a2e,stroke:#74b9ff,color:#74b9ff
+    style A2 fill:#1a1a2e,stroke:#a29bfe,color:#a29bfe
+    style A3 fill:#1a1a2e,stroke:#55efc4,color:#55efc4
+    style OUT fill:#2d3436,stroke:#f0883e,color:#f0883e
 ```
 
 > **Total wall-clock time**: 5-15 minutes. Three isolated context windows, three distinct lenses, one pre-validated spec.
@@ -352,27 +320,14 @@ Why this matters: tests generated from the implementation confirm what the code 
 
 ```mermaid
 graph TD
-    SPEC["📋 Validated Spec\n(from Ticket Capture\nor acceptance criteria)"] --> GEN["🧪 Generate Test Cases"]
-
-    GEN --> HP["Happy path"]
-    GEN --> EC["Edge cases\nfrom spec constraints"]
-    GEN --> ERR["Error conditions\nimplied by requirements"]
-    GEN --> INT["Integration scenarios\nwith adjacent systems"]
-
-    HP & EC & ERR & INT --> RUN["▶️ Run Against\nImplementation"]
-
-    RUN --> PASS["✅ Pass"]
-    RUN --> FAIL["❌ Fail — gap between\nintent and reality"]
-
-    RUN --> GAP["📊 Coverage Report\nSpec requirements → test cases\nUncovered requirements highlighted"]
-
-    GAP --> QA["👤 QA Reviews\nAdds judgment-intensive\nedge cases"]
+    SPEC["📋 Spec"] --> GEN["🧪 Generate cases\nhappy path + edges + errors"]
+    GEN --> RUN["▶️ Run tests"]
+    RUN --> GAP["📊 Coverage report"]
+    GAP --> QA["👤 QA adds\njudgment cases"]
 
     style SPEC fill:#1a1a2e,stroke:#a29bfe,color:#a29bfe
     style GEN fill:#1a1a2e,stroke:#55efc4,color:#55efc4
     style RUN fill:#1a1a2e,stroke:#74b9ff,color:#74b9ff
-    style PASS fill:#1a1a2e,stroke:#00b894,color:#55efc4
-    style FAIL fill:#1a1a2e,stroke:#e17055,color:#fab1a0
     style GAP fill:#1a1a2e,stroke:#fdcb6e,color:#ffeaa7
     style QA fill:#2d3436,stroke:#f0883e,color:#f0883e
 ```
@@ -386,29 +341,20 @@ For tasks at L4 autonomy, the Tester Agent operates independently from the Imple
 Above all eight phases sits a meta-loop that makes the fast loops improve over time:
 
 ```mermaid
-graph TB
-    subgraph CYCLE["🔄 Episodic Feedback — The Slow Loop That Makes Fast Loops Faster"]
-        direction TB
-        EXEC["⚙️ Agent executes task\nin any SDLC phase"] --> SUMMARY["📄 Execution summary\nWhat it did · Where it got stuck · What surprised it"]
-        SUMMARY --> OBSERVE["👤 Engineer reviews\nand observes patterns\nacross multiple executions"]
-        OBSERVE --> ENCODE["📝 Patterns encoded as\nskills · rules · CLAUDE.md · conventions"]
-        ENCODE --> NEXT["🚀 Next agent execution\nbenefits from encoded learning"]
-        NEXT --> EXEC
-    end
+graph TD
+    EXEC["⚙️ Agent executes"] --> SUM["📄 Execution summary"]
+    SUM --> OBS["👤 Engineer spots patterns"]
+    OBS --> ENC["📝 Encode as skills/rules"]
+    ENC --> EXEC
 
-    ENCODE --> PERSONAL["🧑 Personal\nCLAUDE.md prefs\nPersonal skills\nWorkflow shortcuts"]
-    ENCODE --> TEAM["👥 Team\nShared skills\nTeam conventions\nProject rules"]
-    ENCODE --> ORG["🏢 Organization\nCompany CLAUDE.md\nAutonomy policies\nApparatus config"]
+    ENC -.-> P["🧑 Personal"]
+    ENC -.-> T["👥 Team"]
+    ENC -.-> O["🏢 Org"]
 
-    style CYCLE fill:#0d1117,stroke:#f0883e,color:#f0883e
     style EXEC fill:#1a1a2e,stroke:#55efc4,color:#55efc4
-    style SUMMARY fill:#1a1a2e,stroke:#74b9ff,color:#74b9ff
-    style OBSERVE fill:#1a1a2e,stroke:#f0883e,color:#f0883e
-    style ENCODE fill:#1a1a2e,stroke:#a29bfe,color:#a29bfe
-    style NEXT fill:#1a1a2e,stroke:#55efc4,color:#55efc4
-    style PERSONAL fill:#2d3436,stroke:#dfe6e9,color:#dfe6e9
-    style TEAM fill:#2d3436,stroke:#dfe6e9,color:#dfe6e9
-    style ORG fill:#2d3436,stroke:#dfe6e9,color:#dfe6e9
+    style SUM fill:#1a1a2e,stroke:#74b9ff,color:#74b9ff
+    style OBS fill:#1a1a2e,stroke:#f0883e,color:#f0883e
+    style ENC fill:#1a1a2e,stroke:#a29bfe,color:#a29bfe
 ```
 
 This is the "slow loop that makes fast loops faster." It operates at a different cadence from the per-phase slow loops — a weekly or sprint-level reflection on how the agents are performing across all phases.
@@ -422,22 +368,15 @@ This maps to what Karpathy ([#337](../sources/337-karpathy-code-agents-autoresea
 If each phase's fast loop catches 60-80% of issues that would have surfaced in the next human review cycle, the velocity increase is not additive — it's multiplicative. Each phase starts from a higher-quality baseline:
 
 ```mermaid
-graph LR
-    subgraph CASCADE["Quality Cascade — Each Phase Lifts the Next"]
-        direction LR
-        D["🔍 Discovery\n<i>pre-researched brief</i>"]
-        S["📋 Specification\n<i>pre-validated spec</i>"]
-        P["🏗️ Planning\n<i>codebase-informed plan</i>"]
-        I["⚙️ Implementation\n<i>pre-tested PRs</i>"]
-        T["🧪 Testing\n<i>spec-derived coverage</i>"]
-        R["👁️ Review\n<i>judgment-focused</i>"]
-        DEP["🚀 Deployment\n<i>confident release</i>"]
-        M["📊 Monitoring\n<i>contextual alerts</i>"]
+graph TD
+    D["🔍 Discovery"] -->|grounded context| S["📋 Specification"]
+    S -->|clear requirements| P["🏗️ Planning"]
+    P -->|validated architecture| I["⚙️ Implementation"]
+    I -->|passing tests| T["🧪 Testing"]
+    T -->|full coverage| R["👁️ Review"]
+    R -->|clean PR| DEP["🚀 Deploy"]
+    DEP -->|verified checklist| M["📊 Monitor"]
 
-        D -->|"grounded\ncontext"| S -->|"clear\nrequirements"| P -->|"validated\narchitecture"| I -->|"passing\ntests"| T -->|"full\ncoverage"| R -->|"clean\nPR"| DEP -->|"verified\nchecklist"| M
-    end
-
-    style CASCADE fill:#0d1117,stroke:#30363d,color:#c9d1d9
     style D fill:#1a1a2e,stroke:#74b9ff,color:#74b9ff
     style S fill:#1a1a2e,stroke:#a29bfe,color:#a29bfe
     style P fill:#1a1a2e,stroke:#a29bfe,color:#a29bfe
