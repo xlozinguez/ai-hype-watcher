@@ -694,7 +694,7 @@ def build_reader_content(briefings, synthesis_entries, research_entries=None):
             "body_html": body_html,
         })
 
-    # Research — long-form analysis with sections and Mermaid diagrams
+    # Research — long-form analysis with styled HTML components
     for r in research_entries:
         path = RESEARCH_DIR / f'{r["id"]}.md'
         if not path.exists():
@@ -702,25 +702,17 @@ def build_reader_content(briefings, synthesis_entries, research_entries=None):
         text = path.read_text()
         lines = text.split("\n")
 
-        # Parse sections: collect ## headings with their content + mermaid blocks
+        # Parse sections: collect ## headings with first 2 sentences of content
         sections = []
         current_heading = None
         current_lines = []
-        current_mermaid = []
         in_mermaid = False
-        mermaid_buf = []
 
         for line in lines:
-            if line.strip() == "```mermaid":
-                in_mermaid = True
-                mermaid_buf = []
-                continue
-            if in_mermaid and line.strip() == "```":
-                in_mermaid = False
-                current_mermaid.append("\n".join(mermaid_buf))
+            if line.strip().startswith("```"):
+                in_mermaid = not in_mermaid
                 continue
             if in_mermaid:
-                mermaid_buf.append(line)
                 continue
 
             h2 = re.match(r"^##\s+(.+)", line)
@@ -730,11 +722,9 @@ def build_reader_content(briefings, synthesis_entries, research_entries=None):
                     sections.append({
                         "heading": current_heading,
                         "text": strip_markdown(first_n_sentences(para, 2)) if para else "",
-                        "mermaid": current_mermaid,
                     })
                 current_heading = h2.group(1).strip()
                 current_lines = []
-                current_mermaid = []
                 continue
 
             if current_heading and line.strip() and not line.strip().startswith("#"):
@@ -746,27 +736,150 @@ def build_reader_content(briefings, synthesis_entries, research_entries=None):
             sections.append({
                 "heading": current_heading,
                 "text": strip_markdown(first_n_sentences(para, 2)) if para else "",
-                "mermaid": current_mermaid,
             })
 
-        # Build HTML: overview first, then sections with diagrams
+        # Section icon/color mapping
+        section_icons = {
+            "Overview": ("🔭", "green"),
+            "The Autonomy Calibration Model": ("🎛️", "amber"),
+            "Phase-by-Phase Breakdown": ("🔄", "cyan"),
+            "Deep Dive: The Three-Agent Ticket Capture Pattern": ("🎯", "purple"),
+            "Deep Dive: The Tester Agent": ("🧪", "green"),
+            "The Episodic Feedback Meta-Loop": ("🔁", "amber"),
+            "The Compound Effect": ("📈", "cyan"),
+        }
+
         body_parts = []
+
         for sec in sections:
-            if sec["heading"] == "Overview":
-                body_parts.append(f'<div class="card-overview">{sec["text"]}</div>')
-                for m in sec["mermaid"]:
-                    body_parts.append(f'<pre class="mermaid">{m}</pre>')
-                continue
-            if sec["heading"] == "Summary Table":
+            heading = sec["heading"]
+            if heading in ("Summary Table",):
                 continue
 
-            section_html = f'<div class="research-section"><h3>{strip_markdown(sec["heading"])}</h3>'
-            if sec["text"]:
-                section_html += f'<p>{sec["text"]}</p>'
-            for m in sec["mermaid"]:
-                section_html += f'<pre class="mermaid">{m}</pre>'
-            section_html += '</div>'
-            body_parts.append(section_html)
+            icon, color = section_icons.get(heading, ("📄", "cyan"))
+
+            if heading == "Overview":
+                body_parts.append(
+                    f'<div class="research-overview">{sec["text"]}</div>'
+                )
+                continue
+
+            if heading == "The Autonomy Calibration Model":
+                body_parts.append(
+                    f'<div class="research-section">'
+                    f'<div class="research-section-head">'
+                    f'<div class="rs-icon" style="background:rgba(245,158,11,0.1)">{icon}</div>'
+                    f'<h3>Autonomy Levels</h3></div>'
+                    f'<p>{sec["text"]}</p>'
+                    f'<div class="autonomy-bar">'
+                    f'<div class="autonomy-level al-0"><span class="al-tag">L0</span><span class="al-label">Assist</span><span class="al-desc">autocomplete</span></div>'
+                    f'<div class="autonomy-level al-1"><span class="al-tag">L1</span><span class="al-label">Draft</span><span class="al-desc">human reviews all</span></div>'
+                    f'<div class="autonomy-level al-2"><span class="al-tag">L2</span><span class="al-label">Gated</span><span class="al-desc">human gates each phase</span></div>'
+                    f'<div class="autonomy-level al-3"><span class="al-tag">L3</span><span class="al-label">Autonomous</span><span class="al-desc">human reviews outcome</span></div>'
+                    f'<div class="autonomy-level al-4"><span class="al-tag">L4</span><span class="al-label">Delegated</span><span class="al-desc">LLM reviews LLM</span></div>'
+                    f'<div class="autonomy-level al-5"><span class="al-tag">L5</span><span class="al-label">Overnight</span><span class="al-desc">batch dispatch</span></div>'
+                    f'</div></div>'
+                )
+                continue
+
+            if heading == "Phase-by-Phase Breakdown":
+                phases = [
+                    ("1", "Discovery", "Research synthesis", "L1", "blue"),
+                    ("2", "Specification", "3-Agent Ticket Capture", "L2", "purple"),
+                    ("3", "Planning", "Agent-proposed plan", "L2", "purple"),
+                    ("4", "Implementation", "R→P→I per ticket", "L2-4", "green"),
+                    ("5", "Testing", "Tester Agent", "L3", "green"),
+                    ("6", "Code Review", "Agent pre-review", "L1-3", "blue"),
+                    ("7", "Deployment", "Checklist validation", "L2", "purple"),
+                    ("8", "Monitoring", "Anomaly correlation", "L3", "green"),
+                ]
+                flow_html = '<div class="research-flow">'
+                for i, (num, name, fast_loop, level, clr) in enumerate(phases):
+                    flow_html += (
+                        f'<div class="flow-step">'
+                        f'<span class="flow-num {clr}">{num}</span>'
+                        f'<span class="flow-label"><strong>{name}</strong>'
+                        f'<small>{fast_loop} · {level}</small></span>'
+                        f'</div>'
+                    )
+                    if i < len(phases) - 1:
+                        flow_html += '<div class="flow-arrow">↓</div>'
+                flow_html += '</div>'
+                body_parts.append(
+                    f'<div class="research-section">'
+                    f'<div class="research-section-head">'
+                    f'<div class="rs-icon" style="background:rgba(6,182,212,0.1)">{icon}</div>'
+                    f'<h3>SDLC Phases</h3></div>'
+                    f'{flow_html}</div>'
+                )
+                continue
+
+            if heading == "Deep Dive: The Three-Agent Ticket Capture Pattern":
+                flow_html = (
+                    '<div class="research-flow">'
+                    '<div class="flow-step"><span class="flow-num blue">1</span>'
+                    '<span class="flow-label"><strong>Codebase Agent</strong>'
+                    '<small>Maps terrain — no solutions</small></span></div>'
+                    '<div class="flow-arrow">↓ context</div>'
+                    '<div class="flow-step"><span class="flow-num purple">2</span>'
+                    '<span class="flow-label"><strong>Problem Definition</strong>'
+                    '<small>Fresh eyes, generates questions</small></span></div>'
+                    '<div class="flow-arrow">↓ questions</div>'
+                    '<div class="flow-step"><span class="flow-num green">3</span>'
+                    '<span class="flow-label"><strong>Validation Agent</strong>'
+                    '<small>Vision alignment + readiness score</small></span></div>'
+                    '<div class="flow-arrow">↓</div>'
+                    '<div class="flow-step"><span class="flow-num amber">→</span>'
+                    '<span class="flow-label"><strong>Human Review</strong>'
+                    '<small>Pre-validated spec in 5-15 min</small></span></div>'
+                    '</div>'
+                )
+                body_parts.append(
+                    f'<div class="research-section">'
+                    f'<div class="research-section-head">'
+                    f'<div class="rs-icon" style="background:rgba(139,92,246,0.1)">{icon}</div>'
+                    f'<h3>Three-Agent Ticket Capture</h3></div>'
+                    f'<p>{sec["text"]}</p>'
+                    f'{flow_html}</div>'
+                )
+                continue
+
+            if heading == "Deep Dive: The Tester Agent":
+                flow_html = (
+                    '<div class="research-flow">'
+                    '<div class="flow-step"><span class="flow-num purple">📋</span>'
+                    '<span class="flow-label"><strong>Read spec</strong>'
+                    '<small>Not implementation — avoids confirmation bias</small></span></div>'
+                    '<div class="flow-arrow">↓</div>'
+                    '<div class="flow-step"><span class="flow-num green">🧪</span>'
+                    '<span class="flow-label"><strong>Generate cases</strong>'
+                    '<small>Happy path + edges + errors</small></span></div>'
+                    '<div class="flow-arrow">↓</div>'
+                    '<div class="flow-step"><span class="flow-num blue">▶️</span>'
+                    '<span class="flow-label"><strong>Run + report</strong>'
+                    '<small>Coverage gaps → QA adds judgment cases</small></span></div>'
+                    '</div>'
+                )
+                body_parts.append(
+                    f'<div class="research-section">'
+                    f'<div class="research-section-head">'
+                    f'<div class="rs-icon" style="background:rgba(16,185,129,0.1)">{icon}</div>'
+                    f'<h3>Tester Agent</h3></div>'
+                    f'<p>{sec["text"]}</p>'
+                    f'{flow_html}</div>'
+                )
+                continue
+
+            # Generic section fallback
+            bg_colors = {"amber": "rgba(245,158,11,0.1)", "cyan": "rgba(6,182,212,0.1)",
+                         "purple": "rgba(139,92,246,0.1)", "green": "rgba(16,185,129,0.1)"}
+            body_parts.append(
+                f'<div class="research-section">'
+                f'<div class="research-section-head">'
+                f'<div class="rs-icon" style="background:{bg_colors.get(color, bg_colors["cyan"])}">{icon}</div>'
+                f'<h3>{strip_markdown(heading)}</h3></div>'
+                f'<p>{sec["text"]}</p></div>'
+            )
 
         source_range = ""
         if r["source_ids"]:
