@@ -694,7 +694,7 @@ def build_reader_content(briefings, synthesis_entries, research_entries=None):
             "body_html": body_html,
         })
 
-    # Research — long-form analysis with sections
+    # Research — long-form analysis with sections and Mermaid diagrams
     for r in research_entries:
         path = RESEARCH_DIR / f'{r["id"]}.md'
         if not path.exists():
@@ -702,45 +702,78 @@ def build_reader_content(briefings, synthesis_entries, research_entries=None):
         text = path.read_text()
         lines = text.split("\n")
 
-        # Overview
-        overview_lines = []
-        in_overview = False
-        for line in lines:
-            if re.match(r"^##\s+Overview", line):
-                in_overview = True
-                continue
-            if in_overview:
-                if line.strip().startswith("## ") or line.strip() == "---":
-                    if overview_lines:
-                        break
-                    continue
-                if line.strip() and not line.strip().startswith("```"):
-                    overview_lines.append(line.strip())
-        overview = strip_markdown(first_n_sentences(" ".join(overview_lines), 3))
+        # Parse sections: collect ## headings with their content + mermaid blocks
+        sections = []
+        current_heading = None
+        current_lines = []
+        current_mermaid = []
+        in_mermaid = False
+        mermaid_buf = []
 
-        # Section headings as themes
-        themes_html = ""
-        for i, theme in enumerate(r.get("themes", [])[:8], 1):
-            clean = strip_markdown(theme)
-            # Skip generic headings
-            if clean in ("Overview",):
+        for line in lines:
+            if line.strip() == "```mermaid":
+                in_mermaid = True
+                mermaid_buf = []
                 continue
-            themes_html += (
-                f'<div class="theme">'
-                f'<strong>{clean}</strong>'
-                f'</div>'
-            )
+            if in_mermaid and line.strip() == "```":
+                in_mermaid = False
+                current_mermaid.append("\n".join(mermaid_buf))
+                continue
+            if in_mermaid:
+                mermaid_buf.append(line)
+                continue
+
+            h2 = re.match(r"^##\s+(.+)", line)
+            if h2:
+                if current_heading:
+                    para = " ".join(current_lines).strip()
+                    sections.append({
+                        "heading": current_heading,
+                        "text": strip_markdown(first_n_sentences(para, 2)) if para else "",
+                        "mermaid": current_mermaid,
+                    })
+                current_heading = h2.group(1).strip()
+                current_lines = []
+                current_mermaid = []
+                continue
+
+            if current_heading and line.strip() and not line.strip().startswith("#"):
+                if line.strip() != "---":
+                    current_lines.append(line.strip())
+
+        if current_heading:
+            para = " ".join(current_lines).strip()
+            sections.append({
+                "heading": current_heading,
+                "text": strip_markdown(first_n_sentences(para, 2)) if para else "",
+                "mermaid": current_mermaid,
+            })
+
+        # Build HTML: overview first, then sections with diagrams
+        body_parts = []
+        for sec in sections:
+            if sec["heading"] == "Overview":
+                body_parts.append(f'<div class="card-overview">{sec["text"]}</div>')
+                for m in sec["mermaid"]:
+                    body_parts.append(f'<pre class="mermaid">{m}</pre>')
+                continue
+            if sec["heading"] == "Summary Table":
+                continue
+
+            section_html = f'<div class="research-section"><h3>{strip_markdown(sec["heading"])}</h3>'
+            if sec["text"]:
+                section_html += f'<p>{sec["text"]}</p>'
+            for m in sec["mermaid"]:
+                section_html += f'<pre class="mermaid">{m}</pre>'
+            section_html += '</div>'
+            body_parts.append(section_html)
 
         source_range = ""
         if r["source_ids"]:
             source_range = f'#{r["source_ids"][0]}–#{r["source_ids"][-1]} ({len(r["source_ids"])} sources)'
+        body_parts.append(f'<div class="card-sources">Sources: {source_range}</div>')
 
-        body_html = linkify_sources(
-            f'<div class="card-overview">{overview}</div>'
-            f'<div class="card-themes">{themes_html}</div>'
-            f'<div class="card-sources">Sources: {source_range}</div>'
-        )
-
+        body_html = linkify_sources("\n".join(body_parts))
         subtitle = source_range if source_range else r["date"]
 
         documents.append({

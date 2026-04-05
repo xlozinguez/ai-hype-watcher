@@ -324,7 +324,20 @@ header h1 span { color: var(--cyan); }
   .card-title { font-size: 22px; }
   .src-modal { border-radius: 16px; margin-bottom: 10vh; }
 }
+/* Mermaid diagrams in research cards */
+.card .mermaid { margin: 16px 0; border-radius: 8px; overflow-x: auto; }
+.card .mermaid svg { max-width: 100%; height: auto; }
+.research-section { margin-bottom: 20px; }
+.research-section h3 { font-size: 14px; font-weight: 600; color: var(--green); margin-bottom: 8px; }
+.research-section p { font-size: 13px; line-height: 1.5; color: var(--text-dim); }
 </style>
+<script src="https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.min.js"></script>
+<script>
+  mermaid.initialize({ startOnLoad: false, theme: 'dark', themeVariables: {
+    darkMode: true, background: '#0a0a0f', primaryColor: '#1a1a2e',
+    primaryTextColor: '#e4e4ef', lineColor: '#2a2a3a', fontSize: '12px'
+  }});
+</script>
 </head>
 <body>
 
@@ -453,6 +466,8 @@ header h1 span { color: var(--cyan); }
     buildDots();
     updateNav();
     wrapper.style.transform = `translateX(-${currentIdx * 100}%)`;
+    // Render any Mermaid diagrams
+    if (typeof mermaid !== 'undefined') { mermaid.run({ nodes: wrapper.querySelectorAll('.mermaid') }); }
   }
 
   function buildDots() {
