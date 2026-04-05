@@ -103,7 +103,7 @@ def parse_sources():
 
 
 def parse_curriculum():
-    """Parse curriculum module READMEs for module nodes."""
+    """Parse curriculum module READMEs for module nodes with section structure."""
     nodes = []
     for path in sorted(CURRICULUM_DIR.glob("*/README.md")):
         folder = path.parent.name
@@ -111,15 +111,117 @@ def parse_curriculum():
         if not match:
             continue
         order = int(match.group(1))
-        # Extract title from first heading
         text = path.read_text()
+        lines = text.split("\n")
+
+        # Extract title from first heading
         title_match = re.search(r"^#\s+Module\s+\d+:\s+(.+)", text, re.MULTILINE)
         label = title_match.group(1).strip() if title_match else folder
+
+        # Extract overview (first paragraph after ## Overview)
+        overview = ""
+        in_overview = False
+        overview_lines = []
+        for line in lines:
+            if re.match(r"^##\s+Overview", line):
+                in_overview = True
+                continue
+            if in_overview:
+                if line.strip().startswith("## ") or line.strip().startswith("# "):
+                    break
+                if line.strip():
+                    overview_lines.append(line.strip())
+                elif overview_lines:
+                    break  # stop at first blank line after content
+        overview = strip_markdown(first_n_sentences(" ".join(overview_lines), 2))
+
+        # Parse sections by splitting on ## headings
+        current_section = None
+        sections = {
+            "core-concepts": {"label": "Core Concepts", "items": []},
+            "patterns": {"label": "Patterns & Practices", "items": []},
+            "pitfalls": {"label": "Common Pitfalls", "items": []},
+            "exercises": {"label": "Hands-On Exercises", "items": []},
+        }
+
+        for line in lines:
+            # Track which ## section we're in
+            h2 = re.match(r"^##\s+(.+)", line)
+            if h2:
+                heading = h2.group(1).strip()
+                if "Core Concepts" in heading:
+                    current_section = "core-concepts"
+                elif "Patterns" in heading:
+                    current_section = "patterns"
+                elif "Common Pitfalls" in heading:
+                    current_section = "pitfalls"
+                elif "Hands-On Exercises" in heading:
+                    current_section = "exercises"
+                elif "Source Material" in heading or "Further Reading" in heading:
+                    current_section = None
+                continue
+
+            if not current_section:
+                continue
+
+            # Concepts: ### Concept N: Title or ### Concept Na: Title
+            if current_section == "core-concepts":
+                cm = re.match(r"^###\s+Concept\s+(\S+):\s+(.+)", line)
+                if cm:
+                    sections["core-concepts"]["items"].append({
+                        "id": f"c{cm.group(1)}",
+                        "title": strip_markdown(cm.group(2).strip()),
+                    })
+
+            # Patterns: ### Pattern N: Title or ### Pattern: Title
+            elif current_section == "patterns":
+                pm = re.match(r"^###\s+Pattern(?:\s+\d+)?:\s+(.+)", line)
+                if pm:
+                    sections["patterns"]["items"].append({
+                        "id": f"p{len(sections['patterns']['items']) + 1}",
+                        "title": strip_markdown(pm.group(1).strip()),
+                    })
+
+            # Pitfalls: - **Description**: ... (first bold phrase is the title)
+            elif current_section == "pitfalls":
+                pit = re.match(r"^-\s+\*\*(.+?)\*\*", line)
+                if pit:
+                    title = re.sub(r"^Pitfall:\s*", "", pit.group(1).strip()).rstrip(":")
+                    # Truncate long pitfall titles
+                    if len(title) > 80:
+                        title = title[:77] + "..."
+                    sections["pitfalls"]["items"].append({
+                        "id": f"pit{len(sections['pitfalls']['items']) + 1}",
+                        "title": strip_markdown(title),
+                    })
+
+            # Exercises: N. **Title**: ...
+            elif current_section == "exercises":
+                ex = re.match(r"^\d+\.\s+\*\*(.+?)\*\*", line)
+                if ex:
+                    sections["exercises"]["items"].append({
+                        "id": f"ex{len(sections['exercises']['items']) + 1}",
+                        "title": strip_markdown(ex.group(1).strip().rstrip(":")),
+                    })
+
+        # Build sections array (only include non-empty sections)
+        sections_list = []
+        for sid, sec in sections.items():
+            if sec["items"]:
+                sections_list.append({
+                    "id": sid,
+                    "label": sec["label"],
+                    "count": len(sec["items"]),
+                    "items": sec["items"],
+                })
+
         nodes.append({
             "id": f"mod:{folder}",
             "type": "module",
             "label": label,
             "order": order,
+            "overview": overview,
+            "sections": sections_list,
         })
     return nodes
 
