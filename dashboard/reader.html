@@ -324,20 +324,69 @@ header h1 span { color: var(--cyan); }
   .card-title { font-size: 22px; }
   .src-modal { border-radius: 16px; margin-bottom: 10vh; }
 }
-/* Mermaid diagrams in research cards */
-.card .mermaid { margin: 16px 0; border-radius: 8px; overflow-x: auto; }
-.card .mermaid svg { max-width: 100%; height: auto; }
-.research-section { margin-bottom: 20px; }
-.research-section h3 { font-size: 14px; font-weight: 600; color: var(--green); margin-bottom: 8px; }
-.research-section p { font-size: 13px; line-height: 1.5; color: var(--text-dim); }
+/* RESEARCH CARD CONTENT */
+.research-overview {
+  font-size: 14px; line-height: 1.6; color: var(--text); margin-bottom: 16px;
+  padding: 12px; background: rgba(16,185,129,0.04); border-left: 2px solid var(--green);
+  border-radius: 0 6px 6px 0;
+}
+.research-section { margin-bottom: 16px; }
+.research-section-head {
+  display: flex; align-items: center; gap: 8px; margin-bottom: 8px;
+}
+.research-section-head .rs-icon {
+  width: 28px; height: 28px; border-radius: 6px; display: flex;
+  align-items: center; justify-content: center; font-size: 14px; flex-shrink: 0;
+}
+.research-section-head h3 { font-size: 14px; font-weight: 600; color: var(--text); margin: 0; }
+.research-section p { font-size: 13px; line-height: 1.5; color: var(--text-dim); margin: 0 0 8px; }
+.research-flow {
+  display: flex; flex-direction: column; gap: 0; margin: 8px 0 12px;
+}
+.flow-step {
+  display: flex; align-items: center; gap: 10px; padding: 8px 10px;
+  background: rgba(255,255,255,0.02); border-radius: 6px;
+}
+.flow-num {
+  width: 22px; height: 22px; border-radius: 50%; display: flex;
+  align-items: center; justify-content: center; font-size: 11px; font-weight: 700;
+  flex-shrink: 0;
+}
+.flow-num.blue { background: rgba(6,182,212,0.15); color: var(--cyan); }
+.flow-num.purple { background: rgba(139,92,246,0.15); color: var(--purple); }
+.flow-num.green { background: rgba(16,185,129,0.15); color: var(--green); }
+.flow-num.amber { background: rgba(245,158,11,0.15); color: var(--amber); }
+.flow-label { font-size: 13px; color: var(--text); line-height: 1.3; }
+.flow-label small { display: block; font-size: 11px; color: var(--text-dim); margin-top: 1px; }
+.flow-arrow {
+  width: 22px; display: flex; justify-content: center; color: var(--text-dim);
+  font-size: 10px; padding: 2px 0; margin-left: 0;
+}
+.autonomy-bar {
+  display: flex; flex-direction: column; gap: 4px; margin: 8px 0 12px;
+}
+.autonomy-level {
+  display: flex; align-items: center; gap: 8px; padding: 6px 10px;
+  border-radius: 6px; font-size: 12px;
+}
+.autonomy-level .al-tag {
+  font-weight: 700; font-size: 11px; width: 24px; text-align: center; flex-shrink: 0;
+}
+.autonomy-level .al-label { color: var(--text); }
+.autonomy-level .al-desc { color: var(--text-dim); font-size: 11px; margin-left: auto; }
+.al-0 { background: rgba(99,110,114,0.08); }
+.al-0 .al-tag { color: #636e72; }
+.al-1 { background: rgba(9,132,227,0.06); }
+.al-1 .al-tag { color: #74b9ff; }
+.al-2 { background: rgba(108,92,231,0.06); }
+.al-2 .al-tag { color: #a29bfe; }
+.al-3 { background: rgba(0,184,148,0.06); }
+.al-3 .al-tag { color: #55efc4; }
+.al-4 { background: rgba(253,203,110,0.06); }
+.al-4 .al-tag { color: #ffeaa7; }
+.al-5 { background: rgba(225,112,85,0.06); }
+.al-5 .al-tag { color: #fab1a0; }
 </style>
-<script src="https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.min.js"></script>
-<script>
-  mermaid.initialize({ startOnLoad: false, theme: 'dark', themeVariables: {
-    darkMode: true, background: '#0a0a0f', primaryColor: '#1a1a2e',
-    primaryTextColor: '#e4e4ef', lineColor: '#2a2a3a', fontSize: '12px'
-  }});
-</script>
 </head>
 <body>
 
@@ -466,8 +515,6 @@ header h1 span { color: var(--cyan); }
     buildDots();
     updateNav();
     wrapper.style.transform = `translateX(-${currentIdx * 100}%)`;
-    // Render any Mermaid diagrams
-    if (typeof mermaid !== 'undefined') { mermaid.run({ nodes: wrapper.querySelectorAll('.mermaid') }); }
   }
 
   function buildDots() {
