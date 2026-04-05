@@ -821,20 +821,21 @@ def build_reader_content(briefings, synthesis_entries, research_entries=None):
                 flow_html = (
                     '<div class="research-flow">'
                     '<div class="flow-step"><span class="flow-num blue">1</span>'
-                    '<span class="flow-label"><strong>Codebase Agent</strong>'
-                    '<small>Maps terrain — no solutions</small></span></div>'
-                    '<div class="flow-arrow">↓ context</div>'
+                    '<span class="flow-label"><strong>Codebase Agent</strong> <small class="flow-level">read-only</small>'
+                    '<small>Explores the relevant codebase — CLAUDE.md, service files, DB schema, recent PRs — and produces an augmented problem outline with a "codebase context" appendix. Crucially, this agent does NOT propose solutions. It maps the terrain so subsequent agents have grounded context without premature implementation bias.</small>'
+                    '</span></div>'
                     '<div class="flow-step"><span class="flow-num purple">2</span>'
-                    '<span class="flow-label"><strong>Problem Definition</strong>'
-                    '<small>Fresh eyes, generates questions</small></span></div>'
-                    '<div class="flow-arrow">↓ questions</div>'
+                    '<span class="flow-label"><strong>Problem Definition Agent</strong> <small class="flow-level">fresh context</small>'
+                    '<small>Works from Agent 1\'s markdown output only — deliberately has NO direct codebase access. Generates 10-20 validation questions ranked by ambiguity: scope, constraints, priorities, integration points. Fresh context is the feature — it asks the "dumb questions" insiders skip, surfacing ambiguities that would otherwise become bugs.</small>'
+                    '</span></div>'
                     '<div class="flow-step"><span class="flow-num green">3</span>'
-                    '<span class="flow-label"><strong>Validation Agent</strong>'
-                    '<small>Vision alignment + readiness score</small></span></div>'
-                    '<div class="flow-arrow">↓</div>'
+                    '<span class="flow-label"><strong>Validation Agent</strong> <small class="flow-level">vision check</small>'
+                    '<small>Answers each question using product vision docs, ADRs, and team conventions. Flags questions that can\'t be answered — these become the highest-value items for the human review meeting. Produces a specification readiness score so the team knows exactly how much ambiguity remains.</small>'
+                    '</span></div>'
                     '<div class="flow-step"><span class="flow-num amber">→</span>'
                     '<span class="flow-label"><strong>Human Review</strong>'
-                    '<small>Pre-validated spec in 5-15 min</small></span></div>'
+                    '<small>The spec arrives pre-validated with explicit remaining ambiguities, not unknown unknowns. The product review meeting starts from "here\'s what three independent LLM passes found" rather than raw text. Total time: 5-15 minutes.</small>'
+                    '</span></div>'
                     '</div>'
                 )
                 body_parts.append(
@@ -851,16 +852,17 @@ def build_reader_content(briefings, synthesis_entries, research_entries=None):
                 flow_html = (
                     '<div class="research-flow">'
                     '<div class="flow-step"><span class="flow-num purple">📋</span>'
-                    '<span class="flow-label"><strong>Read spec</strong>'
-                    '<small>Not implementation — avoids confirmation bias</small></span></div>'
-                    '<div class="flow-arrow">↓</div>'
+                    '<span class="flow-label"><strong>Read the specification</strong>'
+                    '<small>Ingests the validated spec or acceptance criteria — NOT the implementation code. This is deliberate: tests generated from implementation confirm what the code does, not what it should do. Spec-derived tests catch the gap between intent and reality.</small>'
+                    '</span></div>'
                     '<div class="flow-step"><span class="flow-num green">🧪</span>'
-                    '<span class="flow-label"><strong>Generate cases</strong>'
-                    '<small>Happy path + edges + errors</small></span></div>'
-                    '<div class="flow-arrow">↓</div>'
+                    '<span class="flow-label"><strong>Generate test cases</strong>'
+                    '<small>Covers four categories: happy path, edge cases derivable from spec constraints, error conditions implied by requirements, and integration scenarios with adjacent systems. Tests are "free to generate" with LLMs — the cost is a prompt, not an hour of manual work.</small>'
+                    '</span></div>'
                     '<div class="flow-step"><span class="flow-num blue">▶️</span>'
-                    '<span class="flow-label"><strong>Run + report</strong>'
-                    '<small>Coverage gaps → QA adds judgment cases</small></span></div>'
+                    '<span class="flow-label"><strong>Run tests + coverage report</strong>'
+                    '<small>Executes tests against the implementation, identifies gaps where the spec implies behavior that no test covers, and produces a coverage map. QA reviews the report and adds judgment-intensive edge cases — race conditions, adversarial inputs, business-logic corners that require domain expertise.</small>'
+                    '</span></div>'
                     '</div>'
                 )
                 body_parts.append(
@@ -969,6 +971,138 @@ def md_to_html(text):
     return "\n".join(html_lines)
 
 
+def extract_keywords(title):
+    """Extract meaningful keywords from a concept title for fuzzy matching."""
+    stop = {
+        "the", "a", "an", "and", "or", "but", "in", "on", "at", "to", "for",
+        "of", "with", "by", "from", "as", "is", "was", "are", "be", "been",
+        "not", "no", "vs", "how", "why", "what", "when", "its", "it", "this",
+        "that", "into", "over", "than", "your", "you", "do", "does",
+    }
+    words = re.findall(r'[a-z0-9]+', title.lower())
+    return {w for w in words if w not in stop and len(w) > 2}
+
+
+def score_concepts(module_nodes, source_nodes, source_data, edges):
+    """Enrich curriculum concepts with strength scores based on source support.
+
+    Formula: strength = support_count * decay_factor * diversity_bonus
+    - support_count: distinct sources referencing the concept
+    - decay_factor: freshness signal (1.0 if recent, lower if old)
+    - diversity_bonus: 1.0 + 0.1*(unique_creators-1), capped at 1.5
+    """
+    today = datetime.now(timezone.utc).date()
+
+    # Build source lookup: id -> {title_keywords, tags, creator, date, modules}
+    source_lookup = {}
+    for sn in source_nodes:
+        sid = sn["id"]
+        title_kw = extract_keywords(sn.get("title", ""))
+        tag_kw = {t.replace("-", " ").lower() for t in sn.get("tags", [])}
+        # Also extract keywords from tags
+        tag_words = set()
+        for t in sn.get("tags", []):
+            tag_words.update(re.findall(r'[a-z0-9]+', t.lower()))
+        source_lookup[sid] = {
+            "title_kw": title_kw | tag_words,
+            "tags": sn.get("tags", []),
+            "creator": sn.get("creator", ""),
+            "date": str(sn.get("date", "")),
+            "modules": sn.get("modules", []),
+        }
+
+    # For each module, get its source IDs from edges
+    mod_source_ids = {}
+    for e in edges:
+        if e["type"] == "curriculum":
+            mod_id = e["target"]
+            sid = e["source"]
+            if mod_id not in mod_source_ids:
+                mod_source_ids[mod_id] = set()
+            mod_source_ids[mod_id].add(sid)
+
+    for mod in module_nodes:
+        if mod["type"] != "module":
+            continue
+        mod_id = mod["id"]
+        mod_sources = mod_source_ids.get(mod_id, set())
+
+        for section in mod.get("sections", []):
+            for item in section.get("items", []):
+                concept_kw = extract_keywords(item["title"])
+                if not concept_kw:
+                    item.update({"strength": 0, "classification": "emerging",
+                                 "support_count": 0, "creator_count": 0, "last_supported": ""})
+                    continue
+
+                # Find supporting sources: must be in this module AND share keywords
+                supporting = []
+                for sid in mod_sources:
+                    sl = source_lookup.get(sid)
+                    if not sl:
+                        continue
+                    overlap = concept_kw & sl["title_kw"]
+                    # Require at least 2 keyword matches (or 1 if concept has <=3 keywords)
+                    threshold = 1 if len(concept_kw) <= 3 else 2
+                    if len(overlap) >= threshold:
+                        supporting.append(sl)
+
+                support_count = len(supporting)
+                if support_count == 0:
+                    item.update({"strength": 0, "classification": "emerging",
+                                 "support_count": 0, "creator_count": 0, "last_supported": ""})
+                    continue
+
+                # Decay factor based on most recent supporting source
+                dates = []
+                for sl in supporting:
+                    try:
+                        d = datetime.strptime(sl["date"][:10], "%Y-%m-%d").date()
+                        dates.append(d)
+                    except (ValueError, IndexError):
+                        pass
+
+                if dates:
+                    most_recent = max(dates)
+                    age_days = (today - most_recent).days
+                    if age_days < 90:
+                        decay = 1.0
+                    elif age_days < 180:
+                        decay = 0.85
+                    elif age_days < 365:
+                        decay = 0.7
+                    else:
+                        decay = 0.5
+                    last_supported = most_recent.isoformat()
+                else:
+                    decay = 0.5
+                    last_supported = ""
+
+                # Diversity bonus
+                creators = {sl["creator"] for sl in supporting if sl["creator"]}
+                creator_count = len(creators)
+                diversity = min(1.0 + 0.1 * (creator_count - 1), 1.5)
+
+                strength = round(support_count * decay * diversity, 2)
+
+                if strength >= 5.0:
+                    classification = "evergreen"
+                elif strength >= 2.0:
+                    classification = "established"
+                elif strength >= 1.0:
+                    classification = "emerging"
+                else:
+                    classification = "stale"
+
+                item.update({
+                    "strength": strength,
+                    "classification": classification,
+                    "support_count": support_count,
+                    "creator_count": creator_count,
+                    "last_supported": last_supported,
+                })
+
+
 def build():
     source_nodes, source_data = parse_sources()
     module_nodes = parse_curriculum()
@@ -1005,6 +1139,9 @@ def build():
                 edges.append({"source": sid, "target": target, "type": "curriculum"})
             else:
                 print(f"  Warning: source {sid} references unknown module '{mod}'")
+
+    # Score curriculum concepts by source support
+    score_concepts(module_nodes, source_nodes, source_data, edges)
 
     result = {
         "nodes": nodes,
