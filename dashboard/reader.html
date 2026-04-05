@@ -344,9 +344,9 @@ header h1 span { color: var(--cyan); }
   display: flex; flex-direction: column; gap: 0; margin: 8px 0 12px;
 }
 .flow-step {
-  display: flex; align-items: flex-start; gap: 10px; padding: 10px;
-  background: rgba(255,255,255,0.02); border-radius: 6px;
-  border-bottom: 1px solid rgba(42,42,58,0.3);
+  display: flex; align-items: flex-start; gap: 10px; padding: 12px;
+  background: rgba(255,255,255,0.04); border-radius: 8px;
+  border: 1px solid rgba(42,42,58,0.5); margin-bottom: 6px;
 }
 .flow-num {
   width: 24px; height: 24px; border-radius: 50%; display: flex;
@@ -367,30 +367,30 @@ header h1 span { color: var(--cyan); }
 .flow-label small { display: block; font-size: 12px; color: var(--text-dim); margin-top: 3px; line-height: 1.4; }
 .flow-label .flow-catches { color: var(--amber); font-style: italic; font-size: 11px; }
 .autonomy-bar {
-  display: flex; flex-direction: column; gap: 6px; margin: 8px 0 12px;
+  display: flex; flex-direction: column; gap: 8px; margin: 8px 0 12px;
 }
 .autonomy-level {
-  display: flex; align-items: flex-start; gap: 10px; padding: 10px;
-  border-radius: 6px;
+  display: flex; align-items: flex-start; gap: 10px; padding: 12px;
+  border-radius: 8px; border: 1px solid;
 }
 .autonomy-level .al-tag {
-  font-weight: 700; font-size: 11px; width: 24px; text-align: center; flex-shrink: 0;
-  margin-top: 2px;
+  font-weight: 700; font-size: 12px; width: 26px; text-align: center; flex-shrink: 0;
+  margin-top: 1px;
 }
-.autonomy-level .al-content { display: flex; flex-direction: column; gap: 2px; }
-.autonomy-level .al-label { color: var(--text); font-weight: 600; font-size: 13px; }
-.autonomy-level .al-desc { color: var(--text-dim); font-size: 12px; line-height: 1.4; }
-.al-0 { background: rgba(99,110,114,0.08); }
+.autonomy-level .al-content { display: flex; flex-direction: column; gap: 3px; }
+.autonomy-level .al-label { color: var(--text); font-weight: 600; font-size: 14px; }
+.autonomy-level .al-desc { color: var(--text-dim); font-size: 12px; line-height: 1.5; }
+.al-0 { background: rgba(99,110,114,0.12); border-color: rgba(99,110,114,0.25); }
 .al-0 .al-tag { color: #636e72; }
-.al-1 { background: rgba(9,132,227,0.06); }
+.al-1 { background: rgba(9,132,227,0.10); border-color: rgba(9,132,227,0.25); }
 .al-1 .al-tag { color: #74b9ff; }
-.al-2 { background: rgba(108,92,231,0.06); }
+.al-2 { background: rgba(108,92,231,0.10); border-color: rgba(108,92,231,0.25); }
 .al-2 .al-tag { color: #a29bfe; }
-.al-3 { background: rgba(0,184,148,0.06); }
+.al-3 { background: rgba(0,184,148,0.10); border-color: rgba(0,184,148,0.25); }
 .al-3 .al-tag { color: #55efc4; }
-.al-4 { background: rgba(253,203,110,0.06); }
+.al-4 { background: rgba(253,203,110,0.10); border-color: rgba(253,203,110,0.25); }
 .al-4 .al-tag { color: #ffeaa7; }
-.al-5 { background: rgba(225,112,85,0.06); }
+.al-5 { background: rgba(225,112,85,0.10); border-color: rgba(225,112,85,0.25); }
 .al-5 .al-tag { color: #fab1a0; }
 </style>
 </head>
