@@ -198,6 +198,11 @@ footer {
   width: 16px; height: 16px; cursor: pointer;
 }
 .concept-item.completed .concept-title { color: var(--text-dim); text-decoration: line-through; }
+.strength-badge {
+  flex-shrink: 0; font-size: 10px; font-weight: 700; width: 18px; height: 18px;
+  display: flex; align-items: center; justify-content: center; border-radius: 4px;
+  background: rgba(255,255,255,0.05); margin-left: auto;
+}
 .concept-title { font-size: 13px; line-height: 1.4; }
 .section-progress { margin-top: 8px; margin-bottom: 4px; }
 .section-progress-bar {
@@ -1015,12 +1020,20 @@ footer {
     const color = SEC_COLORS[sec.id] || '#888';
     const sp = Progress.getSectionProgress(modId, sec.id, sec.items);
 
-    const itemsHtml = sec.items.map(item => {
+    const STRENGTH_COLORS = { evergreen: '#10b981', established: '#06b6d4', emerging: '#f59e0b', stale: '#ef4444' };
+    const sortedItems = [...sec.items].sort((a, b) => (b.strength || 0) - (a.strength || 0));
+    const itemsHtml = sortedItems.map(item => {
       const done = Progress.isComplete(modId, sec.id, item.id);
+      const cls = item.classification || 'emerging';
+      const clsColor = STRENGTH_COLORS[cls] || '#888';
+      const badge = item.strength > 0
+        ? `<span class="strength-badge" style="color:${clsColor}" title="${cls}: ${item.support_count || 0} sources, ${item.creator_count || 0} creators">${cls[0].toUpperCase()}</span>`
+        : '';
       return `
         <label class="concept-item ${done ? 'completed' : ''}" data-item="${item.id}">
           <input type="checkbox" ${done ? 'checked' : ''}>
           <span class="concept-title">${item.title}</span>
+          ${badge}
         </label>`;
     }).join('');
 
