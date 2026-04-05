@@ -12,6 +12,8 @@ synthesis/        → Cross-source analyses
 resources/        → Curated external links
 watchlist/        → YouTube channel watchlist and scanning config
 podcast/          → Two-host podcast scripts, config, audio pipeline
+research/         → Curriculum validation reports (concept strength, external verification)
+scripts/          → Automation scripts (bot-auth.sh)
 ```
 
 ## Conventions
@@ -53,6 +55,7 @@ podcast/          → Two-host podcast scripts, config, audio pipeline
 | `/find-sources` | Search and filter sources by tag, creator, module, date range, keyword, or recency |
 | `/digest` | Thematic digest of a source range — new territory vs. reinforced coverage, with theme clusters |
 | `/podcast` | Generate a two-host podcast episode from briefings, synthesis docs, or source notes |
+| `/research-curriculum` | Validate curriculum concepts against sources and external evidence with strength scoring |
 
 ## Common Workflows
 
@@ -86,6 +89,13 @@ After ingesting a batch of sources, always:
 - [ ] Create a synthesis doc if sources share a theme (`synthesis/YYYY-MM-DD-topic.md`)
 - [ ] Create or update the daily briefing (`briefings/YYYY-MM-DD.md`)
 - [ ] Update all README indexes (sources, briefings, synthesis)
+
+### Curriculum research validation
+```
+/research-curriculum 04 core-concepts   # Validate one section
+/research-curriculum 01                 # Validate entire module
+/research-curriculum all                # Full curriculum audit
+```
 
 ## Date Conventions
 
