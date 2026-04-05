@@ -145,10 +145,27 @@ def parse_curriculum():
             "exercises": {"label": "Hands-On Exercises", "items": []},
         }
 
+        # Track current item to collect its body text for citation extraction
+        current_item = None
+        current_item_lines = []
+
+        def flush_item_citations():
+            """Extract [#NNN] citations from accumulated body lines into the current item."""
+            nonlocal current_item, current_item_lines
+            if current_item and current_item_lines:
+                body = "\n".join(current_item_lines)
+                cited = set(re.findall(r'\[#?(\d{3})\b', body))
+                cited.update(re.findall(r'\(#(\d{3})\b', body))
+                cited.update(re.findall(r'#(\d{3})\b', body))
+                current_item["cited_sources"] = sorted(cited)
+            current_item = None
+            current_item_lines = []
+
         for line in lines:
             # Track which ## section we're in
             h2 = re.match(r"^##\s+(.+)", line)
             if h2:
+                flush_item_citations()
                 heading = h2.group(1).strip()
                 if "Core Concepts" in heading:
                     current_section = "core-concepts"
@@ -169,41 +186,61 @@ def parse_curriculum():
             if current_section == "core-concepts":
                 cm = re.match(r"^###\s+Concept\s+(\S+):\s+(.+)", line)
                 if cm:
-                    sections["core-concepts"]["items"].append({
+                    flush_item_citations()
+                    current_item = {
                         "id": f"c{cm.group(1)}",
                         "title": strip_markdown(cm.group(2).strip()),
-                    })
+                        "cited_sources": [],
+                    }
+                    sections["core-concepts"]["items"].append(current_item)
+                    continue
 
             # Patterns: ### Pattern N: Title or ### Pattern: Title
             elif current_section == "patterns":
                 pm = re.match(r"^###\s+Pattern(?:\s+\d+)?:\s+(.+)", line)
                 if pm:
-                    sections["patterns"]["items"].append({
+                    flush_item_citations()
+                    current_item = {
                         "id": f"p{len(sections['patterns']['items']) + 1}",
                         "title": strip_markdown(pm.group(1).strip()),
-                    })
+                        "cited_sources": [],
+                    }
+                    sections["patterns"]["items"].append(current_item)
+                    continue
 
             # Pitfalls: - **Description**: ... (first bold phrase is the title)
             elif current_section == "pitfalls":
                 pit = re.match(r"^-\s+\*\*(.+?)\*\*", line)
                 if pit:
+                    flush_item_citations()
                     title = re.sub(r"^Pitfall:\s*", "", pit.group(1).strip()).rstrip(":")
-                    # Truncate long pitfall titles
                     if len(title) > 80:
                         title = title[:77] + "..."
-                    sections["pitfalls"]["items"].append({
+                    current_item = {
                         "id": f"pit{len(sections['pitfalls']['items']) + 1}",
                         "title": strip_markdown(title),
-                    })
+                        "cited_sources": [],
+                    }
+                    sections["pitfalls"]["items"].append(current_item)
 
             # Exercises: N. **Title**: ...
             elif current_section == "exercises":
                 ex = re.match(r"^\d+\.\s+\*\*(.+?)\*\*", line)
                 if ex:
-                    sections["exercises"]["items"].append({
+                    flush_item_citations()
+                    current_item = {
                         "id": f"ex{len(sections['exercises']['items']) + 1}",
                         "title": strip_markdown(ex.group(1).strip().rstrip(":")),
-                    })
+                        "cited_sources": [],
+                    }
+                    sections["exercises"]["items"].append(current_item)
+
+            # Accumulate body lines for citation extraction
+            if current_item:
+                current_item_lines.append(line)
+
+        # Flush the last item
+        flush_item_citations()
 
         # Build sections array (only include non-empty sections)
         sections_list = []
@@ -1035,17 +1072,30 @@ def score_concepts(module_nodes, source_nodes, source_data, edges):
                                  "support_count": 0, "creator_count": 0, "last_supported": ""})
                     continue
 
-                # Find supporting sources: must be in this module AND share keywords
-                supporting = []
+                # Find supporting sources via two methods:
+                # 1. Inline citations [#NNN] from curriculum text (high confidence)
+                # 2. Keyword matching against source titles/tags (supplementary)
+                cited_ids = set(item.get("cited_sources", []))
+                supporting_ids = set()
+
+                # Method 1: cited sources (always counted)
+                for sid in cited_ids:
+                    if sid in source_lookup:
+                        supporting_ids.add(sid)
+
+                # Method 2: keyword matching (supplementary, within module)
                 for sid in mod_sources:
+                    if sid in supporting_ids:
+                        continue
                     sl = source_lookup.get(sid)
                     if not sl:
                         continue
                     overlap = concept_kw & sl["title_kw"]
-                    # Require at least 2 keyword matches (or 1 if concept has <=3 keywords)
                     threshold = 1 if len(concept_kw) <= 3 else 2
                     if len(overlap) >= threshold:
-                        supporting.append(sl)
+                        supporting_ids.add(sid)
+
+                supporting = [source_lookup[sid] for sid in supporting_ids if sid in source_lookup]
 
                 support_count = len(supporting)
                 if support_count == 0:
@@ -1103,12 +1153,51 @@ def score_concepts(module_nodes, source_nodes, source_data, edges):
                 })
 
 
+def parse_state():
+    """Parse STATE.md for thesis tracker data."""
+    state_path = ROOT / "STATE.md"
+    if not state_path.exists():
+        return []
+
+    text = state_path.read_text()
+    post = frontmatter.loads(text)
+
+    theses = []
+    # Match each thesis block: ### T[N]: [Title] followed by metadata lines
+    pattern = re.compile(
+        r"^### (T\d+):\s+(.+)\n"
+        r"- \*\*Status\*\*:\s*(\w+)\n"
+        r"- \*\*Confidence\*\*:\s*(\w+)\n"
+        r"- \*\*Trend\*\*:\s*(\w+)\n"
+        r"- \*\*Evidence\*\*:\s*(.+)\n"
+        r"- \*\*Modules\*\*:\s*(.+)\n"
+        r"- \*\*Summary\*\*:\s*(.+)",
+        re.MULTILINE,
+    )
+
+    for m in pattern.finditer(text):
+        modules_raw = [s.strip() for s in m.group(7).split(",")]
+        theses.append({
+            "id": m.group(1),
+            "title": m.group(2).strip(),
+            "status": m.group(3).strip().lower(),
+            "confidence": m.group(4).strip().lower(),
+            "trend": m.group(5).strip().lower(),
+            "evidence": m.group(6).strip(),
+            "modules": modules_raw,
+            "summary": m.group(8).strip(),
+        })
+
+    return theses
+
+
 def build():
     source_nodes, source_data = parse_sources()
     module_nodes = parse_curriculum()
     synthesis = parse_synthesis()
     briefings = parse_briefings()
     research = parse_research()
+    theses = parse_state()
     reader = build_reader_content(briefings, synthesis, research)
 
     # Build tag nodes with counts
@@ -1148,6 +1237,7 @@ def build():
         "edges": edges,
         "synthesis": synthesis,
         "briefings": briefings,
+        "theses": theses,
         "reader": reader,
         "meta": {
             "generated": datetime.now(timezone.utc).isoformat(),
@@ -1166,6 +1256,7 @@ def build():
     print(f"  Synthesis: {len(synthesis)}")
     print(f"  Briefings: {len(briefings)}")
     print(f"  Research: {len(research)}")
+    print(f"  Theses: {len(theses)}")
     print(f"  Reader docs: {len(reader['documents'])}")
 
 

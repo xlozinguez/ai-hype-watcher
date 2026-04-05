@@ -225,6 +225,41 @@ footer {
   .sankey-node text { font-size: 9px; }
 }
 
+/* THESIS TRACKER */
+.theses-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 16px; padding: 20px; }
+.thesis-card {
+  background: var(--bg-card); border: 1px solid var(--border); border-radius: 10px;
+  padding: 16px; cursor: pointer; transition: all 0.2s;
+}
+.thesis-card:hover { border-color: var(--cyan); box-shadow: var(--glow-cyan); }
+.thesis-header { display: flex; align-items: center; gap: 8px; margin-bottom: 8px; }
+.thesis-id { font-size: 11px; color: var(--text-dim); font-weight: 600; }
+.thesis-title { font-size: 14px; font-weight: 600; flex: 1; }
+.thesis-status {
+  font-size: 10px; font-weight: 700; padding: 2px 8px; border-radius: 4px;
+  text-transform: uppercase; letter-spacing: 0.5px;
+}
+.thesis-status.confirmed { background: rgba(16,185,129,0.15); color: #10b981; }
+.thesis-status.evolved { background: rgba(6,182,212,0.15); color: #06b6d4; }
+.thesis-status.challenged { background: rgba(245,158,11,0.15); color: #f59e0b; }
+.thesis-status.debunked { background: rgba(239,68,68,0.15); color: #ef4444; }
+.thesis-meta { display: flex; gap: 12px; font-size: 11px; color: var(--text-dim); margin-bottom: 8px; }
+.thesis-trend { font-weight: 600; }
+.thesis-trend.strengthening { color: #10b981; }
+.thesis-trend.stable { color: var(--text-dim); }
+.thesis-trend.weakening { color: #ef4444; }
+.thesis-confidence { display: flex; gap: 2px; }
+.thesis-summary { font-size: 12px; color: var(--text-dim); line-height: 1.5; }
+.thesis-modules { display: flex; gap: 4px; margin-top: 8px; flex-wrap: wrap; }
+.thesis-mod-tag { font-size: 10px; padding: 1px 6px; border-radius: 3px; background: rgba(139,92,246,0.1); color: var(--purple); }
+.thesis-filter-bar { display: flex; gap: 8px; padding: 12px 20px; border-bottom: 1px solid var(--border); flex-wrap: wrap; }
+.thesis-filter-btn {
+  padding: 4px 12px; border-radius: 6px; font-size: 12px; font-weight: 500;
+  background: transparent; color: var(--text-dim); border: 1px solid var(--border);
+  cursor: pointer; transition: all 0.2s;
+}
+.thesis-filter-btn.active { color: var(--cyan); border-color: var(--cyan); background: rgba(6,182,212,0.08); }
+
 /* TAG CLOUD */
 .tag-cloud { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; justify-content: center; padding: 40px 20px; }
 .tag-cloud-item {
@@ -262,6 +297,7 @@ footer {
     <button class="view-tab" data-view="timeline">Timeline</button>
     <button class="view-tab active" data-view="curriculum">Curriculum</button>
     <button class="view-tab" data-view="tags">Tags</button>
+    <button class="view-tab" data-view="theses">Theses</button>
     <a class="view-tab" href="reader.html" style="text-decoration:none">Reader</a>
   </div>
 </header>
@@ -299,6 +335,7 @@ footer {
     <div class="view-container" id="timeline-view"></div>
     <div class="view-container" id="curriculum-view"></div>
     <div class="view-container" id="tags-view"></div>
+    <div class="view-container" id="theses-view"></div>
 
     <div class="detail-panel" id="detail-panel">
       <button class="detail-close" id="detail-close">&times;</button>
@@ -407,7 +444,7 @@ footer {
   Progress.updateStreak();
 
   // ── STATE ──
-  const validViews = ['graph', 'timeline', 'curriculum', 'tags'];
+  const validViews = ['graph', 'timeline', 'curriculum', 'tags', 'theses'];
   const initialHash = location.hash.slice(1);
   let currentView = validViews.includes(initialHash) ? initialHash : 'curriculum';
   let activeFilters = { tags: new Set(), modules: new Set(), creators: new Set() };
@@ -494,6 +531,7 @@ footer {
     if (currentView === 'timeline') renderTimeline();
     if (currentView === 'curriculum') renderCurriculum();
     if (currentView === 'tags') renderTags();
+    if (currentView === 'theses') renderTheses();
     history.replaceState(null, '', '#' + currentView);
   }
 
@@ -1059,6 +1097,66 @@ footer {
         detailContent.querySelector('.section-progress-fill').style.width = `${newSp.pct}%`;
         // Re-render sankey to reflect changes
         renderCurriculum();
+      });
+    });
+  }
+
+  // ── THESES VIEW ──
+  let thesisFilter = 'all';
+  function renderTheses() {
+    const container = document.getElementById('theses-view');
+    const theses = data.theses || [];
+
+    // Trend arrows and confidence dots
+    const trendArrow = t => t === 'strengthening' ? '\u2191' : t === 'weakening' ? '\u2193' : '\u2192';
+    const confDots = c => c === 'high' ? '\u25CF\u25CF\u25CF' : c === 'medium' ? '\u25CF\u25CF\u25CB' : '\u25CF\u25CB\u25CB';
+
+    const filtered = thesisFilter === 'all' ? theses : theses.filter(t => t.status === thesisFilter);
+
+    container.innerHTML = `
+      <div class="thesis-filter-bar">
+        ${['all','confirmed','evolved','challenged','debunked'].map(f =>
+          `<button class="thesis-filter-btn ${thesisFilter===f?'active':''}" data-filter="${f}">${f === 'all' ? 'All' : f.charAt(0).toUpperCase() + f.slice(1)} ${f === 'all' ? `(${theses.length})` : `(${theses.filter(t=>t.status===f).length})`}</button>`
+        ).join('')}
+      </div>
+      <div class="theses-grid">
+        ${filtered.map(t => `
+          <div class="thesis-card" data-thesis="${t.id}">
+            <div class="thesis-header">
+              <span class="thesis-id">${t.id}</span>
+              <span class="thesis-title">${t.title}</span>
+              <span class="thesis-status ${t.status}">${t.status}</span>
+            </div>
+            <div class="thesis-meta">
+              <span class="thesis-trend ${t.trend}">${trendArrow(t.trend)} ${t.trend}</span>
+              <span class="thesis-confidence" title="${t.confidence} confidence">${confDots(t.confidence)}</span>
+              <span>${t.evidence}</span>
+            </div>
+            <div class="thesis-summary">${t.summary}</div>
+            <div class="thesis-modules">${(t.modules || []).map(m => `<span class="thesis-mod-tag">Module ${m}</span>`).join('')}</div>
+          </div>
+        `).join('')}
+      </div>
+    `;
+
+    // Filter buttons
+    container.querySelectorAll('.thesis-filter-btn').forEach(btn => {
+      btn.addEventListener('click', () => { thesisFilter = btn.dataset.filter; renderTheses(); });
+    });
+
+    // Card click -> detail panel
+    container.querySelectorAll('.thesis-card').forEach(card => {
+      card.addEventListener('click', () => {
+        const t = (data.theses || []).find(th => th.id === card.dataset.thesis);
+        if (!t) return;
+        detailPanel.classList.add('open');
+        detailContent.innerHTML = `
+          <div class="detail-type" style="color:${t.status === 'confirmed' ? '#10b981' : t.status === 'evolved' ? '#06b6d4' : t.status === 'challenged' ? '#f59e0b' : '#ef4444'}">${t.id} \u00B7 ${t.status.toUpperCase()}</div>
+          <div class="detail-title">${t.title}</div>
+          <div class="detail-meta">${t.evidence} \u00B7 ${t.confidence} confidence \u00B7 ${t.trend}</div>
+          <p style="margin-top:12px;font-size:13px;line-height:1.6;color:var(--text)">${t.summary}</p>
+          <div style="margin-top:12px">${(t.modules || []).map(m => `<span class="thesis-mod-tag" style="font-size:12px;padding:3px 8px">Module ${m}</span>`).join(' ')}</div>
+        `;
       });
     });
   }

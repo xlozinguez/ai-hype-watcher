@@ -32,6 +32,10 @@ Parse the input to determine which module(s) to compile. Map module names to dir
 - `05` or `teams` → `curriculum/05-team-orchestration/`
 - `06` or `strategy` → `curriculum/06-strategy-and-economics/`
 
+### Step 2b: Cross-reference STATE.md
+
+Read `STATE.md`. Use thesis statuses to inform framing: confirmed theses should be framed as established patterns, evolved theses should use updated language reflecting current state, and challenged theses should include counterarguments.
+
 ### Step 3: Find tagged sources
 
 For each target module, search all files in `sources/` for frontmatter containing the module name in `curriculum_modules`. Read each matching source file.

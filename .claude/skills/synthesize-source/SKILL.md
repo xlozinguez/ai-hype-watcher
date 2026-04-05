@@ -144,6 +144,10 @@ Creator discusses the architectural breakdown ([MM:SS](https://www.youtube.com/w
 - Do not alter quote text — only add attribution links
 - If no raw transcript with timestamps is available, skip this step
 
+### Step 6c: Cross-reference STATE.md
+
+Read `STATE.md`. If the source confirms, evolves, or contradicts any tracked thesis, note it in the source's **Related Sources** section as: `- **State of Field**: Relates to [thesis title] ([status], [trend])`
+
 ### Step 7: Assign tags and curriculum modules
 
 Using the reference material:
