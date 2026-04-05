@@ -501,13 +501,17 @@ Each source is synthesized (not transcribed) into a structured note with frontma
 | [491](491-pastel-sketchbook-black-hat-llm-security.md) | Black-Hat LLMs: The End of the 20-Year Security Balance | Pastel Sketchbook | video | security, ai-landscape, agentic-coding, ai-safety |
 | [492](492-startup-hakk-claude-code-source-leak.md) | Claude's entire playbook is now public | STARTUP HAKK | video | claude-code, security, vibe-coding, ai-sdlc |
 | [493](493-unprompted-llm-zero-day-exploits.md) | Nicholas Carlini - Black-hat LLMs | [un]prompted 2026 | unprompted | video | security, ai-landscape, agentic-coding, claude-code |
+| [494](494-mlopscommunity-rpi-methodology-lessons.md) | Everything We Got Wrong About Research-Plan-Implement -  Dexter Horthy | MLOps.community | video | prompt-engineering, agentic-coding, context-engineering, meta-prompts, ai-sdlc |
 | [494](494-mlopscommunity-rpi-methodology-retrospective.md) | Everything We Got Wrong About Research-Plan-Implement -  Dexter Horthy | MLOps.community | video | prompt-engineering, agentic-coding, context-engineering, meta-prompts, ai-sdlc |
-| [495](495-venelin-valkov-local-gemma4-rag-build.md) | Local Gemma 4 with OpenCode & llama.cpp | Build a Local RAG with LangChain | 🔴 Live | Venelin Valkov | video | agentic-coding, context-engineering, prompt-engineering, infrastructure, ai-landscape |
+| [495](495-venelin-valkov-local-gemma4-rag-build.md) | Local Gemma 4 with OpenCode & llama.cpp | Build a Local RAG with LangChain | 🔴 Live | Venelin Valkov | video | agentic-coding, context-engineering, prompt-engineering, infrastructure |
 | [496](496-motherduck-ducklake-lakehouse-simplicity.md) | Data Lakehouses Were Never This Simple Until DuckLake | MotherDuck | video | infrastructure, enterprise-ai, ai-sdlc |
-| [497](497-azeem-azhar-autoresearch-knowledge-work.md) | How Karpathy’s autoresearch transforms knowledge work (practical guide) | Azeem Azhar | video | multi-agent, prompt-engineering, validation, ai-economics, enterprise-ai |
+| [497](497-azeem-azhar-autoresearch-knowledge-work.md) | How Karpathy’s autoresearch transforms knowledge work (practical guide) | Azeem Azhar | video | multi-agent, validation, prompt-engineering, ai-economics, enterprise-ai |
 | [498](498-the-primetime-ai-codebase-maintenance.md) | Maintaining a codebase with AI | The Standup | The PrimeTime | video | agentic-coding, ai-sdlc, multi-agent, specification |
+| [498](498-the-primetime-ai-open-source-maintenance.md) | Maintaining a codebase with AI | The Standup | The PrimeTime | video | agentic-coding, ai-sdlc, multi-agent, enterprise-ai |
+| [499](499-the-modern-coder-git-worktrees-parallel.md) | Git Worktrees: Work on all your ideas at once | The Modern Coder | video | multi-agent, agentic-coding, ai-sdlc |
 | [499](499-uma-abu-monorepo-at-scale.md) | Everyone Says Don’t Do This in Software… Big Tech Does It Anyway | Uma Abu | video | enterprise-ai, infrastructure, ai-sdlc |
 | [500](500-thestanduppod-production-legacy-code.md) | Code that shouldnt have made it to production | TheStandupPod | video | ai-sdlc, vibe-coding |
+| [500](500-uma-abu-monorepo-at-scale.md) | Everyone Says Don’t Do This in Software… Big Tech Does It Anyway | Uma Abu | video | enterprise-ai, ai-sdlc, infrastructure |
 | [501](501-dreams-of-code-tmux-terminal-workflow.md) | Tmux has forever changed the way I write code. | Dreams of Code | video | agent-teams, multi-agent, agentic-coding |
 | [502](502-barrys-economics-algorithmic-conditioning-creators.md) | I'm Being Trained and So Are You - Barry's Economics | Barry's Economics | video | ai-hype, ai-economics |
 | [503](503-ai-news-strategy-daily-nate-b-jones-outcome-agents-reality-check.md) | Wall Street Just Bet $285 Billion on AI Agents. The Best One Barely Works. | AI News & Strategy Daily | Nate B Jones | video | ai-hype, ai-landscape, enterprise-ai, context-engineering, multi-agent, capability-overhang |
@@ -519,3 +523,4 @@ Each source is synthesized (not transcribed) into a structured note with frontma
 | [509](509-the-atlantic-ai-workforce-impact.md) | What AI Is Actually Doing to the Workforce | The Atlantic | video | ai-hype, enterprise-ai, ai-economics, ai-landscape |
 | [510](510-eliot-prince-claude-usage-limits.md) | Why Claude Keeps Hitting Usage Limits (& how to fix it) | Eliot Prince | video | context-engineering, prompt-engineering, mcp |
 | [511](511-it-revolution-agent-adoption-monolith-problem.md) | Beyond the IDE: Toward Multi-Agent Orchestration | IT Revolution | video | agentic-coding, vibe-coding, capability-overhang, context-engineering, enterprise-ai, claude-code, ai-sdlc |
+| [512](512-lama-dev-fundamentals-over-hype.md) | Can’t We Just… Write Code? | Lama Dev | video | ai-hype, vibe-coding, ai-landscape |
