@@ -101,6 +101,28 @@ After ingesting a batch of sources, always:
 - **Index updates** (`sources/README.md`, `briefings/README.md`, `synthesis/README.md`): Always sequential in main agent — never delegate to subagents due to edit conflicts
 - **Post-ingest updates** (curriculum, briefing, synthesis docs): Run sequentially in main agent to avoid shared file conflicts
 
+## Bot Identity for Git Operations
+
+Before creating commits and PRs, activate the bot identity so PRs can be reviewed by the repo owner:
+
+```bash
+bash scripts/bot-auth.sh activate      # Switch to bot identity
+```
+
+This configures git author/committer and push credentials as the GitHub App bot. Commits will appear as authored by `ai-hype-watcher-bot[bot]`.
+
+For `gh` CLI commands (PR creation), prefix with the bot token:
+
+```bash
+GH_TOKEN=$(jq -r .token /tmp/.bot-token-cache) gh pr create --title "..." --body "..."
+```
+
+After work is done, restore human identity:
+
+```bash
+bash scripts/bot-auth.sh deactivate    # Restore human identity
+```
+
 ## Rules
 
 - Never fabricate quotes — only include quotes that appear in source material

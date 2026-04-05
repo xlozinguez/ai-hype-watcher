@@ -5,6 +5,8 @@
       "Edit",
       "Bash(git *)",
       "Bash(gh *)",
+      "Bash(bash scripts/*)",
+      "Bash(GH_TOKEN=* gh *)",
       "Bash(curl *)",
       "Bash(yt-dlp *)",
       "Bash(python3 *)",
