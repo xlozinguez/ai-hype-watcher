@@ -776,38 +776,37 @@ def build_reader_content(briefings, synthesis_entries, research_entries=None):
                     f'<h3>Autonomy Levels</h3></div>'
                     f'<p>{sec["text"]}</p>'
                     f'<div class="autonomy-bar">'
-                    f'<div class="autonomy-level al-0"><span class="al-tag">L0</span><span class="al-label">Assist</span><span class="al-desc">autocomplete</span></div>'
-                    f'<div class="autonomy-level al-1"><span class="al-tag">L1</span><span class="al-label">Draft</span><span class="al-desc">human reviews all</span></div>'
-                    f'<div class="autonomy-level al-2"><span class="al-tag">L2</span><span class="al-label">Gated</span><span class="al-desc">human gates each phase</span></div>'
-                    f'<div class="autonomy-level al-3"><span class="al-tag">L3</span><span class="al-label">Autonomous</span><span class="al-desc">human reviews outcome</span></div>'
-                    f'<div class="autonomy-level al-4"><span class="al-tag">L4</span><span class="al-label">Delegated</span><span class="al-desc">LLM reviews LLM</span></div>'
-                    f'<div class="autonomy-level al-5"><span class="al-tag">L5</span><span class="al-label">Overnight</span><span class="al-desc">batch dispatch</span></div>'
+                    f'<div class="autonomy-level al-0"><span class="al-tag">L0</span><span class="al-content"><span class="al-label">Assist</span><span class="al-desc">Autocomplete and inline suggestions. Human is the primary author, LLM fills in tokens.</span></span></div>'
+                    f'<div class="autonomy-level al-1"><span class="al-tag">L1</span><span class="al-content"><span class="al-label">Draft</span><span class="al-desc">LLM produces a complete first draft. Human reviews everything before it moves forward.</span></span></div>'
+                    f'<div class="autonomy-level al-2"><span class="al-tag">L2</span><span class="al-content"><span class="al-label">Gated</span><span class="al-desc">Research → Plan → Implement loop with human review gates between phases. Sweet spot for medium-risk work.</span></span></div>'
+                    f'<div class="autonomy-level al-3"><span class="al-tag">L3</span><span class="al-content"><span class="al-label">Autonomous</span><span class="al-desc">LLM executes end-to-end. Human reviews only the final outcome. Requires strong test coverage as the completion signal.</span></span></div>'
+                    f'<div class="autonomy-level al-4"><span class="al-tag">L4</span><span class="al-content"><span class="al-label">Delegated</span><span class="al-desc">One LLM implements, another LLM reviews. Human spot-checks batches of completed work.</span></span></div>'
+                    f'<div class="autonomy-level al-5"><span class="al-tag">L5</span><span class="al-content"><span class="al-label">Overnight</span><span class="al-desc">Batch dispatch at end of day. Review N completed branches next morning. Requires months of L2-L4 trust-building.</span></span></div>'
                     f'</div></div>'
                 )
                 continue
 
             if heading == "Phase-by-Phase Breakdown":
                 phases = [
-                    ("1", "Discovery", "Research synthesis", "L1", "blue"),
-                    ("2", "Specification", "3-Agent Ticket Capture", "L2", "purple"),
-                    ("3", "Planning", "Agent-proposed plan", "L2", "purple"),
-                    ("4", "Implementation", "R→P→I per ticket", "L2-4", "green"),
-                    ("5", "Testing", "Tester Agent", "L3", "green"),
-                    ("6", "Code Review", "Agent pre-review", "L1-3", "blue"),
-                    ("7", "Deployment", "Checklist validation", "L2", "purple"),
-                    ("8", "Monitoring", "Anomaly correlation", "L3", "green"),
+                    ("1", "Discovery", "Agent synthesizes internal context and external evidence in minutes", "Catches: \"we already tried this\"", "L1", "blue"),
+                    ("2", "Specification", "Three agents stress-test the spec: codebase reality, validation questions, vision alignment", "Catches: ambiguity and misalignment before sprint starts", "L2", "purple"),
+                    ("3", "Planning", "Agent reads spec + codebase, proposes file-level plan with dependency order", "Catches: \"this touches 3 services we didn't expect\"", "L2", "purple"),
+                    ("4", "Implementation", "Research → Plan → Implement loop per ticket with test validation", "Catches: spec drift and test failures before code review", "L2-4", "green"),
+                    ("5", "Testing", "Tester Agent generates cases from spec (not implementation) to avoid confirmation bias", "Catches: missed edge cases and coverage gaps", "L3", "green"),
+                    ("6", "Code Review", "Agent pre-review: anti-patterns, spec alignment, security scans", "Catches: mechanical issues so reviewer focuses on judgment", "L1-3", "blue"),
+                    ("7", "Deployment", "Agent validates deployment checklist: CI, dependencies, feature flags, rollback", "Catches: missing config or dependency updates", "L2", "purple"),
+                    ("8", "Monitoring", "Agent correlates error spikes with deployment changes within first hour", "Catches: anomalies before customers complain", "L3", "green"),
                 ]
                 flow_html = '<div class="research-flow">'
-                for i, (num, name, fast_loop, level, clr) in enumerate(phases):
+                for i, (num, name, desc, catches, level, clr) in enumerate(phases):
                     flow_html += (
                         f'<div class="flow-step">'
                         f'<span class="flow-num {clr}">{num}</span>'
-                        f'<span class="flow-label"><strong>{name}</strong>'
-                        f'<small>{fast_loop} · {level}</small></span>'
+                        f'<span class="flow-label"><strong>{name}</strong> <small class="flow-level">{level}</small>'
+                        f'<small>{desc}</small>'
+                        f'<small class="flow-catches">{catches}</small></span>'
                         f'</div>'
                     )
-                    if i < len(phases) - 1:
-                        flow_html += '<div class="flow-arrow">↓</div>'
                 flow_html += '</div>'
                 body_parts.append(
                     f'<div class="research-section">'
