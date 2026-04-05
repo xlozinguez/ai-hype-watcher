@@ -721,15 +721,17 @@ def build_reader_content(briefings, synthesis_entries, research_entries=None):
                     para = " ".join(current_lines).strip()
                     sections.append({
                         "heading": current_heading,
-                        "text": strip_markdown(first_n_sentences(para, 2)) if para else "",
+                        "text": strip_markdown(first_n_sentences(para, 1)) if para else "",
                     })
                 current_heading = h2.group(1).strip()
                 current_lines = []
                 continue
 
             if current_heading and line.strip() and not line.strip().startswith("#"):
-                if line.strip() != "---":
-                    current_lines.append(line.strip())
+                # Skip markdown table rows and horizontal rules
+                if line.strip() == "---" or line.strip().startswith("|") or line.strip().startswith("> **"):
+                    continue
+                current_lines.append(line.strip())
 
         if current_heading:
             para = " ".join(current_lines).strip()
@@ -759,8 +761,10 @@ def build_reader_content(briefings, synthesis_entries, research_entries=None):
             icon, color = section_icons.get(heading, ("📄", "cyan"))
 
             if heading == "Overview":
+                # Shorter overview for the card
+                overview_short = first_n_sentences(sec["text"], 2)
                 body_parts.append(
-                    f'<div class="research-overview">{sec["text"]}</div>'
+                    f'<div class="research-overview">{overview_short}</div>'
                 )
                 continue
 
