@@ -43,6 +43,10 @@ Read `.claude/skills/daily-briefing/REFERENCE.md` for briefing guidelines and to
 
 Read `sources/README.md` to check if any of the gathered content overlaps with existing source notes. Note connections and new perspectives.
 
+### Step 4b: Cross-reference STATE.md
+
+Read `STATE.md`. For headlines that relate to tracked theses, add a parenthetical: `(Relates to: [thesis title] [trend arrow])`
+
 ### Step 5: Synthesize the briefing
 
 Write a briefing covering:

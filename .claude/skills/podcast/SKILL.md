@@ -44,6 +44,10 @@ Read `podcast/_config.yaml` for show metadata and the next episode number.
 
 Read `podcast/_template-script.md` for the expected script format.
 
+### Step 4b: Cross-reference STATE.md
+
+Read `STATE.md`. When topics overlap with tracked theses, the hosts should reference current status — e.g., "this is now a confirmed pattern" or "new evidence is challenging this idea."
+
 ### Step 5: Generate the dialogue script
 
 Using the content bundle from Step 3 and the guidelines from REFERENCE.md, write a two-host dialogue script:
