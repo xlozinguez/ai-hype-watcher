@@ -7,6 +7,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <script src="https://d3js.org/d3.v7.min.js"></script>
+<script src="https://unpkg.com/d3-sankey@0.12.3/dist/d3-sankey.min.js"></script>
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 :root {
@@ -157,6 +158,68 @@ footer {
 .curr-dots { display: flex; flex-wrap: wrap; gap: 4px; }
 .curr-dot { width: 8px; height: 8px; border-radius: 50%; }
 
+/* SANKEY CURRICULUM */
+.sankey-wrapper { display: flex; flex-direction: column; height: 100%; overflow: hidden; }
+.sankey-stats {
+  display: flex; align-items: center; gap: 16px; padding: 12px 20px;
+  border-bottom: 1px solid var(--border); flex-shrink: 0; flex-wrap: wrap;
+}
+.sankey-stats .stat {
+  font-size: 13px; font-weight: 500; color: var(--text-dim);
+  display: flex; align-items: center; gap: 6px;
+}
+.sankey-stats .stat-value { color: var(--text); font-weight: 600; }
+.sankey-stats .stat-level { color: var(--purple); }
+.sankey-stats .stat-xp { color: var(--cyan); }
+.sankey-stats .stat-streak { color: var(--amber); }
+.sankey-stats .xp-bar {
+  width: 120px; height: 6px; background: var(--border); border-radius: 3px; overflow: hidden;
+}
+.sankey-stats .xp-bar-fill { height: 100%; background: var(--cyan); border-radius: 3px; transition: width 0.4s; }
+.sankey-container { flex: 1; overflow: auto; padding: 20px; display: flex; justify-content: center; align-items: flex-start; }
+.sankey-container svg { max-width: 100%; }
+.sankey-node rect { cursor: pointer; transition: opacity 0.2s; rx: 4; ry: 4; }
+.sankey-node rect:hover { opacity: 0.85; }
+.sankey-node text { font-size: 11px; fill: var(--text); pointer-events: none; }
+.sankey-node .node-count { font-size: 10px; fill: var(--text-dim); }
+.sankey-node .node-progress { font-size: 10px; fill: var(--green); font-weight: 600; }
+.sankey-link path { fill: none; stroke-opacity: 0.25; transition: stroke-opacity 0.2s; }
+.sankey-link path:hover { stroke-opacity: 0.5; }
+.sankey-dep-arrow { stroke: var(--purple); stroke-opacity: 0.3; stroke-dasharray: 6 4; fill: none; stroke-width: 1.5; }
+.sankey-dep-head { fill: var(--purple); opacity: 0.3; }
+.concept-list { display: flex; flex-direction: column; gap: 2px; margin-top: 12px; }
+.concept-item {
+  display: flex; align-items: flex-start; gap: 10px; padding: 8px 10px;
+  border-radius: 6px; cursor: pointer; transition: background 0.15s;
+}
+.concept-item:hover { background: var(--bg-hover); }
+.concept-item input[type="checkbox"] {
+  margin-top: 2px; flex-shrink: 0; accent-color: var(--cyan);
+  width: 16px; height: 16px; cursor: pointer;
+}
+.concept-item.completed .concept-title { color: var(--text-dim); text-decoration: line-through; }
+.concept-title { font-size: 13px; line-height: 1.4; }
+.section-progress { margin-top: 8px; margin-bottom: 4px; }
+.section-progress-bar {
+  width: 100%; height: 4px; background: var(--border); border-radius: 2px; overflow: hidden; margin-top: 4px;
+}
+.section-progress-fill { height: 100%; border-radius: 2px; transition: width 0.3s; }
+.module-sections-list { display: flex; flex-direction: column; gap: 12px; margin-top: 16px; }
+.module-section-card {
+  padding: 10px 12px; border: 1px solid var(--border); border-radius: 8px;
+  cursor: pointer; transition: all 0.2s;
+}
+.module-section-card:hover { border-color: var(--cyan); background: var(--bg-hover); }
+.module-section-card h4 { font-size: 13px; margin-bottom: 4px; }
+.module-section-card .sec-meta { font-size: 11px; color: var(--text-dim); }
+@media (max-width: 768px) {
+  .sankey-stats { gap: 8px; padding: 8px 12px; }
+  .sankey-stats .stat { font-size: 11px; }
+  .sankey-stats .xp-bar { width: 80px; }
+  .sankey-container { padding: 12px; overflow-x: auto; }
+  .sankey-node text { font-size: 9px; }
+}
+
 /* TAG CLOUD */
 .tag-cloud { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; justify-content: center; padding: 40px 20px; }
 .tag-cloud-item {
@@ -190,9 +253,9 @@ footer {
 <header>
   <h1><span>AI</span> Hype Watcher</h1>
   <div class="view-tabs">
-    <button class="view-tab active" data-view="graph">Graph</button>
+    <button class="view-tab" data-view="graph">Graph</button>
     <button class="view-tab" data-view="timeline">Timeline</button>
-    <button class="view-tab" data-view="curriculum">Curriculum</button>
+    <button class="view-tab active" data-view="curriculum">Curriculum</button>
     <button class="view-tab" data-view="tags">Tags</button>
     <a class="view-tab" href="reader.html" style="text-decoration:none">Reader</a>
   </div>
@@ -259,10 +322,89 @@ footer {
   document.getElementById('footer').textContent =
     `${data.meta.source_count} sources · ${data.meta.tag_count} tags · ${data.nodes.filter(n=>n.type==='module').length} modules · ${data.synthesis.length} synthesis docs`;
 
+  // ── PROGRESS SYSTEM ──
+  const Progress = (() => {
+    const KEY = 'hypeWatcher_progress';
+    const XP_MAP = { 'core-concepts': 10, 'patterns': 15, 'pitfalls': 5, 'exercises': 25 };
+    const LEVELS = [
+      { xp: 0, title: 'Observer' }, { xp: 100, title: 'Student' },
+      { xp: 300, title: 'Practitioner' }, { xp: 600, title: 'Specialist' },
+      { xp: 1000, title: 'Architect' }, { xp: 2000, title: 'Hype Watchdog' },
+    ];
+    function load() {
+      try { return JSON.parse(localStorage.getItem(KEY)) || defaults(); }
+      catch { return defaults(); }
+    }
+    function defaults() { return { version: 1, streakDays: 0, streakLastDate: '', modules: {} }; }
+    function save(state) { localStorage.setItem(KEY, JSON.stringify(state)); }
+    function isComplete(moduleId, sectionId, itemId) {
+      const s = load();
+      return !!(s.modules[moduleId]?.[sectionId]?.[itemId]);
+    }
+    function toggle(moduleId, sectionId, itemId) {
+      const s = load();
+      if (!s.modules[moduleId]) s.modules[moduleId] = {};
+      if (!s.modules[moduleId][sectionId]) s.modules[moduleId][sectionId] = {};
+      s.modules[moduleId][sectionId][itemId] = !s.modules[moduleId][sectionId][itemId];
+      if (!s.modules[moduleId][sectionId][itemId]) delete s.modules[moduleId][sectionId][itemId];
+      save(s);
+    }
+    function getSectionProgress(moduleId, sectionId, items) {
+      const s = load();
+      const completed = items.filter(i => s.modules[moduleId]?.[sectionId]?.[i.id]).length;
+      return { completed, total: items.length, pct: items.length ? Math.round(completed / items.length * 100) : 0 };
+    }
+    function getModuleProgress(mod) {
+      const sections = mod.sections || [];
+      let completed = 0, total = 0;
+      sections.forEach(sec => {
+        const p = getSectionProgress(mod.id.replace('mod:', ''), sec.id, sec.items);
+        completed += p.completed; total += p.total;
+      });
+      return { completed, total, pct: total ? Math.round(completed / total * 100) : 0 };
+    }
+    function getOverall(modules) {
+      let completed = 0, total = 0, xp = 0;
+      const s = load();
+      modules.forEach(mod => {
+        const modId = mod.id.replace('mod:', '');
+        (mod.sections || []).forEach(sec => {
+          sec.items.forEach(item => {
+            total++;
+            if (s.modules[modId]?.[sec.id]?.[item.id]) {
+              completed++;
+              xp += XP_MAP[sec.id] || 10;
+            }
+          });
+        });
+      });
+      // Streak bonus
+      xp += (s.streakDays || 0) * 10;
+      const level = [...LEVELS].reverse().find(l => xp >= l.xp) || LEVELS[0];
+      const nextLevel = LEVELS[LEVELS.indexOf(level) + 1];
+      return { completed, total, pct: total ? Math.round(completed / total * 100) : 0, xp, level, nextLevel, streakDays: s.streakDays || 0 };
+    }
+    function updateStreak() {
+      const s = load();
+      const today = new Date().toISOString().slice(0, 10);
+      if (s.streakLastDate === today) return;
+      const yesterday = new Date(Date.now() - 86400000).toISOString().slice(0, 10);
+      if (s.streakLastDate === yesterday) {
+        s.streakDays = (s.streakDays || 0) + 1;
+      } else if (s.streakLastDate !== today) {
+        s.streakDays = 1;
+      }
+      s.streakLastDate = today;
+      save(s);
+    }
+    return { load, isComplete, toggle, getSectionProgress, getModuleProgress, getOverall, updateStreak, LEVELS };
+  })();
+  Progress.updateStreak();
+
   // ── STATE ──
   const validViews = ['graph', 'timeline', 'curriculum', 'tags'];
   const initialHash = location.hash.slice(1);
-  let currentView = validViews.includes(initialHash) ? initialHash : 'graph';
+  let currentView = validViews.includes(initialHash) ? initialHash : 'curriculum';
   let activeFilters = { tags: new Set(), modules: new Set(), creators: new Set() };
   let edgeVisibility = { related: true, curriculum: true, tag: false };
   let searchQuery = '';
@@ -343,6 +485,7 @@ footer {
     if (currentView !== 'graph') {
       document.getElementById(currentView + '-view').classList.add('active');
     }
+    if (currentView === 'graph') renderGraph();
     if (currentView === 'timeline') renderTimeline();
     if (currentView === 'curriculum') renderCurriculum();
     if (currentView === 'tags') renderTags();
@@ -430,12 +573,10 @@ footer {
   const zoom = d3.zoom().scaleExtent([0.2, 5]).on('zoom', e => g.attr('transform', e.transform));
   svg.call(zoom);
 
-  // Prepare simulation data
-  const simNodes = data.nodes.map(n => ({...n}));
-  const simNodeMap = new Map(simNodes.map(n => [n.id, n]));
-  const simEdges = data.edges.map(e => ({ ...e, source: e.source, target: e.target }));
+  // ── FOCUS GRAPH (one node + neighbors at a time) ──
+  let focusNodeId = null; // null = overview (modules + tags only)
+  const allNodeData = new Map(data.nodes.map(n => [n.id, {...n}]));
 
-  // Node sizing
   const connectionCount = new Map();
   data.edges.forEach(e => {
     connectionCount.set(e.source, (connectionCount.get(e.source)||0) + 1);
@@ -447,157 +588,135 @@ footer {
     return 3 + Math.sqrt(connectionCount.get(n.id) || 1) * 1.8;
   }
 
-  const simulation = d3.forceSimulation(simNodes)
-    .force('link', d3.forceLink(simEdges).id(d => d.id).distance(e => e.type === 'related' ? 60 : e.type === 'curriculum' ? 80 : 100).strength(e => e.type === 'related' ? 0.4 : e.type === 'curriculum' ? 0.2 : 0.05))
-    .force('charge', d3.forceManyBody().strength(-120))
-    .force('center', d3.forceCenter(width / 2, height / 2))
-    .force('collision', d3.forceCollide().radius(d => nodeRadius(d) + 2))
-    .alphaDecay(0.02);
-
-  // Consensus hulls
-  const hullGroup = g.append('g').attr('class', 'hulls');
   const linkGroup = g.append('g').attr('class', 'links');
   const nodeGroup = g.append('g').attr('class', 'nodes');
   const labelGroup = g.append('g').attr('class', 'labels');
 
-  const linkElements = linkGroup.selectAll('line')
-    .data(simEdges).enter().append('line')
-    .attr('class', d => `edge-line edge-${d.type}`)
-    .style('display', d => edgeVisibility[d.type] ? null : 'none');
+  let simulation = null;
 
-  const nodeElements = nodeGroup.selectAll('g')
-    .data(simNodes).enter().append('g')
-    .attr('cursor', 'pointer')
-    .call(d3.drag()
-      .on('start', (e, d) => { if (!e.active) simulation.alphaTarget(0.1).restart(); d.fx = d.x; d.fy = d.y; })
-      .on('drag', (e, d) => { d.fx = e.x; d.fy = e.y; })
-      .on('end', (e, d) => { if (!e.active) simulation.alphaTarget(0); d.fx = null; d.fy = null; })
-    );
+  function getFocusData() {
+    let visibleIds;
+    let visibleEdges;
 
-  // Source circles
-  nodeElements.filter(d => d.type === 'source').append('circle')
-    .attr('r', d => nodeRadius(d))
-    .attr('class', 'node-source')
-    .style('filter', 'drop-shadow(0 0 4px rgba(6,182,212,0.3))');
+    if (!focusNodeId) {
+      // Overview: modules + tags only (no sources)
+      visibleIds = new Set(data.nodes.filter(n => n.type === 'module' || n.type === 'tag').map(n => n.id));
+      visibleEdges = data.edges.filter(e => visibleIds.has(e.source) && visibleIds.has(e.target));
+    } else {
+      // Focus: the clicked node + top N direct neighbors (capped to stay performant)
+      const MAX_NEIGHBORS = 40;
+      visibleIds = new Set([focusNodeId]);
+      const neighbors = (edgeIndex.get(focusNodeId) || [])
+        .filter(({edge}) => edgeVisibility[edge.type])
+        .map(({other}) => ({ id: other, connections: connectionCount.get(other) || 0 }))
+        .sort((a, b) => b.connections - a.connections)
+        .slice(0, MAX_NEIGHBORS);
+      neighbors.forEach(({id}) => visibleIds.add(id));
+      visibleEdges = data.edges.filter(e => visibleIds.has(e.source) && visibleIds.has(e.target) && edgeVisibility[e.type]);
+    }
 
-  // Tag rounded rects
-  nodeElements.filter(d => d.type === 'tag').append('rect')
-    .attr('rx', 4).attr('ry', 4)
-    .attr('width', d => nodeRadius(d) * 2).attr('height', d => nodeRadius(d) * 1.4)
-    .attr('x', d => -nodeRadius(d)).attr('y', d => -nodeRadius(d) * 0.7)
-    .attr('class', 'node-tag')
-    .style('filter', 'drop-shadow(0 0 4px rgba(245,158,11,0.3))');
+    // Apply sidebar filters
+    const hasFilter = activeFilters.tags.size > 0 || activeFilters.modules.size > 0 || activeFilters.creators.size > 0 || searchQuery;
+    const nodes = [...visibleIds].map(id => allNodeData.get(id)).filter(Boolean).filter(n => !hasFilter || isNodeVisible(n));
+    const nodeIdSet = new Set(nodes.map(n => n.id));
+    const edges = visibleEdges.filter(e => nodeIdSet.has(e.source) && nodeIdSet.has(e.target));
 
-  // Module circles
-  nodeElements.filter(d => d.type === 'module').append('circle')
-    .attr('r', d => nodeRadius(d))
-    .attr('class', 'node-module')
-    .style('filter', 'drop-shadow(0 0 6px rgba(139,92,246,0.4))');
-
-  // Labels for tags and modules
-  const labels = labelGroup.selectAll('text')
-    .data(simNodes.filter(n => n.type !== 'source')).enter().append('text')
-    .attr('class', 'node-label')
-    .attr('dy', d => d.type === 'module' ? nodeRadius(d) + 14 : nodeRadius(d) + 12)
-    .text(d => d.label || '');
-
-  // Hover and click
-  nodeElements.on('mouseover', (evt, d) => {
-    const html = d.type === 'source'
-      ? `<div class="tt-title">[${d.id}] ${d.title}</div><div class="tt-meta">${d.creator} · ${d.date}</div>`
-      : `<div class="tt-title">${d.label}</div><div class="tt-meta">${d.type === 'tag' ? d.count + ' sources' : 'Module ' + d.order}</div>`;
-    showTooltip(evt, html);
-    highlightNeighborhood(d);
-  }).on('mouseout', () => {
-    hideTooltip();
-    clearHighlight();
-  }).on('click', (evt, d) => {
-    evt.stopPropagation();
-    showDetail(d);
-  });
-
-  svg.on('click', () => detailPanel.classList.remove('open'));
-
-  function highlightNeighborhood(d) {
-    const neighbors = new Set([d.id]);
-    (edgeIndex.get(d.id) || []).forEach(({other}) => neighbors.add(other));
-    nodeElements.classed('node-dimmed', n => !neighbors.has(n.id));
-    linkElements.classed('edge-dimmed', e => {
-      const sid = typeof e.source === 'object' ? e.source.id : e.source;
-      const tid = typeof e.target === 'object' ? e.target.id : e.target;
-      return !neighbors.has(sid) || !neighbors.has(tid);
-    });
-    labels.style('opacity', n => neighbors.has(n.id) ? 1 : 0.05);
-  }
-  function clearHighlight() {
-    nodeElements.classed('node-dimmed', false);
-    linkElements.classed('edge-dimmed', false);
-    labels.style('opacity', 1);
+    return { nodes: nodes.map(n => ({...n})), edges: edges.map(e => ({...e})) };
   }
 
-  // Consensus hulls
-  function updateHulls() {
-    const tagSources = new Map(); // tagId -> [simNode]
-    data.edges.filter(e => e.type === 'tag').forEach(e => {
-      const sn = simNodeMap.get(typeof e.source === 'object' ? e.source.id : e.source);
-      if (!sn) return;
-      const tid = typeof e.target === 'object' ? e.target.id : e.target;
-      if (!tagSources.has(tid)) tagSources.set(tid, []);
-      tagSources.get(tid).push(sn);
-    });
-    const hullData = [];
-    tagSources.forEach((nodes, tagId) => {
-      if (nodes.length >= 5) {
-        const points = nodes.map(n => [n.x, n.y]);
-        const hull = d3.polygonHull(points);
-        if (hull) {
-          const tagNode = nodeMap.get(tagId);
-          hullData.push({ hull, count: nodes.length, label: tagNode ? tagNode.label : '' });
-        }
+  function renderGraph() {
+    // Clear previous
+    linkGroup.selectAll('*').remove();
+    nodeGroup.selectAll('*').remove();
+    labelGroup.selectAll('*').remove();
+    if (simulation) simulation.stop();
+
+    const { nodes: gNodes, edges: gEdges } = getFocusData();
+    if (!gNodes.length) return;
+
+    simulation = d3.forceSimulation(gNodes)
+      .force('link', d3.forceLink(gEdges).id(d => d.id).distance(e => e.type === 'related' ? 60 : e.type === 'curriculum' ? 80 : 100).strength(e => e.type === 'related' ? 0.4 : e.type === 'curriculum' ? 0.2 : 0.05))
+      .force('charge', d3.forceManyBody().strength(d => d.id === focusNodeId ? -300 : -120))
+      .force('center', d3.forceCenter(width / 2, height / 2))
+      .force('collision', d3.forceCollide().radius(d => nodeRadius(d) + 3))
+      .alphaDecay(0.03);
+
+    const links = linkGroup.selectAll('line').data(gEdges).enter().append('line')
+      .attr('class', d => `edge-line edge-${d.type}`);
+
+    const nodes = nodeGroup.selectAll('g').data(gNodes).enter().append('g')
+      .attr('cursor', 'pointer')
+      .call(d3.drag()
+        .on('start', (e, d) => { if (!e.active) simulation.alphaTarget(0.1).restart(); d.fx = d.x; d.fy = d.y; })
+        .on('drag', (e, d) => { d.fx = e.x; d.fy = e.y; })
+        .on('end', (e, d) => { if (!e.active) simulation.alphaTarget(0); d.fx = null; d.fy = null; })
+      );
+
+    nodes.filter(d => d.type === 'source').append('circle')
+      .attr('r', d => nodeRadius(d)).attr('class', 'node-source')
+      .style('filter', 'drop-shadow(0 0 4px rgba(6,182,212,0.3))');
+    nodes.filter(d => d.type === 'tag').append('rect')
+      .attr('rx', 4).attr('ry', 4)
+      .attr('width', d => nodeRadius(d) * 2).attr('height', d => nodeRadius(d) * 1.4)
+      .attr('x', d => -nodeRadius(d)).attr('y', d => -nodeRadius(d) * 0.7)
+      .attr('class', 'node-tag')
+      .style('filter', 'drop-shadow(0 0 4px rgba(245,158,11,0.3))');
+    nodes.filter(d => d.type === 'module').append('circle')
+      .attr('r', d => nodeRadius(d)).attr('class', 'node-module')
+      .style('filter', 'drop-shadow(0 0 6px rgba(139,92,246,0.4))');
+
+    // Highlight the focus node
+    nodes.filter(d => d.id === focusNodeId).select('circle, rect')
+      .attr('stroke', 'var(--text)').attr('stroke-width', 2);
+
+    const lbls = labelGroup.selectAll('text')
+      .data(gNodes.filter(n => n.type !== 'source' || n.id === focusNodeId)).enter().append('text')
+      .attr('class', 'node-label')
+      .attr('dy', d => nodeRadius(d) + 14)
+      .text(d => d.type === 'source' ? `[${d.id}] ${(d.title||'').slice(0,30)}` : d.label || '');
+
+    const gNodeMap = new Map(gNodes.map(n => [n.id, n]));
+
+    nodes.on('mouseover', (evt, d) => {
+      const html = d.type === 'source'
+        ? `<div class="tt-title">[${d.id}] ${d.title}</div><div class="tt-meta">${d.creator} · ${d.date}</div><div class="tt-meta" style="color:var(--cyan)">Click to focus</div>`
+        : `<div class="tt-title">${d.label}</div><div class="tt-meta">${d.type === 'tag' ? d.count + ' sources' : 'Module ' + d.order}</div><div class="tt-meta" style="color:var(--cyan)">Click to focus</div>`;
+      showTooltip(evt, html);
+    }).on('mouseout', hideTooltip)
+    .on('click', (evt, d) => {
+      evt.stopPropagation();
+      if (d.id === focusNodeId) {
+        // Already focused — show detail panel
+        showDetail(d);
+      } else {
+        // Focus on this node
+        focusNodeId = d.id;
+        showDetail(d);
+        renderGraph();
       }
     });
-    const hulls = hullGroup.selectAll('path').data(hullData);
-    hulls.exit().remove();
-    hulls.enter().append('path').attr('class', 'hull')
-      .merge(hulls)
-      .attr('d', d => 'M' + d.hull.map(p => p.join(',')).join('L') + 'Z')
-      .attr('fill', 'var(--cyan)')
-      .attr('stroke', 'var(--cyan)')
-      .attr('fill-opacity', d => Math.min(0.03 + d.count * 0.005, 0.12))
-      .attr('stroke-opacity', d => Math.min(0.1 + d.count * 0.01, 0.3));
+
+    simulation.on('tick', () => {
+      links.attr('x1', d => d.source.x).attr('y1', d => d.source.y)
+        .attr('x2', d => d.target.x).attr('y2', d => d.target.y);
+      nodes.attr('transform', d => `translate(${d.x},${d.y})`);
+      lbls.attr('x', d => gNodeMap.get(d.id)?.x || 0).attr('y', d => gNodeMap.get(d.id)?.y || 0);
+    });
   }
 
-  simulation.on('tick', () => {
-    linkElements
-      .attr('x1', d => d.source.x).attr('y1', d => d.source.y)
-      .attr('x2', d => d.target.x).attr('y2', d => d.target.y);
-    nodeElements.attr('transform', d => `translate(${d.x},${d.y})`);
-    labels.attr('x', d => simNodeMap.get(d.id)?.x || 0).attr('y', d => simNodeMap.get(d.id)?.y || 0);
-    if (simulation.alpha() > 0.05) updateHulls();
+  // Click canvas background → zoom out to overview
+  svg.on('click', () => {
+    if (focusNodeId) {
+      focusNodeId = null;
+      detailPanel.classList.remove('open');
+      renderGraph();
+    } else {
+      detailPanel.classList.remove('open');
+    }
   });
 
-  // Apply filters to graph
   function applyFilters() {
-    const hasFilter = activeFilters.tags.size > 0 || activeFilters.modules.size > 0 || activeFilters.creators.size > 0 || searchQuery;
-
-    nodeElements.transition().duration(300).style('opacity', d => {
-      if (!hasFilter) return 1;
-      return isNodeVisible(d) ? 1 : 0.06;
-    });
-    labels.transition().duration(300).style('opacity', d => {
-      if (!hasFilter) return 1;
-      return isNodeVisible(d) ? 1 : 0.06;
-    });
-    linkElements
-      .style('display', d => edgeVisibility[d.type] ? null : 'none')
-      .transition().duration(300).style('opacity', d => {
-        if (!hasFilter) return null;
-        const sid = typeof d.source === 'object' ? d.source.id : d.source;
-        const tid = typeof d.target === 'object' ? d.target.id : d.target;
-        const sn = nodeMap.get(sid);
-        const tn = nodeMap.get(tid);
-        return (sn && isNodeVisible(sn) && tn && isNodeVisible(tn)) ? null : 0.02;
-      });
+    if (currentView === 'graph') renderGraph();
   }
 
   // ── TIMELINE VIEW ──
@@ -665,35 +784,269 @@ footer {
       .text('Each row = one date · Dots = sources · Green highlight = synthesis published');
   }
 
-  // ── CURRICULUM VIEW ──
+  // ── CURRICULUM VIEW (SANKEY) ──
+  const SEC_COLORS = { 'core-concepts': '#06b6d4', 'patterns': '#f59e0b', 'pitfalls': '#ef4444', 'exercises': '#10b981' };
+  const MOD_COLOR = '#8b5cf6';
+
   function renderCurriculum() {
     const container = document.getElementById('curriculum-view');
-    container.innerHTML = '<div class="curriculum-grid"></div>';
-    const grid = container.querySelector('.curriculum-grid');
-    const modules = data.nodes.filter(n => n.type === 'module').sort((a,b) => a.order - b.order);
+    const modules = data.nodes.filter(n => n.type === 'module').sort((a, b) => a.order - b.order);
+
+    // Fallback if d3-sankey not loaded
+    if (typeof d3.sankey !== 'function') {
+      container.innerHTML = '<div style="padding:40px;color:var(--text-dim);text-align:center;">Sankey library not loaded. Please refresh.</div>';
+      return;
+    }
+
+    const overall = Progress.getOverall(modules);
+
+    // Stats bar
+    const xpPct = overall.nextLevel ? Math.min(100, Math.round((overall.xp - overall.level.xp) / (overall.nextLevel.xp - overall.level.xp) * 100)) : 100;
+    container.innerHTML = `
+      <div class="sankey-wrapper">
+        <div class="sankey-stats">
+          <div class="stat"><span class="stat-level">${overall.level.title}</span></div>
+          <div class="stat"><span class="stat-xp">${overall.xp} XP</span>
+            <div class="xp-bar"><div class="xp-bar-fill" style="width:${xpPct}%"></div></div>
+          </div>
+          <div class="stat"><span class="stat-value">${overall.pct}%</span> complete</div>
+          ${overall.streakDays > 0 ? `<div class="stat"><span class="stat-streak">${overall.streakDays}d streak</span></div>` : ''}
+        </div>
+        <div class="sankey-container" id="sankey-container"></div>
+      </div>
+    `;
+
+    const sankeyEl = document.getElementById('sankey-container');
+    const rect = sankeyEl.getBoundingClientRect();
+    const width = Math.max(700, rect.width - 40);
+    const height = Math.max(500, Math.min(700, rect.height - 20));
+
+    // Build sankey data
+    const sNodes = [];
+    const sLinks = [];
+    const nodeIdx = new Map();
 
     modules.forEach(mod => {
-      const modSources = data.edges.filter(e => e.type === 'curriculum' && e.target === mod.id).map(e => nodeMap.get(e.source)).filter(Boolean);
-      const card = document.createElement('div');
-      card.className = 'curr-card';
-      card.innerHTML = `
-        <h3>Module ${String(mod.order).padStart(2,'0')}: ${mod.label}</h3>
-        <div class="source-count">${modSources.length} sources</div>
-        <div class="curr-dots">${modSources.map(s => {
-          const tag = (s.tags||[])[0] || '';
-          const color = tag.includes('agent') ? 'var(--cyan)' : tag.includes('econ') ? 'var(--amber)' : tag.includes('hype') ? 'var(--red)' : 'var(--purple)';
-          return `<div class="curr-dot" style="background:${color}" title="${s.title}"></div>`;
-        }).join('')}</div>
-      `;
-      card.addEventListener('click', () => {
-        // Switch to graph filtered to this module
-        activeFilters.modules.clear();
-        activeFilters.modules.add(mod.id.replace('mod:', ''));
-        document.querySelector(`[data-filter="modules"][value="${mod.id.replace('mod:','')}"]`).checked = true;
-        document.querySelector('[data-view="graph"]').click();
-        applyFilters();
+      const modId = mod.id;
+      const idx = sNodes.length;
+      nodeIdx.set(modId, idx);
+      const mp = Progress.getModuleProgress(mod);
+      sNodes.push({ id: modId, name: `${String(mod.order).padStart(2,'0')}: ${mod.label}`, color: MOD_COLOR, type: 'module', mod, pct: mp.pct });
+
+      (mod.sections || []).forEach(sec => {
+        const secKey = `${modId}|${sec.id}`;
+        const secIdx = sNodes.length;
+        nodeIdx.set(secKey, secIdx);
+        const sp = Progress.getSectionProgress(mod.id.replace('mod:', ''), sec.id, sec.items);
+        sNodes.push({ id: secKey, name: sec.label, color: SEC_COLORS[sec.id] || '#888', type: 'section', mod, sec, pct: sp.pct });
+        sLinks.push({ source: modId, target: secKey, value: Math.max(sec.count, 1), color: SEC_COLORS[sec.id] || '#888' });
       });
-      grid.appendChild(card);
+    });
+
+    // d3-sankey layout
+    const marginLeft = 160, marginRight = 180, marginTop = 10, marginBottom = 10;
+    const innerW = width - marginLeft - marginRight;
+    const innerH = height - marginTop - marginBottom;
+    const sankeyGen = d3.sankey()
+      .nodeId(d => d.id)
+      .nodeWidth(20)
+      .nodePadding(10)
+      .nodeAlign(d3.sankeyLeft)
+      .extent([[0, 0], [innerW, innerH]]);
+
+    const graph = sankeyGen({
+      nodes: sNodes.map(d => ({ ...d })),
+      links: sLinks.map(d => ({ ...d })),
+    });
+
+    const svgEl = d3.select(sankeyEl).append('svg')
+      .attr('width', width)
+      .attr('height', height)
+      .attr('viewBox', `0 0 ${width} ${height}`);
+
+    const gMain = svgEl.append('g').attr('transform', `translate(${marginLeft},${marginTop})`);
+
+    // Links
+    gMain.append('g').selectAll('g')
+      .data(graph.links)
+      .join('g')
+      .attr('class', 'sankey-link')
+      .append('path')
+      .attr('d', d3.sankeyLinkHorizontal())
+      .attr('stroke', d => d.color)
+      .attr('stroke-width', d => Math.max(2, d.width));
+
+    // Nodes
+    const nodeGroups = gMain.append('g').selectAll('g')
+      .data(graph.nodes)
+      .join('g')
+      .attr('class', 'sankey-node')
+      .attr('transform', d => `translate(${d.x0},${d.y0})`);
+
+    // Node rectangles
+    nodeGroups.append('rect')
+      .attr('width', d => d.x1 - d.x0)
+      .attr('height', d => Math.max(d.y1 - d.y0, 2))
+      .attr('fill', d => d.color)
+      .attr('opacity', d => d.pct === 100 ? 1 : 0.7);
+
+    // Progress fill overlay (darker base + bright fill)
+    nodeGroups.each(function(d) {
+      if (d.pct > 0 && d.pct < 100) {
+        const h = Math.max(d.y1 - d.y0, 2);
+        const fillH = h * d.pct / 100;
+        d3.select(this).append('rect')
+          .attr('width', d.x1 - d.x0)
+          .attr('height', fillH)
+          .attr('y', h - fillH)
+          .attr('fill', '#10b981')
+          .attr('opacity', 0.5)
+          .attr('rx', 4).attr('ry', 4)
+          .style('pointer-events', 'none');
+      }
+    });
+
+    // Completion checkmarks
+    nodeGroups.filter(d => d.pct === 100).append('text')
+      .attr('x', d => (d.x1 - d.x0) / 2)
+      .attr('y', d => (d.y1 - d.y0) / 2 + 4)
+      .attr('text-anchor', 'middle')
+      .attr('fill', '#10b981')
+      .attr('font-size', '12px')
+      .text('\u2713');
+
+    // Labels
+    nodeGroups.append('text')
+      .attr('x', d => d.type === 'module' ? -6 : (d.x1 - d.x0) + 6)
+      .attr('y', d => (d.y1 - d.y0) / 2)
+      .attr('dy', '0.35em')
+      .attr('text-anchor', d => d.type === 'module' ? 'end' : 'start')
+      .text(d => d.name);
+
+    // Count + progress labels
+    nodeGroups.filter(d => d.type === 'section').append('text')
+      .attr('x', d => (d.x1 - d.x0) + 6)
+      .attr('y', d => (d.y1 - d.y0) / 2 + 14)
+      .attr('dy', '0.35em')
+      .attr('text-anchor', 'start')
+      .attr('class', d => d.pct > 0 ? 'node-progress' : 'node-count')
+      .text(d => d.pct > 0 ? `${d.sec.count} items · ${d.pct}%` : `${d.sec.count} items`);
+
+    // Module source counts
+    nodeGroups.filter(d => d.type === 'module').append('text')
+      .attr('x', -6)
+      .attr('y', d => (d.y1 - d.y0) / 2 + 14)
+      .attr('dy', '0.35em')
+      .attr('text-anchor', 'end')
+      .attr('class', d => d.pct > 0 ? 'node-progress' : 'node-count')
+      .text(d => {
+        const srcCount = data.edges.filter(e => e.type === 'curriculum' && e.target === d.mod.id).length;
+        return d.pct > 0 ? `${srcCount} sources · ${d.pct}%` : `${srcCount} sources`;
+      });
+
+    // Dependency arrows (01→02→03→04→05)
+    const mainChain = graph.nodes.filter(d => d.type === 'module' && d.mod.order <= 5).sort((a, b) => a.mod.order - b.mod.order);
+    const arrowGroup = gMain.append('g');
+    for (let i = 0; i < mainChain.length - 1; i++) {
+      const from = mainChain[i];
+      const to = mainChain[i + 1];
+      const x = from.x0 - 16;
+      const y1 = (from.y0 + from.y1) / 2;
+      const y2 = (to.y0 + to.y1) / 2;
+      arrowGroup.append('path')
+        .attr('class', 'sankey-dep-arrow')
+        .attr('d', `M${x},${y1} C${x - 20},${(y1 + y2) / 2} ${x - 20},${(y1 + y2) / 2} ${x},${y2}`);
+      arrowGroup.append('polygon')
+        .attr('class', 'sankey-dep-head')
+        .attr('points', `${x},${y2 - 4} ${x + 5},${y2} ${x},${y2 + 4}`);
+    }
+
+    // Click handlers
+    nodeGroups.on('click', (evt, d) => {
+      if (d.type === 'module') showModuleDetail(d.mod);
+      else if (d.type === 'section') showSectionDetail(d.mod, d.sec);
+    });
+
+    // Tooltips
+    nodeGroups.on('mouseenter', (evt, d) => {
+      const label = d.type === 'module' ? `Module ${String(d.mod.order).padStart(2,'0')}: ${d.mod.label}` : `${d.name} (Module ${String(d.mod.order).padStart(2,'0')})`;
+      showTooltip(evt, `<div class="tt-title">${label}</div><div class="tt-meta">${d.pct}% complete</div>`);
+    }).on('mouseleave', hideTooltip);
+  }
+
+  function showModuleDetail(mod) {
+    detailPanel.classList.add('open');
+    const mp = Progress.getModuleProgress(mod);
+    const modId = mod.id.replace('mod:', '');
+    const srcCount = data.edges.filter(e => e.type === 'curriculum' && e.target === mod.id).length;
+    let sectionsHtml = (mod.sections || []).map(sec => {
+      const sp = Progress.getSectionProgress(modId, sec.id, sec.items);
+      const color = SEC_COLORS[sec.id] || '#888';
+      return `
+        <div class="module-section-card" data-mod="${modId}" data-sec="${sec.id}" style="border-left:3px solid ${color}">
+          <h4 style="color:${color}">${sec.label}</h4>
+          <div class="sec-meta">${sp.completed}/${sp.total} completed · ${sp.pct}%</div>
+          <div class="section-progress-bar"><div class="section-progress-fill" style="width:${sp.pct}%;background:${color}"></div></div>
+        </div>`;
+    }).join('');
+
+    detailContent.innerHTML = `
+      <div class="detail-type module">Module ${String(mod.order).padStart(2,'0')}</div>
+      <div class="detail-title">${mod.label}</div>
+      <div class="detail-meta">${srcCount} sources · ${mp.completed}/${mp.total} items</div>
+      <div class="section-progress">
+        <div class="section-progress-bar"><div class="section-progress-fill" style="width:${mp.pct}%;background:var(--purple)"></div></div>
+      </div>
+      <p style="font-size:12px;color:var(--text-dim);margin-top:8px;">${mod.overview || ''}</p>
+      <div class="module-sections-list">${sectionsHtml}</div>
+    `;
+
+    detailContent.querySelectorAll('.module-section-card').forEach(card => {
+      card.addEventListener('click', () => {
+        const sec = (mod.sections || []).find(s => s.id === card.dataset.sec);
+        if (sec) showSectionDetail(mod, sec);
+      });
+    });
+  }
+
+  function showSectionDetail(mod, sec) {
+    detailPanel.classList.add('open');
+    const modId = mod.id.replace('mod:', '');
+    const color = SEC_COLORS[sec.id] || '#888';
+    const sp = Progress.getSectionProgress(modId, sec.id, sec.items);
+
+    const itemsHtml = sec.items.map(item => {
+      const done = Progress.isComplete(modId, sec.id, item.id);
+      return `
+        <label class="concept-item ${done ? 'completed' : ''}" data-item="${item.id}">
+          <input type="checkbox" ${done ? 'checked' : ''}>
+          <span class="concept-title">${item.title}</span>
+        </label>`;
+    }).join('');
+
+    detailContent.innerHTML = `
+      <div class="detail-type" style="color:${color}">Module ${String(mod.order).padStart(2,'0')} · ${sec.label}</div>
+      <div class="detail-title">${mod.label}</div>
+      <div class="detail-meta">${sp.completed}/${sp.total} completed · ${sp.pct}%</div>
+      <div class="section-progress">
+        <div class="section-progress-bar"><div class="section-progress-fill" style="width:${sp.pct}%;background:${color}"></div></div>
+      </div>
+      <div class="concept-list">${itemsHtml}</div>
+    `;
+
+    detailContent.querySelectorAll('.concept-item input').forEach(cb => {
+      cb.addEventListener('change', () => {
+        const itemEl = cb.closest('.concept-item');
+        const itemId = itemEl.dataset.item;
+        Progress.toggle(modId, sec.id, itemId);
+        itemEl.classList.toggle('completed', cb.checked);
+        // Update progress display
+        const newSp = Progress.getSectionProgress(modId, sec.id, sec.items);
+        detailContent.querySelector('.detail-meta').textContent = `${newSp.completed}/${newSp.total} completed · ${newSp.pct}%`;
+        detailContent.querySelector('.section-progress-fill').style.width = `${newSp.pct}%`;
+        // Re-render sankey to reflect changes
+        renderCurriculum();
+      });
     });
   }
 
@@ -797,12 +1150,14 @@ footer {
   window.addEventListener('resize', () => {
     width = canvas.clientWidth; height = canvas.clientHeight;
     svg.attr('width', width).attr('height', height);
-    simulation.force('center', d3.forceCenter(width / 2, height / 2));
-    simulation.alpha(0.1).restart();
+    if (simulation) {
+      simulation.force('center', d3.forceCenter(width / 2, height / 2));
+      simulation.alpha(0.1).restart();
+    }
   });
 
   // ── INITIAL VIEW ──
-  if (currentView !== 'graph') switchView(currentView);
+  switchView(currentView);
 
 })();
 </script>
