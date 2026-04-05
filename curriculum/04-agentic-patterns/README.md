@@ -77,7 +77,7 @@ The companion repository also includes a meta-agent (`meta-agent.md`) -- a speci
 
 ### Concept 5: Lifecycle Hooks for Deterministic Control
 
-IndyDevDan's `claude-code-hooks-mastery` repository ([#001]) implements all 13 Claude Code lifecycle hooks, providing deterministic control points over agent behavior:
+IndyDevDan's `claude-code-hooks-mastery` repository ([#001]) originally documented 13 Claude Code lifecycle hooks. The system has since expanded to **21 lifecycle events** with **4 handler types** (command hooks, HTTP hooks, prompt hooks, and agent hooks), async execution, and JSON structured output. The core hooks for agentic workflows include:
 
 | Hook | When It Fires | Can Block? |
 |------|---------------|------------|
@@ -94,6 +94,11 @@ IndyDevDan's `claude-code-hooks-mastery` repository ([#001]) implements all 13 C
 | SessionEnd | On session exit/error | No |
 | PermissionRequest | Permission dialogs appear | No |
 | Setup | Repository initialization | No |
+| TeammateIdle | When a team member has no tasks | No |
+| TaskCreated | When a new task is created | No |
+| TaskCompleted | When a task finishes | No |
+
+Note: Additional lifecycle events beyond this table bring the total to 21. See the [Claude Code Hooks Guide](https://code.claude.com/docs/en/hooks-guide) for the complete reference. A caveat for parallel PreToolUse hooks using `updatedInput`: non-determinism can occur when multiple hooks modify the same input concurrently.
 
 The key hooks for agentic workflows:
 
@@ -226,15 +231,17 @@ The iterative skill creation pattern demonstrated by Jack Roberts ([#083](../../
 
 Tanmay Deshpande ([#090](../../sources/090-tanmay-deshpande-claude-skill-tradeoffs.md)) demonstrates a compelling application of the **domain-specific intelligence** pattern: a Claude Code skill that encodes a complete architecture trade-off analysis framework into a single invocation. The skill takes a one-paragraph scenario description and produces a comprehensive architecture decision record -- weighted scoring across architecture characteristics, Roger Martin's "What Would Have to Be True" strategic framework, second-order effects analysis (Conway's Law implications, discipline tax), risk profiles, and a phased implementation roadmap. This illustrates how skills can encode multi-step analytical frameworks from management and architecture literature, turning complex decision-making processes into repeatable, documented workflows. As Deshpande puts it: "The most senior person in the room wins and nobody documents why" -- the skill addresses both the documentation gap and the consistency problem in architecture decisions.
 
-### Concept 14: CLI Over MCP for Token Efficiency
+### Concept 14: CLI and MCP -- Strategic Use of Both
 
-The Playwright team ([#030](../../sources/030-playwright-cli-vs-mcp.md)) introduces a file-mediated architecture that dramatically reduces token consumption for browser automation. The same task consumed 114,000 tokens via MCP versus 26,800 tokens via CLI -- a 4.3x reduction. The architectural difference: MCP returns all browser output directly to the LLM's context window, while CLI writes outputs to disk files and lets the agent decide what to read into context.
+The Playwright team ([#030](../../sources/030-playwright-cli-vs-mcp.md)) introduces a file-mediated architecture that dramatically reduces token consumption for browser automation. The same task consumed 114,000 tokens via MCP versus 26,800 tokens via CLI -- a **4.3x reduction**. The architectural difference: MCP returns all browser output directly to the LLM's context window, while CLI writes outputs to disk files and lets the agent decide what to read into context.
 
 IndyDevDan ([#088](../../sources/088-indydevdan-browser-automation-stack.md)) reinforces this choice, explicitly recommending CLIs over MCP servers for browser automation. MCP servers consume more tokens and force you into their opinionated workflow; CLIs give you freedom to build your own opinionated layer on top. The practical guidance: build skills on CLIs, then layer your own structure above.
 
 Peter Steinberger, creator of OpenClaw ([#094](../../sources/094-y-combinator-openclaw-viral-agent.md)), provides additional evidence for the CLI-first thesis. He deliberately avoided building MCP support into OpenClaw -- the fastest-growing open-source project in GitHub history -- and instead created **makeporter**, a tool that converts any MCP into a CLI on the fly. His reasoning: CLIs are what humans naturally use, bots are good at Unix, CLIs scale better, and you do not need to restart the agent to add new tools (unlike Claude Code or Codex with MCP). Steinberger views MCP as unnecessary complexity "invented for bots" rather than building on what already works. The fact that OpenClaw reached 160,000+ stars without any MCP support is a strong empirical signal that CLIs are sufficient for even the most ambitious agent projects.
 
 This applies broadly beyond browser automation. Any tool interaction where the agent does not need to reason about every piece of output benefits from the file-mediated pattern. Write output to disk, read selectively into context -- a lazy-loading pattern that preserves context budget for decisions that actually require intelligence.
+
+**Q1 2026 update: The industry consensus has converged on "use both strategically"** rather than CLI-only. MCP schema filtering can reduce MCP's token overhead by approximately 90% (from 44K tokens to ~3K), significantly narrowing the gap. The emerging best practice: use CLI for tools the model already knows well (git, docker, gh, npm) and MCP for services without CLIs (Slack, Notion, custom APIs, databases). Google Workspace CLI's dual-mode support -- offering both CLI and MCP interfaces -- is the reference pattern for this both/and approach. The 4.3x figure from Playwright remains valid as a baseline comparison, but the practical gap narrows substantially with optimized MCP configurations.
 
 ### Concept 15: Git Worktrees as Agent Infrastructure
 
@@ -999,7 +1006,7 @@ The full system access problem is structural: the capability surface and the att
 
 - **Expecting AI-generated codebases to remain maintainable at scale**: Tom Delalande ([#073](../../sources/073-tom-delalande-claude-agents-useless.md)) documents how Anthropic's own C compiler project reached a point where Claude could not make changes without breaking existing functionality. AI-generated codebases can exceed the model's own ability to modify them -- a critical concern for long-lived projects that depend on autonomous agent maintenance.
 
-- **Using MCP when CLI would be more efficient**: The Playwright team ([#030]) demonstrated a 4.3x token reduction using CLI over MCP for the same browser automation task. Default to CLI-based tools for coding agents; reserve MCP for custom agentic loops where the standardized protocol matters.
+- **Using MCP without schema filtering when CLI would be more efficient**: The Playwright team ([#030]) demonstrated a 4.3x token reduction using CLI over MCP for the same browser automation task. The best practice is to use CLI for tools the model already knows (git, docker, gh) and MCP with schema filtering for services without CLIs (Slack, Notion, custom APIs). Unoptimized MCP configurations remain a common source of context bloat.
 
 - **Granting agents destructive permissions on external systems**: ThePrimeTime ([#163](../../sources/163-primetime-openclaw-inbox.md)) documents an incident where Meta's head of AI safety had her email inbox bulk-deleted by an agent that could not be interrupted mid-execution. The agent interpreted "clean up my inbox" as authorization for bulk deletion, and repeated "stop" commands were queued rather than processed. The lesson: never give agents unsupervised destructive access to external systems (email, calendars, databases). Prefer reversible operations (archiving, moving) over irreversible ones (deletion), require per-action approval for destructive operations, and ensure you can kill the agent process at the OS level when interrupt commands are being queued.
 
@@ -1263,7 +1270,7 @@ The full system access problem is structural: the capability surface and the att
 
 ## Further Reading
 
-- [claude-code-hooks-mastery](https://github.com/disler/claude-code-hooks-mastery) -- IndyDevDan's companion repository with all 13 hook implementations, meta-prompt examples, builder/validator agent definitions, and the `/plan_w_team` workflow
+- [claude-code-hooks-mastery](https://github.com/disler/claude-code-hooks-mastery) -- IndyDevDan's companion repository with hook implementations, meta-prompt examples, builder/validator agent definitions, and the `/plan_w_team` workflow (note: the hooks system has expanded from 13 to 21 lifecycle events since this repo was published; see [official hooks guide](https://code.claude.com/docs/en/hooks-guide) for the current reference)
 - [claude-code-hooks-multi-agent-observability](https://github.com/disler/claude-code-hooks-multi-agent-observability) -- Real-time monitoring for Claude Code agents through hook event tracking
 - [claude-code-damage-control](https://github.com/disler/claude-code-damage-control) -- Safety-focused hooks for preventing destructive agent actions
 - [Module 03: Claude Code Essentials](../03-claude-code-essentials/README.md) -- Skills system fundamentals that underpin skill-augmented agent teams

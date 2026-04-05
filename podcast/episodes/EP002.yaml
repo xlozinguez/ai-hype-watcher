@@ -1,0 +1,28 @@
+episode: EP002
+title: "Reality Check \u2014 What We Got Right, What We Got Wrong, and What Changed"
+date: '2026-04-04'
+sources: []
+research_reports:
+  - research/2026-04-05-module-01-core-concepts.md
+  - research/2026-04-05-module-02-prompting.md
+  - research/2026-04-05-module-03-claude-code.md
+  - research/2026-04-05-module-04-agentic.md
+  - research/2026-04-05-module-05-teams.md
+  - research/2026-04-05-module-06-strategy.md
+theses_referenced:
+  - T1
+  - T2
+  - T3
+  - T4
+  - T5
+  - T7
+  - T8
+  - T9
+  - T10
+  - T12
+  - T14
+  - T15
+  - T16
+estimated_duration: '13:30'
+word_count: 2020
+character_count: 13538
