@@ -13,6 +13,7 @@ SOURCES_DIR = ROOT / "sources"
 CURRICULUM_DIR = ROOT / "curriculum"
 SYNTHESIS_DIR = ROOT / "synthesis"
 BRIEFINGS_DIR = ROOT / "briefings"
+RESEARCH_DIR = ROOT / "research"
 OUTPUT = Path(__file__).resolve().parent / "data.json"
 SRC_DIR = Path(__file__).resolve().parent / "src"
 
@@ -292,6 +293,51 @@ def parse_synthesis():
     return entries
 
 
+def parse_research():
+    """Parse research docs for the reader."""
+    entries = []
+    if not RESEARCH_DIR.exists():
+        return entries
+    for path in sorted(RESEARCH_DIR.glob("*.md")):
+        if path.name in SKIP_FILES or path.name.startswith("_"):
+            continue
+        text = path.read_text()
+
+        # Date from filename (YYYY-MM-DD-slug.md)
+        date_match = re.match(r"(\d{4}-\d{2}-\d{2})", path.stem)
+        date = date_match.group(1) if date_match else ""
+
+        # Title from first heading
+        title_match = re.search(r"^#\s+(?:Research:\s*)?(.+)", text, re.MULTILINE)
+        title = title_match.group(1).strip() if title_match else path.stem
+
+        # Extract source IDs
+        source_ids = sorted(set(
+            re.findall(r'#(\d{3})\b', text) +
+            re.findall(r'\[(\d{3}):', text) +
+            re.findall(r'\[#(\d{3})\]', text)
+        ))
+
+        # Extract ## section headings as themes
+        themes = []
+        for line in text.split("\n"):
+            h2 = re.match(r"^##\s+(.+)", line)
+            if h2:
+                heading = h2.group(1).strip()
+                if heading not in ("Overview",):
+                    themes.append(heading)
+
+        entries.append({
+            "id": path.stem,
+            "date": date,
+            "title": title,
+            "themes": themes,
+            "source_ids": source_ids,
+        })
+
+    return entries
+
+
 def strip_markdown(text):
     """Strip markdown formatting for clean HTML display."""
     text = re.sub(r'\*\*(.+?)\*\*', r'\1', text)  # bold
@@ -457,9 +503,10 @@ def linkify_sources(html):
     )
 
 
-def build_reader_content(briefings, synthesis_entries):
+def build_reader_content(briefings, synthesis_entries, research_entries=None):
     """Build condensed reader documents with pre-rendered HTML."""
     documents = []
+    research_entries = research_entries or []
 
     # Briefings — already structured, just add body_html
     for b in briefings:
@@ -647,6 +694,64 @@ def build_reader_content(briefings, synthesis_entries):
             "body_html": body_html,
         })
 
+    # Research — long-form analysis with sections
+    for r in research_entries:
+        path = RESEARCH_DIR / f'{r["id"]}.md'
+        if not path.exists():
+            continue
+        text = path.read_text()
+        lines = text.split("\n")
+
+        # Overview
+        overview_lines = []
+        in_overview = False
+        for line in lines:
+            if re.match(r"^##\s+Overview", line):
+                in_overview = True
+                continue
+            if in_overview:
+                if line.strip().startswith("## ") or line.strip() == "---":
+                    if overview_lines:
+                        break
+                    continue
+                if line.strip() and not line.strip().startswith("```"):
+                    overview_lines.append(line.strip())
+        overview = strip_markdown(first_n_sentences(" ".join(overview_lines), 3))
+
+        # Section headings as themes
+        themes_html = ""
+        for i, theme in enumerate(r.get("themes", [])[:8], 1):
+            clean = strip_markdown(theme)
+            # Skip generic headings
+            if clean in ("Overview",):
+                continue
+            themes_html += (
+                f'<div class="theme">'
+                f'<strong>{clean}</strong>'
+                f'</div>'
+            )
+
+        source_range = ""
+        if r["source_ids"]:
+            source_range = f'#{r["source_ids"][0]}–#{r["source_ids"][-1]} ({len(r["source_ids"])} sources)'
+
+        body_html = linkify_sources(
+            f'<div class="card-overview">{overview}</div>'
+            f'<div class="card-themes">{themes_html}</div>'
+            f'<div class="card-sources">Sources: {source_range}</div>'
+        )
+
+        subtitle = source_range if source_range else r["date"]
+
+        documents.append({
+            "id": r["id"],
+            "type": "research",
+            "date": r["date"],
+            "title": r["title"],
+            "subtitle": subtitle,
+            "body_html": body_html,
+        })
+
     # Sort newest first
     documents.sort(key=lambda d: d["date"], reverse=True)
     return {"documents": documents}
@@ -720,7 +825,8 @@ def build():
     module_nodes = parse_curriculum()
     synthesis = parse_synthesis()
     briefings = parse_briefings()
-    reader = build_reader_content(briefings, synthesis)
+    research = parse_research()
+    reader = build_reader_content(briefings, synthesis, research)
 
     # Build tag nodes with counts
     tag_counts = {}
@@ -773,6 +879,7 @@ def build():
     print(f"  Edges: {len(edges)}")
     print(f"  Synthesis: {len(synthesis)}")
     print(f"  Briefings: {len(briefings)}")
+    print(f"  Research: {len(research)}")
     print(f"  Reader docs: {len(reader['documents'])}")
 
 

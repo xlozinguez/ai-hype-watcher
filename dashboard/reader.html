@@ -52,6 +52,7 @@ header h1 span { color: var(--cyan); }
 .filter-btn:hover { color: var(--text); border-color: var(--text-dim); }
 .filter-btn.active { color: var(--cyan); border-color: var(--cyan); background: rgba(6,182,212,0.08); }
 .filter-btn.active[data-filter="synthesis"] { color: var(--purple); border-color: var(--purple); background: rgba(139,92,246,0.08); }
+.filter-btn.active[data-filter="research"] { color: var(--green); border-color: var(--green); background: rgba(16,185,129,0.08); }
 
 /* CARD CONTAINER */
 .card-container {
@@ -77,6 +78,7 @@ header h1 span { color: var(--cyan); }
 }
 .card-type.briefing { color: var(--cyan); border: 1px solid rgba(6,182,212,0.3); background: rgba(6,182,212,0.08); }
 .card-type.synthesis { color: var(--purple); border: 1px solid rgba(139,92,246,0.3); background: rgba(139,92,246,0.08); }
+.card-type.research { color: var(--green); border: 1px solid rgba(16,185,129,0.3); background: rgba(16,185,129,0.08); }
 .card-date { font-size: 12px; color: var(--text-dim); }
 .card-title {
   font-size: 18px; font-weight: 600; line-height: 1.3; margin-bottom: 6px;
@@ -337,6 +339,7 @@ header h1 span { color: var(--cyan); }
   <button class="filter-btn active" data-filter="all">All</button>
   <button class="filter-btn" data-filter="briefing">Briefings</button>
   <button class="filter-btn" data-filter="synthesis">Synthesis</button>
+  <button class="filter-btn" data-filter="research">Research</button>
 </div>
 
 <div class="card-container" id="cardContainer">
