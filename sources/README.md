@@ -513,14 +513,31 @@ Each source is synthesized (not transcribed) into a structured note with frontma
 | [500](500-thestanduppod-production-legacy-code.md) | Code that shouldnt have made it to production | TheStandupPod | video | ai-sdlc, vibe-coding |
 | [500](500-uma-abu-monorepo-at-scale.md) | Everyone Says Don’t Do This in Software… Big Tech Does It Anyway | Uma Abu | video | enterprise-ai, ai-sdlc, infrastructure |
 | [501](501-dreams-of-code-tmux-terminal-workflow.md) | Tmux has forever changed the way I write code. | Dreams of Code | video | agent-teams, multi-agent, agentic-coding |
+| [501](501-thestanduppod-legacy-code-permanence.md) | Code that shouldnt have made it to production | TheStandupPod | video | ai-sdlc, vibe-coding |
 | [502](502-barrys-economics-algorithmic-conditioning-creators.md) | I'm Being Trained and So Are You - Barry's Economics | Barry's Economics | video | ai-hype, ai-economics |
+| [502](502-dreams-of-code-tmux-terminal-workflow.md) | Tmux has forever changed the way I write code. | Dreams of Code | video | agent-teams, multi-agent, agentic-coding |
 | [503](503-ai-news-strategy-daily-nate-b-jones-outcome-agents-reality-check.md) | Wall Street Just Bet $285 Billion on AI Agents. The Best One Barely Works. | AI News & Strategy Daily | Nate B Jones | video | ai-hype, ai-landscape, enterprise-ai, context-engineering, multi-agent, capability-overhang |
+| [503](503-barrys-economics-algorithmic-conditioning-creators.md) | I'm Being Trained and So Are You - Barry's Economics | Barry's Economics | video | ai-hype, ai-economics, ai-landscape |
+| [504](504-ai-news-strategy-daily-nate-b-jones-outcome-agents-rubric.md) | Wall Street Just Bet $285 Billion on AI Agents. The Best One Barely Works. | AI News & Strategy Daily | Nate B Jones | video | ai-hype, ai-landscape, enterprise-ai, capability-overhang, context-engineering, multi-agent |
 | [504](504-weaviate-podcast-clips-colgrep-code-retrieval.md) | Supercharge your Coding Agents with ColGrep | Weaviate Podcast Clips | video | agentic-coding, claude-code, context-engineering, ai-economics |
 | [505](505-ai-tinkerers-beads-agent-task-management.md) | Beyond Instructions: How Beads Lets AI Agents Build Like Engineers | AI Tinkerers | video | agentic-coding, vibe-coding, validation, mcp, task-system, prompt-engineering, context-engineering |
+| [505](505-weaviate-podcast-clips-colgrep-code-retrieval.md) | Supercharge your Coding Agents with ColGrep | Weaviate Podcast Clips | video | agentic-coding, claude-code, context-engineering, ai-economics |
+| [506](506-ai-tinkerers-beads-agent-task-memory.md) | Beyond Instructions: How Beads Lets AI Agents Build Like Engineers | AI Tinkerers | video | agentic-coding, vibe-coding, validation, mcp, prompt-engineering, context-engineering, task-system |
 | [506](506-mlopscommunity-coding-agent-to-general-purpose.md) | How to Make a Coding Agent a General Purpose Agent - Harrison Chase | MLOps.community | video | agentic-coding, multi-agent, context-engineering, enterprise-ai, mcp, agent-teams |
+| [507](507-mlopscommunity-coding-agent-general-purpose.md) | How to Make a Coding Agent a General Purpose Agent - Harrison Chase | MLOps.community | video | agentic-coding, multi-agent, context-engineering, enterprise-ai, mcp, security, claude-code |
 | [507](507-ndc-conferences-attacking-ai-systems.md) | Attacking AI - Jason Haddix - NDC Security 2026 | NDC Conferences | video | security, prompt-engineering, multi-agent, enterprise-ai |
+| [508](508-ndc-conferences-attacking-ai-systems.md) | Attacking AI - Jason Haddix - NDC Security 2026 | NDC Conferences | video | security, enterprise-ai, prompt-engineering, multi-agent |
 | [508](508-syntax-ai-slop-code-quality.md) | 37,000 Lines of Slop | Syntax | video | vibe-coding, ai-hype, validation, skills, prompt-engineering |
+| [509](509-syntax-ai-slop-code-quality.md) | 37,000 Lines of Slop | Syntax | video | vibe-coding, ai-hype, validation, skills, prompt-engineering |
 | [509](509-the-atlantic-ai-workforce-impact.md) | What AI Is Actually Doing to the Workforce | The Atlantic | video | ai-hype, enterprise-ai, ai-economics, ai-landscape |
 | [510](510-eliot-prince-claude-usage-limits.md) | Why Claude Keeps Hitting Usage Limits (& how to fix it) | Eliot Prince | video | context-engineering, prompt-engineering, mcp |
+| [510](510-the-atlantic-ai-workforce-impact.md) | What AI Is Actually Doing to the Workforce | The Atlantic | video | ai-hype, enterprise-ai, ai-landscape, ai-economics |
+| [511](511-eliot-prince-claude-usage-limits.md) | Why Claude Keeps Hitting Usage Limits (& how to fix it) | Eliot Prince | video | context-engineering, prompt-engineering, mcp |
 | [511](511-it-revolution-agent-adoption-monolith-problem.md) | Beyond the IDE: Toward Multi-Agent Orchestration | IT Revolution | video | agentic-coding, vibe-coding, capability-overhang, context-engineering, enterprise-ai, claude-code, ai-sdlc |
+| [512](512-it-revolution-agentic-coding-adoption.md) | Beyond the IDE: Toward Multi-Agent Orchestration | IT Revolution | video | agentic-coding, vibe-coding, capability-overhang, enterprise-ai, context-engineering, claude-code, multi-agent |
 | [512](512-lama-dev-fundamentals-over-hype.md) | Can’t We Just… Write Code? | Lama Dev | video | ai-hype, vibe-coding, ai-landscape |
+| [513](513-lama-dev-fundamentals-vs-hype.md) | Can’t We Just… Write Code? | Lama Dev | video | ai-hype, ai-landscape, vibe-coding |
+| [514](514-ai-news-strategy-daily-nate-b-jones-agent-org-readiness.md) | Your Agent Produces at 100x. Your Org Reviews at 3x. That's the Problem. | AI News & Strategy Daily | Nate B Jones | video | vibe-coding, agentic-coding, enterprise-ai, ai-sdlc, validation, specification |
+| [515](515-caleb-writes-code-autoresearch-autonomous-optimization.md) | AutoResearch explained.. | Caleb Writes Code | video | agentic-coding, vibe-coding, ai-sdlc, validation |
+| [516](516-discover-ai-self-learning-multiagent-rag.md) | Words Instead of Weights? Self-Learning Multi-Agent RAG (HERA) | Discover AI | video | multi-agent, agent-teams, prompt-engineering, context-engineering, enterprise-ai |
+| [517](517-mo-bitar-ai-hype-limitations.md) | AI just tried to take our jobs. It failed. | Mo Bitar | video | ai-hype, ai-landscape, enterprise-ai |
